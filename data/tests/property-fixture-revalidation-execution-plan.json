@@ -1,0 +1,61 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Define the controlled execution package required to close the active property fixture revalidation without inventing a corrected fixture or treating synthetic evidence as real-world property evidence.",
+  "plan_id": "PF-REVALIDATION-PLAN-001",
+  "queue_item": "PF-REVAL-QUEUE-001",
+  "impact_event": "FIXTURE-IMPACT-EVENT-001",
+  "target_fixture": "FIXTURE-FOLIO-SYNTHETIC-001",
+  "execution_mode": "CONTROLLED_ISOLATED_REVALIDATION",
+  "required_inputs": [
+    "APPROVED_CORRECTED_OR_REPLACEMENT_FIXTURE",
+    "CURRENT_DEPENDENCY_MAP",
+    "CURRENT_IMPACT_EVENT",
+    "CURRENT_REVALIDATION_QUEUE",
+    "REVALIDATION_RESULT_CONTRACT",
+    "PROPERTY_EVIDENCE_AUDIT_TEST_SUITE"
+  ],
+  "execution_sequence": [
+    "VERIFY_APPROVED_FIXTURE_VERSION",
+    "INITIALISE_ISOLATED_CONTEXT",
+    "LOAD_DEPENDENCIES",
+    "RUN_DEPENDENT_TESTS",
+    "VERIFY_PROVENANCE",
+    "VERIFY_PRIVACY",
+    "VERIFY_PROPOSITION_SCOPE",
+    "VERIFY_HISTORICAL_IMMUTABILITY",
+    "CREATE_NEW_REVALIDATION_RESULT",
+    "RECALCULATE_PATHWAY_STATUS",
+    "UPDATE_IMPACT_EVENT",
+    "RECHECK_CLOSURE_GATE"
+  ],
+  "required_outputs": [
+    "NEW_REVALIDATION_RUN",
+    "REVALIDATION_RESULT",
+    "UPDATED_PATHWAY_STATUS",
+    "UPDATED_IMPACT_EVENT",
+    "CLOSURE_RECHECK"
+  ],
+  "blocking_prerequisite": {
+    "condition": "APPROVED_CORRECTED_OR_REPLACEMENT_FIXTURE",
+    "current_state": "NOT_AVAILABLE",
+    "action": "DO_NOT_INVENT_FIXTURE_CONTENT; obtain or explicitly approve a corrected/replacement controlled fixture before execution."
+  },
+  "success_conditions": [
+    "All required dependent tests have a new result.",
+    "No critical unsafe behavior is detected.",
+    "Fixture provenance and privacy checks pass.",
+    "Synthetic fixture remains clearly synthetic.",
+    "Historical runs remain unchanged.",
+    "Pathway status is recalculated.",
+    "Impact event is updated.",
+    "Closure gate is rechecked."
+  ],
+  "guardrails": [
+    "This plan does not create or imply a corrected fixture.",
+    "No live official property record is retrieved.",
+    "Synthetic evidence cannot establish real ownership, title or boundaries.",
+    "Technical revalidation cannot establish Irish property-law correctness.",
+    "No publication occurs through this plan."
+  ]
+}
