@@ -1,0 +1,20 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-investigation-evidence-cache-deduplication-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for safe reuse and invalidation of previously retrieved evidence.",
+  "core_principle":"CACHE REUSE IS A PROVENANCE AND VALIDITY DECISION, NOT A SHORTCUT AROUND EVIDENCE VERIFICATION.",
+  "minimum_identity":[
+    "source",
+    "document_or_record",
+    "property_scope_when_material",
+    "date_scope_when_material"
+  ],
+  "reuse_rule":"Previously verified evidence may be reused only when its identity, scope, temporal validity and applicable legal context remain sufficient for the new conclusion.",
+  "freshness_rule":"A cache hit does not by itself establish currentness.",
+  "historical_rule":"Current and historical evidence remain separate evidence states.",
+  "invalidation_rule":"Material source, record, legal, procedural, property or identity changes require revalidation or invalidation.",
+  "provenance_rule":"Every reused item retains its original source, retrieval and verification provenance.",
+  "verification_boundary":"The cache records evidence identity and reuse eligibility; it does not independently prove the underlying fact."
+}
