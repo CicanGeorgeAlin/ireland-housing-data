@@ -1,0 +1,14 @@
+{
+  "schema_version":"1.0",
+  "site":"IRELAND HOUSING DATA",
+  "deployment_marker":"IHD-PROPERTY-TITLE-LIVE-220",
+  "source_branch":"main",
+  "source_content":"data/verified/property-title-live-v1.json",
+  "source_content_status":"PUBLISHED_GENERAL_INFORMATION",
+  "integration":"data/verified/property-title-live-v1-ui-integration.json",
+  "integration_status":"INTEGRATED",
+  "deployment_workflow":".github/workflows/pages.yml",
+  "purpose":"Provide a machine-readable deployment identity so a later browser check can distinguish the deployed build from repository state.",
+  "legal_status":"General property-title information published; individual-property answers require official evidence.",
+  "not_a_legal_claim":"The deployment marker identifies the website build only; it does not establish facts about any individual property."
+}
