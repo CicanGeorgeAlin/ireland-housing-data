@@ -76,6 +76,21 @@
     return propositionMap.private_current;
   }
 
+  function renderEvidenceChecklist() {
+    if (!(state.new_apartment || '').toLowerCase().includes('yes')) return '';
+    const items = [
+      ['Commencement notice or 7-day notice','REQUIRED'],
+      ['Submission date to building control authority','REQUIRED'],
+      ['Building control authority identified','REQUIRED'],
+      ['Description of qualifying work','REQUIRED'],
+      ['Certificate of compliance on completion','REQUEST IF NEEDED'],
+      ['Dates and property references cross-checked','REQUIRED']
+    ];
+    return '<div class="evidence-checklist"><div class="kicker">Evidence checklist</div>' +
+      items.map(item => '<div class="check-item"><span>○</span><strong>' + escapeHtml(item[0]) + '</strong><small>' + escapeHtml(item[1]) + '</small></div>').join('') +
+      '</div>';
+  }
+
   function apartmentState() {
     const v=(state.new_apartment||'').toLowerCase();
     if(!v) return 'UNKNOWN — construction/building-control evidence still required.';
@@ -95,8 +110,9 @@
     if(time && result.status === 'PRIVATE_PATH'){
       const mapping=resolvePropositions(result,time);
       const apartment=apartmentState();
+      const checklist=renderEvidenceChecklist();
       html+='<div class="decision-facts"><div><span>Tenancy generation</span><strong>'+escapeHtml(time.tenancyGeneration)+'</strong></div><div><span>Review period</span><strong>'+escapeHtml(time.reviewPeriod)+'</strong></div><div><span>Commencement check</span><strong>'+escapeHtml(time.commencementCheck ? 'REQUIRED' : 'NOT YET REQUIRED')+'</strong></div></div>';
-      html+='<div class="decision-evidence"><div class="kicker">Candidate legal propositions</div><p>'+escapeHtml(mapping.propositions.length ? mapping.propositions.join(' · ') : 'None loaded for this historical branch.')+'</p><div class="kicker">Evidence chain</div><p>'+escapeHtml(mapping.evidence.length ? mapping.evidence.join(' · ') : 'Historical evidence required.')+'</p><div class="kicker">Publication state</div><p>'+escapeHtml(mapping.route)+'</p><div class="kicker">New-apartment exception</div><p>'+escapeHtml(apartment)+'</p><button type="button" id="show-law-button">SHOW ME THE LAW</button></div>';
+      html+='<div class="decision-evidence"><div class="kicker">Candidate legal propositions</div><p>'+escapeHtml(mapping.propositions.length ? mapping.propositions.join(' · ') : 'None loaded for this historical branch.')+'</p><div class="kicker">Evidence chain</div><p>'+escapeHtml(mapping.evidence.length ? mapping.evidence.join(' · ') : 'Historical evidence required.')+'</p><div class="kicker">Publication state</div><p>'+escapeHtml(mapping.route)+'</p><div class="kicker">New-apartment exception</div><p>'+escapeHtml(apartment)+'</p>'+checklist<button type="button" id="show-law-button">SHOW ME THE LAW</button></div>';
     }
     box.innerHTML=html;
     const lawButton=document.getElementById('show-law-button');
