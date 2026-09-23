@@ -252,6 +252,15 @@
         "property-evidence-retrieval-routing",
         "property-official-route-authority-resolver"
       ]
+    },
+    {
+      "stage": "EVIDENCE_RETRIEVAL_SESSION_MANAGEMENT",
+      "routes": [
+        "property-evidence-retrieval-session-manager",
+        "property-question-evidence-request-planner",
+        "property-evidence-sufficiency-minimum-evidence-resolver",
+        "property-evidence-audit-trail"
+      ]
     }
   ],
   "event_model": [
@@ -318,7 +327,8 @@
     "property-legal-change-impact-engine",
     "property-source-reliability-freshness-resolver",
     "property-evidence-sufficiency-minimum-evidence-resolver",
-    "property-question-evidence-request-planner"
+    "property-question-evidence-request-planner",
+    "property-evidence-retrieval-session-manager"
   ],
   "answer_sequence": [
     "QUESTION",
