@@ -1,0 +1,15 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-investigation-consent-citizen-control-boundary-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified architecture contract separating general information from citizen-requested property investigations and defining scope controls.",
+  "core_principle":"THE CITIZEN'S REQUEST DEFINES THE INVESTIGATION PURPOSE AND SCOPE; UNRELATED PROCESSING IS NOT IMPLIED.",
+  "general_information_rule":"General legal or housing information should not require property-specific identifiers unless the requested answer is property-specific.",
+  "investigation_rule":"A property-specific request permits only the investigation necessary to address the stated question and requested outcome.",
+  "document_rule":"Citizen-submitted documents remain citizen-supplied material and do not create blanket permission for unrelated processing.",
+  "scope_change_rule":"Material changes to property, date, question, outcome or legal issue are recorded as scope changes and do not silently rewrite the original investigation.",
+  "assertion_rule":"Citizen statements remain assertions until supported by appropriate evidence.",
+  "control_rule":"Citizen correction, clarification, review and supported scope-change requests remain distinguishable from authoritative source changes.",
+  "verification_boundary":"This contract defines interaction and scope boundaries; it does not itself determine a GDPR lawful basis, statutory right or other context-specific legal entitlement."
+}
