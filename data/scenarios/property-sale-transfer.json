@@ -1,0 +1,46 @@
+{
+  "id":"property-sale-transfer",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "question":"What must be checked when buying, selling or transferring property?",
+  "pipeline":[
+    "identify-property-and-title",
+    "identify-registered-owner",
+    "identify-title-and-burdens",
+    "check-contractual-evidence",
+    "check-mortgage-or-charge",
+    "check-lpt-clearance",
+    "check-stamp-duty-and-tax",
+    "check-planning-building-and-use-issues",
+    "prepare-transfer-instrument",
+    "lodge-registration",
+    "verify-post-registration-position"
+  ],
+  "legal_foundation":[
+    "Land and Conveyancing Law Reform Act 2009 Part 9",
+    "Registration of Title Act 1964",
+    "Land Registration Rules 2012",
+    "Stamp Duties Consolidation Act 1999",
+    "Local Property Tax legislation"
+  ],
+  "verified_facts":[
+    "Section 51 of the Land and Conveyancing Law Reform Act 2009 generally requires an agreement for sale or other disposition of land to be in writing and signed, subject to statutory/equitable exceptions.",
+    "Tailte Éireann provides LR Form 19 for transfer of property by a registered owner and LR Form 17 for registration of ownership or other entries.",
+    "Revenue requires LPT clearance before closing a residential property sale or transfer and notes that unpaid LPT can remain a charge on the property.",
+    "Revenue currently states standard residential Stamp Duty rates of 1% up to €1 million, 2% over €1 million to €1.5 million and 6% above €1.5 million, subject to applicable rules and exceptions.",
+    "Revenue states that Stamp Duty can apply to transfers by sale, gift, exchange, partition, release or surrender, with different rules depending on the transaction."
+  ],
+  "guardrails":[
+    "Contract signing is not the same event as registration of legal title.",
+    "Do not treat an address search as a complete title investigation.",
+    "Do not assume all burdens disappear on sale; discharge, overreaching or other legal mechanisms must be checked.",
+    "Tax treatment depends on transaction facts, consideration, property type, parties and applicable reliefs/exemptions.",
+    "Planning, building control, environmental and physical-condition issues are separate from title registration and must not be inferred from title alone."
+  ],
+  "official_routes":[
+    "Tailte Éireann Land Registry",
+    "Landdirect",
+    "Revenue Stamp Duty",
+    "Revenue LPT"
+  ]
+}
