@@ -1,0 +1,85 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-registration-easements",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "purpose":"Classify easements, rights of way and related registered property rights while separating documentary registration, legal existence, scope and physical use.",
+  "event_types":[
+    "RIGHT_OF_WAY",
+    "EASEMENT_CREATED",
+    "EASEMENT_TRANSFERRED",
+    "EASEMENT_RELEASED",
+    "PRESCRIPTIVE_RIGHT_CLAIM",
+    "WAYLEAVE",
+    "COURT_DECLARATION",
+    "BOUNDARY_OR_ACCESS_DISPUTE"
+  ],
+  "classification_inputs":[
+    "property_identifier",
+    "dominant_and_servient_land",
+    "registered_or_unregistered_status",
+    "folio_or_title_plan",
+    "instrument_or_deed",
+    "registered_burden_or_instrument",
+    "nature_of_right",
+    "route_or_area_used",
+    "historical_use",
+    "prescription_basis",
+    "court_order_or_declaration",
+    "date_of_creation_or_claim"
+  ],
+  "workflow":[
+    "IDENTIFY_AFFECTED_PROPERTIES",
+    "CLASSIFY_RIGHT_OR_BURDEN",
+    "CHECK_REGISTERED_ENTRIES",
+    "CHECK_FILED_INSTRUMENTS_OR_DEEDS",
+    "CHECK_HISTORICAL_RECORDS",
+    "CHECK_PRESCRIPTION_FRAMEWORK_IF_RELEVANT",
+    "DISTINGUISH_REGISTERED_DESCRIPTION_FROM_PHYSICAL_USE",
+    "VERIFY_PROPERTY_MATCH",
+    "ASSESS_SCOPE_ONLY_FROM_SUPPORTED_EVIDENCE",
+    "SELECT_OFFICIAL_OR_DISPUTE_ROUTE",
+    "COMPOSE_LEGAL_EFFECT"
+  ],
+  "legal_distinctions":[
+    "A registered entry and the underlying instrument may need to be read together to understand the right.",
+    "A title plan does not automatically define every practical aspect of an easement or right of way.",
+    "Physical use of a route is not by itself proof of the legal right being claimed.",
+    "Prescription is distinct from creation by deed or registration and requires its own legal analysis.",
+    "An easement/right of way can involve both a benefit to one property and a burden on another.",
+    "A court declaration or judgment is distinct from the underlying registration step."
+  ],
+  "evidence_requirements":[
+    "affected property identifiers",
+    "current folios and title plans where relevant",
+    "registered burden or benefit entry",
+    "underlying deed or filed instrument where relevant",
+    "historical registration evidence where relevant",
+    "evidence of prescription where claimed",
+    "court order or declaration where applicable"
+  ],
+  "official_routes":[
+    "Tailte Éireann Land Registry records and forms",
+    "LandDirect property search",
+    "Registry of Deeds search where applicable",
+    "Courts Service where a judicial declaration or dispute route is relevant"
+  ],
+  "result_states":[
+    "REGISTERED_RIGHT_IDENTIFIED",
+    "INSTRUMENT_REVIEW_REQUIRED",
+    "HISTORICAL_RIGHT_RESEARCH_REQUIRED",
+    "PRESCRIPTIVE_RIGHT_ROUTE",
+    "BOUNDARY_OR_SCOPE_DISPUTE",
+    "EVIDENCE_REQUIRED",
+    "CONFLICT",
+    "PROFESSIONAL_REVIEW_REQUIRED",
+    "NOT_DETERMINABLE"
+  ],
+  "guardrails":[
+    "Never infer a right of way solely from physical use.",
+    "Never infer the full scope of an easement from a map alone.",
+    "Never treat a Registry of Deeds search as proof of the deed's complete legal effect.",
+    "Never collapse prescription, deed creation and registration into one pathway.",
+    "Never state that a disputed right exists without sufficient legal and factual evidence.",
+    "Property-specific conclusions require verified evidence."
+  ]
+}
