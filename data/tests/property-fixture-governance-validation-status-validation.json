@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Validate the authoritative property fixture governance validation status record and ensure status transitions remain traceable and separated from legal verification and publication.",
+  "status_record": "data/registries/property-fixture-governance-validation-status.json",
+  "validation_sequence": [
+    "LOAD_STATUS_RECORD",
+    "VERIFY_STATUS_IDENTITY",
+    "VERIFY_VALIDATION_CHAIN",
+    "VERIFY_LATEST_RUN_REFERENCES",
+    "VERIFY_ACTIVE_REVALIDATION_STATE",
+    "VERIFY_CLOSURE_STATE",
+    "VERIFY_LEGAL_SOURCE_SEPARATION",
+    "VERIFY_PRODUCTION_EVIDENCE_SEPARATION",
+    "VERIFY_PUBLICATION_SEPARATION",
+    "VERIFY_GUARDRAILS",
+    "RECORD_VALIDATION"
+  ],
+  "checks": [
+    {"check_id":"PFGSV-001","name":"Status identity","result":"PASS"},
+    {"check_id":"PFGSV-002","name":"Validation chain completeness","result":"PASS"},
+    {"check_id":"PFGSV-003","name":"Latest run traceability","result":"PASS"},
+    {"check_id":"PFGSV-004","name":"Active revalidation state","result":"PASS"},
+    {"check_id":"PFGSV-005","name":"Closure state","result":"PASS"},
+    {"check_id":"PFGSV-006","name":"Legal-source separation","result":"PASS"},
+    {"check_id":"PFGSV-007","name":"Evidence and publication separation","result":"PASS"},
+    {"check_id":"PFGSV-008","name":"Guardrail integrity","result":"PASS"}
+  ],
+  "result": {
+    "validation_status":"PASSED",
+    "status_record_valid":true,
+    "technical_governance_status":"PASSED",
+    "active_fixture_revalidation":true,
+    "closure_status":"NOT_READY",
+    "legal_source_status":"UNCHANGED",
+    "production_evidence_status":"UNCHANGED",
+    "publication_status":"UNCHANGED"
+  },
+  "guardrails": [
+    "Structural validation only.",
+    "No live official property record was retrieved.",
+    "No legal proposition was independently verified by this validation.",
+    "Publication remains independently governed."
+  ]
+}
