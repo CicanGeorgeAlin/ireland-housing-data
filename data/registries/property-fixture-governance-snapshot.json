@@ -1,0 +1,44 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Capture a point-in-time, immutable summary of the property evidence fixture governance state for audit and historical comparison.",
+  "snapshot_identity": {
+    "snapshot_id": "PROPERTY-FIXTURE-GOVERNANCE-SNAPSHOT-001",
+    "captured_at": "2026-09-23",
+    "governance_manifest": "data/registries/property-fixture-governance-manifest.json",
+    "governance_status": "PASSED"
+  },
+  "state": {
+    "fixture_registry": "APPROVED_FOR_CONTROLLED_TESTING",
+    "dependency_mapping": "ESTABLISHED",
+    "impact_propagation": "VALIDATED",
+    "impact_event": "REVALIDATION_REQUIRED",
+    "revalidation_queue": "ACTIVE",
+    "scenario_validation": "PASSED_WITH_WARNINGS",
+    "closure_validation": "VALIDATED_BUT_NOT_READY",
+    "audit_log_validation": "PASSED",
+    "legal_source_status": "PARTIAL",
+    "production_evidence_status": "PARTIAL",
+    "publication_status": "NOT_READY"
+  },
+  "referenced_records": [
+    "FIXTURE-FOLIO-SYNTHETIC-001",
+    "FIXTURE-IMPACT-EVENT-001",
+    "PF-REVAL-QUEUE-001",
+    "PFRS-RUN-001",
+    "PF-CLOSE-VAL-RUN-001",
+    "PROPERTY-FIXTURE-GOVERNANCE-001"
+  ],
+  "immutability": {
+    "historical_snapshot": true,
+    "overwrite_allowed": false,
+    "new_state_requires_new_snapshot": true
+  },
+  "guardrails": [
+    "Snapshot is a technical governance record, not legal evidence.",
+    "Snapshot does not represent live official-record retrieval.",
+    "Snapshot cannot establish real property ownership or title.",
+    "A later snapshot must be created for any material state change.",
+    "Publication status remains independently governed."
+  ]
+}
