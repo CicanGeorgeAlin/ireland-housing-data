@@ -1,0 +1,92 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-case-review-quality-gate",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Perform the final controlled review of a property case file before an answer is published as verified, limited, partial or indeterminate.",
+  "review_sequence":[
+    "QUESTION_SCOPE_CHECK",
+    "PROPERTY_IDENTITY_CHECK",
+    "DATE_SCOPE_CHECK",
+    "EVIDENCE_SUFFICIENCY_CHECK",
+    "SOURCE_AUTHORITY_FRESHNESS_CHECK",
+    "DOCUMENT_IDENTITY_CHECK",
+    "PROPERTY_DATE_MATCH_CHECK",
+    "FACT_LEGAL_EFFECT_SEPARATION_CHECK",
+    "LEGAL_AUTHORITY_CHAIN_CHECK",
+    "CONDITIONS_EXCEPTIONS_CHECK",
+    "CONFLICT_CHECK",
+    "PROCEDURE_AUTHORITY_CHECK",
+    "DEADLINE_CHECK",
+    "ANSWER_TRACE_CHECK",
+    "AUDIT_TRAIL_CHECK",
+    "PUBLICATION_STATE"
+  ],
+  "gate_results":[
+    "PASS",
+    "PASS_WITH_LIMITATIONS",
+    "FAIL_PROPERTY_MATCH",
+    "FAIL_DATE_SCOPE",
+    "FAIL_EVIDENCE_SUFFICIENCY",
+    "FAIL_SOURCE_AUTHORITY",
+    "FAIL_LEGAL_AUTHORITY",
+    "FAIL_CONDITION_OR_EXCEPTION",
+    "FAIL_CONFLICT",
+    "FAIL_PROCEDURE",
+    "FAIL_DEADLINE",
+    "FAIL_TRACE",
+    "FAIL_AUDIT",
+    "FAIL_MULTIPLE_DEPENDENCIES"
+  ],
+  "publication_states":[
+    "VERIFIED_ANSWER",
+    "VERIFIED_WITH_LIMITATIONS",
+    "PARTIALLY_DETERMINED",
+    "EVIDENCE_INCOMPLETE",
+    "LEGAL_ANALYSIS_INCOMPLETE",
+    "NOT_DETERMINABLE",
+    "PUBLICATION_BLOCKED"
+  ],
+  "verified_answer_requirements":[
+    "question scope resolved",
+    "property match verified where material",
+    "date scope verified where material",
+    "minimum evidence satisfied",
+    "sources authoritative and temporally suitable",
+    "document identity established",
+    "material facts established",
+    "legal authority chain complete",
+    "conditions and exceptions checked",
+    "no unresolved material conflict",
+    "procedure and authority established where requested",
+    "deadline established or expressly not applicable",
+    "answer trace complete",
+    "audit trail complete"
+  ],
+  "limitation_rules":[
+    "A non-material limitation may coexist with VERIFIED_WITH_LIMITATIONS.",
+    "A material unresolved dependency cannot be hidden inside a limitation.",
+    "A missing property match blocks a property-specific verified answer.",
+    "A missing historical date match blocks a historical verified answer.",
+    "An unresolved material legal proposition blocks a definitive legal conclusion.",
+    "An unresolved material conflict blocks a definitive conclusion.",
+    "An unresolved deadline cannot be represented as a calculated deadline."
+  ],
+  "review_output":[
+    "case_file_id",
+    "review_id",
+    "checks",
+    "failed_checks",
+    "limitations",
+    "publication_state",
+    "required_remediation",
+    "review_timestamp",
+    "reviewer_or_engine"
+  ],
+  "hard_stops":[
+    "Never convert a failed gate into a pass because the answer sounds plausible.",
+    "Never use confidence language to conceal a failed material gate.",
+    "Never publish a definitive answer with an incomplete trace or audit trail.",
+    "Never treat review completion as proof of the underlying facts; it verifies that the publication requirements were met."
+  ]
+}
