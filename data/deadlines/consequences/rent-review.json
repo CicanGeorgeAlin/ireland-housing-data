@@ -1,0 +1,34 @@
+{
+  "id":"rent-review-deadline-consequences",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "rules":[
+    {
+      "trigger":"RTB copy of rent review notice not served within 7 days",
+      "current_consequence":"RTB states the rent review notice is invalid.",
+      "status":"EXPLICIT_CONSEQUENCE",
+      "source":"RTB — Setting and reviewing private rents from 1 March 2026"
+    },
+    {
+      "trigger":"rent review notice provided incorrectly",
+      "current_consequence":"The RTB identifies failure to provide a rent review notice correctly as an enforceable rental-law breach. From 14 September 2026, fixed payment notices can apply to this breach.",
+      "status":"ENFORCEMENT_CONSEQUENCE",
+      "source":"RTB — Important changes to rental law from 14 September 2026"
+    },
+    {
+      "trigger":"invalid rent review dispute",
+      "current_consequence":"The RTB dispute-resolution route may be relevant; enforcement and dispute resolution are separate processes.",
+      "status":"ROUTE_DEPENDENT",
+      "source":"RTB — Should I report a landlord or bring a dispute?"
+    }
+  ],
+  "result_types":[
+    "NOT_MISSED",
+    "MISSED_WITH_STATED_CONSEQUENCE",
+    "ENFORCEMENT_RISK",
+    "DISPUTE_ROUTE_RELEVANT",
+    "CONSEQUENCE_NOT_ESTABLISHED",
+    "REVIEW_REQUIRED"
+  ],
+  "guardrail":"Do not infer that every missed deadline has the same consequence. The engine must use the specific legal/procedural rule attached to the triggering event."
+}
