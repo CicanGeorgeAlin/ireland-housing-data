@@ -1,0 +1,127 @@
+{
+  "id":"property-evidence-audit-cases",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"CANONICAL_AUDIT_TEST_SUITE",
+  "purpose":"Test that property evidence never crosses from retrieval or document facts into unsupported legal conclusions.",
+  "global_rules":[
+    "No official retrieval claim without retrieval evidence.",
+    "No proposition is supported unless its evidence requirements are satisfied.",
+    "No legal effect is asserted when required evidence is missing or conflicting.",
+    "Historical evidence must be interpreted against the applicable legal period.",
+    "A document can support some propositions without proving every property fact.",
+    "Professional review flags do not themselves establish a legal conclusion."
+  ],
+  "cases":[
+    {
+      "id":"PAE-001",
+      "name":"complete_current_title_evidence",
+      "status":"PASS_REQUIRED",
+      "scenario":"Current folio and relevant title evidence are retrieved, identity verified, property matched and cross-checked.",
+      "expected_result":"VERIFIED",
+      "must_show":["retrieval","document_identity","property_match","extracted_facts","proposition_support","legal_effect","answer_snapshot","last_verified"],
+      "must_not_show":["unsupported_property_fact"]
+    },
+    {
+      "id":"PAE-002",
+      "name":"record_not_retrieved",
+      "status":"PASS_REQUIRED",
+      "scenario":"The official route is selected but the record has not actually been retrieved.",
+      "expected_result":"RETRIEVAL_REQUIRED",
+      "must_show":["missing_evidence"],
+      "must_not_show":["official_record_confirmed","registered_owner_confirmed"]
+    },
+    {
+      "id":"PAE-003",
+      "name":"document_identity_unverified",
+      "status":"PASS_REQUIRED",
+      "scenario":"A document is available but its identity or authenticity has not been verified.",
+      "expected_result":"PARTIAL",
+      "must_show":["document_identity_unverified"],
+      "must_not_show":["verified_property_record"]
+    },
+    {
+      "id":"PAE-004",
+      "name":"property_match_conflict",
+      "status":"PASS_REQUIRED",
+      "scenario":"The retrieved record cannot be confidently matched to the property in the question.",
+      "expected_result":"CONFLICT",
+      "must_show":["conflict","property_match_unverified"],
+      "must_not_show":["property_specific_legal_effect"]
+    },
+    {
+      "id":"PAE-005",
+      "name":"historical_title_question",
+      "status":"PASS_REQUIRED",
+      "scenario":"The question concerns a historical ownership/title position and the relevant historical record and legal period must be established.",
+      "expected_result":"HISTORICAL_RESEARCH_REQUIRED",
+      "must_show":["date_scope","historical_evidence","applicable_legal_version"],
+      "must_not_show":["current_law_as_historical_law"]
+    },
+    {
+      "id":"PAE-006",
+      "name":"conflicting_records",
+      "status":"PASS_REQUIRED",
+      "scenario":"Two evidence sources contain material information that cannot yet be reconciled.",
+      "expected_result":"CONFLICT",
+      "must_show":["conflicting_evidence","unresolved_issue","review_required"],
+      "must_not_show":["silent_resolution"]
+    },
+    {
+      "id":"PAE-007",
+      "name":"document_supports_limited_proposition",
+      "status":"PASS_REQUIRED",
+      "scenario":"A document supports one defined proposition but does not establish a broader ownership, boundary or planning conclusion.",
+      "expected_result":"PARTIAL",
+      "must_show":["supported_proposition","unsupported_propositions"],
+      "must_not_show":["overbroad_legal_conclusion"]
+    },
+    {
+      "id":"PAE-008",
+      "name":"professional_review_required",
+      "status":"PASS_REQUIRED",
+      "scenario":"Evidence is sufficient to identify a material issue but the legal or factual complexity requires professional review.",
+      "expected_result":"PROFESSIONAL_REVIEW_REQUIRED",
+      "must_show":["issue","evidence","reason_for_review"],
+      "must_not_show":["review_flag_as_conclusion"]
+    },
+    {
+      "id":"PAE-009",
+      "name":"complete_evidence_but_law_changed",
+      "status":"PASS_REQUIRED",
+      "scenario":"The evidence remains valid but a material legal proposition or procedure has changed since the published snapshot.",
+      "expected_result":"REVERIFICATION_REQUIRED",
+      "must_show":["old_snapshot","change_event","affected_dependency","new_verification_required"],
+      "must_not_show":["silent_republication"]
+    },
+    {
+      "id":"PAE-010",
+      "name":"privacy_minimisation",
+      "status":"PASS_REQUIRED",
+      "scenario":"The internal audit contains identifiers that are unnecessary for public display.",
+      "expected_result":"PUBLIC_VIEW_MINIMISED",
+      "must_show":["public_answer","necessary_sources","verification_status"],
+      "must_not_show":["unnecessary_personal_data","internal_identifiers_without_need"]
+    }
+  ],
+  "test_oracle":{
+    "safe_failures":[
+      "NOT_DETERMINABLE",
+      "PARTIAL",
+      "CONFLICT",
+      "HISTORICAL_RESEARCH_REQUIRED",
+      "PROFESSIONAL_REVIEW_REQUIRED",
+      "REVERIFICATION_REQUIRED"
+    ],
+    "unsafe_behaviour":[
+      "invented_record_retrieval",
+      "invented_property_match",
+      "unsupported_registered_owner_claim",
+      "unsupported_boundary_conclusion",
+      "historical_current_law_mix",
+      "silent_conflict_resolution",
+      "silent_snapshot_replacement",
+      "unnecessary_personal_data_exposure"
+    ]
+  }
+}
