@@ -1,0 +1,31 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-evidence-bundle-case-file-assembler-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for assembling a human-auditable property case file from validated retrieval-session material.",
+  "core_principle":"QUESTION → PROPERTY → DATE → CHRONOLOGY → SOURCES/DOCUMENTS → FACTS → LAW → CONFLICTS → SUFFICIENCY → ROUTE/DEADLINE → ANSWER → TRACE → AUDIT",
+  "required_distinctions":[
+    "event date vs document date vs registration date",
+    "observed fact vs legal proposition",
+    "official record vs user-supplied document",
+    "current state vs historical state",
+    "investigation completeness vs answer certainty"
+  ],
+  "minimum_case_file":[
+    "question",
+    "property identity",
+    "date scope",
+    "source/document index",
+    "validated facts",
+    "legal authority where applicable",
+    "conflicts",
+    "evidence sufficiency",
+    "missing evidence",
+    "traceability",
+    "audit trail"
+  ],
+  "publication_rule":"A case file can be assembled with unresolved matters, but a verified answer may only be generated when the linked answer-state publication gate is satisfied.",
+  "review_rule":"The case file must allow a reviewer to reconstruct why each material answer component was included or withheld.",
+  "verification_boundary":"Assembly preserves and organizes evidence and analysis; it does not independently establish the underlying property or legal truth."
+}
