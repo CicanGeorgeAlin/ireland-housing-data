@@ -1,0 +1,44 @@
+{
+  "id":"property-validation-status",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"CANONICAL_DASHBOARD_STATUS_REGISTRY",
+  "purpose":"Single authoritative status registry connecting the property validation manifest, validation runner and validation dashboard.",
+  "source_of_truth":"data/tests/property-validation-manifest.json",
+  "dashboard_contract":"data/components/property-validation-dashboard.json",
+  "runner_contract":"data/tests/property-evidence-audit-runner.json",
+  "registry_rules":[
+    "Dashboard status is derived from this registry and the validation manifest; it is not independently editable.",
+    "A pathway cannot be marked PASSED without a recorded validation run.",
+    "A pathway cannot be marked publication-ready if a blocking failure, unresolved critical traceability issue or required legal verification gap remains.",
+    "Legal-source verification status and technical validation status remain separate.",
+    "A legal change can move a previously passed pathway to REVALIDATION_REQUIRED.",
+    "Historical snapshots and previous validation states must remain auditable."
+  ],
+  "status_record_schema":{
+    "pathway_id":"Unique property pathway identifier.",
+    "validation_status":"NOT_VALIDATED|VALIDATION_PENDING|PASSED|PASSED_WITH_NONCRITICAL_WARNINGS|FAILED|BLOCKED|REVALIDATION_REQUIRED",
+    "legal_source_status":"NOT_CHECKED|PARTIAL|VERIFIED|REQUIRES_REVIEW",
+    "evidence_status":"NOT_CHECKED|PARTIAL|VERIFIED|CONFLICT|MISSING_PRIMARY_EVIDENCE",
+    "publication_status":"NOT_READY|READY_WITH_WARNINGS|READY|BLOCKED|REVALIDATION_REQUIRED",
+    "blocking_issues":[],
+    "warnings":[],
+    "last_validation_run_id":null,
+    "last_validation_result":null,
+    "last_validated":null,
+    "revalidation_reason":null,
+    "change_event_ids":[],
+    "snapshot_ids":[],
+    "updated_at":null
+  },
+  "derived_rules":{
+    "BLOCKED":"Any critical safety, privacy or traceability failure blocks publication.",
+    "REVALIDATION_REQUIRED":"A material legal/evidence/procedure dependency changed after validation.",
+    "PASSED":"Required technical validation layers passed and no blocking issue remains.",
+    "PASSED_WITH_NONCRITICAL_WARNINGS":"Required gates passed but documented noncritical warnings remain.",
+    "READY":"Passed validation, required legal verification acceptable, no blocking issue, current change status reviewed.",
+    "READY_WITH_WARNINGS":"Publication gates pass with explicitly displayed noncritical warnings.",
+    "NOT_READY":"One or more required publication gates remain incomplete."
+  },
+  "current_registry":[]
+}
