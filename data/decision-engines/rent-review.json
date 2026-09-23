@@ -1,0 +1,28 @@
+{
+  "id":"rent-review-decision-engine",
+  "version":"0.1",
+  "status":"STRUCTURAL_ENGINE",
+  "purpose":"Resolve the minimum classification and fact requirements before a rent-review proposition is applied.",
+  "input_fields":["tenancy_type","tenancy_start","review_date","new_apartment","special_facts"],
+  "steps":[
+    {"id":"classify","action":"classify-tenancy","if_missing":["tenancy_type"],"result":"FACT_REQUIRED"},
+    {"id":"date","action":"resolve-tenancy-date","if_missing":["tenancy_start","review_date"],"result":"FACT_REQUIRED"},
+    {"id":"private-regime","condition":"tenancy_type == Private residential tenancy","next":"resolve-generation"},
+    {"id":"special-regime","condition":"tenancy_type in [Student Specific Accommodation, Approved Housing Body, Cost Rental, Local authority housing]","next":"ROUTE_TO_SPECIAL_REGIME"},
+    {"id":"generation","action":"resolve-applicable-legal-generation","next":"check-apartment"},
+    {"id":"apartment","condition":"new_apartment == Yes","next":"check-apartment-conditions"},
+    {"id":"exceptions","action":"check-statutory-and-guidance-exceptions","next":"compose"},
+    {"id":"compose","action":"retrieve-applicable-propositions","next":"show-evidence"}
+  ],
+  "outcomes":{
+    "FACT_REQUIRED":"More facts are needed before the applicable rule can be resolved.",
+    "ROUTE_TO_SPECIAL_REGIME":"The private-tenancy rent proposition set must not be applied automatically.",
+    "SHOW_EVIDENCE":"Return applicable proposition IDs, evidence chain, unresolved facts and official route."
+  },
+  "safety_rules":[
+    "Never infer tenancy classification from rent amount alone.",
+    "Never treat a missing exception as proof that no exception exists.",
+    "Never convert a historical rule into a current rule without date analysis.",
+    "Never produce a definitive individual legal outcome from incomplete facts."
+  ]
+}
