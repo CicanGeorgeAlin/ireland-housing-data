@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Define the exact intake record required before a corrected or replacement property evidence fixture can enter admission review.",
+  "intake_id": "PF-CANDIDATE-INTAKE-001",
+  "target_gate": "PF-FIXTURE-ADMISSION-001",
+  "required_fields": {
+    "candidate_fixture_id": "REQUIRED",
+    "fixture_type": "REQUIRED",
+    "record_type": "REQUIRED",
+    "provenance": "REQUIRED",
+    "source_authority": "REQUIRED_IF_SOURCE_DERIVED",
+    "source_reference": "REQUIRED_IF_SOURCE_DERIVED",
+    "source_date": "REQUIRED_IF_APPLICABLE",
+    "retrieved_at": "REQUIRED_IF_SOURCE_DERIVED",
+    "legal_effective_period": "REQUIRED_IF_APPLICABLE",
+    "redaction_summary": "REQUIRED_IF_REDACTED",
+    "privacy_review_state": "REQUIRED",
+    "substantive_meaning_review_state": "REQUIRED",
+    "fixture_label": "REQUIRED",
+    "production_isolation": "REQUIRED"
+  },
+  "accepted_fixture_types": [
+    "SYNTHETIC",
+    "SOURCE_DERIVED_REDACTED"
+  ],
+  "admission_states": [
+    "PROPOSED",
+    "SOURCE_VERIFIED",
+    "REDACTION_REVIEW",
+    "PRIVACY_REVIEW",
+    "APPROVAL_PENDING",
+    "APPROVED",
+    "REJECTED",
+    "SUPERSEDED"
+  ],
+  "current_intake": {
+    "state": "NOT_SUBMITTED",
+    "candidate_fixture_id": null,
+    "fixture_content": null,
+    "reason": "No corrected or replacement fixture has been submitted."
+  },
+  "rules": [
+    "An intake record is not evidence.",
+    "Submission does not imply approval.",
+    "Missing provenance blocks admission.",
+    "Privacy or meaning-preservation failure blocks admission.",
+    "A synthetic fixture remains synthetic.",
+    "A source-derived fixture remains a controlled fixture unless separately governed as production evidence.",
+    "No dependent revalidation may execute before APPROVED."
+  ],
+  "guardrails": [
+    "Do not invent candidate fixture content.",
+    "Do not infer source provenance.",
+    "Do not claim live official retrieval.",
+    "Do not establish real property ownership, title or boundaries.",
+    "Do not upgrade legal verification or publication readiness."
+  ]
+}
