@@ -1,0 +1,65 @@
+{
+  "schema_version":"1.0",
+  "question_id":"property-registration-lifecycle",
+  "version":"1.0",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "purpose":"Guide a user from an everyday property-registration question to the correct evidence and legal pathway without prematurely asserting ownership or registration effects.",
+  "entry_questions":[
+    "Is this property registered?",
+    "Who is registered as owner?",
+    "How was the property transferred?",
+    "Was the property inherited?",
+    "Is there a mortgage or charge?",
+    "Are there co-owners?",
+    "Is there a right of way or easement?",
+    "Does the register contain an error?",
+    "What did the register say at an earlier date?"
+  ],
+  "fact_collection":[
+    "property_identifier",
+    "question_date",
+    "relevant_event_date",
+    "registered_or_unregistered_status_if_known",
+    "document_or_folio_available",
+    "nature_of_event_or_dispute",
+    "historical_context"
+  ],
+  "routing":[
+    {"question_type":"registration_status_or_owner","route":"property-registration-records"},
+    {"question_type":"first_registration","route":"property-registration-first-registration"},
+    {"question_type":"sale_gift_inheritance_or_other_transfer","route":"property-registration-transfers"},
+    {"question_type":"mortgage_or_charge","route":"property-registration-mortgages"},
+    {"question_type":"joint_ownership_or_survivorship","route":"property-registration-co-ownership"},
+    {"question_type":"easement_right_of_way_or_wayleave","route":"property-registration-easements"},
+    {"question_type":"alleged_register_error","route":"property-registration-rectification"},
+    {"question_type":"historical_register_state","route":"property-registration-records"}
+  ],
+  "answer_modes":[
+    "GENERAL_INFORMATION",
+    "OFFICIAL_RECORD_ROUTE",
+    "EVIDENCE_REQUIRED",
+    "HISTORICAL_RESEARCH_REQUIRED",
+    "CONFLICT",
+    "PROFESSIONAL_REVIEW_REQUIRED"
+  ],
+  "display_sequence":[
+    "THE_ANSWER",
+    "WHAT_THE_RECORD_CAN_ESTABLISH",
+    "WHAT_IT_CANNOT_ESTABLISH",
+    "LEGAL_BASIS",
+    "OFFICIAL_RECORD_ROUTE",
+    "DOCUMENTS_OR_EVIDENCE_NEEDED",
+    "DEADLINE_IF_APPLICABLE",
+    "NEXT_STEP",
+    "PROFESSIONAL_REVIEW_FLAG",
+    "LAST_VERIFIED"
+  ],
+  "guardrails":[
+    "Do not ask for unnecessary personal data.",
+    "Do not claim a property-specific fact without authoritative evidence.",
+    "Do not treat a user-provided document as independently verified.",
+    "Always distinguish current and historical questions.",
+    "Where multiple legal regimes apply, show the separate pathways.",
+    "Do not present a route or form as proof that the requested legal outcome will occur."
+  ]
+}
