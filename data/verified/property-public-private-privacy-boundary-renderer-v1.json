@@ -1,0 +1,27 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-public-private-privacy-boundary-renderer-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for separating private investigation material from public answer content.",
+  "source_basis":[
+    "Irish Data Protection Commission data-protection principles",
+    "Ireland Housing Data privacy and data-minimisation boundary",
+    "Ireland Housing Data access and role boundary",
+    "Ireland Housing Data citizen consent and control boundary"
+  ],
+  "public_contract":{
+    "must_show":["verified answer scope","material evidence summary","law/source","material limitations","next route/action"],
+    "must_minimise":["names","addresses","identifiers","documents","contact details","other personal data not necessary for public understanding"]
+  },
+  "private_contract":{
+    "may_use":["necessary citizen documents","necessary property identifiers","case-specific evidence and correspondence"],
+    "must_remain_scoped":"Only information necessary for the stated investigation purpose should be retained or processed."
+  },
+  "restricted_contract":{
+    "rule":"Restricted source material is not automatically publishable merely because it was used internally.",
+    "presentation":"Where useful, summarise the material fact without exposing restricted content, subject to lawful publication scope."
+  },
+  "publication_rule":"Public answer rendering occurs only after answer quality review and privacy/publication boundary checks.",
+  "verification_boundary":"This contract controls information presentation; it does not create a legal right to access or disclose any particular record."
+}
