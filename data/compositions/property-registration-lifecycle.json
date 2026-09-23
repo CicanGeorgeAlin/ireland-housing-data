@@ -35,6 +35,15 @@
       ]
     },
     {
+      "stage": "HISTORICAL_STATE",
+      "routes": [
+        "property-registration-historical-state",
+        "property-registration-records",
+        "property-registration-transfers",
+        "property-registration-succession"
+      ]
+    },
+    {
       "stage": "SECURITY",
       "routes": [
         "property-registration-mortgages"
@@ -87,6 +96,7 @@
     "property-registration-transfers",
     "property-registration-succession",
     "property-registration-title-consequences",
+    "property-registration-historical-state",
     "property-registration-mortgages",
     "property-registration-co-ownership",
     "property-registration-easements",
@@ -101,12 +111,13 @@
     "DATE_SCOPE",
     "PROPERTY_IDENTIFICATION",
     "REGISTRATION_STATUS",
+    "TARGET_DATE_STATE",
     "EVENT_CLASSIFICATION",
     "SUCCESSION_OR_TRANSFER_CLASSIFICATION",
     "OFFICIAL_RECORD_ROUTE",
     "DOCUMENT_AND_PROPERTY_MATCH",
     "FACT_EXTRACTION",
-    "ENTITLEMENT_ANALYSIS",
+    "HISTORICAL_STATE_RECONSTRUCTION_IF_REQUIRED",
     "LEGAL_PROPOSITION",
     "LEGAL_EFFECT",
     "CONDITIONS_AND_EXCEPTIONS",
