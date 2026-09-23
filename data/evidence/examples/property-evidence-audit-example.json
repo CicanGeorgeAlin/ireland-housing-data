@@ -1,0 +1,91 @@
+{
+  "audit_id":"AUDIT-EXAMPLE-PROPERTY-001",
+  "status":"PARTIAL",
+  "purpose":"Canonical non-personal example demonstrating the complete property evidence audit structure without claiming that an actual property record was retrieved.",
+  "question":{
+    "question_id":"property-title-live",
+    "summary":"What can the available official property records establish about this property's registered title?",
+    "facts_supplied":[
+      "Property identifier supplied by user.",
+      "Question relates to registered title."
+    ]
+  },
+  "property_identifier":{
+    "type":"USER_SUPPLIED_IDENTIFIER",
+    "value":"REDACTED_EXAMPLE_PROPERTY",
+    "verified":false
+  },
+  "official_record_route":{
+    "route_engine":"property-official-records-route",
+    "selected_route":"CURRENT_REGISTERED_TITLE",
+    "route_status":"SELECTED",
+    "retrieval_required":true
+  },
+  "retrieval_event":{
+    "retrieval_event_id":"RETRIEVAL-NOT-PERFORMED-001",
+    "status":"NOT_RETRIEVED",
+    "retrieval_date":null,
+    "source_url":null,
+    "guardrail":"This example intentionally does not claim that an official record was retrieved."
+  },
+  "document":{
+    "document_id":null,
+    "document_type":"FOLIO",
+    "identity_verified":false,
+    "property_match_verified":false
+  },
+  "extracted_facts":[],
+  "verified_evidence":{
+    "evidence_ids":[],
+    "state":"RETRIEVAL_REQUESTED",
+    "supported_propositions":[]
+  },
+  "propositions":{
+    "candidate":[
+      "PROP-PROPERTY-TITLE-001",
+      "PROP-PROPERTY-REGISTRATION-003"
+    ],
+    "supported":[],
+    "unsupported_reason":"Primary property-record evidence has not been retrieved."
+  },
+  "legal_effect":{
+    "status":"NOT_DETERMINABLE",
+    "reason":"No verified property-specific record evidence is available."
+  },
+  "answer_snapshot":{
+    "answer_snapshot_id":"SNAPSHOT-NOT-PUBLISHED-001",
+    "status":"VERIFICATION_PENDING",
+    "published":false
+  },
+  "audit":{
+    "completed_stages":[
+      "QUESTION",
+      "FACTS_SUPPLIED",
+      "PROPERTY_IDENTIFIER",
+      "OFFICIAL_RECORD_ROUTE"
+    ],
+    "pending_stages":[
+      "RETRIEVAL_EVENT",
+      "DOCUMENT_IDENTITY",
+      "EXTRACTED_FACTS",
+      "VERIFIED_EVIDENCE",
+      "CANONICAL_PROPOSITION",
+      "LEGAL_RULE",
+      "LEGAL_EFFECT",
+      "ANSWER"
+    ]
+  },
+  "missing_evidence":[
+    "Actual official record retrieval.",
+    "Document identity verification.",
+    "Property-record-to-property matching.",
+    "Record-specific fact extraction.",
+    "Cross-check against applicable legal propositions."
+  ],
+  "conflicts":[],
+  "deadlines":[],
+  "official_procedure":"Follow the selected official record route only; do not substitute an unverified third-party property source.",
+  "professional_review_flag":false,
+  "last_verified":"2026-09-23",
+  "example_only":true
+}
