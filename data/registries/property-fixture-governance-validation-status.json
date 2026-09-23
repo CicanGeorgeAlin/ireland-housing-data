@@ -1,0 +1,50 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Authoritative status record for the technical validation state of the property fixture governance chain.",
+  "status_identity": {
+    "status_id": "PFG-VALIDATION-STATUS-001",
+    "updated_at": "2026-09-23"
+  },
+  "validation_chain": {
+    "governance_manifest": "PASSED",
+    "governance_audit_log": "PASSED",
+    "governance_snapshot": "VALIDATED",
+    "snapshot_comparison": "PASSED",
+    "validation_run_registry": "PASSED",
+    "validation_run_registry_run": "PASSED"
+  },
+  "current_state": {
+    "technical_governance_status": "PASSED",
+    "active_fixture_revalidation": true,
+    "closure_status": "NOT_READY",
+    "legal_source_status": "PARTIAL",
+    "production_evidence_status": "PARTIAL",
+    "publication_status": "NOT_READY"
+  },
+  "latest_runs": [
+    {
+      "run_id": "PFGVRV-RUN-001",
+      "result": "PASSED",
+      "scope": "Validation run registry integrity"
+    },
+    {
+      "run_id": "PFGSCV-RUN-001",
+      "result": "PASSED",
+      "scope": "Governance snapshot comparison contract"
+    }
+  ],
+  "rules": [
+    "Technical governance PASSED does not mean legal verification PASSED.",
+    "Technical governance PASSED does not mean production evidence PASSED.",
+    "Publication remains NOT_READY until its independent gates are satisfied.",
+    "Active fixture revalidation remains open until its closure contract is satisfied.",
+    "Historical validation records remain immutable."
+  ],
+  "guardrails": [
+    "No live official property record is claimed.",
+    "No real property ownership or title is established.",
+    "No legal proposition is upgraded solely by technical validation.",
+    "No publication decision is inferred from this status record."
+  ]
+}
