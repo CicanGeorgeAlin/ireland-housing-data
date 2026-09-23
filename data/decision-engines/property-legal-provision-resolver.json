@@ -1,0 +1,80 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-legal-provision-resolver",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Identify the exact statutory provision, statutory instrument rule, commencement provision and relevant case-law proposition needed to support a classified property-law issue.",
+  "inputs":["classified_question","legal_regime","applicable_law_version","property_interest","event_type","target_date","procedural_stage"],
+  "provision_types":[
+    "PRIMARY_ACT_SECTION",
+    "STATUTORY_INSTRUMENT_RULE",
+    "COMMENCEMENT_PROVISION",
+    "AMENDING_PROVISION",
+    "TRANSITIONAL_OR_SAVING_PROVISION",
+    "CASE_LAW_PROPOSITION",
+    "OFFICIAL_PROCEDURAL_PROVISION"
+  ],
+  "resolution_sequence":[
+    "IDENTIFY_LEGAL_ISSUE",
+    "IDENTIFY_PRIMARY_ACT_OR_INSTRUMENT",
+    "LOCATE_EXACT_PROVISION",
+    "CHECK_CURRENT_OR_HISTORICAL_TEXT",
+    "CHECK_COMMENCEMENT",
+    "CHECK_AMENDMENTS",
+    "CHECK_SAVING_OR_TRANSITION",
+    "IDENTIFY_RELATED_PROVISIONS",
+    "IDENTIFY_RELEVANT_CASE_LAW",
+    "MAP_PROVISION_TO_PROPOSITION",
+    "MAP_PROPOSITION_TO_LEGAL_EFFECT"
+  ],
+  "provision_record_contract":{
+    "provision_id":"unique identifier",
+    "source":"official source",
+    "instrument_or_act":"title",
+    "section_or_rule":"exact provision",
+    "version_date":"applicable version",
+    "commencement_status":"status",
+    "amendments":"relevant changes",
+    "transitional_status":"if applicable",
+    "proposition":"what the provision establishes",
+    "scope":"limits",
+    "related_provisions":"connected rules",
+    "case_law":"relevant authorities",
+    "verification_date":"date checked"
+  },
+  "verified_examples":[
+    {
+      "issue":"registered transfer effect",
+      "provision":"Registration of Title Act 1964, section 51",
+      "proposition":"The statutory registration framework governs when a transfer of registered land takes effect on registration."
+    },
+    {
+      "issue":"pre-registration dealing by person entitled to be registered",
+      "provision":"Registration of Title Act 1964, section 90",
+      "proposition":"The Act contains a specific framework for certain dealings before the person entitled becomes registered."
+    },
+    {
+      "issue":"inspection of filed instruments",
+      "provision":"Land Registration Rules 2012, Rule 159",
+      "proposition":"Inspection of filed documents is subject to specified entitlement and access conditions."
+    },
+    {
+      "issue":"official searches",
+      "provision":"Land Registration Rules 2012, Rule 160",
+      "proposition":"The Rules provide routes for official searches of names, specified property and register/map entries."
+    }
+  ],
+  "case_law_rules":[
+    "Use a judgment for the proposition actually decided or clearly reasoned, not merely because the case concerns the same subject.",
+    "Record court, date, citation, issue and proposition.",
+    "Distinguish binding authority from persuasive material where relevant.",
+    "Do not convert a party submission into a judicial finding."
+  ],
+  "hard_stops":[
+    "No definitive legal proposition without an identified authoritative provision or properly supported case-law proposition.",
+    "No historical provision selection from current text alone where amendments or commencement may matter.",
+    "No case-law proposition without identifying the relevant passage/issue.",
+    "If exact provision resolution fails, return LEGAL_PROVISION_UNRESOLVED."
+  ],
+  "result_states":["PROVISION_IDENTIFIED","MULTIPLE_PROVISIONS_REQUIRED","HISTORICAL_VERSION_REQUIRED","COMMENCEMENT_REQUIRES_CHECK","TRANSITIONAL_ANALYSIS_REQUIRED","CASE_LAW_REQUIRED","LEGAL_PROVISION_UNRESOLVED"]
+}
