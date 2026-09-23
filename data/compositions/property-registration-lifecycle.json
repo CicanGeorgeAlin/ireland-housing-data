@@ -189,6 +189,15 @@
         "property-evidence-retrieval-routing",
         "property-deadline-calculation"
       ]
+    },
+    {
+      "stage": "HUMAN_READABLE_LEGAL_ANSWER_COMPOSITION",
+      "routes": [
+        "property-human-readable-legal-answer-composer",
+        "property-answer-assembly-snapshot",
+        "property-evidence-audit-trail",
+        "property-answer-state-machine"
+      ]
     }
   ],
   "event_model": [
@@ -248,7 +257,8 @@
     "property-legal-conditions-exceptions-overrides",
     "property-legal-procedure-remedy-resolver",
     "property-deadline-calculation",
-    "property-official-route-authority-resolver"
+    "property-official-route-authority-resolver",
+    "property-human-readable-legal-answer-composer"
   ],
   "answer_sequence": [
     "QUESTION",
