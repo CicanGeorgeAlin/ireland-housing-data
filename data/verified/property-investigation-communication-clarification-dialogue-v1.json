@@ -1,0 +1,15 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-investigation-communication-clarification-dialogue-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for citizen-facing clarification dialogue.",
+  "core_principle":"MINIMUM NECESSARY QUESTION, CLEAR REASON, NO LOSS OF PRIOR CONTEXT.",
+  "clarification_rule":"Ask only the unresolved information that materially blocks the next investigation stage.",
+  "plain_language_rule":"Explain why the requested information matters without exposing internal reasoning or technical workflow details.",
+  "known_unknown_rule":"Keep verified facts, citizen assertions and unresolved items visibly distinct.",
+  "choice_rule":"Use bounded choices when they reduce ambiguity without constraining the citizen beyond what is necessary.",
+  "no_question_rule":"If the investigation can proceed safely with the information already available, do not ask an unnecessary clarification.",
+  "privacy_rule":"Clarification questions should not request unnecessary personal information.",
+  "verification_boundary":"Dialogue communicates investigation state; it does not establish property facts or legal conclusions."
+}
