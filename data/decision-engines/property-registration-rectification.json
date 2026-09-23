@@ -1,0 +1,89 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-registration-rectification",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "purpose":"Classify disputes and applications concerning correction, rectification, alteration or other challenges to registered property records without assuming that an alleged error automatically changes title.",
+  "event_types":[
+    "REGISTRY_ERROR_ALLEGED",
+    "BOUNDARY_ERROR_ALLEGED",
+    "WRONG_PROPRIETOR_ALLEGED",
+    "INCORRECT_BURDEN_ALLEGED",
+    "MISSING_ENTRY_ALLEGED",
+    "FRAUD_OR_FORGERY_ALLEGED",
+    "COURT_ORDER",
+    "RECTIFICATION_APPLICATION",
+    "COMPENSATION_ISSUE"
+  ],
+  "classification_inputs":[
+    "property_identifier",
+    "folio",
+    "registered_entry_in_dispute",
+    "nature_of_alleged_error",
+    "affected_interest",
+    "supporting_documents",
+    "historical_register_entries",
+    "title_plan_or_boundary_evidence",
+    "court_order_or_judgment",
+    "fraud_or_forgery_evidence_if_alleged",
+    "date_of_discovery",
+    "prior_application_or_decision"
+  ],
+  "workflow":[
+    "IDENTIFY_REGISTERED_ENTRY",
+    "CLASSIFY_ALLEGED_ERROR",
+    "CHECK_CURRENT_REGISTER",
+    "CHECK_HISTORICAL_REGISTER",
+    "CHECK_SUPPORTING_INSTRUMENTS",
+    "CHECK_BOUNDARY_EVIDENCE_IF_RELEVANT",
+    "CHECK_STATUTORY_RECTIFICATION_FRAMEWORK",
+    "CHECK_COURT_OR_TAILTE_ROUTE",
+    "CHECK_TIME_AND_PROCEDURAL_REQUIREMENTS",
+    "SEPARATE_RECTIFICATION_FROM_COMPENSATION",
+    "EVIDENCE_GATE",
+    "COMPOSE_LEGAL_EFFECT"
+  ],
+  "legal_distinctions":[
+    "An alleged error does not itself establish that the register is legally incorrect.",
+    "Rectification, alteration, court intervention and compensation are distinct questions.",
+    "A registry map or folio issue may require separate boundary, title and historical-record analysis.",
+    "Fraud or forgery allegations require evidence and may trigger separate legal and procedural routes.",
+    "A current register entry must be distinguished from historical entries and the underlying instrument.",
+    "Correction of a record and determination of the underlying substantive dispute are not always the same process."
+  ],
+  "evidence_requirements":[
+    "current folio or official record",
+    "historical register entries where relevant",
+    "underlying instrument or deed where relevant",
+    "title plan and boundary evidence where relevant",
+    "court order or judgment where applicable",
+    "documentary evidence supporting the alleged error",
+    "date and procedural history of prior applications"
+  ],
+  "official_routes":[
+    "Tailte Éireann property registration procedures",
+    "Land Registry forms and rules",
+    "LandDirect official records",
+    "Courts Service where judicial determination is required"
+  ],
+  "result_states":[
+    "RECTIFICATION_ROUTE_IDENTIFIED",
+    "RECORD_CORRECTION_ROUTE",
+    "COURT_REVIEW_ROUTE",
+    "BOUNDARY_REVIEW_REQUIRED",
+    "FRAUD_OR_FORGERY_REVIEW_REQUIRED",
+    "COMPENSATION_REVIEW_REQUIRED",
+    "EVIDENCE_REQUIRED",
+    "CONFLICT",
+    "HISTORICAL_RESEARCH_REQUIRED",
+    "PROFESSIONAL_REVIEW_REQUIRED",
+    "NOT_DETERMINABLE"
+  ],
+  "guardrails":[
+    "Never state that the register is wrong without evidence.",
+    "Never alter or reinterpret a title result merely because a user disputes it.",
+    "Never treat rectification as automatically available without checking the applicable statutory route.",
+    "Never infer fraud or forgery from an inconsistency alone.",
+    "Never collapse compensation and rectification into one remedy.",
+    "Property-specific disputes require verified records and, where necessary, professional or judicial review."
+  ]
+}
