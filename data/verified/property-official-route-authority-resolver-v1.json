@@ -1,0 +1,23 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-official-route-authority-resolver-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "scope":"Official-route and authority-function routing for Irish property questions; it does not decide the outcome of an individual dispute.",
+  "last_verified":"2026-09-24",
+  "verified_sources":[
+    "Tailte Éireann Property Registration Services",
+    "Tailte Éireann Search and Copy Services",
+    "Tailte Éireann Registry of Deeds services",
+    "Land Registration Rules 2012, Rule 160",
+    "Applicable Irish court procedures"
+  ],
+  "verified_points":[
+    "Tailte Éireann maintains the Land Register, Registry of Deeds and Registry Map.",
+    "LandDirect provides access to Land Register searches and related services.",
+    "A mapping search can identify whether property is registered and identify a folio number.",
+    "Registry of Deeds searches disclose whether documents have been executed dealing with the transaction; the underlying deeds are needed to assess their substantive effect.",
+    "Official routes and access conditions differ between folios, maps, Instruments and Registry of Deeds records."
+  ],
+  "core_rule":"QUESTION FUNCTION → AUTHORITY → OFFICIAL ROUTE → EVIDENCE/PROCEDURE → LIMITATION → NEXT STEP",
+  "publication_gate":"GENERAL_INFORMATION_ONLY"
+}
