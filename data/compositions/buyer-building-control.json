@@ -1,0 +1,44 @@
+{
+  "id":"buyer-building-control-composition",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "purpose":"Connect building-control evidence to property purchase due diligence.",
+  "trigger":"property_purchase_due_diligence",
+  "inputs":[
+    "property_identifier",
+    "known_construction_dates",
+    "planning_permissions",
+    "commencement_or_7_day_notices",
+    "completion_certificates",
+    "fire_safety_documents_where_applicable",
+    "disability_access_documents_where_applicable",
+    "regularisation_documents_where_applicable",
+    "known_extensions_or_material_alterations"
+  ],
+  "analysis":[
+    "identify_known_building_work",
+    "match_work_to_planning_evidence",
+    "match_work_to_building_control_evidence",
+    "check_document_references_and_dates",
+    "identify_missing_completion_evidence",
+    "identify_conflicts",
+    "identify_historical_regime_questions",
+    "flag_specialist_review"
+  ],
+  "result_types":[
+    "BUILDING_CONTROL_EVIDENCE_IDENTIFIED",
+    "BUILDING_CONTROL_EVIDENCE_INCOMPLETE",
+    "DOCUMENT_CONFLICT",
+    "HISTORICAL_REGIME_REQUIRES_REVIEW",
+    "SPECIALIST_REVIEW_REQUIRED",
+    "NOT_DETERMINABLE"
+  ],
+  "guardrails":[
+    "Missing building-control evidence is not itself proof of non-compliance.",
+    "Presence of a completion certificate is not a substitute for reviewing its scope and linked records.",
+    "Planning and building-control evidence must be reconciled separately.",
+    "Do not infer the legality of an extension solely from its physical existence.",
+    "Do not provide a final professional certification opinion from document matching alone."
+  ],
+  "official_data_route":"National Building Control Office / BCMS open data and relevant Building Control Authority"
+}
