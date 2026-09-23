@@ -17,6 +17,13 @@
       ]
     },
     {
+      "stage": "LEGAL_PROVISION_RESOLUTION",
+      "routes": [
+        "property-legal-provision-resolver",
+        "property-legal-regime-resolver"
+      ]
+    },
+    {
       "stage": "STATUS",
       "routes": [
         "property-registration-records",
@@ -193,7 +200,8 @@
     "property-evidence-audit-trail",
     "property-answer-state-machine",
     "property-question-classifier",
-    "property-legal-regime-resolver"
+    "property-legal-regime-resolver",
+    "property-legal-provision-resolver"
   ],
   "answer_sequence": [
     "QUESTION",
