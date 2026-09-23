@@ -87,6 +87,15 @@
     return '<div class="evidence-gate"><strong>EVIDENCE GATE PASSED</strong><p>The required checklist items have reached an extracted/consistent state. Full legal composition can now continue.</p></div>';
   }
 
+  function deadlineState() {
+    const serviceDate = state.notice_service_date || '';
+    if (!serviceDate) return {status:'UNKNOWN',message:'The notice service date has not been established, so the RTB deadline cannot be calculated.'};
+    if (!validDate(serviceDate)) return {status:'UNKNOWN',message:'The notice service date must be entered as YYYY-MM-DD.'};
+    const d=new Date(serviceDate+'T00:00:00Z');
+    d.setUTCDate(d.getUTCDate()+7);
+    return {status:'CALCULATED',date:d.toISOString().slice(0,10),message:'Current RTB procedure: the notice copy deadline is calculated as 7 calendar days from the established service date, subject to the applicable legal/procedural rules.'};
+  }
+
   function renderEvidenceChecklist() {
     if (!(state.new_apartment || '').toLowerCase().includes('yes')) return '';
     const items = [
@@ -124,8 +133,9 @@
       const composition=composeLegalResult(result,time);
       const checklist=renderEvidenceChecklist();
       const evidenceGate=renderEvidenceGate();
+      const deadline=deadlineState();
       html+='<div class="decision-facts"><div><span>Tenancy generation</span><strong>'+escapeHtml(time.tenancyGeneration)+'</strong></div><div><span>Review period</span><strong>'+escapeHtml(time.reviewPeriod)+'</strong></div><div><span>Commencement check</span><strong>'+escapeHtml(time.commencementCheck ? 'REQUIRED' : 'NOT YET REQUIRED')+'</strong></div></div>';
-      html+='<div class="citizen-summary"><div class="kicker">YOUR SITUATION</div><p>'+escapeHtml(result.message)+'</p><div class="kicker">APPLICABLE LAW</div><p>Candidate propositions: '+escapeHtml(mapping.propositions.length ? mapping.propositions.join(' · ') : 'Historical or special-regime research required.')+'</p><div class="kicker">WHAT IS VERIFIED</div><p>Source-linked legal seed and pathway classification are available.</p><div class="kicker">WHAT IS NOT YET VERIFIED</div><p>Individual exceptions, complete statutory conditions and any missing evidence still require resolution.</p><div class="kicker">WHY</div><p>The platform does not convert incomplete facts or evidence into a definitive legal conclusion.</p><div class="kicker">WHAT TO DO NEXT</div><p>Complete the missing facts and evidence checks shown below.</p></div><div class="decision-evidence"><div class="kicker">Candidate legal propositions</div><p>'+escapeHtml(mapping.propositions.length ? mapping.propositions.join(' · ') : 'None loaded for this historical branch.')+'</p><div class="kicker">Evidence chain</div><p>'+escapeHtml(mapping.evidence.length ? mapping.evidence.join(' · ') : 'Historical evidence required.')+'</p><div class="kicker">Publication state</div><p>'+escapeHtml(mapping.route)+'</p><div class="kicker">New-apartment exception</div><p>'+escapeHtml(apartment)+'</p><div class="kicker">Legal composition</div><p><strong>'+escapeHtml(composition.result)+'</strong><br>'+escapeHtml(composition.reason)+'</p>'+checklist+evidenceGate<button type="button" id="show-law-button">SHOW ME THE LAW</button></div>';
+      html+='<div class="citizen-summary"><div class="kicker">YOUR SITUATION</div><p>'+escapeHtml(result.message)+'</p><div class="kicker">APPLICABLE LAW</div><p>Candidate propositions: '+escapeHtml(mapping.propositions.length ? mapping.propositions.join(' · ') : 'Historical or special-regime research required.')+'</p><div class="kicker">WHAT IS VERIFIED</div><p>Source-linked legal seed and pathway classification are available.</p><div class="kicker">WHAT IS NOT YET VERIFIED</div><p>Individual exceptions, complete statutory conditions and any missing evidence still require resolution.</p><div class="kicker">WHY</div><p>The platform does not convert incomplete facts or evidence into a definitive legal conclusion.</p><div class="kicker">WHAT TO DO NEXT</div><p>Complete the missing facts and evidence checks shown below.</p></div><div class="decision-evidence"><div class="kicker">Candidate legal propositions</div><p>'+escapeHtml(mapping.propositions.length ? mapping.propositions.join(' · ') : 'None loaded for this historical branch.')+'</p><div class="kicker">Evidence chain</div><p>'+escapeHtml(mapping.evidence.length ? mapping.evidence.join(' · ') : 'Historical evidence required.')+'</p><div class="kicker">Publication state</div><p>'+escapeHtml(mapping.route)+'</p><div class="kicker">New-apartment exception</div><p>'+escapeHtml(apartment)+'</p><div class="kicker">Deadline</div><p>'+escapeHtml(deadline.message)+(deadline.date ? '<br><strong>'+escapeHtml(deadline.date)+'</strong>' : '')+'</p><div class="kicker">Legal composition</div><p><strong>'+escapeHtml(composition.result)+'</strong><br>'+escapeHtml(composition.reason)+'</p>'+checklist+evidenceGate<button type="button" id="show-law-button">SHOW ME THE LAW</button></div>';
     }
     box.innerHTML=html;
     document.querySelectorAll('.evidence-toggle').forEach(button => button.addEventListener('click', () => { const key=button.dataset.evidence; const order=['MISSING','SUPPLIED','EXTRACTED','CONSISTENT','CONFLICT']; const current=evidenceState[key]||'MISSING'; evidenceState[key]=order[(order.indexOf(current)+1)%order.length]; renderDecision(); }));
