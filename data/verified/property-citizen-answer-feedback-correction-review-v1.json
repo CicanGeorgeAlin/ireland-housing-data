@@ -1,0 +1,25 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-citizen-answer-feedback-correction-review-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for citizen correction, supplementation and review of published property answers.",
+  "citizen_rights_in_scope":[
+    "identify an apparent factual error",
+    "correct property or date information",
+    "provide additional documents",
+    "identify a missing source or route",
+    "challenge an interpretation for review",
+    "request correction or review",
+    "raise a privacy/publication concern"
+  ],
+  "governance_rules":[
+    "Feedback is preserved separately from verified evidence.",
+    "New evidence enters the same identity, property-match, date-match and sufficiency controls as other evidence.",
+    "Material answer changes require quality-gate review.",
+    "Published snapshots are immutable; material corrections create a new snapshot linked to the predecessor.",
+    "Unresolved challenges remain visible as unresolved where material."
+  ],
+  "verification_boundary":"This contract governs review workflow and citizen participation; it does not decide whether a citizen's correction is substantively correct.",
+  "public_boundary":"Citizens should see the review outcome and material reason, not internal chain-of-thought, private metadata or restricted personal information."
+}
