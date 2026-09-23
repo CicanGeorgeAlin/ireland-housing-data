@@ -1,0 +1,46 @@
+{
+  "schema_version":"0.1",
+  "status":"RESEARCH_GAP_RECORDED",
+  "verified_at":"2026-09-23",
+  "purpose":"Record unresolved case-law searches transparently when primary-source discovery does not yet establish suitable authorities.",
+  "search_scope":[
+    "Registration of Title Act 1964 registry-map and boundary provisions",
+    "Registration of Title Act 1964 possessory-title provisions",
+    "historical registration and rectification",
+    "current interpretation of official-search procedures"
+  ],
+  "primary_source_search":[
+    {
+      "authority":"Courts Service",
+      "searches":[
+        "registry map boundary Registration of Title Act",
+        "section 85 Registration of Title Act boundary",
+        "possessory title Registration of Title Act"
+      ],
+      "result":"NO_SUITABLE_PRIMARY_RESULTS_RETURNED",
+      "date":"2026-09-23"
+    }
+  ],
+  "handling_rule":"No case authority is invented, inferred, or promoted from an unverified secondary reference merely to fill a research gap.",
+  "current_case_law_status":{
+    "s31_registered_title":"PRIMARY_AUTHORITIES_REVIEWED",
+    "rectification":"PRIMARY_AUTHORITIES_REVIEWED",
+    "registry_map_boundary":"DEDICATED_SEARCH_REQUIRED",
+    "possessory_title":"DEDICATED_SEARCH_REQUIRED",
+    "historical_registration":"DEDICATED_SEARCH_REQUIRED",
+    "official_search_procedure":"DEDICATED_SEARCH_REQUIRED"
+  },
+  "next_research_methods":[
+    "Search the Irish Legal Information Institute and other authoritative case repositories for candidate judgments.",
+    "Cross-check every candidate against the actual judgment.",
+    "Use cited authorities within reviewed judgments to expand the primary-case network.",
+    "Record negative searches and unresolved gaps rather than treating absence of search results as absence of case law."
+  ],
+  "publication_effect":"Only propositions dependent on unresolved judicial interpretation remain blocked; statutory propositions are not downgraded solely because a separate case-law search is incomplete.",
+  "guardrails":[
+    "No claim that no case law exists.",
+    "No secondary summary treated as a judgment.",
+    "No case-law gap converted into a legal conclusion.",
+    "No publication readiness upgrade."
+  ]
+}
