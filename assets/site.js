@@ -39,6 +39,7 @@
       state[key] = value.trim();
       renderState();
       renderDecision();
+      renderLegalJourney();
     });
   });
 
@@ -85,6 +86,25 @@
     if (conflict) return '<div class="evidence-gate"><strong>CONFLICT — REVIEW REQUIRED</strong><p>Conflicting evidence prevents a definitive exception result.</p></div>';
     if (blocked) return '<div class="evidence-gate"><strong>NOT READY FOR DEFINITIVE RESULT</strong><p>Required evidence has not yet reached an extracted/consistent state.</p></div>';
     return '<div class="evidence-gate"><strong>EVIDENCE GATE PASSED</strong><p>The required checklist items have reached an extracted/consistent state. Full legal composition can now continue.</p></div>';
+  }
+
+  function renderLegalJourney() {
+    const box=document.getElementById('legal-journey');
+    if(!box) return;
+    const steps=[
+      ['01','QUESTION','Rent review'],
+      ['02','FACTS','Your information'],
+      ['03','CLASSIFICATION','Tenancy regime'],
+      ['04','TIME','Legal generation'],
+      ['05','LAW','Candidate rules'],
+      ['06','EVIDENCE','Proof required'],
+      ['07','DEADLINE','Time limit'],
+      ['08','NEXT','Official route']
+    ];
+    const result=classify();
+    const active=result.status==='PRIVATE_PATH' ? 4 : result.status==='SPECIAL_PATH' ? 3 : 2;
+    box.hidden=false;
+    box.innerHTML='<div class="kicker">YOUR LEGAL JOURNEY</div><div class="journey-track">'+steps.map((s,i)=>'<div class="journey-step '+(i<=active?'active':'')+'"><small>'+s[0]+'</small><strong>'+s[1]+'</strong><small>'+s[2]+'</small></div>').join('')+'</div>';
   }
 
   function deadlineState() {
