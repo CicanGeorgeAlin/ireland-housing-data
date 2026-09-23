@@ -1,0 +1,95 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-evidence-fact-legal-effect-boundary",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Prevent the property platform from converting a retrieved record directly into a legal conclusion without separating the observed record fact, the scope of that fact, the applicable legal proposition and the resulting legal effect.",
+  "pipeline":[
+    "RETRIEVED_RECORD",
+    "DOCUMENT_IDENTITY",
+    "PROPERTY_MATCH",
+    "DATE_MATCH",
+    "RAW_RECORD_FACT",
+    "FACT_SCOPE",
+    "LEGAL_PROPOSITION",
+    "LEGAL_EFFECT",
+    "CONDITIONS_AND_EXCEPTIONS",
+    "ANSWER"
+  ],
+  "fact_classes":[
+    "REGISTER_ENTRY",
+    "INSTRUMENT_ENTRY",
+    "MAP_OR_PLAN_FEATURE",
+    "REGISTRY_OF_DEEDS_MEMORIAL",
+    "SUCCESSION_RECORD",
+    "COURT_ORDER",
+    "PARTY_ASSERTION",
+    "USER_SUPPLIED_DOCUMENT",
+    "ADMINISTRATIVE_RECORD"
+  ],
+  "legal_proposition_classes":[
+    "REGISTRATION_EFFECT",
+    "TRANSFER_EFFECT",
+    "SUCCESSION_EFFECT",
+    "CHARGE_EFFECT",
+    "EASEMENT_OR_BURDEN_EFFECT",
+    "CO_OWNERSHIP_EFFECT",
+    "BOUNDARY_EFFECT",
+    "RECTIFICATION_EFFECT",
+    "COURT_ORDER_EFFECT",
+    "PROCEDURAL_EFFECT"
+  ],
+  "record_fact_rules":[
+    "Record what the source actually states or records.",
+    "Do not silently expand a register entry beyond its statutory scope.",
+    "Record document date, registration/dealing date and event date separately.",
+    "Record whether the fact is current or historical.",
+    "Record the exact property identifier used for matching.",
+    "Record uncertainty instead of resolving it by assumption."
+  ],
+  "legal_effect_rules":[
+    "A recorded event is not automatically the same as its legal effect.",
+    "A transfer document is not automatically proof that registration occurred.",
+    "Succession entitlement is not automatically current registered ownership.",
+    "A registered charge is not ownership.",
+    "A map or plan is not automatically conclusive of every boundary issue.",
+    "A Registry of Deeds memorial is not automatically the complete deed or its complete legal effect.",
+    "A court document must be matched to the relevant property, parties, order and date before its effect is stated."
+  ],
+  "answer_contract":{
+    "required_fields":[
+      "question",
+      "property_identifier",
+      "date_scope",
+      "source",
+      "document_identity",
+      "property_match",
+      "date_match",
+      "observed_fact",
+      "fact_scope",
+      "legal_proposition",
+      "legal_effect",
+      "conditions_or_exceptions",
+      "unestablished_matters",
+      "next_evidence_or_procedure"
+    ],
+    "prohibited_shortcut":"source → conclusion without an explicit fact and legal-proposition layer"
+  },
+  "uncertainty_states":[
+    "FACT_VERIFIED",
+    "FACT_PARTIALLY_VERIFIED",
+    "FACT_UNCERTAIN",
+    "LEGAL_EFFECT_REQUIRES_ADDITIONAL_SOURCE",
+    "PROPERTY_MATCH_UNCERTAIN",
+    "DATE_MATCH_UNCERTAIN",
+    "NOT_ESTABLISHED"
+  ],
+  "guardrails":[
+    "Never state an inferred legal conclusion as though it were a quoted or recorded fact.",
+    "Never convert user assertions into verified property facts.",
+    "Never use a current register entry as automatic proof of a historical state.",
+    "Never use a historical document as automatic proof of the current state.",
+    "Never omit material statutory conditions or exceptions.",
+    "If the legal effect requires another source, route to that source instead of guessing."
+  ]
+}
