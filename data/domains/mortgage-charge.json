@@ -1,0 +1,42 @@
+{
+  "id":"mortgage-charge",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"STRUCTURAL_DOMAIN_SEED",
+  "scope":[
+    "registered_mortgages",
+    "charges",
+    "judgment_mortgages",
+    "charge_release",
+    "transfer_of_charge",
+    "mortgage_enforcement",
+    "co-owner_and_mortgage_interaction",
+    "death_and_secured_property"
+  ],
+  "legal_foundation":[
+    "Registration of Title Act 1964",
+    "Land and Conveyancing Law Reform Act 2009 Part 10",
+    "Land Registration Rules 2012 Rules 105-113"
+  ],
+  "verified_facts":[
+    "Tailte Éireann provides Form 17 for an application for registration of a mortgage/loan charge and requires the charge to identify the lender and property, with a folio reference.",
+    "Tailte Éireann provides Forms 51 and 52 for specified registered-land charges under the Land Registration Rules 2012.",
+    "Tailte Éireann lists procedures for transfer and cancellation/release of charges, including Forms 56, 57A, 57B and 58.",
+    "Tailte Éireann identifies judgment mortgages as a separate registration category.",
+    "For charges dated on or after 1 December 2009, Tailte Éireann states that a mortgagee's power of sale is subject to the statutory court-order/consent framework under section 100(3) of the Land and Conveyancing Law Reform Act 2009."
+  ],
+  "guardrails":[
+    "A registered charge is not the same thing as ownership.",
+    "A mortgage balance cannot be inferred from the mere existence of a folio entry.",
+    "A charge entry must be interpreted with its legal basis and relevant documents.",
+    "Mortgage enforcement is distinct from ordinary ownership transfer.",
+    "Co-ownership, succession and mortgage interests must be analysed together where they intersect.",
+    "Do not state that a mortgagee can sell property without checking the applicable date, statutory framework and required court order or consent."
+  ],
+  "sources":[
+    "SRC-TE-MORTGAGE-CHARGE",
+    "SRC-TE-RULE105",
+    "SRC-TE-RULE110",
+    "SRC-LCLRA-2009-PART10"
+  ]
+}
