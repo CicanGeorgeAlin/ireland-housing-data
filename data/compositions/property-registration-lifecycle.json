@@ -281,6 +281,16 @@
         "property-evidence-to-answer-trace-graph",
         "property-evidence-audit-trail"
       ]
+    },
+    {
+      "stage": "ANSWER_VERSION_AND_SNAPSHOT_PUBLICATION",
+      "routes": [
+        "property-answer-version-snapshot-publication-manager",
+        "property-case-review-quality-gate",
+        "property-answer-reverification-change-detection",
+        "property-legal-change-impact-engine",
+        "property-evidence-audit-trail"
+      ]
     }
   ],
   "event_model": [
@@ -350,7 +360,8 @@
     "property-question-evidence-request-planner",
     "property-evidence-retrieval-session-manager",
     "property-evidence-bundle-case-file-assembler",
-    "property-case-review-quality-gate"
+    "property-case-review-quality-gate",
+    "property-answer-version-snapshot-publication-manager"
   ],
   "answer_sequence": [
     "QUESTION",
