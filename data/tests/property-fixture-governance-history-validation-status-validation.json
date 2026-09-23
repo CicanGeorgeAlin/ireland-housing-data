@@ -1,0 +1,46 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Validate the authoritative technical status of the property fixture governance history chain.",
+  "status_record": "data/registries/property-fixture-governance-history-validation-status.json",
+  "validation_sequence": [
+    "LOAD_STATUS",
+    "VERIFY_STATUS_IDENTITY",
+    "VERIFY_VALIDATION_CHAIN",
+    "VERIFY_LATEST_RUN",
+    "VERIFY_HISTORICAL_INTEGRITY",
+    "VERIFY_ACTIVE_REVALIDATION",
+    "VERIFY_CLOSURE_STATE",
+    "VERIFY_LEGAL_SOURCE_SEPARATION",
+    "VERIFY_PRODUCTION_EVIDENCE_SEPARATION",
+    "VERIFY_PUBLICATION_SEPARATION",
+    "RECORD_VALIDATION"
+  ],
+  "checks": [
+    {"check_id":"PFGHVS-001","name":"Status identity","result":"PASS"},
+    {"check_id":"PFGHVS-002","name":"Validation-chain completeness","result":"PASS"},
+    {"check_id":"PFGHVS-003","name":"Latest-run traceability","result":"PASS"},
+    {"check_id":"PFGHVS-004","name":"Historical integrity","result":"PASS"},
+    {"check_id":"PFGHVS-005","name":"Active revalidation state","result":"PASS"},
+    {"check_id":"PFGHVS-006","name":"Closure state","result":"PASS"},
+    {"check_id":"PFGHVS-007","name":"Legal-source separation","result":"PASS"},
+    {"check_id":"PFGHVS-008","name":"Evidence/publication separation","result":"PASS"}
+  ],
+  "result": {
+    "validation_status": "PASSED",
+    "status_record_valid": true,
+    "technical_history_governance": "PASSED",
+    "historical_integrity": "PASSED",
+    "active_fixture_revalidation": true,
+    "closure_status": "NOT_READY",
+    "legal_source_status": "UNCHANGED",
+    "production_evidence_status": "UNCHANGED",
+    "publication_status": "UNCHANGED"
+  },
+  "guardrails": [
+    "Structural validation only.",
+    "No live official property record was retrieved.",
+    "No Irish property-law proposition was independently verified by this validation.",
+    "No publication status was upgraded."
+  ]
+}
