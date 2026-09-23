@@ -1,0 +1,69 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-public-source-evidence-citation-renderer",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Render resolved official source and evidence references into clear citizen-facing citations without exposing internal investigation machinery.",
+  "core_principle":"WHY_THIS_CLAIM → OFFICIAL_SOURCE → EXACT_SUPPORT → DATE/VERSION → LIMITATION IF ANY",
+  "rendering_sequence":[
+    "RECEIVE_APPROVED_CITATION_RECORD",
+    "CHECK_PUBLICATION_SCOPE",
+    "CHECK_SOURCE_AUTHORITY",
+    "CHECK_TEMPORAL_SCOPE",
+    "CHECK_EXACT_SUPPORT",
+    "CHECK_ACCESS_ROUTE",
+    "RENDER_CITATION",
+    "RENDER_LIMITATION_IF_REQUIRED",
+    "LINK_TO_OFFICIAL_SOURCE_OR_ROUTE",
+    "PRESERVE_SNAPSHOT_REFERENCE"
+  ],
+  "public_citation_forms":[
+    "LEGAL_PROVISION",
+    "OFFICIAL_PROPERTY_RECORD",
+    "OFFICIAL_PROCEDURE",
+    "COURT_JUDGMENT",
+    "OFFICIAL_GUIDANCE",
+    "EVIDENCE_LIMITATION"
+  ],
+  "visible_fields":[
+    "source_authority",
+    "source_title",
+    "exact_provision_or_record",
+    "date_or_version",
+    "why_it_supports_the_claim",
+    "official_route",
+    "access_limitation"
+  ],
+  "presentation_rules":[
+    "Use plain language for why a source matters.",
+    "Keep the source identity precise enough for independent checking.",
+    "Show the relevant section, rule, judgment or record identity where known.",
+    "Show temporal information when it affects applicability.",
+    "Separate official source from CICAN explanation.",
+    "Make material access limitations visible.",
+    "Do not expose internal chain-of-thought, dependency graph details or confidence scores.",
+    "Do not imply that a source establishes facts outside its actual scope."
+  ],
+  "link_rules":[
+    "Prefer the authoritative official source or official retrieval route.",
+    "For property-specific records, link the official service route rather than exposing restricted personal information.",
+    "A route link may explain how to obtain evidence; it is not itself evidence of the property fact.",
+    "Never invent a URL."
+  ],
+  "hard_stops":[
+    "No citation without a resolved source record.",
+    "No citation that materially overstates the source.",
+    "No historical citation without temporal verification where time matters.",
+    "No property-specific citation from a general source.",
+    "No hidden limitation that changes what the citizen can rely upon."
+  ],
+  "output_contract":[
+    "rendered_citation",
+    "source_identity",
+    "exact_support",
+    "temporal_scope",
+    "official_route",
+    "limitation",
+    "snapshot_reference"
+  ]
+}
