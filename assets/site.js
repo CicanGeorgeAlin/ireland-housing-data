@@ -24,8 +24,29 @@
       if (value === null || !value.trim()) return;
       state[key] = value.trim();
       renderState();
+      renderDecision();
     });
   });
+
+  function classify() {
+    const type=(state.tenancy_type||'').toLowerCase();
+    if (!state.tenancy_type) return {status:'FACT_REQUIRED',message:'Tell us what type of tenancy this is before applying the rent-review rules.'};
+    if (!state.tenancy_start || !state.review_date) return {status:'FACT_REQUIRED',message:'The tenancy start date and proposed review date are still required.'};
+    if (type.includes('private')) return {status:'PRIVATE_PATH',message:'Private-tenancy pathway selected. The applicable legal generation and exceptions still need to be resolved.'};
+    if (type.includes('student')) return {status:'SPECIAL_PATH',message:'Student Specific Accommodation selected. Do not automatically apply the ordinary private-tenancy pathway.'};
+    if (type.includes('cost')) return {status:'SPECIAL_PATH',message:'Cost Rental selected. Route to the cost-rental rules rather than automatically applying the private-tenancy proposition.'};
+    if (type.includes('approved') || type.includes('ahb')) return {status:'SPECIAL_PATH',message:'Approved Housing Body tenancy selected. Route to the applicable AHB rules.'};
+    if (type.includes('local')) return {status:'SPECIAL_PATH',message:'Local-authority housing selected. Route to the applicable local-authority framework.'};
+    return {status:'FACT_REQUIRED',message:'The arrangement could not yet be classified. More information is required.'};
+  }
+
+  function renderDecision() {
+    const box=document.getElementById('pathway-decision');
+    if(!box) return;
+    const result=classify();
+    box.hidden=false;
+    box.innerHTML='<div class="kicker">Current pathway state</div><strong>'+escapeHtml(result.status)+'</strong><p>'+escapeHtml(result.message)+'</p>';
+  }
 
   function renderState() {
     const box = document.getElementById('pathway-state');
@@ -38,12 +59,7 @@
   }
 
   function label(key) {
-    return ({
-      tenancy_type:'Tenancy type',
-      tenancy_start:'Tenancy start',
-      review_date:'Review date',
-      new_apartment:'New-apartment construction test'
-    })[key] || key;
+    return ({tenancy_type:'Tenancy type',tenancy_start:'Tenancy start',review_date:'Review date',new_apartment:'New-apartment construction test'})[key] || key;
   }
 
   function escapeHtml(value) {
