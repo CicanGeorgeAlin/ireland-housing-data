@@ -1,0 +1,82 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Define the canonical result produced by a new dependent validation run after a property evidence fixture change.",
+  "identity": [
+    "revalidation_result_id",
+    "impact_event_id",
+    "queue_id",
+    "fixture_id",
+    "fixture_version",
+    "validation_run_id",
+    "recorded_at"
+  ],
+  "required_result_fields": [
+    "test_case_results",
+    "pathway_results",
+    "proposition_scope_results",
+    "historical_integrity",
+    "provenance_status",
+    "privacy_status",
+    "critical_issues",
+    "overall_result",
+    "closure_eligibility"
+  ],
+  "overall_result_states": [
+    "PASSED",
+    "PASSED_WITH_WARNINGS",
+    "FAILED",
+    "BLOCKED",
+    "REVALIDATION_REQUIRED"
+  ],
+  "closure_eligibility_states": [
+    "ELIGIBLE",
+    "NOT_ELIGIBLE",
+    "BLOCKED"
+  ],
+  "rules": [
+    "The revalidation result must reference a new validation run.",
+    "The new run must not replace or mutate the historical run that triggered the revalidation.",
+    "Every required dependent test must have an explicit result.",
+    "Proposition scope must remain limited to the propositions mapped to the fixture dependency.",
+    "Synthetic fixtures cannot produce real-world property conclusions.",
+    "Source-derived fixtures require provenance appropriate to their declared source.",
+    "A privacy failure blocks closure.",
+    "A critical dependency failure blocks closure.",
+    "Passing revalidation does not establish legal-source verification or publication readiness."
+  ],
+  "example_result": {
+    "revalidation_result_id": "PF-REVAL-RESULT-001",
+    "impact_event_id": "FIXTURE-IMPACT-EVENT-001",
+    "queue_id": "PF-REVAL-QUEUE-001",
+    "fixture_id": "FIXTURE-FOLIO-SYNTHETIC-001",
+    "fixture_version": "1.1",
+    "validation_run_id": "PF-REVAL-RUN-002",
+    "recorded_at": "2026-09-23",
+    "test_case_results": {
+      "PAE-001": "PENDING",
+      "PAE-007": "PENDING"
+    },
+    "pathway_results": {
+      "property-title-live": "PENDING_REVALIDATION"
+    },
+    "proposition_scope_results": {
+      "PROP-PROPERTY-TITLE-001": "FIXTURE_SCOPE_ONLY",
+      "PROP-PROPERTY-REGISTRATION-003": "FIXTURE_SCOPE_ONLY"
+    },
+    "historical_integrity": "PASS",
+    "provenance_status": "NOT_APPLICABLE_SYNTHETIC",
+    "privacy_status": "PASS",
+    "critical_issues": [],
+    "overall_result": "REVALIDATION_REQUIRED",
+    "closure_eligibility": "NOT_ELIGIBLE",
+    "example_only": true
+  },
+  "guardrails": [
+    "This contract governs technical revalidation output only.",
+    "It does not determine the truth of Irish property law.",
+    "It cannot represent live official-record retrieval.",
+    "It cannot convert a synthetic fixture into production evidence.",
+    "Publication remains subject to separate legal-source, evidence and privacy gates."
+  ]
+}
