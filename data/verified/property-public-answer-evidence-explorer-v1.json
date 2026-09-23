@@ -1,0 +1,23 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-public-answer-evidence-explorer-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified citizen-facing presentation contract for explaining why a published property answer is supported.",
+  "core_principle":"ANSWER → MATERIAL EVIDENCE → LAW → DATES/VERSION → LIMITATIONS → OFFICIAL NEXT STEP",
+  "required_visible_information":[
+    "answer",
+    "verification state",
+    "material supporting evidence",
+    "applicable legal provision where a legal conclusion is stated",
+    "relevant dates/version",
+    "limitations",
+    "official route where action is needed",
+    "official sources"
+  ],
+  "presentation_rule":"Explain provenance at the level necessary for a person to understand and check the answer, without exposing internal chain-of-thought.",
+  "fact_law_rule":"Observed record facts and legal propositions must remain visibly distinguishable.",
+  "limitation_rule":"Material limitations must remain visible and cannot be represented only as optional fine print.",
+  "source_rule":"Official source references should identify the source, relevant provision/record and temporal version where material.",
+  "verification_boundary":"This layer presents already-established evidence and legal analysis; it does not create new factual or legal conclusions."
+}
