@@ -1,0 +1,17 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-question-classifier-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "scope":"Classification of property questions into evidence and legal-analysis inputs. It does not determine the answer.",
+  "last_verified":"2026-09-24",
+  "source_architecture":[
+    "Registration of Title Act 1964",
+    "Land Registration Rules 2012",
+    "Succession Act 1965",
+    "Tailte Éireann official property-record services",
+    "Irish Statute Book"
+  ],
+  "core_rule":"QUESTION → CLASSIFICATION → EVIDENCE ROUTE → FACTS → LAW → ANSWER",
+  "critical_boundary":"A classified intent is not a legal conclusion and must not be presented as one.",
+  "publication_gate":"GENERAL_INFORMATION_ONLY"
+}
