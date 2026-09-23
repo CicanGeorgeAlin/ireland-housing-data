@@ -1,0 +1,30 @@
+{
+  "id":"rent-review-deadline-engine",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "rules":[
+    {
+      "id":"RTB-RENT-REVIEW-COPY-7-DAYS",
+      "event":"landlord serves notice of rent review on tenant",
+      "deadline":"7 days",
+      "unit":"calendar_days",
+      "recipient":"RTB",
+      "action":"serve/copy the notice to RTB",
+      "effective_from":"2026-09-14",
+      "source":"RTB — Important changes to rental law from 14 September 2026",
+      "status":"OFFICIAL_GUIDANCE_VERIFIED",
+      "guardrail":"Do not calculate the deadline until the actual service date is established."
+    }
+  ],
+  "calculation_model":{
+    "required_inputs":["trigger_event","trigger_date","legal_rule","effective_date"],
+    "outputs":["deadline_date","calculation_explanation","source","exceptions_or_unknowns"],
+    "rules":[
+      "Do not assume the trigger date.",
+      "Do not substitute publication date for effective date.",
+      "Preserve historical rules when the trigger predates a legal change.",
+      "If service timing is disputed, return REVIEW_REQUIRED rather than inventing a date."
+    ]
+  },
+  "scope_limit":"This is the first verified deadline seed, not a complete deadline corpus for Irish tenancy law."
+}
