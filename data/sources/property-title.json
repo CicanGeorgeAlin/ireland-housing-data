@@ -1,0 +1,46 @@
+{
+  "id":"property-title-source-cards",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "sources":[
+    {
+      "id":"SRC-TE-LANDREGISTRY",
+      "authority_type":"OFFICIAL_REGISTRY",
+      "title":"Tailte Éireann — Property Registration Services",
+      "official_url":"https://tailte.ie/services/property-registration/",
+      "role":"Land Register / Registry of Deeds official service information"
+    },
+    {
+      "id":"SRC-TE-COPYSERVICES",
+      "authority_type":"OFFICIAL_REGISTRY",
+      "title":"Tailte Éireann — Search and Copy Services",
+      "official_url":"https://tailte.ie/services/copy-services/",
+      "role":"Official folio, title-plan and search routes"
+    },
+    {
+      "id":"SRC-TE-RULE160",
+      "authority_type":"LEGAL_RULE",
+      "title":"Tailte Éireann — LR Rule 160: Official Search",
+      "official_url":"https://tailte.ie/lr-rule-160-official-search/",
+      "role":"Official-search procedure"
+    },
+    {
+      "id":"SRC-TE-FORM89",
+      "authority_type":"OFFICIAL_FORM",
+      "title":"Tailte Éireann — LR Form 89",
+      "official_url":"https://tailte.ie/lr-form-89-requisition-for-official-search-for-the-registration-of-the-ownership-registered-in-the-registers-maintained-under-section-8a-and-b-of-the-act/",
+      "role":"Official ownership search"
+    }
+  ],
+  "verified_facts":{
+    "public_register":"Tailte Éireann states that the Land Register is a public record and that people may inspect folios/maps or obtain copies subject to prescribed fees.",
+    "landdirect":"Tailte Éireann states that Landdirect allows searches by location/address and identification of folio details.",
+    "mapping_search":"Tailte Éireann states that a mapping search can identify whether a property is registered and the relevant folio number.",
+    "official_search":"Tailte Éireann provides an official ownership-search route under LR Rule 160 / Form 89."
+  },
+  "guardrails":{
+    "boundary":"Do not treat general boundary datasets as legal property boundaries; Tailte Éireann directs users to the Land Registry folio/filed plan for legal-boundary information.",
+    "ownership":"Do not infer ownership from an address without title evidence.",
+    "historical":"Current folio information does not automatically answer every historical ownership question."
+  }
+}
