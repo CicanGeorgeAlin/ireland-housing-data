@@ -1,0 +1,85 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-registration-co-ownership",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "purpose":"Classify registered co-ownership interests and route questions about joint tenancy, tenancy in common, severance, transfer and survivorship without inferring beneficial ownership from the register alone.",
+  "event_types":[
+    "CO_OWNERSHIP_CREATED",
+    "TRANSFER_BY_ONE_CO_OWNER",
+    "SEVERANCE",
+    "SURVIVORSHIP",
+    "DEATH_OF_CO_OWNER",
+    "SALE_OR_PARTITION",
+    "COURT_ORDER",
+    "TRUST_OR_BENEFICIAL_INTEREST"
+  ],
+  "classification_inputs":[
+    "registered_or_unregistered_status",
+    "property_identifier",
+    "registered_proprietors",
+    "joint_tenancy_or_tenancy_in_common",
+    "date_of_acquisition_or_registration",
+    "instrument_or_transfer",
+    "death_or_succession_event",
+    "severance_evidence",
+    "trust_or_beneficial_interest",
+    "mortgage_or_charge_context",
+    "court_order_context"
+  ],
+  "workflow":[
+    "CLASSIFY_PROPERTY_STATUS",
+    "IDENTIFY_REGISTERED_PROPRIETORS",
+    "IDENTIFY_REGISTERED_CO_OWNERSHIP_FORM",
+    "CHECK_SEVERANCE_OR_TRANSFER_EVENTS",
+    "CHECK_SURVIVORSHIP_OR_SUCCESSION_EVENT",
+    "CHECK_TRUST_OR_BENEFICIAL_INTEREST_SEPARATELY",
+    "CHECK_MORTGAGES_AND_OTHER_INTERESTS",
+    "SELECT_REGISTRATION_OR_SUCCESSION_ROUTE",
+    "VERIFY_DOCUMENT_AND_PROPERTY_MATCH",
+    "COMPOSE_LEGAL_EFFECT"
+  ],
+  "legal_distinctions":[
+    "Joint tenancy and tenancy in common are distinct forms of co-ownership.",
+    "Registered proprietorship does not necessarily resolve every beneficial or trust interest.",
+    "Survivorship and succession are distinct legal events and must be analysed with the applicable ownership form.",
+    "Severance can alter the co-ownership relationship and requires evidence of the relevant legal event.",
+    "A court order concerning sale or partition is distinct from the resulting registration steps.",
+    "Mortgages, burdens and other registered interests remain separate layers."
+  ],
+  "evidence_requirements":[
+    "property_identifier",
+    "current folio or registration evidence",
+    "instrument establishing co-ownership where relevant",
+    "severance evidence where alleged",
+    "death certificate and succession documentation where relevant",
+    "trust documentation where a beneficial interest is alleged",
+    "court order where applicable"
+  ],
+  "official_routes":[
+    "Tailte Éireann Land Registry registration services",
+    "Tailte Éireann forms and registration rules",
+    "LandDirect property search",
+    "Probate and succession routes where a co-owner has died",
+    "Courts Service where judicial partition or sale is relevant"
+  ],
+  "result_states":[
+    "CO_OWNERSHIP_IDENTIFIED",
+    "JOINT_TENANCY_ROUTE",
+    "TENANCY_IN_COMMON_ROUTE",
+    "SEVERANCE_REVIEW_REQUIRED",
+    "SURVIVORSHIP_OR_SUCCESSION_ROUTE",
+    "BENEFICIAL_INTEREST_REVIEW_REQUIRED",
+    "EVIDENCE_REQUIRED",
+    "CONFLICT",
+    "PROFESSIONAL_REVIEW_REQUIRED",
+    "NOT_DETERMINABLE"
+  ],
+  "guardrails":[
+    "Never infer beneficial ownership solely from registered names.",
+    "Never assume survivorship without establishing the relevant co-ownership form and legal event.",
+    "Never treat a death as automatically resolving every title or beneficial-interest issue.",
+    "Never infer severance without supporting evidence.",
+    "Never collapse legal title and beneficial ownership into one concept.",
+    "Property-specific conclusions require verified evidence."
+  ]
+}
