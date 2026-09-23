@@ -1,0 +1,30 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-answer-assembly-snapshot-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "scope":"Controlled answer assembly for property questions. It does not create property-specific evidence.",
+  "last_verified":"2026-09-24",
+  "verified_source_architecture":[
+    "Registration of Title Act 1964",
+    "Land Registration Rules 2012",
+    "Succession Act 1965",
+    "Tailte Éireann official property-record services",
+    "Irish Statute Book"
+  ],
+  "answer_contract":{
+    "required_sequence":[
+      "QUESTION",
+      "PROPERTY",
+      "DATE",
+      "EVIDENCE",
+      "FACT",
+      "LAW",
+      "LEGAL_EFFECT",
+      "LIMITATIONS",
+      "NEXT_STEP"
+    ],
+    "minimum_quality":"No property-specific conclusion without matched authoritative evidence where authoritative evidence is required."
+  },
+  "verification_date_policy":"Every published property-specific snapshot must carry the date on which its evidence and legal sources were checked.",
+  "publication_gate":"GENERAL_INFORMATION_ONLY"
+}
