@@ -1,0 +1,91 @@
+{
+  "id":"property-answer-snapshot",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"CANONICAL_VERSIONED_ANSWER_CONTRACT",
+  "purpose":"Version, preserve and re-verify completed property-law answers without silently changing historical answers.",
+  "snapshot_identity":[
+    "answer_snapshot_id",
+    "question_id",
+    "created_at",
+    "created_by_system_version",
+    "legal_version_context",
+    "effective_date_context",
+    "geographic_scope",
+    "person_scope"
+  ],
+  "answer_payload":[
+    "the_answer",
+    "legal_basis",
+    "evidence_establishes",
+    "evidence_does_not_establish",
+    "conditions_and_exceptions",
+    "deadline",
+    "official_route",
+    "next_steps",
+    "documents_required",
+    "conflicts_and_unknowns",
+    "professional_review_flag"
+  ],
+  "traceability":[
+    "property_identifier",
+    "evidence_ids",
+    "document_ids",
+    "retrieval_event_ids",
+    "proposition_ids",
+    "proposition_version_ids",
+    "legal_rule_ids",
+    "deadline_rule_ids",
+    "official_procedure_ids"
+  ],
+  "verification":{
+    "primary_law_verified":false,
+    "commencement_verified":false,
+    "amendments_checked":false,
+    "case_law_checked":false,
+    "procedure_verified":false,
+    "official_route_checked":false,
+    "last_verified":null,
+    "verification_notes":[]
+  },
+  "lifecycle":[
+    "DRAFT",
+    "EVIDENCE_ASSEMBLED",
+    "LEGAL_COMPOSITION_COMPLETE",
+    "VERIFICATION_PENDING",
+    "VERIFIED",
+    "PUBLISHED",
+    "REVERIFICATION_REQUIRED",
+    "SUPERSEDED",
+    "HISTORICAL"
+  ],
+  "change_rules":[
+    "Never silently overwrite a published snapshot.",
+    "A material legal change creates a new snapshot/version.",
+    "Historical snapshots remain available for the date to which they relate.",
+    "A changed proposition, deadline, procedure, source or legal version triggers re-verification.",
+    "A stale answer must be marked REVERIFICATION_REQUIRED before republication.",
+    "A snapshot cannot be marked VERIFIED merely because the underlying document was retrieved."
+  ],
+  "reverification_triggers":[
+    "statutory amendment",
+    "commencement order",
+    "repeal",
+    "new or materially relevant regulation",
+    "relevant judicial decision",
+    "official procedure change",
+    "official form/link change affecting the answer",
+    "deadline rule change",
+    "source correction",
+    "material evidence conflict"
+  ],
+  "public_display":{
+    "show_last_verified":true,
+    "show_status":true,
+    "show_key_sources":true,
+    "show_material_conditions":true,
+    "show_unresolved_items":true,
+    "show_historical_context_when_relevant":true,
+    "hide_internal_identifiers_unless_needed":true
+  }
+}
