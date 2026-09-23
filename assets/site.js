@@ -77,6 +77,16 @@
     return propositionMap.private_current;
   }
 
+  function renderEvidenceGate() {
+    if (!(state.new_apartment || '').toLowerCase().includes('yes')) return '';
+    const required = ['e0','e1','e2','e3','e5'];
+    const blocked = required.some(key => !['EXTRACTED','CONSISTENT'].includes(evidenceState[key] || 'MISSING'));
+    const conflict = Object.values(evidenceState).includes('CONFLICT');
+    if (conflict) return '<div class="evidence-gate"><strong>CONFLICT — REVIEW REQUIRED</strong><p>Conflicting evidence prevents a definitive exception result.</p></div>';
+    if (blocked) return '<div class="evidence-gate"><strong>NOT READY FOR DEFINITIVE RESULT</strong><p>Required evidence has not yet reached an extracted/consistent state.</p></div>';
+    return '<div class="evidence-gate"><strong>EVIDENCE GATE PASSED</strong><p>The required checklist items have reached an extracted/consistent state. Full legal composition can now continue.</p></div>';
+  }
+
   function renderEvidenceChecklist() {
     if (!(state.new_apartment || '').toLowerCase().includes('yes')) return '';
     const items = [
@@ -112,8 +122,9 @@
       const mapping=resolvePropositions(result,time);
       const apartment=apartmentState();
       const checklist=renderEvidenceChecklist();
+      const evidenceGate=renderEvidenceGate();
       html+='<div class="decision-facts"><div><span>Tenancy generation</span><strong>'+escapeHtml(time.tenancyGeneration)+'</strong></div><div><span>Review period</span><strong>'+escapeHtml(time.reviewPeriod)+'</strong></div><div><span>Commencement check</span><strong>'+escapeHtml(time.commencementCheck ? 'REQUIRED' : 'NOT YET REQUIRED')+'</strong></div></div>';
-      html+='<div class="decision-evidence"><div class="kicker">Candidate legal propositions</div><p>'+escapeHtml(mapping.propositions.length ? mapping.propositions.join(' · ') : 'None loaded for this historical branch.')+'</p><div class="kicker">Evidence chain</div><p>'+escapeHtml(mapping.evidence.length ? mapping.evidence.join(' · ') : 'Historical evidence required.')+'</p><div class="kicker">Publication state</div><p>'+escapeHtml(mapping.route)+'</p><div class="kicker">New-apartment exception</div><p>'+escapeHtml(apartment)+'</p>'+checklist<button type="button" id="show-law-button">SHOW ME THE LAW</button></div>';
+      html+='<div class="decision-evidence"><div class="kicker">Candidate legal propositions</div><p>'+escapeHtml(mapping.propositions.length ? mapping.propositions.join(' · ') : 'None loaded for this historical branch.')+'</p><div class="kicker">Evidence chain</div><p>'+escapeHtml(mapping.evidence.length ? mapping.evidence.join(' · ') : 'Historical evidence required.')+'</p><div class="kicker">Publication state</div><p>'+escapeHtml(mapping.route)+'</p><div class="kicker">New-apartment exception</div><p>'+escapeHtml(apartment)+'</p>'+checklist+evidenceGate<button type="button" id="show-law-button">SHOW ME THE LAW</button></div>';
     }
     box.innerHTML=html;
     document.querySelectorAll('.evidence-toggle').forEach(button => button.addEventListener('click', () => { const key=button.dataset.evidence; const order=['MISSING','SUPPLIED','EXTRACTED','CONSISTENT','CONFLICT']; const current=evidenceState[key]||'MISSING'; evidenceState[key]=order[(order.indexOf(current)+1)%order.length]; renderDecision(); }));
