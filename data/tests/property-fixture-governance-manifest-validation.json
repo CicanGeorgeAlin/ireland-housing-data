@@ -1,0 +1,76 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Validate that the unified property fixture governance manifest references the required controls, source files, validation layers and publication gates without silently upgrading legal or publication status.",
+  "manifest": "data/registries/property-fixture-governance-manifest.json",
+  "validation_sequence": [
+    "LOAD_MANIFEST",
+    "VERIFY_GOVERNANCE_CHAIN",
+    "VERIFY_REQUIRED_CONTROLS",
+    "VERIFY_SOURCE_FILE_REFERENCES",
+    "VERIFY_IMPACT_AND_REVALIDATION_LINKS",
+    "VERIFY_HISTORICAL_IMMUTABILITY",
+    "VERIFY_PUBLICATION_GATE",
+    "VERIFY_LEGAL_SOURCE_SEPARATION",
+    "VERIFY_SYNTHETIC_FIXTURE_BOUNDARY",
+    "RECORD_VALIDATION"
+  ],
+  "checks": [
+    {
+      "check_id": "PFGM-001",
+      "name": "Governance chain completeness",
+      "requirement": "All fixture governance layers from registry through closure are represented.",
+      "result": "PASS"
+    },
+    {
+      "check_id": "PFGM-002",
+      "name": "Required controls",
+      "requirement": "Identity, lifecycle, provenance, dependencies, impact, revalidation, privacy, proposition scope and closure controls are represented.",
+      "result": "PASS"
+    },
+    {
+      "check_id": "PFGM-003",
+      "name": "Source references",
+      "requirement": "Manifest references the established fixture governance files.",
+      "result": "PASS"
+    },
+    {
+      "check_id": "PFGM-004",
+      "name": "Historical protection",
+      "requirement": "Manifest preserves the rule that historical validation results remain immutable.",
+      "result": "PASS"
+    },
+    {
+      "check_id": "PFGM-005",
+      "name": "Publication separation",
+      "requirement": "Manifest does not mark the pathway publication-ready merely because technical governance exists.",
+      "result": "PASS"
+    },
+    {
+      "check_id": "PFGM-006",
+      "name": "Legal-source separation",
+      "requirement": "Technical fixture governance remains separate from substantive legal verification.",
+      "result": "PASS"
+    },
+    {
+      "check_id": "PFGM-007",
+      "name": "Synthetic evidence boundary",
+      "requirement": "Synthetic fixtures cannot establish real-world property facts.",
+      "result": "PASS"
+    }
+  ],
+  "result": {
+    "validation_status": "PASSED",
+    "governance_manifest_valid": true,
+    "historical_runs_immutable": true,
+    "publication_ready": false,
+    "legal_source_status": "UNCHANGED",
+    "production_evidence_status": "UNCHANGED"
+  },
+  "guardrails": [
+    "This validates governance architecture only.",
+    "It does not verify Irish property law.",
+    "It does not represent live official-record retrieval.",
+    "It does not make any property pathway publication-ready."
+  ]
+}
