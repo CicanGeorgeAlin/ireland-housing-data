@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1",
+  "run_id": "PFRQ-VAL-RUN-001",
+  "status": "PASSED_WITH_WARNINGS",
+  "execution_mode": "STATIC_QUEUE_CONTRACT_VALIDATION",
+  "recorded_at": "2026-09-23",
+  "queue_id": "PF-REVAL-QUEUE-001",
+  "impact_event_id": "FIXTURE-IMPACT-EVENT-001",
+  "fixture_id": "FIXTURE-FOLIO-SYNTHETIC-001",
+  "scope": {
+    "queue": "data/registries/property-fixture-revalidation-queue.json",
+    "queue_validation_contract": "data/registries/property-fixture-revalidation-queue-validation.json",
+    "impact_event": "data/tests/property-fixture-impact-event.json",
+    "dependency_registry": "data/registries/property-fixture-test-dependencies.json",
+    "fixture_registry": "data/registries/property-evidence-fixtures.json"
+  },
+  "checks": {
+    "queue_identity": "PASS",
+    "dependency_completeness": "PASS",
+    "historical_preservation": "PASS",
+    "action_completeness": "PASS",
+    "closure_gate": "PENDING_NEW_VALIDATION",
+    "publication_separation": "PASS"
+  },
+  "result": {
+    "queue_integrity": "PASSED",
+    "new_dependent_validation_required": true,
+    "historical_runs_unchanged": true,
+    "publication_ready": false,
+    "legal_source_status": "UNCHANGED",
+    "production_evidence_status": "UNCHANGED"
+  },
+  "warnings": [
+    "This is static queue-contract validation only.",
+    "The referenced fixture is synthetic.",
+    "The material correction represented by the example impact event has not been closed by a new dependent validation run.",
+    "No production legal evidence or publication state was changed."
+  ],
+  "next_required_action": "Run a new isolated dependent validation using an approved corrected or replacement fixture, then link the resulting run to the impact event and queue item.",
+  "guardrails": [
+    "Passing this run does not verify Irish property law.",
+    "Passing this run does not represent live official-record retrieval.",
+    "Historical validation records remain immutable."
+  ]
+}
