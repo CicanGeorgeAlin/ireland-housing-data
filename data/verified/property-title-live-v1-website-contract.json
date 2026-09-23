@@ -1,0 +1,51 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-title-live-website-contract",
+  "status":"WEBSITE_READY",
+  "verified_content":"property-title-live-v1",
+  "last_verified":"2026-09-23",
+  "route":"property-title",
+  "answer_contract":"data/components/property-legal-answer.json",
+  "display_sections":[
+    "THE_ANSWER",
+    "LEGAL_BASIS",
+    "WHAT_THE_EVIDENCE_ESTABLISHES",
+    "WHAT_THE_EVIDENCE_DOES_NOT_ESTABLISH",
+    "OFFICIAL_SOURCES",
+    "CONDITIONS_AND_EXCEPTIONS",
+    "OFFICIAL_ROUTE",
+    "WHAT_TO_DO_NEXT",
+    "PROFESSIONAL_REVIEW_FLAG",
+    "LAST_VERIFIED"
+  ],
+  "public_flow":[
+    "USER_QUESTION",
+    "PROPERTY_TOPIC_CLASSIFICATION",
+    "GENERAL_LAW_EXPLANATION",
+    "SHOW_ME_THE_LAW",
+    "OFFICIAL_RECORD_ROUTE_IF_PROPERTY_SPECIFIC",
+    "EVIDENCE_GATE",
+    "PROPERTY_SPECIFIC_ANSWER_ONLY_IF_EVIDENCE_EXISTS"
+  ],
+  "property_specific_gate":{
+    "required":[
+      "property_identifier",
+      "record_route",
+      "retrieval_event",
+      "document_identity",
+      "property_match",
+      "fact_extraction",
+      "proposition_support"
+    ],
+    "if_missing":"Do not state an individual ownership/title/boundary conclusion."
+  },
+  "visual_principle":"Keep the existing pure-black / bright-white CICAN visual language while making legal evidence status unmistakable.",
+  "source_links":[
+    "https://revisedacts.lawreform.ie/eli/1964/act/16/revised/en/html",
+    "https://tailte.ie/services/property-registration/",
+    "https://tailte.ie/services/copy-services/",
+    "https://tailte.ie/category/forms/?_type=land-registry-forms"
+  ],
+  "publication_gate":"WEBSITE_READY",
+  "legal_change_dependency":"PROPERTY-TITLE-VERIFICATION-001"
+}
