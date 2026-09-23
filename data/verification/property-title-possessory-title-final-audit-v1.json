@@ -1,0 +1,59 @@
+{
+  "schema_version":"0.1",
+  "status":"PARTIALLY_VERIFIED",
+  "verified_at":"2026-09-23",
+  "proposition_id":"PROP-PROPERTY-REGISTRATION-003",
+  "scope":"Possessory title, adverse possession of registered land, and first registration by possession",
+  "statutory_sources":[
+    {
+      "instrument":"Registration of Title Act 1964",
+      "provisions":["s.33","s.49","s.53","s.54"],
+      "source":"https://revisedacts.lawreform.ie/eli/1964/act/16/revised/en/html",
+      "status":"CURRENT_REVISED_TEXT_REVIEWED"
+    },
+    {
+      "instrument":"Statute of Limitations 1957",
+      "source":"https://www.irishstatutebook.ie/eli/1957/act/6/enacted/en/html",
+      "status":"PRIMARY_SOURCE_IDENTIFIED"
+    }
+  ],
+  "procedural_sources":[
+    {
+      "authority":"Tailte Éireann",
+      "source":"https://tailte.ie/legal-practices-practise-directions-adverse-possession-title-by-adverse-possession-to-registered-land/",
+      "finding":"Registered-land adverse possession applications use the statutory application route and require evidence of the facts relied upon.",
+      "status":"CURRENT_OFFICIAL_PROCEDURE_VERIFIED"
+    },
+    {
+      "authority":"Tailte Éireann",
+      "source":"https://tailte.ie/adverse-possession-application-guidelines/",
+      "finding":"Current guidance provides separate material for adverse possession and possessory-title applications.",
+      "status":"CURRENT_OFFICIAL_GUIDANCE_VERIFIED"
+    }
+  ],
+  "case_law":[
+    {
+      "case":"McDonnell v McDonnell [2013] IEHC 395",
+      "source":"https://www.bailii.org/ie/cases/IEHC/2013/2013IEHC395.html",
+      "status":"PRIMARY_AUTHORITY_IDENTIFIED",
+      "scope":"Adverse possession/title by possession; full proposition extraction remains required."
+    }
+  ],
+  "critical_distinctions":[
+    "First registration with possessory title is distinct from acquisition of registered land by possession.",
+    "The statutory limitation question is distinct from the registration/procedure question.",
+    "Prescription of easements is distinct from acquisition of title by possession.",
+    "Historical possession claims require the law applicable at the relevant time."
+  ],
+  "audit_result":"NOT_PUBLICATION_READY",
+  "blocking_reasons":[
+    "Complete proposition-level extraction from the relevant primary judgment(s).",
+    "Complete historical/transitional analysis for the relevant possession date.",
+    "Complete current form/rule mapping for every possessory-title user route."
+  ],
+  "guardrails":[
+    "No individual possession claim assessed.",
+    "No ownership conclusion inferred.",
+    "No claim that a limitation period alone guarantees registration."
+  ]
+}
