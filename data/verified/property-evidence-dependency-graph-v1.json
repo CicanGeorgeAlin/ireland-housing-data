@@ -1,0 +1,22 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-evidence-dependency-graph-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for tracing material dependencies from evidence and law to answer publication.",
+  "core_principle":"TARGETED REVERIFICATION REQUIRES EXPLICIT DEPENDENCY LINKS.",
+  "minimum_dependency":[
+    "upstream_node",
+    "downstream_node",
+    "relationship",
+    "materiality",
+    "scope",
+    "verification_state"
+  ],
+  "materiality_rule":"A dependency is material when a change upstream could alter a material fact, legal effect, procedure, deadline or publication state downstream.",
+  "propagation_rule":"Changes propagate through explicit dependency edges rather than through broad assumptions that all answers are affected.",
+  "historical_rule":"Historical answers retain their target-date scope; current changes do not automatically rewrite historical states.",
+  "publication_rule":"If a material dependency changes, the affected answer must be reverified before a new definitive snapshot is published.",
+  "provenance_rule":"Superseded nodes and dependency paths remain available for reconstruction.",
+  "verification_boundary":"The dependency graph identifies what may be affected; it does not itself establish the truth of any node."
+}
