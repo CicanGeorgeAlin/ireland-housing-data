@@ -291,6 +291,15 @@
         "property-legal-change-impact-engine",
         "property-evidence-audit-trail"
       ]
+    },
+    {
+      "stage": "PUBLIC_ANSWER_EVIDENCE_EXPLORER",
+      "routes": [
+        "property-public-answer-evidence-explorer",
+        "property-human-readable-legal-answer-composer",
+        "property-evidence-to-answer-trace-graph",
+        "property-answer-version-snapshot-publication-manager"
+      ]
     }
   ],
   "event_model": [
@@ -361,7 +370,8 @@
     "property-evidence-retrieval-session-manager",
     "property-evidence-bundle-case-file-assembler",
     "property-case-review-quality-gate",
-    "property-answer-version-snapshot-publication-manager"
+    "property-answer-version-snapshot-publication-manager",
+    "property-public-answer-evidence-explorer"
   ],
   "answer_sequence": [
     "QUESTION",
