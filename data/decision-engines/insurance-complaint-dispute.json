@@ -1,0 +1,48 @@
+{
+  "id":"insurance-complaint-dispute",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"STRUCTURAL_DISPUTE_ENGINE",
+  "question":"What can I do if an insurance claim is rejected, delayed or disputed?",
+  "pipeline":[
+    "identify-insurer_or-intermediary",
+    "identify-policy-and-claim",
+    "collect-final-or-interim-claim-decision",
+    "check-insurer_internal_complaints_route",
+    "identify-complaint_submission_date",
+    "track-response_and-deadline",
+    "identify-financial-services_and_pensions_ombudsman_route_where_applicable",
+    "identify-legal-court-route_if-separate",
+    "preserve-policy-and-claim-evidence",
+    "compose-next-step"
+  ],
+  "evidence":[
+    "policy wording",
+    "schedule",
+    "claim notification",
+    "claim reference",
+    "insurer correspondence",
+    "complaint letter",
+    "final response",
+    "expert reports",
+    "photographs",
+    "repair records",
+    "financial loss evidence"
+  ],
+  "guardrails":[
+    "Do not state that an insurer must pay without analysing policy wording, exclusions, causation and facts.",
+    "Do not treat an insurer complaint as the same as a court action.",
+    "Do not state that the Financial Services and Pensions Ombudsman is available without checking jurisdiction and complaint eligibility.",
+    "Do not give a limitation/deadline date without identifying the relevant event and applicable rules.",
+    "Preserve the distinction between contractual insurance disputes and separate negligence, construction, tenancy or property claims."
+  ],
+  "result_types":[
+    "INTERNAL_COMPLAINT_ROUTE_IDENTIFIED",
+    "FSPO_ROUTE_REQUIRES_VERIFICATION",
+    "COURT_ROUTE_REQUIRES_REVIEW",
+    "EVIDENCE_INCOMPLETE",
+    "DEADLINE_REQUIRES_DATE_CALCULATION",
+    "MULTI_REGIME_DISPUTE",
+    "NOT_DETERMINABLE"
+  ]
+}
