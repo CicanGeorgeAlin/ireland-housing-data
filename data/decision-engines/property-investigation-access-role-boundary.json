@@ -1,0 +1,98 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-investigation-access-role-boundary",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Define role-based access and responsibility boundaries so information is provided, retrieved, analysed, reviewed and published by distinct functions with auditable permissions.",
+  "core_principle":"ACCESS FOLLOWS FUNCTION; RESPONSIBILITY FOLLOWS AUTHORITY; PUBLICATION REQUIRES REVIEW.",
+  "roles":[
+    {
+      "role":"CITIZEN",
+      "purpose":"Provide a question, clarification and optionally citizen-supplied material.",
+      "may":"submit_question, provide_clarification, provide_documents, view_own_case_status, view_public_answer",
+      "may_not":"establish_official_record, alter_verified_legal_source, publish_verified_answer"
+    },
+    {
+      "role":"INTAKE",
+      "purpose":"Interpret the citizen question and identify minimum required information.",
+      "may":"classify_question, split_subquestions, identify_missing_inputs, request_clarification",
+      "may_not":"invent_facts, establish_property_title, alter_legal_propositions"
+    },
+    {
+      "role":"EVIDENCE",
+      "purpose":"Retrieve, identify, match and assess evidence.",
+      "may":"retrieve_sources, record_document_identity, match_property, match_date, extract_observed_facts, assess_sufficiency",
+      "may_not":"convert_uncertain_evidence_to_fact, alter_primary_legal_source"
+    },
+    {
+      "role":"LEGAL_ANALYSIS",
+      "purpose":"Resolve applicable law, propositions, conditions, exceptions and legal effects.",
+      "may":"identify_legal_regime, resolve_provisions, analyse_legal_effect, identify_procedure_and_deadline",
+      "may_not":"invent_property_specific_evidence, override_primary_source_without_authority"
+    },
+    {
+      "role":"REVIEW",
+      "purpose":"Check publication requirements and unresolved dependencies.",
+      "may":"review_trace, audit, evidence_sufficiency, legal_authority, conflicts, procedure, deadline, publication_state",
+      "may_not":"silently_change_underlying_evidence"
+    },
+    {
+      "role":"PUBLICATION",
+      "purpose":"Publish approved answer snapshots and public evidence explanations.",
+      "may":"publish_approved_snapshot, supersede_snapshot, expose_public_evidence_view",
+      "may_not":"bypass_quality_gate, modify_historical_source_records"
+    },
+    {
+      "role":"SYSTEM_ADMINISTRATION",
+      "purpose":"Maintain system configuration and access controls.",
+      "may":"manage_access_configuration, operational_settings, system_integrity",
+      "may_not":"alter_substantive_property_facts_or_legal_sources_without_traceable_source_basis"
+    }
+  ],
+  "permission_principles":[
+    "Least privilege",
+    "Purpose limitation",
+    "Separation of duties",
+    "Source provenance preservation",
+    "Immutable audit history",
+    "Public/private information separation",
+    "No privilege escalation through downstream state"
+  ],
+  "change_controls":[
+    "Citizen assertions are recorded as citizen-supplied information.",
+    "Evidence-layer changes require source provenance.",
+    "Legal-analysis changes require legal-source provenance.",
+    "Review changes require reviewer identity or system actor and reason.",
+    "Publication changes require quality-gate state.",
+    "Administrative configuration changes cannot silently alter substantive case history."
+  ],
+  "access_states":[
+    "ACCESS_GRANTED",
+    "ACCESS_LIMITED",
+    "SOURCE_ACCESS_RESTRICTED",
+    "PERSONAL_DATA_RESTRICTED",
+    "LEGAL_SOURCE_ACCESS_RESTRICTED",
+    "REVIEW_REQUIRED",
+    "PUBLICATION_BLOCKED",
+    "ACCESS_DENIED"
+  ],
+  "hard_stops":[
+    "Never allow a citizen submission to overwrite an official evidence record.",
+    "Never allow a publication layer to bypass review.",
+    "Never allow administrative access to silently rewrite substantive case history.",
+    "Never expose restricted personal information merely because a user can view the case.",
+    "Never treat access to a record as authority to decide its legal effect."
+  ],
+  "output_contract":[
+    "access_decision_id",
+    "run_id",
+    "requesting_role",
+    "requested_resource",
+    "purpose",
+    "permission",
+    "scope",
+    "restrictions",
+    "audit_reference",
+    "next_action"
+  ]
+}
