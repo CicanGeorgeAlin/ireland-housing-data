@@ -1,0 +1,91 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-investigation-communication-clarification-dialogue",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Translate intake, scope, evidence and investigation states into clear citizen-facing dialogue that asks only the smallest useful clarification and explains why it is needed.",
+  "core_principle":"ASK THE SMALLEST USEFUL QUESTION → EXPLAIN WHY IT MATTERS → PRESERVE EVERYTHING ALREADY KNOWN.",
+  "dialogue_sequence":[
+    "RECEIVE_CITIZEN_MESSAGE",
+    "LOAD_CURRENT_INVESTIGATION_STATE",
+    "SEPARATE_KNOWN_FROM_UNKNOWN",
+    "IDENTIFY_BLOCKING_DEPENDENCY",
+    "CHECK_Whether_CLARIFICATION_IS_REALLY_NEEDED",
+    "FORM_MINIMUM_QUESTION",
+    "EXPLAIN_REASON",
+    "PRESERVE_SCOPE",
+    "WAIT_OR_PROCEED"
+  ],
+  "known_unknown_record":[
+    "known_facts_from_citizen",
+    "verified_facts",
+    "unverified_assertions",
+    "known_property_scope",
+    "known_date_scope",
+    "known_legal_issue",
+    "missing_material_input",
+    "non_material_unknowns"
+  ],
+  "clarification_priority":[
+    "PROPERTY_IDENTITY",
+    "TARGET_DATE",
+    "DOCUMENT_IDENTITY",
+    "REQUESTED_OUTCOME",
+    "LEGAL_ISSUE",
+    "JURISDICTION",
+    "NON_MATERIAL_DETAIL"
+  ],
+  "dialogue_rules":[
+    "Ask only the highest-priority unresolved item that blocks the next material stage.",
+    "Do not ask for lower-priority details while a higher-priority blocker remains.",
+    "If the answer can proceed safely without clarification, proceed.",
+    "Explain why the requested information matters in plain language.",
+    "Do not expose internal engine names, confidence scores or chain-of-thought.",
+    "Preserve the citizen's original wording and assumptions as separate from verified facts.",
+    "Offer bounded response choices where they reduce ambiguity.",
+    "Do not pressure the citizen to provide unnecessary personal information.",
+    "When several independent questions are present, clarify them separately only where necessary."
+  ],
+  "response_modes":[
+    "PROCEED_WITHOUT_CLARIFICATION",
+    "ONE_CLARIFICATION_QUESTION",
+    "BOUNDED_CHOICE",
+    "MULTI_PART_CLARIFICATION",
+    "EXPLAIN_INFORMATIONAL_LIMIT",
+    "REQUEST_DOCUMENT_IDENTITY",
+    "REQUEST_PROPERTY_IDENTIFIER",
+    "REQUEST_TARGET_DATE",
+    "REQUEST_SCOPE_CONFIRMATION"
+  ],
+  "dialogue_record":[
+    "dialogue_id",
+    "run_id",
+    "message_id",
+    "known_state",
+    "blocking_dependency",
+    "question_asked",
+    "reason_given",
+    "response_options",
+    "citizen_response",
+    "resulting_state",
+    "next_stage",
+    "timestamp"
+  ],
+  "hard_stops":[
+    "Never ask a clarification merely because more information would be interesting.",
+    "Never ask multiple questions when one answer would unblock the next material stage.",
+    "Never imply that an unverified citizen assertion is established.",
+    "Never reveal internal reasoning or confidence metrics.",
+    "Never silently change the citizen's requested scope."
+  ],
+  "output_contract":[
+    "dialogue_state",
+    "known",
+    "unknown",
+    "blocking_item",
+    "citizen_question",
+    "why_needed",
+    "response_options",
+    "next_stage"
+  ]
+}
