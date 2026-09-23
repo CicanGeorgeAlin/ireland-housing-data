@@ -1,0 +1,59 @@
+{
+  "schema_version":"0.1",
+  "status":"PARTIALLY_VERIFIED",
+  "verified_at":"2026-09-23",
+  "purpose":"Bind judicial propositions to specific judgments and prevent broad conclusions from case summaries.",
+  "cases":[
+    {
+      "case":"Reidy v The Governor and Company of Bank of Ireland [2023] IECA 212",
+      "source":"https://www.courts.ie/acc/alfresco/32580a19-5d68-457d-b29a-672d66d9470e/%5B2023%5D%20IECA%20212%20Reidy%20v.%20the%20Governor%20and%20Company%20of%20Bank%20of%20Ireland.pdf/pdf",
+      "propositions":[
+        {
+          "id":"CASE-REIDY-S31-001",
+          "statement":"Section 31 gives registered entries the statutory conclusive effect specified by the Act, subject to its exceptions and rectification framework.",
+          "scope":"Registered title",
+          "status":"EXTRACTED"
+        }
+      ]
+    },
+    {
+      "case":"Planetwhite Ltd v Hogan & Anor [2025] IEHC 378",
+      "source":"https://www.bailii.org/ie/cases/IEHC/2025/2025IEHC378.html",
+      "propositions":[
+        {
+          "id":"CASE-PLANETWHITE-S31-001",
+          "statement":"A registered owner's title under s.31 can be relied upon in possession proceedings, but the register is not automatically conclusive evidence of every term of the underlying transfer or assignment.",
+          "scope":"Registered title / possession",
+          "status":"EXTRACTED"
+        }
+      ]
+    },
+    {
+      "case":"McDonnell v McDonnell [2013] IEHC 395",
+      "source":"https://www.bailii.org/ie/cases/IEHC/2013/2013IEHC395.html",
+      "propositions":[
+        {
+          "id":"CASE-MCDONNELL-POSSESSION-001",
+          "statement":"Adverse possession/title by possession requires analysis of the claimant's actual possession and the applicable limitation law rather than simply relying on the passage of time.",
+          "scope":"Adverse possession",
+          "status":"PRELIMINARY_EXTRACTION_REQUIRES_FULL_JUDGMENT_AUDIT"
+        }
+      ]
+    },
+    {
+      "case":"O'Flaherty & Ors v Permanent TSB Public Ltd Company & Ors [2026] IEHC 74",
+      "source":"https://www.bailii.org/ie/cases/IEHC/2026/2026IEHC74.html",
+      "propositions":[
+        {
+          "id":"CASE-OFLAHERTY-MAP-001",
+          "statement":"A dispute concerning the correctness of a Land Registry map and the extent of registered folios may require factual and legal analysis beyond simply identifying the folio/map.",
+          "scope":"Boundary / registry map",
+          "status":"EXTRACTED_WITH_FACTUAL_LIMITS"
+        }
+      ]
+    }
+  ],
+  "judicial_rule":"Every public case-law proposition must retain its case, court, date, issue and factual scope.",
+  "remaining":"Full judgment audit and additional primary authorities for possessory title and boundaries.",
+  "publication_gate":"NOT_READY"
+}
