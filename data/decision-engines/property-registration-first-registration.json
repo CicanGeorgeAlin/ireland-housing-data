@@ -1,0 +1,93 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-registration-first-registration",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "purpose":"Classify and route questions about bringing land into the registered title system without treating an application route as proof that registration will be granted.",
+  "classification_inputs":[
+    "registered_or_unregistered_status",
+    "applicant_interest",
+    "root_of_title",
+    "possession_basis_if_any",
+    "title_documents_available",
+    "property_identifier",
+    "map_or_plan_available",
+    "transaction_or_event_trigger",
+    "historical_title_context"
+  ],
+  "routes":[
+    {
+      "id":"REGISTERED_PROPERTY",
+      "condition":"Property is already registered",
+      "next":"CURRENT_REGISTERED_TITLE_ROUTE"
+    },
+    {
+      "id":"VOLUNTARY_FIRST_REGISTRATION",
+      "condition":"Unregistered property with a qualifying title and applicable first-registration route",
+      "next":"FIRST_REGISTRATION_APPLICATION"
+    },
+    {
+      "id":"COMPULSORY_FIRST_REGISTRATION",
+      "condition":"A transaction or statutory circumstance triggers compulsory registration",
+      "next":"COMPULSORY_REGISTRATION_CHECK"
+    },
+    {
+      "id":"POSSESSORY_TITLE",
+      "condition":"Applicant relies on possession rather than documentary title",
+      "next":"POSSESSORY_TITLE_ROUTE"
+    },
+    {
+      "id":"INSUFFICIENT_FACTS",
+      "condition":"Registration status or title basis cannot be established",
+      "next":"OFFICIAL_RECORDS_AND_TITLE_EVIDENCE_REQUIRED"
+    }
+  ],
+  "workflow":[
+    "CLASSIFY_REGISTRATION_STATUS",
+    "IDENTIFY_APPLICANT_INTEREST",
+    "IDENTIFY_TITLE_BASIS",
+    "CHECK_TRANSACTION_OR_STATUTORY_TRIGGER",
+    "SELECT_TAILTE_ROUTE",
+    "CHECK_REQUIRED_DOCUMENTS",
+    "CHECK_MAP_PLAN_REQUIREMENTS",
+    "CHECK_CURRENT_LEGAL_RULES",
+    "CHECK_HISTORICAL_RULES_IF_RELEVANT",
+    "EVIDENCE_GATE",
+    "ANSWER"
+  ],
+  "evidence_requirements":[
+    "property_identifier",
+    "registration_search_or_other authoritative status evidence",
+    "title_documents where applicable",
+    "appropriate map_or_plan",
+    "applicant_interest evidence",
+    "historical documents where historical title matters"
+  ],
+  "legal_distinctions":[
+    "First registration is a registration procedure, not automatic proof that the applicant has good title.",
+    "Possessory title is distinct from documentary title and has its own statutory and procedural requirements.",
+    "Compulsory registration is distinct from voluntary first registration.",
+    "Registration outcome and underlying title merits are separate questions."
+  ],
+  "official_routes":[
+    "Tailte Éireann first registration services",
+    "Land Registry forms and rules",
+    "LandDirect property search"
+  ],
+  "guardrails":[
+    "Never infer registration status without evidence.",
+    "Never promise registration outcome.",
+    "Never convert possession alone into ownership.",
+    "Never use a current form as proof of historical legal requirements without date checking.",
+    "Property-specific conclusions require verified evidence."
+  ],
+  "result_states":[
+    "REGISTERED_PROPERTY_ROUTE",
+    "FIRST_REGISTRATION_ROUTE",
+    "COMPULSORY_REGISTRATION_ROUTE",
+    "POSSESSORY_TITLE_ROUTE",
+    "EVIDENCE_REQUIRED",
+    "HISTORICAL_RESEARCH_REQUIRED",
+    "PROFESSIONAL_REVIEW_REQUIRED",
+    "NOT_DETERMINABLE"
+  ]
+}
