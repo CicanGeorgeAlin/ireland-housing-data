@@ -1,0 +1,41 @@
+{
+  "schema_version":"0.1",
+  "status":"PARTIALLY_VERIFIED",
+  "verified_at":"2026-09-23",
+  "purpose":"Add current primary Irish judgments located in the latest case-law research pass and map their precise evidential limits.",
+  "new_authorities":[
+    {
+      "case":"Planetwhite Ltd v Hogan & Anor [2025] IEHC 378",
+      "court":"High Court on Circuit Appeal",
+      "source":"https://www.bailii.org/ie/cases/IEHC/2025/2025IEHC378.html",
+      "status":"PRIMARY_JUDGMENT_REVIEWED",
+      "relevance":"Section 31 applied to a registered owner seeking possession; judgment distinguishes conclusive registered title from evidence of the terms of an underlying transfer."
+    }
+  ],
+  "linked_authorities":[
+    {
+      "case":"Fannon v Ulster Bank [2024] IECA 51",
+      "status":"PRIMARY_AUTHORITY_REFERENCED_IN_PLANETWHITE",
+      "relevance":"Section 31 does not make the register conclusive evidence of the terms of an underlying transfer or assignment."
+    },
+    {
+      "case":"Tanager DAC v Kane [2018] IECA 352",
+      "status":"PRIMARY_AUTHORITY_REFERENCED_IN_PLANETWHITE",
+      "relevance":"Discussed the registered register as an 'iron curtain' and the curative effect of registration."
+    }
+  ],
+  "verified_interpretive_points":[
+    "Planetwhite states that s.31 applies to a registered owner seeking possession even though that owner was not in possession.",
+    "The judgment distinguishes a registered owner's title from the evidential question of the detailed terms of an underlying transfer or assignment.",
+    "Section 72(1)(j) does not create a legal right of occupation merely because a person is physically occupying registered land; an existing legal right must be established.",
+    "A registered-title proposition must still be analysed alongside overriding interests, burdens and the specific pleadings/evidence in a dispute."
+  ],
+  "case_law_limits":[
+    "Planetwhite is a High Court judgment and does not replace Court of Appeal or Supreme Court authority.",
+    "Its possession facts are specific and must not be generalized to every occupier dispute.",
+    "The judgment does not complete the separate registry-map/physical-boundary case-law search.",
+    "No individual property conclusion is drawn."
+  ],
+  "publication_effect":"Strengthens PROP-PROPERTY-TITLE-001 case-law support but does not by itself move any proposition to publication-ready.",
+  "publication_gate":"NOT_READY"
+}
