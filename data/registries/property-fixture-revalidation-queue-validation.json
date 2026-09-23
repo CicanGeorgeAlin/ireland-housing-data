@@ -1,0 +1,96 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Validate that every active property fixture revalidation queue item has complete dependency, impact, historical and closure information before revalidation proceeds.",
+  "input_contract": [
+    "queue_id",
+    "impact_event_id",
+    "fixture_id",
+    "dependency_registry",
+    "impact_event",
+    "revalidation_queue",
+    "historical_validation_runs"
+  ],
+  "validation_sequence": [
+    "LOAD_QUEUE_ITEM",
+    "VERIFY_IMPACT_EVENT",
+    "VERIFY_FIXTURE_REGISTRY_STATE",
+    "VERIFY_DEPENDENCY_MAP",
+    "VERIFY_AFFECTED_TESTS",
+    "VERIFY_AFFECTED_PATHWAYS",
+    "VERIFY_AFFECTED_PROPOSITIONS",
+    "VERIFY_HISTORICAL_IMMUTABILITY",
+    "VERIFY_REQUIRED_ACTIONS",
+    "VERIFY_CLOSURE_GATE",
+    "VERIFY_PUBLICATION_SEPARATION",
+    "RECORD_QUEUE_VALIDATION"
+  ],
+  "checks": [
+    {
+      "check_id": "PFRQ-001",
+      "name": "Queue identity",
+      "requirement": "Queue item must reference an existing impact event and fixture.",
+      "failure_status": "BLOCKED"
+    },
+    {
+      "check_id": "PFRQ-002",
+      "name": "Dependency completeness",
+      "requirement": "All required dependent tests, runs, pathways and propositions must be represented.",
+      "failure_status": "BLOCKED"
+    },
+    {
+      "check_id": "PFRQ-003",
+      "name": "Historical preservation",
+      "requirement": "Referenced historical validation runs remain immutable.",
+      "failure_status": "BLOCKED"
+    },
+    {
+      "check_id": "PFRQ-004",
+      "name": "Action completeness",
+      "requirement": "Required revalidation actions must be explicit.",
+      "failure_status": "REVIEW_REQUIRED"
+    },
+    {
+      "check_id": "PFRQ-005",
+      "name": "Closure gate",
+      "requirement": "Closure conditions must include new validation evidence and impact-event linkage.",
+      "failure_status": "REVALIDATION_REQUIRED"
+    },
+    {
+      "check_id": "PFRQ-006",
+      "name": "Publication separation",
+      "requirement": "Queue completion must not automatically publish or upgrade a legal answer.",
+      "failure_status": "BLOCKED"
+    }
+  ],
+  "result_states": [
+    "PASSED",
+    "PASSED_WITH_WARNINGS",
+    "REVALIDATION_REQUIRED",
+    "REVIEW_REQUIRED",
+    "BLOCKED"
+  ],
+  "example_result": {
+    "validation_id": "PFRQ-VAL-001",
+    "queue_id": "PF-REVAL-QUEUE-001",
+    "result": "PASSED_WITH_WARNINGS",
+    "checks": {
+      "PFRQ-001": "PASS",
+      "PFRQ-002": "PASS",
+      "PFRQ-003": "PASS",
+      "PFRQ-004": "PASS",
+      "PFRQ-005": "PENDING_NEW_VALIDATION",
+      "PFRQ-006": "PASS"
+    },
+    "historical_runs_immutable": true,
+    "publication_ready": false,
+    "example_only": true
+  },
+  "guardrails": [
+    "This validates queue integrity, not Irish property law.",
+    "Queue validation cannot create live property evidence.",
+    "A synthetic fixture remains synthetic after queue validation.",
+    "Historical validation results cannot be rewritten.",
+    "Legal-source and publication verification remain separate gates."
+  ]
+}
