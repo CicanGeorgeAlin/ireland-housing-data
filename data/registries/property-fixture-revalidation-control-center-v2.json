@@ -1,0 +1,47 @@
+{
+  "schema_version": "0.2",
+  "status": "STRUCTURAL",
+  "purpose": "Integrate the controlled fixture admission stage into the authoritative property fixture revalidation control chain so the next actionable gate is visible in one place.",
+  "control_center_id": "PF-REVALIDATION-CONTROL-002",
+  "updated_at": "2026-09-23",
+  "previous_control_center": "PF-REVALIDATION-CONTROL-001",
+  "linked_records": {
+    "candidate_intake_contract": "data/tests/property-fixture-candidate-intake.json",
+    "candidate_intake_status": "data/registries/property-fixture-candidate-intake-status.json",
+    "admission_gate": "data/tests/property-fixture-admission-gate.json",
+    "admission_gate_status": "data/registries/property-fixture-admission-gate-status.json",
+    "revalidation_execution_plan": "data/tests/property-fixture-revalidation-execution-plan.json",
+    "revalidation_blocker": "PF-BLOCKER-001",
+    "closure_readiness": "data/tests/property-fixture-governance-closure-readiness.json"
+  },
+  "current_state": {
+    "candidate_intake": "NOT_SUBMITTED",
+    "admission_gate": "BLOCKED",
+    "revalidation": "BLOCKED",
+    "closure": "NOT_READY",
+    "technical_governance": "PASSED",
+    "legal_source_verification": "PARTIAL",
+    "production_evidence": "PARTIAL",
+    "publication": "NOT_READY"
+  },
+  "next_action": {
+    "gate": "CANDIDATE_FIXTURE_SUBMISSION",
+    "required_action": "Submit an actual controlled fixture candidate for admission review.",
+    "after_gate": "ADMISSION_REVIEW",
+    "then": "CONTROLLED_DEPENDENT_REVALIDATION"
+  },
+  "state_transition_rules": [
+    "NOT_SUBMITTED -> PROPOSED only when an actual candidate fixture is submitted.",
+    "PROPOSED -> APPROVAL_PENDING only after required provenance/privacy/meaning checks are completed.",
+    "APPROVAL_PENDING -> APPROVED only when the admission gate conditions pass.",
+    "No admission state may be inferred from validation of the contract itself.",
+    "No dependent revalidation may execute before APPROVED."
+  ],
+  "guardrails": [
+    "No fixture content is invented.",
+    "Synthetic or source-derived fixture status remains explicit.",
+    "No live official property record is claimed.",
+    "No legal proposition is upgraded.",
+    "No publication decision is made."
+  ]
+}
