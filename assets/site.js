@@ -76,6 +76,15 @@
     return propositionMap.private_current;
   }
 
+  function apartmentState() {
+    const v=(state.new_apartment||'').toLowerCase();
+    if(!v) return 'UNKNOWN — construction/building-control evidence still required.';
+    if(v.includes('not sure') || v.includes('unknown')) return 'UNKNOWN — do not assume qualification.';
+    if(v.includes('yes')) return 'POSSIBLE QUALIFICATION — verify commencement notice / 7-day notice and statutory conditions.';
+    if(v.includes('no')) return 'NOT INDICATED — ordinary rule remains the candidate branch, subject to all other conditions.';
+    return 'UNKNOWN — use evidence rather than inference.';
+  }
+
   function renderDecision() {
     const box=document.getElementById('pathway-decision');
     if(!box) return;
@@ -85,8 +94,9 @@
     let html='<div class="kicker">Current pathway state</div><strong>'+escapeHtml(result.status)+'</strong><p>'+escapeHtml(result.message)+'</p>';
     if(time && result.status === 'PRIVATE_PATH'){
       const mapping=resolvePropositions(result,time);
+      const apartment=apartmentState();
       html+='<div class="decision-facts"><div><span>Tenancy generation</span><strong>'+escapeHtml(time.tenancyGeneration)+'</strong></div><div><span>Review period</span><strong>'+escapeHtml(time.reviewPeriod)+'</strong></div><div><span>Commencement check</span><strong>'+escapeHtml(time.commencementCheck ? 'REQUIRED' : 'NOT YET REQUIRED')+'</strong></div></div>';
-      html+='<div class="decision-evidence"><div class="kicker">Candidate legal propositions</div><p>'+escapeHtml(mapping.propositions.length ? mapping.propositions.join(' · ') : 'None loaded for this historical branch.')+'</p><div class="kicker">Evidence chain</div><p>'+escapeHtml(mapping.evidence.length ? mapping.evidence.join(' · ') : 'Historical evidence required.')+'</p><div class="kicker">Publication state</div><p>'+escapeHtml(mapping.route)+'</p><button type="button" id="show-law-button">SHOW ME THE LAW</button></div>';
+      html+='<div class="decision-evidence"><div class="kicker">Candidate legal propositions</div><p>'+escapeHtml(mapping.propositions.length ? mapping.propositions.join(' · ') : 'None loaded for this historical branch.')+'</p><div class="kicker">Evidence chain</div><p>'+escapeHtml(mapping.evidence.length ? mapping.evidence.join(' · ') : 'Historical evidence required.')+'</p><div class="kicker">Publication state</div><p>'+escapeHtml(mapping.route)+'</p><div class="kicker">New-apartment exception</div><p>'+escapeHtml(apartment)+'</p><button type="button" id="show-law-button">SHOW ME THE LAW</button></div>';
     }
     box.innerHTML=html;
     const lawButton=document.getElementById('show-law-button');
