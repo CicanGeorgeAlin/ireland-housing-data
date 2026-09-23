@@ -1,0 +1,42 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Preserve the chronological history of authoritative property fixture governance validation states without overwriting prior status records.",
+  "history_rules": [
+    "Each material status state receives a new immutable history entry.",
+    "Historical entries cannot be silently rewritten.",
+    "A new entry must identify the event or validation run that caused the state.",
+    "Technical status history is separate from legal-source history.",
+    "Technical status history is separate from publication history."
+  ],
+  "entries": [
+    {
+      "history_id": "PFGSVH-001",
+      "effective_at": "2026-09-23",
+      "status_record": "PFG-VALIDATION-STATUS-001",
+      "trigger": "PFGSV-RUN-001",
+      "technical_governance_status": "PASSED",
+      "active_fixture_revalidation": true,
+      "closure_status": "NOT_READY",
+      "legal_source_status": "PARTIAL",
+      "production_evidence_status": "PARTIAL",
+      "publication_status": "NOT_READY",
+      "superseded_by": null
+    }
+  ],
+  "transition_requirements": [
+    "VALIDATION_RUN_COMPLETED",
+    "STATUS_RECALCULATED",
+    "HISTORY_ENTRY_CREATED",
+    "PREVIOUS_ENTRY_PRESERVED",
+    "TRIGGER_RECORDED",
+    "LEGAL_AND_PUBLICATION_SEPARATION_CHECKED"
+  ],
+  "guardrails": [
+    "History is technical governance history only.",
+    "It does not establish Irish property-law correctness.",
+    "It does not establish live property facts.",
+    "It cannot authorize publication.",
+    "Historical states remain available even after later states are recorded."
+  ]
+}
