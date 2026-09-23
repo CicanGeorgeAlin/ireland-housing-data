@@ -1,0 +1,89 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-official-source-navigator-citation-resolver",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Resolve each material citizen-facing claim to the appropriate official source, provision, record, version/date and retrieval route.",
+  "core_principle":"CLAIM → AUTHORITY → EXACT SOURCE → VERSION/DATE → EVIDENCE OR PROVISION → OFFICIAL ROUTE",
+  "source_classes":[
+    "CONSTITUTION",
+    "ACT_OF_OIREACHTAS",
+    "STATUTORY_INSTRUMENT",
+    "EU_LAW",
+    "CASE_LAW",
+    "OFFICIAL_GUIDANCE",
+    "OFFICIAL_ADMINISTRATIVE_SOURCE",
+    "OFFICIAL_PROPERTY_RECORD",
+    "COURT_OR_PROCEDURE_SOURCE"
+  ],
+  "citation_targets":[
+    "legal_proposition",
+    "legal_condition_or_exception",
+    "property_record_fact",
+    "procedure",
+    "authority",
+    "deadline",
+    "evidence_limitation",
+    "official_retrieval_route"
+  ],
+  "resolution_sequence":[
+    "IDENTIFY_CLAIM",
+    "CLASSIFY_CLAIM_TYPE",
+    "SELECT_AUTHORITY_CLASS",
+    "SELECT_PRIMARY_OFFICIAL_SOURCE",
+    "IDENTIFY_EXACT_PROVISION_OR_RECORD",
+    "CHECK_VERSION_AND_DATE",
+    "CHECK_COMMENCEMENT_OR_TEMPORAL_SCOPE",
+    "LINK_SUPPORTING_CASE_OR_GUIDANCE_IF_NEEDED",
+    "LINK_OFFICIAL_RETRIEVAL_ROUTE",
+    "CHECK_SOURCE_ACCESS",
+    "CREATE_PUBLIC_CITATION"
+  ],
+  "source_rules":[
+    "Primary legal propositions should cite the applicable primary legislation or SI where available.",
+    "Case law supports only the proposition actually decided or reasoned in the relevant case.",
+    "Official guidance explains procedure or administration and must not be presented as legislation.",
+    "Property-specific facts require the relevant official property record or authorised official evidence route.",
+    "Current and historical claims require matching temporal source scope.",
+    "A source URL alone is not sufficient where the relevant provision, record or version must be identified.",
+    "If the official source is inaccessible or incomplete, the citation state must disclose that limitation."
+  ],
+  "property_route_examples":[
+    "Land Register current folio/title plan → Tailte Éireann/LandDirect",
+    "Filed Land Registry document → Tailte Éireann Rule 159 route where access entitlement exists",
+    "Registry of Deeds search/memorial → Tailte Éireann Registry of Deeds services",
+    "Legal rule → Irish Statute Book or other authoritative legal source"
+  ],
+  "citation_record":[
+    "citation_id",
+    "claim_id",
+    "claim_text",
+    "source_class",
+    "official_authority",
+    "source_reference",
+    "exact_provision_or_record",
+    "version_or_publication_date",
+    "commencement_or_temporal_scope",
+    "retrieval_route",
+    "access_limitation",
+    "verification_date",
+    "public_citation_text"
+  ],
+  "hard_stops":[
+    "Never cite a secondary source when an authoritative primary source is required and available.",
+    "Never cite a current consolidated source as proof of a historical version without temporal verification.",
+    "Never cite a general property page as proof of a property-specific fact.",
+    "Never invent a provision, record number, source date or retrieval route.",
+    "Never imply that a citation proves more than the cited source establishes."
+  ],
+  "output_contract":[
+    "claim_id",
+    "resolved_source",
+    "exact_support",
+    "temporal_scope",
+    "official_route",
+    "citation",
+    "limitations",
+    "verification_status"
+  ]
+}
