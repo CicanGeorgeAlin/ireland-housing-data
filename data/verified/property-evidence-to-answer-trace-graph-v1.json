@@ -1,0 +1,33 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-evidence-to-answer-trace-graph-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified traceability contract connecting citizen-facing answer components to the evidence and authority chain that supports them.",
+  "minimum_trace":"ANSWER → FACT/PROCEDURE → SOURCE → MATCH → LEGAL PROPOSITION WHERE APPLICABLE → QUALIFIERS → VERIFICATION EVENT",
+  "required_for_property_specific_answers":[
+    "property identifier",
+    "property match",
+    "date scope where material",
+    "supporting evidence",
+    "legal authority where a legal conclusion is stated",
+    "visible limitations"
+  ],
+  "required_for_deadlines":[
+    "governing provision",
+    "trigger event",
+    "verified trigger date",
+    "counting rule",
+    "calculated result",
+    "verification event"
+  ],
+  "required_for_procedure":[
+    "responsible authority",
+    "official route",
+    "function of that authority",
+    "official procedural source",
+    "access or submission conditions where material"
+  ],
+  "publication_rule":"A source citation without the intervening evidence/property/legal reasoning path is insufficient for a verified answer.",
+  "verification_boundary":"The trace graph proves provenance and completeness of reasoning paths; it does not independently establish the underlying property or legal facts."
+}
