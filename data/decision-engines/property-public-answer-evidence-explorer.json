@@ -1,0 +1,98 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-public-answer-evidence-explorer",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Present the evidence and legal-source basis of a published citizen-facing answer in an understandable layered view, without exposing internal reasoning or unsupported material.",
+  "explorer_sequence":[
+    "ANSWER",
+    "WHY_THIS_ANSWER",
+    "WHAT_THE_RECORD_SHOWS",
+    "WHAT_THE_LAW_SAYS",
+    "DATES_AND_VERSION",
+    "LIMITATIONS",
+    "WHO_HANDLES_NEXT_STEP",
+    "OFFICIAL_SOURCE"
+  ],
+  "layers":[
+    {
+      "layer":"ANSWER",
+      "purpose":"State the supported conclusion in plain language.",
+      "must_show":["answer","verification_state"]
+    },
+    {
+      "layer":"WHY_THIS_ANSWER",
+      "purpose":"Show the material evidence and authority supporting the conclusion without exposing hidden reasoning.",
+      "must_show":["supporting_facts","legal_propositions","source_links"]
+    },
+    {
+      "layer":"WHAT_THE_RECORD_SHOWS",
+      "purpose":"Distinguish observed official-record facts from interpretation.",
+      "must_show":["record_type","record_date","property_match","observed_fact","scope"]
+    },
+    {
+      "layer":"WHAT_THE_LAW_SAYS",
+      "purpose":"Identify the applicable legal source and proposition.",
+      "must_show":["act_or_rule","provision","version_or_commencement","legal_proposition"]
+    },
+    {
+      "layer":"DATES_AND_VERSION",
+      "purpose":"Make temporal scope visible.",
+      "must_show":["target_date","event_date","registration_date","source_version","verification_date"]
+    },
+    {
+      "layer":"LIMITATIONS",
+      "purpose":"Show what remains unestablished.",
+      "must_show":["missing_evidence","unresolved_conflict","scope_limitations"]
+    },
+    {
+      "layer":"NEXT_STEP",
+      "purpose":"Give the appropriate official route when action is required.",
+      "must_show":["authority","function","official_route","deadline_if_verified"]
+    }
+  ],
+  "display_rules":[
+    "Lead with the answer rather than the research machinery.",
+    "Show only material evidence needed to understand the answer.",
+    "Allow deeper source inspection through official-source references.",
+    "Keep factual observations visually distinct from legal propositions.",
+    "Display relevant dates when temporal scope matters.",
+    "Display limitations prominently enough that they cannot be mistaken for footnotes.",
+    "Do not expose hidden chain-of-thought or private reasoning.",
+    "Do not display an internal confidence score as a substitute for evidence status."
+  ],
+  "answer_status_labels":[
+    "VERIFIED",
+    "VERIFIED_WITH_LIMITATIONS",
+    "PARTIALLY_DETERMINED",
+    "EVIDENCE_INCOMPLETE",
+    "LEGAL_ANALYSIS_INCOMPLETE",
+    "NOT_DETERMINABLE"
+  ],
+  "source_display_contract":[
+    "source_name",
+    "source_type",
+    "authority",
+    "relevant_provision_or_record",
+    "version_or_date",
+    "official_route"
+  ],
+  "hard_stops":[
+    "Never imply that a citation alone proves the conclusion.",
+    "Never hide a material limitation behind a collapsed or secondary interface.",
+    "Never expose internal reasoning traces that are not appropriate for public presentation.",
+    "Never substitute an internal score for the underlying source and evidence.",
+    "Never show an official route as if it were a completed action."
+  ],
+  "output_contract":[
+    "answer_snapshot_id",
+    "answer",
+    "verification_state",
+    "supporting_evidence",
+    "legal_sources",
+    "dates",
+    "limitations",
+    "next_step",
+    "official_sources"
+  ]
+}
