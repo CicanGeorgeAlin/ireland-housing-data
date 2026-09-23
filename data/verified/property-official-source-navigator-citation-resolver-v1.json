@@ -1,0 +1,40 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-official-source-navigator-citation-resolver-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for resolving material answer claims to authoritative Irish legal, property-record and official procedural sources.",
+  "official_sources_verified":[
+    {
+      "authority":"Tailte Éireann",
+      "source":"Property Registration Services",
+      "supports":[
+        "Land Register and Registry of Deeds functions",
+        "LandDirect property search",
+        "property registration routes"
+      ]
+    },
+    {
+      "authority":"Tailte Éireann",
+      "source":"Search and Copy Services",
+      "supports":[
+        "folios and maps as public records",
+        "copy folio/title plan route",
+        "filed Instrument access restrictions",
+        "Registry of Deeds search and copy distinctions"
+      ]
+    },
+    {
+      "authority":"Tailte Éireann",
+      "source":"LR Rule 159: Inspection of filed documents and obtaining copies thereof",
+      "supports":[
+        "Rule 159 access framework for filed documents"
+      ]
+    }
+  ],
+  "citation_rule":"Each material public claim must point to the source that actually establishes or explains that claim.",
+  "property_fact_rule":"A general Tailte Éireann page may establish the official route, but a property-specific fact requires the relevant property-specific official record.",
+  "historical_rule":"Historical claims require a source whose temporal scope matches the target date or period.",
+  "procedure_rule":"Official procedural guidance may establish how to access or apply for a service, but does not replace the substantive legal source.",
+  "verification_boundary":"The citation resolver establishes source linkage and scope; it does not independently establish the underlying legal or property conclusion."
+}
