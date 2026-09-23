@@ -1,0 +1,22 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-deadline-calculation-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "scope":"Deadline calculation architecture for Irish property-related procedures and disputes. It does not calculate an individual deadline without the governing provision and trigger facts.",
+  "last_verified":"2026-09-24",
+  "official_source_basis":[
+    "Interpretation Act 2005",
+    "Irish Statute Book",
+    "Applicable property legislation and statutory instruments",
+    "Applicable court rules",
+    "Official procedural sources where relevant"
+  ],
+  "verified_points":[
+    "Interpretation Act 2005 section 18(h) contains general inclusion rules for periods expressed to begin/end on or from a particular day, subject to the governing enactment.",
+    "The Interpretation Act 2005 Schedule defines calendar month, week, week-day, public holiday and working day.",
+    "Interpretation Act 2005 section 16 contains general commencement rules for Acts and statutory instruments, subject to its exceptions."
+  ],
+  "core_rule":"TRIGGER → PROVISION → TIME UNIT → COUNTING RULE → EXCLUSIONS → EXTENSIONS → CALCULATION → VALIDATION",
+  "critical_boundary":"The general Interpretation Act rules do not replace a specific deadline rule in the governing legislation or court rules.",
+  "publication_gate":"GENERAL_INFORMATION_ONLY"
+}
