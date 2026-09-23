@@ -1,0 +1,60 @@
+{
+  "id":"estate-property-registration",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"STRUCTURAL_REGISTRATION_ENGINE",
+  "question":"How is property transferred from a deceased person's estate into the entitled person's registered ownership?",
+  "pipeline":[
+    "identify-property-and-folio",
+    "identify-deceased-registered-owner",
+    "classify-joint-tenancy_or_tenancy-in-common",
+    "identify-will_or_intestacy",
+    "identify-probate_or_administration",
+    "identify-personal-representative",
+    "identify-person-entitled",
+    "identify-transfer_or-devolution-instrument",
+    "check-mortgages-charges-easements-and-other-entries",
+    "identify-tailte-registration-form_and-route",
+    "verify-post-registration-folio",
+    "check-tax-and-clearance-issues",
+    "preserve-historical-record"
+  ],
+  "registration_events":[
+    "SURVIVING_JOINT_TENANT_REGISTRATION",
+    "TRANSMISSION_ON_DEATH",
+    "ASSENT_OR_TRANSFER_BY_PERSONAL_REPRESENTATIVE",
+    "REGISTRATION_OF_DEVOLUTION",
+    "SUBSEQUENT_TRANSFER"
+  ],
+  "evidence":[
+    "folio",
+    "proof_of_death",
+    "grant_of_probate",
+    "letters_of_administration",
+    "will_where_relevant",
+    "personal_representative_documentation",
+    "transmission_or_transfer_instrument",
+    "tax_or_clearance_evidence_where_required"
+  ],
+  "guardrails":[
+    "Do not treat probate as itself changing the Land Register.",
+    "Do not treat a will as itself registering the beneficiary as owner.",
+    "Identify whether survivorship or estate transmission applies before selecting the registration route.",
+    "Do not assume the estate has unencumbered title.",
+    "Historical registrations must preserve the law and forms applicable at the relevant date."
+  ],
+  "result_types":[
+    "SURVIVORSHIP_REGISTRATION_ROUTE",
+    "ESTATE_TRANSMISSION_ROUTE",
+    "TRANSFER_BY_PERSONAL_REPRESENTATIVE_ROUTE",
+    "REGISTRATION_EVIDENCE_REQUIRED",
+    "HISTORICAL_REGISTRATION_RESEARCH_REQUIRED",
+    "NOT_DETERMINABLE"
+  ],
+  "official_source_families":[
+    "Tailte Éireann Land Registry forms and rules",
+    "Succession Act 1965",
+    "Probate / Courts Service procedures",
+    "Revenue CAT guidance"
+  ]
+}
