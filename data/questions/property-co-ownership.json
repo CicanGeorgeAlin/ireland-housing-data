@@ -1,0 +1,55 @@
+{
+  "id":"property-co-ownership",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "question":"How is this property co-owned?",
+  "pipeline":[
+    "identify-property",
+    "retrieve-current-title-evidence",
+    "identify-registered-proprietors",
+    "classify-joint-tenancy-or-tenancy-in-common",
+    "identify-shares-where-applicable",
+    "check-severance-status",
+    "check-mortgages-and-other-interests",
+    "check-survivorship_or_succession_issue",
+    "identify-dispute-or-sale-options",
+    "show-evidence",
+    "official-route"
+  ],
+  "result_types":[
+    "JOINT_TENANCY_IDENTIFIED",
+    "TENANCY_IN_COMMON_IDENTIFIED",
+    "SHARES_IDENTIFIED",
+    "CO_OWNERSHIP_NOT_DETERMINABLE",
+    "SEVERANCE_REQUIRES_REVIEW",
+    "HISTORICAL_CO_OWNERSHIP_RESEARCH_REQUIRED",
+    "COURT_ORDER_ROUTE_IDENTIFIED"
+  ],
+  "legal_rules":[
+    {
+      "source":"Land and Conveyancing Law Reform Act 2009, section 30",
+      "effect":"A joint tenancy has specific statutory rules concerning unilateral severance and consent, subject to the court's powers."
+    },
+    {
+      "source":"Land and Conveyancing Law Reform Act 2009, section 31",
+      "effect":"A person with an estate or interest in co-owned land may apply to court for orders including partition, sale, accounting adjustments and, in specified circumstances, dispensing with consent to severance."
+    },
+    {
+      "source":"Land Registration Rules 2012, Rules 48 and 63",
+      "effect":"Registered tenants in common are recorded with their specified undivided shares."
+    }
+  ],
+  "guardrails":[
+    "Do not assume equal shares merely because two people are registered.",
+    "Do not assume joint tenancy merely because two names appear on a title.",
+    "Do not treat occupation as proof of ownership share.",
+    "Do not assume death of one co-owner has the same legal effect under joint tenancy and tenancy in common.",
+    "Do not calculate beneficial ownership from the folio alone where a trust or equitable-interest issue exists.",
+    "Do not state that a co-owner can simply force a sale without checking the applicable statutory and court framework."
+  ],
+  "source_ids":[
+    "SRC-TE-COOWNERSHIP",
+    "SRC-LCLRA-2009-SS30-31",
+    "SRC-TE-RULE48-63"
+  ]
+}
