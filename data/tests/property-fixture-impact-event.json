@@ -1,0 +1,94 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Record a versioned, auditable event whenever a controlled property evidence fixture change affects dependent testing or validation state.",
+  "event_identity": {
+    "required": [
+      "impact_event_id",
+      "fixture_id",
+      "fixture_version_before",
+      "fixture_version_after",
+      "change_type",
+      "recorded_at"
+    ]
+  },
+  "change_types": [
+    "CORRECTION",
+    "PROVENANCE_CHANGE",
+    "PRIVACY_CHANGE",
+    "SOURCE_UPDATE",
+    "SUPERSESSION",
+    "REJECTION",
+    "RESTORATION"
+  ],
+  "required_impact_fields": [
+    "dependency_registry_version",
+    "impact_status",
+    "affected_test_case_ids",
+    "affected_validation_run_ids",
+    "affected_pathway_ids",
+    "affected_proposition_ids",
+    "new_validation_required",
+    "historical_runs_unchanged"
+  ],
+  "lifecycle": [
+    "DETECTED",
+    "CLASSIFIED",
+    "IMPACT_MAPPED",
+    "REVALIDATION_QUEUED",
+    "REVALIDATED",
+    "CLOSED"
+  ],
+  "event_rules": [
+    "Every material fixture change receives a unique impact_event_id.",
+    "The event records both the previous and new fixture version.",
+    "Impact is calculated from the dependency registry rather than inferred from memory.",
+    "Historical validation runs are referenced but never overwritten.",
+    "A revalidation event must reference the impact event that caused it.",
+    "Closing an impact event requires all required dependent revalidation work to be resolved or explicitly blocked.",
+    "A fixture impact event cannot itself change a legal proposition or establish live property facts."
+  ],
+  "privacy": {
+    "default": "MINIMISE",
+    "prohibited": [
+      "unnecessary_personal_data",
+      "real_property_owner_identity_when_not_required",
+      "full_address_when_not_required",
+      "unredacted_fixture_contents"
+    ]
+  },
+  "example_event": {
+    "impact_event_id": "FIXTURE-IMPACT-EVENT-001",
+    "fixture_id": "FIXTURE-FOLIO-SYNTHETIC-001",
+    "fixture_version_before": "1.0",
+    "fixture_version_after": "1.1",
+    "change_type": "CORRECTION",
+    "recorded_at": "2026-09-23",
+    "dependency_registry_version": "0.1",
+    "impact_status": "REVALIDATION_REQUIRED",
+    "affected_test_case_ids": [
+      "PAE-001",
+      "PAE-007"
+    ],
+    "affected_validation_run_ids": [
+      "RUN-PROPERTY-TITLE-SYNTHETIC-E2E-001"
+    ],
+    "affected_pathway_ids": [
+      "property-title-live"
+    ],
+    "affected_proposition_ids": [
+      "PROP-PROPERTY-TITLE-001",
+      "PROP-PROPERTY-REGISTRATION-003"
+    ],
+    "new_validation_required": true,
+    "historical_runs_unchanged": true,
+    "lifecycle": "REVALIDATION_QUEUED",
+    "example_only": true
+  },
+  "guardrails": [
+    "The example event is synthetic and does not describe a real property.",
+    "A fixture impact event is technical governance evidence, not legal evidence.",
+    "No impact event may claim that an official property record was retrieved unless an actual retrieval event exists.",
+    "No impact event may silently upgrade a pathway to publication-ready."
+  ]
+}
