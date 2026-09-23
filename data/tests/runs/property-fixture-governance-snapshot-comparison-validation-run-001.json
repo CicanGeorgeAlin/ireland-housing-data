@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1",
+  "run_id": "PFGSCV-RUN-001",
+  "contract": "data/tests/property-fixture-governance-snapshot-comparison-validation.json",
+  "execution_mode": "STATIC_CONTRACT_VALIDATION",
+  "executed_at": "2026-09-23",
+  "status": "PASSED",
+  "checks": [
+    {"check_id": "PFGSCV-001", "result": "PASS"},
+    {"check_id": "PFGSCV-002", "result": "PASS"},
+    {"check_id": "PFGSCV-003", "result": "PASS"},
+    {"check_id": "PFGSCV-004", "result": "PASS"},
+    {"check_id": "PFGSCV-005", "result": "PASS"},
+    {"check_id": "PFGSCV-006", "result": "PASS"},
+    {"check_id": "PFGSCV-007", "result": "PASS"}
+  ],
+  "summary": {
+    "comparison_contract_valid": true,
+    "historical_integrity": true,
+    "legal_source_status": "UNCHANGED",
+    "production_evidence_status": "UNCHANGED",
+    "publication_status": "UNCHANGED"
+  },
+  "guardrails": [
+    "Static validation only.",
+    "No live official property record was retrieved.",
+    "No legal-source verification was performed by this run.",
+    "No production evidence or publication status was upgraded."
+  ]
+}
