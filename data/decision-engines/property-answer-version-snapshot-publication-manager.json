@@ -1,0 +1,102 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-answer-version-snapshot-publication-manager",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Create immutable, traceable versions of published property answers, preserving the evidence, legal versions, source states, review result and predecessor relationship that supported each publication.",
+  "publication_sequence":[
+    "CASE_FILE_READY",
+    "QUALITY_GATE_PASSED",
+    "COLLECT_SOURCE_VERSIONS",
+    "COLLECT_EVIDENCE_SNAPSHOT",
+    "COLLECT_LEGAL_VERSION",
+    "COLLECT_PROCEDURE_AND_DEADLINE_STATE",
+    "COLLECT_TRACE_GRAPH",
+    "COLLECT_AUDIT_STATE",
+    "CREATE_ANSWER_SNAPSHOT",
+    "ASSIGN_SNAPSHOT_ID",
+    "LINK_PREDECESSOR_IF_ANY",
+    "PUBLISH_IMMUTABLE_SNAPSHOT",
+    "REGISTER_REVERIFICATION_TRIGGERS"
+  ],
+  "snapshot_types":[
+    "VERIFIED_ANSWER",
+    "VERIFIED_WITH_LIMITATIONS",
+    "PARTIALLY_DETERMINED",
+    "EVIDENCE_INCOMPLETE",
+    "LEGAL_ANALYSIS_INCOMPLETE",
+    "NOT_DETERMINABLE"
+  ],
+  "immutable_fields":[
+    "snapshot_id",
+    "published_at",
+    "question",
+    "answer",
+    "property_identity",
+    "date_scope",
+    "evidence_references",
+    "source_versions",
+    "legal_provisions_and_versions",
+    "conditions_exceptions",
+    "procedure_state",
+    "deadline_state",
+    "trace_graph_reference",
+    "audit_reference",
+    "quality_gate_result",
+    "predecessor_snapshot_id"
+  ],
+  "snapshot_rules":[
+    "Published snapshots are immutable.",
+    "A changed answer creates a new snapshot rather than silently overwriting the old one.",
+    "A new snapshot retains a predecessor link where it revises an earlier answer.",
+    "Historical snapshots remain associated with their original target date and source/legal versions.",
+    "Current answer snapshots can be flagged for reverification without altering their historical publication record.",
+    "A snapshot must preserve enough source/version metadata to reconstruct why the answer was published."
+  ],
+  "revision_triggers":[
+    "legal_change_impact",
+    "source_freshness_change",
+    "property_record_change",
+    "new_evidence",
+    "conflict_resolution",
+    "procedure_change",
+    "deadline_change",
+    "quality_gate_revision"
+  ],
+  "snapshot_states":[
+    "DRAFT",
+    "READY_TO_PUBLISH",
+    "PUBLISHED",
+    "SUPERSEDED",
+    "REQUIRES_REVERIFICATION",
+    "WITHDRAWN_FOR_MATERIAL_ERROR"
+  ],
+  "withdrawal_rules":[
+    "Withdrawal requires a recorded reason and verification event.",
+    "Withdrawal does not erase the historical existence of the published snapshot.",
+    "A corrected answer must receive a new snapshot identity."
+  ],
+  "hard_stops":[
+    "Never overwrite a published answer in place.",
+    "Never change the source/legal version attached to a published snapshot without creating a new snapshot.",
+    "Never mark a historical snapshot current merely because it remains visible.",
+    "Never publish without a passed quality gate.",
+    "Never claim a snapshot is verified if its required provenance is incomplete."
+  ],
+  "output_contract":[
+    "snapshot_id",
+    "status",
+    "published_at",
+    "answer",
+    "evidence_state",
+    "source_versions",
+    "legal_versions",
+    "procedure_state",
+    "deadline_state",
+    "trace_reference",
+    "audit_reference",
+    "quality_gate",
+    "predecessor",
+    "reverification_triggers"
+  ]
+}
