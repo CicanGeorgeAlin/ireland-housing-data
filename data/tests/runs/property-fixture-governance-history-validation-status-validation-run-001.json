@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1",
+  "run_id": "PFGHVS-RUN-001",
+  "contract": "data/tests/property-fixture-governance-history-validation-status-validation.json",
+  "execution_mode": "STATIC_CONTRACT_VALIDATION",
+  "executed_at": "2026-09-23",
+  "status": "PASSED",
+  "checks": [
+    {"check_id":"PFGHVS-001","result":"PASS"},
+    {"check_id":"PFGHVS-002","result":"PASS"},
+    {"check_id":"PFGHVS-003","result":"PASS"},
+    {"check_id":"PFGHVS-004","result":"PASS"},
+    {"check_id":"PFGHVS-005","result":"PASS"},
+    {"check_id":"PFGHVS-006","result":"PASS"},
+    {"check_id":"PFGHVS-007","result":"PASS"},
+    {"check_id":"PFGHVS-008","result":"PASS"}
+  ],
+  "summary": {
+    "status_record_valid": true,
+    "technical_history_governance": "PASSED",
+    "historical_integrity": "PASSED",
+    "active_fixture_revalidation": true,
+    "closure_status": "NOT_READY",
+    "legal_source_status": "UNCHANGED",
+    "production_evidence_status": "UNCHANGED",
+    "publication_status": "UNCHANGED"
+  },
+  "guardrails": [
+    "Static validation only.",
+    "No live official property record was retrieved.",
+    "No Irish property-law proposition was independently verified by this run.",
+    "No publication status was upgraded."
+  ]
+}
