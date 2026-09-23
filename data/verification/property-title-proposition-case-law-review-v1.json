@@ -1,0 +1,52 @@
+{
+  "schema_version":"0.1",
+  "status":"PARTIALLY_VERIFIED",
+  "verified_at":"2026-09-23",
+  "purpose":"Record case-law review status separately for each property-title proposition and prevent secondary summaries from being treated as judicial authority.",
+  "propositions":[
+    {
+      "id":"PROP-PROPERTY-TITLE-001",
+      "issue":"Conclusive effect of registered title under Registration of Title Act 1964 s.31",
+      "cases":[
+        {
+          "name":"Reidy v The Governor and Company of Bank of Ireland [2023] IECA 212",
+          "court":"Court of Appeal",
+          "source":"https://www.courts.ie/acc/alfresco/32580a19-5d68-457d-b29a-672d66d9470e/%5B2023%5D%20IECA%20212%20Reidy%20v.%20the%20Governor%20and%20Company%20of%20Bank%20of%20Ireland.pdf/pdf",
+          "status":"PRIMARY_JUDGMENT_IDENTIFIED",
+          "use":"Interpretation of s.31 and statutory registration framework."
+        }
+      ],
+      "status":"CASE_LAW_REVIEW_STARTED"
+    },
+    {
+      "id":"PROP-PROPERTY-MAP-002",
+      "issue":"Registry map, boundaries and extent",
+      "cases":[
+        {
+          "status":"REQUIRES_DEDICATED_CASE_LAW_SEARCH",
+          "reason":"Boundary/registry-map disputes involve fact-specific evidence and must not be inferred from s.31 cases alone."
+        }
+      ],
+      "status":"CASE_LAW_REVIEW_PENDING"
+    },
+    {
+      "id":"PROP-PROPERTY-REGISTRATION-003",
+      "issue":"Classes and effects of registered title",
+      "cases":[
+        {
+          "status":"REQUIRES_DEDICATED_CASE_LAW_SEARCH",
+          "reason":"Absolute, qualified and possessory title can raise different evidential and procedural questions."
+        }
+      ],
+      "status":"CASE_LAW_REVIEW_PENDING"
+    }
+  ],
+  "review_rules":[
+    "Primary judgments must be reviewed before being relied upon for a public legal proposition.",
+    "A case explains/interprets law; it does not silently amend legislation.",
+    "A case involving a different statutory provision or factual issue must not be generalized without analysis.",
+    "Case-law status is separate from statutory amendment/commencement status.",
+    "Unreviewed case-law gaps block publication of propositions that depend materially on judicial interpretation."
+  ],
+  "publication_gate":"NOT_READY"
+}
