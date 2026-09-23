@@ -180,6 +180,15 @@
         "property-legal-provision-resolver",
         "property-legal-conditions-exceptions-overrides"
       ]
+    },
+    {
+      "stage": "OFFICIAL_ROUTE_AND_AUTHORITY_RESOLUTION",
+      "routes": [
+        "property-official-route-authority-resolver",
+        "property-legal-procedure-remedy-resolver",
+        "property-evidence-retrieval-routing",
+        "property-deadline-calculation"
+      ]
     }
   ],
   "event_model": [
@@ -238,7 +247,8 @@
     "property-legal-proposition-authority-chain",
     "property-legal-conditions-exceptions-overrides",
     "property-legal-procedure-remedy-resolver",
-    "property-deadline-calculation"
+    "property-deadline-calculation",
+    "property-official-route-authority-resolver"
   ],
   "answer_sequence": [
     "QUESTION",
