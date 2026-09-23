@@ -1,0 +1,18 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-conditions-exceptions-overrides-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "scope":"Architecture for resolving qualifying conditions and interacting legal rules in Irish property questions.",
+  "last_verified":"2026-09-24",
+  "source_architecture":[
+    "Irish Statute Book",
+    "Registration of Title Act 1964",
+    "Land Registration Rules 2012 and amendments",
+    "Succession Act 1965",
+    "Relevant Irish case law",
+    "Official administrative guidance where applicable"
+  ],
+  "core_rule":"RULE → CONDITIONS → EXCEPTIONS → SAVINGS/TRANSITION → SPECIAL REGIME → PRIORITY → LEGAL EFFECT",
+  "critical_boundary":"A condition or exception must be supported by an authoritative source and applicable facts; it cannot be inferred merely because it seems plausible.",
+  "publication_gate":"GENERAL_INFORMATION_ONLY"
+}
