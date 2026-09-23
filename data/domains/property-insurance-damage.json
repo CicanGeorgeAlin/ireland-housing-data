@@ -1,0 +1,72 @@
+{
+  "id":"property-insurance-damage",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"STRUCTURAL_INSURANCE_DOMAIN",
+  "question":"Does insurance apply to this property damage, and what should happen next?",
+  "pipeline":[
+    "identify-property-and-insured-interest",
+    "identify-policy-and-policyholder",
+    "identify-event",
+    "identify-date-and-notification-window",
+    "identify-damage",
+    "identify-cause_evidence",
+    "identify-policy-cover-and-exclusions",
+    "identify-excess_and-limits",
+    "identify-OMC-landlord-owner-tenant roles",
+    "notify-insurer-or-broker",
+    "preserve-evidence",
+    "assess-claim-response",
+    "identify-complaint_or-dispute-route",
+    "identify-legal-route-if-separate"
+  ],
+  "event_types":[
+    "FIRE",
+    "FLOOD",
+    "WATER_INGRESS",
+    "STORM",
+    "IMPACT",
+    "THEFT",
+    "VANDALISM",
+    "ESCAPE_OF_WATER",
+    "STRUCTURAL_DAMAGE",
+    "DEFECT_REMEDIATION"
+  ],
+  "legal_distinctions":[
+    "insurance_cover_is_not_property_ownership",
+    "policy_cover_is_not_automatic_liability",
+    "an_insured_event_is_not_automatically_a_building_defect",
+    "an_OMC_policy_is_not_identical_to_an_individual_owner_policy",
+    "a claim decision is not automatically a final legal determination"
+  ],
+  "evidence":[
+    "policy_schedule",
+    "policy_wording",
+    "claim_reference",
+    "dated_photographs",
+    "inspection_reports",
+    "repair_invoices",
+    "contractor_reports",
+    "correspondence",
+    "OMC_records",
+    "landlord_records",
+    "building-control-and-planning records where relevant"
+  ],
+  "guardrails":[
+    "Do not state that an insurer must pay without analysing the applicable policy terms and facts.",
+    "Do not infer coverage from the name of an insurance product alone.",
+    "Do not advise destruction or disposal of damaged property before relevant evidence requirements are considered.",
+    "Do not confuse an insurer's claim decision with a court's determination of liability.",
+    "Where an insurance complaint route is relevant, identify the applicable formal complaints and external dispute mechanisms."
+  ],
+  "result_types":[
+    "POLICY_IDENTIFIED",
+    "COVER_REQUIRES_POLICY_REVIEW",
+    "CLAIM_ROUTE_IDENTIFIED",
+    "EXCLUSION_REQUIRES_REVIEW",
+    "EVIDENCE_REQUIRED",
+    "COMPLAINT_ROUTE_IDENTIFIED",
+    "SEPARATE_LEGAL_DISPUTE_REQUIRES_REVIEW",
+    "NOT_DETERMINABLE"
+  ]
+}
