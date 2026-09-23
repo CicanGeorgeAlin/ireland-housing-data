@@ -1,0 +1,62 @@
+{
+  "schema_version":"0.2",
+  "status":"SOURCE_VERIFIED_UPDATE_REQUIRED",
+  "verified_at":"2026-09-23",
+  "purpose":"Update the property-title legal audit to reflect the Irish Statute Book revised Registration of Title Act record updated to 18 June 2026.",
+  "current_revised_baseline":{
+    "source":"Irish Statute Book Revised Acts",
+    "act":"Registration of Title Act 1964",
+    "url":"https://www.irishstatutebook.ie/eli/isbc/1964_16.html",
+    "updated":"2026-06-18",
+    "current_effects_include":"Act No. 11 of 2026 and S.I. No. 269 of 2026"
+  },
+  "new_audit_observation":"The earlier verification package must not be treated as the final amendment inventory because the revised Act record contains effects through June 2026.",
+  "provisions":[
+    {
+      "provision":"s.31",
+      "current_source":"https://www.irishstatutebook.ie/eli/1964/act/16/section/31/enacted/en/html",
+      "status":"CORE_TEXT_VERIFIED",
+      "note":"The current statutory rule states the conclusiveness of the register while preserving court jurisdiction based on actual fraud or mistake."
+    },
+    {
+      "provision":"s.33",
+      "current_source":"https://www.irishstatutebook.ie/eli/1964/act/16/section/33/enacted/en/html",
+      "status":"CORE_TEXT_VERIFIED",
+      "note":"The enacted provision establishes absolute, qualified and possessory freehold title classes; current revised effects require final cross-check."
+    },
+    {
+      "provision":"s.49",
+      "current_source":"https://www.irishstatutebook.ie/eli/1964/act/16/section/49/enacted/en/html",
+      "status":"CORE_TEXT_VERIFIED",
+      "note":"Registered-land acquisition by possession is expressly linked to the Statute of Limitations and an application to the Registrar."
+    },
+    {
+      "provision":"ss.84-88",
+      "current_source":"https://www.irishstatutebook.ie/eli/1964/act/16/enacted/en/print.html",
+      "status":"CURRENT_BOUNDARY_FRAMEWORK_IDENTIFIED",
+      "note":"Section 85 states that, except as provided by the Act, the register/map description is not conclusive as to boundaries or extent."
+    }
+  ],
+  "additional_verified_effect":{
+    "provision":"s.25",
+    "source":"https://www.irishstatutebook.ie/eli/2009/act/27/section/128/enacted/en/html",
+    "finding":"The 2009 Act substituted s.25 concerning compulsory registration and the effect of failure to register where registration is compulsory.",
+    "status":"PRIMARY_SOURCE_VERIFIED"
+  },
+  "critical_update":{
+    "issue":"Prescription versus registered-land possession",
+    "finding":"The 2021 Act repealed ss.33-39 of the 2009 Act and preserved pending proceedings/applications, while amending s.49A of the 1964 Act. This does not by itself repeal the s.49 registered-land possession framework.",
+    "sources":[
+      "https://www.irishstatutebook.ie/eli/2021/act/35/section/6/enacted/en/html",
+      "https://www.irishstatutebook.ie/eli/2021/act/35/enacted/en/html"
+    ]
+  },
+  "audit_action":"Reconcile every user-facing property-title proposition against the June 2026 revised Act record before publication.",
+  "publication_gate":"NOT_READY",
+  "guardrails":[
+    "No individual property conclusion.",
+    "No live record retrieval claim.",
+    "Revised-law baseline does not replace provision-level amendment/commencement analysis.",
+    "The 2026 revised record must be treated as the current baseline for the final audit."
+  ]
+}
