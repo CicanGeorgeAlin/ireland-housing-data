@@ -1,0 +1,38 @@
+{
+  "id":"property-title-live",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"WEBSITE_PATHWAY_CONTRACT",
+  "question":"Who is registered as the owner of this property?",
+  "inputs":[
+    "property_address_or_identifier",
+    "folio_number_optional",
+    "date_scope"
+  ],
+  "pipeline":[
+    "identify-property",
+    "resolve-registration-status",
+    "retrieve-current-folio-evidence",
+    "identify-registered-owner",
+    "identify-registered-burdens-or-interests",
+    "check-date-scope",
+    "show-evidence",
+    "official-route"
+  ],
+  "answer_contract":"property-legal-answer",
+  "guardrails":[
+    "Address alone is not proof of ownership.",
+    "A current folio answer is date-sensitive.",
+    "A current folio does not automatically establish historical ownership.",
+    "Registered ownership does not answer planning, building-control or physical-boundary questions.",
+    "Where the register is insufficient, identify the additional title evidence required."
+  ],
+  "result_types":[
+    "REGISTERED_OWNER_IDENTIFIED",
+    "PROPERTY_NOT_YET_IDENTIFIED",
+    "REGISTRATION_STATUS_UNKNOWN",
+    "HISTORICAL_TITLE_RESEARCH_REQUIRED",
+    "FURTHER_TITLE_DOCUMENTS_REQUIRED",
+    "NOT_DETERMINABLE"
+  ]
+}
