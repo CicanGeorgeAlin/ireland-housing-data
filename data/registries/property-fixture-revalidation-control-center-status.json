@@ -1,0 +1,47 @@
+{
+  "schema_version": "0.2",
+  "status": "STRUCTURAL",
+  "purpose": "Authoritative operational status for the integrated property fixture revalidation control center.",
+  "status_id": "PFRCCV2-STATUS-001",
+  "updated_at": "2026-09-23",
+  "control_center": "PF-REVALIDATION-CONTROL-002",
+  "latest_validation": {
+    "run_id": "PFRCCV2-RUN-001",
+    "result": "PASSED",
+    "validated_at": "2026-09-23"
+  },
+  "current_state": {
+    "candidate_intake": "NOT_SUBMITTED",
+    "admission_gate": "BLOCKED",
+    "revalidation": "BLOCKED",
+    "closure": "NOT_READY",
+    "technical_governance": "PASSED",
+    "legal_source_verification": "PARTIAL",
+    "production_evidence": "PARTIAL",
+    "publication": "NOT_READY"
+  },
+  "transition_gate": {
+    "current": "CANDIDATE_FIXTURE_SUBMISSION",
+    "next": "ADMISSION_REVIEW",
+    "after_approval": "CONTROLLED_DEPENDENT_REVALIDATION",
+    "satisfied": false
+  },
+  "open_blocker": {
+    "blocker_id": "PF-BLOCKER-001",
+    "type": "APPROVED_FIXTURE_MISSING",
+    "status": "OPEN"
+  },
+  "rules": [
+    "A passed control-center validation does not open the operational gate.",
+    "Candidate submission must be real and recorded.",
+    "Admission approval must precede dependent revalidation.",
+    "Historical states remain immutable.",
+    "Technical governance does not establish legal correctness or publication readiness."
+  ],
+  "guardrails": [
+    "No candidate fixture is invented.",
+    "No live official property record is claimed.",
+    "No legal proposition is upgraded.",
+    "No publication status is upgraded."
+  ]
+}
