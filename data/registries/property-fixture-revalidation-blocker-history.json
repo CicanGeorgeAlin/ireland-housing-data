@@ -1,0 +1,36 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Preserve the chronological history of blockers affecting controlled property fixture revalidation.",
+  "history_rules": [
+    "Every material blocker state receives a new immutable entry.",
+    "Blocker closure requires recorded evidence of the required action.",
+    "Historical blocker states are never silently overwritten.",
+    "Technical blocker history remains separate from legal-source and publication history."
+  ],
+  "entries": [
+    {
+      "history_id": "PFRBH-001",
+      "effective_at": "2026-09-23",
+      "blocker_id": "PF-BLOCKER-001",
+      "queue_item": "PF-REVAL-QUEUE-001",
+      "impact_event": "FIXTURE-IMPACT-EVENT-001",
+      "blocker_type": "APPROVED_FIXTURE_MISSING",
+      "status": "OPEN",
+      "severity": "MATERIAL",
+      "trigger": "PFRBV-RUN-001",
+      "required_action": "Obtain or explicitly approve a corrected/replacement controlled fixture through fixture governance.",
+      "execution_blocked": true,
+      "closure_blocked": true,
+      "publication_status": "NOT_READY",
+      "superseded_by": null
+    }
+  ],
+  "guardrails": [
+    "This is technical governance history only.",
+    "It does not establish legal facts or property ownership.",
+    "It does not represent live official-record retrieval.",
+    "It cannot authorize publication.",
+    "A later blocker state must be recorded as a new entry."
+  ]
+}
