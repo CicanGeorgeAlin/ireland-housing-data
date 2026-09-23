@@ -1,0 +1,185 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-registration-succession",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "purpose":"Classify death-related ownership events for registered land, distinguish estate administration from registration of title, and route the correct evidence and registration pathway without treating inheritance entitlement, personal-representative authority, an assent or transfer, or an application as equivalent to current registered ownership.",
+  "verified_date":"2026-09-24",
+  "primary_legal_sources":[
+    {
+      "source":"Registration of Title Act 1964",
+      "provisions":["section 31","section 61","section 90"],
+      "role":"Registered-title effect, death of registered full owner, and powers of a person entitled to be registered before registration."
+    },
+    {
+      "source":"Succession Act 1965",
+      "provisions":["section 10","section 50","section 52","section 54","section 62"],
+      "role":"Devolution to personal representatives, administration powers, assent/transfer, special provisions for registered land, and distribution timing."
+    },
+    {
+      "source":"Land Registration Rules 2012",
+      "provisions":["Rules 86-92"],
+      "role":"Operational registration routes following death, including testate, intestate, unregistered-at-death entitlement, charge/burden transmission and note of death."
+    }
+  ],
+  "event_types":[
+    "DEATH_OF_SOLE_REGISTERED_FULL_OWNER",
+    "DEATH_OF_SURVIVING_REGISTERED_FULL_OWNER",
+    "DEATH_OF_REGISTERED_JOINT_TENANT",
+    "DEATH_OF_REGISTERED_OWNER_OF_CHARGE_OR_BURDEN",
+    "DEATH_OF_PERSON_ENTITLED_BUT_NOT_REGISTERED",
+    "TESTATE_SUCCESSION",
+    "INTESTATE_SUCCESSION",
+    "SUCCESSIVE_DEATHS_BEFORE_REGISTRATION",
+    "PERSONAL_REPRESENTATIVE_ADMINISTRATION",
+    "ASSENT_TO_PERSON_ENTITLED",
+    "PERSONAL_REPRESENTATIVE_TRANSFER_TO_PERSON_ENTITLED",
+    "SALE_BY_PERSONAL_REPRESENTATIVE",
+    "COURT_ORDER_OR_VESTING_ORDER"
+  ],
+  "classification_inputs":[
+    "property_identifier",
+    "folio_or_registration_reference",
+    "registered_or_unregistered_status",
+    "registered_owner_names",
+    "ownership_mode_if_recorded",
+    "date_of_death",
+    "will_or_intestacy_status",
+    "grant_type",
+    "personal_representative_identity",
+    "beneficial_entitlement_claim",
+    "assent_or_transfer",
+    "probate_or_letters_of_administration",
+    "death_certificate_or_other_identity_evidence",
+    "mortgage_or_charge_context",
+    "co_ownership_context",
+    "historical_registration_state",
+    "court_order_context"
+  ],
+  "core_distinctions":[
+    "Death of a registered owner is not itself proof that the named beneficiary is already the registered owner.",
+    "Under section 61 of the Registration of Title Act 1964, on the death of a sole registered full owner, or the survivor of several registered full owners who are not tenants in common, the personal representatives are recognised by the Registrar as having the relevant rights in respect of the land pending the succession registration route.",
+    "The Succession Act 1965 provides that the real and personal estate of a deceased person devolves on and becomes vested in personal representatives, who hold it as trustees for persons entitled by law.",
+    "For registered land, section 54 of the Succession Act 1965 makes the assent or transfer subject to the Registration of Title Act 1964 and its prescribed forms.",
+    "A person may be beneficially or legally entitled through succession without yet appearing as the registered owner on the folio.",
+    "An assent or transfer is a legal succession instrument; the registration record must still be checked before stating that the person's registered title has changed.",
+    "A personal representative may have powers to deal with estate property, including sale, but a sale by a personal representative and transmission to a beneficiary are different event routes.",
+    "Joint-tenancy survivorship must be distinguished from succession of a sole registered full owner or tenant-in-common share.",
+    "A death affecting a registered charge or other burden is a separate registration pathway from death affecting ownership of the land.",
+    "Historical cases may require date-specific analysis because older deaths and older registration rules can produce different documentary routes."
+  ],
+  "route_matrix":[
+    {
+      "condition":"Registered full owner dies testate",
+      "route":"SUCCESSION_TESTATE",
+      "registration_evidence":["probate or letters of administration with will annexed, or official copy","assent or transfer in the prescribed form","application for registration","property identification"],
+      "current_rule_family":"Land Registration Rules 2012 Rules 86-87"
+    },
+    {
+      "condition":"Registered full owner dies intestate",
+      "route":"SUCCESSION_INTESTATE",
+      "registration_evidence":["letters of administration or official copy","assent or transfer where applicable","application for registration","property identification"],
+      "current_rule_family":"Land Registration Rules 2012 Rules 88-89"
+    },
+    {
+      "condition":"Person entitled to registration dies before becoming registered",
+      "route":"SUCCESSION_OF_UNREGISTERED_ENTITLEMENT",
+      "registration_evidence":["Form 34 affidavit by personal representative(s) where required","underlying evidence satisfying the applicable Rule 86-89 route","succession/representation documents","property identification"],
+      "current_rule_family":"Land Registration Rules 2012 Rule 90"
+    },
+    {
+      "condition":"One registered joint tenant dies",
+      "route":"JOINT_TENANCY_SURVIVORSHIP",
+      "registration_evidence":["proof of death and identity","official registration evidence"],
+      "current_rule_family":"Land Registration Rules 2012 Rule 94"
+    },
+    {
+      "condition":"Registered owner of a charge or other burden dies",
+      "route":"CHARGE_OR_BURDEN_TRANSMISSION",
+      "registration_evidence":["evidence prescribed for the analogous land-ownership transmission","death and entitlement evidence","registration application"],
+      "current_rule_family":"Land Registration Rules 2012 Rule 91"
+    }
+  ],
+  "title_consequence_model":[
+    {
+      "stage":"DEATH",
+      "effect":"Triggers estate/succession analysis; does not by itself establish the final registered proprietor."
+    },
+    {
+      "stage":"DEVOLUTION_TO_PERSONAL_REPRESENTATIVES",
+      "effect":"The estate is administered through the personal representatives under the Succession Act framework."
+    },
+    {
+      "stage":"ENTITLEMENT_IDENTIFIED",
+      "effect":"Identify the person or persons legally entitled under the will, intestacy rules or another applicable succession route."
+    },
+    {
+      "stage":"ASSENT_OR_TRANSFER",
+      "effect":"Personal representative executes the appropriate succession instrument where required."
+    },
+    {
+      "stage":"REGISTRATION_APPLICATION",
+      "effect":"Application and prescribed evidence are submitted through the applicable Land Registry route."
+    },
+    {
+      "stage":"REGISTER_UPDATED",
+      "effect":"Only verified registration evidence supports a statement that the person is registered as owner."
+    }
+  ],
+  "personal_representative_model":{
+    "role":"The personal representative is the estate-administration actor recognised in the statutory succession and registered-land framework.",
+    "do_not_conflate":[
+      "personal representative",
+      "beneficial beneficiary",
+      "registered proprietor",
+      "purchaser from the estate"
+    ],
+    "sale_route":"A personal representative may have statutory powers to sell estate property. A sale to a purchaser is not the same legal event as registration of a beneficiary by succession.",
+    "multi_representative_safeguard":"Where more than one personal representative exists, the applicable statutory requirements for acts by personal representatives must be checked before treating an assent, transfer or disposal as validly executed."
+  },
+  "evidence_chain":[
+    "QUESTION",
+    "PROPERTY_IDENTIFIER",
+    "CURRENT_FOLIO_OR_REGISTER",
+    "DEATH_EVENT",
+    "WILL_OR_INTESTACY_CLASSIFICATION",
+    "GRANT_OF_REPRESENTATION",
+    "PERSONAL_REPRESENTATIVE_IDENTITY",
+    "ENTITLEMENT_BASIS",
+    "ASSENT_OR_TRANSFER_IF_REQUIRED",
+    "REGISTRATION_APPLICATION_OR_RECORD",
+    "REGISTRATION_OUTCOME",
+    "CURRENT_REGISTER_VERIFICATION",
+    "HISTORICAL_REGISTER_CHECK_IF_NEEDED",
+    "LEGAL_EFFECT",
+    "ANSWER"
+  ],
+  "result_states":[
+    "SUCCESSION_ROUTE_IDENTIFIED",
+    "ENTITLEMENT_IDENTIFIED_REGISTRATION_UNVERIFIED",
+    "REGISTRATION_VERIFIED",
+    "JOINT_TENANCY_SURVIVORSHIP_ROUTE",
+    "CHARGE_OR_BURDEN_SUCCESSION_ROUTE",
+    "HISTORICAL_SUCCESSION_RESEARCH_REQUIRED",
+    "EVIDENCE_REQUIRED",
+    "CONFLICT",
+    "PROFESSIONAL_REVIEW_REQUIRED",
+    "NOT_DETERMINABLE"
+  ],
+  "guardrails":[
+    "Never state that a beneficiary is the registered owner without authoritative current registration evidence.",
+    "Never treat probate, letters of administration, a will or a death certificate alone as proof of current registered ownership.",
+    "Never treat an assent or transfer alone as proof that the folio has been updated.",
+    "Never collapse personal-representative powers, beneficial entitlement and registered title into one status.",
+    "Never apply the joint-tenancy survivorship route to a tenancy-in-common share without checking the actual ownership record.",
+    "Never assume a mortgage or charge disappeared on death or inheritance; inspect the relevant registered interest and discharge evidence separately.",
+    "Never ignore the date of death where historical rules or transitional provisions may affect the route.",
+    "Never use a synthetic property, folio or beneficiary as real-world evidence.",
+    "For property-specific answers, retrieve and match the authoritative property record before asserting the current title position."
+  ],
+  "official_routes":[
+    "Tailte Éireann Land Registry",
+    "Tailte Éireann Land Registration Rules 2012",
+    "LandDirect official property search",
+    "Irish Statute Book"
+  ]
+}
