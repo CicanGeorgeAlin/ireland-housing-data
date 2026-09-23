@@ -1,0 +1,50 @@
+{
+  "version":"0.1",
+  "purpose":"Structural tenancy classification rules for the first rent-review pathway.",
+  "classification_order":[
+    "identify-housing-arrangement",
+    "identify-tenancy-regime",
+    "resolve-tenancy-start-date",
+    "resolve-applicable-legal-generation",
+    "check-special-accommodation-category",
+    "check-exceptions"
+  ],
+  "categories":{
+    "private_residential":{
+      "signals":["ordinary private residential tenancy"],
+      "rent_proposition_sets":["RTB-2026-RENT-CAP-001","RTB-2026-RENT-RESET-002","RTB-2026-APARTMENT-003"]
+    },
+    "student_specific_accommodation":{
+      "signals":["student specific accommodation"],
+      "rent_proposition_sets":["RTB-2026-RENT-CAP-001"],
+      "special_handling_required":true
+    },
+    "approved_housing_body":{
+      "signals":["AHB tenancy"],
+      "rent_control_note":"Do not apply the national private-tenancy rent-control proposition automatically.",
+      "special_handling_required":true
+    },
+    "cost_rental":{
+      "signals":["cost-rental tenancy"],
+      "rent_control_note":"Do not apply the national private-tenancy rent-control proposition automatically.",
+      "special_handling_required":true
+    },
+    "local_authority":{
+      "signals":["local-authority housing"],
+      "rent_control_note":"Outside the private-tenancy rent-control pathway.",
+      "special_handling_required":true
+    },
+    "unknown":{
+      "result":"NOT_DETERMINABLE",
+      "next_step":"Ask for enough facts to classify the arrangement."
+    }
+  },
+  "date_rules":{
+    "before_2026_03_01":"Historical/current regime must be resolved from the tenancy start date and applicable law.",
+    "from_2026_03_01":"Apply the 2026 private-tenancy framework only after classification and exceptions are checked."
+  },
+  "verification":{
+    "official_guidance_checked":"2026-09-23",
+    "sources":["RTB setting and reviewing private rents from 1 March 2026","Residential Tenancies (Miscellaneous Provisions) Act 2026","S.I. No. 67/2026"]
+  }
+}
