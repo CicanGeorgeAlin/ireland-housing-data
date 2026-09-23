@@ -1,0 +1,26 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-evidence-audit-trail-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "scope":"Provenance architecture for property answers. It records the relationship between sources, facts, legal propositions and answer versions; it does not itself establish property facts.",
+  "last_verified":"2026-09-24",
+  "source_architecture":[
+    "Registration of Title Act 1964",
+    "Land Registration Rules 2012",
+    "Tailte Éireann official property-record services",
+    "Irish Statute Book"
+  ],
+  "minimum_audit_contract":[
+    "SOURCE",
+    "PROPERTY_MATCH",
+    "DATE_SCOPE",
+    "FACT",
+    "LEGAL_SOURCE",
+    "LEGAL_PROPOSITION",
+    "ANSWER_COMPONENT",
+    "SNAPSHOT_VERSION",
+    "VERIFICATION_EVENT"
+  ],
+  "core_rule":"If a material answer component cannot be traced through its evidence and legal source chain, the answer must expose that provenance gap.",
+  "publication_gate":"GENERAL_INFORMATION_ONLY"
+}
