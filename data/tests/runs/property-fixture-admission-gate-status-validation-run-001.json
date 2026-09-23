@@ -1,0 +1,33 @@
+{
+  "schema_version": "0.1",
+  "run_id": "PFAGSV-RUN-001",
+  "contract": "data/tests/property-fixture-admission-gate-status-validation.json",
+  "execution_mode": "STATIC_CONTRACT_VALIDATION",
+  "executed_at": "2026-09-23",
+  "status": "PASSED",
+  "checks": [
+    {"check_id":"PFAGSV-001","result":"PASS"},
+    {"check_id":"PFAGSV-002","result":"PASS"},
+    {"check_id":"PFAGSV-003","result":"PASS"},
+    {"check_id":"PFAGSV-004","result":"PASS"},
+    {"check_id":"PFAGSV-005","result":"PASS"},
+    {"check_id":"PFAGSV-006","result":"PASS"},
+    {"check_id":"PFAGSV-007","result":"PASS"}
+  ],
+  "summary": {
+    "status_record_valid": true,
+    "gate_status": "BLOCKED",
+    "execution_allowed": false,
+    "candidate_fixture": null,
+    "approved_fixture": null,
+    "legal_source_status": "UNCHANGED",
+    "publication_status": "UNCHANGED"
+  },
+  "guardrails": [
+    "Static validation only.",
+    "The admission gate remains operationally blocked.",
+    "No fixture was invented or admitted.",
+    "No live official property record was retrieved.",
+    "No legal proposition or publication status was upgraded."
+  ]
+}
