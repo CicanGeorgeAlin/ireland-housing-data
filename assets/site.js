@@ -2,6 +2,19 @@
   const links = document.querySelectorAll('.action');
   const state = {};
 
+  const propositionMap = {
+    private_current: {
+      propositions: ['RTB-2026-RENT-CAP-001','RTB-2026-RENT-RESET-002','RTB-2026-APARTMENT-003'],
+      evidence: ['EVID-RTB-2026-001'],
+      route: 'VERIFIED_SEED_FACTS'
+    },
+    private_historical: {
+      propositions: [],
+      evidence: [],
+      route: 'HISTORICAL_RESEARCH_REQUIRED'
+    }
+  };
+
   links.forEach(link => link.addEventListener('click', event => {
     event.preventDefault();
     const topic = link.textContent.trim();
@@ -57,6 +70,12 @@
     };
   }
 
+  function resolvePropositions(result,time) {
+    if (result.status !== 'PRIVATE_PATH' || !time) return null;
+    if (time.reviewPeriod === 'BEFORE_2026_FRAMEWORK') return propositionMap.private_historical;
+    return propositionMap.private_current;
+  }
+
   function renderDecision() {
     const box=document.getElementById('pathway-decision');
     if(!box) return;
@@ -65,7 +84,9 @@
     box.hidden=false;
     let html='<div class="kicker">Current pathway state</div><strong>'+escapeHtml(result.status)+'</strong><p>'+escapeHtml(result.message)+'</p>';
     if(time && result.status === 'PRIVATE_PATH'){
+      const mapping=resolvePropositions(result,time);
       html+='<div class="decision-facts"><div><span>Tenancy generation</span><strong>'+escapeHtml(time.tenancyGeneration)+'</strong></div><div><span>Review period</span><strong>'+escapeHtml(time.reviewPeriod)+'</strong></div><div><span>Commencement check</span><strong>'+escapeHtml(time.commencementCheck ? 'REQUIRED' : 'NOT YET REQUIRED')+'</strong></div></div>';
+      html+='<div class="decision-evidence"><div class="kicker">Candidate legal propositions</div><p>'+escapeHtml(mapping.propositions.length ? mapping.propositions.join(' · ') : 'None loaded for this historical branch.')+'</p><div class="kicker">Evidence chain</div><p>'+escapeHtml(mapping.evidence.length ? mapping.evidence.join(' · ') : 'Historical evidence required.')+'</p><div class="kicker">Publication state</div><p>'+escapeHtml(mapping.route)+'</p></div>';
     }
     box.innerHTML=html;
   }
