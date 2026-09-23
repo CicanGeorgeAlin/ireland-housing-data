@@ -1,0 +1,41 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Validate the property fixture governance closure-readiness assessment and ensure outstanding revalidation conditions cannot be silently treated as satisfied.",
+  "assessment": "data/tests/property-fixture-governance-closure-readiness.json",
+  "validation_sequence": [
+    "LOAD_ASSESSMENT",
+    "VERIFY_INPUT_REFERENCES",
+    "VERIFY_REQUIRED_CLOSURE_CONDITIONS",
+    "VERIFY_CURRENT_CONDITION_STATES",
+    "VERIFY_BLOCKING_CONDITIONS",
+    "VERIFY_NEXT_REQUIRED_SEQUENCE",
+    "VERIFY_GUARDRAILS",
+    "RECORD_VALIDATION"
+  ],
+  "checks": [
+    {"check_id":"PFGCRV-001","name":"Input traceability","result":"PASS"},
+    {"check_id":"PFGCRV-002","name":"Closure-condition completeness","result":"PASS"},
+    {"check_id":"PFGCRV-003","name":"Current-state integrity","result":"PASS"},
+    {"check_id":"PFGCRV-004","name":"Blocking-condition integrity","result":"PASS"},
+    {"check_id":"PFGCRV-005","name":"Next-sequence integrity","result":"PASS"},
+    {"check_id":"PFGCRV-006","name":"No premature closure","result":"PASS"},
+    {"check_id":"PFGCRV-007","name":"Legal/publication separation","result":"PASS"}
+  ],
+  "result": {
+    "validation_status":"PASSED",
+    "assessment_valid":true,
+    "closure_status":"NOT_READY",
+    "revalidation_required":true,
+    "legal_source_status":"UNCHANGED",
+    "production_evidence_status":"UNCHANGED",
+    "publication_status":"UNCHANGED"
+  },
+  "guardrails": [
+    "Structural validation only.",
+    "Pending conditions remain pending.",
+    "No live official property record was retrieved.",
+    "No legal proposition was upgraded.",
+    "No publication status was upgraded."
+  ]
+}
