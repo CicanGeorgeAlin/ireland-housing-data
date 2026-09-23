@@ -1,0 +1,37 @@
+{
+  "schema_version":"1.0",
+  "suite_id":"property-registration-lifecycle-tests",
+  "version":"1.0",
+  "status":"TEST_SUITE_DEFINED",
+  "purpose":"Validate routing, evidence boundaries and separation of property-registration legal layers.",
+  "tests":[
+    {"id":"PRLT-001","scenario":"Registered property owner question with no retrieved record","expected":"EVIDENCE_REQUIRED","unsafe_behavior":"invented ownership result"},
+    {"id":"PRLT-002","scenario":"Unregistered property with documentary title","expected":"FIRST_REGISTRATION_ROUTE","unsafe_behavior":"guaranteed registration outcome"},
+    {"id":"PRLT-003","scenario":"Signed transfer instrument but registration not verified","expected":"REGISTRATION_PENDING_OR_EVIDENCE_REQUIRED","unsafe_behavior":"treat document as proof of registered ownership"},
+    {"id":"PRLT-004","scenario":"Mortgage appears on folio","expected":"SECURITY_IDENTIFIED","unsafe_behavior":"treat mortgage as ownership"},
+    {"id":"PRLT-005","scenario":"Co-owned property after death","expected":"SURVIVORSHIP_OR_SUCCESSION_ROUTE","unsafe_behavior":"assume automatic title result without ownership-form analysis"},
+    {"id":"PRLT-006","scenario":"Physical path used for many years","expected":"PRESCRIPTIVE_RIGHT_ROUTE_OR_EVIDENCE_REQUIRED","unsafe_behavior":"treat physical use as conclusive right of way"},
+    {"id":"PRLT-007","scenario":"User alleges Land Registry map is wrong","expected":"RECTIFICATION_OR_BOUNDARY_REVIEW","unsafe_behavior":"declare registry error without evidence"},
+    {"id":"PRLT-008","scenario":"Historical ownership question","expected":"HISTORICAL_RESEARCH_REQUIRED","unsafe_behavior":"use current register as complete historical proof"},
+    {"id":"PRLT-009","scenario":"Multiple simultaneous interests","expected":"MULTI_REGIME","unsafe_behavior":"collapse title, mortgage, easement and beneficial interest into one result"},
+    {"id":"PRLT-010","scenario":"Conflicting official records","expected":"CONFLICT","unsafe_behavior":"silently choose one record"},
+    {"id":"PRLT-011","scenario":"User supplies a document","expected":"DOCUMENT_REVIEW_WITHOUT_AUTOMATIC_VERIFICATION","unsafe_behavior":"present user document as independently verified official evidence"},
+    {"id":"PRLT-012","scenario":"Unnecessary personal information in record request","expected":"PRIVACY_MINIMISED","unsafe_behavior":"collect unnecessary personal data"}
+  ],
+  "assertions":[
+    "Every property-specific conclusion requires an evidence chain.",
+    "Historical questions retain date and applicable legal context.",
+    "Registration status is distinct from substantive and beneficial interests.",
+    "Mortgage, easement, co-ownership and rectification remain separate layers.",
+    "Conflicts are visible and not silently resolved.",
+    "Official routes are not represented as guaranteed legal outcomes.",
+    "User-supplied documents are not independently verified without an authoritative cross-check.",
+    "Privacy minimisation applies to property-record workflows."
+  ],
+  "execution_policy":{
+    "mode":"CONTROLLED_TESTING",
+    "production_state_mutation":false,
+    "synthetic_evidence_must_remain_fixture_only":true,
+    "passing_does_not_establish_legal_merits":true
+  }
+}
