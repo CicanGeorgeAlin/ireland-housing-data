@@ -1,0 +1,20 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-citizen-question-intake-clarification-resolver-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified citizen-facing intake contract for converting natural-language property questions into investigation-ready requests.",
+  "core_principle":"UNDERSTAND THE QUESTION → IDENTIFY ESSENTIAL GAPS → ASK ONLY WHAT CHANGES THE ROUTE → INVESTIGATE",
+  "minimum_intake":[
+    "question",
+    "jurisdiction where material",
+    "property scope where property-specific",
+    "time scope where historical/current distinction matters",
+    "requested outcome"
+  ],
+  "clarification_rule":"Ask the smallest number of questions necessary to make the investigation route and evidence requirements determinate.",
+  "general_information_rule":"General legal-information questions do not require a property identifier unless the requested answer is property-specific.",
+  "historical_rule":"Historical property questions require a sufficiently precise target date or event-relative date before historical evidence selection.",
+  "compound_question_rule":"Independent legal, evidence, ownership, charge, boundary, procedural or dispute questions should be separated before analysis.",
+  "verification_boundary":"Intake and clarification define the investigation request; they do not establish property facts or legal conclusions."
+}
