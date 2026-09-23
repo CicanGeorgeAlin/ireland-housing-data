@@ -1,0 +1,48 @@
+{
+  "schema_version":"0.3",
+  "status":"BASELINE_LOCKED_FOR_FINAL_AUDIT",
+  "verified_at":"2026-09-23",
+  "milestone":200,
+  "purpose":"Lock the current Irish Statute Book revised-law baseline before the final provision-level audit.",
+  "authoritative_current_source":{
+    "authority":"Irish Statute Book",
+    "act":"Registration of Title Act 1964",
+    "url":"https://www.irishstatutebook.ie/eli/isbc/1964_16.html",
+    "updated_to":"2026-06-18",
+    "effects_reflected":"Act No. 11 of 2026 and S.I. No. 269 of 2026"
+  },
+  "verified_commencement":{
+    "whole_act":"1967-01-01",
+    "source":"Registration of Title Act 1964 (Commencement) Order 1966, S.I. 167/1966"
+  },
+  "current_secondary_rules":[
+    "Land Registration Rules 2021 (S.I. 726/2021)",
+    "Land Registration Rules 2013 (S.I. 389/2013)"
+  ],
+  "amendment_inventory_signal":[
+    "The revised Act record contains amendments/effects extending beyond the previously recorded 2006 and 2009 amendments.",
+    "The final audit must reconcile the revised record against each user-facing proposition rather than assume the earlier inventory is exhaustive."
+  ],
+  "verification_rules":[
+    "Use the revised Act as the current-text baseline.",
+    "Use the Chronological Table/commencement sources to resolve effective dates.",
+    "Check the exact provision relied upon, not merely the Act as a whole.",
+    "Preserve historical versions for date-specific questions.",
+    "Do not mark a proposition fully verified until amendment and commencement effects relevant to that proposition are resolved."
+  ],
+  "audit_state":{
+    "current_text_baseline":"PASS",
+    "whole_act_commencement":"PASS",
+    "material_amendment_inventory":"REQUIRES_FINAL_RECONCILIATION",
+    "provision_level_commencement":"REQUIRES_FINAL_RECONCILIATION",
+    "case_law":"PARTIAL",
+    "procedure":"PASS_WITH_HISTORY_CONTEXT",
+    "publication":"NOT_READY"
+  },
+  "next_step":"Run the final provision-by-provision reconciliation for s.31, s.33, s.49 and ss.84-88 against the June 2026 revised record and every material affecting provision.",
+  "guardrails":[
+    "No live property record retrieved.",
+    "No individual ownership conclusion.",
+    "This baseline does not itself constitute publication-level legal verification."
+  ]
+}
