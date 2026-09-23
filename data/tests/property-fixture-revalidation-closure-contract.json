@@ -1,0 +1,60 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Define the conditions under which a property evidence fixture impact event and its revalidation queue item may be formally closed.",
+  "closure_sequence": [
+    "VERIFY_APPROVED_FIXTURE",
+    "VERIFY_DEPENDENCY_REVALIDATION",
+    "VERIFY_NEW_VALIDATION_RUN",
+    "VERIFY_HISTORICAL_IMMUTABILITY",
+    "VERIFY_PROVENANCE_AND_PRIVACY",
+    "VERIFY_PATHWAY_STATUS_RECALCULATION",
+    "VERIFY_IMPACT_EVENT_LINKAGE",
+    "VERIFY_NO_UNRESOLVED_CRITICAL_ISSUE",
+    "CLOSE_IMPACT_EVENT"
+  ],
+  "required_conditions": [
+    "The fixture version used for revalidation is approved or otherwise explicitly permitted by its lifecycle.",
+    "Every required dependent test has a new validation result.",
+    "The new validation run is distinct from historical runs.",
+    "Historical validation results remain unchanged.",
+    "Required provenance and privacy checks pass.",
+    "Affected pathway validation status has been recalculated.",
+    "The resulting validation run IDs are linked to the impact event and queue item.",
+    "No unresolved critical fixture dependency remains.",
+    "Closure does not automatically change legal-source verification or publication status."
+  ],
+  "failure_states": [
+    "FIXTURE_NOT_APPROVED",
+    "DEPENDENCY_REVALIDATION_MISSING",
+    "HISTORICAL_MUTATION_DETECTED",
+    "PROVENANCE_REVIEW_FAILED",
+    "PRIVACY_REVIEW_FAILED",
+    "PATHWAY_STATUS_NOT_RECALCULATED",
+    "IMPACT_LINKAGE_MISSING",
+    "CRITICAL_DEPENDENCY_REMAINS"
+  ],
+  "closure_states": [
+    "NOT_READY",
+    "READY_FOR_CLOSURE",
+    "CLOSED",
+    "BLOCKED",
+    "HISTORICAL"
+  ],
+  "example": {
+    "closure_id": "PF-CLOSE-001",
+    "impact_event_id": "FIXTURE-IMPACT-EVENT-001",
+    "queue_id": "PF-REVAL-QUEUE-001",
+    "fixture_id": "FIXTURE-FOLIO-SYNTHETIC-001",
+    "status": "NOT_READY",
+    "blocking_condition": "DEPENDENCY_REVALIDATION_MISSING",
+    "example_only": true
+  },
+  "guardrails": [
+    "Closure is a technical evidence-governance state, not a legal conclusion.",
+    "Closing a fixture impact event cannot establish real ownership, title, boundary or other property facts.",
+    "A closed technical impact event does not make a pathway publication-ready by itself.",
+    "Historical validation runs cannot be rewritten during closure.",
+    "Legal-source verification remains independent."
+  ]
+}
