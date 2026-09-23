@@ -5,6 +5,16 @@
   "purpose": "Connect the principal property-registration pathways into one date-aware evidence-driven lifecycle while keeping each legal event distinct.",
   "lifecycle": [
     {
+      "stage": "CITIZEN_ANSWER_DELIVERY_AND_ACTION_PLAN",
+      "routes": [
+        "property-citizen-answer-delivery-action-plan",
+        "property-human-readable-legal-answer-composer",
+        "property-public-answer-evidence-explorer",
+        "property-investigation-citizen-timeline-status-view",
+        "property-official-route-authority-resolver"
+      ]
+    },
+    {
       "stage": "CITIZEN_TIMELINE_AND_STATUS_VIEW",
       "routes": [
         "property-investigation-citizen-timeline-status-view",
@@ -499,7 +509,8 @@
     "property-investigation-access-role-boundary",
     "property-investigation-consent-citizen-control-boundary",
     "property-investigation-communication-clarification-dialogue",
-    "property-investigation-citizen-timeline-status-view"
+    "property-investigation-citizen-timeline-status-view",
+    "property-citizen-answer-delivery-action-plan"
   ],
   "answer_sequence": [
     "QUESTION",
