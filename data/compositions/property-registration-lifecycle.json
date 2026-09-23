@@ -234,6 +234,15 @@
         "property-conflict-contradiction-resolver",
         "property-legal-proposition-authority-chain"
       ]
+    },
+    {
+      "stage": "EVIDENCE_SUFFICIENCY_AND_MINIMUM_EVIDENCE",
+      "routes": [
+        "property-evidence-sufficiency-minimum-evidence-resolver",
+        "property-evidence-retrieval-routing",
+        "property-evidence-property-match",
+        "property-answer-state-machine"
+      ]
     }
   ],
   "event_model": [
@@ -298,7 +307,8 @@
     "property-evidence-to-answer-trace-graph",
     "property-conflict-contradiction-resolver",
     "property-legal-change-impact-engine",
-    "property-source-reliability-freshness-resolver"
+    "property-source-reliability-freshness-resolver",
+    "property-evidence-sufficiency-minimum-evidence-resolver"
   ],
   "answer_sequence": [
     "QUESTION",
