@@ -44,6 +44,14 @@
       ]
     },
     {
+      "stage": "EVIDENCE_ROUTE_SELECTION",
+      "routes": [
+        "property-evidence-retrieval-routing",
+        "property-evidence-property-match",
+        "property-registration-historical-state"
+      ]
+    },
+    {
       "stage": "EVIDENCE_AND_PROPERTY_MATCH",
       "routes": [
         "property-evidence-property-match",
@@ -113,7 +121,8 @@
     "property-title-live",
     "property-evidence-audit",
     "property-answer-snapshot",
-    "property-answer-reverification"
+    "property-answer-reverification",
+    "property-evidence-retrieval-routing"
   ],
   "answer_sequence": [
     "QUESTION",
