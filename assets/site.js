@@ -86,9 +86,23 @@
     if(time && result.status === 'PRIVATE_PATH'){
       const mapping=resolvePropositions(result,time);
       html+='<div class="decision-facts"><div><span>Tenancy generation</span><strong>'+escapeHtml(time.tenancyGeneration)+'</strong></div><div><span>Review period</span><strong>'+escapeHtml(time.reviewPeriod)+'</strong></div><div><span>Commencement check</span><strong>'+escapeHtml(time.commencementCheck ? 'REQUIRED' : 'NOT YET REQUIRED')+'</strong></div></div>';
-      html+='<div class="decision-evidence"><div class="kicker">Candidate legal propositions</div><p>'+escapeHtml(mapping.propositions.length ? mapping.propositions.join(' · ') : 'None loaded for this historical branch.')+'</p><div class="kicker">Evidence chain</div><p>'+escapeHtml(mapping.evidence.length ? mapping.evidence.join(' · ') : 'Historical evidence required.')+'</p><div class="kicker">Publication state</div><p>'+escapeHtml(mapping.route)+'</p></div>';
+      html+='<div class="decision-evidence"><div class="kicker">Candidate legal propositions</div><p>'+escapeHtml(mapping.propositions.length ? mapping.propositions.join(' · ') : 'None loaded for this historical branch.')+'</p><div class="kicker">Evidence chain</div><p>'+escapeHtml(mapping.evidence.length ? mapping.evidence.join(' · ') : 'Historical evidence required.')+'</p><div class="kicker">Publication state</div><p>'+escapeHtml(mapping.route)+'</p><button type="button" id="show-law-button">SHOW ME THE LAW</button></div>';
     }
     box.innerHTML=html;
+    const lawButton=document.getElementById('show-law-button');
+    if(lawButton) lawButton.addEventListener('click', renderLaw);
+  }
+
+  function renderLaw() {
+    const box=document.getElementById('pathway-decision');
+    if(!box) return;
+    const time=temporalState();
+    const result=classify();
+    if(result.status !== 'PRIVATE_PATH' || !time || time.reviewPeriod !== 'FROM_2026_FRAMEWORK') return;
+    const p='RTB-2026-RENT-CAP-001';
+    box.innerHTML='<div class="kicker">SHOW ME THE LAW</div><h3>RTB-2026-RENT-CAP-001</h3><p><strong>What we say</strong><br>For applicable private residential tenancies from 1 March 2026, the general annual rent-increase rule is 2% or CPI, whichever is lower, subject to applicable exceptions.</p><p><strong>Why we say it</strong><br>This proposition is linked to the 2026 statutory framework, commencement record and current RTB official guidance.</p><p><strong>What it means</strong><br>This is a general rule only. Your tenancy classification, dates and exceptions must still be checked before an individual conclusion is reached.</p><p><strong>Official route</strong><br>RTB</p><p><strong>Last verified</strong><br>23 September 2026</p><p class="muted">Exact statutory wording will only be displayed after the applicable provision has been retrieved and verified for the relevant legal version.</p><button type="button" id="show-law-back">BACK TO PATHWAY</button>';
+    const back=document.getElementById('show-law-back');
+    if(back) back.addEventListener('click',renderDecision);
   }
 
   function renderState() {
