@@ -1,0 +1,22 @@
+{
+  "id":"rent-review-what-happens-next",
+  "version":"0.1",
+  "status":"STRUCTURAL_ENGINE",
+  "timeline":[
+    {"state":"PROPOSED_REVIEW","event":"landlord proposes rent review","requires":["tenancy classification","review date","applicable rent rule"]},
+    {"state":"NOTICE_PREPARED","event":"rent review notice prepared","requires":["required notice content","applicable calculation","supporting evidence where required"]},
+    {"state":"NOTICE_SERVED","event":"notice served on tenant","triggers":["RTB copy deadline"]},
+    {"state":"RTB_COPY_WINDOW","event":"copy of notice served to RTB","deadline_rule":"RTB-RENT-REVIEW-COPY-7-DAYS"},
+    {"state":"REVIEW_ACTIVE","event":"review takes effect if legally and procedurally valid","requires":["effective date","valid notice","applicable calculation"]},
+    {"state":"DISPUTED","event":"tenant or landlord disputes issue","route":"RTB dispute resolution"},
+    {"state":"ENFORCEMENT","event":"compliance issue identified","route":"RTB compliance/enforcement"},
+    {"state":"RESOLVED","event":"dispute/compliance process concluded","requires":["official outcome"]}
+  ],
+  "branches":{
+    "deadline_missed":"Load specific deadline consequence; do not infer a generic penalty.",
+    "evidence_conflict":"Pause definitive composition and enter REVIEW_REQUIRED.",
+    "historical_rule":"Resolve the historical legal version before continuing.",
+    "special_regime":"Exit ordinary private-tenancy timeline and route to the applicable regime."
+  },
+  "guardrail":"The timeline describes legal process states, not a prediction of outcome."
+}
