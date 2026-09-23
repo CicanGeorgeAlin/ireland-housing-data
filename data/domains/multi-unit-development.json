@@ -1,0 +1,57 @@
+{
+  "id":"multi-unit-development",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"STRUCTURAL_DOMAIN_SEED",
+  "question":"What are my rights and obligations in a multi-unit development?",
+  "legal_foundation":[
+    "Multi-Unit Developments Act 2011",
+    "Multi-Unit Developments Act 2011 amendments where applicable",
+    "relevant company law",
+    "relevant lease and title documents",
+    "OMC constitution and rules"
+  ],
+  "entities":[
+    "OWNER_MANAGEMENT_COMPANY",
+    "UNIT_OWNER",
+    "COMMON_AREAS",
+    "DEVELOPMENT_MANAGER",
+    "SERVICE_CHARGE",
+    "SINKING_FUND",
+    "ANNUAL_GENERAL_MEETING",
+    "TRANSFER_OF_COMMON_AREAS",
+    "HOUSE_RULES",
+    "LEASE",
+    "OMC_CONSTITUTION"
+  ],
+  "pipeline":[
+    "identify-development",
+    "identify-unit-and-title",
+    "identify-OMC",
+    "identify-common-area_status",
+    "identify-lease_and_constitution",
+    "identify-service-charge_obligation",
+    "identify-sinking-fund_position",
+    "identify-governance_and-voting_issue",
+    "identify-maintenance_or_common-area_issue",
+    "identify-dispute-route",
+    "show-evidence"
+  ],
+  "guardrails":[
+    "Do not treat an apartment title as identical to the common-area ownership structure.",
+    "Do not assume every charge imposed by an OMC is lawful without checking the legal and contractual basis.",
+    "Do not assume an OMC dispute is a tenancy dispute.",
+    "Do not assume a management-company practice overrides the Act, lease or OMC governing documents.",
+    "Check the development's title, leases and OMC documents where the question depends on development-specific arrangements."
+  ],
+  "result_types":[
+    "OMC_STRUCTURE_IDENTIFIED",
+    "UNIT_TITLE_IDENTIFIED",
+    "COMMON_AREA_ISSUE_IDENTIFIED",
+    "SERVICE_CHARGE_ISSUE_IDENTIFIED",
+    "SINKING_FUND_ISSUE_IDENTIFIED",
+    "GOVERNANCE_ISSUE_IDENTIFIED",
+    "DISPUTE_ROUTE_REQUIRES_REVIEW",
+    "DOCUMENTS_REQUIRED"
+  ]
+}
