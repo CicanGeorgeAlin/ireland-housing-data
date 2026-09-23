@@ -1,0 +1,25 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-change-impact-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified impact-mapping contract for legal and official-source changes affecting property rules, procedures, deadlines and published answers.",
+  "core_principle":"CHANGE → EFFECTIVE DATE → TRANSITION → DEPENDENCY MAP → IMPACT → REVERIFICATION",
+  "required_checks":[
+    "source identity",
+    "version",
+    "change type",
+    "commencement/effective date",
+    "transitional or saving provisions",
+    "affected legal provisions",
+    "affected propositions",
+    "affected procedures",
+    "affected deadlines",
+    "affected current answers",
+    "affected historical snapshots"
+  ],
+  "dependency_rule":"Only connected propositions, procedures, deadlines and answers are flagged unless a broader dependency is established.",
+  "historical_rule":"Historical answers remain tied to the legal and evidential state applicable to their target date; later changes are not silently applied backward.",
+  "publication_rule":"Materially affected current answers require reverification before continued VERIFIED_ANSWER status.",
+  "verification_boundary":"This engine identifies potential impact and triggers review; it does not itself decide the substantive legal effect of a new law or judgment."
+}
