@@ -1,0 +1,23 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-provision-resolver-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "scope":"Exact-provision resolution architecture for Irish property questions; it does not create a property-specific legal conclusion.",
+  "last_verified":"2026-09-24",
+  "official_source_basis":[
+    "Irish Statute Book",
+    "Registration of Title Act 1964",
+    "Land Registration Rules 2012",
+    "Land Registration Rules 2013",
+    "Land Registration Rules 2021"
+  ],
+  "verified_points":[
+    "Land Registration Rules 2012 commenced on 1 February 2013.",
+    "Rule 159 governs inspection/copy access to filed documents and contains specified entitlement routes.",
+    "Rule 160 provides official-search mechanisms for names, specified property and register/map entries.",
+    "The 2013 Rules amended the 2012 Rules and commenced on 1 November 2013.",
+    "The 2021 Rules further amended the 2012 Rules and commenced on 16 December 2021."
+  ],
+  "core_rule":"REGIME → EXACT PROVISION → VERSION → COMMENCEMENT/TRANSITION → PROPOSITION → LEGAL EFFECT",
+  "publication_gate":"GENERAL_INFORMATION_ONLY"
+}
