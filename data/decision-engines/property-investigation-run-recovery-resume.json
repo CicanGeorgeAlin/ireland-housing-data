@@ -1,0 +1,97 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-investigation-run-recovery-resume",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Safely resume interrupted property investigations from the last verified state without repeating valid completed work or treating partial work as completed.",
+  "core_principle":"RECOVER VERIFIED STATE → IDENTIFY OPEN DEPENDENCIES → RESUME FROM THE EARLIEST UNRESOLVED MATERIAL STAGE.",
+  "recovery_sequence":[
+    "LOAD_RUN",
+    "LOAD_EVENT_LOG",
+    "VERIFY_EVENT_CHAIN",
+    "RECONSTRUCT_STATE",
+    "IDENTIFY_LAST_VERIFIED_STATE",
+    "IDENTIFY_IN_PROGRESS_STAGE",
+    "IDENTIFY_OPEN_DEPENDENCIES",
+    "CHECK_SOURCE_AND_LEGAL_FRESHNESS",
+    "CHECK_CACHE_ELIGIBILITY",
+    "CHECK_CONFLICTS",
+    "SELECT_RESUME_STAGE",
+    "RESUME_OR_BLOCK"
+  ],
+  "state_classes":[
+    "VERIFIED_COMPLETED",
+    "COMPLETED_WITH_LIMITATIONS",
+    "IN_PROGRESS",
+    "WAITING_FOR_INPUT",
+    "WAITING_FOR_EVIDENCE",
+    "BLOCKED",
+    "FAILED",
+    "STALE_REQUIRES_RECHECK",
+    "NOT_STARTED"
+  ],
+  "resume_rules":[
+    "Completed stages with unchanged dependencies may be reused.",
+    "Completed stages with materially changed dependencies must be reverified before downstream reuse.",
+    "In-progress stages are never treated as completed merely because an event exists showing that work started.",
+    "Failed retrieval is not evidence of record absence.",
+    "A blocked stage resumes only when its blocking dependency is resolved or new valid evidence/input exists.",
+    "A run may resume from an earlier stage if a downstream dependency has become invalid.",
+    "Current and historical scope must be reconstructed separately.",
+    "Subquestions may resume independently."
+  ],
+  "resume_decisions":[
+    "RESUME_AT_NEXT_UNRESOLVED_STAGE",
+    "RESUME_AFTER_REVALIDATION",
+    "WAITING_FOR_USER_INPUT",
+    "WAITING_FOR_EVIDENCE",
+    "RESTART_FROM_INVALIDATED_STAGE",
+    "BLOCKED",
+    "CANNOT_RECONSTRUCT"
+  ],
+  "recovery_record":[
+    "recovery_id",
+    "run_id",
+    "recovered_at",
+    "last_event_id",
+    "reconstructed_state",
+    "verified_completed_stages",
+    "stale_stages",
+    "open_dependencies",
+    "resume_stage",
+    "resume_reason",
+    "source_freshness_check",
+    "cache_check",
+    "conflict_check",
+    "recovery_status"
+  ],
+  "integrity_checks":[
+    "event_chain_continuity",
+    "state_transition_validity",
+    "dependency_references",
+    "snapshot_references",
+    "source_references",
+    "property_scope_consistency",
+    "date_scope_consistency",
+    "publication_state_consistency"
+  ],
+  "hard_stops":[
+    "Never resume from an unverified partial state as though it were complete.",
+    "Never discard prior events to simplify recovery.",
+    "Never assume an interruption means the last stage succeeded.",
+    "Never reuse stale evidence merely because it was previously retrieved.",
+    "Never silently broaden or change property/date scope during recovery.",
+    "If the event chain cannot support reliable reconstruction, block rather than invent state."
+  ],
+  "output_contract":[
+    "run_id",
+    "recovery_id",
+    "recovered_state",
+    "resume_stage",
+    "reused_completed_stages",
+    "revalidation_required",
+    "open_dependencies",
+    "recovery_status",
+    "next_action"
+  ]
+}
