@@ -1,0 +1,33 @@
+{
+  "id":"legal-answer-component",
+  "version":"0.1",
+  "status":"PLATFORM_STANDARD",
+  "purpose":"Reusable citizen-facing answer structure for verified Ireland Housing Data pathways.",
+  "sections":[
+    {"id":"answer","label":"THE ANSWER","rule":"State only the result supported by the current legal composition."},
+    {"id":"basis","label":"LEGAL BASIS","rule":"Identify the canonical proposition and applicable legal regime."},
+    {"id":"sources","label":"SOURCES","rule":"Separate primary law, court authority, official guidance and tools."},
+    {"id":"evidence","label":"WHAT IS VERIFIED","rule":"Show verified facts/evidence and unresolved evidence."},
+    {"id":"conditions","label":"CONDITIONS","rule":"Show material statutory or procedural conditions."},
+    {"id":"deadline","label":"DEADLINE","rule":"Show only a deadline whose trigger and legal rule are established."},
+    {"id":"next","label":"WHAT TO DO NEXT","rule":"Provide the applicable official route or identify what must be resolved first."},
+    {"id":"last_verified","label":"LAST VERIFIED","rule":"Display the verification date for the current proposition/package."}
+  ],
+  "result_policy":{
+    "YES":"Only where the legal composition supports an affirmative proposition.",
+    "NO":"Only where the applicable legal rule and facts establish the negative result.",
+    "YES_SUBJECT_TO_CONDITIONS":"Use where conditions remain material.",
+    "POSSIBLY":"Use where material facts/evidence remain unresolved.",
+    "NOT_DETERMINABLE":"Use where the current verified dataset cannot resolve the issue.",
+    "HISTORICAL":"Use when historical legal research controls.",
+    "REVIEW_REQUIRED":"Use for conflicting evidence or unresolved material legal issues."
+  },
+  "global_rules":[
+    "Never present CICAN explanation as statutory text.",
+    "Never hide unresolved facts.",
+    "Never invent a deadline.",
+    "Never treat an official link as proof of entitlement.",
+    "Every legal proposition must resolve to evidence.",
+    "Every displayed answer must retain its legal/time scope."
+  ]
+}
