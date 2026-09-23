@@ -1,0 +1,16 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-answer-reverification-change-detection-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "scope":"Reverification architecture for previously assembled property answers. It does not assert that any particular property record has changed.",
+  "last_verified":"2026-09-24",
+  "verified_source_architecture":[
+    "Registration of Title Act 1964",
+    "Land Registration Rules 2012",
+    "Tailte Éireann official property-record services",
+    "Irish Statute Book"
+  ],
+  "core_rule":"A snapshot remains valid only to the extent that its underlying evidence, applicable law and stated date scope remain valid.",
+  "current_vs_historical_rule":"Current-position questions require current evidence; historical questions remain anchored to their target date and must not be rewritten merely because later events occurred.",
+  "publication_gate":"GENERAL_INFORMATION_ONLY"
+}
