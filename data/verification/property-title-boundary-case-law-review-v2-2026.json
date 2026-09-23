@@ -1,0 +1,38 @@
+{
+  "schema_version":"0.2",
+  "status":"PARTIALLY_VERIFIED",
+  "verified_at":"2026-09-23",
+  "purpose":"Strengthen the registry-map and boundary proposition using a current primary Irish judgment while preserving its factual limits.",
+  "proposition_id":"PROP-PROPERTY-MAP-002",
+  "primary_authority":{
+    "case":"O'Flaherty & Ors v Permanent TSB Public Ltd Company & Ors [2026] IEHC 74",
+    "court":"High Court",
+    "date":"2026-02-10",
+    "source":"https://www.bailii.org/ie/cases/IEHC/2026/2026IEHC74.html",
+    "status":"PRIMARY_JUDGMENT_REVIEWED"
+  },
+  "verified_observations":[
+    "The judgment records an express allegation that a Land Registry map was incorrect.",
+    "The dispute involved folios created by severance and questions concerning what land fell within the registered folios.",
+    "The judgment records a claimed boundary problem and an alleged easement/landlocked-land issue.",
+    "The court did not treat the existence of the folio/map as automatically resolving every underlying boundary or easement issue; the factual and legal material presented was insufficient for the plaintiffs' requested relief."
+  ],
+  "statutory_connection":{
+    "s85":"The current statutory framework provides that, except as provided by the Act, the register/map description is not conclusive as to boundaries or extent.",
+    "s86":"The Act contains a specific mechanism by which certain ascertained boundaries can become conclusive.",
+    "source":"https://revisedacts.lawreform.ie/eli/1964/act/16/revised/en/html"
+  },
+  "safe_public_proposition":"A Land Registry map/title plan is important evidence of the registered parcel, but it should not automatically be presented as a definitive answer to every physical-boundary, easement or historical-conveyance question.",
+  "remaining":[
+    "Additional primary authorities specifically interpreting ss.84-86.",
+    "Historical boundary authorities where the relevant conveyance predates current legislation.",
+    "Final proposition-level legal audit."
+  ],
+  "publication_gate":"NOT_READY",
+  "guardrails":[
+    "No universal boundary rule inferred from one case.",
+    "No individual property boundary is determined.",
+    "No court outcome is predicted.",
+    "Physical reality, deeds, folio and map remain separate evidence layers."
+  ]
+}
