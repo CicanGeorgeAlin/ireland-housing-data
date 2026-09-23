@@ -1,0 +1,133 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-evidence-bundle-case-file-assembler",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Assemble a complete, auditable case file from a property evidence retrieval session without converting collected material into unsupported conclusions.",
+  "case_file_sequence":[
+    "CASE_FILE_CREATED",
+    "QUESTION",
+    "PROPERTY_IDENTITY",
+    "DATE_SCOPE",
+    "CHRONOLOGY",
+    "SOURCE_INDEX",
+    "DOCUMENT_INDEX",
+    "PROPERTY_AND_DATE_MATCHES",
+    "OBSERVED_FACTS",
+    "LEGAL_AUTHORITY",
+    "LEGAL_EFFECT",
+    "CONDITIONS_EXCEPTIONS",
+    "CONFLICTS",
+    "EVIDENCE_SUFFICIENCY",
+    "MISSING_EVIDENCE",
+    "OFFICIAL_ROUTE",
+    "DEADLINE",
+    "ANSWER_COMPONENTS",
+    "TRACE_GRAPH",
+    "AUDIT_TRAIL",
+    "CASE_FILE_STATUS"
+  ],
+  "case_file_sections":[
+    {
+      "section":"QUESTION",
+      "required":["original_question","classified_intent","subquestions"]
+    },
+    {
+      "section":"PROPERTY_IDENTITY",
+      "required":["identifier","matching_basis","match_state"]
+    },
+    {
+      "section":"DATE_SCOPE",
+      "required":["target_date_or_current_scope","date_basis","date_match_state"]
+    },
+    {
+      "section":"CHRONOLOGY",
+      "required":["event_date","document_date","registration_date","relevant_sequence"]
+    },
+    {
+      "section":"SOURCE_INDEX",
+      "required":["source_id","authority","version","currentness","purpose"]
+    },
+    {
+      "section":"DOCUMENT_INDEX",
+      "required":["document_id","document_type","identity","property_match","date_match"]
+    },
+    {
+      "section":"FACTS",
+      "required":["observed_fact","source","scope","limitations"]
+    },
+    {
+      "section":"LAW",
+      "required":["regime","provision","version","proposition","conditions","authority"]
+    },
+    {
+      "section":"CONFLICTS",
+      "required":["conflict_id","type","items","resolution_or_uncertainty"]
+    },
+    {
+      "section":"SUFFICIENCY",
+      "required":["state","minimum_profile","available","missing"]
+    },
+    {
+      "section":"ROUTE_AND_DEADLINE",
+      "required":["authority","function","route","deadline_state"]
+    },
+    {
+      "section":"ANSWER",
+      "required":["answer_components","limitations","next_step"]
+    },
+    {
+      "section":"TRACE",
+      "required":["answer_to_evidence_paths"]
+    }
+  ],
+  "assembly_rules":[
+    "Preserve source identity and provenance for every document.",
+    "Separate chronology from legal effect.",
+    "Separate observed facts from legal propositions.",
+    "Include unresolved conflicts rather than hiding them.",
+    "Include missing evidence explicitly.",
+    "Use only validated evidence in the verified fact section.",
+    "Keep user-supplied material distinguishable from official records.",
+    "A case file may be complete as an investigation record even when the legal answer remains unresolved."
+  ],
+  "case_file_states":[
+    "ASSEMBLED",
+    "ASSEMBLED_WITH_LIMITATIONS",
+    "EVIDENCE_INCOMPLETE",
+    "LEGAL_ANALYSIS_INCOMPLETE",
+    "CONFLICT_UNRESOLVED",
+    "PROPERTY_MATCH_INCOMPLETE",
+    "DATE_SCOPE_INCOMPLETE",
+    "READY_FOR_ANSWER",
+    "READY_FOR_REVIEW",
+    "CLOSED"
+  ],
+  "hard_stops":[
+    "Never omit a material source from the case file.",
+    "Never merge different documents merely because they concern the same parties.",
+    "Never merge different events merely because they concern the same property.",
+    "Never treat chronology as proof of legal effect.",
+    "Never mark READY_FOR_ANSWER when a material publication block remains."
+  ],
+  "output_contract":[
+    "case_file_id",
+    "question",
+    "property_identity",
+    "date_scope",
+    "chronology",
+    "sources",
+    "documents",
+    "facts",
+    "legal_analysis",
+    "conflicts",
+    "sufficiency",
+    "missing_evidence",
+    "official_route",
+    "deadline",
+    "answer",
+    "trace_graph",
+    "audit_trail",
+    "status"
+  ]
+}
