@@ -1,0 +1,73 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Define isolated execution of the property fixture revalidation scenario matrix.",
+  "runner_id": "PFRS-RUNNER-001",
+  "execution_order": [
+    "LOAD_SCENARIO_MATRIX",
+    "INITIALISE_ISOLATED_CONTEXT",
+    "LOAD_FIXTURE_STATE",
+    "CREATE_OR_LOAD_IMPACT_EVENT",
+    "RESOLVE_DEPENDENCIES",
+    "APPLY_SCENARIO_CHANGE",
+    "PROPAGATE_IMPACT",
+    "CHECK_HISTORICAL_IMMUTABILITY",
+    "CHECK_PROPOSITION_SCOPE",
+    "CHECK_PROVENANCE_AND_PRIVACY",
+    "CALCULATE_EXPECTED_STATUS",
+    "COMPARE_RESULT",
+    "CHECK_UNSAFE_BEHAVIOUR",
+    "RECORD_SCENARIO_RESULT"
+  ],
+  "isolation": {
+    "production_propositions_mutated": false,
+    "production_answers_mutated": false,
+    "production_publication_state_mutated": false,
+    "historical_runs_mutated": false,
+    "fixture_registry_mutated": false,
+    "synthetic_results_labelled": true
+  },
+  "scenario_inputs": [
+    "PFRS-001",
+    "PFRS-002",
+    "PFRS-003",
+    "PFRS-004",
+    "PFRS-005",
+    "PFRS-006"
+  ],
+  "required_assertions": [
+    "Expected scenario status matches actual propagation status.",
+    "Every required dependency is identified.",
+    "Historical runs remain unchanged.",
+    "Synthetic fixtures cannot generate real-world property claims.",
+    "Privacy issues block affected use.",
+    "Provenance changes require review.",
+    "Superseded fixtures require replacement or historical-only treatment.",
+    "Rejected fixtures cannot remain active.",
+    "No scenario can silently make a pathway publication-ready."
+  ],
+  "result_states": [
+    "NOT_RUN",
+    "RUNNING",
+    "PASSED",
+    "PASSED_WITH_WARNINGS",
+    "FAILED",
+    "BLOCKED",
+    "FIXTURE_INVALID"
+  ],
+  "output_contract": {
+    "scenario_id": "string",
+    "expected_status": "string",
+    "actual_status": "string",
+    "result": "PASS | FAIL | BLOCKED",
+    "unsafe_behaviour_detected": false,
+    "historical_runs_unchanged": true,
+    "production_state_unchanged": true
+  },
+  "guardrails": [
+    "The runner validates technical governance behavior only.",
+    "It does not verify Irish property law.",
+    "Scenario fixtures do not represent live official records.",
+    "A passing scenario does not make a legal pathway publication-ready."
+  ]
+}
