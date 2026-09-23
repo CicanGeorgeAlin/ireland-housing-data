@@ -1,0 +1,72 @@
+{
+  "id":"adverse-possession-prescriptive-rights-time",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"HISTORICAL_TIME_ENGINE_SEED",
+  "questions":[
+    "Could long possession affect title?",
+    "Could long use establish a prescriptive easement or right?"
+  ],
+  "pipeline":[
+    "identify-land-and-registered-status",
+    "identify-claimed-interest",
+    "identify-start-date-of-possession_or_use",
+    "identify-continuity",
+    "identify-nature-and-exclusivity-of-possession_where_relevant",
+    "identify-permission_or_acknowledgement",
+    "identify-interruptions",
+    "identify-title_and_instruments",
+    "identify-law-applicable-through-time",
+    "check-registration-route",
+    "check-opposition_or-dispute",
+    "calculate-relevant-period-only-after-law-classification",
+    "identify-court_or_registry_route",
+    "show-evidence"
+  ],
+  "time_dimensions":[
+    "start_date",
+    "continuous_period",
+    "interruptions",
+    "historical_regime",
+    "effective_date_of_statutory_change",
+    "registration_date"
+  ],
+  "legal_distinctions":[
+    "adverse_possession_of_land",
+    "prescriptive_easement_or_profit",
+    "registered_land",
+    "unregistered_land",
+    "private_right",
+    "public_right"
+  ],
+  "guardrails":[
+    "Never hard-code a generic possession or prescription period without first identifying the legal interest, land status and historical regime.",
+    "Do not infer adverse possession from long occupation alone.",
+    "Do not infer a prescriptive easement from long use alone.",
+    "Permission or acknowledgement can materially affect the legal analysis.",
+    "The 2021 reforms to prescription must be applied with their commencement and transitional/saving provisions.",
+    "A registration application is not the same as a judicial determination where the claim is disputed.",
+    "Historical claims require evidence for the full relevant period."
+  ],
+  "evidence":[
+    "title documents",
+    "folio",
+    "maps",
+    "deeds",
+    "dated photographs",
+    "correspondence",
+    "permissions",
+    "witness evidence",
+    "surveyor evidence",
+    "historical registration records"
+  ],
+  "result_types":[
+    "TIME_PERIOD_REQUIRES_CLASSIFICATION",
+    "HISTORICAL_REGIME_IDENTIFIED",
+    "EVIDENCE_PERIOD_INCOMPLETE",
+    "PRESCRIPTIVE_CLAIM_REQUIRES_REVIEW",
+    "REGISTRATION_ROUTE_IDENTIFIED",
+    "COURT_DETERMINATION_REQUIRES_REVIEW",
+    "NOT_DETERMINABLE"
+  ]
+}
