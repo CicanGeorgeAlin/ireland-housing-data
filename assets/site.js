@@ -121,15 +121,32 @@
     if(time && result.status === 'PRIVATE_PATH'){
       const mapping=resolvePropositions(result,time);
       const apartment=apartmentState();
+      const composition=composeLegalResult(result,time);
       const checklist=renderEvidenceChecklist();
       const evidenceGate=renderEvidenceGate();
       html+='<div class="decision-facts"><div><span>Tenancy generation</span><strong>'+escapeHtml(time.tenancyGeneration)+'</strong></div><div><span>Review period</span><strong>'+escapeHtml(time.reviewPeriod)+'</strong></div><div><span>Commencement check</span><strong>'+escapeHtml(time.commencementCheck ? 'REQUIRED' : 'NOT YET REQUIRED')+'</strong></div></div>';
-      html+='<div class="decision-evidence"><div class="kicker">Candidate legal propositions</div><p>'+escapeHtml(mapping.propositions.length ? mapping.propositions.join(' · ') : 'None loaded for this historical branch.')+'</p><div class="kicker">Evidence chain</div><p>'+escapeHtml(mapping.evidence.length ? mapping.evidence.join(' · ') : 'Historical evidence required.')+'</p><div class="kicker">Publication state</div><p>'+escapeHtml(mapping.route)+'</p><div class="kicker">New-apartment exception</div><p>'+escapeHtml(apartment)+'</p>'+checklist+evidenceGate<button type="button" id="show-law-button">SHOW ME THE LAW</button></div>';
+      html+='<div class="decision-evidence"><div class="kicker">Candidate legal propositions</div><p>'+escapeHtml(mapping.propositions.length ? mapping.propositions.join(' · ') : 'None loaded for this historical branch.')+'</p><div class="kicker">Evidence chain</div><p>'+escapeHtml(mapping.evidence.length ? mapping.evidence.join(' · ') : 'Historical evidence required.')+'</p><div class="kicker">Publication state</div><p>'+escapeHtml(mapping.route)+'</p><div class="kicker">New-apartment exception</div><p>'+escapeHtml(apartment)+'</p><div class="kicker">Legal composition</div><p><strong>'+escapeHtml(composition.result)+'</strong><br>'+escapeHtml(composition.reason)+'</p>'+checklist+evidenceGate<button type="button" id="show-law-button">SHOW ME THE LAW</button></div>';
     }
     box.innerHTML=html;
     document.querySelectorAll('.evidence-toggle').forEach(button => button.addEventListener('click', () => { const key=button.dataset.evidence; const order=['MISSING','SUPPLIED','EXTRACTED','CONSISTENT','CONFLICT']; const current=evidenceState[key]||'MISSING'; evidenceState[key]=order[(order.indexOf(current)+1)%order.length]; renderDecision(); }));
     const lawButton=document.getElementById('show-law-button');
     if(lawButton) lawButton.addEventListener('click', renderLaw);
+  }
+
+  function composeLegalResult(result, time) {
+    if (result.status !== 'PRIVATE_PATH' || !time) return {result:'NOT_DETERMINABLE',reason:'Classification or time resolution incomplete.'};
+    if (time.reviewPeriod === 'BEFORE_2026_FRAMEWORK') return {result:'HISTORICAL',reason:'Historical propositions and evidence are required.'};
+    const newApartment = (state.new_apartment || '').toLowerCase();
+    if (newApartment.includes('yes')) {
+      const required=['e0','e1','e2','e3','e5'];
+      const conflict=Object.values(evidenceState).includes('CONFLICT');
+      if (conflict) return {result:'REVIEW_REQUIRED',reason:'Evidence conflict detected.'};
+      const ready=required.every(k => ['EXTRACTED','CONSISTENT'].includes(evidenceState[k] || 'MISSING'));
+      if (!ready) return {result:'POSSIBLY',reason:'The special-rule pathway is potentially relevant, but required evidence is not yet complete.'};
+      return {result:'YES_SUBJECT_TO_CONDITIONS',reason:'The verified seed supports continuing the qualifying new-apartment analysis, subject to all statutory conditions.'};
+    }
+    if (newApartment.includes('not sure') || !newApartment) return {result:'POSSIBLY',reason:'The special-rule fact has not been resolved.'};
+    return {result:'POSSIBLY',reason:'The ordinary current private-rent proposition remains a candidate, subject to all applicable conditions and exceptions.'};
   }
 
   function renderLaw() {
