@@ -1,0 +1,77 @@
+{
+  "id":"property-evidence-fixtures",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"CANONICAL_PROPERTY_FIXTURE_REGISTRY",
+  "purpose":"Central inventory for controlled property evidence fixtures and their provenance, approval, validation and lifecycle status.",
+  "source_protocol":"data/tests/fixtures/source-derived-redacted-protocol.json",
+  "approval_contract":"data/tests/fixtures/source-derived-fixture-approval.json",
+  "registry_rules":[
+    "Every fixture used by a property test must have a registry entry.",
+    "A fixture cannot be used unless its lifecycle state permits the intended test use.",
+    "Synthetic fixtures remain explicitly synthetic.",
+    "Source-derived fixtures retain provenance and approval references.",
+    "Rejected fixtures cannot be used.",
+    "Superseded fixtures remain historical but cannot be used for current validation unless explicitly permitted by the test's historical scope.",
+    "Fixture status does not equal legal-source verification status.",
+    "Fixture approval does not equal live retrieval."
+  ],
+  "lifecycle_states":[
+    "PROPOSED",
+    "SOURCE_VERIFIED",
+    "REDACTION_REVIEW",
+    "APPROVED",
+    "REJECTED",
+    "SUPERSEDED"
+  ],
+  "fixture_record_schema":{
+    "fixture_id":"Unique fixture identifier.",
+    "fixture_type":"SYNTHETIC|SOURCE_DERIVED_REDACTED",
+    "record_type":"FOLIO|TITLE_PLAN|OFFICIAL_SEARCH|REGISTRY_OF_DEEDS_SEARCH|FILED_INSTRUMENT|OTHER",
+    "lifecycle_state":"Current fixture lifecycle state.",
+    "approval_id":"Approval record identifier where applicable.",
+    "source_authority":null,
+    "source_reference":null,
+    "source_url":null,
+    "source_date":null,
+    "retrieved_at":null,
+    "legal_period":null,
+    "redaction_status":"NOT_APPLICABLE|REVIEWED|REQUIRES_REVIEW",
+    "privacy_status":"NOT_REVIEWED|PASSED|FAILED",
+    "allowed_test_uses":[],
+    "prohibited_uses":[],
+    "supersedes_fixture_id":null,
+    "superseded_by_fixture_id":null,
+    "last_reviewed":null
+  },
+  "current_registry":[
+    {
+      "fixture_id":"FIXTURE-FOLIO-SYNTHETIC-001",
+      "fixture_type":"SYNTHETIC",
+      "record_type":"FOLIO",
+      "lifecycle_state":"APPROVED",
+      "approval_id":null,
+      "source_authority":"Synthetic test fixture",
+      "source_reference":null,
+      "source_url":null,
+      "source_date":null,
+      "retrieved_at":null,
+      "legal_period":"TEST_ONLY",
+      "redaction_status":"NOT_APPLICABLE",
+      "privacy_status":"PASSED",
+      "allowed_test_uses":[
+        "CONTROLLED_TESTING",
+        "PIPELINE_VALIDATION",
+        "EVIDENCE_BOUNDARY_TESTING"
+      ],
+      "prohibited_uses":[
+        "LIVE_RETRIEVAL_CLAIM",
+        "REAL_PROPERTY_CLAIM",
+        "PRODUCTION_LEGAL_EVIDENCE"
+      ],
+      "supersedes_fixture_id":null,
+      "superseded_by_fixture_id":null,
+      "last_reviewed":"2026-09-23"
+    }
+  ]
+}
