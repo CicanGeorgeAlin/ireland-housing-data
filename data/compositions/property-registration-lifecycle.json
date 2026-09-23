@@ -5,6 +5,15 @@
   "purpose": "Connect the principal property-registration pathways into one date-aware evidence-driven lifecycle while keeping each legal event distinct.",
   "lifecycle": [
     {
+      "stage": "PRIVACY_AND_DATA_MINIMISATION_BOUNDARY",
+      "routes": [
+        "property-investigation-privacy-data-minimisation-boundary",
+        "property-citizen-question-intake-clarification-resolver",
+        "property-investigation-run-event-log",
+        "property-investigation-evidence-cache-deduplication"
+      ]
+    },
+    {
       "stage": "INVESTIGATION_MERGE_AND_CASE_IDENTITY",
       "routes": [
         "property-investigation-merge-case-identity-resolver",
@@ -449,7 +458,8 @@
     "property-evidence-dependency-graph",
     "property-investigation-reverification-priority-engine",
     "property-investigation-run-recovery-resume",
-    "property-investigation-merge-case-identity-resolver"
+    "property-investigation-merge-case-identity-resolver",
+    "property-investigation-privacy-data-minimisation-boundary"
   ],
   "answer_sequence": [
     "QUESTION",
