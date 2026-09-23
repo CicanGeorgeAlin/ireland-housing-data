@@ -1,0 +1,37 @@
+{
+  "schema_version":"1.0",
+  "integration_id":"property-registration-general-v1-ui",
+  "status":"INTEGRATED",
+  "source_content":"data/verified/property-registration-general-v1.json",
+  "website_contract":"data/verified/property-registration-general-v1-website-contract.json",
+  "question_path":"data/questions/property-registration-lifecycle.json",
+  "lifecycle":"data/compositions/property-registration-lifecycle.json",
+  "website_files":[
+    "index.html",
+    "assets/site.js"
+  ],
+  "ui_routes":[
+    {"id":"records","label":"Registration records","engine":"property-registration-records"},
+    {"id":"transfer","label":"Transfer / inheritance","engine":"property-registration-transfers"},
+    {"id":"mortgage","label":"Mortgage / charge","engine":"property-registration-mortgages"},
+    {"id":"coownership","label":"Co-ownership","engine":"property-registration-co-ownership"},
+    {"id":"easement","label":"Right of way / easement","engine":"property-registration-easements"},
+    {"id":"rectification","label":"Register error","engine":"property-registration-rectification"}
+  ],
+  "public_safety_states":[
+    "GENERAL_INFORMATION",
+    "EVIDENCE_REQUIRED",
+    "HISTORICAL_RESEARCH_REQUIRED",
+    "CONFLICT",
+    "PROFESSIONAL_REVIEW_REQUIRED"
+  ],
+  "integration_rules":[
+    "UI route selection does not establish a legal result.",
+    "Property-specific facts require authoritative evidence.",
+    "User-supplied documents are not independently verified merely by upload or entry.",
+    "Current and historical records remain separate.",
+    "Official routes are informational and do not guarantee an outcome.",
+    "Conflicts remain visible."
+  ],
+  "status":"READY_FOR_CONTROLLED_BROWSER_OR_INTERACTION_TEST"
+}
