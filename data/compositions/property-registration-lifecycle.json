@@ -207,6 +207,15 @@
         "property-evidence-audit-trail",
         "property-answer-assembly-snapshot"
       ]
+    },
+    {
+      "stage": "CONFLICT_AND_CONTRADICTION_RESOLUTION",
+      "routes": [
+        "property-conflict-contradiction-resolver",
+        "property-evidence-to-answer-trace-graph",
+        "property-answer-state-machine",
+        "property-answer-reverification-change-detection"
+      ]
     }
   ],
   "event_model": [
@@ -268,7 +277,8 @@
     "property-deadline-calculation",
     "property-official-route-authority-resolver",
     "property-human-readable-legal-answer-composer",
-    "property-evidence-to-answer-trace-graph"
+    "property-evidence-to-answer-trace-graph",
+    "property-conflict-contradiction-resolver"
   ],
   "answer_sequence": [
     "QUESTION",
