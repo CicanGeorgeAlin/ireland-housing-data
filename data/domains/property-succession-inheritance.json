@@ -1,0 +1,57 @@
+{
+  "id":"property-succession-inheritance",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"STRUCTURAL_SUCCESSION_DOMAIN",
+  "question":"What happens to a person's property when they die?",
+  "pipeline":[
+    "identify-deceased-and-property-interest",
+    "identify-registered-ownership",
+    "classify-joint-tenancy-or-tenancy-in-common",
+    "identify-will-or-intestacy",
+    "identify-personal-representative_and-estate",
+    "identify-probate-or-administration-status",
+    "identify-property-interest_in_estate",
+    "identify-beneficiary_or-entitled_person",
+    "check-mortgages-charges-easements-and-other-interests",
+    "check-cat-tax-regime",
+    "identify-tailte-registration_route",
+    "identify-dispute_or-caveat-issues",
+    "show-evidence"
+  ],
+  "legal_sources":[
+    "Succession Act 1965",
+    "Land Registration Rules 2012",
+    "Registration of Title Act 1964",
+    "Capital Acquisitions Tax Consolidation Act 2003",
+    "relevant probate and court procedure"
+  ],
+  "key_distinctions":[
+    "joint-tenancy-survivorship",
+    "tenancy-in-common-estate-share",
+    "legal-title",
+    "beneficial-interest",
+    "probate_or_administration",
+    "succession-entitlement",
+    "registration-of-devolution",
+    "CAT-tax-liability"
+  ],
+  "guardrails":[
+    "Do not assume a deceased co-owner's share passes to the survivor without identifying the ownership structure.",
+    "Do not treat a will as equivalent to registered title.",
+    "Do not treat probate as equivalent to registration of property ownership.",
+    "Do not assume an estate asset is unencumbered; inspect registered and relevant underlying interests.",
+    "Do not calculate CAT without the relevant beneficiary relationship, prior benefits, valuation date and applicable exemptions/reliefs.",
+    "Historical deaths require the succession law applicable at the relevant date."
+  ],
+  "result_types":[
+    "SURVIVORSHIP_ROUTE_IDENTIFIED",
+    "ESTATE_PROPERTY_IDENTIFIED",
+    "SUCCESSION_ROUTE_IDENTIFIED",
+    "REGISTRATION_ROUTE_IDENTIFIED",
+    "CAT_REVIEW_REQUIRED",
+    "DISPUTE_OR_CAVEAT_REQUIRES_REVIEW",
+    "HISTORICAL_SUCCESSION_RESEARCH_REQUIRED",
+    "NOT_DETERMINABLE"
+  ]
+}
