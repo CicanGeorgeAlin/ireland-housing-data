@@ -1,0 +1,51 @@
+{
+  "id":"show-me-the-law-rent-review",
+  "version":"0.1",
+  "status":"STRUCTURAL_PUBLICATION_PACKAGE",
+  "propositions":{
+    "RTB-2026-RENT-CAP-001":{
+      "what_we_say":"For applicable private residential tenancies from 1 March 2026, the general annual rent-increase rule is 2% or CPI, whichever is lower, subject to applicable exceptions.",
+      "why_we_say":"The proposition is linked to the 2026 statutory framework, its commencement record and current RTB official guidance.",
+      "original_legal_text":"Retrieve the exact applicable statutory provision before displaying verbatim legal text.",
+      "official_source":"RTB current rent-setting guidance plus Irish Statute Book Act and commencement record.",
+      "what_it_means":"This is a general rule only; classification, timing and exceptions must be checked.",
+      "how_it_applies":"The user's facts must be composed against the canonical proposition and applicable exceptions.",
+      "what_you_can_do":"Continue through the rent-review pathway and verify the official procedure before acting.",
+      "deadline":"Resolve only after the applicable notice/procedure rule has been identified.",
+      "official_route":"RTB",
+      "last_verified":"2026-09-23"
+    },
+    "RTB-2026-RENT-RESET-002":{
+      "what_we_say":"Certain private tenancies beginning from 1 March 2026 may have specified market-rent reset circumstances.",
+      "why_we_say":"Linked to the 2026 statutory framework and current RTB guidance.",
+      "original_legal_text":"Retrieve the exact applicable statutory provision before displaying verbatim legal text.",
+      "official_source":"RTB current rent-setting guidance plus Irish Statute Book Act and commencement record.",
+      "what_it_means":"A market-rent reset is not automatically available in every tenancy.",
+      "how_it_applies":"The engine must identify the tenancy generation and the statutory conditions before applying this proposition.",
+      "what_you_can_do":"Provide the missing facts requested by the pathway.",
+      "deadline":"Case-specific procedural rule required.",
+      "official_route":"RTB",
+      "last_verified":"2026-09-23"
+    },
+    "RTB-2026-APARTMENT-003":{
+      "what_we_say":"A qualifying new-apartment rule can affect the ordinary rent-increase calculation where the statutory conditions concerning construction commencement and the tenancy are met.",
+      "why_we_say":"Linked to current RTB guidance and the 2026 statutory framework.",
+      "original_legal_text":"Retrieve the exact applicable statutory provision before displaying verbatim legal text.",
+      "official_source":"RTB current rent-setting guidance plus Irish Statute Book Act and commencement record.",
+      "what_it_means":"The construction date is a legally relevant fact for the special rule; it must not be assumed from the apartment's age alone.",
+      "how_it_applies":"The engine must collect and verify the relevant construction fact and other statutory conditions.",
+      "what_you_can_do":"Continue the pathway and provide supporting information where requested.",
+      "deadline":"Case-specific procedural rule required.",
+      "official_route":"RTB",
+      "last_verified":"2026-09-23"
+    }
+  },
+  "publication_gate":[
+    "canonical proposition exists",
+    "evidence record exists",
+    "source role identified",
+    "current status checked",
+    "exact statutory text retrieved before verbatim quotation",
+    "exceptions checked before definitive application"
+  ]
+}
