@@ -243,6 +243,15 @@
         "property-evidence-property-match",
         "property-answer-state-machine"
       ]
+    },
+    {
+      "stage": "QUESTION_TO_EVIDENCE_REQUEST_PLANNING",
+      "routes": [
+        "property-question-evidence-request-planner",
+        "property-evidence-sufficiency-minimum-evidence-resolver",
+        "property-evidence-retrieval-routing",
+        "property-official-route-authority-resolver"
+      ]
     }
   ],
   "event_model": [
@@ -308,7 +317,8 @@
     "property-conflict-contradiction-resolver",
     "property-legal-change-impact-engine",
     "property-source-reliability-freshness-resolver",
-    "property-evidence-sufficiency-minimum-evidence-resolver"
+    "property-evidence-sufficiency-minimum-evidence-resolver",
+    "property-question-evidence-request-planner"
   ],
   "answer_sequence": [
     "QUESTION",
