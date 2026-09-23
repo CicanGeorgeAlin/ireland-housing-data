@@ -1,0 +1,68 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Central registry for property evidence fixture impact events and their current revalidation state.",
+  "registry_rules": [
+    "Every material fixture impact event must have a unique event ID.",
+    "Registry state is derived from the impact event and dependency map.",
+    "Historical validation runs remain immutable.",
+    "An impact event cannot establish live property evidence or change legal-source status.",
+    "Open impact events remain visible until revalidation is completed, superseded, or explicitly blocked."
+  ],
+  "statuses": [
+    "DETECTED",
+    "CLASSIFIED",
+    "IMPACT_MAPPED",
+    "REVALIDATION_QUEUED",
+    "REVALIDATION_IN_PROGRESS",
+    "REVALIDATED",
+    "BLOCKED",
+    "CLOSED",
+    "HISTORICAL"
+  ],
+  "records": [
+    {
+      "impact_event_id": "FIXTURE-IMPACT-EVENT-001",
+      "fixture_id": "FIXTURE-FOLIO-SYNTHETIC-001",
+      "fixture_version_before": "1.0",
+      "fixture_version_after": "1.1",
+      "change_type": "CORRECTION",
+      "status": "REVALIDATION_QUEUED",
+      "impact_status": "REVALIDATION_REQUIRED",
+      "affected_test_case_ids": [
+        "PAE-001",
+        "PAE-007"
+      ],
+      "affected_validation_run_ids": [
+        "RUN-PROPERTY-TITLE-SYNTHETIC-E2E-001"
+      ],
+      "affected_pathway_ids": [
+        "property-title-live"
+      ],
+      "affected_proposition_ids": [
+        "PROP-PROPERTY-TITLE-001",
+        "PROP-PROPERTY-REGISTRATION-003"
+      ],
+      "replacement_required": true,
+      "new_validation_run_required": true,
+      "historical_runs_immutable": true,
+      "legal_source_status_changed": false,
+      "publication_status_changed": false,
+      "example_only": true
+    }
+  ],
+  "closure_requirements": [
+    "All required dependent tests have a new validation result.",
+    "Any provenance or privacy review has passed.",
+    "Affected pathway validation status has been updated.",
+    "Historical validation records remain unchanged.",
+    "The impact event records the resulting validation run IDs.",
+    "No unresolved critical fixture dependency remains."
+  ],
+  "guardrails": [
+    "Registry status is technical validation governance, not a legal confidence score.",
+    "A REVALIDATED fixture does not mean the underlying legal proposition is legally verified.",
+    "Synthetic fixture events remain isolated from production legal evidence.",
+    "No event may claim live official-record retrieval without a real retrieval record."
+  ]
+}
