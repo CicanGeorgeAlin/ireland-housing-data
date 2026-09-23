@@ -1,0 +1,44 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Validate the authoritative blocker registry for identity, traceability, severity, closure conditions and separation from legal/publication status.",
+  "registry": "data/registries/property-fixture-revalidation-blockers.json",
+  "validation_sequence": [
+    "LOAD_BLOCKER_REGISTRY",
+    "VERIFY_BLOCKER_IDENTITY",
+    "VERIFY_QUEUE_AND_IMPACT_LINKS",
+    "VERIFY_BLOCKER_TYPE",
+    "VERIFY_SEVERITY",
+    "VERIFY_REQUIRED_ACTION",
+    "VERIFY_EXECUTION_EFFECT",
+    "VERIFY_CLOSURE_EFFECT",
+    "VERIFY_PUBLICATION_SEPARATION",
+    "VERIFY_GUARDRAILS",
+    "RECORD_VALIDATION"
+  ],
+  "checks": [
+    {"check_id":"PFRBV-001","name":"Blocker identity","result":"PASS"},
+    {"check_id":"PFRBV-002","name":"Dependency traceability","result":"PASS"},
+    {"check_id":"PFRBV-003","name":"Blocker classification","result":"PASS"},
+    {"check_id":"PFRBV-004","name":"Required action","result":"PASS"},
+    {"check_id":"PFRBV-005","name":"Execution and closure impact","result":"PASS"},
+    {"check_id":"PFRBV-006","name":"Publication separation","result":"PASS"},
+    {"check_id":"PFRBV-007","name":"No invented evidence","result":"PASS"}
+  ],
+  "result": {
+    "validation_status":"PASSED",
+    "registry_valid":true,
+    "open_blocker_count":1,
+    "execution_ready":false,
+    "closure_ready":false,
+    "legal_source_status":"UNCHANGED",
+    "publication_status":"UNCHANGED"
+  },
+  "guardrails": [
+    "Structural validation only.",
+    "The open blocker remains open.",
+    "No live official property record was retrieved.",
+    "No legal proposition was upgraded.",
+    "No publication status was upgraded."
+  ]
+}
