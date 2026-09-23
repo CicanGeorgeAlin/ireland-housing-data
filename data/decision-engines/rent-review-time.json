@@ -1,0 +1,30 @@
+{
+  "id":"rent-review-time-resolver",
+  "version":"0.1",
+  "status":"STRUCTURAL_ENGINE",
+  "purpose":"Resolve the temporal branch of the rent-review pathway without confusing enactment, commencement, tenancy generation or review date.",
+  "required_facts":["tenancy_start","review_date"],
+  "date_tests":[
+    {"id":"start-before-2026-03-01","condition":"tenancy_start < 2026-03-01","label":"tenancy-created-before-2026-framework"},
+    {"id":"start-from-2026-03-01","condition":"tenancy_start >= 2026-03-01","label":"tenancy-created-under-2026-framework"},
+    {"id":"review-before-2026-03-01","condition":"review_date < 2026-03-01","label":"historical-review-date"},
+    {"id":"review-from-2026-03-01","condition":"review_date >= 2026-03-01","label":"review-date-under-2026-framework"}
+  ],
+  "composition_rules":[
+    "Resolve tenancy start date first.",
+    "Resolve proposed review date separately.",
+    "Do not infer legal effect from Act publication date alone.",
+    "Check commencement where a statutory provision is relied upon.",
+    "Preserve historical treatment when the relevant event occurred under an earlier regime.",
+    "If dates are invalid, missing or ambiguous, return FACT_REQUIRED."
+  ],
+  "outputs":[
+    "tenancy_generation_candidate",
+    "review_date_period",
+    "historical_or_current_branch",
+    "commencement_check_required",
+    "date_facts_missing"
+  ],
+  "important_distinction":"A tenancy created before 1 March 2026 and a rent review occurring after 1 March 2026 are separate temporal facts. The engine must not collapse them into a single date test.",
+  "verification_note":"Temporal classification is structural until every dependent statutory provision, commencement provision and exception has been provision-level verified."
+}
