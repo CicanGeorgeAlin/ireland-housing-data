@@ -1,0 +1,53 @@
+{
+  "id":"planning-property-use",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"STRUCTURAL_DOMAIN_SEED",
+  "question":"What planning and development rules apply to this property or proposed use?",
+  "pipeline":[
+    "identify-property",
+    "identify-proposed-development-or-use",
+    "identify-current-planning-law-version",
+    "check-commencement-status",
+    "identify-development-plan-and-local-policy",
+    "check-permission-or-exemption-route",
+    "check-existing-permission-and-conditions",
+    "check-enforcement-or-retention-issues",
+    "check-building-control_separately",
+    "check-environmental_or_protected-status",
+    "identify-application_or-appeal-route",
+    "show-evidence"
+  ],
+  "core_distinctions":[
+    "ownership_is_not_planning_authorisation",
+    "planning_permission_is_not_title",
+    "planning_permission_is_not_building_control_compliance",
+    "exempted_development_is_not_the_same_as_planning_permission",
+    "physical_existing_use_is_not_proof_of_lawful_authorisation"
+  ],
+  "current_law_guardrail":"The Planning and Development Act 2024 is being commenced in stages. The current Irish Statute Book revised Act records different commencement dates for different provisions, including provisions commenced in 2025 and 2026; therefore the engine must resolve the applicable provision and effective date rather than treating the 2024 Act as wholly operative or the 2000 Act as wholly repealed.",
+  "verified_sources":[
+    {
+      "id":"SRC-ISB-PDA2024",
+      "title":"Planning and Development Act 2024 — Revised Act / commencement table",
+      "url":"https://www.irishstatutebook.ie/eli/isbc/2024_34.html"
+    },
+    {
+      "id":"SRC-ISB-PDA2024-S1",
+      "title":"Planning and Development Act 2024 — Section 1",
+      "url":"https://www.irishstatutebook.ie/eli/2024/act/34/section/1"
+    },
+    {
+      "id":"SRC-ISB-SI194-2026",
+      "title":"Planning and Development Act 2024 (Commencement) Order 2026",
+      "url":"https://www.irishstatutebook.ie/eli/2026/si/194/made/en/"
+    }
+  ],
+  "guardrails":[
+    "Never give a planning answer without resolving the date and applicable legislation.",
+    "Do not infer planning permission from title documents.",
+    "Do not infer building-regulation compliance from planning permission.",
+    "Flag local development-plan and site-specific policy questions.",
+    "Flag specialist review for protected structures, environmental assessment, enforcement, retention or complex development."
+  ]
+}
