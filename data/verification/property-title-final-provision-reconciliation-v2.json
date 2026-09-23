@@ -1,0 +1,45 @@
+{
+  "schema_version":"0.2",
+  "status":"PARTIALLY_RECONCILED",
+  "verified_at":"2026-09-23",
+  "purpose":"Correct the core property-title reconciliation using the current revised statutory text and its annotations.",
+  "source":"https://revisedacts.lawreform.ie/eli/1964/act/16/revised/en/html",
+  "corrections":[
+    {
+      "provision":"s.49",
+      "finding":"The current revised text states that the Statute of Limitations 1957 applies to registered land subject to s.49 and provides an application route to the Authority where title by possession is claimed.",
+      "amendment":"Registration of Deeds and Title Act 2006 s.4(2), effective 4 November 2006",
+      "status":"CURRENT_TEXT_AND_AMENDMENT_CONFIRMED"
+    },
+    {
+      "provision":"s.33",
+      "finding":"The current revised text permits registration of unregistered freehold land with absolute, qualified or possessory title and includes prescribed-evidence requirements.",
+      "amendment":"Registration of Deeds and Title Act 2006 s.56, effective 4 November 2006",
+      "status":"CURRENT_TEXT_AND_AMENDMENT_CONFIRMED"
+    },
+    {
+      "provision":"s.84",
+      "finding":"The current revised text concerns registry maps and provides for their identification/adoption under the statutory framework.",
+      "amendment":"Registration of Deeds and Title Act 2006 s.61, effective 4 November 2006",
+      "status":"CURRENT_TEXT_AND_AMENDMENT_CONFIRMED"
+    },
+    {
+      "provision":"s.85",
+      "finding":"The current revised text expressly states that, except as provided by the Act, neither the register description nor registry-map identification is conclusive as to boundaries or extent.",
+      "amendment":"Registration of Deeds and Title Act 2006 s.62, effective 4 November 2006",
+      "status":"CURRENT_TEXT_AND_AMENDMENT_CONFIRMED"
+    },
+    {
+      "provision":"s.86",
+      "finding":"Certain historically ascertained and defined boundaries may be entered as conclusive after the prescribed process.",
+      "status":"CURRENT_TEXT_CONFIRMED"
+    }
+  ],
+  "new_temporal_correction":{
+    "issue":"Law Reform Commission Revised Acts page",
+    "finding":"The generic Revised Act front page returned in the search describes a 17 July 2023 consolidation, while individual revised section pages show current annotations/corrections. The platform must therefore use the specific current section record and official amendment/commencement sources rather than assume the front-page update date alone is exhaustive.",
+    "status":"RECORDED"
+  },
+  "important_case_law_rule":"The statutory reconciliation and judicial interpretation remain separate evidence layers.",
+  "publication_gate":"NOT_READY"
+}
