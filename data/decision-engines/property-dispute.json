@@ -1,0 +1,68 @@
+{
+  "id":"property-dispute",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"STRUCTURAL_DISPUTE_ENGINE",
+  "question":"What legal issue is actually in dispute about this property?",
+  "pipeline":[
+    "identify-property",
+    "identify-parties_and_interests",
+    "classify-dispute",
+    "reconstruct-relevant-property-timeline",
+    "identify-governing-law-at-event-dates",
+    "identify-primary-evidence",
+    "identify-administrative_or_regulatory_route",
+    "identify-court_or_tribunal_route",
+    "identify-deadlines",
+    "identify-pre_action_requirements",
+    "identify-remedies_or_orders",
+    "compose-evidence-based-next-step"
+  ],
+  "dispute_types":[
+    "TITLE_OR_OWNERSHIP",
+    "BOUNDARY",
+    "EASEMENT_OR_RIGHT_OF_WAY",
+    "CO_OWNERSHIP",
+    "MORTGAGE_OR_CHARGE",
+    "PLANNING",
+    "BUILDING_CONTROL",
+    "PROPERTY_TRANSACTION",
+    "LEASE_OR_TENANCY",
+    "SUCCESSION",
+    "OMC_OR_MULTI_UNIT_DEVELOPMENT",
+    "PROPERTY_TAX",
+    "ENVIRONMENTAL_OR_PROTECTED_STATUS"
+  ],
+  "state_model":[
+    "ISSUE_REPORTED",
+    "FACTS_COLLECTED",
+    "LEGAL_CLASSIFICATION",
+    "EVIDENCE_REVIEW",
+    "ROUTE_IDENTIFIED",
+    "PRE_ACTION",
+    "FORMAL_PROCEEDING",
+    "DECISION_OR_ORDER",
+    "APPEAL_OR_REVIEW",
+    "ENFORCEMENT",
+    "RESOLVED"
+  ],
+  "guardrails":[
+    "Do not assume the user's legal characterisation is correct; classify the underlying issue.",
+    "Do not give a court, tribunal or administrative route without identifying the relevant legal regime.",
+    "Do not treat a dispute as established merely because one party alleges a breach.",
+    "Preserve disputed facts and competing evidence explicitly.",
+    "Deadlines must be event-based and date-specific.",
+    "Do not advise self-help measures that may create further legal exposure.",
+    "Where specialist legal representation is appropriate, identify that need without pretending to provide legal representation."
+  ],
+  "evidence_chain":"PROPERTY -> PARTIES -> EVENT -> LEGAL STATE BEFORE -> ALLEGED CHANGE -> PRIMARY EVIDENCE -> APPLICABLE LAW -> PROCEDURE -> DEADLINE -> REMEDY -> CURRENT STATE",
+  "result_types":[
+    "DISPUTE_CLASSIFIED",
+    "ADMINISTRATIVE_ROUTE_IDENTIFIED",
+    "COURT_ROUTE_REQUIRES_REVIEW",
+    "EVIDENCE_INSUFFICIENT",
+    "MULTI_REGIME_DISPUTE",
+    "HISTORICAL_RESEARCH_REQUIRED",
+    "NOT_DETERMINABLE"
+  ]
+}
