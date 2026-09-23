@@ -1,0 +1,71 @@
+{
+  "schema_version":"0.1",
+  "status":"PARTIALLY_RECONCILED",
+  "verified_at":"2026-09-23",
+  "scope":["s.31","s.33","s.49","ss.84-88"],
+  "source":"https://revisedacts.lawreform.ie/eli/1964/act/16/revised/en/html",
+  "findings":[
+    {
+      "provision":"s.31",
+      "current_text":"VERIFIED",
+      "material_amendment":"Registration of Deeds and Title Act 2006 s.4(2)",
+      "effective_date":"2006-11-04",
+      "case_law":"PRIMARY_AUTHORITIES_REVIEWED",
+      "status":"RECONCILED"
+    },
+    {
+      "provision":"s.33",
+      "current_text":"VERIFIED",
+      "material_amendment":"Registration of Deeds and Title Act 2006 s.56",
+      "effective_date":"2006-11-04",
+      "status":"RECONCILED_WITH_PROCEDURAL_REVIEW_REMAINING"
+    },
+    {
+      "provision":"s.49",
+      "current_text":"VERIFIED",
+      "material_amendment":"Registration of Deeds and Title Act 2006 s.4(2)",
+      "effective_date":"2006-11-04",
+      "status":"RECONCILED_WITH_CASE_LAW_REVIEW_REMAINING"
+    },
+    {
+      "provision":"s.84",
+      "current_text":"VERIFIED",
+      "material_amendment":"Registration of Deeds and Title Act 2006 s.61",
+      "effective_date":"2006-11-04",
+      "status":"RECONCILED"
+    },
+    {
+      "provision":"s.85",
+      "current_text":"VERIFIED",
+      "material_amendment":"Registration of Deeds and Title Act 2006 s.62",
+      "effective_date":"2006-11-04",
+      "status":"RECONCILED"
+    },
+    {
+      "provision":"s.86",
+      "current_text":"VERIFIED",
+      "status":"CURRENT_TEXT_REVIEWED",
+      "note":"Specific statutory mechanism can make certain ascertained boundaries conclusive; must not be generalized to all title plans."
+    },
+    {
+      "provision":"s.87",
+      "current_text":"VERIFIED",
+      "status":"CURRENT_TEXT_REVIEWED"
+    },
+    {
+      "provision":"s.88",
+      "current_text":"VERIFIED",
+      "status":"CURRENT_TEXT_REVIEWED"
+    }
+  ],
+  "critical_correction":"The current revised text shows that s.33 was substituted in 2006, while later 2009 amendments deleted portions of several title-effect provisions. User-facing content must therefore use the current revised text rather than reproducing the original 1964 wording.",
+  "verified_amendment_chain":[
+    "s.31 -> 2006 Act s.4(2)",
+    "s.33 -> 2006 Act s.56",
+    "s.49 -> 2006 Act s.4(2)",
+    "s.84 -> 2006 Act s.61",
+    "s.85 -> 2006 Act s.62"
+  ],
+  "remaining":"Final review of current procedural rules, possessory-title case law, and all later effects relevant to each user-facing proposition.",
+  "publication_gate":"NOT_READY"
+}
