@@ -1,0 +1,50 @@
+{
+  "schema_version":"0.1",
+  "status":"PARTIALLY_VERIFIED",
+  "verified_at":"2026-09-23",
+  "scope":"Possessory title, registered-land possession and adverse possession",
+  "primary_sources":[
+    {
+      "case":"McDonnell v McDonnell [2013] IEHC 395",
+      "court":"High Court",
+      "source":"https://www.bailii.org/ie/cases/IEHC/2013/2013IEHC395.html",
+      "relevance":"Adverse possession and title by possession; factual requirements and evidential analysis.",
+      "status":"PRIMARY_JUDGMENT_IDENTIFIED"
+    },
+    {
+      "case":"JA Pye (Oxford) Ltd v Graham",
+      "court":"UK House of Lords",
+      "source_role":"comparative authority only",
+      "status":"NOT_IRISH_AUTHORITY"
+    }
+  ],
+  "statutory_context":[
+    {
+      "instrument":"Registration of Title Act 1964",
+      "provisions":"s.49 and related registration provisions",
+      "status":"PRIMARY_STATUTE"
+    },
+    {
+      "instrument":"Statute of Limitations 1957",
+      "provisions":"Part IV land limitation provisions",
+      "status":"PRIMARY_STATUTE"
+    },
+    {
+      "instrument":"Land and Conveyancing Law Reform Act 2021",
+      "provisions":"prescription and transitional provisions",
+      "status":"PRIMARY_STATUTE_REQUIRES_DETAILED_APPLICATION_ANALYSIS"
+    }
+  ],
+  "verified_limit":[
+    "A case involving adverse possession cannot automatically be treated as a complete statement of the current registration procedure.",
+    "Historical possession claims require date-specific statutory analysis.",
+    "Prescriptive easements remain a separate pathway from possession-based title."
+  ],
+  "remaining":[
+    "Review McDonnell judgment in full for proposition-level extraction.",
+    "Identify additional Irish authorities involving registered land and possessory title.",
+    "Complete 2021 Act commencement and transitional analysis.",
+    "Map current Tailte procedure/forms for possessory-title applications."
+  ],
+  "publication_gate":"NOT_READY"
+}
