@@ -1,0 +1,109 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Provide a chronological audit record for material property evidence fixture governance events without rewriting historical records.",
+  "audit_rules": [
+    "Every material governance state transition receives an auditable event.",
+    "Events are append-only; historical entries are never silently replaced.",
+    "Each event references its originating fixture, impact event, queue item or validation run where applicable.",
+    "Technical governance events cannot establish legal facts or live property evidence.",
+    "Privacy-sensitive fixture contents are not copied into the public audit log."
+  ],
+  "event_types": [
+    "FIXTURE_REGISTERED",
+    "DEPENDENCY_MAPPED",
+    "IMPACT_DETECTED",
+    "IMPACT_CLASSIFIED",
+    "REVALIDATION_QUEUED",
+    "QUEUE_VALIDATED",
+    "SCENARIO_VALIDATED",
+    "CLOSURE_CHECKED",
+    "GOVERNANCE_VALIDATED",
+    "STATUS_UPDATED"
+  ],
+  "events": [
+    {
+      "event_id": "PFG-AUDIT-001",
+      "event_type": "FIXTURE_REGISTERED",
+      "fixture_id": "FIXTURE-FOLIO-SYNTHETIC-001",
+      "recorded_at": "2026-09-23",
+      "source_reference": "data/registries/property-evidence-fixtures.json",
+      "result": "APPROVED_FOR_CONTROLLED_TESTING",
+      "historical_record_immutable": true
+    },
+    {
+      "event_id": "PFG-AUDIT-002",
+      "event_type": "DEPENDENCY_MAPPED",
+      "fixture_id": "FIXTURE-FOLIO-SYNTHETIC-001",
+      "recorded_at": "2026-09-23",
+      "source_reference": "data/registries/property-fixture-test-dependencies.json",
+      "result": "DEPENDENCIES_RECORDED",
+      "historical_record_immutable": true
+    },
+    {
+      "event_id": "PFG-AUDIT-003",
+      "event_type": "IMPACT_DETECTED",
+      "fixture_id": "FIXTURE-FOLIO-SYNTHETIC-001",
+      "impact_event_id": "FIXTURE-IMPACT-EVENT-001",
+      "recorded_at": "2026-09-23",
+      "result": "REVALIDATION_REQUIRED",
+      "historical_record_immutable": true
+    },
+    {
+      "event_id": "PFG-AUDIT-004",
+      "event_type": "REVALIDATION_QUEUED",
+      "fixture_id": "FIXTURE-FOLIO-SYNTHETIC-001",
+      "queue_id": "PF-REVAL-QUEUE-001",
+      "recorded_at": "2026-09-23",
+      "result": "READY_FOR_REVALIDATION",
+      "historical_record_immutable": true
+    },
+    {
+      "event_id": "PFG-AUDIT-005",
+      "event_type": "SCENARIO_VALIDATED",
+      "fixture_id": "FIXTURE-FOLIO-SYNTHETIC-001",
+      "validation_run_id": "PFRS-RUN-001",
+      "recorded_at": "2026-09-23",
+      "result": "PASSED_WITH_WARNINGS",
+      "historical_record_immutable": true
+    },
+    {
+      "event_id": "PFG-AUDIT-006",
+      "event_type": "CLOSURE_CHECKED",
+      "fixture_id": "FIXTURE-FOLIO-SYNTHETIC-001",
+      "validation_run_id": "PF-CLOSE-VAL-RUN-001",
+      "recorded_at": "2026-09-23",
+      "result": "NOT_READY",
+      "reason": "DEPENDENT_REVALIDATION_MISSING",
+      "historical_record_immutable": true
+    },
+    {
+      "event_id": "PFG-AUDIT-007",
+      "event_type": "GOVERNANCE_VALIDATED",
+      "recorded_at": "2026-09-23",
+      "source_reference": "data/tests/property-fixture-governance-manifest-validation.json",
+      "result": "PASSED",
+      "historical_record_immutable": true
+    },
+    {
+      "event_id": "PFG-AUDIT-008",
+      "event_type": "STATUS_UPDATED",
+      "recorded_at": "2026-09-23",
+      "source_reference": "data/registries/property-fixture-governance-status.json",
+      "result": "GOVERNANCE_PASSED_REVALIDATION_OPEN_PUBLICATION_NOT_READY",
+      "historical_record_immutable": true
+    }
+  ],
+  "current_state": {
+    "governance_status": "PASSED",
+    "active_revalidation": true,
+    "closure_state": "NOT_READY",
+    "publication_status": "NOT_READY"
+  },
+  "guardrails": [
+    "This audit log records technical governance history only.",
+    "It does not establish legal ownership, title, boundaries or other property facts.",
+    "It does not represent live official-record retrieval.",
+    "Historical audit entries are append-only and immutable."
+  ]
+}
