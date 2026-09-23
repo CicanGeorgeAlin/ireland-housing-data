@@ -1,0 +1,22 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-investigation-run-recovery-resume-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for recovering and resuming interrupted investigations.",
+  "core_principle":"ONLY VERIFIED STATE MAY BE REUSED; PARTIAL OR UNCERTAIN STATE MUST BE RECHECKED.",
+  "minimum_recovery_inputs":[
+    "run_id",
+    "event_log",
+    "last_known_state",
+    "open_dependencies",
+    "source_freshness",
+    "cache_status"
+  ],
+  "completion_rule":"A stage is complete only when its required output and verification event are present; a start or in-progress event is not completion.",
+  "staleness_rule":"Previously completed work is reusable only when its material dependencies remain valid.",
+  "scope_rule":"Property and date scope are restored from the run history and cannot be silently broadened during recovery.",
+  "subquestion_rule":"Independent subquestions may resume at different stages and retain their own states.",
+  "failure_rule":"If reliable state reconstruction is impossible, the run is blocked rather than reconstructed by inference.",
+  "verification_boundary":"Recovery reconstructs workflow state; it does not establish the underlying property fact or legal conclusion."
+}
