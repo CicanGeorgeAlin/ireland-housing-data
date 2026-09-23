@@ -1,0 +1,66 @@
+{
+  "id":"source-derived-redacted-protocol",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"CONTROLLED_SOURCE_DERIVED_FIXTURE_PROTOCOL",
+  "purpose":"Define how carefully selected official-source material may be converted into privacy-minimised test fixtures while preserving provenance, date and legal context.",
+  "eligibility":[
+    "Source must be authoritative for the fact being tested.",
+    "Source provenance must be recorded before redaction.",
+    "The material must be necessary for the test objective.",
+    "Personal data must be minimised or redacted where not necessary.",
+    "The fixture must retain enough provenance to distinguish it from synthetic data.",
+    "The fixture must not be used to imply live retrieval of the underlying source."
+  ],
+  "provenance_record":{
+    "fixture_id":"Unique fixture identifier.",
+    "source_authority":"Official source authority.",
+    "source_title":"Original source title.",
+    "source_url":"Authoritative source URL.",
+    "source_reference":"Provision, record reference, document identifier or other locator where appropriate.",
+    "retrieved_at":"Actual retrieval timestamp.",
+    "source_date":"Date of source/record where relevant.",
+    "legal_effective_period":"Applicable legal or procedural period.",
+    "original_record_type":"FOLIO|TITLE_PLAN|OFFICIAL_SEARCH|REGISTRY_OF_DEEDS_SEARCH|FILED_INSTRUMENT|OTHER",
+    "redaction_summary":"What was removed or generalised and why."
+  },
+  "redaction_rules":[
+    "Remove unnecessary names, addresses, folio numbers, account numbers and other identifiers.",
+    "Do not alter the substantive fact being tested.",
+    "If redaction changes evidential meaning, the fixture must be rejected.",
+    "Never fabricate missing text to make a redacted record appear complete.",
+    "Keep an internal provenance record even when public/test output is minimised."
+  ],
+  "legal_context":{
+    "current_or_historical":"CURRENT|HISTORICAL",
+    "applicable_law_version":null,
+    "commencement_status":"VERIFIED|NOT_VERIFIED|NOT_APPLICABLE",
+    "amendments_checked":false,
+    "case_law_relevance_checked":false
+  },
+  "fixture_states":[
+    "PROPOSED",
+    "SOURCE_VERIFIED",
+    "REDACTION_REVIEW",
+    "FIXTURE_APPROVED",
+    "FIXTURE_REJECTED",
+    "SUPERSEDED"
+  ],
+  "approval_gate":[
+    "SOURCE_PROVENANCE_RECORDED",
+    "SOURCE_AUTHORITY_CONFIRMED",
+    "DATE_SCOPE_RECORDED",
+    "REDACTION_REVIEWED",
+    "SUBSTANTIVE_MEANING_PRESERVED",
+    "PRIVACY_MINIMISED",
+    "FIXTURE_LABEL_APPLIED"
+  ],
+  "guardrails":[
+    "Source-derived fixture evidence is for controlled testing unless separately promoted through the legal evidence process.",
+    "A source-derived fixture does not equal a live retrieval event.",
+    "A fixture cannot silently become production evidence.",
+    "Historical source material must remain date-aware.",
+    "Public display must not expose unnecessary personal data.",
+    "If provenance or substantive meaning cannot be preserved, do not create the fixture."
+  ]
+}
