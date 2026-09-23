@@ -1,0 +1,159 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-evidence-retrieval-routing",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "purpose":"Select the authoritative evidence route required to answer a property-specific proposition, based on the question, date, property status, legal event and proposition type.",
+  "verified_date":"2026-09-24",
+  "source_basis":[
+    "Tailte Éireann Land Registry and Registry of Deeds services",
+    "Land Registration Rules 2012",
+    "Registration of Title Act 1964",
+    "Succession Act 1965",
+    "Irish Statute Book"
+  ],
+  "proposition_types":[
+    "CURRENT_REGISTERED_OWNER",
+    "CURRENT_REGISTERED_CHARGE",
+    "HISTORICAL_REGISTERED_OWNER",
+    "HISTORICAL_REGISTERED_CHARGE",
+    "TRANSFER_REGISTRATION",
+    "SUCCESSION_REGISTRATION",
+    "JOINT_TENANCY_SURVIVORSHIP",
+    "TENANCY_IN_COMMON_SHARE",
+    "EASEMENT_OR_BURDEN",
+    "BOUNDARY_OR_EXTENT",
+    "FIRST_REGISTRATION",
+    "REGISTRY_OF_DEEDS_TRANSACTION",
+    "RECTIFICATION_OR_REGISTER_ERROR",
+    "COURT_DETERMINATION",
+    "DOCUMENT_AUTHENTICITY_OR_CONTENT"
+  ],
+  "route_catalogue":[
+    {
+      "route_id":"LAND_REGISTRY_CURRENT_FOLIO",
+      "authority":"Tailte Éireann",
+      "best_for":["CURRENT_REGISTERED_OWNER","CURRENT_REGISTERED_CHARGE","CURRENT_REGISTERED_INTERESTS"],
+      "minimum_identifiers":["folio_number_or sufficiently precise property identification"],
+      "limitation":"Current register evidence does not automatically answer historical-state questions."
+    },
+    {
+      "route_id":"LAND_REGISTRY_HISTORICAL_RECORD",
+      "authority":"Tailte Éireann",
+      "best_for":["HISTORICAL_REGISTERED_OWNER","HISTORICAL_REGISTERED_CHARGE","HISTORICAL_TRANSFER_REGISTRATION"],
+      "minimum_identifiers":["property identifier","target date or historical period"],
+      "limitation":"Availability and form of historical records must be confirmed through the official service."
+    },
+    {
+      "route_id":"LAND_REGISTRY_INSTRUMENT",
+      "authority":"Tailte Éireann",
+      "best_for":["DOCUMENT_AUTHENTICITY_OR_CONTENT","TRANSFER_REGISTRATION","SUCCESSION_REGISTRATION","CHARGE_INSTRUMENT","RECTIFICATION"],
+      "minimum_identifiers":["folio/dealing/instrument reference where available"],
+      "access_condition":"Instrument inspection is subject to the access rules applicable under Land Registration Rules 2012 Rule 159."
+    },
+    {
+      "route_id":"LAND_REGISTRY_MAP_OR_TITLE_PLAN",
+      "authority":"Tailte Éireann",
+      "best_for":["PROPERTY_IDENTITY","BOUNDARY_OR_EXTENT","MAP_REFERENCE"],
+      "limitation":"A registry map/title plan must not be treated as conclusive of every boundary or extent question."
+    },
+    {
+      "route_id":"REGISTRY_OF_DEEDS_SEARCH",
+      "authority":"Tailte Éireann",
+      "best_for":["REGISTRY_OF_DEEDS_TRANSACTION","UNREGISTERED_PROPERTY_HISTORY","HISTORICAL_DEED_REGISTRATION"],
+      "minimum_identifiers":["party/name index information and relevant date/property clues"],
+      "limitation":"A memorial/search result is not automatically the full deed or proof of its legal effect."
+    },
+    {
+      "route_id":"SUCCESSION_RECORDS",
+      "authority":"Probate/estate records and relevant official registration records",
+      "best_for":["SUCCESSION_REGISTRATION","PERSONAL_REPRESENTATIVE_STATUS","BENEFICIAL_ENTITLEMENT"],
+      "limitation":"Succession evidence alone does not prove current registered ownership."
+    },
+    {
+      "route_id":"COURT_RECORD",
+      "authority":"Relevant Irish court",
+      "best_for":["COURT_DETERMINATION","VESTING_ORDER","RECTIFICATION_OR_REGISTER_ERROR","BOUNDARY_DISPUTE"],
+      "limitation":"Court material must be matched to the property and order/date."
+    }
+  ],
+  "selection_logic":[
+    "CLASSIFY_PROPOSITION",
+    "SET_DATE_SCOPE",
+    "IDENTIFY_PROPERTY",
+    "DETERMINE_REGISTRATION_SYSTEM",
+    "SELECT_MINIMUM_AUTHORITATIVE_ROUTE",
+    "ADD_SECONDARY_ROUTE_IF_PRIMARY_ROUTE_CANNOT_ESTABLISH_THE_PROPOSITION",
+    "RETRIEVE_RECORD",
+    "MATCH_PROPERTY_AND_DATE",
+    "ASSESS_SUFFICIENCY",
+    "ROUTE_TO_LEGAL_ANALYSIS"
+  ],
+  "sufficiency_model":[
+    {
+      "level":"DIRECT",
+      "meaning":"The selected authoritative record directly establishes the requested fact within its legal/evidential scope."
+    },
+    {
+      "level":"CORROBORATED",
+      "meaning":"No single record is sufficient, but multiple matched authoritative sources establish the fact together."
+    },
+    {
+      "level":"SUPPORTING",
+      "meaning":"The evidence supports the proposition but does not independently establish it."
+    },
+    {
+      "level":"INSUFFICIENT",
+      "meaning":"The evidence cannot establish the requested proposition."
+    }
+  ],
+  "routing_examples":[
+    {
+      "question":"Who is registered owner now?",
+      "route":["LAND_REGISTRY_CURRENT_FOLIO"],
+      "do_not_substitute":["will","private deed","old sale contract"]
+    },
+    {
+      "question":"Who was registered owner on a historical date?",
+      "route":["LAND_REGISTRY_HISTORICAL_RECORD"],
+      "secondary":["LAND_REGISTRY_INSTRUMENT","REGISTRY_OF_DEEDS_SEARCH if property was then unregistered"]
+    },
+    {
+      "question":"Did my parent leave this registered house to me?",
+      "route":["SUCCESSION_RECORDS","LAND_REGISTRY_CURRENT_FOLIO","LAND_REGISTRY_HISTORICAL_RECORD"],
+      "reason":"Entitlement and registered title are distinct propositions."
+    },
+    {
+      "question":"Was there a mortgage on the property on a particular date?",
+      "route":["LAND_REGISTRY_HISTORICAL_RECORD"],
+      "secondary":["LAND_REGISTRY_INSTRUMENT"]
+    },
+    {
+      "question":"Does this deed prove the property was transferred?",
+      "route":["LAND_REGISTRY_INSTRUMENT","LAND_REGISTRY_CURRENT_FOLIO"],
+      "reason":"Document content and registration effect are separate questions."
+    },
+    {
+      "question":"Was this property registered before first registration?",
+      "route":["LAND_REGISTRY_HISTORICAL_RECORD","REGISTRY_OF_DEEDS_SEARCH"],
+      "reason":"The appropriate evidence system depends on the property's registration history."
+    }
+  ],
+  "guardrails":[
+    "Never select an evidence route solely because it is convenient.",
+    "Never use a secondary source when an authoritative route is required and available.",
+    "Never treat one record as sufficient for a proposition outside that record's scope.",
+    "Never infer that a Registry of Deeds memorial proves the complete legal effect of the underlying deed.",
+    "Never treat a succession document as current registered-title evidence.",
+    "Never retrieve or publish personal property information without the lawful/appropriate access route and necessary property identifiers."
+  ],
+  "result_states":[
+    "AUTHORITATIVE_ROUTE_SELECTED",
+    "MULTI_SOURCE_ROUTE_REQUIRED",
+    "ROUTE_REQUIRES_PROPERTY_IDENTIFIER",
+    "ROUTE_REQUIRES_DATE_SCOPE",
+    "ACCESS_RESTRICTION_APPLIES",
+    "INSUFFICIENT_ROUTE",
+    "EVIDENCE_REQUIRED",
+    "NOT_DETERMINABLE"
+  ]
+}
