@@ -1,0 +1,96 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-official-route-authority-resolver",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Select the appropriate official body, record service, application route, dispute route or court route for a classified property issue, while distinguishing each body's function and evidential authority.",
+  "route_dimensions":[
+    "QUESTION_FUNCTION",
+    "RECORD_FUNCTION",
+    "REGISTRATION_FUNCTION",
+    "ADMINISTRATIVE_FUNCTION",
+    "REVIEW_FUNCTION",
+    "DISPUTE_FUNCTION",
+    "COURT_FUNCTION",
+    "ENFORCEMENT_FUNCTION"
+  ],
+  "official_property_routes":[
+    {
+      "route":"LAND_REGISTRY",
+      "authority":"Tailte Éireann",
+      "functions":["Land Register","folios","maps","registration","official searches","copy services"],
+      "source_basis":"Tailte Éireann property registration and copy services"
+    },
+    {
+      "route":"REGISTRY_OF_DEEDS",
+      "authority":"Tailte Éireann",
+      "functions":["record/search unregistered-property deed transactions","official searches","memorial/application copies"],
+      "source_basis":"Tailte Éireann Registry of Deeds services"
+    },
+    {
+      "route":"COURT_ROUTE",
+      "authority":"Relevant Irish court",
+      "functions":["judicial determination","orders","disputes","remedies within jurisdiction"],
+      "source_basis":"Applicable court legislation/rules"
+    }
+  ],
+  "route_selection":[
+    "CLASSIFY_FUNCTION",
+    "IDENTIFY_AUTHORITY",
+    "IDENTIFY_RECORD_OR_PROCEDURE",
+    "CHECK_ACCESS_REQUIREMENTS",
+    "CHECK_REQUIRED_IDENTIFIERS",
+    "CHECK_DEADLINE_IF_ANY",
+    "CHECK_REVIEW_OR_APPEAL",
+    "CHECK_COURT_OR_ENFORCEMENT_ROUTE",
+    "OUTPUT_SINGLE_OR_MULTI_ROUTE_PATH"
+  ],
+  "land_registry_rules":[
+    "Use Land Registry evidence for registered-land propositions within the scope of the register.",
+    "Use mapping search to identify a registered folio where property identity is not yet established.",
+    "Use official search routes where a certified search result is required.",
+    "Instrument access is subject to the applicable access conditions."
+  ],
+  "registry_of_deeds_rules":[
+    "Use Registry of Deeds searches for the existence of registered deeds affecting unregistered property.",
+    "Do not treat a Registry of Deeds search result as the full deed or as proof of the deed's complete legal effect.",
+    "Where substantive deed effect matters, route to the deed itself and legal analysis where available."
+  ],
+  "authority_separation":[
+    "RECORD_CUSTODIAN is not automatically DISPUTE_DECISION_MAKER.",
+    "REGISTRAR is not automatically COURT.",
+    "INFORMATION_ROUTE is not automatically REMEDY.",
+    "COMPLAINT_ROUTE is not automatically APPEAL.",
+    "COURT_ROUTE is not automatically ADMINISTRATIVE_REVIEW."
+  ],
+  "output_contract":[
+    "primary_authority",
+    "authority_function",
+    "official_route",
+    "record_or_application",
+    "required_identifiers",
+    "access_conditions",
+    "deadline",
+    "review_or_appeal",
+    "court_or_dispute_route",
+    "remedy_scope",
+    "next_step",
+    "limitations"
+  ],
+  "result_states":[
+    "OFFICIAL_ROUTE_IDENTIFIED",
+    "MULTI_ROUTE_IDENTIFIED",
+    "AUTHORITY_FUNCTION_CONFIRMED",
+    "ACCESS_REQUIREMENT_IDENTIFIED",
+    "DEADLINE_REQUIRES_SEPARATE_RESOLUTION",
+    "DISPUTE_ROUTE_REQUIRES_SEPARATE_RESOLUTION",
+    "OFFICIAL_ROUTE_UNRESOLVED"
+  ],
+  "guardrails":[
+    "Never tell the user to contact an authority without stating what function that authority serves.",
+    "Never imply that a record request resolves a legal dispute.",
+    "Never imply that a complaint is an appeal unless the governing framework says so.",
+    "Never treat a private intermediary as the official record custodian when an official route exists.",
+    "Where a current official service has changed, use the current official route rather than stale contact instructions."
+  ]
+}
