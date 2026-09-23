@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Map controlled property evidence fixtures to dependent tests, pathways, propositions and validation runs so material fixture changes trigger explicit re-validation without silently altering historical results.",
+  "dependency_types": ["REQUIRED", "OPTIONAL", "HISTORICAL"],
+  "impact_statuses": ["NO_IMPACT", "REVIEW_REQUIRED", "REVALIDATION_REQUIRED", "BLOCKED", "HISTORICAL_ONLY"],
+  "trigger_rules": {
+    "fixture_rejected": "Required active dependencies become BLOCKED; optional dependencies require review.",
+    "fixture_corrected": "Material correction requires dependent tests to be re-run; prior results remain immutable.",
+    "provenance_error": "Source-derived dependencies require provenance review before reuse.",
+    "privacy_issue": "Affected fixture use is blocked until privacy review passes.",
+    "source_updated": "Source-derived fixture enters REVIEW_REQUIRED and its provenance/legal period must be reviewed.",
+    "fixture_superseded": "Active dependencies require a replacement fixture or explicit historical-only classification."
+  },
+  "guardrails": [
+    "Fixture lifecycle changes never silently rewrite historical validation runs.",
+    "A material fixture change requires a new validation run.",
+    "Synthetic fixtures remain synthetic and cannot establish real-world legal facts.",
+    "Source-derived fixtures retain provenance and require provenance review after material source change.",
+    "Fixture approval is not legal-source verification and is not live-record retrieval.",
+    "Fixture dependencies support testing only within explicitly mapped propositions and pathways."
+  ],
+  "dependencies": [
+    {
+      "fixture_id": "FIXTURE-FOLIO-SYNTHETIC-001",
+      "fixture_type": "SYNTHETIC",
+      "record_type": "FOLIO",
+      "current_fixture_lifecycle_state": "APPROVED",
+      "dependent_test_case_ids": ["PAE-001", "PAE-007"],
+      "dependent_validation_run_ids": ["RUN-PROPERTY-TITLE-SYNTHETIC-E2E-001"],
+      "dependent_pathway_ids": ["property-title-live"],
+      "dependent_proposition_ids": ["PROP-PROPERTY-TITLE-001", "PROP-PROPERTY-REGISTRATION-003"],
+      "dependent_answer_snapshot_ids": [],
+      "dependency_type": "REQUIRED",
+      "impact_status": "NO_IMPACT",
+      "historical_results_immutable": true,
+      "replacement_required_if_superseded": true
+    }
+  ],
+  "impact_outputs": {
+    "fixture_change": "Return affected test cases, validation runs and pathways before reuse.",
+    "required_revalidation": "Create a new validation run rather than modifying a previous run.",
+    "historical_preservation": "Retain prior run, fixture version and dependency state as historical records."
+  }
+}
