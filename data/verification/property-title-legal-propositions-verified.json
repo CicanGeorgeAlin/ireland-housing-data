@@ -1,0 +1,76 @@
+{
+  "schema_version":"0.1",
+  "status":"PARTIALLY_VERIFIED",
+  "verified_at":"2026-09-23",
+  "scope":"Core registered-title propositions for property-title-live",
+  "source_chain":[
+    {
+      "authority":"Irish Statute Book",
+      "source":"Registration of Title Act 1964",
+      "url":"https://www.irishstatutebook.ie/eli/1964/act/16/enacted/en/print.html",
+      "role":"primary legislation"
+    },
+    {
+      "authority":"Irish Statute Book",
+      "source":"Registration of Title Act 1964, section 31",
+      "url":"https://www.irishstatutebook.ie/eli/1964/act/16/section/31/enacted/en/html",
+      "role":"primary provision"
+    },
+    {
+      "authority":"Tailte Éireann",
+      "source":"Statutory Instruments relating to Registration",
+      "url":"https://tailte.ie/statutory-instruments-related-to-registration/",
+      "role":"official current registration-legislation index"
+    }
+  ],
+  "propositions":[
+    {
+      "id":"PROP-PROPERTY-TITLE-001",
+      "status":"PRIMARY_LAW_VERIFIED",
+      "statement":"For registered land, the register is conclusive evidence of the title of the owner as appearing on the register and of rights, privileges, appurtenances or burdens appearing thereon, subject to the statutory qualifications including actual fraud or mistake and the court's rectification jurisdiction.",
+      "legal_basis":[
+        "Registration of Title Act 1964, s.31(1)"
+      ],
+      "source_verified":true,
+      "commencement_verified":false,
+      "amendments_checked":"PARTIAL",
+      "case_law_checked":false,
+      "procedure_checked":false
+    },
+    {
+      "id":"PROP-PROPERTY-REGISTRATION-003",
+      "status":"PRIMARY_LAW_VERIFIED",
+      "statement":"The Registration of Title Act 1964 provides the statutory framework for registration of ownership and distinguishes classes of registered title, including absolute, qualified and possessory title for freehold land.",
+      "legal_basis":[
+        "Registration of Title Act 1964, ss.33-39"
+      ],
+      "source_verified":true,
+      "commencement_verified":false,
+      "amendments_checked":"PARTIAL",
+      "case_law_checked":false,
+      "procedure_checked":false
+    },
+    {
+      "id":"PROP-PROPERTY-MAP-002",
+      "status":"PRIMARY_LAW_VERIFIED_WITH_LIMITATION",
+      "statement":"The register or registry map is not generally conclusive as to the boundaries or extent of registered land, subject to statutory mechanisms that can make specified boundaries conclusive.",
+      "legal_basis":[
+        "Registration of Title Act 1964, ss.84-88"
+      ],
+      "source_verified":true,
+      "commencement_verified":false,
+      "amendments_checked":"PARTIAL",
+      "case_law_checked":false,
+      "procedure_checked":false
+    }
+  ],
+  "important_limits":[
+    "These propositions do not establish the facts of any particular property.",
+    "A live folio, title plan or official search has not been retrieved here.",
+    "Primary-law verification is not the same as current procedural verification.",
+    "Amendment, commencement and relevant case-law verification remain open.",
+    "The legal effect of a particular registered entry can depend on the full record and applicable statutory exceptions."
+  ],
+  "overall_verification_state":"PARTIAL",
+  "publication_gate":"NOT_READY"
+}
