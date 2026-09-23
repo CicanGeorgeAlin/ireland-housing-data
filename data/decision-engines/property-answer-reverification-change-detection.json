@@ -1,0 +1,113 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-answer-reverification-change-detection",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Determine when a previously assembled property answer may be stale, what source or event could change it, which components require re-verification, and whether the existing snapshot remains publishable.",
+  "change_dimensions":[
+    "CURRENT_REGISTER",
+    "HISTORICAL_RECORD",
+    "REGISTRATION_DEALING",
+    "TRANSFER",
+    "SUCCESSION",
+    "CHARGE_OR_DISCHARGE",
+    "CO_OWNERSHIP",
+    "EASEMENT_OR_BURDEN",
+    "RECTIFICATION",
+    "COURT_ORDER",
+    "BOUNDARY_RECORD",
+    "LEGAL_RULE_OR_STATUTE",
+    "PROCEDURE_OR_SERVICE",
+    "SOURCE_ACCESS_OR_AVAILABILITY"
+  ],
+  "snapshot_dependencies":[
+    "PROPERTY_IDENTIFIER",
+    "DATE_SCOPE",
+    "EVIDENCE_RECORDS",
+    "OBSERVED_FACTS",
+    "LEGAL_PROPOSITIONS",
+    "LEGAL_EFFECTS",
+    "PROCEDURAL_ROUTE"
+  ],
+  "reverification_triggers":[
+    {
+      "trigger":"CURRENT_REGISTER_CHANGE",
+      "recheck":["current ownership","registered charges","registered burdens","co-ownership"]
+    },
+    {
+      "trigger":"NEW_DEALING_OR_INSTRUMENT",
+      "recheck":["transfer","charge","discharge","rectification","registration effect"]
+    },
+    {
+      "trigger":"DEATH_OR_SUCCESSION_EVENT",
+      "recheck":["succession","personal representative role","co-ownership","registration"]
+    },
+    {
+      "trigger":"COURT_ORDER_OR_LITIGATION_EVENT",
+      "recheck":["court determination","title consequences","boundary/easement if affected"]
+    },
+    {
+      "trigger":"LEGAL_CHANGE",
+      "recheck":["applicable law","transitional provisions","procedure","deadline where relevant"]
+    },
+    {
+      "trigger":"SOURCE_CORRECTION",
+      "recheck":["affected fact","document identity","legal proposition","answer snapshot"]
+    }
+  ],
+  "freshness_policy":{
+    "principle":"Do not treat age alone as proof that an answer is wrong; use event and source-based triggers.",
+    "current_property_answers":"Require current official evidence when the user asks for the present position.",
+    "historical_answers":"Reverification must preserve the target historical date; later events do not automatically alter the historical answer.",
+    "legal_answers":"Recheck the law applicable to the relevant date, including commencement, amendment and transitional provisions."
+  },
+  "impact_levels":[
+    "NO_MATERIAL_CHANGE",
+    "FACT_LAYER_AFFECTED",
+    "LEGAL_LAYER_AFFECTED",
+    "PROCEDURAL_LAYER_AFFECTED",
+    "ANSWER_MUST_BE_REBUILT"
+  ],
+  "reverification_workflow":[
+    "LOAD_SNAPSHOT",
+    "IDENTIFY_DEPENDENCIES",
+    "CHECK_RELEVANT_CHANGE_TRIGGERS",
+    "IDENTIFY_AFFECTED_LAYERS",
+    "RETRIEVE_CURRENT_OR_TARGET_DATE_SOURCES",
+    "REPEAT_PROPERTY_AND_DATE_MATCH",
+    "REASSESS_FACTS",
+    "REASSESS_APPLICABLE_LAW",
+    "REBUILD_AFFECTED_ANSWER_COMPONENTS",
+    "COMPARE_WITH_PRIOR_SNAPSHOT",
+    "PUBLISH_NEW_VERIFICATION_STATE"
+  ],
+  "comparison_fields":[
+    "source_set",
+    "property_match",
+    "date_scope",
+    "observed_facts",
+    "legal_propositions",
+    "legal_effects",
+    "conditions",
+    "unestablished_matters",
+    "procedural_route",
+    "verification_date"
+  ],
+  "guardrails":[
+    "Never silently overwrite a prior snapshot.",
+    "Never assume a later event changes a historical answer without analysing the target date.",
+    "Never assume a current answer remains current without current evidence when current status is material.",
+    "Never treat a legal amendment as automatically applicable to past events.",
+    "If change detection is inconclusive, mark the snapshot for reverification."
+  ],
+  "result_states":[
+    "CURRENTLY_VERIFIED",
+    "REQUIRES_REVERIFICATION",
+    "MATERIAL_CHANGE_DETECTED",
+    "HISTORICAL_STATE_UNCHANGED",
+    "LEGAL_SOURCE_CHANGED",
+    "PROCEDURE_CHANGED",
+    "SOURCE_UNAVAILABLE",
+    "NOT_DETERMINABLE"
+  ]
+}
