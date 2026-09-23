@@ -1,0 +1,33 @@
+{
+  "id":"document-intelligence-rent-review",
+  "version":"0.1",
+  "status":"STRUCTURAL_ENGINE",
+  "purpose":"Define how housing documents are classified and mapped to legal evidence without treating document presence as proof of every legal requirement.",
+  "document_types":{
+    "commencement_notice":{"aliases":["commencement notice","notice of commencement"],"relevant_facts":["document_date","submission_date","building_control_authority","site/property_reference","work_description"]},
+    "seven_day_notice":{"aliases":["7-day notice","seven day notice"],"relevant_facts":["document_date","submission_date","building_control_authority","site/property_reference","work_description"]},
+    "certificate_of_compliance_on_completion":{"aliases":["certificate of compliance","completion certificate"],"relevant_facts":["issue_date","building_control_authority","property_reference","works_description"]},
+    "rent_review_notice":{"aliases":["notice of rent review","rent review notice"],"relevant_facts":["service_date","proposed_new_rent","effective_date","rent_previous","rent_period","landlord_reference","tenancy_reference"]}
+  },
+  "evidence_mapping":{
+    "commencement_notice":["construction_commencement_date","building_control_submission"],
+    "seven_day_notice":["construction_commencement_date","building_control_submission"],
+    "certificate_of_compliance_on_completion":["completion_evidence"],
+    "rent_review_notice":["review_date","proposed_rent","notice_procedure"]
+  },
+  "validation":{
+    "document_identity":"Identify the document before extracting facts.",
+    "authenticity":"Presence of a document is not independent proof of authenticity.",
+    "field_consistency":"Compare dates, addresses/references and descriptions across documents.",
+    "legal_sufficiency":"A document may support one legal element without proving the complete legal test.",
+    "conflict":"Conflicting extracted facts must be surfaced rather than silently resolved."
+  },
+  "output":{
+    "DOCUMENT_IDENTIFIED":true,
+    "EXTRACTED_FACTS":true,
+    "EVIDENCE_ELEMENTS":true,
+    "UNRESOLVED_ITEMS":true,
+    "CONFLICTS":true,
+    "LEGAL_CONCLUSION":"Only after the legal composition engine evaluates all required conditions."
+  }
+}
