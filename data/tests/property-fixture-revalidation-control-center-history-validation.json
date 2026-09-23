@@ -1,0 +1,48 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Validate chronological control-center history for identity, trigger traceability, state integrity and separation from legal and publication decisions.",
+  "history": "data/registries/property-fixture-revalidation-control-center-history.json",
+  "validation_sequence": [
+    "LOAD_HISTORY",
+    "VERIFY_CONTROL_CENTER_IDENTITY",
+    "VERIFY_CHRONOLOGY",
+    "VERIFY_TRIGGER_TRACEABILITY",
+    "VERIFY_REVALIDATION_STATE",
+    "VERIFY_BLOCKER_STATE",
+    "VERIFY_CLOSURE_STATE",
+    "VERIFY_NEXT_ACTION",
+    "VERIFY_HISTORICAL_IMMUTABILITY",
+    "VERIFY_LEGAL_SOURCE_SEPARATION",
+    "VERIFY_PUBLICATION_SEPARATION",
+    "RECORD_VALIDATION"
+  ],
+  "checks": [
+    {"check_id":"PFRCCHV-001","name":"Control-center identity","result":"PASS"},
+    {"check_id":"PFRCCHV-002","name":"Chronology","result":"PASS"},
+    {"check_id":"PFRCCHV-003","name":"Trigger traceability","result":"PASS"},
+    {"check_id":"PFRCCHV-004","name":"Revalidation-state integrity","result":"PASS"},
+    {"check_id":"PFRCCHV-005","name":"Blocker-state integrity","result":"PASS"},
+    {"check_id":"PFRCCHV-006","name":"Closure-state integrity","result":"PASS"},
+    {"check_id":"PFRCCHV-007","name":"Next-action integrity","result":"PASS"},
+    {"check_id":"PFRCCHV-008","name":"Historical immutability","result":"PASS"},
+    {"check_id":"PFRCCHV-009","name":"Legal/publication separation","result":"PASS"}
+  ],
+  "result": {
+    "validation_status":"PASSED",
+    "history_valid":true,
+    "current_revalidation_state":"BLOCKED",
+    "open_blocker":"PF-BLOCKER-001",
+    "closure_status":"NOT_READY",
+    "legal_source_status":"UNCHANGED",
+    "production_evidence_status":"UNCHANGED",
+    "publication_status":"UNCHANGED"
+  },
+  "guardrails": [
+    "Structural validation only.",
+    "The control-center history does not establish Irish property-law correctness.",
+    "No live official property record was retrieved.",
+    "No legal proposition was upgraded.",
+    "No publication status was upgraded."
+  ]
+}
