@@ -1,0 +1,51 @@
+{
+  "id":"property-legal-answer",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"CANONICAL_ANSWER_CONTRACT",
+  "purpose":"Render evidence-based property-law answers consistently across title, transaction, planning, building control, OMC, succession, tax and disputes.",
+  "sections":[
+    "THE_ANSWER",
+    "LEGAL_BASIS",
+    "WHAT_THE_EVIDENCE_ESTABLISHES",
+    "WHAT_THE_EVIDENCE_DOES_NOT_ESTABLISH",
+    "SOURCES",
+    "CONDITIONS_AND_EXCEPTIONS",
+    "DEADLINE",
+    "OFFICIAL_ROUTE",
+    "WHAT_TO_DO_NEXT",
+    "DOCUMENTS_STILL_REQUIRED",
+    "CONFLICTS_OR_UNKNOWN_FACTS",
+    "PROFESSIONAL_REVIEW_FLAG",
+    "LAST_VERIFIED"
+  ],
+  "trace_fields":[
+    "question_id",
+    "facts_used",
+    "property_proposition_ids",
+    "evidence_ids",
+    "primary_sources",
+    "official_procedures",
+    "deadline_rule_ids",
+    "historical_law_version",
+    "effective_date",
+    "geographic_scope",
+    "person_scope"
+  ],
+  "result_policy":{
+    "REGISTERED_OWNER_IDENTIFIED":"State the registered-title evidence and its date; identify limitations.",
+    "APPLICATION_ROUTE_IDENTIFIED":"State the official route and unresolved prerequisites.",
+    "POSSIBLY":"Explain the conditions preventing a definitive result.",
+    "NOT_DETERMINABLE":"List the minimum missing facts or evidence.",
+    "HISTORICAL_RESEARCH_REQUIRED":"State the relevant historical period and records required.",
+    "PROFESSIONAL_REVIEW_REQUIRED":"Identify the issue requiring specialist legal, tax, engineering, planning or other review."
+  },
+  "global_rules":[
+    "Do not state a legal conclusion beyond the evidence and applicable proposition version.",
+    "Separate facts, legal rules, interpretation and practical guidance.",
+    "Do not silently resolve conflicting evidence.",
+    "Do not present an official procedure as substantive legal entitlement.",
+    "Every deadline must identify its triggering event and legal source.",
+    "Every published answer must retain its verification date and source chain."
+  ]
+}
