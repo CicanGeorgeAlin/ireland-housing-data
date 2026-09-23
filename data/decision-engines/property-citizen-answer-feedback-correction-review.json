@@ -1,0 +1,78 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-citizen-answer-feedback-correction-review",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Allow citizens to challenge, correct, supplement or request review of an answer without allowing an unverified assertion to overwrite verified evidence, law or published snapshots.",
+  "core_principle":"CITIZEN_FEEDBACK → CLASSIFY → PRESERVE → VERIFY → REVIEW → CORRECT OR CONFIRM → NEW SNAPSHOT IF REQUIRED",
+  "feedback_types":[
+    "FACTUAL_CORRECTION",
+    "PROPERTY_IDENTITY_CORRECTION",
+    "DATE_CORRECTION",
+    "DOCUMENT_IDENTITY_CORRECTION",
+    "MISSING_EVIDENCE",
+    "NEW_DOCUMENT",
+    "LEGAL_SOURCE_CHALLENGE",
+    "LEGAL_INTERPRETATION_CHALLENGE",
+    "PROCEDURE_OR_ROUTE_CORRECTION",
+    "DEADLINE_CHALLENGE",
+    "PRIVACY_OR_PUBLICATION_CONCERN",
+    "CLARIFICATION_REQUEST",
+    "GENERAL_FEEDBACK"
+  ],
+  "review_sequence":[
+    "RECEIVE_FEEDBACK",
+    "LINK_TO_ANSWER_SNAPSHOT",
+    "CLASSIFY_FEEDBACK",
+    "PRESERVE_CITIZEN_ASSERTION",
+    "CHECK_IF_NEW_EVIDENCE_EXISTS",
+    "IDENTIFY_AFFECTED_CLAIM_OR_DEPENDENCY",
+    "RETRIEVE_AND_VALIDATE_NEW_SOURCE_IF_REQUIRED",
+    "RECHECK_PROPERTY_AND_DATE_MATCH",
+    "RECHECK_LEGAL_AUTHORITY_IF_REQUIRED",
+    "REASSESS_CONFLICT",
+    "REASSESS_SUFFICIENCY",
+    "QUALITY_GATE_REVIEW",
+    "CONFIRM_OR_REVISE_ANSWER",
+    "CREATE_NEW_SNAPSHOT_IF_MATERIAL",
+    "RETAIN_PREDECESSOR_AND_AUDIT_EVENT"
+  ],
+  "assertion_rules":[
+    "Citizen statements remain assertions until independently established.",
+    "A citizen-provided document can be relevant evidence but is not automatically an official record.",
+    "A property-identity correction triggers property matching review before substantive conclusions are changed.",
+    "A date correction triggers temporal-scope review.",
+    "A legal challenge triggers authority/proposition review and does not itself establish a different legal rule.",
+    "A new document may change sufficiency only after identity, property and date validation.",
+    "Material correction to a published answer requires a new immutable snapshot rather than editing history."
+  ],
+  "outcomes":[
+    "FEEDBACK_NOT_MATERIAL",
+    "FEEDBACK_ACCEPTED_AS_CLARIFICATION",
+    "NEW_EVIDENCE_REQUIRED",
+    "EVIDENCE_RETRIEVAL_REQUIRED",
+    "PROPERTY_MATCH_REQUIRES_REVIEW",
+    "DATE_SCOPE_REQUIRES_REVIEW",
+    "LEGAL_ANALYSIS_REQUIRES_REVIEW",
+    "CONFLICT_REQUIRES_REVIEW",
+    "ANSWER_CONFIRMED",
+    "ANSWER_CONFIRMED_WITH_LIMITATIONS",
+    "ANSWER_REVISED",
+    "ANSWER_WITHDRAWN_FOR_MATERIAL_ERROR",
+    "PRIVACY_REVIEW_REQUIRED"
+  ],
+  "public_response_rules":[
+    "Explain what part of the answer was reviewed.",
+    "State whether the feedback changed the evidence, legal analysis, limitation or answer.",
+    "Do not expose internal chain-of-thought or private investigation metadata.",
+    "If unresolved, state what evidence or authority is still needed.",
+    "If materially revised, identify the new answer version and preserve the predecessor."
+  ],
+  "hard_stops":[
+    "Never overwrite official evidence with citizen assertions.",
+    "Never silently alter a published answer.",
+    "Never suppress a material correction because it conflicts with an existing answer.",
+    "Never treat a user-uploaded document as official registration evidence without source validation.",
+    "Never convert disagreement alone into a new legal conclusion."
+  ]
+}
