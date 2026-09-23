@@ -1,0 +1,54 @@
+{
+  "schema_version":"0.1",
+  "status":"PARTIALLY_CLOSED",
+  "verified_at":"2026-09-23",
+  "purpose":"Resolve the material amendment and commencement gap for the core property-title propositions using the current revised Acts and commencement sources.",
+  "provisions":[
+    {
+      "provision":"Registration of Title Act 1964 s.31",
+      "affecting_instrument":"Registration of Deeds and Title Act 2006 s.4(2)",
+      "effective_date":"2006-11-04",
+      "status":"CLOSED_FOR_CORE_PROPOSITION",
+      "source":"https://revisedacts.lawreform.ie/eli/1964/act/16/section/31/revised/en/html"
+    },
+    {
+      "provision":"Registration of Title Act 1964 s.33",
+      "affecting_instrument":"Registration of Deeds and Title Act 2006 s.56",
+      "effective_date":"2006-11-04",
+      "status":"CLOSED_FOR_CORE_PROPOSITION",
+      "source":"https://revisedacts.lawreform.ie/eli/1964/act/16/section/33/revised/en/html"
+    },
+    {
+      "provision":"Registration of Title Act 1964 s.49",
+      "affecting_instrument":"Registration of Deeds and Title Act 2006 s.4(2)",
+      "effective_date":"2006-11-04",
+      "status":"CLOSED_FOR_CORE_PROPOSITION",
+      "source":"https://revisedacts.lawreform.ie/eli/1964/act/16/section/49/revised/en/html"
+    },
+    {
+      "provision":"Registration of Title Act 1964 s.84",
+      "affecting_instrument":"Registration of Deeds and Title Act 2006 s.61",
+      "effective_date":"2006-11-04",
+      "status":"CLOSED_FOR_CORE_PROPOSITION",
+      "source":"https://revisedacts.lawreform.ie/eli/1964/act/16/section/84/revised/en/html"
+    },
+    {
+      "provision":"Registration of Title Act 1964 s.85",
+      "affecting_instrument":"Registration of Deeds and Title Act 2006 s.62",
+      "effective_date":"2006-11-04",
+      "status":"CLOSED_FOR_CORE_PROPOSITION",
+      "source":"https://revisedacts.lawreform.ie/eli/1964/act/16/section/85/revised/en/html"
+    }
+  ],
+  "historical_baseline":{
+    "original_act_commencement":"1967-01-01",
+    "source":"Registration of Title Act 1964 (Commencement) Order 1966, S.I. 167/1966"
+  },
+  "important_limit":"Closure means the identified amendment and commencement chain is sufficient for the specific core proposition. It does not mean every provision of the 1964 Act has been audited.",
+  "remaining_gaps":[
+    "Later effects unrelated to the core propositions remain outside this closure.",
+    "Case-law and final publication-source audit remain separate."
+  ],
+  "publication_effect":"PTG-001 CLOSED_FOR_CORE_PROPOSITIONS",
+  "publication_gate":"NOT_READY"
+}
