@@ -1,0 +1,31 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-evidence-retrieval-session-manager-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified lifecycle contract for managing property evidence retrieval and validation as a traceable session.",
+  "core_principle":"REQUEST → RETRIEVE → IDENTIFY → MATCH → EXTRACT → CHECK CONFLICT → REASSESS SUFFICIENCY → CLOSE OR CONTINUE",
+  "critical_distinctions":[
+    "retrieval success is not evidence sufficiency",
+    "retrieval failure is not proof of record absence",
+    "access restriction is not record absence",
+    "user document is not automatically official evidence",
+    "current record is not automatically historical proof"
+  ],
+  "required_session_history":[
+    "retrieval request",
+    "route",
+    "identifiers",
+    "attempt outcome",
+    "source/document identity",
+    "property match",
+    "date match",
+    "facts",
+    "conflicts",
+    "sufficiency result",
+    "next action or closure"
+  ],
+  "closure_rule":"Close only with an explicit verified, limited, partial, indeterminate, access-limited or source-unavailable state.",
+  "audit_rule":"Every material retrieval attempt and validation transition must remain traceable.",
+  "verification_boundary":"This manager records and governs retrieval workflow; it does not itself establish the truth of a retrieved record."
+}
