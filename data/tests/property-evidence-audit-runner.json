@@ -1,0 +1,78 @@
+{
+  "id":"property-evidence-audit-runner",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"CANONICAL_VALIDATION_RUNNER_CONTRACT",
+  "purpose":"Define how property evidence audit test cases are executed against the live evidence-to-answer pipeline.",
+  "input":{
+    "test_suite":"data/tests/property-evidence-audit-cases.json",
+    "pipeline":"data/compositions/property-answer-audit-experience.json",
+    "fixtures":"Test-case-specific facts, records, evidence and legal dependencies.",
+    "run_id":"Unique validation run identifier."
+  },
+  "execution_order":[
+    "LOAD_TEST_CASE",
+    "INITIALISE_ISOLATED_CONTEXT",
+    "CAPTURE_QUESTION",
+    "CLASSIFY_PROPERTY_ISSUE",
+    "SELECT_OFFICIAL_RECORD_ROUTE",
+    "PROCESS_RETRIEVAL_EVENT",
+    "IDENTIFY_DOCUMENT",
+    "EXTRACT_FACTS",
+    "VERIFY_EVIDENCE",
+    "RESOLVE_PROPOSITIONS",
+    "COMPOSE_LEGAL_EFFECT",
+    "COMPOSE_ANSWER",
+    "CREATE_SNAPSHOT",
+    "CREATE_AUDIT",
+    "APPLY_PUBLIC_PRIVACY_FILTER",
+    "COMPARE_EXPECTED_RESULT",
+    "CHECK_UNSAFE_BEHAVIOUR",
+    "RECORD_RESULT"
+  ],
+  "isolation_rules":[
+    "Each test runs in an isolated context.",
+    "A test cannot alter production propositions, snapshots or legal change state.",
+    "Fixtures must identify whether evidence is simulated or sourced.",
+    "Simulated evidence must never be presented as a real official retrieval."
+  ],
+  "assertions":{
+    "result_state":"Actual result must match an allowed expected result.",
+    "required_fields":"Every required audit stage for the scenario must be present.",
+    "forbidden_fields":"Unsafe conclusions must not be generated.",
+    "traceability":"Every asserted legal effect must trace to proposition and evidence identifiers.",
+    "temporal_integrity":"Historical scenarios must retain their applicable legal period.",
+    "change_integrity":"Reverification scenarios must preserve prior snapshots.",
+    "privacy_integrity":"Public output must exclude unnecessary personal data."
+  },
+  "result":{
+    "run_id":null,
+    "case_id":null,
+    "status":"NOT_RUN",
+    "actual_result":null,
+    "expected_result":null,
+    "passed":false,
+    "assertion_failures":[],
+    "unsafe_behaviour_detected":[],
+    "traceability_failures":[],
+    "privacy_failures":[],
+    "temporal_failures":[],
+    "snapshot_failures":[],
+    "executed_at":null
+  },
+  "run_statuses":[
+    "NOT_RUN",
+    "RUNNING",
+    "PASSED",
+    "FAILED",
+    "BLOCKED",
+    "FIXTURE_INVALID"
+  ],
+  "guardrails":[
+    "A passing test does not prove the underlying law is correct; it proves the pipeline obeyed the specified evidence boundary.",
+    "Legal source verification remains a separate research task.",
+    "A failed safety assertion blocks publication of the affected answer path.",
+    "No test fixture can override a verified legal proposition or current legal status.",
+    "Test results must be retained for auditability."
+  ]
+}
