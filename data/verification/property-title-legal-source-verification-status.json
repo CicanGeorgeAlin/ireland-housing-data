@@ -1,0 +1,40 @@
+{
+  "schema_version":"0.1",
+  "status":"PARTIALLY_VERIFIED",
+  "status_id":"PROPERTY-TITLE-LEGAL-VERIFY-001",
+  "verified_at":"2026-09-23",
+  "package":"PROPERTY-TITLE-LEGAL-SOURCE-VERIFICATION-001",
+  "primary_law":{
+    "Registration of Title Act 1964":"CORE_PROVISIONS_VERIFIED",
+    "Registration of Deeds and Title Act 2006":"SOURCE_IDENTIFIED_REQUIRES_PROVISION_REVIEW",
+    "Land and Conveyancing Law Reform Act 2009":"SOURCE_IDENTIFIED_REQUIRES_PROVISION_REVIEW",
+    "Land and Conveyancing Law Reform Act 2021":"SOURCE_IDENTIFIED_REQUIRES_PROVISION_REVIEW"
+  },
+  "secondary_legislation":{
+    "S.I. 726/2021 Land Registration Rules 2021":"COMMENCEMENT_VERIFIED",
+    "S.I. 389/2013 Land Registration Rules 2013":"SOURCE_IDENTIFIED",
+    "S.I. 387/2013 Registration of Deeds Rules 2013":"SOURCE_IDENTIFIED"
+  },
+  "official_procedure":{
+    "Tailte Éireann current registration legislation index":"CHECKED",
+    "First Registration procedure":"CHECKED",
+    "Official search / inspection routes":"CHECKED",
+    "Historical/current distinction":"CHECKED"
+  },
+  "important_verified_point":"S.I. 726/2021 states that the Land Registration Rules 2021 came into operation on 16 December 2021 and that they are to be construed together with the Land Registration Rules 2012 to 2013.",
+  "remaining_verification":[
+    "Provision-by-provision amendment and commencement analysis for every proposition used by property-title-live.",
+    "Current case-law search for the interpretation and limits of the registered-title propositions.",
+    "Complete procedural mapping from each user question to the applicable current form/rule.",
+    "Historical transaction analysis where a past effective date is supplied.",
+    "Final source-by-source publication review."
+  ],
+  "publication_gate":"NOT_READY",
+  "guardrails":[
+    "No live property record was retrieved.",
+    "No ownership result is asserted.",
+    "Technical fixture status remains separate from legal-source status.",
+    "Official guidance is not treated as a substitute for primary law.",
+    "Historical rules are not automatically treated as current law."
+  ]
+}
