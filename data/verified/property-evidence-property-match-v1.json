@@ -1,0 +1,45 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-evidence-property-match-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "scope":"General evidence-matching framework for property-specific answers; not evidence about any particular property.",
+  "last_verified":"2026-09-24",
+  "verified_propositions":[
+    {
+      "id":"PEM-001",
+      "claim":"When a Land Registry dealing is completed, its legal effect is registered on the folio and the title documents are filed in an Instrument.",
+      "source":"Tailte Éireann Copy Services"
+    },
+    {
+      "id":"PEM-002",
+      "claim":"Inspection of a Land Registry Instrument is restricted to specified persons or legal routes under Rule 159 of the Land Registration Rules 2012.",
+      "source":"Tailte Éireann Copy Services; Land Registration Rules 2012 Rule 159"
+    },
+    {
+      "id":"PEM-003",
+      "claim":"A transfer of registered land does not operate to transfer the land until the transferee is registered as owner, subject to the specific statutory framework governing persons entitled to registration before registration.",
+      "source":"Registration of Title Act 1964, sections 51 and 90"
+    },
+    {
+      "id":"PEM-004",
+      "claim":"The register can be conclusive evidence of registered title within the statutory framework, while boundary and historical questions may require additional evidence.",
+      "source":"Registration of Title Act 1964, sections 31 and 85-88"
+    }
+  ],
+  "public_answer_contract":[
+    "PROPERTY_IDENTIFIER",
+    "DOCUMENT_IDENTITY",
+    "OFFICIAL_OR_USER_SOURCE",
+    "PROPERTY_MATCH",
+    "DATE_MATCH",
+    "INSTRUMENT_OR_DEALING_MATCH",
+    "FACT_ESTABLISHED",
+    "FACT_SCOPE",
+    "LEGAL_EFFECT",
+    "LIMITATIONS",
+    "NEXT_EVIDENCE_STEP",
+    "LAST_VERIFIED"
+  ],
+  "evidence_gate":"A property-specific proposition may enter the answer layer only after the source document and property identity have been matched sufficiently for the proposition being asserted.",
+  "publication_gate":"GENERAL_INFORMATION_ONLY"
+}
