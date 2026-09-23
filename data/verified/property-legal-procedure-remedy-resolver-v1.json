@@ -1,0 +1,17 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-procedure-remedy-resolver-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "scope":"General procedure, authority, deadline and remedy routing for Irish property questions; it does not determine the outcome of an individual case.",
+  "last_verified":"2026-09-24",
+  "source_architecture":[
+    "Irish Statute Book",
+    "Relevant statutory instruments",
+    "Tailte Éireann official services",
+    "Relevant courts and tribunal procedures",
+    "Official Government guidance"
+  ],
+  "core_rule":"LEGAL EFFECT → RESPONSIBLE BODY → PROCEDURE → EVIDENCE → DEADLINE → REVIEW/APPEAL → REMEDY → NEXT STEP",
+  "deadline_boundary":"No deadline is published as a conclusion unless the triggering event, applicable provision and time-unit calculation are established.",
+  "publication_gate":"GENERAL_INFORMATION_ONLY"
+}
