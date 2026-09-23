@@ -1,0 +1,89 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-evidence-audit-trail",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Create a reproducible audit chain connecting each property answer component to the evidence, legal source, reasoning scope, verification state and published snapshot version that produced it.",
+  "audit_chain":[
+    "QUESTION",
+    "PROPERTY_IDENTIFIER",
+    "DATE_SCOPE",
+    "SOURCE_RETRIEVAL",
+    "DOCUMENT_IDENTITY",
+    "PROPERTY_MATCH",
+    "DATE_MATCH",
+    "OBSERVED_FACT",
+    "LEGAL_SOURCE",
+    "LEGAL_PROPOSITION",
+    "LEGAL_EFFECT",
+    "CONDITIONS_AND_EXCEPTIONS",
+    "ANSWER_COMPONENT",
+    "SNAPSHOT_VERSION",
+    "VERIFICATION_EVENT"
+  ],
+  "record_types":[
+    "SOURCE_RECORD",
+    "DOCUMENT_RECORD",
+    "PROPERTY_MATCH_RECORD",
+    "FACT_RECORD",
+    "LEGAL_SOURCE_RECORD",
+    "LEGAL_PROPOSITION_RECORD",
+    "ANSWER_COMPONENT_RECORD",
+    "SNAPSHOT_RECORD",
+    "REVERIFICATION_RECORD"
+  ],
+  "required_provenance":[
+    "record_id",
+    "source_type",
+    "source_reference",
+    "retrieval_or_verification_date",
+    "property_identifier_if_applicable",
+    "date_scope_if_applicable",
+    "match_status",
+    "fact_or_proposition",
+    "scope_or_limitation"
+  ],
+  "link_rules":[
+    "Every material observed fact must link to its source record.",
+    "Every material legal proposition must link to its authoritative legal source.",
+    "Every property-specific fact must link to a verified property match.",
+    "Every historical fact must link to a date scope and date-match assessment.",
+    "Every published answer component must link to the fact or legal proposition from which it was assembled.",
+    "Every revised snapshot must retain its predecessor reference.",
+    "A source retrieval event is not itself proof of the proposition claimed from that source."
+  ],
+  "versioning":{
+    "principle":"Published snapshots are immutable records of the answer state at verification time.",
+    "revision_rule":"A changed answer creates a new snapshot/version and records the reason for change.",
+    "predecessor_rule":"The new snapshot must retain a link to the immediately preceding snapshot when one exists."
+  },
+  "audit_events":[
+    "SOURCE_RETRIEVED",
+    "SOURCE_MATCHED",
+    "FACT_EXTRACTED",
+    "LAW_VERIFIED",
+    "LEGAL_EFFECT_ASSESSED",
+    "ANSWER_ASSEMBLED",
+    "SNAPSHOT_PUBLISHED",
+    "REVERIFICATION_STARTED",
+    "CHANGE_DETECTED",
+    "SNAPSHOT_REPLACED"
+  ],
+  "integrity_states":[
+    "COMPLETE",
+    "COMPLETE_WITH_LIMITATIONS",
+    "MISSING_SOURCE_LINK",
+    "MISSING_PROPERTY_MATCH",
+    "MISSING_DATE_MATCH",
+    "MISSING_LEGAL_SOURCE",
+    "BROKEN_PREDECESSOR_LINK",
+    "AUDIT_INCOMPLETE"
+  ],
+  "guardrails":[
+    "Never create an audit entry that claims evidence was reviewed when it was not.",
+    "Never use the audit trail to manufacture missing evidence.",
+    "Never delete the provenance of a superseded snapshot.",
+    "Never treat a citation alone as proof that the cited source establishes the proposition.",
+    "If provenance is incomplete, expose the gap in the answer state."
+  ]
+}
