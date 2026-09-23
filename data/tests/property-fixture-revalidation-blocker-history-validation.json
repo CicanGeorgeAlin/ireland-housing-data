@@ -1,0 +1,42 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Validate chronological blocker history for identity, trigger traceability, immutability and separation from legal and publication status.",
+  "history": "data/registries/property-fixture-revalidation-blocker-history.json",
+  "validation_sequence": [
+    "LOAD_HISTORY",
+    "VERIFY_BLOCKER_IDENTITIES",
+    "VERIFY_CHRONOLOGY",
+    "VERIFY_TRIGGER_LINKS",
+    "VERIFY_STATUS_TRANSITIONS",
+    "VERIFY_IMMUTABILITY",
+    "VERIFY_EXECUTION_AND_CLOSURE_EFFECTS",
+    "VERIFY_PUBLICATION_SEPARATION",
+    "RECORD_VALIDATION"
+  ],
+  "checks": [
+    {"check_id":"PFRBHV-001","name":"Blocker identity","result":"PASS"},
+    {"check_id":"PFRBHV-002","name":"Chronology","result":"PASS"},
+    {"check_id":"PFRBHV-003","name":"Trigger traceability","result":"PASS"},
+    {"check_id":"PFRBHV-004","name":"Status transition integrity","result":"PASS"},
+    {"check_id":"PFRBHV-005","name":"Immutability","result":"PASS"},
+    {"check_id":"PFRBHV-006","name":"Execution/closure effects","result":"PASS"},
+    {"check_id":"PFRBHV-007","name":"Publication separation","result":"PASS"}
+  ],
+  "result": {
+    "validation_status":"PASSED",
+    "history_valid":true,
+    "open_blocker_count":1,
+    "execution_ready":false,
+    "closure_ready":false,
+    "legal_source_status":"UNCHANGED",
+    "publication_status":"UNCHANGED"
+  },
+  "guardrails": [
+    "Structural validation only.",
+    "The blocker remains open.",
+    "No live official property record was retrieved.",
+    "No legal proposition was upgraded.",
+    "No publication status was upgraded."
+  ]
+}
