@@ -1,0 +1,20 @@
+{
+  "run_id":"RUN-PROPERTY-REGISTRATION-UI-001",
+  "suite_id":"property-registration-ui-static-validation",
+  "execution_mode":"STATIC_CONTRACT_VALIDATION",
+  "run_date":"2026-09-24",
+  "status":"PASSED_WITH_NONCRITICAL_WARNINGS",
+  "checks_passed":10,
+  "checks_failed":0,
+  "unsafe_behaviour_detected":false,
+  "production_state_changed":false,
+  "legal_source_status":"UNCHANGED",
+  "publication_status":"GENERAL_INFORMATION_INTEGRATED",
+  "warnings":[
+    "Browser rendering not independently observed.",
+    "GitHub Pages public deployment not independently observed.",
+    "No live property record was retrieved.",
+    "This run validates integration contracts, not property-specific legal facts."
+  ],
+  "next_action":"CONTROLLED_BROWSER_OR_LIVE_INTERACTION_CHECK"
+}
