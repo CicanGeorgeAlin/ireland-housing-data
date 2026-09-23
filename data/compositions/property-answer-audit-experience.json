@@ -1,0 +1,74 @@
+{
+  "id":"property-answer-audit-experience",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"END_TO_END_PROPERTY_AUDIT_COMPOSITION",
+  "purpose":"Connect the live property-title pathway, canonical property legal answer, evidence audit and public audit viewer into one traceable experience.",
+  "pipeline":[
+    "property-title-live",
+    "property-official-records-route",
+    "property-official-record-evidence-map",
+    "property-evidence-audit",
+    "property-propositions",
+    "property-legal-answer",
+    "property-answer-snapshot",
+    "property-answer-reverification",
+    "property-answer-audit-viewer"
+  ],
+  "flow":{
+    "question":"Capture the user's property question and minimum necessary facts.",
+    "classification":"Determine the property issue and applicable route.",
+    "official_route":"Select the appropriate official property-record route.",
+    "retrieval":"Require an evidenced retrieval event before claiming an official record was obtained.",
+    "evidence":"Extract and verify only facts supported by the retrieved record.",
+    "proposition":"Map verified facts to canonical property propositions.",
+    "legal_composition":"Apply applicable law, temporal scope, conditions, exceptions and procedure.",
+    "answer":"Compose the canonical property legal answer.",
+    "snapshot":"Create a versioned answer snapshot.",
+    "audit":"Create the complete internal audit trail.",
+    "public_view":"Render the privacy-minimised audit viewer."
+  },
+  "result_states":[
+    "PROPERTY_NOT_IDENTIFIED",
+    "OFFICIAL_ROUTE_SELECTED",
+    "RETRIEVAL_REQUIRED",
+    "EVIDENCE_PENDING",
+    "PARTIAL",
+    "CONFLICT",
+    "HISTORICAL_RESEARCH_REQUIRED",
+    "PROFESSIONAL_REVIEW_REQUIRED",
+    "NOT_DETERMINABLE",
+    "VERIFIED",
+    "PUBLISHED",
+    "REVERIFICATION_REQUIRED"
+  ],
+  "integration_contracts":{
+    "question":"property-title-live",
+    "record_route":"property-official-records-route",
+    "evidence":"property-official-record-evidence-map",
+    "audit":"property-evidence-audit",
+    "legal_answer":"property-legal-answer",
+    "snapshot":"property-answer-snapshot",
+    "change_monitor":"property-answer-reverification",
+    "public_view":"property-answer-audit-viewer"
+  },
+  "publication_guardrails":[
+    "Do not claim an official property record was retrieved without a retrieval event and record evidence.",
+    "Do not convert extracted document wording directly into a legal conclusion without proposition and legal-rule mapping.",
+    "Do not publish an answer as verified when required primary evidence is missing or conflicting.",
+    "Preserve historical snapshots when the legal position changes.",
+    "Keep unresolved facts and evidence gaps visible.",
+    "Minimise personal data in public output."
+  ],
+  "future_ui_sections":[
+    "PROPERTY QUESTION",
+    "WHAT WE KNOW",
+    "OFFICIAL RECORDS",
+    "EVIDENCE TRAIL",
+    "LEGAL BASIS",
+    "ANSWER",
+    "WHAT IS STILL UNKNOWN",
+    "OFFICIAL NEXT STEP",
+    "VERIFICATION"
+  ]
+}
