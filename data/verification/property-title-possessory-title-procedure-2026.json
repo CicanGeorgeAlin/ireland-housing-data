@@ -1,0 +1,47 @@
+{
+  "schema_version":"0.1",
+  "status":"PROCEDURE_VERIFIED_WITH_HISTORICAL_RULE_CONTEXT",
+  "verified_at":"2026-09-23",
+  "scope":"Registered-land adverse possession and possessory-title procedures",
+  "official_sources":[
+    {
+      "authority":"Tailte Éireann",
+      "source":"Adverse Possession Guidance",
+      "url":"https://tailte.ie/legal-practices-practise-directions-adverse-possession-title-by-adverse-possession-to-registered-land/",
+      "finding":"Applications for adverse possession of registered land are made under section 4 of the Registration of Title Act 1964 and Rule 45, using LR Form 6; the applicant must prove the facts relied upon and each case is considered on its merits.",
+      "status":"CURRENT_OFFICIAL_PROCEDURE_CONFIRMED"
+    },
+    {
+      "authority":"Tailte Éireann",
+      "source":"Adverse Possession Application Guidelines",
+      "url":"https://tailte.ie/adverse-possession-application-guidelines/",
+      "finding":"Tailte publishes Form 5 and Form 6 adverse-possession/possessory-title guidance and sample rulings.",
+      "status":"CURRENT_OFFICIAL_GUIDANCE_CONFIRMED"
+    },
+    {
+      "authority":"Tailte Éireann",
+      "source":"Current Land Registry Forms catalogue",
+      "url":"https://tailte.ie/category/forms/?_type=land-registry-forms",
+      "finding":"The current catalogue lists LR Forms 4, 5, 6, 10 and later forms dealing with possessory title and adverse possession.",
+      "status":"CURRENT_CATALOGUE_CONFIRMED"
+    }
+  ],
+  "critical_distinctions":[
+    "First registration with possessory title is distinct from an application concerning possession of already registered land.",
+    "Tailte's registered-land adverse-possession route expressly requires proof of facts; a bare assertion that the limitation period has expired is insufficient.",
+    "Possessory title is an evidential/title-class issue and must not be treated as identical to the underlying limitation claim.",
+    "Prescriptive easement claims are separate from title-by-adverse-possession claims."
+  ],
+  "2021_prescription_context":{
+    "land_conveyancing_law_reform_act_2021":"commenced 2021-11-30",
+    "effect":"The 2021 Act primarily reforms prescription of easements and profits à prendre and contains savers for pending proceedings/applications. It must not be automatically treated as a wholesale replacement of the statutory adverse-possession framework.",
+    "source":"https://www.irishstatutebook.ie/eli/isbc/2021_35.html"
+  },
+  "publication_gate":"NOT_READY",
+  "guardrails":[
+    "No individual adverse-possession claim is assessed.",
+    "No ownership result is inferred from the existence of a form.",
+    "Historical law remains date-sensitive.",
+    "Official guidance is not substituted for the underlying statutory provisions."
+  ]
+}
