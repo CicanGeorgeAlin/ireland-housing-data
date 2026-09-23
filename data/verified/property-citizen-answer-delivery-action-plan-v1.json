@@ -1,0 +1,26 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-citizen-answer-delivery-action-plan-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for delivering reviewed property answers with evidence, legal explanation, limitations and next actions.",
+  "core_principle":"A USEFUL ANSWER MUST EXPLAIN BOTH WHAT IS ESTABLISHED AND WHAT THE CITIZEN CAN SAFELY DO NEXT.",
+  "required_sections":[
+    "direct answer",
+    "record evidence",
+    "law",
+    "legal effect",
+    "limitations",
+    "responsible route",
+    "required evidence",
+    "deadline when verified",
+    "next action",
+    "official sources"
+  ],
+  "publication_rule":"Only approved answer snapshots may be delivered as definitive published answers.",
+  "limitation_rule":"Material uncertainty or missing evidence must remain visible.",
+  "route_rule":"A next action must be tied to an identified responsible body or established procedural route.",
+  "deadline_rule":"Deadlines are shown only when their governing source, trigger and calculation or official timeframe are sufficiently established.",
+  "evidence_rule":"The action plan may identify evidence to obtain, but an evidence request is not itself evidence.",
+  "verification_boundary":"The delivery layer communicates an approved result and action plan; it does not independently establish property facts or legal rights."
+}
