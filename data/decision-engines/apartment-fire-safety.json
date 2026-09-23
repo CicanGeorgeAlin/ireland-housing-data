@@ -1,0 +1,55 @@
+{
+  "id":"apartment-fire-safety",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"STRUCTURAL_SAFETY_ENGINE",
+  "question":"What fire-safety requirements, documents or issues may apply to this apartment or multi-unit development?",
+  "pipeline":[
+    "identify-development-and-use",
+    "identify-building-and-construction-date",
+    "identify-fire-safety_regulatory-framework",
+    "identify-required_fire_safety_documents",
+    "check-building-control_records",
+    "check-fire-safety_certificate_route_where_applicable",
+    "check-completion_and_assigned_certification",
+    "identify-common-area_and-OMC_responsibilities",
+    "identify-alleged-defect_or-risk",
+    "identify-enforcement_or-remediation_route",
+    "check-effective-date_and-historical-regime",
+    "show-evidence"
+  ],
+  "document_types":[
+    "FIRE_SAFETY_CERTIFICATE",
+    "REVISED_FIRE_SAFETY_CERTIFICATE",
+    "FIRE_SAFETY_DESIGN_DOCUMENTATION",
+    "CERTIFICATE_OF_COMPLIANCE_ON_COMPLETION",
+    "BUILDING_CONTROL_RECORD",
+    "FIRE_SAFETY_RISK_ASSESSMENT",
+    "OMC_MAINTENANCE_RECORDS",
+    "FIRE_ALARM_OR_EMERGENCY_LIGHTING_RECORDS",
+    "REMEDIATION_DOCUMENTATION"
+  ],
+  "legal_distinctions":[
+    "fire_safety_certificate_is_not_planning_permission",
+    "fire_safety_certificate_is_not_certificate_of_title",
+    "building_control_completion_evidence_is_not_identical_to_fire_safety_certificate",
+    "current_physical_fire_safety_is_not_proved_by_historical_documentation_alone",
+    "maintenance_and_management_are_distinct_from_original_design_compliance"
+  ],
+  "guardrails":[
+    "Do not determine that a building is fire-safe from a document alone.",
+    "Do not diagnose a fire-safety defect without appropriate technical evidence.",
+    "Do not assume an OMC is solely responsible for every fire-safety issue; identify the specific duty and building element.",
+    "Do not treat a historical certificate as proof of current condition.",
+    "Check the regulatory framework and effective date applicable to the work and building.",
+    "Urgent safety concerns should be directed to the appropriate emergency or competent authority route rather than delayed for online legal analysis."
+  ],
+  "result_types":[
+    "DOCUMENTARY_FIRE_SAFETY_EVIDENCE_IDENTIFIED",
+    "FIRE_SAFETY_REVIEW_REQUIRED",
+    "BUILDING_CONTROL_REVIEW_REQUIRED",
+    "TECHNICAL_FIRE_SAFETY_ASSESSMENT_REQUIRED",
+    "REMEDIATION_ROUTE_REQUIRES_RESEARCH",
+    "NOT_DETERMINABLE"
+  ]
+}
