@@ -1,0 +1,22 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-evidence-fact-legal-effect-boundary-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "scope":"General evidence-to-law architecture. It does not determine the legal effect of any particular property's documents without property-specific evidence and applicable law.",
+  "last_verified":"2026-09-24",
+  "evidence_boundary":[
+    "A record establishes only what the record can properly establish.",
+    "A legal proposition requires the applicable statute, rule, case law or other authoritative source.",
+    "A legal effect may require multiple matched records and legal provisions.",
+    "Where a required condition is unresolved, the answer must remain qualified."
+  ],
+  "official_source_basis":[
+    "Registration of Title Act 1964",
+    "Land Registration Rules 2012",
+    "Succession Act 1965",
+    "Tailte Éireann property-registration and copy-service information",
+    "Irish Statute Book"
+  ],
+  "publication_contract":"FACT → SCOPE → LAW → EFFECT → CONDITIONS → UNESTABLISHED MATTERS → NEXT ROUTE",
+  "publication_gate":"GENERAL_INFORMATION_ONLY"
+}
