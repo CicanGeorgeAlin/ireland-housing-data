@@ -92,6 +92,15 @@
         "property-registration-title-consequences",
         "property-registration-historical-state"
       ]
+    },
+    {
+      "stage": "ANSWER_ASSEMBLY_AND_SNAPSHOT",
+      "routes": [
+        "property-answer-assembly-snapshot",
+        "property-evidence-fact-legal-effect-boundary",
+        "property-registration-title-consequences",
+        "property-registration-historical-state"
+      ]
     }
   ],
   "event_model": [
@@ -139,7 +148,8 @@
     "property-answer-snapshot",
     "property-answer-reverification",
     "property-evidence-retrieval-routing",
-    "property-evidence-fact-legal-effect-boundary"
+    "property-evidence-fact-legal-effect-boundary",
+    "property-answer-assembly-snapshot"
   ],
   "answer_sequence": [
     "QUESTION",
