@@ -1,0 +1,99 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-investigation-reverification-priority-engine",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Convert dependency changes and freshness events into an ordered re-verification queue without inventing urgency or silently changing answer states.",
+  "core_principle":"DETECT → IDENTIFY DEPENDENTS → ASSESS MATERIALITY → PRIORITIZE → REVERIFY → REPUBLISH OR RETAIN",
+  "trigger_types":[
+    "MATERIAL_LEGAL_CHANGE",
+    "PROPERTY_RECORD_CHANGE",
+    "SOURCE_CONTENT_CHANGE",
+    "SOURCE_SUPERSESSION",
+    "PROCEDURE_CHANGE",
+    "DEADLINE_CHANGE",
+    "ACCESS_CHANGE",
+    "IDENTITY_CONFLICT",
+    "NEW_EVIDENCE",
+    "QUALITY_GATE_REVISION",
+    "MANUAL_REVIEW"
+  ],
+  "priority_dimensions":[
+    "materiality_to_published_answer",
+    "currentness_requirement",
+    "deadline_or_time_sensitivity",
+    "number_of_affected_answers",
+    "severity_of_unresolved_conflict",
+    "source_authority",
+    "dependency_depth",
+    "availability_of_replacement_evidence"
+  ],
+  "priority_classes":[
+    "P0_IMMEDIATE_REVIEW_REQUIRED",
+    "P1_HIGH_PRIORITY",
+    "P2_STANDARD_REVIEW",
+    "P3_MONITOR",
+    "NO_REVIEW_REQUIRED"
+  ],
+  "priority_rules":[
+    "Materiality is assessed before queue priority.",
+    "A legal change affecting a published answer's governing proposition requires review even if the answer is old.",
+    "A currentness-sensitive answer receives greater urgency when its authoritative property record changes.",
+    "A historical answer is not prioritized merely because the current property record changed unless its historical evidence dependency is affected.",
+    "A deadline-related change is prioritized when an open or published answer depends on that deadline.",
+    "A source access problem does not prove the underlying record changed.",
+    "Queue priority does not itself change the answer's legal status.",
+    "No priority class may be used as a substitute for a legal conclusion."
+  ],
+  "queue_item":[
+    "queue_id",
+    "trigger_id",
+    "answer_snapshot_id",
+    "investigation_run_id",
+    "changed_node",
+    "impact_state",
+    "priority_class",
+    "materiality_basis",
+    "affected_scope",
+    "date_scope",
+    "required_reverification_steps",
+    "blocking_dependency",
+    "created_at",
+    "due_basis",
+    "status"
+  ],
+  "queue_states":[
+    "QUEUED",
+    "TRIAGE_REQUIRED",
+    "REVERIFICATION_IN_PROGRESS",
+    "WAITING_FOR_EVIDENCE",
+    "WAITING_FOR_LEGAL_REVIEW",
+    "WAITING_FOR_PROCEDURE_REVIEW",
+    "READY_FOR_QUALITY_GATE",
+    "REVERIFIED_NO_CHANGE",
+    "REVISED_SNAPSHOT_REQUIRED",
+    "BLOCKED",
+    "CLOSED"
+  ],
+  "reverification_sequence":[
+    "OPEN_QUEUE_ITEM",
+    "RECHECK_TRIGGER",
+    "CHECK_DEPENDENCY_GRAPH",
+    "RECHECK_SOURCE_FRESHNESS",
+    "RECHECK_PROPERTY_OR_HISTORICAL_SCOPE",
+    "RECHECK_LEGAL_VERSION_IF_RELEVANT",
+    "RECHECK_EVIDENCE_SUFFICIENCY",
+    "RECHECK_CONFLICTS",
+    "REASSEMBLE_ANSWER",
+    "QUALITY_GATE",
+    "PUBLISH_NEW_SNAPSHOT_OR_CLOSE"
+  ],
+  "hard_stops":[
+    "Never invent a due date when no governing deadline exists.",
+    "Never treat priority as proof that an answer is wrong.",
+    "Never mark an answer superseded without a material basis.",
+    "Never skip re-verification because a change appears small if the dependency is material.",
+    "Never reverify unrelated answers merely because they share a broad topic.",
+    "Never conceal an unresolved dependency behind a low priority class."
+  ]
+}
