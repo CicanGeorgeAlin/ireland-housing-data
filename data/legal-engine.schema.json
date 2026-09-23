@@ -1,0 +1,37 @@
+{
+  "version":"0.1",
+  "pipeline":[
+    "question",
+    "facts",
+    "classification",
+    "legal-regime",
+    "definition",
+    "general-rule",
+    "special-rule",
+    "exception",
+    "temporal-rule",
+    "geographic-rule",
+    "procedure",
+    "deadline",
+    "remedy",
+    "official-route",
+    "evidence"
+  ],
+  "result_types":[
+    "YES",
+    "NO",
+    "YES_SUBJECT_TO_CONDITIONS",
+    "POSSIBLY",
+    "NOT_DETERMINABLE",
+    "HISTORICAL",
+    "MULTI_REGIME",
+    "PROFESSIONAL_REVIEW_REQUIRED"
+  ],
+  "publication_gate":{
+    "primary_source_verified":true,
+    "current_status_checked":true,
+    "commencement_checked_when_relevant":true,
+    "exceptions_checked":true,
+    "official_procedure_checked_when_relevant":true
+  }
+}
