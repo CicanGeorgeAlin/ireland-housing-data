@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.2",
+  "run_id": "PFRCCV2-RUN-001",
+  "contract": "data/tests/property-fixture-revalidation-control-center-v2-validation.json",
+  "execution_mode": "STATIC_CONTRACT_VALIDATION",
+  "executed_at": "2026-09-23",
+  "status": "PASSED",
+  "checks": [
+    {"check_id":"PFRCCV2-001","result":"PASS"},
+    {"check_id":"PFRCCV2-002","result":"PASS"},
+    {"check_id":"PFRCCV2-003","result":"PASS"},
+    {"check_id":"PFRCCV2-004","result":"PASS"},
+    {"check_id":"PFRCCV2-005","result":"PASS"},
+    {"check_id":"PFRCCV2-006","result":"PASS"},
+    {"check_id":"PFRCCV2-007","result":"PASS"},
+    {"check_id":"PFRCCV2-008","result":"PASS"},
+    {"check_id":"PFRCCV2-009","result":"PASS"}
+  ],
+  "summary": {
+    "control_center_valid": true,
+    "candidate_intake": "NOT_SUBMITTED",
+    "admission_gate": "BLOCKED",
+    "revalidation": "BLOCKED",
+    "closure": "NOT_READY",
+    "publication": "NOT_READY"
+  },
+  "guardrails": [
+    "Static validation only.",
+    "No candidate fixture was invented or submitted.",
+    "No live official property record was retrieved.",
+    "No legal proposition was upgraded.",
+    "No publication status was upgraded."
+  ]
+}
