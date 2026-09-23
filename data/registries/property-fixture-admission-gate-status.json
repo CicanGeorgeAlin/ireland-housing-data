@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Authoritative status of the controlled property fixture admission gate.",
+  "status_id": "PFAG-STATUS-001",
+  "updated_at": "2026-09-23",
+  "gate": {
+    "gate_id": "PF-FIXTURE-ADMISSION-001",
+    "status": "BLOCKED",
+    "candidate_fixture": null,
+    "approved_fixture": null,
+    "execution_allowed": false
+  },
+  "latest_validation": {
+    "run_id": "PFAGV-RUN-001",
+    "result": "PASSED",
+    "validated_at": "2026-09-23"
+  },
+  "blocking_reason": {
+    "code": "APPROVED_FIXTURE_MISSING",
+    "description": "No corrected or replacement controlled fixture has been admitted and approved for dependent revalidation."
+  },
+  "required_next_action": "IDENTIFY_AND_SUBMIT_CANDIDATE_FIXTURE_FOR_ADMISSION_REVIEW",
+  "status_rules": [
+    "PASSED gate validation does not mean the admission gate is open.",
+    "A gate may be structurally valid while operationally blocked.",
+    "Approval requires the admission conditions to be satisfied.",
+    "No dependent revalidation may execute while execution_allowed is false.",
+    "A source-derived fixture remains a controlled fixture and does not automatically become production evidence."
+  ],
+  "guardrails": [
+    "No fixture is invented.",
+    "No live official property record is claimed.",
+    "No legal proposition is upgraded.",
+    "No publication status is upgraded."
+  ]
+}
