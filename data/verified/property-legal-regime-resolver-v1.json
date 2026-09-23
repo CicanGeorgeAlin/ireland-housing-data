@@ -1,0 +1,18 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-regime-resolver-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "scope":"General legal-regime and temporal-version resolution architecture for Irish property questions. It does not determine a property-specific legal result.",
+  "last_verified":"2026-09-24",
+  "source_architecture":[
+    "Irish Statute Book",
+    "Registration of Title Act 1964",
+    "Land Registration Rules 2012",
+    "Succession Act 1965",
+    "Tailte Éireann official services",
+    "Relevant Irish case law"
+  ],
+  "core_rule":"QUESTION → LEGAL ISSUE → REGIME → TEMPORAL VERSION → LAW → LEGAL EFFECT",
+  "temporal_rule":"The applicable law depends on the legally relevant date and may require commencement, amendment, repeal, saving and transitional analysis.",
+  "publication_gate":"GENERAL_INFORMATION_ONLY"
+}
