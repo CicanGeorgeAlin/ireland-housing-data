@@ -1,0 +1,42 @@
+{
+  "version":"0.1",
+  "purpose":"Structural legal-state model. This file defines navigation states, not legal conclusions.",
+  "states":[
+    {
+      "id":"tenancy",
+      "label":"Tenancy",
+      "events":["tenancy-started","rent-reviewed","notice-served","dispute-started","determination-made","appeal-started","tenancy-ended"],
+      "rule":"Resolve the tenancy classification and applicable date/regime before applying a state transition."
+    },
+    {
+      "id":"property",
+      "label":"Property",
+      "events":["interest-acquired","mortgage-created","transfer-started","planning-applied","permission-granted","construction-started","construction-completed","use-changed","interest-transferred","dispute-started"],
+      "rule":"Resolve the property interest, title/registration status, planning position and other applicable regimes before applying a state transition."
+    },
+    {
+      "id":"social-housing-application",
+      "label":"Social housing application",
+      "events":["application-submitted","assessment-started","qualified","not-qualified","waiting-list-status","offer-made","offer-accepted","offer-declined","review-requested","appeal-started"],
+      "rule":"Eligibility, assessment, allocation and review routes must be resolved from the applicable legislation, regulations and official local-authority procedure."
+    },
+    {
+      "id":"planning",
+      "label":"Planning",
+      "events":["proposal-prepared","application-submitted","validation","decision-made","appeal-started","permission-effective","condition-discharged","development-started"],
+      "rule":"Planning status must be distinguished from title, building control, environmental requirements and physical reality."
+    },
+    {
+      "id":"mortgage",
+      "label":"Mortgage",
+      "events":["mortgage-created","payment-difficulty","arrears","enforcement-process","possession-process","sale","redemption"],
+      "rule":"The applicable mortgage, enforcement, court and consumer-protection regimes must be identified before determining procedural consequences."
+    }
+  ],
+  "transition_rules":{
+    "event_is_not_conclusion":true,
+    "current_state_requires_date":true,
+    "historical_state_must_be_preserved":true,
+    "legal_change_triggers_reverification":true
+  }
+}
