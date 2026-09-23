@@ -1,0 +1,42 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Validate the central registry of property fixture governance validation runs for identity, immutability, traceability and separation from legal verification and publication.",
+  "registry": "data/registries/property-fixture-governance-validation-runs.json",
+  "validation_sequence": [
+    "LOAD_REGISTRY",
+    "VERIFY_RUN_IDENTITIES",
+    "VERIFY_CONTRACT_REFERENCES",
+    "VERIFY_EXECUTION_DATES",
+    "VERIFY_RESULT_STATES",
+    "VERIFY_IMMUTABILITY_RULE",
+    "VERIFY_HISTORICAL_INTEGRITY",
+    "VERIFY_LEGAL_SOURCE_SEPARATION",
+    "VERIFY_PRODUCTION_EVIDENCE_SEPARATION",
+    "VERIFY_PUBLICATION_SEPARATION",
+    "RECORD_VALIDATION"
+  ],
+  "checks": [
+    {"check_id":"PFGVRV-001","name":"Run identity","requirement":"Every entry has a unique run ID.","result":"PASS"},
+    {"check_id":"PFGVRV-002","name":"Contract traceability","requirement":"Every run points to its validation contract.","result":"PASS"},
+    {"check_id":"PFGVRV-003","name":"Execution record","requirement":"Execution mode, date and result are recorded.","result":"PASS"},
+    {"check_id":"PFGVRV-004","name":"Immutability","requirement":"Completed run records cannot be silently overwritten.","result":"PASS"},
+    {"check_id":"PFGVRV-005","name":"Historical integrity","requirement":"Historical validation results remain preserved.","result":"PASS"},
+    {"check_id":"PFGVRV-006","name":"Legal separation","requirement":"Technical validation does not become legal verification.","result":"PASS"},
+    {"check_id":"PFGVRV-007","name":"Publication separation","requirement":"Validation runs do not independently authorize publication.","result":"PASS"}
+  ],
+  "result": {
+    "validation_status":"PASSED",
+    "registry_valid":true,
+    "historical_integrity":true,
+    "legal_source_status":"UNCHANGED",
+    "production_evidence_status":"UNCHANGED",
+    "publication_status":"UNCHANGED"
+  },
+  "guardrails": [
+    "Structural validation only.",
+    "No live official property record was retrieved.",
+    "No Irish property-law proposition was verified by this validation.",
+    "No production pathway was made publication-ready."
+  ]
+}
