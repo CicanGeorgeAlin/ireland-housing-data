@@ -1,0 +1,29 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-source-reliability-freshness-resolver-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for assessing source authority, temporal validity, completeness and currentness before using a source in an Ireland Housing Data answer.",
+  "core_principle":"SOURCE IDENTITY → AUTHORITY → TIME/VERSION → SUPERSESSION → COMPLETENESS → USE CLASS → VERIFICATION",
+  "source_priority":"Use the highest-authority source that actually establishes the proposition; freshness never substitutes for authority.",
+  "required_checks":[
+    "source identity",
+    "source type",
+    "jurisdiction",
+    "publication/version date",
+    "effective or commencement date where applicable",
+    "repeal/supersession",
+    "transitional scope",
+    "content completeness",
+    "current versus historical purpose"
+  ],
+  "allowed_uses":[
+    "CURRENT_LAW",
+    "HISTORICAL_LAW",
+    "OFFICIAL_PROCEDURE",
+    "PROPERTY_RECORD_EVIDENCE",
+    "SUPPORTING_CONTEXT"
+  ],
+  "publication_rule":"A source whose authority, temporal scope or completeness is unresolved cannot independently support a definitive material proposition.",
+  "verification_boundary":"This resolver assesses source suitability; it does not itself decide the substantive legal proposition."
+}
