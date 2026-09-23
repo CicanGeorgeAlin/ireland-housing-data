@@ -1,0 +1,48 @@
+{
+  "id":"building-control",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"STRUCTURAL_DOMAIN_SEED",
+  "question":"Can I legally carry out the proposed building work?",
+  "pipeline":[
+    "identify-property-and-work",
+    "identify-planning-status",
+    "identify-building-regulations_scope",
+    "classify-work_and_applicable_requirements",
+    "identify_required_building_control_route",
+    "check_design_certification_and_documents",
+    "check_commencement_notice_or_7_day_notice_where_required",
+    "check_inspection_and_compliance_records",
+    "check_completion_certificate_or_equivalent_evidence",
+    "check_fire_safety_accessibility_and_other_special_requirements",
+    "check_enforcement_or_regularisation_route",
+    "show-evidence"
+  ],
+  "state_model":[
+    "PLANNING_STATUS",
+    "BUILDING_REGULATIONS_STATUS",
+    "BUILDING_CONTROL_STATUS",
+    "CERTIFICATION_STATUS",
+    "CONSTRUCTION_STATUS",
+    "COMPLETION_STATUS"
+  ],
+  "guardrails":[
+    "Planning permission does not by itself establish compliance with Building Regulations.",
+    "Building Regulations compliance does not by itself grant planning permission.",
+    "A commencement notice is not the same thing as a planning permission.",
+    "A commencement notice or 7-day notice must not be treated as proof that completed work complies with all applicable requirements.",
+    "Completion evidence must be distinguished from planning permission and title evidence.",
+    "Historical construction requires the law and building-control regime applicable at the time.",
+    "Specialist review may be required for structural, fire-safety, accessibility, energy-performance or other technical questions."
+  ],
+  "future_subengines":[
+    "building-regulations-classifier",
+    "commencement-notice-validator",
+    "completion-certificate-resolver",
+    "fire-safety-route",
+    "accessibility-route",
+    "energy-performance-route",
+    "retention-and-regularisation",
+    "building-control-enforcement"
+  ]
+}
