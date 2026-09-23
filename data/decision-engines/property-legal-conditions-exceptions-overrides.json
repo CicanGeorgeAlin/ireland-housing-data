@@ -1,0 +1,80 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-legal-conditions-exceptions-overrides",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Identify conditions, exceptions, provisos, savings, transitional rules and interacting provisions that qualify or alter a property-law proposition before a legal effect is stated.",
+  "rule_components":[
+    "PRIMARY_RULE",
+    "CONDITION",
+    "EXCEPTION",
+    "PROVISO",
+    "QUALIFICATION",
+    "SAVING",
+    "TRANSITIONAL_RULE",
+    "SPECIAL_REGIME",
+    "OVERRIDING_PROVISION",
+    "PROCEDURAL_PREREQUISITE"
+  ],
+  "resolution_sequence":[
+    "IDENTIFY_PRIMARY_PROPOSITION",
+    "IDENTIFY_EXPRESS_CONDITIONS",
+    "IDENTIFY_EXCEPTIONS",
+    "IDENTIFY_PROVISOS_OR_QUALIFICATIONS",
+    "CHECK_SAVINGS_AND_TRANSITION",
+    "CHECK_SPECIAL_REGIMES",
+    "CHECK_INTERACTING_PROVISIONS",
+    "RESOLVE_PRIORITY",
+    "ATTACH_UNRESOLVED_QUALIFIERS",
+    "HAND_OFF_TO_LEGAL_EFFECT"
+  ],
+  "priority_rules":[
+    "Apply the legally controlling provision for the identified issue and date.",
+    "Do not assume a general rule overrides a specific provision.",
+    "Do not assume a later provision applies retrospectively.",
+    "Do not treat an exception as applicable unless its factual and legal conditions are satisfied.",
+    "Preserve saving and transitional provisions when they protect an earlier legal state or process.",
+    "Where two provisions interact and priority cannot be resolved from the available authority, mark OVERRIDE_UNRESOLVED."
+  ],
+  "condition_record":{
+    "condition_id":"unique identifier",
+    "linked_proposition":"proposition being qualified",
+    "type":"condition/exception/proviso/saving/transition/special regime",
+    "source":"authoritative provision",
+    "temporal_scope":"date/version",
+    "factual_trigger":"required facts",
+    "legal_effect":"effect when satisfied",
+    "failure_effect":"effect when not satisfied",
+    "priority":"relationship to other provisions",
+    "verification_date":"date checked"
+  },
+  "common_property_interactions":[
+    "registered transfer vs pre-registration dealing",
+    "succession entitlement vs registered title",
+    "joint tenancy vs tenancy in common",
+    "charge vs transfer or discharge",
+    "easement vs boundary or title extent",
+    "historical rule vs later amendment",
+    "court order vs register state",
+    "rectification vs registered title",
+    "general rule vs special statutory regime"
+  ],
+  "hard_stops":[
+    "Never state the primary rule without material qualifying conditions.",
+    "Never silently discard an exception because the primary rule appears simpler.",
+    "Never infer an exception from sympathy, custom or administrative practice.",
+    "Never resolve conflicting provisions without an authority basis.",
+    "If a material condition is unknown, the answer cannot be marked fully verified."
+  ],
+  "result_states":[
+    "RULE_UNQUALIFIED",
+    "CONDITIONS_IDENTIFIED",
+    "EXCEPTION_IDENTIFIED",
+    "SPECIAL_REGIME_IDENTIFIED",
+    "OVERRIDE_RESOLVED",
+    "OVERRIDE_UNRESOLVED",
+    "TEMPORAL_EXCEPTION_REQUIRES_CHECK",
+    "FACTUAL_CONDITION_UNRESOLVED",
+    "LEGAL_EFFECT_READY"
+  ]
+}
