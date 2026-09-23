@@ -24,6 +24,14 @@
       ]
     },
     {
+      "stage": "LEGAL_PROPOSITION_AUTHORITY_CHAIN",
+      "routes": [
+        "property-legal-proposition-authority-chain",
+        "property-legal-provision-resolver",
+        "property-legal-regime-resolver"
+      ]
+    },
+    {
       "stage": "STATUS",
       "routes": [
         "property-registration-records",
@@ -201,7 +209,8 @@
     "property-answer-state-machine",
     "property-question-classifier",
     "property-legal-regime-resolver",
-    "property-legal-provision-resolver"
+    "property-legal-provision-resolver",
+    "property-legal-proposition-authority-chain"
   ],
   "answer_sequence": [
     "QUESTION",
