@@ -1,0 +1,39 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Index immutable property fixture governance snapshots so historical states can be located and compared without overwriting prior records.",
+  "index_rules": [
+    "Every governance snapshot receives one immutable index entry.",
+    "A material governance state change requires a new snapshot and index entry.",
+    "Historical snapshots remain discoverable.",
+    "The index does not itself establish legal facts or publication readiness."
+  ],
+  "entries": [
+    {
+      "snapshot_id": "PROPERTY-FIXTURE-GOVERNANCE-SNAPSHOT-001",
+      "captured_at": "2026-09-23",
+      "snapshot_path": "data/registries/property-fixture-governance-snapshot.json",
+      "governance_status": "PASSED",
+      "active_revalidation": true,
+      "closure_state": "NOT_READY",
+      "legal_source_status": "PARTIAL",
+      "production_evidence_status": "PARTIAL",
+      "publication_status": "NOT_READY",
+      "superseded_by": null,
+      "historical": true
+    }
+  ],
+  "comparison_rules": [
+    "Compare snapshots by capture date and governance version.",
+    "Identify additions, removals and state transitions explicitly.",
+    "Never treat a later technical state as retroactive correction of an earlier snapshot.",
+    "Legal-source changes must be evaluated separately from technical governance changes.",
+    "A snapshot comparison cannot independently authorize publication."
+  ],
+  "guardrails": [
+    "Snapshot indexing is technical governance only.",
+    "Historical snapshots are immutable.",
+    "Synthetic fixture states cannot establish real-world property facts.",
+    "No index entry may claim live official-record retrieval without a corresponding retrieval event."
+  ]
+}
