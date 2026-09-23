@@ -271,6 +271,16 @@
         "property-evidence-to-answer-trace-graph",
         "property-human-readable-legal-answer-composer"
       ]
+    },
+    {
+      "stage": "CASE_REVIEW_AND_QUALITY_GATE",
+      "routes": [
+        "property-case-review-quality-gate",
+        "property-evidence-bundle-case-file-assembler",
+        "property-answer-state-machine",
+        "property-evidence-to-answer-trace-graph",
+        "property-evidence-audit-trail"
+      ]
     }
   ],
   "event_model": [
@@ -339,7 +349,8 @@
     "property-evidence-sufficiency-minimum-evidence-resolver",
     "property-question-evidence-request-planner",
     "property-evidence-retrieval-session-manager",
-    "property-evidence-bundle-case-file-assembler"
+    "property-evidence-bundle-case-file-assembler",
+    "property-case-review-quality-gate"
   ],
   "answer_sequence": [
     "QUESTION",
