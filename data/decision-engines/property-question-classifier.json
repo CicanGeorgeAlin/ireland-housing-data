@@ -1,0 +1,113 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-question-classifier",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Convert a natural-language property question into structured decision inputs without prematurely deciding the legal answer.",
+  "classification_dimensions":[
+    "QUESTION_INTENT",
+    "PROPERTY_SCOPE",
+    "TIME_SCOPE",
+    "REGISTRATION_SYSTEM",
+    "PROPERTY_INTEREST",
+    "EVENT_TYPE",
+    "EVIDENCE_TARGET",
+    "LEGAL_ISSUE",
+    "PROCEDURAL_TARGET"
+  ],
+  "question_intents":[
+    "CURRENT_OWNERSHIP",
+    "HISTORICAL_OWNERSHIP",
+    "TRANSFER",
+    "SUCCESSION",
+    "MORTGAGE_OR_CHARGE",
+    "CO_OWNERSHIP",
+    "EASEMENT_OR_RIGHT_OF_WAY",
+    "BOUNDARY",
+    "FIRST_REGISTRATION",
+    "REGISTRY_OF_DEEDS",
+    "RECTIFICATION",
+    "COURT_ORDER",
+    "DOCUMENT_INTERPRETATION",
+    "PROPERTY_RECORD_RETRIEVAL",
+    "GENERAL_PROPERTY_LAW"
+  ],
+  "time_scope_types":[
+    "CURRENT",
+    "EXACT_DATE",
+    "DATE_RANGE",
+    "EVENT_RELATIVE",
+    "HISTORICAL_UNSPECIFIED",
+    "NO_TIME_COMPONENT"
+  ],
+  "registration_system_types":[
+    "LAND_REGISTRY",
+    "REGISTRY_OF_DEEDS",
+    "UNKNOWN_OR_TO_BE_DETERMINED"
+  ],
+  "interest_types":[
+    "REGISTERED_PROPRIETORSHIP",
+    "BENEFICIAL_INTEREST",
+    "JOINT_TENANCY",
+    "TENANCY_IN_COMMON",
+    "LEASEHOLD",
+    "MORTGAGE_OR_CHARGE",
+    "EASEMENT_OR_BURDEN",
+    "BOUNDARY_OR_EXTENT",
+    "SUCCESSION_INTEREST",
+    "UNKNOWN"
+  ],
+  "event_types":[
+    "SALE",
+    "GIFT",
+    "DEATH",
+    "ASSENT",
+    "TRANSFER",
+    "MORTGAGE",
+    "DISCHARGE",
+    "SEVERANCE",
+    "COURT_ORDER",
+    "RECTIFICATION",
+    "FIRST_REGISTRATION",
+    "UNKNOWN"
+  ],
+  "classification_rules":[
+    "Classify the question before selecting evidence.",
+    "Do not infer a property identifier from a person's name alone.",
+    "Treat words such as 'now', 'currently' and 'today' as current-time signals.",
+    "Treat explicit dates and phrases such as 'at the time of death' as date-scope signals.",
+    "If the question contains multiple propositions, split them into separately classified subquestions.",
+    "If the registration system is unclear, preserve UNKNOWN_OR_TO_BE_DETERMINED rather than guessing.",
+    "If the user asks what a document proves, separate document-content classification from registration-effect classification.",
+    "If a question combines entitlement and registration, classify both rather than collapsing them."
+  ],
+  "ambiguity_states":[
+    "CLASSIFIED",
+    "MULTI_INTENT",
+    "PROPERTY_SCOPE_MISSING",
+    "DATE_SCOPE_MISSING",
+    "REGISTRATION_SYSTEM_UNKNOWN",
+    "LEGAL_ISSUE_UNKNOWN",
+    "CLARIFICATION_REQUIRED"
+  ],
+  "output_contract":{
+    "question_text":"original question",
+    "primary_intent":"one classified intent",
+    "subquestions":"array where multiple propositions exist",
+    "property_scope":"identified or unresolved",
+    "time_scope":"classified or unresolved",
+    "registration_system":"classified or unresolved",
+    "property_interest":"classified or unresolved",
+    "event_type":"classified or unresolved",
+    "evidence_target":"required evidence category",
+    "legal_issue":"issue to analyse",
+    "procedural_target":"next official route where identifiable",
+    "ambiguities":"explicit unresolved inputs"
+  },
+  "guardrails":[
+    "Classification is not legal advice.",
+    "Classification must not imply ownership or legal entitlement.",
+    "Ambiguity must be surfaced rather than silently resolved.",
+    "The classifier must preserve the user's original wording for auditability."
+  ]
+}
