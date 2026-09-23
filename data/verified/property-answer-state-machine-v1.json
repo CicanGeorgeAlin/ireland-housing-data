@@ -1,0 +1,18 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-answer-state-machine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "scope":"Publication-state architecture for property answers. It does not itself establish any property-specific fact.",
+  "last_verified":"2026-09-24",
+  "source_architecture":[
+    "Registration of Title Act 1964",
+    "Land Registration Rules 2012",
+    "Tailte Éireann official property-record services",
+    "Irish Statute Book"
+  ],
+  "core_rule":"Publication state is determined by evidence, property/date matching, legal-source completeness and audit integrity—not by confidence language alone.",
+  "verified_answer_gate":"No unresolved material dependency and complete audit provenance.",
+  "limited_answer_gate":"Core proposition established with explicit material limitations and sufficient provenance.",
+  "not_determinable_gate":"Required evidence, identity or legal basis remains insufficient for a responsible conclusion.",
+  "publication_gate":"GENERAL_INFORMATION_ONLY"
+}
