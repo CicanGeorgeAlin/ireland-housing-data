@@ -22,7 +22,16 @@
       "stage": "SUCCESSION",
       "routes": [
         "property-registration-succession",
+        "property-registration-title-consequences",
         "property-registration-co-ownership"
+      ]
+    },
+    {
+      "stage": "TITLE_CONSEQUENCES",
+      "routes": [
+        "property-registration-title-consequences",
+        "property-registration-mortgages",
+        "property-registration-easements"
       ]
     },
     {
@@ -77,6 +86,7 @@
     "property-registration-first-registration",
     "property-registration-transfers",
     "property-registration-succession",
+    "property-registration-title-consequences",
     "property-registration-mortgages",
     "property-registration-co-ownership",
     "property-registration-easements",
