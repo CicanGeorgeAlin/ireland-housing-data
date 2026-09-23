@@ -1,0 +1,39 @@
+{
+  "schema_version":"0.1",
+  "status":"SOURCE_CORRECTED",
+  "verified_at":"2026-09-23",
+  "purpose":"Correct procedural-source dating and prevent historical-rule pages from being treated as standalone current-law authority.",
+  "corrections":[
+    {
+      "item":"Rule 160 official search",
+      "finding":"Tailte Éireann's current page reproduces Rule 160 from the 2012 Rules, while the 2021 Rules state that the 2021 Rules operate together with the earlier Rules.",
+      "required_display":"Show the rule-history/current-framework context rather than presenting the 2012 page as a standalone current instrument."
+    },
+    {
+      "item":"Forms 89 and 90",
+      "finding":"Tailte Éireann currently publishes Forms 89 and 90 and identifies them as Rule 160 official-search forms.",
+      "source":"https://tailte.ie/lr-form-89-requisition-for-official-search-for-the-registration-of-the-ownership-registered-in-the-registers-maintained-under-section-8a-and-b-of-the-act/ ; https://tailte.ie/lr-form-90-requisition-for-official-search-in-a-register-for-entries-since-first-registration/",
+      "status":"CURRENT_FORM_CONFIRMED"
+    },
+    {
+      "item":"Full forms catalogue",
+      "finding":"Tailte Éireann's current forms catalogue lists LR Forms 88-92 and Form 96, among many other Land Registry forms.",
+      "source":"https://tailte.ie/category/forms/?_type=land-registry-forms",
+      "status":"CURRENT_CATALOGUE_CONFIRMED"
+    },
+    {
+      "item":"Order 96",
+      "finding":"The Courts Service current Order 96 page identifies the Registration of Title Act 1964 procedure and records later amendments to the Order, including S.I. 261/2023.",
+      "source":"https://courts.ie/court-rules/full-court-rule?url=Order-96-Superior-The-Registration-of-Title-Act-1964",
+      "status":"CURRENT_COURT_PROCEDURE_CONFIRMED"
+    }
+  ],
+  "legal_safety_rule":"A current official webpage may reproduce a historical statutory rule. The system must retain the rule's legislative date, later instruments and current procedural status before presenting it as current law.",
+  "publication_gate":"NOT_READY",
+  "guardrails":[
+    "No live property record retrieved.",
+    "No ownership conclusion made.",
+    "Historical rule text is not silently relabelled as current standalone legislation.",
+    "Current form availability is separated from substantive legal effect."
+  ]
+}
