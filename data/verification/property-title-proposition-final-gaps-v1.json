@@ -1,0 +1,57 @@
+{
+  "schema_version":"0.1",
+  "status":"GAP_ANALYSIS_COMPLETE",
+  "verified_at":"2026-09-23",
+  "purpose":"Identify only the remaining material gaps that can prevent publication of the core property-title propositions.",
+  "gaps":[
+    {
+      "id":"PTG-001",
+      "proposition":"PROP-PROPERTY-TITLE-001",
+      "gap":"Final provision-specific amendment/commencement reconciliation",
+      "materiality":"HIGH",
+      "required_action":"Check every later affecting instrument in the current revised record and resolve effective dates."
+    },
+    {
+      "id":"PTG-002",
+      "proposition":"PROP-PROPERTY-TITLE-001",
+      "gap":"Final primary judgment audit",
+      "materiality":"MATERIAL",
+      "required_action":"Verify the exact judicial propositions used publicly against the full judgments."
+    },
+    {
+      "id":"PTG-003",
+      "proposition":"PROP-PROPERTY-MAP-002",
+      "gap":"Additional primary authorities interpreting ss.84-86",
+      "materiality":"MATERIAL",
+      "required_action":"Search and review further Irish judgments dealing specifically with registry maps and boundary extent."
+    },
+    {
+      "id":"PTG-004",
+      "proposition":"PROP-PROPERTY-REGISTRATION-003",
+      "gap":"Possessory-title/adverse-possession case-law extraction",
+      "materiality":"HIGH",
+      "required_action":"Complete primary judgment review and date-specific limitation analysis."
+    },
+    {
+      "id":"PTG-005",
+      "proposition":"ALL",
+      "gap":"Final publication source audit",
+      "materiality":"HIGH",
+      "required_action":"Recheck every official source URL, rule/form route, current status and last-verified date immediately before publication."
+    }
+  ],
+  "explicitly_closed":[
+    "Core current statutory text identification",
+    "Main official property-record routes",
+    "Current Tailte Éireann forms/routes",
+    "s.31 primary case-law network foundation",
+    "Evidence-boundary architecture",
+    "Historical/current law separation"
+  ],
+  "not_a_gap":[
+    "Live property record retrieval is not required to publish general legal information; it is required only for an individual-property answer.",
+    "Technical fixture revalidation is separate from substantive legal-source verification."
+  ],
+  "next_step":"Resolve PTG-001 through PTG-005 without creating additional governance layers unless a genuine new control gap is discovered.",
+  "publication_gate":"NOT_READY"
+}
