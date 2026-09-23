@@ -1,0 +1,97 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-legal-regime-resolver",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Determine which Irish legal regime, statutory instrument, case-law framework and temporal version applies to a classified property question before legal effect is stated.",
+  "inputs":[
+    "classified_question",
+    "property_interest",
+    "event_type",
+    "registration_system",
+    "target_date",
+    "event_date",
+    "current_or_historical",
+    "jurisdiction",
+    "procedural_stage"
+  ],
+  "regime_dimensions":[
+    "PROPERTY_REGISTRATION",
+    "CONVEYANCING",
+    "SUCCESSION",
+    "MORTGAGE_OR_SECURITY",
+    "CO_OWNERSHIP",
+    "EASEMENT_OR_BURDEN",
+    "BOUNDARY",
+    "RECTIFICATION",
+    "COURT_PROCEDURE",
+    "LEASEHOLD",
+    "PLANNING_OR_DEVELOPMENT",
+    "TAX_OR_DUTIES",
+    "LOCAL_AUTHORITY_HOUSING",
+    "TENANCY"
+  ],
+  "temporal_resolution":[
+    "EVENT_DATE",
+    "LEGAL_EFFECT_DATE",
+    "REGISTRATION_DATE",
+    "TARGET_HISTORICAL_DATE",
+    "CURRENT_DATE",
+    "COMMENCEMENT_DATE",
+    "AMENDMENT_DATE",
+    "REPEAL_DATE",
+    "TRANSITIONAL_PROVISION_PERIOD"
+  ],
+  "resolution_sequence":[
+    "CLASSIFIED_QUESTION",
+    "IDENTIFY_LEGAL_ISSUE",
+    "IDENTIFY_PRIMARY_REGIME",
+    "IDENTIFY_RELATED_REGIMES",
+    "IDENTIFY_RELEVANT_STATUTORY_PROVISIONS",
+    "CHECK_COMMENCEMENT",
+    "CHECK_AMENDMENTS",
+    "CHECK_REPEAL_OR_SAVING",
+    "CHECK_TRANSITIONAL_PROVISIONS",
+    "CHECK_RELEVANT_REGULATIONS",
+    "CHECK_RELEVANT_CASE_LAW",
+    "SET_APPLICABLE_VERSION",
+    "HAND_OFF_TO_LEGAL_EFFECT_ENGINE"
+  ],
+  "selection_rules":[
+    "The law applicable to a historical event must not be selected solely from the current consolidated text.",
+    "An amendment date is not automatically the date on which the amended provision became operative.",
+    "A repeal does not automatically erase legal consequences that occurred while the earlier regime applied.",
+    "Where commencement or transitional provisions matter, they must be resolved before stating the legal effect.",
+    "Related regimes must be retained where one event produces effects under more than one legal framework.",
+    "Case law must be matched to the relevant legal provision, date and issue rather than used as a substitute for the statute."
+  ],
+  "outputs":[
+    "primary_legal_regime",
+    "related_legal_regimes",
+    "applicable_statutory_provisions",
+    "applicable_regulations",
+    "applicable_case_law",
+    "commencement_status",
+    "amendment_status",
+    "transitional_status",
+    "applicable_law_version",
+    "unresolved_temporal_issues",
+    "legal_source_route"
+  ],
+  "states":[
+    "REGIME_IDENTIFIED",
+    "TEMPORAL_VERSION_IDENTIFIED",
+    "COMMENCEMENT_REQUIRES_CHECK",
+    "TRANSITIONAL_ANALYSIS_REQUIRED",
+    "RELATED_REGIME_REQUIRED",
+    "CASE_LAW_REVIEW_REQUIRED",
+    "LEGAL_REGIME_UNRESOLVED"
+  ],
+  "guardrails":[
+    "Never infer the applicable historical law from today's wording alone.",
+    "Never treat guidance as legislation.",
+    "Never treat a case citation as proof that every proposition in the case applies to the present question.",
+    "Never collapse different legal regimes merely because they concern the same property.",
+    "If the applicable temporal version cannot be established, mark the legal regime unresolved."
+  ]
+}
