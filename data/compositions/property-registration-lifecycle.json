@@ -101,6 +101,15 @@
         "property-registration-title-consequences",
         "property-registration-historical-state"
       ]
+    },
+    {
+      "stage": "REVERIFICATION_AND_CHANGE_DETECTION",
+      "routes": [
+        "property-answer-reverification-change-detection",
+        "property-answer-assembly-snapshot",
+        "property-registration-historical-state",
+        "property-evidence-retrieval-routing"
+      ]
     }
   ],
   "event_model": [
@@ -149,7 +158,8 @@
     "property-answer-reverification",
     "property-evidence-retrieval-routing",
     "property-evidence-fact-legal-effect-boundary",
-    "property-answer-assembly-snapshot"
+    "property-answer-assembly-snapshot",
+    "property-answer-reverification-change-detection"
   ],
   "answer_sequence": [
     "QUESTION",
