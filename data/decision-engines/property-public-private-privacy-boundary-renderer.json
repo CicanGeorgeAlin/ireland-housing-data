@@ -1,0 +1,98 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-public-private-privacy-boundary-renderer",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Control what information is visible in private case views versus public answer views while preserving evidence integrity, privacy and auditability.",
+  "core_principle":"PRIVATE CASE DATA ≠ PUBLIC ANSWER DATA",
+  "visibility_classes":[
+    "PUBLIC_GENERAL_INFORMATION",
+    "PUBLIC_VERIFIED_ANSWER",
+    "PUBLIC_VERIFIED_WITH_LIMITATIONS",
+    "PUBLIC_PARTIALLY_DETERMINED",
+    "PRIVATE_CITIZEN_CASE",
+    "RESTRICTED_EVIDENCE",
+    "SYSTEM_AUDIT_ONLY"
+  ],
+  "classification_dimensions":[
+    "purpose",
+    "personal_data",
+    "sensitivity",
+    "source_access_rights",
+    "property_specificity",
+    "legal_relevance",
+    "public_interest",
+    "publication_need",
+    "retention_requirement"
+  ],
+  "public_answer_may_include":[
+    "answer conclusion within verified scope",
+    "material evidence summary",
+    "legal proposition and official source",
+    "relevant dates and versions",
+    "material limitations",
+    "responsible official route",
+    "next action",
+    "official source links",
+    "answer snapshot/version reference"
+  ],
+  "private_case_may_include":[
+    "citizen-provided documents",
+    "necessary personal information",
+    "property identifiers needed for the investigation",
+    "case-specific correspondence",
+    "restricted source details where access is lawful",
+    "review and correction submissions",
+    "private evidence-matching details"
+  ],
+  "never_public_by_default":[
+    "unnecessary personal data",
+    "identity documents",
+    "private contact details",
+    "sensitive personal information",
+    "restricted documents or extracts",
+    "internal access metadata",
+    "internal chain-of-thought",
+    "internal confidence scores",
+    "security credentials",
+    "unpublished investigation metadata"
+  ],
+  "rendering_sequence":[
+    "IDENTIFY_SOURCE_DATA",
+    "CLASSIFY_INFORMATION",
+    "CHECK_PUBLICATION_PURPOSE",
+    "MINIMISE_PERSONAL_DATA",
+    "CHECK_SOURCE_ACCESS_RIGHTS",
+    "SEPARATE_PUBLIC_FACT_FROM_PRIVATE_EVIDENCE",
+    "REDACT_OR_SUMMARISE_WHERE_REQUIRED",
+    "CHECK_PUBLICATION_STATE",
+    "RENDER_PUBLIC_OR_PRIVATE_VIEW",
+    "AUDIT_PUBLICATION_DECISION"
+  ],
+  "rules":[
+    "Public answer should expose only information necessary to understand and act on the verified result.",
+    "Private case access does not automatically confer public disclosure rights.",
+    "Official public availability does not mean every derived personal-data field should be republished.",
+    "A citizen's document can be used privately without being reproduced publicly.",
+    "Property-specific answers must avoid unnecessary identification of individuals.",
+    "Publication must preserve material evidence limitations.",
+    "Public rendering must not disclose restricted source material merely to make the answer appear more authoritative."
+  ],
+  "hard_stops":[
+    "Never publish unnecessary personal information.",
+    "Never expose restricted evidence because it supports an answer.",
+    "Never remove a material limitation merely to simplify public presentation.",
+    "Never treat private case metadata as public evidence.",
+    "Never allow publication to bypass privacy/access review."
+  ],
+  "output_contract":[
+    "visibility_class",
+    "public_fields",
+    "private_fields",
+    "restricted_fields",
+    "redactions_or_summaries",
+    "publication_basis",
+    "privacy_review_state",
+    "audit_reference"
+  ]
+}
