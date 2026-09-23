@@ -1,0 +1,88 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-human-readable-legal-answer-composer",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Convert the verified property-question, evidence, legal-authority, procedure, deadline and official-route layers into a neutral human-readable answer without exceeding the established evidence or legal proposition.",
+  "answer_sequence":[
+    "QUESTION_RESTATED",
+    "WHAT_HAPPENED_OR_WHAT_IS_BEING_ASKED",
+    "PROPERTY_AND_TIME_SCOPE",
+    "WHAT_THE_OFFICIAL_RECORD_ESTABLISHES",
+    "WHICH_LAW_APPLIES",
+    "LEGAL_EFFECT",
+    "CONDITIONS_EXCEPTIONS_AND_LIMITATIONS",
+    "WHAT_REMAINS_UNESTABLISHED",
+    "WHO_HANDLES_THE_NEXT_STEP",
+    "WHAT_TO_SUBMIT_OR_RETRIEVE",
+    "DEADLINE_IF_VERIFIED",
+    "REVIEW_APPEAL_OR_COURT_ROUTE_IF_APPLICABLE",
+    "NEXT_ACTION",
+    "SOURCE_AND_VERIFICATION_TRACE"
+  ],
+  "language_rules":[
+    "Use plain language first and legal terminology second where useful.",
+    "Separate observed facts from legal propositions and conclusions.",
+    "State uncertainty explicitly rather than filling evidence gaps.",
+    "Use neutral wording for disputes and contested positions.",
+    "Do not imply that a general rule resolves an individual property without property-specific evidence.",
+    "Do not present guidance or administrative practice as substantive law.",
+    "Do not state a deadline unless its trigger, governing source and counting rule are resolved.",
+    "Do not state a remedy or appeal unless the governing framework provides it."
+  ],
+  "evidence_labels":[
+    "OFFICIAL_RECORD",
+    "OFFICIAL_PROCEDURE",
+    "USER_SUPPLIED_DOCUMENT",
+    "LEGAL_SOURCE",
+    "CASE_LAW",
+    "GUIDANCE",
+    "UNVERIFIED_CLAIM"
+  ],
+  "answer_confidence_states":[
+    "VERIFIED_ANSWER",
+    "VERIFIED_WITH_LIMITATIONS",
+    "PARTIALLY_DETERMINED",
+    "EVIDENCE_INCOMPLETE",
+    "LEGAL_ANALYSIS_INCOMPLETE",
+    "PROPERTY_MATCH_INCOMPLETE",
+    "DATE_SCOPE_INCOMPLETE",
+    "NOT_DETERMINABLE"
+  ],
+  "publication_gates":{
+    "VERIFIED_ANSWER":[
+      "question classified",
+      "property match verified where property-specific",
+      "date scope resolved where material",
+      "required evidence retrieved",
+      "material facts established",
+      "legal authority chain complete",
+      "conditions/exceptions checked",
+      "procedure/authority resolved where requested",
+      "deadline resolved or explicitly not applicable",
+      "audit trail complete"
+    ],
+    "VERIFIED_WITH_LIMITATIONS":[
+      "core proposition established",
+      "limitations visible",
+      "no unsupported conclusion",
+      "audit trail complete"
+    ]
+  },
+  "hard_stops":[
+    "Never convert missing evidence into a factual statement.",
+    "Never convert a legal possibility into a legal conclusion.",
+    "Never conceal an unresolved property or date match.",
+    "Never invent a deadline, authority, form, remedy or appeal.",
+    "Never present a user-supplied document as an official register record.",
+    "Never omit a material exception or condition identified by the authority chain.",
+    "Never use a confidence label to compensate for missing evidence."
+  ],
+  "traceability_contract":{
+    "every_material_fact":"must link to evidence record",
+    "every_material_legal_proposition":"must link to authoritative legal source",
+    "every_procedure_claim":"must link to official procedural source",
+    "every_deadline":"must link to governing provision and trigger date",
+    "every_property_specific_conclusion":"must link to verified property match"
+  }
+}
