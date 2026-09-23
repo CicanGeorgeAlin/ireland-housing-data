@@ -1,0 +1,71 @@
+{
+  "id":"property-answer-reverification",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"CANONICAL_REVERIFICATION_LINK",
+  "purpose":"Connect material property-law changes to affected answer snapshots and place them into a controlled re-verification workflow.",
+  "input":{
+    "change_event_id":"Required legal change event identifier.",
+    "change_type":"Amendment, commencement, repeal, regulation, judgment, procedure, form/link, source correction or other material change.",
+    "effective_date":"Date the change legally/procedurally takes effect where established.",
+    "geographic_scope":"Scope of application.",
+    "person_scope":"Affected person/class scope.",
+    "affected_proposition_ids":[],
+    "affected_rule_ids":[],
+    "affected_deadline_rule_ids":[],
+    "affected_procedure_ids":[]
+  },
+  "dependency_resolution":{
+    "direct_snapshot_matches":"Snapshots directly linked to affected canonical objects.",
+    "indirect_snapshot_matches":"Snapshots dependent on changed objects through the dependency graph.",
+    "historical_snapshot_matches":"Historical answers potentially affected only for their relevant legal period.",
+    "unaffected_snapshots":"Snapshots reviewed and determined not materially affected."
+  },
+  "reverification_event":{
+    "event_id":"Unique re-verification event.",
+    "answer_snapshot_id":"Affected answer snapshot.",
+    "reason":"Specific legal or procedural dependency that triggered review.",
+    "severity":"CRITICAL|HIGH|MATERIAL|PROCEDURAL|INFORMATIONAL",
+    "status":"QUEUED|IN_REVIEW|VERIFIED_UNCHANGED|UPDATED_PENDING_PUBLICATION|PUBLISHED|NO_MATERIAL_IMPACT|HISTORICAL_ONLY|BLOCKED",
+    "created_at":null,
+    "reviewed_at":null,
+    "review_notes":[]
+  },
+  "decision_rules":[
+    "Detected change does not itself establish legal effect.",
+    "An answer is not republished solely because a dependency changed.",
+    "Effective and commencement dates must be resolved before current-law publication.",
+    "Historical snapshots remain preserved even when superseded.",
+    "Direct and indirect dependencies must both be considered.",
+    "A procedural change can trigger review without changing the underlying entitlement.",
+    "A source or link change must not be treated as a substantive legal amendment.",
+    "Unresolved legal effect blocks automatic publication.",
+    "Material evidence conflicts require explicit review.",
+    "No silent stale-answer replacement is permitted."
+  ],
+  "publication_gate":[
+    "CHANGE_SOURCE_VERIFIED",
+    "LEGAL_EFFECT_RESOLVED",
+    "COMMENCEMENT_OR_EFFECTIVE_DATE_RESOLVED",
+    "DEPENDENCIES_RECALCULATED",
+    "AFFECTED_SNAPSHOTS_IDENTIFIED",
+    "REVERIFICATION_COMPLETED",
+    "PUBLIC_ANSWER_UPDATED",
+    "CHANGE_LOGGED"
+  ],
+  "outputs":[
+    "affected_answer_snapshot_ids",
+    "reverification_queue",
+    "unchanged_snapshot_ids",
+    "historical_only_snapshot_ids",
+    "blocked_snapshot_ids",
+    "updated_snapshot_ids",
+    "change_log_entry_id"
+  ],
+  "audit_requirements":[
+    "Every re-verification event retains its triggering change event.",
+    "Every changed answer retains its previous snapshot.",
+    "Every publication decision is auditable.",
+    "The public answer exposes last-verified status without exposing unnecessary internal identifiers or personal data."
+  ]
+}
