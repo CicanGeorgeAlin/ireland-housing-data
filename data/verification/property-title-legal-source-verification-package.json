@@ -1,0 +1,82 @@
+{
+  "schema_version":"0.1",
+  "status":"RESEARCH_PACKAGE",
+  "package_id":"PROPERTY-TITLE-LEGAL-SOURCE-VERIFICATION-001",
+  "purpose":"Separate substantive legal-source verification for the property-title pathway from technical fixture governance and live-record retrieval.",
+  "verification_scope":[
+    "Registration of Title Act 1964",
+    "Registration of Deeds and Title Act 2006",
+    "Land Registration Rules 2021 (S.I. 726/2021)",
+    "Registration of Deeds Rules 2013 (S.I. 387/2013)",
+    "current Tailte Éireann registration procedures",
+    "Land Registry / Landdirect official-record routes",
+    "Registry of Deeds official-record routes",
+    "historical/current distinction",
+    "relevant case-law search scope",
+    "commencement and amendment status"
+  ],
+  "official_sources_checked_2026_09_23":[
+    {
+      "authority":"Tailte Éireann",
+      "source":"Property Registration Services",
+      "url":"https://tailte.ie/services/property-registration/",
+      "role":"official system description and Landdirect/Registry of Deeds routes"
+    },
+    {
+      "authority":"Tailte Éireann",
+      "source":"Search and Copy Services",
+      "url":"https://tailte.ie/services/copy-services/",
+      "role":"official copy/search procedures and distinction between Land Registry and Registry of Deeds evidence"
+    },
+    {
+      "authority":"Tailte Éireann",
+      "source":"Statutory Instruments relating to Registration",
+      "url":"https://tailte.ie/statutory-instruments-related-to-registration/",
+      "role":"official registration legislation index"
+    },
+    {
+      "authority":"Irish Statute Book",
+      "source":"Land Registration Rules 2021, S.I. 726/2021",
+      "url":"https://www.irishstatutebook.ie/eli/2021/si/726/made/en/pdf",
+      "role":"primary secondary legislation source"
+    },
+    {
+      "authority":"Irish Statute Book",
+      "source":"Land Registration Rules 2012, S.I. 483/2012",
+      "url":"https://www.irishstatutebook.ie/eli/2012/si/483/made/en/pdf",
+      "role":"historical source encountered during verification; not treated as current without further status analysis"
+    }
+  ],
+  "verified_facts_from_sources":[
+    "Tailte Éireann states that it maintains the Land Register, Registry of Deeds and Registry map.",
+    "Tailte Éireann states that Landdirect can be used to locate and identify folio information and access property-registration services.",
+    "Tailte Éireann distinguishes registered Land Registry records from Registry of Deeds records concerning unregistered property.",
+    "Tailte Éireann states that a Registry of Deeds search establishes the existence of relevant deeds/documents, while the legal effect requires examination of the deeds themselves.",
+    "The Irish Statute Book publication of S.I. 726/2021 is an official statutory-instrument source."
+  ],
+  "not_yet_verified":[
+    "Complete current provision-by-provision status of all property-title provisions relied upon by the pathway.",
+    "All amendments and commencement provisions affecting the selected provisions.",
+    "Complete current procedural rule mapping for every official-record route.",
+    "Relevant current Irish case law for each substantive proposition.",
+    "Whether any historical rule encountered remains applicable to a specific historical transaction."
+  ],
+  "required_evidence_chain":[
+    "LEGAL_PROPOSITION",
+    "PRIMARY_OR_SECONDARY_LEGISLATIVE_SOURCE",
+    "AMENDMENT_STATUS",
+    "COMMENCEMENT_STATUS",
+    "CURRENT_RULE",
+    "CASE_LAW_SEARCH",
+    "OFFICIAL_PROCEDURE",
+    "OFFICIAL_ROUTE",
+    "LAST_VERIFIED"
+  ],
+  "publication_gate":"BLOCKED_PENDING_COMPLETE_VERIFICATION",
+  "guardrails":[
+    "This package does not claim live retrieval of any property.",
+    "Official-record availability does not by itself establish ownership, boundary or legal effect for a particular property.",
+    "Historical rules are not treated as current merely because an official copy remains accessible.",
+    "Technical validation does not substitute for legal-source verification."
+  ]
+}
