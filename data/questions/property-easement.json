@@ -1,0 +1,46 @@
+{
+  "id":"property-easement",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "question":"Does this property have a right of way or other easement?",
+  "pipeline":[
+    "identify-dominant-and-servient-property",
+    "identify-title-status",
+    "inspect-folio-entries",
+    "inspect-filed-instrument-and-map",
+    "classify-right",
+    "check-registration-or-prescription-route",
+    "check-current-status",
+    "resolve-scope-and-location",
+    "show-evidence",
+    "identify-official-route"
+  ],
+  "result_types":[
+    "REGISTERED_EASEMENT_IDENTIFIED",
+    "RIGHT_OF_WAY_IDENTIFIED",
+    "PRESCRIPTIVE_CLAIM_REQUIRES_EVIDENCE",
+    "UNDERLYING_INSTRUMENT_REQUIRED",
+    "DISPUTED_EASEMENT_REQUIRES_COURT",
+    "NO_REGISTERED_EASEMENT_IDENTIFIED",
+    "NOT_DETERMINABLE"
+  ],
+  "legal_relationship":{
+    "dominant_tenement":"property benefited by the easement",
+    "servient_tenement":"property burdened by the easement",
+    "burden":"the registered or otherwise legally established right affecting the servient property",
+    "benefit":"the corresponding right attached to the dominant property where applicable"
+  },
+  "guardrails":[
+    "A right of way is not the same thing as ownership of the route.",
+    "A map alone is not necessarily the complete legal instrument.",
+    "Do not infer an easement solely because a route is physically used.",
+    "Express, implied and prescriptive rights require separate legal analysis.",
+    "A disputed prescriptive claim is not to be treated as established by an administrative search.",
+    "Do not rely on the repealed 2009 Act prescription provisions as if they were current law."
+  ],
+  "sources":[
+    "SRC-TE-RULE121",
+    "SRC-TE-EASEMENT-PRESCRIPTION",
+    "SRC-LCLRA-2021"
+  ]
+}
