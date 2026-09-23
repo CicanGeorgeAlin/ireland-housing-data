@@ -1,0 +1,42 @@
+{
+  "version":"0.1",
+  "purpose":"Canonical legal propositions. Each proposition is reusable by pages, answers, calculators and validators.",
+  "propositions":[
+    {
+      "id":"RTB-2026-RENT-CAP-001",
+      "status":"VERIFIED_SEED",
+      "authority":"PRIMARY_LAW_PLUS_OFFICIAL_GUIDANCE",
+      "subject":"Private residential rent review",
+      "effective_from":"2026-03-01",
+      "statement":"For applicable private residential tenancies, the general rent-review rule from 1 March 2026 is an increase of no more than 2% or CPI, whichever is lower, subject to the statutory and guidance-based exceptions that apply to the tenancy.",
+      "source_refs":["renting-2026-core"],
+      "dependencies":["tenancy-classification","tenancy-start-date","rent-review-date","applicable-exception"],
+      "used_by":["renting-home","rent-calculator","rent-review-explainer","question-engine"],
+      "historical":false
+    },
+    {
+      "id":"RTB-2026-RENT-RESET-002",
+      "status":"VERIFIED_SEED",
+      "authority":"OFFICIAL_GUIDANCE",
+      "subject":"Specified market-rent resetting",
+      "effective_from":"2026-03-01",
+      "statement":"For private tenancies created from 1 March 2026, market-rent resetting is permitted only in the specified circumstances and subject to the applicable statutory conditions.",
+      "source_refs":["renting-2026-core"],
+      "dependencies":["tenancy-start-date","tenancy-generation","termination-or-new-tenancy-event","statutory-condition"],
+      "used_by":["renting-home","rent-reset-explainer","question-engine"],
+      "historical":false
+    },
+    {
+      "id":"RTB-2026-APARTMENT-003",
+      "status":"VERIFIED_SEED",
+      "authority":"OFFICIAL_GUIDANCE",
+      "subject":"Specified new-apartment rent rule",
+      "effective_from":"2026-03-01",
+      "statement":"A specified new private apartment whose construction commenced after 10 June 2025 is subject to the special rent-review treatment described by current RTB guidance, including the applicable CPI-based rule and conditions.",
+      "source_refs":["renting-2026-core"],
+      "dependencies":["dwelling-type","construction-commencement-date","tenancy-regime","rent-review-date"],
+      "used_by":["renting-home","rent-calculator","rent-review-explainer"],
+      "historical":false
+    }
+  ]
+}
