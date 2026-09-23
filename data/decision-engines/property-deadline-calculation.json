@@ -1,0 +1,123 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-deadline-calculation",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Calculate or qualify legal deadlines only after identifying the governing provision, triggering event, time unit, counting rule, exclusions, extensions and applicable temporal version.",
+  "inputs":[
+    "legal_regime",
+    "legal_provision",
+    "procedure",
+    "triggering_event",
+    "trigger_date",
+    "time_period",
+    "time_unit",
+    "counting_rule",
+    "exclusions",
+    "extensions",
+    "transitional_rules",
+    "jurisdiction",
+    "target_date"
+  ],
+  "time_units":[
+    "DAYS",
+    "WORKING_DAYS",
+    "WEEKS",
+    "MONTHS",
+    "CALENDAR_MONTHS",
+    "YEARS",
+    "HOURS",
+    "OTHER_STATUTORY_UNIT"
+  ],
+  "deadline_types":[
+    "APPLICATION_DEADLINE",
+    "NOTICE_DEADLINE",
+    "RESPONSE_PERIOD",
+    "APPEAL_PERIOD",
+    "REVIEW_PERIOD",
+    "LIMITATION_PERIOD",
+    "COURT_RULE_DEADLINE",
+    "REGISTRATION_PERIOD",
+    "ADMINISTRATIVE_PROCESSING_PERIOD"
+  ],
+  "calculation_sequence":[
+    "IDENTIFY_DEADLINE_TYPE",
+    "IDENTIFY_EXACT_PROVISION",
+    "IDENTIFY_TRIGGERING_EVENT",
+    "VERIFY_TRIGGER_DATE",
+    "IDENTIFY_TIME_UNIT",
+    "IDENTIFY_START_DAY_RULE",
+    "IDENTIFY_END_DAY_RULE",
+    "CHECK_WORKING_DAY_RULE",
+    "CHECK_PUBLIC_HOLIDAY_RULE_IF_EXPRESSLY_APPLICABLE",
+    "CHECK_MONTH_OR_YEAR_RULE",
+    "CHECK_EXTENSIONS_OR_DISCRETION",
+    "CHECK_TRANSITIONAL_RULES",
+    "CALCULATE_RESULT",
+    "VALIDATE_AGAINST_SOURCE",
+    "PUBLISH_DEADLINE_WITH_ASSUMPTIONS"
+  ],
+  "general_interpretation_rules":[
+    {
+      "source":"Interpretation Act 2005, section 18(h)",
+      "rule":"Where a period is expressed to begin on or be reckoned from a particular day, that day is deemed included; where expressed to end on or be reckoned to a particular day, that day is deemed included, subject to the governing enactment and any contrary intention."
+    },
+    {
+      "source":"Interpretation Act 2005, Schedule Part 1",
+      "rule":"Month means a calendar month; week means the period between midnight on Saturday and the following Saturday; week-day excludes Sunday; working day excludes Saturday, Sunday and public holiday for purposes where that defined term applies."
+    },
+    {
+      "source":"Interpretation Act 2005, section 16",
+      "rule":"Commencement of an Act or statutory instrument follows the statutory commencement rules, including expressly specified commencement dates."
+    }
+  ],
+  "critical_rules":[
+    "A generic calendar calculation must not override a specific statutory counting rule.",
+    "The existence of a defined term such as working day does not by itself mean every deadline excludes weekends and public holidays; the governing provision must use or otherwise invoke the relevant rule.",
+    "A deadline must not be calculated until the triggering event and trigger date are established.",
+    "A deadline stated in months or years must not be approximated by a fixed number of days unless the governing law expressly requires that method.",
+    "Court rules, statutory limitation periods and administrative deadlines may use different counting regimes.",
+    "Extensions or judicial/administrative discretion must be separately identified from the original deadline."
+  ],
+  "validation_checks":[
+    "PROVISION_MATCH",
+    "TRIGGER_DATE_VERIFIED",
+    "TIME_UNIT_VERIFIED",
+    "COUNTING_RULE_VERIFIED",
+    "EXCLUSIONS_VERIFIED",
+    "EXTENSION_RULE_VERIFIED",
+    "TEMPORAL_VERSION_VERIFIED",
+    "CALCULATION_REPRODUCIBLE"
+  ],
+  "result_states":[
+    "DEADLINE_CALCULATED",
+    "DEADLINE_CALCULATED_WITH_LIMITATIONS",
+    "TRIGGER_DATE_REQUIRED",
+    "COUNTING_RULE_REQUIRES_SOURCE_CHECK",
+    "TEMPORAL_VERSION_REQUIRED",
+    "EXTENSION_REQUIRES_DECISION",
+    "DEADLINE_UNRESOLVED",
+    "NO_DEADLINE_IDENTIFIED"
+  ],
+  "output_contract":{
+    "deadline_type":"type",
+    "governing_source":"exact provision",
+    "trigger_event":"event",
+    "trigger_date":"verified date",
+    "time_period":"number and unit",
+    "counting_method":"method",
+    "exclusions":"if applicable",
+    "extensions":"if applicable",
+    "calculated_due_date":"date or unresolved",
+    "assumptions":"explicit",
+    "verification_date":"date",
+    "limitations":"scope"
+  },
+  "guardrails":[
+    "Never invent a deadline.",
+    "Never silently substitute calendar days for working days or vice versa.",
+    "Never silently treat a deadline as a limitation period.",
+    "Never ignore a statutory extension or court discretion.",
+    "Never publish a calculated date without preserving the rule used to calculate it."
+  ]
+}
