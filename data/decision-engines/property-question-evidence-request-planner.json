@@ -1,0 +1,107 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-question-evidence-request-planner",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Translate an evidence-sufficiency result into a precise, ordered retrieval plan identifying the missing evidence, its purpose, official source route, required identifiers, alternatives and stopping conditions.",
+  "planning_sequence":[
+    "CLASSIFY_QUESTION",
+    "LOAD_MINIMUM_EVIDENCE_PROFILE",
+    "COMPARE_AVAILABLE_VS_REQUIRED",
+    "IDENTIFY_MISSING_MATERIAL_ITEMS",
+    "MAP_EACH_ITEM_TO_EVIDENCE_TYPE",
+    "MAP_EVIDENCE_TYPE_TO_OFFICIAL_ROUTE",
+    "IDENTIFY_REQUIRED_PROPERTY_AND_DATE_IDENTIFIERS",
+    "CHECK_ACCESS_REQUIREMENTS",
+    "ORDER_RETRIEVAL_STEPS",
+    "DEFINE_ALTERNATIVE_ROUTE_IF_PRIMARY_UNAVAILABLE",
+    "DEFINE_SUFFICIENCY_STOPPING_CONDITION",
+    "RETURN_RETRIEVAL_PLAN"
+  ],
+  "request_item_types":[
+    "CURRENT_FOLIO",
+    "HISTORICAL_FOLIO_OR_REGISTER_ENTRY",
+    "PROPERTY_MAP",
+    "OFFICIAL_SEARCH",
+    "INSTRUMENT_OR_FILED_DOCUMENT",
+    "REGISTRY_OF_DEEDS_SEARCH_OR_MEMORIAL",
+    "UNDERLYING_DEED",
+    "CHARGE_OR_DISCHARGE_RECORD",
+    "SUCCESSION_DOCUMENT",
+    "ASSENT_OR_TRANSFER_DOCUMENT",
+    "COURT_ORDER",
+    "BOUNDARY_EVIDENCE",
+    "EASEMENT_OR_RIGHT_OF_WAY_EVIDENCE",
+    "SURVEY_OR_MAP",
+    "LEGAL_PROVISION",
+    "COMMENCEMENT_OR_TRANSITIONAL_SOURCE",
+    "OFFICIAL_PROCEDURE"
+  ],
+  "request_item_contract":[
+    "missing_item",
+    "why_needed",
+    "conclusion_supported",
+    "preferred_source",
+    "official_route",
+    "required_identifiers",
+    "date_scope",
+    "access_condition",
+    "alternative_source_or_route",
+    "expected_evidence",
+    "sufficiency_effect"
+  ],
+  "routing_rules":[
+    "Prefer the official source that directly establishes the missing proposition.",
+    "Do not request a document that cannot resolve the identified evidential gap.",
+    "Use property identifiers before relying on names or addresses.",
+    "Use date-specific retrieval where the question is historical.",
+    "If the primary route is inaccessible, identify an alternative only if that alternative can actually support the proposition.",
+    "A discovery source is not automatically an evidential source.",
+    "If no available route can establish the missing proposition, state that explicitly."
+  ],
+  "ordering_rules":[
+    "Resolve property identity before expensive document retrieval where identity is uncertain.",
+    "Resolve date scope before historical retrieval.",
+    "Retrieve current register evidence before inferential downstream analysis where current title is central.",
+    "Retrieve underlying instruments only when the legal effect cannot be established from the register or official summary.",
+    "Retrieve court orders where the claimed property effect depends on judicial determination.",
+    "Stop when the minimum evidence profile is satisfied unless the question asks for additional historical or contextual detail."
+  ],
+  "alternative_route_rules":[
+    "PRIMARY_OFFICIAL_ROUTE_UNAVAILABLE → verify whether a secondary official route exists.",
+    "RECORD_NOT_ACCESSIBLE → determine whether another official record establishes the same proposition.",
+    "PROPERTY_MATCH_UNCERTAIN → obtain better identifier/map evidence before selecting a record.",
+    "HISTORICAL_RECORD_UNAVAILABLE → do not substitute current record for historical proof.",
+    "UNDERLYING_DOCUMENT_UNAVAILABLE → state that the substantive document effect remains unresolved if the register alone is insufficient."
+  ],
+  "plan_states":[
+    "NO_RETRIEVAL_REQUIRED",
+    "RETRIEVAL_PLAN_READY",
+    "IDENTIFIER_REQUIRED",
+    "DATE_REQUIRED",
+    "OFFICIAL_ROUTE_REQUIRED",
+    "ACCESS_CONDITION_REQUIRES_CHECK",
+    "ALTERNATIVE_ROUTE_IDENTIFIED",
+    "NO_SUFFICIENT_ROUTE_IDENTIFIED",
+    "RETRIEVAL_PLAN_BLOCKED"
+  ],
+  "hard_stops":[
+    "Never invent an official form, URL, fee, contact or submission method.",
+    "Never request unnecessary documents merely to increase document volume.",
+    "Never treat a retrieval plan as evidence already obtained.",
+    "Never substitute an easier record for the required record unless its evidential sufficiency is established.",
+    "Never silently abandon a missing material item."
+  ],
+  "output_contract":[
+    "question",
+    "current_sufficiency_state",
+    "retrieval_items",
+    "ordered_steps",
+    "required_identifiers",
+    "official_routes",
+    "alternatives",
+    "stopping_condition",
+    "limitations",
+    "next_action"
+  ]
+}
