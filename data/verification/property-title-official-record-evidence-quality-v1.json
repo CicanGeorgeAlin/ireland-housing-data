@@ -1,0 +1,74 @@
+{
+  "schema_version":"0.1",
+  "status":"STRUCTURAL_WITH_OFFICIAL_SOURCE_BASIS",
+  "verified_at":"2026-09-23",
+  "purpose":"Define what each official property record can and cannot establish before it is used in a public legal answer.",
+  "record_types":[
+    {
+      "record":"FOLIO",
+      "can_support":[
+        "registered title information appearing on the folio",
+        "registered burdens/interests appearing on the folio",
+        "registered proprietor information subject to the statutory framework"
+      ],
+      "cannot_alone_establish":[
+        "every physical boundary fact",
+        "every underlying contractual/deed term",
+        "unregistered interests",
+        "the merits of a disputed rectification application"
+      ]
+    },
+    {
+      "record":"TITLE_PLAN",
+      "can_support":[
+        "registry-map representation associated with the registered title"
+      ],
+      "cannot_alone_establish":[
+        "every physical boundary on the ground",
+        "every historical conveyance boundary",
+        "the outcome of a boundary dispute"
+      ]
+    },
+    {
+      "record":"OFFICIAL_SEARCH",
+      "can_support":[
+        "the official search result specified by the applicable rule/form"
+      ],
+      "cannot_alone_establish":[
+        "facts outside the scope of the search",
+        "the legal merits of an underlying dispute"
+      ]
+    },
+    {
+      "record":"REGISTRY_OF_DEEDS_SEARCH",
+      "can_support":[
+        "existence/location of registered deeds or conveyances within the search scope"
+      ],
+      "cannot_alone_establish":[
+        "the complete legal effect of a deed without examination of the instrument",
+        "current registered title where property is registered in the Land Registry"
+      ]
+    },
+    {
+      "record":"FILED_INSTRUMENT",
+      "can_support":[
+        "the contents of the specific instrument, subject to authentication and access conditions"
+      ],
+      "cannot_alone_establish":[
+        "that the instrument was legally effective in every respect",
+        "that no later instrument or registration altered the legal position"
+      ]
+    }
+  ],
+  "official_basis":[
+    "Tailte Éireann Property Registration Services",
+    "Tailte Éireann Search and Copy Services",
+    "Registration of Title Act 1964",
+    "Land Registration Rules"
+  ],
+  "answer_rule":"Evidence establishes only the propositions for which its content, identity, scope and legal effect have been verified.",
+  "conflict_rule":"If official records conflict, expose the conflict and do not silently select a preferred record.",
+  "temporal_rule":"Every record retains its retrieval date and, where relevant, the legal/historical period to which it relates.",
+  "privacy_rule":"Public answers minimize personal data even when the underlying record is publicly accessible.",
+  "publication_gate":"NOT_READY"
+}
