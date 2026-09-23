@@ -1,0 +1,42 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Validate the registry of governance status-history validation runs for identity, traceability, immutability and separation from legal verification and publication.",
+  "registry": "data/registries/property-fixture-governance-status-history-runs.json",
+  "validation_sequence": [
+    "LOAD_REGISTRY",
+    "VERIFY_RUN_IDENTITIES",
+    "VERIFY_CONTRACT_REFERENCES",
+    "VERIFY_EXECUTION_RECORDS",
+    "VERIFY_RESULT_STATES",
+    "VERIFY_SCOPE",
+    "VERIFY_IMMUTABILITY",
+    "VERIFY_HISTORICAL_INTEGRITY",
+    "VERIFY_LEGAL_SOURCE_SEPARATION",
+    "VERIFY_PUBLICATION_SEPARATION",
+    "RECORD_VALIDATION"
+  ],
+  "checks": [
+    {"check_id":"PFGSHRV-001","name":"Run identity","result":"PASS"},
+    {"check_id":"PFGSHRV-002","name":"Contract traceability","result":"PASS"},
+    {"check_id":"PFGSHRV-003","name":"Execution record","result":"PASS"},
+    {"check_id":"PFGSHRV-004","name":"Result integrity","result":"PASS"},
+    {"check_id":"PFGSHRV-005","name":"Scope integrity","result":"PASS"},
+    {"check_id":"PFGSHRV-006","name":"Immutability","result":"PASS"},
+    {"check_id":"PFGSHRV-007","name":"Historical integrity","result":"PASS"},
+    {"check_id":"PFGSHRV-008","name":"Legal/publication separation","result":"PASS"}
+  ],
+  "result": {
+    "validation_status":"PASSED",
+    "registry_valid":true,
+    "historical_integrity":true,
+    "legal_source_status":"UNCHANGED",
+    "publication_status":"UNCHANGED"
+  },
+  "guardrails": [
+    "Structural validation only.",
+    "No live official property record was retrieved.",
+    "No Irish property-law proposition was verified by this validation.",
+    "No publication status was upgraded."
+  ]
+}
