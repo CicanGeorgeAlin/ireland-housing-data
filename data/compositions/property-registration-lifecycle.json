@@ -216,6 +216,15 @@
         "property-answer-state-machine",
         "property-answer-reverification-change-detection"
       ]
+    },
+    {
+      "stage": "LEGAL_CHANGE_IMPACT_ANALYSIS",
+      "routes": [
+        "property-legal-change-impact-engine",
+        "property-answer-reverification-change-detection",
+        "property-legal-provision-resolver",
+        "property-evidence-to-answer-trace-graph"
+      ]
     }
   ],
   "event_model": [
@@ -278,7 +287,8 @@
     "property-official-route-authority-resolver",
     "property-human-readable-legal-answer-composer",
     "property-evidence-to-answer-trace-graph",
-    "property-conflict-contradiction-resolver"
+    "property-conflict-contradiction-resolver",
+    "property-legal-change-impact-engine"
   ],
   "answer_sequence": [
     "QUESTION",
