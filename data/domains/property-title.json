@@ -1,0 +1,44 @@
+{
+  "id":"property-title-domain",
+  "version":"0.1",
+  "status":"STRUCTURAL_DOMAIN_SEED",
+  "purpose":"Second reusable legal domain proving that the Ireland Housing Data engine can move beyond residential rent.",
+  "primary_subjects":["registered title","unregistered title","folio","map","ownership","co-ownership","charges","easements","leases","judgment mortgages","property searches"],
+  "source_hierarchy":[
+    "Registration of Title Act 1964",
+    "Land and Conveyancing Law Reform Act 2009",
+    "Land and Conveyancing Law Reform Act 2021 where applicable",
+    "Land Registration Rules 2021 and other applicable current rules",
+    "Tailte Éireann official guidance and Land Registry services",
+    "relevant Irish case law"
+  ],
+  "core_questions":[
+    "Who is registered as owner?",
+    "Is the property registered?",
+    "What is the folio number?",
+    "What rights or burdens appear on the register?",
+    "What does the registry map establish and what does it not establish?",
+    "Are there co-owners?",
+    "Are there mortgages, judgment mortgages, cautions or inhibitions?",
+    "Is an easement or right of way registered?",
+    "What further title documents must be examined?"
+  ],
+  "legal_resolver_sequence":[
+    "identify-property-interest",
+    "identify-registration-status",
+    "resolve-current-legal-version",
+    "retrieve-folio-or-title-evidence",
+    "identify-registered-interests",
+    "check-underlying-instruments-where-required",
+    "compose-property-law",
+    "show-evidence",
+    "official-route"
+  ],
+  "guardrails":[
+    "A folio is evidence of registered title but does not answer every property-law question.",
+    "Registry map boundaries are not automatically conclusive of the physical boundary.",
+    "Ownership does not mean absence of planning, building, environmental, tax or other statutory constraints.",
+    "A public register record is not automatically permission to republish personal data without privacy analysis.",
+    "Do not infer unregistered rights solely from absence on a folio."
+  ]
+}
