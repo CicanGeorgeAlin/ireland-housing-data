@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Authoritative status record for the unified property evidence fixture governance layer.",
+  "registry_rules": [
+    "Governance status is derived from the manifest and recorded validation.",
+    "A PASSED governance status does not mean legal-source verification is complete.",
+    "A PASSED governance status does not mean live official-record retrieval occurred.",
+    "Historical validation records remain immutable.",
+    "Publication readiness remains independently gated."
+  ],
+  "status_record": {
+    "governance_id": "PROPERTY-FIXTURE-GOVERNANCE-001",
+    "manifest": "data/registries/property-fixture-governance-manifest.json",
+    "manifest_validation": "data/tests/property-fixture-governance-manifest-validation.json",
+    "governance_status": "PASSED",
+    "validation_status": "PASSED",
+    "scenario_validation_status": "PASSED_WITH_WARNINGS",
+    "active_revalidation_event_id": "FIXTURE-IMPACT-EVENT-001",
+    "active_revalidation_queue_id": "PF-REVAL-QUEUE-001",
+    "closure_state": "NOT_READY",
+    "legal_source_status": "PARTIAL",
+    "production_evidence_status": "PARTIAL",
+    "publication_status": "NOT_READY",
+    "last_validated": "2026-09-23"
+  },
+  "blocking_conditions": [
+    "Active fixture impact event has not completed dependent revalidation.",
+    "Substantive legal-source verification remains separate and incomplete for the property-title-live pathway.",
+    "No live official property record has been retrieved and verified through the production evidence path."
+  ],
+  "warnings": [
+    "Technical governance passing is not legal verification.",
+    "Synthetic fixture validation does not establish real property facts.",
+    "No publication-ready status may be inferred from this registry."
+  ],
+  "next_state_rule": "Governance may remain PASSED while active revalidation is open; closure and pathway publication require their own explicit gates."
+}
