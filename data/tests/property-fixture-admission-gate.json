@@ -1,0 +1,61 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Define the controlled admission gate for a corrected or replacement property evidence fixture before dependent revalidation may execute.",
+  "gate_id": "PF-FIXTURE-ADMISSION-001",
+  "current_gate": "APPROVED_CORRECTED_OR_REPLACEMENT_CONTROLLED_FIXTURE",
+  "admission_sequence": [
+    "IDENTIFY_CANDIDATE_FIXTURE",
+    "CLASSIFY_SYNTHETIC_OR_SOURCE_DERIVED",
+    "VERIFY_PROVENANCE",
+    "VERIFY_SOURCE_AUTHORITY_IF_SOURCE_DERIVED",
+    "VERIFY_SOURCE_AND_RETRIEVAL_DATES",
+    "VERIFY_LEGAL_PERIOD_IF_APPLICABLE",
+    "PERFORM_REDACTION_REVIEW_IF_REQUIRED",
+    "PERFORM_PRIVACY_REVIEW",
+    "VERIFY_SUBSTANTIVE_MEANING_PRESERVED",
+    "VERIFY_FIXTURE_LABEL",
+    "ISOLATE_FROM_PRODUCTION_EVIDENCE",
+    "CREATE_OR_UPDATE_APPROVAL_RECORD",
+    "REGISTER_FIXTURE",
+    "UPDATE_DEPENDENCY_MAP_IF_NEEDED",
+    "SATISFY_REVALIDATION_GATE"
+  ],
+  "admission_states": [
+    "NOT_SUBMITTED",
+    "PROPOSED",
+    "SOURCE_VERIFIED",
+    "REDACTION_REVIEW",
+    "PRIVACY_REVIEW",
+    "APPROVAL_PENDING",
+    "APPROVED",
+    "REJECTED",
+    "SUPERSEDED"
+  ],
+  "required_conditions": [
+    "Fixture identity is unique.",
+    "Fixture provenance is recorded.",
+    "Source authority is verified when source-derived.",
+    "Retrieval/source dates are recorded when applicable.",
+    "Legal period is preserved when applicable.",
+    "Privacy minimisation passes.",
+    "Substantive meaning is not altered by redaction.",
+    "Fixture remains explicitly synthetic or source-derived.",
+    "Fixture remains isolated from production legal evidence.",
+    "Approval is recorded before dependent revalidation."
+  ],
+  "current_state": {
+    "gate_status": "BLOCKED",
+    "candidate_fixture": null,
+    "approved_fixture": null,
+    "reason": "No corrected or replacement fixture has yet been admitted and approved."
+  },
+  "guardrails": [
+    "Do not invent fixture content.",
+    "Do not infer approval from technical validation.",
+    "A source-derived fixture is still a controlled test fixture unless separately admitted as production evidence through the appropriate evidence process.",
+    "No fixture can establish real property ownership, title, boundary or other real-world property fact.",
+    "Passing this gate does not verify Irish property law.",
+    "Passing this gate does not authorize publication."
+  ]
+}
