@@ -1,0 +1,108 @@
+{
+  "id":"property-validation-dashboard",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"CANONICAL_VALIDATION_DASHBOARD_CONTRACT",
+  "purpose":"Define the internal dashboard used to monitor validation, legal verification, evidence quality, revalidation and publication readiness across property pathways.",
+  "dashboard_sections":[
+    "OVERALL_PROPERTY_VALIDATION",
+    "PATHWAY_STATUS",
+    "CRITICAL_FAILURES",
+    "LEGAL_VERIFICATION_GAPS",
+    "EVIDENCE_GAPS",
+    "HISTORICAL_RESEARCH",
+    "REVALIDATION_QUEUE",
+    "PRIVACY_ISSUES",
+    "PUBLICATION_READINESS",
+    "RECENT_VALIDATION_RUNS",
+    "CHANGE_IMPACTS"
+  ],
+  "pathway_status":{
+    "fields":[
+      "pathway_id",
+      "pathway_name",
+      "validation_status",
+      "legal_source_status",
+      "evidence_status",
+      "last_validation_run_id",
+      "last_validated",
+      "revalidation_required",
+      "publication_status"
+    ],
+    "statuses":[
+      "NOT_VALIDATED",
+      "VALIDATION_PENDING",
+      "PASSED",
+      "PASSED_WITH_NONCRITICAL_WARNINGS",
+      "FAILED",
+      "BLOCKED",
+      "REVALIDATION_REQUIRED"
+    ]
+  },
+  "legal_verification_gaps":[
+    "PRIMARY_LAW_NOT_VERIFIED",
+    "COMMENCEMENT_NOT_VERIFIED",
+    "AMENDMENTS_NOT_CHECKED",
+    "CASE_LAW_NOT_CHECKED",
+    "PROCEDURE_NOT_VERIFIED",
+    "OFFICIAL_ROUTE_NOT_CHECKED"
+  ],
+  "evidence_gaps":[
+    "RETRIEVAL_REQUIRED",
+    "DOCUMENT_IDENTITY_UNVERIFIED",
+    "PROPERTY_MATCH_UNVERIFIED",
+    "FACT_EXTRACTION_PENDING",
+    "PROPOSITION_SUPPORT_PENDING",
+    "CONFLICTING_EVIDENCE",
+    "MISSING_PRIMARY_EVIDENCE"
+  ],
+  "severity":{
+    "CRITICAL":"Blocks publication or requires immediate legal/evidence review.",
+    "HIGH":"Material issue requiring review before relying on the pathway.",
+    "MATERIAL":"Substantive gap that must be resolved before verified publication.",
+    "PROCEDURAL":"Procedure/form/link issue requiring correction.",
+    "INFORMATIONAL":"Non-blocking improvement or documentation issue."
+  },
+  "publication_readiness":{
+    "gates":[
+      "LEGAL_SOURCE_STATUS_ACCEPTABLE",
+      "EVIDENCE_BOUNDARY_PASSED",
+      "NO_CRITICAL_UNSAFE_BEHAVIOUR",
+      "TEMPORAL_INTEGRITY_PASSED",
+      "TRACEABILITY_PASSED",
+      "PRIVACY_PASSED",
+      "CURRENT_CHANGE_STATUS_REVIEWED"
+    ],
+    "outcomes":[
+      "READY",
+      "READY_WITH_WARNINGS",
+      "NOT_READY",
+      "BLOCKED",
+      "REVALIDATION_REQUIRED"
+    ]
+  },
+  "metrics":{
+    "pathways_total":true,
+    "validated_total":true,
+    "not_validated_total":true,
+    "blocked_total":true,
+    "revalidation_required_total":true,
+    "critical_failures_total":true,
+    "evidence_conflicts_total":true,
+    "historical_research_items_total":true,
+    "privacy_issues_total":true,
+    "publication_ready_total":true
+  },
+  "privacy":{
+    "internal_only":true,
+    "do_not_display_personal_property_data_unnecessarily":true,
+    "aggregate_metrics_preferred":true
+  },
+  "guardrails":[
+    "Dashboard status must never be represented as a legal confidence score.",
+    "A green technical validation state does not replace substantive legal-source verification.",
+    "A blocked pathway remains blocked until the blocking condition is resolved and revalidated.",
+    "Historical and current legal status must remain distinguishable.",
+    "No pathway becomes publication-ready solely because a test suite passes."
+  ]
+}
