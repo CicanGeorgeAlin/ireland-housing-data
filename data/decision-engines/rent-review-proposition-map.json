@@ -1,0 +1,31 @@
+{
+  "id":"rent-review-proposition-map",
+  "version":"0.1",
+  "status":"STRUCTURAL_ENGINE",
+  "purpose":"Map classified temporal states to canonical propositions and evidence records without producing a final individual legal conclusion.",
+  "rules":[
+    {
+      "when":{"tenancy_type":"private","review_period":"FROM_2026_FRAMEWORK"},
+      "candidate_propositions":["RTB-2026-RENT-CAP-001","RTB-2026-RENT-RESET-002","RTB-2026-APARTMENT-003"],
+      "evidence":["EVID-RTB-2026-001"]
+    },
+    {
+      "when":{"tenancy_type":"private","review_period":"BEFORE_2026_FRAMEWORK"},
+      "candidate_propositions":[],
+      "route":"HISTORICAL_RESEARCH_REQUIRED"
+    },
+    {
+      "when":{"tenancy_type":"special"},
+      "candidate_propositions":[],
+      "route":"SPECIAL_REGIME_RESEARCH_REQUIRED"
+    }
+  ],
+  "publication_rules":[
+    "Candidate proposition is not a legal conclusion.",
+    "Every displayed proposition must resolve to a canonical registry entry.",
+    "Every displayed proposition must resolve to an evidence-ledger record.",
+    "Historical branches require the applicable historical proposition set.",
+    "Missing evidence blocks definitive output.",
+    "Special-regime classifications must not inherit private-tenancy propositions automatically."
+  ]
+}
