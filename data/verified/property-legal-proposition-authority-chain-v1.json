@@ -1,0 +1,20 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-proposition-authority-chain-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "scope":"Authority-chain architecture for property-law propositions. It does not itself determine a property-specific legal outcome.",
+  "last_verified":"2026-09-24",
+  "authority_hierarchy":[
+    "Constitution",
+    "Acts of the Oireachtas",
+    "Statutory Instruments",
+    "EU law where applicable",
+    "Irish case law",
+    "Official Government guidance",
+    "Administrative procedure",
+    "CICAN citizen-facing explanation"
+  ],
+  "core_rule":"PROVISION → PROPOSITION → INTERPRETATION IF NEEDED → PROCEDURE IF NEEDED → CONDITIONS → LEGAL EFFECT",
+  "critical_boundary":"Guidance and administrative procedure may explain how a rule is operated, but they must not be represented as the underlying statutory rule.",
+  "publication_gate":"GENERAL_INFORMATION_ONLY"
+}
