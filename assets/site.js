@@ -1,6 +1,7 @@
 (() => {
   const links = document.querySelectorAll('.action');
   const state = {};
+  const evidenceState = {};
 
   const propositionMap = {
     private_current: {
@@ -87,7 +88,7 @@
       ['Dates and property references cross-checked','REQUIRED']
     ];
     return '<div class="evidence-checklist"><div class="kicker">Evidence checklist</div>' +
-      items.map(item => '<div class="check-item"><span>○</span><strong>' + escapeHtml(item[0]) + '</strong><small>' + escapeHtml(item[1]) + '</small></div>').join('') +
+      items.map((item,index) => { const key='e'+index; const current=evidenceState[key]||'MISSING'; return '<div class="check-item"><button type="button" class="evidence-toggle" data-evidence="'+key+'">'+escapeHtml(current)+'</button><strong>' + escapeHtml(item[0]) + '</strong><small>' + escapeHtml(item[1]) + '</small></div>'; }).join('') +
       '</div>';
   }
 
@@ -115,6 +116,7 @@
       html+='<div class="decision-evidence"><div class="kicker">Candidate legal propositions</div><p>'+escapeHtml(mapping.propositions.length ? mapping.propositions.join(' · ') : 'None loaded for this historical branch.')+'</p><div class="kicker">Evidence chain</div><p>'+escapeHtml(mapping.evidence.length ? mapping.evidence.join(' · ') : 'Historical evidence required.')+'</p><div class="kicker">Publication state</div><p>'+escapeHtml(mapping.route)+'</p><div class="kicker">New-apartment exception</div><p>'+escapeHtml(apartment)+'</p>'+checklist<button type="button" id="show-law-button">SHOW ME THE LAW</button></div>';
     }
     box.innerHTML=html;
+    document.querySelectorAll('.evidence-toggle').forEach(button => button.addEventListener('click', () => { const key=button.dataset.evidence; const order=['MISSING','SUPPLIED','EXTRACTED','CONSISTENT','CONFLICT']; const current=evidenceState[key]||'MISSING'; evidenceState[key]=order[(order.indexOf(current)+1)%order.length]; renderDecision(); }));
     const lawButton=document.getElementById('show-law-button');
     if(lawButton) lawButton.addEventListener('click', renderLaw);
   }
