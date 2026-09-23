@@ -51,7 +51,13 @@ footer p{color:var(--muted);font-size:.78rem;margin:22px 0 0}
 @media(max-width:700px){.section{padding:80px 18px}.law{grid-template-columns:1fr;gap:28px}.brand{font-size:.62rem}.navlink{font-size:.6rem}}
 </style>
 <script defer src="assets/site.js"></script>
-</head>
+<style>
+.legal-journey{margin-top:24px;border-top:1px solid rgba(255,255,255,.12);padding-top:24px}
+.journey-track{display:flex;gap:10px;overflow-x:auto;padding:8px 0 14px}
+.journey-step{min-width:145px;border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:14px;background:rgba(255,255,255,.025)}
+.journey-step.active{border-color:rgba(255,255,255,.7);box-shadow:0 0 22px rgba(255,255,255,.08)}
+.journey-step small{display:block;color:rgba(255,255,255,.5);margin-top:7px}
+</style></head>
 <body>
 <nav><a class="brand" href="#">IRELAND HOUSING DATA</a><a class="navlink" href="#show-law">SHOW ME THE LAW</a></nav>
 
@@ -88,7 +94,7 @@ footer p{color:var(--muted);font-size:.78rem;margin:22px 0 0}
       <button class="action pathway-btn" type="button" data-next="review_date">When is the review?</button>
       <button class="action pathway-btn" type="button" data-next="new_apartment">Is it a new apartment?</button>
     </div>
-    <div id="pathway-state" class="pathway-state" hidden></div><div id="pathway-decision" class="pathway-decision" hidden></div><p class="lead" style="margin-top:22px;font-size:.82rem">The pathway is an information prototype. Individual legal outcomes require the applicable facts and full legal analysis.</p>
+    <div id="pathway-state" class="pathway-state" hidden></div><div id="pathway-decision" class="pathway-decision" hidden></div><div id="legal-journey" class="legal-journey" hidden></div><p class="lead" style="margin-top:22px;font-size:.82rem">The pathway is an information prototype. Individual legal outcomes require the applicable facts and full legal analysis.</p>
   </div>
 </section>
 <section class="section" id="topics">
