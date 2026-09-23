@@ -110,6 +110,15 @@
         "property-registration-historical-state",
         "property-evidence-retrieval-routing"
       ]
+    },
+    {
+      "stage": "EVIDENCE_AUDIT_TRAIL",
+      "routes": [
+        "property-evidence-audit-trail",
+        "property-answer-assembly-snapshot",
+        "property-answer-reverification-change-detection",
+        "property-evidence-fact-legal-effect-boundary"
+      ]
     }
   ],
   "event_model": [
@@ -159,7 +168,8 @@
     "property-evidence-retrieval-routing",
     "property-evidence-fact-legal-effect-boundary",
     "property-answer-assembly-snapshot",
-    "property-answer-reverification-change-detection"
+    "property-answer-reverification-change-detection",
+    "property-evidence-audit-trail"
   ],
   "answer_sequence": [
     "QUESTION",
