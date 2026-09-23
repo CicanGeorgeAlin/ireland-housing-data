@@ -1,0 +1,91 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-official-source-change-monitor-watchlist",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Define how Ireland Housing Data monitors authoritative sources for changes that may affect legal propositions, procedures, evidence routes, deadlines or published answers.",
+  "core_principle":"MONITOR SOURCE → DETECT CHANGE → CLASSIFY CHANGE → MAP DEPENDENCIES → REVERIFY ONLY WHAT IS AFFECTED",
+  "watch_targets":[
+    "Irish Statute Book Acts and statutory provisions",
+    "Irish Statute Book Statutory Instruments",
+    "official commencement and amendment material",
+    "official court judgments and legal sources",
+    "Tailte Éireann property-registration services",
+    "Tailte Éireann search/copy procedures",
+    "LandDirect access/service information",
+    "official court and procedural sources",
+    "official Government housing/property guidance"
+  ],
+  "change_types":[
+    "NEW_SOURCE",
+    "SOURCE_CONTENT_CHANGED",
+    "SOURCE_VERSION_CHANGED",
+    "AMENDMENT",
+    "REPEAL",
+    "COMMENCEMENT",
+    "TRANSITIONAL_CHANGE",
+    "NEW_CASE_LAW",
+    "OFFICIAL_PROCEDURE_CHANGED",
+    "OFFICIAL_ROUTE_CHANGED",
+    "DEADLINE_OR_COUNTING_RULE_CHANGED",
+    "FORM_OR_ACCESS_CHANGE",
+    "SOURCE_UNAVAILABLE",
+    "SOURCE_MOVED_OR_RELOCATED"
+  ],
+  "detection_sequence":[
+    "IDENTIFY_WATCH_TARGET",
+    "CAPTURE_SOURCE_IDENTITY",
+    "CAPTURE_VERSION_OR_RETRIEVAL_DATE",
+    "COMPARE_WITH_PRIOR_KNOWN_STATE",
+    "NORMALIZE_CHANGE",
+    "CLASSIFY_CHANGE",
+    "IDENTIFY_TEMPORAL_SCOPE",
+    "MAP_DEPENDENCY_GRAPH",
+    "CLASSIFY_IMPACT",
+    "CREATE_REVERIFICATION_EVENT",
+    "PRIORITIZE_AFFECTED_ANSWERS",
+    "REVERIFY_MATERIAL_DEPENDENCIES",
+    "QUALITY_GATE_AFFECTED_SNAPSHOTS",
+    "PUBLISH_NEW_SNAPSHOT_IF_REQUIRED"
+  ],
+  "watch_record":[
+    "watch_id",
+    "authority",
+    "source_name",
+    "source_type",
+    "official_location",
+    "source_identifier",
+    "last_checked",
+    "previous_state_reference",
+    "current_state_reference",
+    "change_detected",
+    "change_type",
+    "temporal_scope",
+    "affected_dependencies",
+    "impact_state",
+    "reverification_priority",
+    "next_review"
+  ],
+  "impact_rules":[
+    "A source change does not automatically invalidate every answer using that source.",
+    "An amendment is not treated as operative until commencement and transitional rules are checked.",
+    "A new judgment affects only propositions within its actual legal scope.",
+    "A procedure-page change may affect route/access information without changing substantive law.",
+    "A source becoming unavailable is not evidence that the underlying legal or property fact disappeared.",
+    "Historical snapshots remain anchored to their applicable historical sources unless a material historical dependency changes."
+  ],
+  "priority_rules":[
+    "P0_IMMEDIATE_REVIEW_REQUIRED for material current legal/deadline changes affecting published answers.",
+    "P1_HIGH_PRIORITY for material current property/procedure/route changes.",
+    "P2_STANDARD_REVIEW for ordinary material source changes.",
+    "P3_MONITOR for changes with no presently identified material dependency.",
+    "NO_REVIEW_REQUIRED where change is demonstrably outside all material dependencies."
+  ],
+  "hard_stops":[
+    "Never silently rewrite a published answer because a source changed.",
+    "Never treat a changed webpage as proof of changed law without legal-source verification.",
+    "Never treat source disappearance as legal repeal or property-record deletion.",
+    "Never use freshness as a substitute for authority.",
+    "Never skip dependency analysis before mass invalidation."
+  ]
+}
