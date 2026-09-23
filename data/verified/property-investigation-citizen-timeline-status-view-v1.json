@@ -1,0 +1,27 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-investigation-citizen-timeline-status-view-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for exposing investigation progress to citizens in clear, limited language.",
+  "core_principle":"PUBLIC STATUS MUST REFLECT REAL INVESTIGATION STATE WITHOUT EXPOSING INTERNAL OR RESTRICTED INFORMATION.",
+  "public_stages":[
+    "Question received",
+    "Question understood",
+    "Information needed",
+    "Evidence being checked",
+    "Property and date checked",
+    "Law being checked",
+    "Issue or evidence gap being reviewed",
+    "Next route identified",
+    "Answer reviewed",
+    "Answer ready",
+    "Answer published"
+  ],
+  "waiting_rule":"When citizen action or official evidence is required, explain what is needed and why, without exposing unnecessary internal details.",
+  "limitation_rule":"Material limitations affecting reliance on the answer must be visible in the public status or answer.",
+  "certainty_rule":"Status language must not imply a stronger verification state than the underlying investigation.",
+  "privacy_rule":"Public status must not disclose unrelated or restricted personal information.",
+  "timing_rule":"Do not promise completion times unless supported by an applicable verified timeframe.",
+  "verification_boundary":"The status view communicates investigation progress; it does not establish the underlying property or legal conclusion."
+}
