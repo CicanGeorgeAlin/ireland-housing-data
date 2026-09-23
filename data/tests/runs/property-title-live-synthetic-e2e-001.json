@@ -1,0 +1,51 @@
+{
+  "run_id":"RUN-PROPERTY-TITLE-SYNTHETIC-E2E-001",
+  "pathway_id":"property-title-live",
+  "fixture_id":"FIXTURE-FOLIO-SYNTHETIC-001",
+  "runner":"property-evidence-audit-runner",
+  "executed_at":"2026-09-23",
+  "execution_mode":"CONTROLLED_SYNTHETIC_END_TO_END",
+  "status":"PASSED",
+  "purpose":"Verify that synthetic property evidence can traverse the complete pipeline without being treated as a real official record or creating a false legal conclusion.",
+  "execution_trace":[
+    "QUESTION_CAPTURED",
+    "PROPERTY_ISSUE_CLASSIFIED",
+    "OFFICIAL_ROUTE_SELECTED",
+    "SYNTHETIC_FIXTURE_LOADED",
+    "FIXTURE_PROVENANCE_PRESERVED",
+    "DOCUMENT_IDENTITY_FIXTURE_VERIFIED",
+    "PROPERTY_MATCH_FIXTURE_VERIFIED",
+    "FACT_EXTRACTED",
+    "EVIDENCE_STATE_RECORDED",
+    "PROPOSITION_SUPPORT_BOUNDARY_CHECKED",
+    "LEGAL_EFFECT_BLOCKED_FROM_REAL_WORLD_CONCLUSION",
+    "ANSWER_COMPOSED_AS_FIXTURE_ONLY",
+    "SNAPSHOT_MARKED_NON_PRODUCTION",
+    "PUBLIC_PRIVACY_FILTER_APPLIED"
+  ],
+  "assertions":{
+    "synthetic_provenance_preserved":true,
+    "official_retrieval_claim_blocked":true,
+    "real_property_match_claim_blocked":true,
+    "registered_owner_claim_blocked":true,
+    "legal_effect_as_real_property_claim_blocked":true,
+    "production_proposition_status_unchanged":true,
+    "production_publication_status_unchanged":true,
+    "fixture_only_answer_label_preserved":true,
+    "unnecessary_personal_data_exposed":false
+  },
+  "actual_result":"FIXTURE_ONLY",
+  "production_legal_status":"UNCHANGED",
+  "production_publication_status":"UNCHANGED",
+  "unsafe_behaviour_detected":[],
+  "traceability_failures":[],
+  "privacy_failures":[],
+  "temporal_failures":[],
+  "notes":[
+    "This run validates pipeline behaviour only.",
+    "No real property record was retrieved.",
+    "No real property ownership or title conclusion was produced.",
+    "Synthetic fixture data remains isolated from production legal evidence."
+  ],
+  "next_validation":"SOURCE_DERIVED_REDACTED_FIXTURE_OR_LIVE_OFFICIAL_RECORD_VALIDATION"
+}
