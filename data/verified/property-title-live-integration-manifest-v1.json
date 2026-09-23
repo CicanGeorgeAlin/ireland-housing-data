@@ -1,0 +1,33 @@
+{
+  "schema_version":"1.0",
+  "manifest_id":"PROPERTY-TITLE-LIVE-INTEGRATION-001",
+  "status":"INTEGRATION_REGISTERED",
+  "verified_content":"data/verified/property-title-live-v1.json",
+  "website_contract":"data/verified/property-title-live-v1-website-contract.json",
+  "answer_contract":"data/components/property-legal-answer.json",
+  "navigation":"data/navigation.json",
+  "pathway":"data/questions/property-title-live.json",
+  "official_record_route":"data/decision-engines/property-official-records-route.json",
+  "evidence_map":"data/evidence/property-official-record-evidence-map.json",
+  "audit_contract":"data/evidence/property-evidence-audit.json",
+  "snapshot_contract":"data/answers/property-answer-snapshot.json",
+  "reverification":"data/change-monitor/property-answer-reverification.json",
+  "public_display_requirements":[
+    "Show the legal answer separately from property-specific evidence.",
+    "Show official source links.",
+    "Show applicable date and last-verified date.",
+    "Show what the evidence establishes and does not establish.",
+    "Never imply live retrieval when no retrieval event exists.",
+    "Route individual-property questions through the evidence gate."
+  ],
+  "integration_test_requirements":[
+    "General property-title question resolves to verified general information.",
+    "Property-specific question without official evidence remains evidence-pending.",
+    "Official record route selection remains separate from legal conclusion.",
+    "Conflicting evidence remains visible.",
+    "Historical questions retain historical legal context.",
+    "Legal-change dependency can trigger re-verification."
+  ],
+  "publication_status":"GENERAL_INFORMATION_LIVE_READY",
+  "individual_property_status":"EVIDENCE_REQUIRED"
+}
