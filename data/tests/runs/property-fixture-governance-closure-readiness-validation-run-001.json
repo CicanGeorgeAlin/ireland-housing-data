@@ -1,0 +1,32 @@
+{
+  "schema_version": "0.1",
+  "run_id": "PFGCRV-RUN-001",
+  "contract": "data/tests/property-fixture-governance-closure-readiness-validation.json",
+  "execution_mode": "STATIC_CONTRACT_VALIDATION",
+  "executed_at": "2026-09-23",
+  "status": "PASSED",
+  "checks": [
+    {"check_id":"PFGCRV-001","result":"PASS"},
+    {"check_id":"PFGCRV-002","result":"PASS"},
+    {"check_id":"PFGCRV-003","result":"PASS"},
+    {"check_id":"PFGCRV-004","result":"PASS"},
+    {"check_id":"PFGCRV-005","result":"PASS"},
+    {"check_id":"PFGCRV-006","result":"PASS"},
+    {"check_id":"PFGCRV-007","result":"PASS"}
+  ],
+  "summary": {
+    "assessment_valid": true,
+    "closure_status": "NOT_READY",
+    "revalidation_required": true,
+    "legal_source_status": "UNCHANGED",
+    "production_evidence_status": "UNCHANGED",
+    "publication_status": "UNCHANGED"
+  },
+  "guardrails": [
+    "Static validation only.",
+    "Pending closure conditions remain pending.",
+    "No live official property record was retrieved.",
+    "No legal proposition was upgraded.",
+    "No publication status was upgraded."
+  ]
+}
