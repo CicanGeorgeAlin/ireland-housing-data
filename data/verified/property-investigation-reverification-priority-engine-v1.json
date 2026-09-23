@@ -1,0 +1,29 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-investigation-reverification-priority-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for prioritizing targeted re-verification of published property answers.",
+  "core_principle":"PRIORITY FOLLOWS MATERIAL IMPACT; PRIORITY DOES NOT ESTABLISH LEGAL CORRECTNESS.",
+  "required_inputs":[
+    "change_trigger",
+    "affected_dependency",
+    "dependency_materiality",
+    "answer_snapshot",
+    "current_or_historical_scope"
+  ],
+  "priority_basis":[
+    "material answer impact",
+    "currentness sensitivity",
+    "deadline sensitivity",
+    "conflict severity",
+    "affected-answer count",
+    "source authority"
+  ],
+  "currentness_rule":"Current answers are rechecked when material current records or sources change.",
+  "historical_rule":"Historical answers remain anchored to their target date and are rechecked only when dependencies relevant to that historical state are affected.",
+  "deadline_rule":"Deadline changes are escalated when the affected answer depends on the changed deadline or trigger rule.",
+  "queue_rule":"Every queued item records why it was queued and which dependency caused the review.",
+  "closure_rule":"A queue item closes only after re-verification, documented no-change determination, revised snapshot, or an explicitly recorded blocking state.",
+  "verification_boundary":"The priority engine organizes work; it does not determine whether the underlying legal answer is correct."
+}
