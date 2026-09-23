@@ -1,0 +1,44 @@
+{
+  "schema_version":"0.1",
+  "status":"SUBSTANTIALLY_VERIFIED",
+  "verified_at":"2026-09-23",
+  "proposition_id":"PROP-PROPERTY-TITLE-001",
+  "primary_judgments":[
+    {
+      "case":"Tanager DAC v Kane [2018] IECA 352",
+      "status":"PRIMARY_AUTHORITY_CONFIRMED",
+      "role":"registered-title / curative-effect framework"
+    },
+    {
+      "case":"Reidy v The Governor and Company of Bank of Ireland [2023] IECA 212",
+      "status":"PRIMARY_AUTHORITY_CONFIRMED",
+      "role":"s.31 statutory conclusiveness"
+    },
+    {
+      "case":"Fannon v Ulster Bank Ireland DAC [2024] IECA 51",
+      "status":"PRIMARY_AUTHORITY_CONFIRMED",
+      "role":"limits of s.31 as evidence of underlying transfer/assignment terms"
+    },
+    {
+      "case":"Planetwhite Ltd v Hogan & Anor [2025] IEHC 378",
+      "status":"PRIMARY_JUDGMENT_REVIEWED",
+      "role":"registered owner not in possession; s.31 and statutory burdens"
+    }
+  ],
+  "verified_propositions":[
+    "Section 31(1) gives the register the statutory conclusive effect specified by the Act, subject to the statutory exceptions and rectification framework.",
+    "The statutory conclusiveness is not confined by its text to an owner who is physically in possession; Planetwhite applied it to a registered owner seeking possession.",
+    "Section 31 does not make the register conclusive evidence of every term of an underlying transfer or assignment; Fannon is material to that evidential distinction.",
+    "The 'iron curtain' / curative-effect description comes from the judicial treatment of registered title and must be presented as judicial characterization, not as statutory wording.",
+    "Overriding-interest questions and existing legal rights of occupation remain separate from the conclusiveness of the registered title."
+  ],
+  "limits":[
+    "The proposition does not establish the facts of an individual property.",
+    "Fraud/mistake and statutory rectification routes remain material.",
+    "Boundary/map questions remain governed by their separate statutory and evidential framework.",
+    "This audit does not determine any future court outcome."
+  ],
+  "publication_effect":"PTG-002 CLOSED_FOR_CORE_S31_PROPOSITION",
+  "remaining":"Final publication-source audit and separate boundary/possessory-title gaps.",
+  "publication_gate":"NOT_READY"
+}
