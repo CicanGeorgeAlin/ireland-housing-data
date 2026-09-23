@@ -1,0 +1,100 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-legal-procedure-remedy-resolver",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Translate an established legal issue and legal effect into the appropriate official procedure, responsible body, evidence requirements, deadlines where applicable, remedies and next route without confusing information with legal representation.",
+  "inputs":[
+    "classified_question",
+    "legal_regime",
+    "legal_provision",
+    "legal_proposition",
+    "conditions_and_exceptions",
+    "established_facts",
+    "property_match",
+    "date_scope",
+    "current_or_historical"
+  ],
+  "procedure_dimensions":[
+    "RESPONSIBLE_BODY",
+    "ADMINISTRATOR",
+    "DECISION_MAKER",
+    "APPLICATION_OR_NOTICE",
+    "REQUIRED_EVIDENCE",
+    "DEADLINE",
+    "RESPONSE_PERIOD",
+    "REVIEW_OR_APPEAL",
+    "COURT_OR_DISPUTE_ROUTE",
+    "ENFORCEMENT_ROUTE",
+    "REMEDY",
+    "NEXT_STEP"
+  ],
+  "actor_roles":[
+    "INFORMATION_PROVIDER",
+    "REGISTRAR",
+    "ADMINISTRATOR",
+    "INVESTIGATOR",
+    "DECISION_MAKER",
+    "REVIEW_BODY",
+    "COURT",
+    "ENFORCEMENT_BODY"
+  ],
+  "procedure_sequence":[
+    "CLASSIFY_PROCEDURAL_ISSUE",
+    "IDENTIFY_RESPONSIBLE_BODY",
+    "IDENTIFY_FORM_OR_APPLICATION",
+    "IDENTIFY_REQUIRED_EVIDENCE",
+    "IDENTIFY_DEADLINE_IF_ANY",
+    "IDENTIFY_RESPONSE_OR_PROCESSING_STAGE",
+    "IDENTIFY_REVIEW_APPEAL_OR_OBJECTION",
+    "IDENTIFY_COURT_OR_DISPUTE_ROUTE_IF_NEEDED",
+    "IDENTIFY_REMEDY",
+    "IDENTIFY_NEXT_STEP"
+  ],
+  "deadline_rules":[
+    "Never invent a deadline.",
+    "A statutory deadline must be tied to the exact provision and triggering event.",
+    "Distinguish application deadlines, response periods, appeal periods and limitation periods.",
+    "Distinguish calendar days, working days, months and other statutory units.",
+    "Where the triggering date is unresolved, the deadline remains unresolved.",
+    "Historical deadlines must be assessed under the law applicable to the relevant period."
+  ],
+  "route_rules":[
+    "Do not assume the authority that created a record is the authority that decides the dispute.",
+    "Do not treat an administrative complaint as equivalent to a court remedy.",
+    "Do not treat an appeal route as available unless the governing source provides it.",
+    "Identify enforcement separately from information, registration and dispute resolution.",
+    "Where multiple routes exist, state their different functions rather than presenting them as interchangeable."
+  ],
+  "output_contract":{
+    "responsible_body":"identified or unresolved",
+    "role":"what the body does",
+    "procedure":"application/notice/action",
+    "evidence_required":"documents/facts",
+    "deadline":"if applicable",
+    "trigger":"event starting the clock",
+    "review_or_appeal":"if available",
+    "dispute_or_court_route":"if applicable",
+    "remedy":"what the route can achieve",
+    "next_step":"practical official route",
+    "limitations":"what this route cannot establish or decide"
+  },
+  "result_states":[
+    "PROCEDURE_IDENTIFIED",
+    "DEADLINE_IDENTIFIED",
+    "DEADLINE_REQUIRES_FACT_DATE",
+    "MULTI_ROUTE_REQUIRED",
+    "REVIEW_OR_APPEAL_IDENTIFIED",
+    "COURT_ROUTE_IDENTIFIED",
+    "REMEDY_IDENTIFIED",
+    "PROCEDURE_UNRESOLVED",
+    "AUTHORITY_UNRESOLVED"
+  ],
+  "guardrails":[
+    "Never state that an authority can decide an issue outside its legal function.",
+    "Never convert general information into a representation that a particular remedy will succeed.",
+    "Never invent forms, deadlines or appeal rights.",
+    "Keep legal effect separate from procedural availability.",
+    "If the official route cannot be verified, mark it unresolved."
+  ]
+}
