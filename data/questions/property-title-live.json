@@ -1,16 +1,13 @@
 {
   "id":"property-title-live",
-  "version":"0.1",
+  "version":"0.2",
   "verified_on":"2026-09-23",
   "status":"WEBSITE_PATHWAY_CONTRACT",
   "question":"Who is registered as the owner of this property?",
-  "inputs":[
-    "property_address_or_identifier",
-    "folio_number_optional",
-    "date_scope"
-  ],
+  "inputs":["property_address_or_identifier","folio_number_optional","date_scope"],
   "pipeline":[
     "identify-property",
+    "select-official-record-route",
     "resolve-registration-status",
     "retrieve-current-folio-evidence",
     "identify-registered-owner",
@@ -19,20 +16,15 @@
     "show-evidence",
     "official-route"
   ],
+  "record_route_engine":"property-official-records-route",
   "answer_contract":"property-legal-answer",
   "guardrails":[
     "Address alone is not proof of ownership.",
     "A current folio answer is date-sensitive.",
     "A current folio does not automatically establish historical ownership.",
     "Registered ownership does not answer planning, building-control or physical-boundary questions.",
-    "Where the register is insufficient, identify the additional title evidence required."
+    "A Registry of Deeds search identifies recorded transactions/documents but the legal effect requires examination of the deeds.",
+    "The website must not claim a record was retrieved unless the actual official record has been retrieved and evidence-linked."
   ],
-  "result_types":[
-    "REGISTERED_OWNER_IDENTIFIED",
-    "PROPERTY_NOT_YET_IDENTIFIED",
-    "REGISTRATION_STATUS_UNKNOWN",
-    "HISTORICAL_TITLE_RESEARCH_REQUIRED",
-    "FURTHER_TITLE_DOCUMENTS_REQUIRED",
-    "NOT_DETERMINABLE"
-  ]
+  "result_types":["REGISTERED_OWNER_IDENTIFIED","PROPERTY_NOT_YET_IDENTIFIED","REGISTRATION_STATUS_UNKNOWN","HISTORICAL_TITLE_RESEARCH_REQUIRED","FURTHER_TITLE_DOCUMENTS_REQUIRED","NOT_DETERMINABLE"]
 }
