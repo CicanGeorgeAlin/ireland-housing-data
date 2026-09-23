@@ -1,0 +1,26 @@
+{
+  "schema_version":"0.1",
+  "status":"SOURCE_VERIFIED",
+  "verified_at":"2026-09-23",
+  "purpose":"Record the institutional transition from the Property Registration Authority to Tailte Éireann so historical and current property-title sources use the correct authority identity.",
+  "primary_source":{
+    "authority":"Irish Statute Book",
+    "instrument":"Tailte Éireann Act 2022",
+    "url":"https://www.irishstatutebook.ie/eli/2022/act/50/enacted/en/pdf",
+    "verified_finding":"The Act established Tailte Éireann and provided for the dissolution of the Property Registration Authority and transfer of its functions.",
+    "status":"PRIMARY_LAW_VERIFIED"
+  },
+  "system_effects":[
+    "Historical documents may refer to the Property Registration Authority (PRA).",
+    "Current administrative routes may refer to Tailte Éireann.",
+    "The system must preserve the authority name that existed at the relevant historical date.",
+    "A change of institutional name/body does not by itself change the underlying property right or historical record."
+  ],
+  "evidence_rule":"Authority identity is date-sensitive: PROPERTY REGISTRATION AUTHORITY for historical periods where applicable; TAILTE ÉIREANN for the current institutional framework.",
+  "guardrails":[
+    "Do not rewrite historical documents to current institutional terminology.",
+    "Do not treat institutional succession as substantive amendment of title law.",
+    "Do not infer current ownership from institutional metadata."
+  ],
+  "publication_gate":"NOT_READY"
+}
