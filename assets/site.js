@@ -40,6 +40,7 @@
       renderState();
       renderDecision();
       renderLegalJourney();
+      renderLegalAnswer();
     });
   });
 
@@ -105,6 +106,27 @@
     const active=result.status==='PRIVATE_PATH' ? 4 : result.status==='SPECIAL_PATH' ? 3 : 2;
     box.hidden=false;
     box.innerHTML='<div class="kicker">YOUR LEGAL JOURNEY</div><div class="journey-track">'+steps.map((s,i)=>'<button type="button" class="journey-step '+(i<=active?'active':'')+'" data-stage="'+s[1]+'"><small>'+s[0]+'</small><strong>'+s[1]+'</strong><small>'+s[2]+'</small></button>').join('')+'</div><div id="journey-detail" class="journey-detail"></div>'; renderJourneyDetail('FACTS');
+  }
+
+  function renderLegalAnswer() {
+    const box=document.getElementById('legal-answer');
+    if(!box) return;
+    const result=classify(), time=temporalState(), composition=composeLegalResult(result,time), deadline=deadlineState();
+    box.hidden=false;
+    const basis=(result.status==='PRIVATE_PATH'&&time&&time.reviewPeriod==='FROM_2026_FRAMEWORK')
+      ? 'RTB-2026-RENT-CAP-001 · RTB-2026-RENT-RESET-002 · RTB-2026-APARTMENT-003'
+      : 'Not yet resolved';
+    const evidence=Object.keys(evidenceState).length ? Object.entries(evidenceState).map(([k,v])=>k+': '+v).join(' · ') : 'No evidence states entered yet.';
+    box.innerHTML='<div class="kicker">LEGAL ANSWER</div><div class="answer-grid">'+
+      '<div class="answer-card"><small>THE ANSWER</small><p>'+escapeHtml(composition.result)+'</p></div>'+
+      '<div class="answer-card"><small>LEGAL BASIS</small><p>'+escapeHtml(basis)+'</p></div>'+
+      '<div class="answer-card"><small>WHAT IS VERIFIED</small><p>Current source-linked proposition package and pathway facts.</p></div>'+
+      '<div class="answer-card"><small>CONDITIONS / UNRESOLVED</small><p>'+escapeHtml(composition.reason)+'</p></div>'+
+      '<div class="answer-card"><small>EVIDENCE</small><p>'+escapeHtml(evidence)+'</p></div>'+
+      '<div class="answer-card"><small>DEADLINE</small><p>'+escapeHtml(deadline.date || deadline.message)+'</p></div>'+
+      '<div class="answer-card"><small>WHAT TO DO NEXT</small><p>Continue the applicable RTB official route after all material conditions are resolved.</p></div>'+
+      '<div class="answer-card"><small>LAST VERIFIED</small><p>23 September 2026</p></div>'+
+      '</div>';
   }
 
   function renderJourneyDetail(stage) {
