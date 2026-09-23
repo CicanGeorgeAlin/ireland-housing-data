@@ -1,0 +1,65 @@
+{
+  "id":"property-tax",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"STRUCTURAL_TAX_DOMAIN",
+  "question":"What property taxes may apply to this transaction, ownership or transfer?",
+  "taxes":[
+    "LOCAL_PROPERTY_TAX",
+    "STAMP_DUTY",
+    "CAPITAL_GAINS_TAX",
+    "CAPITAL_ACQUISITIONS_TAX",
+    "INCOME_TAX_WHERE_PROPERTY_INCOME_IS_RELEVANT",
+    "CORPORATION_TAX_WHERE_APPLICABLE"
+  ],
+  "event_types":[
+    "BUY",
+    "SELL",
+    "TRANSFER_BY_GIFT",
+    "INHERIT",
+    "OWN",
+    "LET",
+    "DEVELOP",
+    "CHANGE_USE",
+    "DISPOSE",
+    "ACQUIRE"
+  ],
+  "pipeline":[
+    "classify-property-event",
+    "identify-taxpayer-and-parties",
+    "identify-property-type",
+    "identify-consideration-or-value",
+    "identify-date",
+    "identify-tax-regime",
+    "check-reliefs-and-exemptions",
+    "check-valuation-and-basis",
+    "calculate-tax-where-supported",
+    "identify-filing-and-payment-deadline",
+    "identify-clearance_or_registration_requirement",
+    "official-route"
+  ],
+  "guardrails":[
+    "Do not infer tax liability from property value alone.",
+    "Tax treatment depends on transaction type, parties, consideration/value, dates, property use and applicable reliefs/exemptions.",
+    "Do not mix Stamp Duty, LPT, CGT and CAT into a single generic property tax.",
+    "Tax calculations must use the law and rates applicable on the relevant date.",
+    "Do not treat a tax clearance or payment as proof of title or planning compliance.",
+    "Flag accountant/tax-adviser review for complex transactions, companies, trusts, development activity or uncertain residence/domicile issues."
+  ],
+  "official_source_families":[
+    "Revenue Stamp Duty",
+    "Revenue Local Property Tax",
+    "Revenue Capital Gains Tax",
+    "Revenue Capital Acquisitions Tax",
+    "Revenue rental/property income guidance"
+  ],
+  "result_types":[
+    "TAX_REGIME_IDENTIFIED",
+    "TAX_CALCULATION_SUPPORTED",
+    "RELIEF_REQUIRES_VERIFICATION",
+    "FILING_ROUTE_IDENTIFIED",
+    "DATE_SPECIFIC_RESEARCH_REQUIRED",
+    "TAX_ADVISER_REVIEW_REQUIRED",
+    "NOT_DETERMINABLE"
+  ]
+}
