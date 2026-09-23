@@ -1,0 +1,34 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-investigation-privacy-data-minimisation-boundary-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified architecture contract for minimising personal information in property investigations and preserving source distinctions.",
+  "official_basis":[
+    {
+      "authority":"Data Protection Commission",
+      "source":"Principles of Data Protection",
+      "supports":[
+        "purpose limitation",
+        "data minimisation",
+        "accuracy",
+        "storage limitation",
+        "integrity and confidentiality",
+        "accountability"
+      ]
+    },
+    {
+      "authority":"Data Protection Commission",
+      "source":"How long should personal data be held to meet GDPR obligations?",
+      "supports":[
+        "retention depends on purpose and applicable legal obligations",
+        "GDPR does not prescribe one universal retention period"
+      ]
+    }
+  ],
+  "core_rule":"Personal information handled by an investigation must be adequate, relevant and limited to what is necessary for its documented purpose, subject to applicable legal requirements.",
+  "source_rule":"Citizen-supplied material and official records remain separate evidence classes with separate provenance.",
+  "retention_rule":"No universal retention period is assumed; retention must be assessed against purpose and applicable legal obligations.",
+  "publication_rule":"Public answers should expose only information necessary to explain the result and should not reproduce unrelated personal information.",
+  "verification_boundary":"This architecture contract does not by itself determine the lawful basis, retention period or rights outcome for a specific processing activity; those require a context-specific privacy/legal assessment."
+}
