@@ -122,7 +122,11 @@
       NEXT:['NEXT','Official route','RTB / applicable route after legal composition']
     };
     const d=data[stage]||data.FACTS;
-    detail.innerHTML='<div class="kicker">'+escapeHtml(d[0])+'</div><strong>'+escapeHtml(d[1])+'</strong><p>'+escapeHtml(d[2])+'</p>';
+    let sourceHtml='';
+    if(stage==='LAW' && result.status==='PRIVATE_PATH' && time && time.reviewPeriod==='FROM_2026_FRAMEWORK'){
+      sourceHtml='<div class="source-cards"><div><small>PRIMARY LAW</small><strong>Residential Tenancies (Miscellaneous Provisions) Act 2026</strong><span>Statutory amendments</span></div><div><small>OFFICIAL GUIDANCE</small><strong>RTB — Setting and reviewing private rents</strong><span>Operational guidance</span></div><div><small>OFFICIAL TOOL</small><strong>RTB Rent Calculator</strong><span>Calculation route</span></div></div>';
+    }
+    detail.innerHTML='<div class="kicker">'+escapeHtml(d[0])+'</div><strong>'+escapeHtml(d[1])+'</strong><p>'+escapeHtml(d[2])+'</p>'+sourceHtml;
     document.querySelectorAll('.journey-step').forEach(b=>b.addEventListener('click',()=>renderJourneyDetail(b.dataset.stage)));
   }
 
