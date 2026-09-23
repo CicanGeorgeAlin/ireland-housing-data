@@ -1,0 +1,66 @@
+{
+  "id":"property-evidence-ledger",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"EVIDENCE_CHAIN_INTEGRATION",
+  "purpose":"Connect property documents and verified facts to canonical legal propositions and final answers.",
+  "chain":"DOCUMENT -> EXTRACTED_FACT -> VERIFIED_EVIDENCE -> LEGAL_PROPOSITION -> LEGAL_RULE -> LEGAL_EFFECT -> ANSWER",
+  "evidence_record":{
+    "evidence_id":"unique identifier",
+    "document_id":"source document identifier",
+    "document_type":"controlled vocabulary",
+    "property_identifier":"folio/address/map reference where applicable",
+    "fact":"precise extracted fact",
+    "fact_date":"date or date range",
+    "source_location":"page/section/entry reference",
+    "verification_status":"SUPPLIED|EXTRACTED|OFFICIAL_VERIFIED|CONFLICT|REQUIRES_REVIEW",
+    "verified_by_source":"official source where available",
+    "legal_proposition_id":"canonical proposition",
+    "legal_effect":"effect established by the evidence and applicable law",
+    "created_at":"timestamp",
+    "supersedes":"prior evidence record if applicable"
+  },
+  "evidence_types":[
+    "TITLE_EVIDENCE",
+    "OWNERSHIP_EVIDENCE",
+    "CHARGE_EVIDENCE",
+    "EASEMENT_EVIDENCE",
+    "BOUNDARY_EVIDENCE",
+    "PLANNING_EVIDENCE",
+    "BUILDING_CONTROL_EVIDENCE",
+    "OMC_EVIDENCE",
+    "INSURANCE_EVIDENCE",
+    "TAX_EVIDENCE",
+    "SUCCESSION_EVIDENCE",
+    "TRANSACTION_EVIDENCE",
+    "DISPUTE_EVIDENCE"
+  ],
+  "rules":[
+    "An extracted fact cannot become a verified legal proposition without source verification where verification is required.",
+    "A document can support a proposition without proving every proposition about the property.",
+    "Conflicting evidence remains visible and is not silently resolved.",
+    "Historical evidence retains its event date and applicable legal version.",
+    "A source can support facts while a different primary legal source determines legal effect.",
+    "Current legal answers must not silently use superseded evidence."
+  ],
+  "answer_audit":[
+    "question",
+    "facts_used",
+    "legal_propositions_used",
+    "primary_sources",
+    "procedural_sources",
+    "exceptions_checked",
+    "deadline_rules",
+    "conflicts",
+    "unknowns",
+    "last_verified"
+  ],
+  "result_states":[
+    "ANSWER_FULLY_EVIDENCED",
+    "ANSWER_PARTIALLY_EVIDENCED",
+    "CONFLICTING_EVIDENCE",
+    "MISSING_PRIMARY_EVIDENCE",
+    "HISTORICAL_RESEARCH_REQUIRED",
+    "NOT_DETERMINABLE"
+  ]
+}
