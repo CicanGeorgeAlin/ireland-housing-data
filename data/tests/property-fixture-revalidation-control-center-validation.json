@@ -1,0 +1,44 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Validate the authoritative control-center record for active property fixture revalidation and ensure all linked states remain consistent.",
+  "control_center": "data/registries/property-fixture-revalidation-control-center.json",
+  "validation_sequence": [
+    "LOAD_CONTROL_CENTER",
+    "VERIFY_LINKED_RECORDS",
+    "VERIFY_CURRENT_STATE",
+    "VERIFY_OPEN_BLOCKER",
+    "VERIFY_NEXT_ACTION",
+    "VERIFY_CLOSURE_DEPENDENCIES",
+    "VERIFY_LEGAL_SOURCE_SEPARATION",
+    "VERIFY_PUBLICATION_SEPARATION",
+    "VERIFY_GUARDRAILS",
+    "RECORD_VALIDATION"
+  ],
+  "checks": [
+    {"check_id":"PFRCV-001","name":"Linked-record completeness","result":"PASS"},
+    {"check_id":"PFRCV-002","name":"Current-state consistency","result":"PASS"},
+    {"check_id":"PFRCV-003","name":"Open-blocker integrity","result":"PASS"},
+    {"check_id":"PFRCV-004","name":"Next-action integrity","result":"PASS"},
+    {"check_id":"PFRCV-005","name":"Closure dependency integrity","result":"PASS"},
+    {"check_id":"PFRCV-006","name":"Legal/evidence separation","result":"PASS"},
+    {"check_id":"PFRCV-007","name":"Publication separation","result":"PASS"},
+    {"check_id":"PFRCV-008","name":"Guardrail integrity","result":"PASS"}
+  ],
+  "result": {
+    "validation_status":"PASSED",
+    "control_center_valid":true,
+    "revalidation_state":"BLOCKED",
+    "closure_state":"NOT_READY",
+    "legal_source_status":"UNCHANGED",
+    "production_evidence_status":"UNCHANGED",
+    "publication_status":"UNCHANGED"
+  },
+  "guardrails": [
+    "Structural validation only.",
+    "Open blocker remains open.",
+    "No live official property record was retrieved.",
+    "No legal proposition was upgraded.",
+    "No publication status was upgraded."
+  ]
+}
