@@ -1,0 +1,110 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Validate that a property evidence fixture impact event has propagated correctly before the affected pathway can return to its previous validation state.",
+  "input_contract": [
+    "impact_event_id",
+    "fixture_id",
+    "dependency_registry",
+    "impact_event",
+    "affected_validation_runs",
+    "current_pathway_validation_status"
+  ],
+  "validation_sequence": [
+    "LOAD_IMPACT_EVENT",
+    "VERIFY_FIXTURE_IDENTITY",
+    "VERIFY_VERSION_CHANGE",
+    "VERIFY_CHANGE_TYPE",
+    "RESOLVE_DEPENDENCIES",
+    "VERIFY_AFFECTED_TESTS",
+    "VERIFY_AFFECTED_PATHWAYS",
+    "VERIFY_AFFECTED_PROPOSITIONS",
+    "CHECK_HISTORICAL_IMMUTABILITY",
+    "CHECK_NEW_VALIDATION_RUN",
+    "CHECK_PROVENANCE_OR_PRIVACY_REVIEW",
+    "CHECK_PUBLICATION_GATE",
+    "RECORD_VALIDATION_RESULT"
+  ],
+  "checks": [
+    {
+      "check_id": "PFIV-001",
+      "name": "Impact event identity",
+      "requirement": "Event ID and fixture ID must match the dependency registry.",
+      "failure_status": "BLOCKED"
+    },
+    {
+      "check_id": "PFIV-002",
+      "name": "Version transition",
+      "requirement": "Previous and new fixture versions must be recorded for material changes.",
+      "failure_status": "BLOCKED"
+    },
+    {
+      "check_id": "PFIV-003",
+      "name": "Dependency completeness",
+      "requirement": "All required dependent tests, runs, pathways and propositions must be identified.",
+      "failure_status": "BLOCKED"
+    },
+    {
+      "check_id": "PFIV-004",
+      "name": "Historical immutability",
+      "requirement": "Previous validation results must remain unchanged.",
+      "failure_status": "BLOCKED"
+    },
+    {
+      "check_id": "PFIV-005",
+      "name": "Revalidation",
+      "requirement": "A material fixture change must produce a new validation run before the dependency can be considered revalidated.",
+      "failure_status": "REVALIDATION_REQUIRED"
+    },
+    {
+      "check_id": "PFIV-006",
+      "name": "Provenance review",
+      "requirement": "Source-derived fixtures with provenance changes require provenance review.",
+      "failure_status": "REVIEW_REQUIRED"
+    },
+    {
+      "check_id": "PFIV-007",
+      "name": "Privacy review",
+      "requirement": "A privacy-impacting fixture change remains blocked until privacy review passes.",
+      "failure_status": "BLOCKED"
+    },
+    {
+      "check_id": "PFIV-008",
+      "name": "Publication separation",
+      "requirement": "Fixture validation must not automatically make a pathway publication-ready.",
+      "failure_status": "BLOCKED"
+    }
+  ],
+  "result_states": [
+    "PASSED",
+    "PASSED_WITH_WARNINGS",
+    "REVALIDATION_REQUIRED",
+    "REVIEW_REQUIRED",
+    "BLOCKED"
+  ],
+  "example_result": {
+    "validation_id": "PFIV-RUN-001",
+    "impact_event_id": "FIXTURE-IMPACT-EVENT-001",
+    "fixture_id": "FIXTURE-FOLIO-SYNTHETIC-001",
+    "result": "REVALIDATION_REQUIRED",
+    "checks_passed": [
+      "PFIV-001",
+      "PFIV-002",
+      "PFIV-003",
+      "PFIV-004",
+      "PFIV-008"
+    ],
+    "checks_pending": [
+      "PFIV-005"
+    ],
+    "historical_runs_unchanged": true,
+    "publication_ready": false,
+    "example_only": true
+  },
+  "guardrails": [
+    "Passing this contract validates impact propagation, not the correctness of Irish property law.",
+    "Fixture validation cannot create live property evidence.",
+    "Historical validation runs cannot be edited to reflect later fixture changes.",
+    "Publication remains governed by the separate legal-source and evidence gates."
+  ]
+}
