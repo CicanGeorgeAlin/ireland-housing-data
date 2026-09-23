@@ -1,0 +1,67 @@
+{
+  "schema_version":"1.0",
+  "contract_id":"property-registration-general-v1-website",
+  "status":"WEBSITE_READY",
+  "source_content":"data/verified/property-registration-general-v1.json",
+  "question_path":"data/questions/property-registration-lifecycle.json",
+  "lifecycle":"data/compositions/property-registration-lifecycle.json",
+  "display_modes":[
+    "GENERAL_INFORMATION",
+    "OFFICIAL_RECORD_ROUTE",
+    "EVIDENCE_REQUIRED",
+    "HISTORICAL_RESEARCH_REQUIRED",
+    "CONFLICT",
+    "PROFESSIONAL_REVIEW_REQUIRED"
+  ],
+  "display_sequence":[
+    "THE_ANSWER",
+    "LEGAL_BASIS",
+    "WHAT_THE_RECORD_ESTABLISHES",
+    "WHAT_THE_RECORD_DOES_NOT_ESTABLISH",
+    "OFFICIAL_ROUTE",
+    "EVIDENCE_REQUIRED",
+    "CONDITIONS_AND_EXCEPTIONS",
+    "WHAT_TO_DO_NEXT",
+    "PROFESSIONAL_REVIEW_FLAG",
+    "LAST_VERIFIED"
+  ],
+  "entry_routes":[
+    {
+      "label":"Property registration",
+      "route":"property-registration-lifecycle"
+    },
+    {
+      "label":"Who is registered owner?",
+      "route":"property-registration-records"
+    },
+    {
+      "label":"Transfer or inheritance",
+      "route":"property-registration-transfers"
+    },
+    {
+      "label":"Mortgage or charge",
+      "route":"property-registration-mortgages"
+    },
+    {
+      "label":"Co-ownership",
+      "route":"property-registration-co-ownership"
+    },
+    {
+      "label":"Right of way or easement",
+      "route":"property-registration-easements"
+    },
+    {
+      "label":"Register error",
+      "route":"property-registration-rectification"
+    }
+  ],
+  "safety_rules":[
+    "General information may be displayed without property-specific retrieval.",
+    "Specific ownership/title claims require verified authoritative evidence.",
+    "User documents remain unverified until independently cross-checked where required.",
+    "Historical questions require date-aware records and law.",
+    "Conflicts must remain visible.",
+    "Official routes must not be presented as guaranteed outcomes."
+  ],
+  "publication_status":"READY_FOR_UI_IMPLEMENTATION"
+}
