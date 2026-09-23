@@ -1,0 +1,16 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-evidence-sufficiency-minimum-evidence-resolver-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for deciding whether the evidence available is sufficient for the specific property conclusion requested.",
+  "core_principle":"QUESTION TYPE → MINIMUM EVIDENCE PROFILE → MATCH → AUTHORITY → SUFFICIENCY → SPECIFIC NEXT EVIDENCE",
+  "key_distinction":"Relevant evidence is not necessarily sufficient evidence.",
+  "minimum_evidence_rule":"The system must identify the smallest material evidence set needed for the requested conclusion rather than collecting documents without a defined evidential purpose.",
+  "property_specific_rule":"No definitive property-specific conclusion without verified property identity/match.",
+  "historical_rule":"No definitive historical conclusion without target date and date-matched evidence.",
+  "legal_rule":"No definitive legal conclusion without the applicable authoritative legal proposition and material qualifiers.",
+  "missing_item_rule":"Where possible, identify the specific missing record, document, date, match or legal authority rather than returning a generic evidence-incomplete message.",
+  "publication_rule":"If minimum evidence is not met, publish only supported facts and clearly state the missing material dependency.",
+  "verification_boundary":"This resolver assesses evidential sufficiency; it does not create missing evidence or independently determine the underlying legal result."
+}
