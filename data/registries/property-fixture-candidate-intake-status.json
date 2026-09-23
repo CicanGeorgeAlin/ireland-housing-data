@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Authoritative operational status for the controlled property fixture candidate intake gate.",
+  "status_id": "PFCI-STATUS-001",
+  "updated_at": "2026-09-23",
+  "intake": {
+    "contract": "data/tests/property-fixture-candidate-intake.json",
+    "validation_run": "PFCIV-RUN-001",
+    "state": "NOT_SUBMITTED",
+    "candidate_fixture_id": null,
+    "fixture_type": null,
+    "admission_state": "NOT_SUBMITTED"
+  },
+  "current_gate": {
+    "admission_gate": "BLOCKED",
+    "dependent_revalidation": "NOT_ALLOWED",
+    "closure": "NOT_READY",
+    "publication": "NOT_READY"
+  },
+  "blocking_reason": {
+    "code": "NO_CANDIDATE_FIXTURE_SUBMITTED",
+    "required_action": "Submit an actual candidate fixture for controlled admission review; do not invent fixture content."
+  },
+  "rules": [
+    "Validation of the intake contract does not constitute submission.",
+    "A candidate fixture must exist before admission review can begin.",
+    "Submission does not imply approval.",
+    "Approval requires the full admission gate.",
+    "No dependent revalidation may execute before approval."
+  ],
+  "guardrails": [
+    "No candidate fixture is invented.",
+    "No live official property record is claimed.",
+    "No legal proposition is upgraded.",
+    "No publication status is upgraded."
+  ]
+}
