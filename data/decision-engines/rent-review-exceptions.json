@@ -1,0 +1,25 @@
+{
+  "id":"rent-review-exception-engine",
+  "version":"0.1",
+  "status":"VERIFIED_RULE_SEED",
+  "verified_on":"2026-09-23",
+  "exception":"new_apartment_or_qualifying_new_build",
+  "trigger":{
+    "work_commenced_on_or_after":"2025-06-10",
+    "evidence_required":["commencement notice OR 7-day notice submitted to building control authority","compliance with applicable Building Control Act 1990 regulations"],
+    "qualifying_work":["construction of apartment complex/building or relevant part","extension increasing floor area by at least 25%","change of use creating qualifying new apartment complex/building or qualifying floor area"]
+  },
+  "effect_seed":"For a qualifying property, the ordinary 2% ceiling does not apply to annual rent increases; the increase is linked to CPI, subject to the statutory conditions.",
+  "source_chain":[
+    {"type":"PRIMARY_LAW","source":"Residential Tenancies (Miscellaneous Provisions) Act 2026","reference":"section 8 / amended rent provisions"},
+    {"type":"OFFICIAL_GUIDANCE","source":"RTB — Setting and reviewing private rents from 1 March 2026"}
+  ],
+  "decision_states":{
+    "YES":"Exception conditions evidenced; continue to full legal composition.",
+    "NO":"Evidence indicates the qualifying exception does not apply; continue with ordinary applicable rule.",
+    "UNKNOWN":"Do not assume qualification. Request or verify the required Building Control evidence.",
+    "CONFLICT":"Facts/evidence conflict; stop definitive calculation and flag for review."
+  },
+  "important_guardrail":"Apartment age alone is not sufficient evidence of qualification. The legally relevant construction commencement/building-control evidence must be checked.",
+  "scope_limit":"This is a verified rule seed, not a complete legal determination or complete treatment of every exception."
+}
