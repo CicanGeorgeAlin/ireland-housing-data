@@ -1,0 +1,85 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-registration-mortgages",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "purpose":"Classify mortgages and registered charges affecting property title and separate the existence of security from enforcement, discharge and ownership consequences.",
+  "event_types":[
+    "MORTGAGE_CREATED",
+    "MORTGAGE_TRANSFERRED",
+    "MORTGAGE_ASSIGNED",
+    "MORTGAGE_REDEEMED",
+    "CHARGE_REGISTERED",
+    "CHARGE_DISCHARGED",
+    "JUDGMENT_MORTGAGE",
+    "RECEIVERSHIP_OR_ENFORCEMENT",
+    "SALE_WITH_EXISTING_SECURITY"
+  ],
+  "classification_inputs":[
+    "registered_or_unregistered_status",
+    "property_identifier",
+    "registered_owner_or_interest_holder",
+    "mortgage_or_charge_type",
+    "date_created",
+    "registration_status",
+    "instrument_or_order",
+    "lender_or_charge_holder",
+    "redemption_or_discharge_evidence",
+    "enforcement_status",
+    "transaction_context"
+  ],
+  "workflow":[
+    "CLASSIFY_PROPERTY_STATUS",
+    "IDENTIFY_SECURITY_OR_CHARGE",
+    "CHECK_REGISTERED_ENTRY",
+    "IDENTIFY_INSTRUMENT_OR_ORDER",
+    "VERIFY_PROPERTY_MATCH",
+    "VERIFY_REGISTRATION_STATUS",
+    "CHECK_PRIORITY_OR_OTHER_REGISTERED_INTERESTS",
+    "SEPARATE_SECURITY_FROM_ENFORCEMENT",
+    "CHECK_DISCHARGE_OR_REDEMPTION",
+    "SELECT_OFFICIAL_REGISTRATION_ROUTE",
+    "COMPOSE_LEGAL_EFFECT"
+  ],
+  "legal_distinctions":[
+    "A mortgage or charge is a security interest and is not itself identical to ownership.",
+    "Registration of a charge is distinct from creation, transfer, redemption or discharge of the underlying security.",
+    "A judgment mortgage has its own statutory and procedural framework.",
+    "Mortgage enforcement is a separate legal stage from registration of the security.",
+    "A property sale does not automatically establish that a registered charge has been discharged.",
+    "Priority between interests may require separate title and registration analysis."
+  ],
+  "evidence_requirements":[
+    "property_identifier",
+    "current folio_or_official registration evidence where registered",
+    "mortgage_or_charge instrument or registration evidence",
+    "discharge_or_redeemed evidence where applicable",
+    "court order or judgment evidence where relevant",
+    "historical register evidence where the security predates current entries"
+  ],
+  "official_routes":[
+    "Tailte Éireann Land Registry registration services",
+    "Tailte Éireann forms and registration rules",
+    "LandDirect property search",
+    "Courts Service records where a court order or judgment mortgage is relevant"
+  ],
+  "result_states":[
+    "SECURITY_IDENTIFIED",
+    "CHARGE_REGISTERED",
+    "DISCHARGE_PENDING",
+    "DISCHARGE_VERIFIED",
+    "ENFORCEMENT_PATHWAY",
+    "HISTORICAL_RESEARCH_REQUIRED",
+    "EVIDENCE_REQUIRED",
+    "CONFLICT",
+    "PROFESSIONAL_REVIEW_REQUIRED",
+    "NOT_DETERMINABLE"
+  ],
+  "guardrails":[
+    "Never treat a mortgage as proof of ownership.",
+    "Never state that a charge is discharged without supporting evidence.",
+    "Never infer enforcement merely from the existence of a charge.",
+    "Never infer priority without examining the applicable registration and priority framework.",
+    "Never convert a registration entry into a conclusion about the merits of an underlying debt dispute.",
+    "Property-specific conclusions require verified evidence."
+  ]
+}
