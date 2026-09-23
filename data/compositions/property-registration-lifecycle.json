@@ -198,6 +198,15 @@
         "property-evidence-audit-trail",
         "property-answer-state-machine"
       ]
+    },
+    {
+      "stage": "EVIDENCE_TO_ANSWER_TRACE_GRAPH",
+      "routes": [
+        "property-evidence-to-answer-trace-graph",
+        "property-human-readable-legal-answer-composer",
+        "property-evidence-audit-trail",
+        "property-answer-assembly-snapshot"
+      ]
     }
   ],
   "event_model": [
@@ -258,7 +267,8 @@
     "property-legal-procedure-remedy-resolver",
     "property-deadline-calculation",
     "property-official-route-authority-resolver",
-    "property-human-readable-legal-answer-composer"
+    "property-human-readable-legal-answer-composer",
+    "property-evidence-to-answer-trace-graph"
   ],
   "answer_sequence": [
     "QUESTION",
