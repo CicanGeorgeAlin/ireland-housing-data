@@ -1,0 +1,77 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Validate that each property fixture governance snapshot is complete, internally coherent, immutable and separated from legal evidence and publication decisions.",
+  "snapshot": "data/registries/property-fixture-governance-snapshot.json",
+  "validation_sequence": [
+    "LOAD_SNAPSHOT",
+    "VERIFY_SNAPSHOT_IDENTITY",
+    "VERIFY_CAPTURE_DATE",
+    "VERIFY_GOVERNANCE_REFERENCE",
+    "VERIFY_STATE_FIELDS",
+    "VERIFY_REFERENCED_RECORDS",
+    "VERIFY_IMMUTABILITY_RULE",
+    "VERIFY_REVALIDATION_STATE",
+    "VERIFY_LEGAL_SOURCE_SEPARATION",
+    "VERIFY_PUBLICATION_SEPARATION",
+    "RECORD_VALIDATION"
+  ],
+  "checks": [
+    {
+      "check_id": "PFGS-001",
+      "name": "Snapshot identity",
+      "requirement": "Snapshot has a unique identifier and capture date.",
+      "result": "PASS"
+    },
+    {
+      "check_id": "PFGS-002",
+      "name": "Governance reference",
+      "requirement": "Snapshot identifies the governance manifest on which its state is based.",
+      "result": "PASS"
+    },
+    {
+      "check_id": "PFGS-003",
+      "name": "State completeness",
+      "requirement": "Fixture, dependency, impact, revalidation, closure, audit, legal-source, evidence and publication states are represented.",
+      "result": "PASS"
+    },
+    {
+      "check_id": "PFGS-004",
+      "name": "Record traceability",
+      "requirement": "Snapshot references the material fixture, impact, queue, validation and governance records.",
+      "result": "PASS"
+    },
+    {
+      "check_id": "PFGS-005",
+      "name": "Immutability",
+      "requirement": "Snapshot is treated as historical and cannot be silently overwritten.",
+      "result": "PASS"
+    },
+    {
+      "check_id": "PFGS-006",
+      "name": "Legal-source separation",
+      "requirement": "Snapshot does not convert technical governance status into legal verification.",
+      "result": "PASS"
+    },
+    {
+      "check_id": "PFGS-007",
+      "name": "Publication separation",
+      "requirement": "Snapshot does not independently make a pathway publication-ready.",
+      "result": "PASS"
+    }
+  ],
+  "result": {
+    "validation_status": "PASSED",
+    "snapshot_valid": true,
+    "historical_snapshot": true,
+    "legal_source_status": "UNCHANGED",
+    "production_evidence_status": "UNCHANGED",
+    "publication_status": "UNCHANGED"
+  },
+  "guardrails": [
+    "This validates snapshot governance only.",
+    "It does not verify Irish property law.",
+    "It does not represent live official-record retrieval.",
+    "It does not upgrade any pathway to publication-ready."
+  ]
+}
