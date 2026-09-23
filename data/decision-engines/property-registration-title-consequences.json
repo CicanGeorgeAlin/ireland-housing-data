@@ -1,0 +1,118 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-registration-title-consequences",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "purpose":"Determine what a succession or ownership event changes, what remains separately registered, and what evidence is required before stating the resulting title position.",
+  "verified_date":"2026-09-24",
+  "source_basis":[
+    "Registration of Title Act 1964, as amended",
+    "Succession Act 1965, as amended",
+    "Land Registration Rules 2012 to 2013 and applicable later amendments"
+  ],
+  "title_state_layers":[
+    "REGISTERED_PROPRIETOR",
+    "RIGHT_TO_BE_REGISTERED",
+    "PERSONAL_REPRESENTATIVE_ESTATES_ROLE",
+    "BENEFICIAL_OR_SUCCESSION_ENTITLEMENT",
+    "REGISTERED_CHARGES_AND_BURDENS",
+    "CO_OWNERSHIP_STRUCTURE",
+    "EASEMENTS_AND_APPURTENANT_RIGHTS",
+    "HISTORICAL_REGISTER_STATE"
+  ],
+  "event_consequences":[
+    {
+      "event":"DEATH_OF_SOLE_REGISTERED_FULL_OWNER",
+      "immediate_effect":"Succession and estate-administration consequences arise; the final beneficiary's registered title is not established merely by the death.",
+      "registration_question":"Identify the personal representative and applicable testate/intestate route, then verify the registration outcome."
+    },
+    {
+      "event":"ASSENT_OR_SUCCESSION_TRANSFER",
+      "immediate_effect":"Creates the relevant succession instrument for the registration process.",
+      "registration_question":"Check whether and when the register was actually changed."
+    },
+    {
+      "event":"DEATH_OF_JOINT_TENANT",
+      "immediate_effect":"Potential survivorship route; the deceased joint tenant's name may be withdrawn following prescribed proof.",
+      "registration_question":"Verify the folio's ownership structure and the death evidence before treating the survivor as the sole registered owner."
+    },
+    {
+      "event":"DEATH_OF_TENANT_IN_COMMON",
+      "immediate_effect":"The deceased's distinct share enters the succession analysis rather than being treated as automatic joint-tenancy survivorship.",
+      "registration_question":"Identify the share and succession route, then verify registration."
+    },
+    {
+      "event":"PERSON_ENTITLED_BUT_NOT_YET_REGISTERED",
+      "immediate_effect":"The right to be registered may have devolved even though the folio has not yet been updated.",
+      "registration_question":"Determine whether section 90 powers are engaged and whether the statutory conditions are satisfied."
+    },
+    {
+      "event":"PERSONAL_REPRESENTATIVE_SALE",
+      "immediate_effect":"A disposal by the estate is distinct from transmission to a beneficiary.",
+      "registration_question":"Follow the disposal and purchaser-registration route; do not describe the beneficiary as owner merely because they were named in a will."
+    }
+  ],
+  "interaction_rules":[
+    {
+      "topic":"MORTGAGE_OR_CHARGE",
+      "rule":"Inheritance or transfer does not by itself prove that a registered charge has been discharged. Inspect the burden and separate discharge/transfer evidence."
+    },
+    {
+      "topic":"CO_OWNERSHIP",
+      "rule":"Always determine whether the registered ownership was joint or in common before applying a death route."
+    },
+    {
+      "topic":"EASEMENT",
+      "rule":"A transfer or succession event does not by itself establish the creation, alteration or extinction of an easement; inspect the relevant burden/appurtenance and underlying instrument where necessary."
+    },
+    {
+      "topic":"BOUNDARY",
+      "rule":"A title transfer does not itself resolve a disputed boundary. The statutory register/map rules must be considered separately."
+    },
+    {
+      "topic":"HISTORICAL_STATE",
+      "rule":"Current register data must not be used as a substitute for reconstructing an earlier title state where the question concerns a historical event."
+    }
+  ],
+  "answer_matrix":[
+    {
+      "question":"Am I now the registered owner?",
+      "required_evidence":["identified property","current folio/register evidence","succession documents","registration outcome"],
+      "safe_result_if_missing":"ENTITLEMENT_OR_SUCCESSION_MAY_BE_ESTABLISHED_BUT_CURRENT_REGISTRATION_UNVERIFIED"
+    },
+    {
+      "question":"Did the house pass to me when the owner died?",
+      "required_evidence":["date of death","ownership structure","will/intestacy","grant","succession documents","applicable registration route"],
+      "safe_result_if_missing":"SUCCESSION_EFFECT_REQUIRES_FURTHER_ANALYSIS"
+    },
+    {
+      "question":"Can the beneficiary sell before registration?",
+      "required_evidence":["proof of entitlement","registration status","applicable section 90 conditions","transaction route"],
+      "safe_result_if_missing":"REGISTRATION_OR_PROFESSIONAL_REVIEW_REQUIRED"
+    },
+    {
+      "question":"Did the mortgage disappear after inheritance?",
+      "required_evidence":["current folio burdens","charge instrument","discharge/transfer evidence"],
+      "safe_result_if_missing":"CHARGE_STATUS_UNVERIFIED"
+    }
+  ],
+  "guardrails":[
+    "Never convert a succession entitlement into a current registered-proprietor statement without current authoritative registration evidence.",
+    "Never treat the absence of a beneficiary's name from a current folio as proof that the beneficiary has no succession entitlement.",
+    "Never treat a will, probate, assent or transfer as a substitute for the relevant register evidence when the question is current registered title.",
+    "Never infer discharge of a mortgage or other burden from inheritance or sale alone.",
+    "Never apply survivorship without verifying the ownership form.",
+    "Never resolve historical title from a current snapshot alone."
+  ],
+  "result_states":[
+    "TITLE_CONSEQUENCE_CLASSIFIED",
+    "REGISTERED_TITLE_VERIFIED",
+    "RIGHT_TO_BE_REGISTERED_REQUIRES_ANALYSIS",
+    "SUCCESSION_EFFECT_ESTABLISHED_REGISTRATION_UNVERIFIED",
+    "CHARGE_STATUS_REQUIRES_VERIFICATION",
+    "HISTORICAL_STATE_REQUIRES_RECONSTRUCTION",
+    "EVIDENCE_REQUIRED",
+    "CONFLICT",
+    "PROFESSIONAL_REVIEW_REQUIRED",
+    "NOT_DETERMINABLE"
+  ]
+}
