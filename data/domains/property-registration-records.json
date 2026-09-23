@@ -1,0 +1,59 @@
+{
+  "schema_version":"1.0",
+  "domain_id":"property-registration-records",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "purpose":"Define the official-record layer for registered and unregistered property information without conflating records with legal conclusions.",
+  "record_systems":[
+    {"id":"LAND_REGISTRY","authority":"Tailte Éireann","purpose":"Registered land and registered interests"},
+    {"id":"REGISTRY_OF_DEEDS","authority":"Tailte Éireann","purpose":"Registration/search of deeds affecting unregistered land and other instruments"},
+    {"id":"LANDDIRECT","authority":"Tailte Éireann","purpose":"Public property/map and registration service access"}
+  ],
+  "record_types":[
+    "FOLIO",
+    "TITLE_PLAN",
+    "OFFICIAL_SEARCH",
+    "HISTORICAL_REGISTER_ENTRY",
+    "FILED_INSTRUMENT",
+    "REGISTRY_OF_DEEDS_SEARCH",
+    "REGISTRY_OF_DEEDS_INSTRUMENT"
+  ],
+  "record_to_fact_rules":[
+    "A record can establish only facts supported by its contents and applicable legal framework.",
+    "A title plan is not automatically a complete physical-boundary determination.",
+    "A Registry of Deeds search does not by itself establish the full legal effect of the underlying deed.",
+    "A retrieved document must be matched to the correct property before property-specific facts are stated.",
+    "Historical records must retain their date and applicable legal context."
+  ],
+  "workflow":[
+    "QUESTION",
+    "PROPERTY_IDENTIFIER",
+    "SELECT_RECORD_SYSTEM",
+    "SELECT_RECORD_TYPE",
+    "RETRIEVAL",
+    "DOCUMENT_IDENTITY",
+    "PROPERTY_MATCH",
+    "FACT_EXTRACTION",
+    "SOURCE_CROSS_CHECK",
+    "LEGAL_PROPOSITION",
+    "ANSWER"
+  ],
+  "official_routes":[
+    "https://tailte.ie/services/property-registration/",
+    "https://tailte.ie/services/copy-services/",
+    "https://www.landdirect.ie/"
+  ],
+  "guardrails":[
+    "No invented record retrieval.",
+    "No ownership conclusion without verified property-specific evidence.",
+    "No inference that public availability removes privacy considerations.",
+    "Record evidence and legal interpretation remain separate layers."
+  ],
+  "next_domains":[
+    "property-registration-first-registration",
+    "property-registration-transfers",
+    "property-registration-mortgages",
+    "property-registration-co-ownership",
+    "property-registration-easements",
+    "property-registration-rectification"
+  ]
+}
