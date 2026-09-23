@@ -1,0 +1,69 @@
+{
+  "id":"property-development-history",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"STRUCTURAL_TIMELINE_SEED",
+  "question":"What has happened to this property over time?",
+  "timeline_events":[
+    "original_registration_or_first_known_title",
+    "ownership_transfer",
+    "lease_or_tenure_change",
+    "mortgage_or_charge_registration",
+    "planning_application",
+    "planning_decision",
+    "exempted_development_event",
+    "commencement_notice_or_7_day_notice",
+    "construction_or_alteration",
+    "completion_evidence",
+    "change_of_use",
+    "enforcement_or_retention_event",
+    "easement_or_right_registration",
+    "co_ownership_change",
+    "succession_event",
+    "sale_or_transfer",
+    "mortgage_release",
+    "current_registered_state"
+  ],
+  "pipeline":[
+    "identify-property",
+    "set-date-range",
+    "collect-title-events",
+    "collect-planning-events",
+    "collect-building-control-events",
+    "collect-mortgage_and_charge_events",
+    "collect-easement_and_interest_events",
+    "collect-succession_and_ownership_events",
+    "normalise_dates",
+    "link_events_to_legal_sources",
+    "detect_conflicts",
+    "preserve_unknown_periods",
+    "render_legal_timeline"
+  ],
+  "event_record":{
+    "event_date":"date or date range",
+    "event_type":"controlled vocabulary",
+    "property_identifier":"folio/address/map reference as applicable",
+    "legal_state_before":"state snapshot",
+    "event":"what happened",
+    "legal_effect":"verified legal effect",
+    "source":"official/source evidence",
+    "verification_status":"verified|partially_verified|requires_research|unknown",
+    "legal_version":"law applicable at the event date"
+  },
+  "guardrails":[
+    "Do not fill gaps in the timeline with assumptions.",
+    "A planning event does not prove construction occurred.",
+    "A building-control record does not by itself establish title ownership.",
+    "A current folio does not automatically establish every historical ownership event.",
+    "Physical changes should be distinguished from legally documented changes.",
+    "Historical law must be resolved at the date of each event.",
+    "Conflicting source dates remain visible rather than silently reconciled."
+  ],
+  "result_types":[
+    "TIMELINE_ESTABLISHED",
+    "TIMELINE_PARTIALLY_ESTABLISHED",
+    "HISTORICAL_GAPS_IDENTIFIED",
+    "SOURCE_CONFLICT_IDENTIFIED",
+    "HISTORICAL_RESEARCH_REQUIRED"
+  ]
+}
