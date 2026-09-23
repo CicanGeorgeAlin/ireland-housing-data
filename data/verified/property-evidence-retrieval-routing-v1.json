@@ -1,0 +1,50 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-evidence-retrieval-routing-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "scope":"General routing framework for selecting official property evidence; not a retrieval or determination for any particular property.",
+  "last_verified":"2026-09-24",
+  "verified_propositions":[
+    {
+      "id":"ERR-001",
+      "claim":"Tailte Éireann provides Land Registry copy/search services for folios, instruments and maps, subject to the applicable service and access conditions.",
+      "source":"Tailte Éireann Copy Services"
+    },
+    {
+      "id":"ERR-002",
+      "claim":"Inspection of a Land Registry Instrument is subject to the access provisions in Rule 159 of the Land Registration Rules 2012.",
+      "source":"Tailte Éireann Copy Services; Land Registration Rules 2012"
+    },
+    {
+      "id":"ERR-003",
+      "claim":"Tailte Éireann provides Registry of Deeds search services, including searches by name and related registration information.",
+      "source":"Tailte Éireann Registry of Deeds services"
+    },
+    {
+      "id":"ERR-004",
+      "claim":"The appropriate evidence route depends on whether the proposition concerns current registered title, historical registered title, an instrument, a Registry of Deeds transaction, a succession event or a court determination.",
+      "source":"Integrated statutory and official-record architecture"
+    }
+  ],
+  "route_selection_contract":[
+    "PROPOSITION",
+    "DATE_SCOPE",
+    "PROPERTY_IDENTIFIER",
+    "REGISTRATION_SYSTEM",
+    "PRIMARY_OFFICIAL_ROUTE",
+    "SECONDARY_ROUTE_IF_NEEDED",
+    "ACCESS_CONDITION",
+    "SUFFICIENCY_TEST",
+    "PROPERTY_MATCH",
+    "DATE_MATCH",
+    "LEGAL_ANALYSIS_ROUTE"
+  ],
+  "sufficiency_levels":[
+    "DIRECT",
+    "CORROBORATED",
+    "SUPPORTING",
+    "INSUFFICIENT"
+  ],
+  "critical_boundary":"Selecting the correct official route does not itself establish the requested property fact. The retrieved evidence must still be identified, matched to the property and relevant date, and assessed for legal scope.",
+  "publication_gate":"GENERAL_INFORMATION_ONLY"
+}
