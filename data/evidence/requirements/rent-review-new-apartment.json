@@ -1,0 +1,35 @@
+{
+  "id":"EVID-REQ-RTB-NEW-APARTMENT-001",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "purpose":"Identify evidence needed before the new-apartment inflation-only exception is treated as established.",
+  "required_evidence":[
+    {
+      "item":"commencement_notice_or_7_day_notice",
+      "why":"RTB guidance says the landlord should have a commencement notice or 7-day notice submitted to a building control authority on or after 10 June 2025.",
+      "source_role":"OFFICIAL_GUIDANCE"
+    },
+    {
+      "item":"certificate_of_compliance_on_completion",
+      "why":"The current RTB rent-review form checklist identifies the related certificate of compliance upon completion as evidence that may be requested in an RTB investigation or dispute.",
+      "source_role":"OFFICIAL_FORM"
+    },
+    {
+      "item":"qualifying_work_type",
+      "why":"The legal test concerns specified construction, qualifying floor-area extension or qualifying change-of-use work.",
+      "source_role":"PRIMARY_LAW_PLUS_OFFICIAL_GUIDANCE"
+    }
+  ],
+  "decision_logic":{
+    "verified_yes":"Evidence supports the statutory conditions; proceed to full composition.",
+    "verified_no":"Evidence establishes that the conditions are not met; do not apply this exception.",
+    "unknown":"Do not assume the exception. Request or verify the missing evidence.",
+    "conflict":"Conflicting evidence requires review before a definitive result."
+  },
+  "official_sources":[
+    "RTB Rent Calculator",
+    "RTB Notice of Rent Review form",
+    "Residential Tenancies (Miscellaneous Provisions) Act 2026"
+  ],
+  "scope_limit":"Evidence requirements are not themselves proof that an individual tenancy qualifies; the underlying statutory conditions must still be composed and verified."
+}
