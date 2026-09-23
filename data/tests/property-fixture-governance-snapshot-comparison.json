@@ -1,0 +1,69 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Define how two property fixture governance snapshots are compared while preserving historical truth and separating technical state changes from legal changes.",
+  "comparison_inputs": [
+    "snapshot_before",
+    "snapshot_after"
+  ],
+  "comparison_sequence": [
+    "VERIFY_SNAPSHOT_IDENTITIES",
+    "VERIFY_CAPTURE_DATES",
+    "LOAD_STATE_FIELDS",
+    "COMPARE_FIXTURE_STATE",
+    "COMPARE_DEPENDENCY_STATE",
+    "COMPARE_IMPACT_STATE",
+    "COMPARE_REVALIDATION_STATE",
+    "COMPARE_CLOSURE_STATE",
+    "COMPARE_LEGAL_SOURCE_STATUS",
+    "COMPARE_PRODUCTION_EVIDENCE_STATUS",
+    "COMPARE_PUBLICATION_STATUS",
+    "CLASSIFY_TRANSITIONS",
+    "CHECK_HISTORICAL_INTEGRITY",
+    "RECORD_COMPARISON"
+  ],
+  "transition_types": [
+    "UNCHANGED",
+    "IMPROVED",
+    "REGRESSED",
+    "NEW_BLOCKER",
+    "BLOCKER_RESOLVED",
+    "REVALIDATION_STARTED",
+    "REVALIDATION_COMPLETED",
+    "CLOSURE_STARTED",
+    "CLOSURE_COMPLETED",
+    "LEGAL_STATUS_CHANGED",
+    "PUBLICATION_STATUS_CHANGED"
+  ],
+  "rules": [
+    "A later snapshot does not rewrite an earlier snapshot.",
+    "Technical governance transitions must not be presented as legal conclusions.",
+    "A legal-source status transition requires separate legal-change evidence.",
+    "A production-evidence transition requires actual evidence records.",
+    "Publication-status changes require their independent publication gate.",
+    "If snapshots conflict on historical identity or capture date, comparison is BLOCKED.",
+    "Synthetic fixture changes remain within technical fixture governance unless separately promoted through approved evidence governance."
+  ],
+  "example_comparison": {
+    "comparison_id": "PFGSC-001",
+    "before_snapshot_id": "PROPERTY-FIXTURE-GOVERNANCE-SNAPSHOT-001",
+    "after_snapshot_id": "PROPERTY-FIXTURE-GOVERNANCE-SNAPSHOT-002",
+    "example_only": true,
+    "transitions": {
+      "governance_status": "UNCHANGED",
+      "revalidation": "REVALIDATION_COMPLETED",
+      "closure": "BLOCKER_RESOLVED",
+      "legal_source_status": "UNCHANGED",
+      "production_evidence_status": "UNCHANGED",
+      "publication_status": "UNCHANGED"
+    },
+    "historical_integrity": "PASS",
+    "comparison_result": "TECHNICAL_STATE_CHANGE_ONLY"
+  },
+  "guardrails": [
+    "Snapshot comparison is not legal analysis.",
+    "It does not prove ownership, title, boundary or any other property fact.",
+    "It does not represent live official-record retrieval.",
+    "It cannot independently authorize publication."
+  ]
+}
