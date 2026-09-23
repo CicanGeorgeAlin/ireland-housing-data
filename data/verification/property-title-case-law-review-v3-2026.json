@@ -1,0 +1,63 @@
+{
+  "schema_version":"0.1",
+  "status":"PARTIALLY_VERIFIED",
+  "verified_at":"2026-09-23",
+  "purpose":"Update the property-title case-law network using primary Irish judgments located in the current research pass.",
+  "authorities":[
+    {
+      "case":"O'Flaherty & Ors v Permanent TSB Public Ltd Company & Ors [2026] IEHC 74",
+      "court":"High Court",
+      "source":"https://www.bailii.org/ie/cases/IEHC/2026/2026IEHC74.html",
+      "relevance":"Current 2026 treatment of s.31, registered charges, conclusiveness and rectification.",
+      "status":"PRIMARY_JUDGMENT_IDENTIFIED"
+    },
+    {
+      "case":"Bank Of Ireland Mortgage Bank v Seery and Anor [2026] IEHC 80",
+      "court":"High Court",
+      "source":"https://www.bailii.org/ie/cases/IEHC/2026/2026IEHC80.html",
+      "relevance":"Current application of s.31 to registered charges and folio evidence.",
+      "status":"PRIMARY_JUDGMENT_IDENTIFIED"
+    },
+    {
+      "case":"Doyle v Houston [2025] IEHC 35",
+      "court":"High Court",
+      "source":"https://www.bailii.org/ie/cases/IEHC/2025/2025IEHC35.html",
+      "relevance":"s.31 and the court's inability to look behind folio entries until appropriate rectification/cancellation route is engaged.",
+      "status":"PRIMARY_JUDGMENT_IDENTIFIED"
+    },
+    {
+      "case":"Planetwhite Ltd v Hogan & Anor [2025] IEHC 378",
+      "court":"High Court",
+      "source":"https://www.bailii.org/ie/cases/IEHC/2025/2025IEHC378.html",
+      "relevance":"s.31 limits and distinction between registered title and evidence of the underlying transfer/assignment.",
+      "status":"PRIMARY_JUDGMENT_IDENTIFIED"
+    }
+  ],
+  "case_network":[
+    "Tanager DAC v Kane [2018] IECA 352",
+    "Reidy v The Governor and Company of Bank of Ireland [2023] IECA 212",
+    "Everyday Finance DAC v Gleeson [2022] IECA 130",
+    "O'Flaherty [2026] IEHC 74",
+    "Bank Of Ireland Mortgage Bank v Seery [2026] IEHC 80",
+    "Doyle v Houston [2025] IEHC 35",
+    "Planetwhite Ltd v Hogan [2025] IEHC 378"
+  ],
+  "verified_interpretive_points":[
+    "Recent Irish courts continue to treat the register as having the statutory conclusive effect specified by s.31, subject to the statutory rectification framework.",
+    "The courts distinguish the legal effect of a register entry from proof of the detailed terms of an underlying transfer or assignment.",
+    "A challenge to a registered entry generally requires the appropriate statutory/court route rather than an indirect attempt to look behind the folio in unrelated proceedings."
+  ],
+  "remaining_gaps":[
+    "Dedicated primary case-law search for registry-map and physical-boundary disputes.",
+    "Dedicated primary case-law search for possessory-title provisions.",
+    "Full review of each identified judgment before any quotation or proposition is published.",
+    "Historical case-law mapping by legal-version date."
+  ],
+  "publication_gate":"NOT_READY",
+  "guardrails":[
+    "Case-law identification is not the same as final legal verification.",
+    "No case outcome is generalized beyond its legal issue.",
+    "No individual property conclusion is made.",
+    "No prediction about future court outcomes is made."
+  ]
+}
