@@ -1,0 +1,34 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-official-source-change-monitor-watchlist-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified monitoring contract for authoritative Irish property, housing, legal and procedural sources.",
+  "source_families":[
+    {
+      "authority":"Irish Statute Book",
+      "watch_for":["Acts","sections","amendments","commencement","repeals","Statutory Instruments","temporal changes"],
+      "role":"primary legal source"
+    },
+    {
+      "authority":"Tailte Éireann",
+      "watch_for":["property registration services","search/copy services","LandDirect routes","access conditions","official service changes"],
+      "role":"official property-record and administrative source"
+    },
+    {
+      "authority":"Courts Service / authoritative court sources",
+      "watch_for":["judgments","procedural rules","court routes","material interpretations"],
+      "role":"case law and court procedure"
+    },
+    {
+      "authority":"Official Government sources",
+      "watch_for":["housing/property guidance","administrative procedures","official policy/process changes"],
+      "role":"official guidance and administration"
+    }
+  ],
+  "monitoring_boundary":"This contract defines what should be monitored and how changes should affect the dependency system. It does not claim that a live automated monitor is currently running.",
+  "change_verification_rule":"A detected source change is a trigger for verification, not by itself a legal conclusion.",
+  "historical_rule":"Current-source changes must not silently alter historically scoped answers.",
+  "publication_rule":"Affected published answers remain governed by the existing quality gate and snapshot publication manager.",
+  "verification_boundary":"The watchlist identifies monitoring requirements; it does not itself establish that a particular source has changed."
+}
