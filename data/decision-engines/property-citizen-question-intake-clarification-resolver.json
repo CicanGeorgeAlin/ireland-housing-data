@@ -1,0 +1,88 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-citizen-question-intake-clarification-resolver",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Convert a citizen's natural-language property question into a safe, actionable investigation request while asking only for essential missing information.",
+  "intake_sequence":[
+    "RECEIVE_QUESTION",
+    "NORMALIZE_LANGUAGE",
+    "CLASSIFY_PRIMARY_INTENT",
+    "DETECT_SUBQUESTIONS",
+    "IDENTIFY_PROPERTY_SCOPE",
+    "IDENTIFY_TIME_SCOPE",
+    "IDENTIFY_REQUESTED_OUTCOME",
+    "CHECK_MINIMUM_REQUIRED_INPUTS",
+    "CHECK_AMBIGUITY",
+    "ASK_MINIMUM_CLARIFICATION",
+    "CREATE_INVESTIGATION_REQUEST"
+  ],
+  "required_dimensions":[
+    "question",
+    "property_scope",
+    "time_scope",
+    "requested_outcome",
+    "legal_issue",
+    "evidence_target",
+    "procedure_target_if_any"
+  ],
+  "essential_missing_inputs":[
+    "PROPERTY_IDENTIFIER",
+    "TARGET_DATE",
+    "EVENT_DATE",
+    "DOCUMENT_IDENTITY",
+    "JURISDICTION",
+    "REQUESTED_OUTCOME"
+  ],
+  "clarification_rules":[
+    "Ask only for information that materially changes the investigation route or evidence requirement.",
+    "Do not ask for information already supplied or reliably established.",
+    "If the question is answerable as general law without property-specific evidence, do not demand a property identifier.",
+    "If a property-specific conclusion is requested, obtain a sufficient property identifier before selecting the record.",
+    "If historical status is requested, obtain the target date or a sufficiently precise event-relative date.",
+    "If multiple independent questions are present, split them into subquestions.",
+    "If wording is ambiguous but one interpretation is materially safer and does not change the evidence route, preserve the ambiguity explicitly rather than inventing certainty.",
+    "Do not ask for sensitive personal information unless genuinely necessary and lawfully relevant to the requested route."
+  ],
+  "question_split_rules":[
+    "Separate current ownership from historical ownership.",
+    "Separate registered ownership from beneficial ownership.",
+    "Separate ownership from mortgage/charge status.",
+    "Separate right of way from boundary position.",
+    "Separate document interpretation from registration effect.",
+    "Separate legal information from procedural action.",
+    "Separate record retrieval from dispute resolution."
+  ],
+  "clarification_output":[
+    "original_question",
+    "normalized_question",
+    "primary_intent",
+    "subquestions",
+    "property_scope",
+    "time_scope",
+    "requested_outcome",
+    "missing_essential_inputs",
+    "ambiguities",
+    "clarification_question",
+    "investigation_ready"
+  ],
+  "intake_states":[
+    "READY_TO_INVESTIGATE",
+    "CLARIFICATION_REQUIRED",
+    "AMBIGUITY_REQUIRES_USER_INPUT",
+    "GENERAL_INFORMATION_READY",
+    "MULTI_QUESTION_SPLIT",
+    "JURISDICTION_REQUIRED",
+    "PROPERTY_IDENTIFIER_REQUIRED",
+    "DATE_REQUIRED",
+    "DOCUMENT_IDENTITY_REQUIRED"
+  ],
+  "hard_stops":[
+    "Never invent a property identifier.",
+    "Never infer a target date from a vague historical phrase when precision materially affects the answer.",
+    "Never collapse distinct legal questions into one conclusion.",
+    "Never ask unnecessary questions merely to make intake more complete.",
+    "Never treat an intake clarification as evidence.",
+    "Never expose internal classification labels as if they were legal conclusions."
+  ]
+}
