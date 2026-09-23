@@ -1,0 +1,45 @@
+{
+  "id":"easement-scope",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "purpose":"Determine the legally supported scope of an easement/right of way without inferring rights from physical use alone.",
+  "pipeline":[
+    "identify-right",
+    "identify-creating-instrument-or-legal-basis",
+    "identify-dominant-and-servient-land",
+    "resolve-route-and-map",
+    "resolve-express-terms",
+    "check-registration",
+    "check-prescriptive-history-if-relevant",
+    "identify-users-and-purpose",
+    "identify-obligations-or-maintenance-terms",
+    "check-current-status",
+    "determine-whether-dispute-requires-court",
+    "compose-answer"
+  ],
+  "scope_dimensions":[
+    "route",
+    "width",
+    "purpose",
+    "persons_or_land_benefited",
+    "vehicles_or_modes_of_use",
+    "duration",
+    "maintenance_or_repair",
+    "gates_or_obstructions",
+    "intensity_of_use"
+  ],
+  "guardrails":[
+    "Physical use does not by itself establish the legal scope of an easement.",
+    "A title plan must be read with the relevant instrument where the instrument defines or limits the right.",
+    "Do not infer vehicle access merely because a route is physically wide enough for vehicles.",
+    "Do not infer unlimited use from a general right-of-way description.",
+    "Historical and prescriptive claims require temporal analysis.",
+    "Where scope or existence is genuinely disputed, identify the appropriate legal dispute route rather than declaring the disputed position as fact."
+  ],
+  "primary_sources":[
+    "Land Registration Rules 2012, Rule 121",
+    "Land and Conveyancing Law Reform Act 2021",
+    "Land and Conveyancing Law Reform Act 2009, section 11 where applicable",
+    "relevant creating instrument and registered title evidence"
+  ]
+}
