@@ -1,0 +1,29 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-case-review-quality-gate-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified publication-gate contract for reviewing whether a property case file meets the conditions for a verified citizen-facing answer.",
+  "core_principle":"REVIEW ALL MATERIAL DEPENDENCIES → FAIL CLOSED ON MATERIAL GAPS → PUBLISH ONLY THE SUPPORTED STATE",
+  "required_gate_domains":[
+    "question",
+    "property",
+    "date",
+    "evidence",
+    "source authority/freshness",
+    "document identity",
+    "property/date match",
+    "facts/legal effect",
+    "legal authority",
+    "conditions/exceptions",
+    "conflicts",
+    "procedure/authority",
+    "deadline",
+    "traceability",
+    "audit"
+  ],
+  "publication_rule":"VERIFIED_ANSWER requires every material gate to pass; VERIFIED_WITH_LIMITATIONS requires the remaining limitation to be non-material and explicit.",
+  "fail_closed_rule":"A material failed gate prevents definitive publication.",
+  "review_rule":"The review result must identify failed checks and required remediation rather than only returning a generic failure.",
+  "verification_boundary":"The quality gate validates completeness and publication readiness of the case file; it does not independently establish the underlying property or legal truth."
+}
