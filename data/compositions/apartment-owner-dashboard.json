@@ -1,0 +1,57 @@
+{
+  "id":"apartment-owner-dashboard",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"CROSS_DOMAIN_COMPOSITION",
+  "purpose":"Provide a unified legal-state view for apartment owners without collapsing distinct legal regimes.",
+  "modules":[
+    {
+      "id":"unit-title",
+      "source":"property-title",
+      "checks":["registered_owner","unit_folio","leasehold_or_freehold_status","registered_burdens"]
+    },
+    {
+      "id":"common-areas-and-omc",
+      "source":"multi-unit-development",
+      "checks":["OMC","common_area_status","lease","constitution","governance"]
+    },
+    {
+      "id":"charges",
+      "source":"omc-service-charge-sinking-fund",
+      "checks":["service_charge","sinking_fund","budget","accounting_basis"]
+    },
+    {
+      "id":"insurance",
+      "status":"MODULE_TO_BUILD",
+      "checks":["development_insurance","unit_owner_insurance","claims","policy_scope"]
+    },
+    {
+      "id":"defects-and-remediation",
+      "status":"MODULE_TO_BUILD",
+      "checks":["construction_defects","fire_safety","water_ingress","structural_issues","remediation_scheme"]
+    },
+    {
+      "id":"planning-and-building-control",
+      "source":"planning-property-use+building-control",
+      "checks":["planning_status","building_control_status","completion_evidence"]
+    }
+  ],
+  "dashboard_states":[
+    "TITLE_CHECKED",
+    "OMC_STRUCTURE_CHECKED",
+    "CHARGES_CHECKED",
+    "INSURANCE_REVIEW_REQUIRED",
+    "DEFECTS_REVIEW_REQUIRED",
+    "PLANNING_REVIEW_REQUIRED",
+    "BUILDING_CONTROL_REVIEW_REQUIRED",
+    "DOCUMENTS_MISSING",
+    "MULTI_REGIME_ISSUE"
+  ],
+  "guardrails":[
+    "Do not combine distinct legal regimes into one ownership status.",
+    "Insurance coverage depends on the actual policy and insured interest; title evidence alone is insufficient.",
+    "Defect status requires evidence and must not be inferred from age or appearance of a building.",
+    "Remediation eligibility depends on the applicable statutory scheme and facts.",
+    "The dashboard is a navigation and evidence map, not a professional building survey or legal opinion."
+  ]
+}
