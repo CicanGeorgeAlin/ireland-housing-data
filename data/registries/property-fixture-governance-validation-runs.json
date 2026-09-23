@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Central registry of validation runs supporting property fixture governance, preserving run identity, scope, result and separation from legal verification and publication.",
+  "registry_rules": [
+    "Every governance validation run receives one immutable registry entry.",
+    "A run result cannot be silently changed.",
+    "Later validation requires a new run ID.",
+    "Technical validation status is separate from legal-source verification.",
+    "Technical validation status is separate from publication readiness."
+  ],
+  "runs": [
+    {
+      "run_id": "PFGSCV-RUN-001",
+      "contract": "data/tests/property-fixture-governance-snapshot-comparison-validation.json",
+      "execution_mode": "STATIC_CONTRACT_VALIDATION",
+      "executed_at": "2026-09-23",
+      "result": "PASSED",
+      "scope": "Governance snapshot comparison contract",
+      "historical_integrity": "PASS",
+      "legal_source_status": "UNCHANGED",
+      "production_evidence_status": "UNCHANGED",
+      "publication_status": "UNCHANGED",
+      "live_official_record_retrieval": false,
+      "immutable": true
+    }
+  ],
+  "guardrails": [
+    "A passed technical run does not establish Irish property-law correctness.",
+    "A passed run does not establish ownership, title, boundary or any other real property fact.",
+    "No run may claim live official retrieval unless an actual retrieval event and evidence record exist.",
+    "Registry entries preserve historical validation results."
+  ]
+}
