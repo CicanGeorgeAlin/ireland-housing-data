@@ -1,0 +1,63 @@
+{
+  "id":"apartment-defects-remediation",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"STRUCTURAL_REMEDIATION_DOMAIN",
+  "question":"What can an apartment owner do about a building defect or safety issue?",
+  "pipeline":[
+    "identify-development-and-unit",
+    "identify-alleged-defect",
+    "classify-defect",
+    "collect-existing-technical_and_management_records",
+    "identify-responsible_entities_without_assuming_liability",
+    "identify-applicable-statutory_remediation_scheme",
+    "check-scheme-effective-date",
+    "check-eligibility",
+    "check-evidence_requirements",
+    "check-development_or-OMC-process",
+    "identify-inspection_or-technical_assessment",
+    "identify-application_or-notification-route",
+    "identify-dispute_or-enforcement-route",
+    "show-evidence"
+  ],
+  "defect_types":[
+    "FIRE_SAFETY",
+    "WATER_INGRESS",
+    "STRUCTURAL",
+    "DEFECTIVE_CONCRETE",
+    "MOISTURE",
+    "VENTILATION",
+    "ACCESSIBILITY",
+    "ENERGY_PERFORMANCE",
+    "OTHER_CONSTRUCTION_DEFECT"
+  ],
+  "legal_distinctions":[
+    "defect_identification_is_not_liability_determination",
+    "physical_problem_is_not_automatically_statutory_scheme_eligibility",
+    "planning_status_is_not_building_defect_status",
+    "building_control_evidence_is_not_automatically_proof_of_current_physical_condition",
+    "remediation_scheme_is_not_automatically_available_to_every_property"
+  ],
+  "verified_current_framework_examples":[
+    "The Defective Concrete Blocks Act 2022 and its 2024/2025 amendments create a specific remediation framework for qualifying affected residential properties, subject to statutory conditions and application processes.",
+    "The current defective-concrete remediation scheme has 2026 regulations/orders that must be checked for the relevant claim and date.",
+    "Other apartment defect issues, including fire safety or water ingress, must not be automatically treated as defective-concrete claims."
+  ],
+  "guardrails":[
+    "Do not diagnose a technical defect from photographs alone.",
+    "Do not determine legal liability without evidence and applicable law.",
+    "Do not assume a remediation scheme applies because a defect appears similar to a qualifying category.",
+    "Use the statutory scheme and effective date applicable to the property and event.",
+    "Flag engineer, fire-safety, building-surveyor or legal review where appropriate.",
+    "Preserve evidence and document chronology."
+  ],
+  "result_types":[
+    "DEFECT_CLASSIFIED",
+    "REMEDIATION_SCHEME_IDENTIFIED",
+    "ELIGIBILITY_REQUIRES_VERIFICATION",
+    "TECHNICAL_ASSESSMENT_REQUIRED",
+    "LEGAL_LIABILITY_REQUIRES_REVIEW",
+    "DOCUMENTS_REQUIRED",
+    "NOT_DETERMINABLE"
+  ]
+}
