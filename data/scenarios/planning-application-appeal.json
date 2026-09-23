@@ -1,0 +1,56 @@
+{
+  "id":"planning-application-appeal",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "question":"What happens if planning permission is required?",
+  "pipeline":[
+    "classify-proposed-development",
+    "identify-applicable-planning-law",
+    "identify-planning-authority",
+    "pre_application_or_local_guidance_check",
+    "prepare_application_and_required_documents",
+    "submit_application",
+    "public_notice_and_submission_period_where_applicable",
+    "planning-authority_assessment",
+    "decision",
+    "condition_review",
+    "appeal_or_other_review_route",
+    "decision_finality_and_judicial_review_check",
+    "compliance_and_enforcement_after_decision"
+  ],
+  "decision_states":[
+    "PRE_APPLICATION",
+    "APPLICATION_PREPARED",
+    "APPLICATION_SUBMITTED",
+    "PUBLIC_PARTICIPATION",
+    "UNDER_ASSESSMENT",
+    "DECISION_MADE",
+    "CONDITIONS_TO_REVIEW",
+    "APPEAL_WINDOW",
+    "APPEAL_SUBMITTED",
+    "DECISION_FINAL",
+    "JUDICIAL_REVIEW_CONSIDERATION",
+    "COMPLIANCE_OR_ENFORCEMENT"
+  ],
+  "guardrails":[
+    "Do not state that planning permission is granted merely because an application has been submitted.",
+    "Do not state that an application is approved unless the official decision is identified.",
+    "Planning appeals and judicial review are different routes and must not be conflated.",
+    "Time limits must be calculated from the applicable decision/event and law version.",
+    "Public participation requirements depend on the application and statutory framework.",
+    "Conditions attached to permission must be analysed separately from the grant itself.",
+    "A planning permission does not automatically establish building-control compliance or title."
+  ],
+  "official_routes":[
+    "Relevant local planning authority",
+    "An Coimisiún Pleanála / An Bord Pleanála where the applicable appeal or statutory route applies",
+    "Planning and development official registers/services"
+  ],
+  "result_types":[
+    "APPLICATION_ROUTE_IDENTIFIED",
+    "DECISION_IDENTIFIED",
+    "APPEAL_ROUTE_IDENTIFIED",
+    "JUDICIAL_REVIEW_ISSUE_REQUIRES_LEGAL_REVIEW",
+    "NOT_DETERMINABLE"
+  ]
+}
