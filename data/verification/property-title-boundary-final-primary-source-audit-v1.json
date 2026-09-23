@@ -1,0 +1,26 @@
+{
+  "schema_version":"0.1",
+  "status":"SUBSTANTIALLY_VERIFIED",
+  "verified_at":"2026-09-23",
+  "proposition_id":"PROP-PROPERTY-MAP-002",
+  "statutory_chain":{
+    "s84":"Registration of Title Act 1964 s.84, current revised text",
+    "s85":"Registration of Title Act 1964 s.85, current revised text",
+    "s86":"Registration of Title Act 1964 s.86, current revised text",
+    "amendments":"Registration of Deeds and Title Act 2006 ss.61-63",
+    "commencement":"2006-11-04"
+  },
+  "primary_case_law":[
+    {
+      "case":"O'Flaherty & Ors v Permanent TSB Public Ltd Company & Ors [2026] IEHC 74",
+      "status":"PRIMARY_JUDGMENT_REVIEWED",
+      "role":"current boundary/map dispute involving folios, registry mapping and easement issues"
+    }
+  ],
+  "verified_proposition":"Except where the Registration of Title Act provides otherwise, the register/map description is not conclusive as to boundaries or extent; specific statutory mechanisms can make an ascertained boundary conclusive. A title plan therefore cannot automatically be represented as a universal determination of the physical boundary on the ground.",
+  "judicial_limit":"O'Flaherty is a fact-specific High Court decision and is used to demonstrate the evidential complexity of map/boundary disputes, not as a universal statement replacing ss.84-86.",
+  "evidence_rule":"Where folio, title plan, deeds, physical occupation and boundary evidence conflict, the platform must expose the conflict and identify the additional evidence/procedure required.",
+  "publication_effect":"PTG-003 CLOSED_FOR_CORE_PUBLIC_PROPOSITION",
+  "remaining":"Final publication source audit and possessory-title gap.",
+  "publication_gate":"NOT_READY"
+}
