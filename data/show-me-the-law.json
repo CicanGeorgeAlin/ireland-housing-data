@@ -1,0 +1,19 @@
+{
+  "version":"0.1",
+  "purpose":"Public explanation contract for showing the evidence behind an important legal proposition.",
+  "sections":["WHAT_WE_SAY","WHY_WE_SAY_IT","ORIGINAL_LEGAL_TEXT","OFFICIAL_SOURCE","WHAT_IT_MEANS","HOW_IT_APPLIES","WHAT_YOU_CAN_DO","DEADLINE","OFFICIAL_ROUTE","LAST_VERIFIED"],
+  "example":{
+    "proposition_id":"RTB-2026-RENT-CAP-001",
+    "what_we_say":"For an applicable private residential tenancy, the general rent-review rule from 1 March 2026 is no more than 2% or CPI, whichever is lower, subject to applicable exceptions.",
+    "why_we_say_it":"The proposition is linked to the 2026 residential-tenancy legislation, its commencement framework and current RTB guidance.",
+    "original_legal_text_status":"REQUIRED_FOR_FINAL_PUBLIC_PROVISION_VIEW",
+    "official_source_status":"REQUIRED_AND_LINKED",
+    "what_it_means":"The rule is not applied until tenancy type, dates and applicable exceptions have been resolved.",
+    "how_it_applies":"FACTS_REQUIRED",
+    "what_you_can_do":"CHECK_TENANCY_CLASSIFICATION_AND_RENT_REVIEW_DATE",
+    "deadline":"FACT_DEPENDENT",
+    "official_route":"RTB",
+    "last_verified":"2026-09-23"
+  },
+  "publication_rule":"The public component must distinguish legal text, official guidance and CICAN explanation rather than presenting them as the same authority."
+}
