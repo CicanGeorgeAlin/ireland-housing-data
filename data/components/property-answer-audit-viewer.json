@@ -1,0 +1,110 @@
+{
+  "id":"property-answer-audit-viewer",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"PUBLIC_AUDIT_VIEW_CONTRACT",
+  "purpose":"Define the public-facing audit view for a property-law answer while preserving the complete internal evidence chain and minimizing unnecessary personal data.",
+  "display_order":[
+    "THE_ANSWER",
+    "WHAT_THE_EVIDENCE_ESTABLISHES",
+    "WHAT_THE_EVIDENCE_DOES_NOT_ESTABLISH",
+    "LEGAL_BASIS",
+    "APPLICABLE_DATE",
+    "EVIDENCE_TRAIL",
+    "OFFICIAL_SOURCES",
+    "CONDITIONS_AND_EXCEPTIONS",
+    "DEADLINES",
+    "OFFICIAL_ROUTE",
+    "UNRESOLVED_ISSUES",
+    "VERIFICATION_STATUS",
+    "LAST_VERIFIED",
+    "HISTORICAL_VERSION",
+    "WHAT_TO_DO_NEXT"
+  ],
+  "answer_header":{
+    "answer_snapshot_id_public":false,
+    "question_summary":true,
+    "status":true,
+    "applicable_date":true,
+    "geographic_scope":true,
+    "last_verified":true
+  },
+  "evidence_trail":{
+    "stages":[
+      "QUESTION",
+      "FACTS_USED",
+      "OFFICIAL_RECORD_ROUTE",
+      "RETRIEVAL",
+      "DOCUMENT",
+      "EXTRACTED_FACT",
+      "VERIFIED_EVIDENCE",
+      "CANONICAL_PROPOSITION",
+      "LEGAL_EFFECT",
+      "ANSWER"
+    ],
+    "stage_requirements":[
+      "Show whether each material stage is complete, incomplete or not applicable.",
+      "Link public source references where appropriate.",
+      "Do not expose internal retrieval identifiers unless required for transparency.",
+      "Do not imply that a source proves propositions beyond its evidential role."
+    ]
+  },
+  "source_display":{
+    "official_first":true,
+    "source_types":[
+      "CONSTITUTION",
+      "LEGISLATION",
+      "STATUTORY_INSTRUMENT",
+      "COURT",
+      "EU",
+      "GOVERNMENT",
+      "LOCAL_AUTHORITY",
+      "TAILTE_EIREANN",
+      "OTHER_OFFICIAL"
+    ],
+    "show_source_title":true,
+    "show_relevant_provision":true,
+    "show_source_date":true,
+    "show_direct_link":true
+  },
+  "verification_display":{
+    "labels":[
+      "PRIMARY LAW VERIFIED",
+      "COMMENCEMENT VERIFIED",
+      "AMENDMENTS CHECKED",
+      "CASE LAW CHECKED",
+      "OFFICIAL PROCEDURE CHECKED",
+      "OFFICIAL ROUTE CHECKED"
+    ],
+    "never_use_subjective_confidence_score":true,
+    "show_missing_verification_items":true
+  },
+  "unresolved_issue_display":{
+    "show_conflicts":true,
+    "show_missing_evidence":true,
+    "show_historical_research_required":true,
+    "show_professional_review_required":true,
+    "show_not_determinable":true
+  },
+  "privacy":{
+    "minimise_personal_data":true,
+    "do_not_display_unnecessary_names_or_identifiers":true,
+    "separate_public_view_from_internal_audit":true,
+    "retain_only_data_required_for_legal_traceability":true
+  },
+  "historical_mode":{
+    "show_previous_answer_when_relevant":true,
+    "show_effective_period":true,
+    "show_superseded_status":true,
+    "never_present_historical_law_as_current":true
+  },
+  "guardrails":[
+    "The audit viewer is an explanation and transparency layer, not itself legal advice.",
+    "A retrieved official record is not automatically proof of every legal conclusion.",
+    "Missing evidence remains visible.",
+    "Conflicting evidence remains visible until resolved.",
+    "No answer is shown as currently verified if its snapshot requires re-verification.",
+    "Public source links must point to the authoritative route where available.",
+    "Internal identifiers, personal data and system metadata are hidden unless genuinely necessary."
+  ]
+}
