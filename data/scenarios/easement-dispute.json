@@ -1,0 +1,59 @@
+{
+  "id":"easement-dispute",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "scenario":"Easement or right-of-way dispute",
+  "states":[
+    "RIGHT_IDENTIFIED",
+    "ALLEGED_OBSTRUCTION",
+    "ALLEGED_OVERUSE",
+    "MAINTENANCE_DISPUTE",
+    "EVIDENCE_COLLECTION",
+    "LEGAL_BASIS_REVIEW",
+    "REGISTRATION_REVIEW",
+    "PRE_ACTION_OPTIONS",
+    "DISPUTE_ROUTE",
+    "COURT_OR_OTHER_AUTHORITY",
+    "RESOLVED"
+  ],
+  "minimum_facts":[
+    "properties_affected",
+    "nature_of_alleged_right",
+    "source_of_right_if_known",
+    "location_or_route",
+    "what_changed",
+    "date_change_occurred",
+    "documents_available",
+    "current_effect_on_use"
+  ],
+  "issue_types":[
+    "existence",
+    "scope",
+    "obstruction",
+    "interference",
+    "overuse",
+    "maintenance",
+    "repair",
+    "route",
+    "vehicle_use",
+    "gates",
+    "costs"
+  ],
+  "evidence_priority":[
+    "registered_folio",
+    "filed_instrument",
+    "title_plan",
+    "creating_deed_or_conveyance",
+    "historical_title_documents",
+    "relevant_court_order",
+    "documented_physical_evidence",
+    "witness_or_usage_evidence"
+  ],
+  "guardrails":[
+    "Do not determine a disputed easement merely from current physical use.",
+    "Do not label conduct as unlawful without identifying the applicable legal right, duty or restriction.",
+    "Do not treat registration evidence as resolving every question of scope or interpretation.",
+    "Do not recommend self-help measures that could create a separate legal dispute.",
+    "Where court determination is required, identify the need for legal advice and the appropriate formal route."
+  ]
+}
