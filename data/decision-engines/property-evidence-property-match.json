@@ -1,0 +1,116 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-evidence-property-match",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "purpose":"Verify that an official or user-supplied document actually relates to the identified property, legal interest, event and date before extracting a property-specific fact.",
+  "verified_date":"2026-09-24",
+  "source_basis":[
+    "Registration of Title Act 1964",
+    "Land Registration Rules 2012",
+    "Tailte Éireann Land Registry copy and search services",
+    "Tailte Éireann Registry of Deeds search services"
+  ],
+  "identity_dimensions":[
+    "folio_number",
+    "county",
+    "property_description",
+    "map_reference",
+    "instrument_number",
+    "dealing_reference",
+    "registered_owner_name",
+    "registered_charge_holder",
+    "party_names",
+    "document_date",
+    "registration_date",
+    "event_date",
+    "address_or_locality",
+    "title_plan_or_map_reference"
+  ],
+  "matching_rules":[
+    {
+      "rule_id":"PM-001",
+      "test":"FOLIO_MATCH",
+      "effect":"If a current or historical folio number is available, match it exactly and record the source/date."
+    },
+    {
+      "rule_id":"PM-002",
+      "test":"PROPERTY_DESCRIPTION_MATCH",
+      "effect":"Compare the official property description with the target property; do not rely on a similar address alone."
+    },
+    {
+      "rule_id":"PM-003",
+      "test":"MAP_REFERENCE_MATCH",
+      "effect":"Where a map or registry plan is relevant, compare the mapped parcel/reference and preserve the limits of what the map establishes."
+    },
+    {
+      "rule_id":"PM-004",
+      "test":"INSTRUMENT_TO_FOLIO_MATCH",
+      "effect":"Where an instrument is retrieved, establish that the instrument is associated with the relevant folio/dealing before extracting its contents as property-specific evidence."
+    },
+    {
+      "rule_id":"PM-005",
+      "test":"PARTY_AND_EVENT_MATCH",
+      "effect":"Names and dates must correspond to the alleged transaction, succession event or other legal event."
+    },
+    {
+      "rule_id":"PM-006",
+      "test":"TEMPORAL_MATCH",
+      "effect":"The document/event date and registration date must be preserved separately; a document cannot be treated as a target-date register state merely because it predates that date."
+    },
+    {
+      "rule_id":"PM-007",
+      "test":"TITLE_SYSTEM_MATCH",
+      "effect":"Determine whether the property belongs in the Land Registry or Registry of Deeds evidence route for the relevant period."
+    }
+  ],
+  "evidence_states":[
+    "PROPERTY_MATCH_VERIFIED",
+    "PROPERTY_MATCH_PARTIAL",
+    "PROPERTY_MATCH_UNCERTAIN",
+    "PROPERTY_MISMATCH",
+    "TEMPORAL_MATCH_VERIFIED",
+    "TEMPORAL_MATCH_UNCERTAIN",
+    "INSTRUMENT_LINK_VERIFIED",
+    "INSTRUMENT_LINK_UNVERIFIED",
+    "TITLE_SYSTEM_UNCERTAIN",
+    "CONFLICT"
+  ],
+  "extraction_rules":[
+    "Only facts whose source document and property match are verified may enter the property-specific evidence layer.",
+    "A user-supplied deed can be relevant evidence but must not be treated as an official registration record merely because it appears authentic.",
+    "An official folio can establish registered facts within its scope; deeper legal conclusions may require the underlying instrument or other evidence.",
+    "A Registry of Deeds memorial/search result must not be treated as the text or legal effect of the underlying deed.",
+    "If multiple candidate properties match an address or party name, stop and request stronger property identification evidence rather than selecting one silently."
+  ],
+  "instrument_access_rule":"Tailte Éireann states that completed dealings are registered on the folio and that the underlying title documents are filed in an Instrument; inspection of an Instrument is restricted to specified persons or routes under Rule 159.",
+  "answer_contract":[
+    "PROPERTY_IDENTIFICATION",
+    "SOURCE_DOCUMENT",
+    "MATCH_TESTS",
+    "MATCH_RESULT",
+    "DATE_MATCH",
+    "EXTRACTED_FACT",
+    "FACT_SCOPE",
+    "LEGAL_EFFECT_IF_ESTABLISHED",
+    "UNRESOLVED_POINTS",
+    "NEXT_EVIDENCE_STEP"
+  ],
+  "result_states":[
+    "EVIDENCE_READY_FOR_PROPERTY_ANSWER",
+    "OFFICIAL_RECORD_MATCH_VERIFIED",
+    "USER_DOCUMENT_REQUIRES_CORROBORATION",
+    "PROPERTY_MATCH_UNCERTAIN",
+    "DOCUMENT_MATCH_UNCERTAIN",
+    "TEMPORAL_CONFLICT",
+    "TITLE_SYSTEM_UNCERTAIN",
+    "EVIDENCE_REQUIRED",
+    "NOT_DETERMINABLE"
+  ],
+  "guardrails":[
+    "Never match a property solely by address.",
+    "Never treat a document's existence as proof of its legal effect.",
+    "Never treat an instrument as the current register without checking the folio/dealing outcome.",
+    "Never infer historical ownership from a current owner name without temporal evidence.",
+    "Never publish a property-specific fact until property identity and source identity are both verified."
+  ]
+}
