@@ -1,0 +1,44 @@
+{
+  "schema_version":"0.1",
+  "status":"SUBSTANTIALLY_VERIFIED",
+  "verified_at":"2026-09-23",
+  "proposition_id":"PROP-PROPERTY-REGISTRATION-003",
+  "statutory_chain":{
+    "s33":"Registration of Title Act 1964 s.33, current revised text",
+    "s49":"Registration of Title Act 1964 s.49, current revised text",
+    "s53_54":"Registration of Title Act 1964 ss.53-54, current revised text",
+    "limitation":"Statute of Limitations 1957 relevant provisions",
+    "modern_prescription":"Land and Conveyancing Law Reform Act 2021 applies to prescription/easements and contains transitional provisions"
+  },
+  "official_procedure":[
+    {
+      "authority":"Tailte Éireann",
+      "source":"https://tailte.ie/legal-practices-practise-directions-adverse-possession-title-by-adverse-possession-to-registered-land/",
+      "status":"CURRENT_PROCEDURE_CONFIRMED",
+      "finding":"Registered-land adverse-possession applications require the prescribed application route and evidence of the facts relied upon."
+    },
+    {
+      "authority":"Tailte Éireann",
+      "source":"https://tailte.ie/adverse-possession-application-guidelines/",
+      "status":"CURRENT_GUIDANCE_CONFIRMED",
+      "finding":"Current guidance distinguishes adverse possession and possessory-title application materials."
+    }
+  ],
+  "primary_case_law":[
+    {
+      "case":"McDonnell v McDonnell [2013] IEHC 395",
+      "source":"https://www.bailii.org/ie/cases/IEHC/2013/2013IEHC395.html",
+      "status":"PRIMARY_AUTHORITY_REVIEWED_FOR_CORE_PRINCIPLE",
+      "finding":"A possession-based title claim requires analysis of the claimant's actual possession and the applicable limitation framework; mere passage of time is not presented as a standalone automatic title mechanism."
+    }
+  ],
+  "safe_public_proposition":"A person claiming title through possession must establish the legally relevant possession and satisfy the applicable statutory framework and registration procedure; expiry of a limitation period does not by itself automatically produce a registered title.",
+  "critical_distinctions":[
+    "First registration with possessory title is distinct from acquisition of registered land by possession.",
+    "Adverse possession of registered land is distinct from prescriptive easement.",
+    "The applicable law depends on the relevant historical period."
+  ],
+  "publication_effect":"PTG-004 CLOSED_FOR_CORE_PUBLIC_PROPOSITION",
+  "remaining":"Final publication source audit only.",
+  "publication_gate":"NOT_READY"
+}
