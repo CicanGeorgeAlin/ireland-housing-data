@@ -225,6 +225,15 @@
         "property-legal-provision-resolver",
         "property-evidence-to-answer-trace-graph"
       ]
+    },
+    {
+      "stage": "SOURCE_RELIABILITY_AND_FRESHNESS",
+      "routes": [
+        "property-source-reliability-freshness-resolver",
+        "property-legal-change-impact-engine",
+        "property-conflict-contradiction-resolver",
+        "property-legal-proposition-authority-chain"
+      ]
     }
   ],
   "event_model": [
@@ -288,7 +297,8 @@
     "property-human-readable-legal-answer-composer",
     "property-evidence-to-answer-trace-graph",
     "property-conflict-contradiction-resolver",
-    "property-legal-change-impact-engine"
+    "property-legal-change-impact-engine",
+    "property-source-reliability-freshness-resolver"
   ],
   "answer_sequence": [
     "QUESTION",
