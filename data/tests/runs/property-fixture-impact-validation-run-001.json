@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1",
+  "run_id": "PFIV-RUN-001",
+  "status": "PASSED_WITH_WARNINGS",
+  "execution_mode": "STATIC_IMPACT_CONTRACT_VALIDATION",
+  "recorded_at": "2026-09-23",
+  "impact_event_id": "FIXTURE-IMPACT-EVENT-001",
+  "fixture_id": "FIXTURE-FOLIO-SYNTHETIC-001",
+  "scope": {
+    "dependency_map": "data/registries/property-fixture-test-dependencies.json",
+    "impact_rules": "data/tests/property-fixture-impact-rules.json",
+    "impact_event_contract": "data/tests/property-fixture-impact-event.json",
+    "validation_contract": "data/tests/property-fixture-impact-validation.json"
+  },
+  "checks": {
+    "impact_event_identity": "PASS",
+    "version_transition": "PASS",
+    "dependency_completeness": "PASS",
+    "historical_immutability": "PASS",
+    "new_validation_requirement": "PASS",
+    "provenance_review_requirement": "PASS",
+    "privacy_review_requirement": "PASS",
+    "publication_separation": "PASS"
+  },
+  "result": {
+    "impact_propagation_contract": "PASSED",
+    "new_validation_run_required": true,
+    "historical_runs_unchanged": true,
+    "publication_ready": false,
+    "legal_source_status": "UNCHANGED",
+    "production_evidence_status": "UNCHANGED"
+  },
+  "warnings": [
+    "This is a static contract validation only.",
+    "The referenced fixture is synthetic and cannot establish a real property fact.",
+    "The dependent synthetic end-to-end run remains historical and immutable.",
+    "A real replacement/revalidation run is required before this impact event can be closed."
+  ],
+  "next_required_action": "Create a new isolated validation run after an approved fixture replacement or correction.",
+  "guardrails": [
+    "Passing this run does not verify Irish property law.",
+    "Passing this run does not represent live official-record retrieval.",
+    "No production legal proposition or publication state was changed."
+  ]
+}
