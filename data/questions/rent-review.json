@@ -1,0 +1,17 @@
+{
+  "id":"rent-review-pathway",
+  "version":"0.1",
+  "status":"STRUCTURAL_PROTOTYPE",
+  "title":"Can my rent be increased?",
+  "disclaimer":"This pathway is an information and classification prototype. It does not determine an individual legal outcome.",
+  "questions":[
+    {"id":"tenancy_type","question":"What type of housing arrangement is this?","options":["Private residential tenancy","Student Specific Accommodation","Cost Rental","Approved Housing Body","Local authority housing","Not sure"]},
+    {"id":"tenancy_start","question":"When did the tenancy begin?","input":"date"},
+    {"id":"review_date","question":"When is the proposed rent review?","input":"date"},
+    {"id":"new_apartment","question":"Is this a new private apartment where construction commenced after 10 June 2025?","options":["Yes","No","Not sure"]},
+    {"id":"special_facts","question":"Are there other circumstances that may affect the rent rule?","options":["Yes","No","Not sure"]}
+  ],
+  "resolution_pipeline":["classify-tenancy","resolve-tenancy-generation","resolve-effective-date","check-special-rule","check-exceptions","retrieve-canonical-proposition","show-evidence","identify-official-route"],
+  "outputs":["classification","applicable-rule-status","evidence-chain","facts-still-needed","official-route"],
+  "linked_propositions":["RTB-2026-RENT-CAP-001","RTB-2026-RENT-RESET-002","RTB-2026-APARTMENT-003"]
+}
