@@ -1,0 +1,91 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-investigation-evidence-cache-deduplication",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Reuse previously retrieved and verified evidence safely while preserving source identity, version, date, property match and legal provenance.",
+  "core_principle":"REUSE VERIFIED EVIDENCE ONLY WHEN IDENTITY, SCOPE, TEMPORAL STATUS AND SUFFICIENCY REMAIN VALID.",
+  "cache_key_dimensions":[
+    "source_identity",
+    "document_or_record_identity",
+    "property_identifier",
+    "registration_system",
+    "target_date_or_currentness",
+    "retrieval_date",
+    "source_version",
+    "content_hash_if_available",
+    "access_scope"
+  ],
+  "deduplication_sequence":[
+    "NORMALIZE_SOURCE",
+    "NORMALIZE_DOCUMENT",
+    "CHECK_PROPERTY_SCOPE",
+    "CHECK_DATE_SCOPE",
+    "CHECK_SOURCE_VERSION",
+    "CHECK_CONTENT_IDENTITY",
+    "CHECK_ACCESS_SCOPE",
+    "CHECK_PRIOR_VERIFICATION",
+    "CHECK_FRESHNESS",
+    "CHECK_SUFFICIENCY",
+    "REUSE_OR_RETRIEVE"
+  ],
+  "reuse_rules":[
+    "Exact identity match may reuse the cached evidence subject to freshness and temporal rules.",
+    "A current record may not automatically answer a historical question.",
+    "A historical record may not automatically establish current status.",
+    "A document matching by title alone is insufficient for property-specific reuse.",
+    "A cached source does not remove the need for property/date matching.",
+    "Changed source content requires a new retrieval or explicit revalidation.",
+    "An inaccessible prior source cannot be represented as newly verified evidence.",
+    "User-supplied copies remain distinct from official records even when their content appears identical."
+  ],
+  "cache_states":[
+    "CACHE_MISS",
+    "CACHE_HIT_VERIFIED",
+    "CACHE_HIT_REQUIRES_FRESHNESS_CHECK",
+    "CACHE_HIT_REQUIRES_PROPERTY_MATCH",
+    "CACHE_HIT_REQUIRES_DATE_MATCH",
+    "CACHE_HIT_REQUIRES_LEGAL_REVALIDATION",
+    "CACHE_HIT_SUPERSEDED",
+    "CACHE_HIT_CONFLICTED",
+    "CACHE_ENTRY_INVALID",
+    "RETRIEVAL_REQUIRED"
+  ],
+  "invalidation_triggers":[
+    "source_change",
+    "legal_change",
+    "procedure_change",
+    "property_record_change",
+    "historical_record_discovered",
+    "new_dealing_or_registration",
+    "new_charge_or_discharge",
+    "new_court_order",
+    "rectification_or_boundary_change",
+    "access_scope_change",
+    "identity_conflict"
+  ],
+  "cache_entry":[
+    "cache_id",
+    "source_reference",
+    "document_reference",
+    "property_match",
+    "date_match",
+    "source_version",
+    "retrieved_at",
+    "verified_at",
+    "freshness_state",
+    "sufficiency_state",
+    "content_identity",
+    "legal_references",
+    "dependent_answer_snapshots",
+    "invalidation_state",
+    "provenance"
+  ],
+  "hard_stops":[
+    "Never deduplicate records merely because names, addresses or titles look similar.",
+    "Never reuse stale evidence as current evidence.",
+    "Never let cache presence override a newer authoritative source.",
+    "Never merge distinct property records into one cache entry.",
+    "Never erase provenance when reusing cached evidence."
+  ]
+}
