@@ -1,0 +1,15 @@
+{
+  "version":"0.1",
+  "purpose":"Registry of verified content seeds eligible for controlled website publication.",
+  "records":[
+    {
+      "id":"renting-2026-core",
+      "path":"data/verified/renting-2026.json",
+      "status":"verified-for-structural-publication",
+      "verified_on":"2026-09-23",
+      "scope":"Residential tenancies — selected 2026 rent-control and commencement facts",
+      "not_exhaustive":true
+    }
+  ],
+  "rule":"A verified seed does not imply that every related legal question has been researched or that an individual outcome can be determined without facts and full applicable-law analysis."
+}
