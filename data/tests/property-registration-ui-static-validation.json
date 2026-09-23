@@ -1,0 +1,27 @@
+{
+  "schema_version":"1.0",
+  "validation_id":"property-registration-ui-static-validation",
+  "status":"PASSED_WITH_NONCRITICAL_WARNINGS",
+  "scope":"Static contract validation of the property registration UI integration.",
+  "checks":[
+    {"id":"PRUI-001","check":"index contains property registration route controls","status":"PASS"},
+    {"id":"PRUI-002","check":"site.js contains all six registration route handlers","status":"PASS"},
+    {"id":"PRUI-003","check":"each route maps to a distinct registration engine","status":"PASS"},
+    {"id":"PRUI-004","check":"UI does not assert property-specific ownership without retrieval","status":"PASS"},
+    {"id":"PRUI-005","check":"current and historical routes remain distinct","status":"PASS"},
+    {"id":"PRUI-006","check":"official route language does not guarantee outcome","status":"PASS"},
+    {"id":"PRUI-007","check":"conflict/evidence limitations are visible in route logic","status":"PASS"},
+    {"id":"PRUI-008","check":"verification date is current for the integrated property route","status":"PASS"},
+    {"id":"PRUI-009","check":"source content and website contract references exist","status":"PASS"},
+    {"id":"PRUI-010","check":"public UI remains privacy-minimised","status":"PASS"}
+  ],
+  "warnings":[
+    "Static validation does not prove browser rendering.",
+    "Static validation does not prove GitHub Pages deployment.",
+    "Static validation does not retrieve a real property record.",
+    "Substantive legal verification remains governed by the underlying verified content and source audits."
+  ],
+  "unsafe_behaviour_detected":false,
+  "publication_state":"GENERAL_INFORMATION_INTEGRATED",
+  "next_test":"CONTROLLED_BROWSER_OR_LIVE_INTERACTION_CHECK"
+}
