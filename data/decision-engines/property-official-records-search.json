@@ -1,0 +1,69 @@
+{
+  "id":"property-official-records-search",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"STRUCTURAL_EVIDENCE_RETRIEVAL_ENGINE",
+  "question":"Where can I obtain the official property records needed to answer this question?",
+  "pipeline":[
+    "classify-property-question",
+    "identify-required-evidence",
+    "identify-registration-system",
+    "identify-land-register_or_registry-of-deeds_route",
+    "identify-property-or-folio",
+    "select-search_copy_or-official-search",
+    "identify-title-plan_or-filed-instrument",
+    "identify-historical-records_if_needed",
+    "record-source-date",
+    "link-evidence-to-legal-proposition",
+    "show-official-route"
+  ],
+  "record_types":[
+    "CURRENT_FOLIO",
+    "TITLE_PLAN",
+    "FILED_INSTRUMENT",
+    "OFFICIAL_SEARCH",
+    "HISTORICAL_FOLIO",
+    "REGISTRY_OF_DEEDS_RECORD",
+    "LANDDIRECT_SEARCH",
+    "MAPPING_SEARCH",
+    "CHARGE_ENTRY",
+    "EASEMENT_ENTRY",
+    "JUDGMENT_MORTGAGE_ENTRY"
+  ],
+  "route_selection":[
+    {
+      "question_type":"current_registered_owner",
+      "route":"Land Register / Landdirect / appropriate official ownership search"
+    },
+    {
+      "question_type":"registered_title_and_burdens",
+      "route":"folio plus relevant filed instrument/title plan"
+    },
+    {
+      "question_type":"historical_or_unregistered_title",
+      "route":"historical Land Registry records and/or Registry of Deeds research as applicable"
+    },
+    {
+      "question_type":"official_ownership_search",
+      "route":"LR Rule 160 / Form 89 where applicable"
+    }
+  ],
+  "guardrails":[
+    "Do not treat a general map search as proof of ownership.",
+    "Do not treat a current folio as a complete historical title record.",
+    "Do not assume an unregistered property is absent from the Registry of Deeds.",
+    "Do not assume a folio contains every underlying instrument needed to interpret an interest.",
+    "Do not republish personal/property data merely because it is publicly accessible; apply the project's privacy rules.",
+    "Every retrieved record must retain its source, retrieval date and legal purpose."
+  ],
+  "result_types":[
+    "OFFICIAL_SOURCE_IDENTIFIED",
+    "FOLIO_ROUTE_IDENTIFIED",
+    "TITLE_PLAN_ROUTE_IDENTIFIED",
+    "OFFICIAL_SEARCH_ROUTE_IDENTIFIED",
+    "HISTORICAL_RECORD_ROUTE_IDENTIFIED",
+    "REGISTRY_OF_DEEDS_ROUTE_IDENTIFIED",
+    "ADDITIONAL_RECORD_REQUIRED",
+    "NOT_DETERMINABLE"
+  ]
+}
