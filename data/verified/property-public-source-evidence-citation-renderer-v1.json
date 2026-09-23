@@ -1,0 +1,25 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-public-source-evidence-citation-renderer-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for rendering authoritative source references for citizens.",
+  "public_contract":{
+    "legal_claim":"Show the applicable official legal source and exact provision where available.",
+    "property_fact":"Show the relevant official property-record identity or official retrieval route; do not expose unnecessary personal data.",
+    "procedure":"Show the responsible official body and its official route.",
+    "historical_claim":"Show the source/version applicable to the requested historical period.",
+    "limitation":"State when the source establishes only part of the proposition or access is restricted."
+  },
+  "recommended_display":{
+    "label":"Official source",
+    "fields":["authority","title","provision_or_record","date_or_version","why_it_matters","official_route","limitation"]
+  },
+  "source_boundaries":[
+    "An official service page can establish an official route without establishing a property-specific fact.",
+    "A folio/search can establish registered facts within its scope but does not automatically resolve every beneficial, historical or boundary issue.",
+    "A Registry of Deeds memorial/search can identify registration evidence but does not by itself establish the full substantive effect of an underlying deed.",
+    "Official guidance may explain process but does not override legislation."
+  ],
+  "verification_boundary":"Rendering a citation does not independently establish the underlying claim; the citation must already have passed the source navigator, evidence/legal analysis and quality gate."
+}
