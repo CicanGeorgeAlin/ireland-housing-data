@@ -1,0 +1,44 @@
+{
+  "id":"co-ownership-death",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "question":"What happens to jointly owned property when one co-owner dies?",
+  "branches":[
+    {
+      "ownership_type":"JOINT_TENANCY",
+      "legal_effect":"The deceased joint tenant's interest ceases on death and the surviving joint tenant(s) take by survivorship, subject to the applicable legal framework.",
+      "registration_route":"Land Registration Rules 2012, Rule 94; LR Form 47",
+      "evidence":"Proof of death and identity; prescribed registration application."
+    },
+    {
+      "ownership_type":"TENANCY_IN_COMMON",
+      "legal_effect":"The deceased co-owner's undivided share does not pass automatically to the other co-owner(s); it passes through the deceased's succession/estate framework.",
+      "registration_route":"Applicable transmission/devolution procedure under the Land Registration Rules.",
+      "evidence":"Will/probate or intestacy documentation and title evidence as applicable."
+    }
+  ],
+  "pipeline":[
+    "identify-ownership-type",
+    "check-severance-or-equity-issues",
+    "identify-death",
+    "determine-survivorship-or-estate-route",
+    "identify-registration-procedure",
+    "check-will-or-intestacy-where-relevant",
+    "show-evidence",
+    "official-route"
+  ],
+  "guardrails":[
+    "Do not assume survivorship without establishing joint tenancy.",
+    "Do not assume a deceased tenant-in-common share passes to the surviving co-owner.",
+    "Do not treat the folio alone as resolving beneficial ownership or trust issues.",
+    "Historical ownership requires date-specific analysis.",
+    "Registration after death is distinct from the underlying succession entitlement."
+  ],
+  "sources":[
+    "SRC-TE-RULE94",
+    "SRC-TE-FORM47",
+    "SRC-TE-DEVOLUTION",
+    "SRC-SUCCESSION-1965",
+    "SRC-LCLRA-2009-S30"
+  ]
+}
