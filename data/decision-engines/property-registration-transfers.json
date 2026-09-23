@@ -1,0 +1,82 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-registration-transfers",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "purpose":"Classify ownership-change events and route the registration consequences without treating a transfer document or application as proof that registration has occurred.",
+  "event_types":[
+    "SALE",
+    "GIFT",
+    "INHERITANCE",
+    "TRANSFER_BETWEEN_CO_OWNERS",
+    "COURT_ORDER",
+    "ASSENT_OR_PERSONAL_REPRESENTATIVE_TRANSFER",
+    "OTHER_STATUTORY_TRANSFER"
+  ],
+  "classification_inputs":[
+    "registered_or_unregistered_status",
+    "current_registered_owner_or_registered_interest",
+    "transferor_interest",
+    "transferee_interest",
+    "transfer_type",
+    "consideration",
+    "date_of_event",
+    "instrument_or_document",
+    "succession_context",
+    "mortgage_or_charge_context",
+    "co_ownership_context",
+    "property_identifier"
+  ],
+  "workflow":[
+    "CLASSIFY_PROPERTY_STATUS",
+    "CLASSIFY_TRANSFER_EVENT",
+    "IDENTIFY_TRANSFEROR_AND_TRANSFEREE_INTERESTS",
+    "IDENTIFY_LEGAL_INSTRUMENT_OR_SUCCESSION_ROUTE",
+    "CHECK_TITLE_AND_REGISTRATION_REQUIREMENTS",
+    "CHECK_MORTGAGES_CHARGES_AND_OTHER_REGISTERED_INTERESTS",
+    "CHECK_TAX_OR_DUTY_ROUTE_SEPARATELY",
+    "SELECT_OFFICIAL_REGISTRATION_ROUTE",
+    "RETRIEVE_OR_REQUEST_REQUIRED_RECORDS",
+    "VERIFY_DOCUMENT_IDENTITY",
+    "VERIFY_PROPERTY_MATCH",
+    "VERIFY_REGISTRATION_EFFECT",
+    "COMPOSE_ANSWER"
+  ],
+  "legal_distinctions":[
+    "A signed transfer instrument is not by itself proof that the register has been changed.",
+    "A contract for sale, conveyance, transfer instrument and registered title are distinct legal stages.",
+    "Inheritance and personal-representative transfers follow distinct succession and registration pathways.",
+    "A transfer can coexist with mortgages, charges, burdens, easements or other interests that require separate analysis.",
+    "Tax and registration are separate questions even when triggered by the same transaction."
+  ],
+  "evidence_requirements":[
+    "property_identifier",
+    "relevant folio_or_registration evidence where registered",
+    "transfer instrument or succession documentation where applicable",
+    "identity of parties or legal representatives where necessary",
+    "evidence of registration outcome for any claim that ownership has been registered",
+    "historical records where the transfer predates the current register state"
+  ],
+  "official_routes":[
+    "Tailte Éireann Land Registry registration services",
+    "Tailte Éireann forms and registration rules",
+    "LandDirect property search"
+  ],
+  "result_states":[
+    "TRANSFER_ROUTE_IDENTIFIED",
+    "REGISTRATION_PENDING",
+    "REGISTRATION_VERIFIED",
+    "HISTORICAL_TRANSFER_RESEARCH_REQUIRED",
+    "EVIDENCE_REQUIRED",
+    "CONFLICT",
+    "PROFESSIONAL_REVIEW_REQUIRED",
+    "NOT_DETERMINABLE"
+  ],
+  "guardrails":[
+    "Never infer current ownership solely from a transfer document.",
+    "Never state that registration occurred without registration evidence.",
+    "Never collapse succession, conveyancing and registration into one event.",
+    "Never ignore registered charges or burdens when describing a transfer.",
+    "Never use tax treatment as proof of ownership.",
+    "Property-specific answers require verified evidence."
+  ]
+}
