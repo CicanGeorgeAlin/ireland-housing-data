@@ -1,0 +1,93 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-investigation-merge-case-identity-resolver",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Determine whether investigations can safely share or merge case context without conflating different properties, dates, legal questions, evidence or answer states.",
+  "core_principle":"MATCH IDENTITY AND SCOPE BEFORE MERGING; SHARED TOPIC ALONE IS NEVER SUFFICIENT.",
+  "identity_dimensions":[
+    "jurisdiction",
+    "property_identifier",
+    "registration_system",
+    "property_scope",
+    "time_scope",
+    "question_intent",
+    "requested_outcome",
+    "legal_issue",
+    "event_scope",
+    "evidence_scope",
+    "document_scope"
+  ],
+  "comparison_states":[
+    "EXACT_CASE_MATCH",
+    "SAME_PROPERTY_DIFFERENT_QUESTION",
+    "SAME_QUESTION_DIFFERENT_PROPERTY",
+    "SAME_PROPERTY_DIFFERENT_DATE",
+    "RELATED_SUBQUESTIONS",
+    "SHARED_EVIDENCE_ONLY",
+    "POTENTIAL_DUPLICATE",
+    "IDENTITY_CONFLICT",
+    "CANNOT_MERGE"
+  ],
+  "merge_sequence":[
+    "NORMALIZE_CASES",
+    "COMPARE_JURISDICTION",
+    "COMPARE_PROPERTY_IDENTITY",
+    "COMPARE_REGISTRATION_SYSTEM",
+    "COMPARE_DATE_SCOPE",
+    "COMPARE_QUESTION_INTENT",
+    "COMPARE_REQUESTED_OUTCOME",
+    "COMPARE_LEGAL_ISSUE",
+    "COMPARE_EVENT_SCOPE",
+    "COMPARE_EVIDENCE",
+    "DETECT_CONFLICTS",
+    "SELECT_MERGE_OR_LINK"
+  ],
+  "merge_rules":[
+    "Exact case identity may permit consolidation of duplicate investigation work.",
+    "Same property does not mean same investigation.",
+    "Same question does not mean same property.",
+    "Same property with different target dates remains distinct unless explicitly linked as related historical/current investigations.",
+    "Shared evidence may be linked without merging the cases.",
+    "Related subquestions may share evidence and case context while retaining separate answer states.",
+    "Different registration systems must not be silently merged.",
+    "Conflicting property identifiers block automatic merge.",
+    "Different material legal issues require separate subquestion or case states."
+  ],
+  "merge_actions":[
+    "MERGE_DUPLICATE_RUNS",
+    "LINK_RELATED_RUNS",
+    "SHARE_EVIDENCE_REFERENCE",
+    "CREATE_SUBQUESTION_LINK",
+    "KEEP_SEPARATE",
+    "BLOCK_PENDING_IDENTITY_CLARIFICATION"
+  ],
+  "merge_record":[
+    "merge_id",
+    "source_run_ids",
+    "target_case_id",
+    "identity_comparison",
+    "shared_dependencies",
+    "conflicts",
+    "merge_action",
+    "reason",
+    "created_at",
+    "verification_status"
+  ],
+  "hard_stops":[
+    "Never merge cases because they share an address string alone.",
+    "Never merge different target dates without preserving the distinct historical scopes.",
+    "Never merge different legal questions merely because they concern the same property.",
+    "Never merge conflicting property identifiers.",
+    "Never use merged evidence to imply that the underlying cases have identical legal conclusions."
+  ],
+  "output_contract":[
+    "case_identity_status",
+    "merge_action",
+    "linked_runs",
+    "shared_evidence",
+    "conflicts",
+    "required_clarification",
+    "reason"
+  ]
+}
