@@ -1,0 +1,60 @@
+{
+  "schema_version":"0.1",
+  "status":"PARTIALLY_VERIFIED",
+  "verified_at":"2026-09-23",
+  "scope":"Registration of Title Act 1964 core title propositions, amendment history and judicial interpretation",
+  "primary_sources":[
+    {
+      "source":"Registration of Deeds and Title Act 2006",
+      "role":"confirmed amendment source for s.31 and registry-map provisions",
+      "official_reference":"S.I. 511/2006 commencement context"
+    },
+    {
+      "source":"Land and Conveyancing Law Reform Act 2009",
+      "role":"modern property-law framework and amendments; commencement must be checked provision-by-provision"
+    }
+  ],
+  "case_law_review":[
+    {
+      "case":"Reidy v The Governor and Company of Bank of Ireland [2023] IECA 212",
+      "court_source":"https://www.courts.ie/acc/alfresco/32580a19-5d68-457d-b29a-672d66d9470e/%5B2023%5D%20IECA%20212%20Reidy%20v.%20the%20Governor%20and%20Company%20of%20Bank%20of%20Ireland.pdf/pdf",
+      "relevance":"Court of Appeal discussion of s.31 and the conclusiveness of the register.",
+      "status":"RELEVANT_CASE_IDENTIFIED"
+    },
+    {
+      "case":"Recent Irish appellate/High Court authorities concerning registered charges and s.31",
+      "source_role":"secondary case-law index used for discovery only",
+      "status":"CASES_IDENTIFIED_REQUIRES_PRIMARY_JUDGMENT_REVIEW"
+    }
+  ],
+  "amendment_review":[
+    {
+      "instrument":"Registration of Deeds and Title Act 2006",
+      "finding":"Section 4(2) substituted s.31 of the 1964 Act with effect from 4 November 2006.",
+      "status":"VERIFIED"
+    },
+    {
+      "instrument":"Registration of Deeds and Title Act 2006",
+      "finding":"Section 61 substituted s.84 of the 1964 Act concerning registry maps.",
+      "status":"VERIFIED"
+    },
+    {
+      "instrument":"Land and Conveyancing Law Reform Act 2009",
+      "finding":"The Act expressly defines the 1964 Act and contains amendments/repeals affecting land law; commencement is subject to ministerial orders under s.2.",
+      "status":"SOURCE_VERIFIED_COMMENCEMENT_REVIEW_REQUIRED"
+    }
+  ],
+  "legal_effect_notes":[
+    "Section 31 is not an unrestricted statement that every factual or physical aspect of property is conclusively established by a folio.",
+    "The statutory fraud/mistake and rectification framework remains material.",
+    "A registry map should not be presented as conclusively determining every physical boundary question.",
+    "Case law can explain the operation of statutory conclusiveness but does not itself amend the statute."
+  ],
+  "remaining_work":[
+    "Review the full text and commencement history of each amendment affecting the exact propositions.",
+    "Review the identified judgments in full rather than relying on summaries.",
+    "Map current procedural rules and official forms to each user-facing route.",
+    "Check historical law when a user's property event predates current rules."
+  ],
+  "publication_gate":"NOT_READY"
+}
