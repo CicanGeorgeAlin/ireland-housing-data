@@ -1,0 +1,21 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-investigation-merge-case-identity-resolver-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for determining when investigation runs are duplicates, related, or must remain separate.",
+  "core_principle":"CASE IDENTITY REQUIRES PROPERTY, TIME, QUESTION AND SCOPE CONSISTENCY WHERE THOSE DIMENSIONS ARE MATERIAL.",
+  "minimum_identity":[
+    "jurisdiction",
+    "property_scope_when_material",
+    "time_scope_when_material",
+    "question_intent",
+    "requested_outcome"
+  ],
+  "duplicate_rule":"Runs may be consolidated only where the material identity and scope dimensions are compatible and no unresolved identity conflict exists.",
+  "relationship_rule":"Related investigations may share evidence references without becoming one legal answer.",
+  "historical_rule":"Different target dates remain distinct scopes even when the property is identical.",
+  "address_rule":"An address string alone is not sufficient to establish case identity where multiple properties could match.",
+  "conflict_rule":"Conflicting material property identifiers prevent automatic merge.",
+  "verification_boundary":"Case merging determines workflow identity and shared dependencies; it does not establish property facts or legal conclusions."
+}
