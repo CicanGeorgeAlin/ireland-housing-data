@@ -1,0 +1,30 @@
+{
+  "schema_version":"1.0",
+  "integration_id":"PROPERTY-TITLE-LIVE-UI-001",
+  "status":"INTEGRATED",
+  "ux_contract":"data/verified/property-title-live-v1-ux-contract.json",
+  "content":"data/verified/property-title-live-v1.json",
+  "pathway":"data/questions/property-title-live.json",
+  "answer_contract":"data/components/property-legal-answer.json",
+  "route_engine":"data/decision-engines/property-official-records-route.json",
+  "evidence_map":"data/evidence/property-official-record-evidence-map.json",
+  "website_entry":"property-title",
+  "routing_rules":[
+    {"intent":"general_property_title","mode":"GENERAL_INFORMATION","source":"property-title-live"},
+    {"intent":"specific_property","mode":"EVIDENCE_REQUIRED","source":"property-official-records-route"},
+    {"intent":"historical_title","mode":"HISTORICAL","source":"property-official-records-route"},
+    {"intent":"boundary_dispute","mode":"CONFLICT","source":"property-title-live + property evidence pathway"},
+    {"intent":"possessory_title","mode":"POSSESSORY_TITLE","source":"separate possession pathway"}
+  ],
+  "ui_requirements":[
+    "Use canonical answer sections.",
+    "Expose official source links.",
+    "Never display a property-specific fact without verified evidence.",
+    "Show evidence status prominently.",
+    "Preserve historical/current distinction.",
+    "Keep official route selection separate from legal conclusion."
+  ],
+  "integration_status":"READY_FOR_BROWSER_CHECK",
+  "publication_status":"GENERAL_INFORMATION_LIVE_READY",
+  "next_step":"Perform browser-level website check of the property-title pathway."
+}
