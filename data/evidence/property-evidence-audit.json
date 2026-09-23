@@ -1,0 +1,72 @@
+{
+  "id":"property-evidence-audit",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"CANONICAL_AUDIT_CONTRACT",
+  "purpose":"Provide a complete, inspectable audit trail for a property-law answer from the user's question through official evidence to the final answer.",
+  "audit_chain":[
+    "QUESTION",
+    "FACTS_SUPPLIED",
+    "PROPERTY_IDENTIFIER",
+    "OFFICIAL_RECORD_ROUTE",
+    "RETRIEVAL_EVENT",
+    "DOCUMENT_IDENTITY",
+    "EXTRACTED_FACTS",
+    "SOURCE_VERIFICATION",
+    "CANONICAL_PROPOSITION",
+    "LEGAL_RULE",
+    "LEGAL_EFFECT",
+    "CONDITIONS_AND_EXCEPTIONS",
+    "DEADLINE",
+    "OFFICIAL_PROCEDURE",
+    "ANSWER",
+    "LAST_VERIFIED"
+  ],
+  "required_fields":{
+    "question_id":"Unique question/pathway identifier.",
+    "property_identifier":"Address, folio or other identifier actually supplied/verified.",
+    "date_scope":"Current or historical date relevant to the question.",
+    "record_route":"Official retrieval route selected by the route engine.",
+    "retrieval_event_id":"Identifier for the actual retrieval event.",
+    "document_id":"Identifier for the retrieved record/document.",
+    "document_type":"Folio, title plan, official search, Registry of Deeds record, filed instrument, etc.",
+    "source_url":"Official source or retrieval destination where applicable.",
+    "retrieval_date":"Date the record was actually retrieved.",
+    "extracted_facts":"Only facts actually present in the record.",
+    "verification_state":"Current evidence state.",
+    "proposition_ids":"Canonical propositions supported by the evidence.",
+    "legal_effect":"Effect determined from applicable law, not merely document wording.",
+    "conflicts":"Conflicting evidence or unresolved inconsistencies.",
+    "missing_evidence":"Evidence still required.",
+    "answer_snapshot_id":"Versioned final answer identifier.",
+    "last_verified":"Date the answer/evidence chain was last verified."
+  },
+  "audit_rules":[
+    "Every material answer must be traceable to at least one proposition and evidence chain.",
+    "A proposition without supporting evidence cannot be presented as verified.",
+    "A retrieved document must retain retrieval date and source.",
+    "Historical evidence must retain the relevant date and legal version.",
+    "Conflicting evidence must remain visible until resolved.",
+    "If the chain breaks, the answer must downgrade to the appropriate non-definitive result.",
+    "The audit record must not expose unnecessary personal data.",
+    "Public-facing answers may show a simplified audit while retaining the full internal evidence chain."
+  ],
+  "answer_trace_examples":{
+    "registered_owner":"QUESTION -> PROPERTY_IDENTIFIER -> FOLIO_ROUTE -> FOLIO -> REGISTERED_OWNER_FACT -> PROP-PROPERTY-TITLE-001 -> LEGAL_EFFECT -> ANSWER",
+    "boundary_issue":"QUESTION -> PROPERTY_IDENTIFIER -> TITLE_PLAN/FOLIO -> MAP_FACT -> SURVEY_OR_OTHER_EVIDENCE -> PROP-PROPERTY-MAP-002 -> LEGAL_EFFECT -> ANSWER",
+    "historical_title":"QUESTION -> DATE_SCOPE -> HISTORICAL_RECORD_ROUTE -> HISTORICAL_RECORD -> FACT -> PROP-PROPERTY-REGISTRATION-003 -> HISTORICAL_LEGAL_VERSION -> ANSWER"
+  },
+  "failure_states":[
+    "PROPERTY_NOT_IDENTIFIED",
+    "OFFICIAL_ROUTE_UNKNOWN",
+    "RECORD_NOT_RETRIEVED",
+    "DOCUMENT_IDENTITY_UNVERIFIED",
+    "PROPERTY_MATCH_UNVERIFIED",
+    "FACT_NOT_SUPPORTED",
+    "PROPOSITION_UNSUPPORTED",
+    "CONFLICTING_EVIDENCE",
+    "HISTORICAL_RESEARCH_REQUIRED",
+    "PROFESSIONAL_REVIEW_REQUIRED",
+    "NOT_DETERMINABLE"
+  ]
+}
