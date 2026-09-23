@@ -1,0 +1,54 @@
+{
+  "id":"building-control-completion-validator",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"EVIDENCE_VALIDATOR_SEED",
+  "document_types":[
+    "COMMENCEMENT_NOTICE",
+    "SEVEN_DAY_NOTICE",
+    "CERTIFICATE_OF_COMPLIANCE_ON_COMPLETION",
+    "DESIGN_CERTIFICATE",
+    "ANCILLARY_CERTIFICATES",
+    "FIRE_SAFETY_CERTIFICATE",
+    "DISABILITY_ACCESS_CERTIFICATE",
+    "REGULARISATION_CERTIFICATE"
+  ],
+  "validation_chain":[
+    "document_identity",
+    "property_and_work_identity",
+    "bcms_reference",
+    "date",
+    "building_control_authority",
+    "applicable_regulatory_route",
+    "linked_documents",
+    "completion_status",
+    "consistency_check",
+    "legal_sufficiency_check"
+  ],
+  "verified_facts":[
+    "The National Building Control Office's BCMS documentation distinguishes a Commencement Notice from a Certificate of Compliance on Completion.",
+    "A Certificate of Compliance on Completion links back to the relevant Commencement/7 Day Notice reference and contains certification by the builder concerning compliance with the Building Regulations insofar as they apply.",
+    "The national building-control open-data portal contains Commencement Notice and Certificate of Compliance on Completion data submitted through BCMS for all 31 Building Control Authorities since 2014."
+  ],
+  "guardrails":[
+    "A commencement notice proves notification/registration of proposed works, not completed compliance.",
+    "A completion certificate is evidence within the building-control certification framework; it is not planning permission or proof of title.",
+    "Do not infer document authenticity solely from a user-uploaded copy; where possible reconcile the reference with the relevant official record.",
+    "Historical works require the regulatory framework applicable when the work occurred.",
+    "Conflicting dates, property identifiers or document references trigger CONFLICT rather than automatic acceptance."
+  ],
+  "result_states":[
+    "MISSING",
+    "SUPPLIED",
+    "EXTRACTED",
+    "CONSISTENT",
+    "CONFLICT",
+    "REQUIRES_OFFICIAL_VERIFICATION",
+    "PROFESSIONAL_REVIEW_REQUIRED"
+  ],
+  "sources":[
+    "turn0search13",
+    "turn0search12",
+    "turn0search0"
+  ]
+}
