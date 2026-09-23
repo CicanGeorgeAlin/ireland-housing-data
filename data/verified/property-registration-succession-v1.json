@@ -1,0 +1,84 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-registration-succession-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "scope":"General Irish registered-land succession and transmission information; not a property-specific determination.",
+  "last_verified":"2026-09-24",
+  "verified_propositions":[
+    {
+      "id":"PRS-001",
+      "claim":"On the death of a sole registered full owner, or of the survivor of several registered full owners who are not registered as tenants in common, section 61 of the Registration of Title Act 1964 provides that the personal representatives are recognised by the Registrar as having rights in respect of the land and that registered dispositions by them have the same effect as if they were registered owners.",
+      "sources":["Registration of Title Act 1964, section 61"]
+    },
+    {
+      "id":"PRS-002",
+      "claim":"The Succession Act 1965 provides that the real and personal estate of a deceased person devolves on and becomes vested in the personal representatives, who hold the estate as trustees for persons entitled by law.",
+      "sources":["Succession Act 1965, section 10"]
+    },
+    {
+      "id":"PRS-003",
+      "claim":"For registered land, an assent or transfer made by a personal representative is subject to the Registration of Title Act 1964 and its prescribed requirements.",
+      "sources":["Succession Act 1965, section 54"]
+    },
+    {
+      "id":"PRS-004",
+      "claim":"For a registered full owner who dies testate, Land Registration Rules 2012 Rules 86 and 87 provide prescribed routes involving an assent or a transfer and the relevant grant documentation.",
+      "sources":["Land Registration Rules 2012 Rules 86-87"]
+    },
+    {
+      "id":"PRS-005",
+      "claim":"For a registered full owner who dies intestate, Land Registration Rules 2012 Rules 88 and 89 provide routes for the person entitled other than the personal representative and for a personal representative claiming entitlement, with letters of administration or an official copy required as prescribed.",
+      "sources":["Land Registration Rules 2012 Rules 88-89"]
+    },
+    {
+      "id":"PRS-006",
+      "claim":"Where a person dies entitled to be registered as owner but is not yet registered, Rule 90 provides for an affidavit by the personal representative or representatives in Form 34 in addition to the requirements of the applicable Rules 86-89 route.",
+      "sources":["Land Registration Rules 2012 Rule 90"]
+    },
+    {
+      "id":"PRS-007",
+      "claim":"The death of a registered joint tenant follows a distinct survivorship registration route; Rule 94 provides for withdrawal of the deceased joint tenant's name on proof of death.",
+      "sources":["Land Registration Rules 2012 Rule 94"]
+    },
+    {
+      "id":"PRS-008",
+      "claim":"The death of the registered owner of a charge or other burden is a distinct registration pathway governed by Rule 91.",
+      "sources":["Land Registration Rules 2012 Rule 91"]
+    },
+    {
+      "id":"PRS-009",
+      "claim":"The Registration of Title Act 1964 permits a person on whom the right to be registered as owner has devolved by death or another qualifying event to exercise specified powers before registration, subject to the statutory conditions.",
+      "sources":["Registration of Title Act 1964, section 90"]
+    },
+    {
+      "id":"PRS-010",
+      "claim":"The register is generally conclusive evidence of title as appearing on the register, subject to the statutory jurisdiction concerning actual fraud or mistake and rectification.",
+      "sources":["Registration of Title Act 1964, section 31"]
+    }
+  ],
+  "critical_boundaries":[
+    "Inheritance entitlement and current registered ownership are separate answer states.",
+    "A grant of representation identifies the personal-representative authority but is not, by itself, a current folio ownership record.",
+    "A will identifies testamentary dispositions but does not by itself prove that the Land Registry register has been updated.",
+    "An assent or transfer is a succession instrument and must not be represented as a verified current register entry without checking the registration outcome.",
+    "Death of a joint tenant must not be analysed as though it were death of a sole owner or tenant in common.",
+    "Death of a mortgagee or other registered charge owner must be separated from death of the landowner.",
+    "Historical succession questions require date-specific analysis of the applicable law and registration rules."
+  ],
+  "official_routes":[
+    {
+      "authority":"Tailte Éireann",
+      "route":"Land Registration Rules 2012 and current registration forms"
+    },
+    {
+      "authority":"LandDirect",
+      "route":"Official property search and registration-record access"
+    },
+    {
+      "authority":"Irish Statute Book",
+      "route":"Primary legislation and statutory instruments"
+    }
+  ],
+  "publication_gate":"GENERAL_INFORMATION_ONLY",
+  "property_specific_evidence_gate":"A current ownership statement requires authoritative property-specific registration evidence matched to the identified property and relevant date."
+}
