@@ -1,0 +1,70 @@
+{
+  "schema_version":"0.1",
+  "status":"PARTIALLY_VERIFIED",
+  "verified_at":"2026-09-23",
+  "scope":"Current official-record and court routes for property-title-live",
+  "official_routes":[
+    {
+      "route_id":"LANDDIRECT_MAP_TO_FOLIO",
+      "authority":"Tailte Éireann",
+      "source":"Property Registration Services",
+      "verified":"YES",
+      "purpose":"Locate a registered property and identify its folio."
+    },
+    {
+      "route_id":"COPY_FOLIO",
+      "authority":"Tailte Éireann",
+      "source":"Search and Copy Services",
+      "verified":"YES",
+      "purpose":"Obtain a plain or certified copy of a folio."
+    },
+    {
+      "route_id":"COPY_FOLIO_TITLE_PLAN",
+      "authority":"Tailte Éireann",
+      "source":"Search and Copy Services",
+      "verified":"YES",
+      "purpose":"Obtain a folio with title plan/map."
+    },
+    {
+      "route_id":"OFFICIAL_SEARCH",
+      "authority":"Tailte Éireann",
+      "source":"Land Registration Rules official-search procedure",
+      "verified":"YES",
+      "purpose":"Official searches concerning names, registered parcels/interests and specified register/map entries."
+    },
+    {
+      "route_id":"REGISTRY_OF_DEEDS",
+      "authority":"Tailte Éireann",
+      "source":"Property Registration Services",
+      "verified":"YES",
+      "purpose":"Search records concerning deeds/conveyances affecting unregistered property."
+    },
+    {
+      "route_id":"COURT_APPLICATION_OR_APPEAL",
+      "authority":"Courts Service",
+      "source":"Order 96, Superior Courts",
+      "verified":"YES",
+      "purpose":"Applications or appeals to the Court under the Registration of Title Act 1964 and related registration directions."
+    }
+  ],
+  "important_limits":[
+    "A map search identifies registration/folio information but does not by itself establish every legal interest.",
+    "A folio is evidence of registered title subject to statutory qualifications and the full legal record.",
+    "A title plan should not be presented as a universal determination of physical boundaries.",
+    "A Registry of Deeds search records the existence of deeds/conveyances; legal effect requires examination of the relevant documents.",
+    "A court route is procedural and does not itself determine the merits of an individual dispute."
+  ],
+  "current_official_source_refs":[
+    "https://tailte.ie/services/property-registration/",
+    "https://tailte.ie/services/copy-services/",
+    "https://tailte.ie/lr-rule-160-official-search/",
+    "https://courts.ie/court-rules/full-court-rule?url=Order-96-Superior-The-Registration-of-Title-Act-1964"
+  ],
+  "remaining":[
+    "Map each route to the exact current form/rule used by the website.",
+    "Verify current fees and any procedural changes immediately before publication.",
+    "Complete case-law review for propositions used in user-facing answers.",
+    "Complete amendment/commencement matrix for every relied-upon provision."
+  ],
+  "publication_gate":"NOT_READY"
+}
