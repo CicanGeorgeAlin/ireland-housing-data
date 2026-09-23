@@ -1,0 +1,78 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Validate that the property fixture governance audit log is append-only, traceable, chronologically coherent and separated from legal evidence and publication status.",
+  "audit_log": "data/registries/property-fixture-governance-audit-log.json",
+  "validation_sequence": [
+    "LOAD_AUDIT_LOG",
+    "VERIFY_EVENT_IDENTITY",
+    "VERIFY_EVENT_TYPE",
+    "VERIFY_SOURCE_REFERENCES",
+    "VERIFY_CHRONOLOGICAL_ORDER",
+    "VERIFY_IMPACT_LINKAGE",
+    "VERIFY_REVALIDATION_LINKAGE",
+    "VERIFY_CLOSURE_LINKAGE",
+    "VERIFY_APPEND_ONLY_RULE",
+    "VERIFY_HISTORICAL_IMMUTABILITY",
+    "VERIFY_LEGAL_EVIDENCE_SEPARATION",
+    "VERIFY_PUBLICATION_SEPARATION",
+    "RECORD_VALIDATION"
+  ],
+  "checks": [
+    {
+      "check_id": "PFGAL-001",
+      "name": "Event identity",
+      "requirement": "Every recorded event has a unique event ID and recorded date.",
+      "result": "PASS"
+    },
+    {
+      "check_id": "PFGAL-002",
+      "name": "Traceability",
+      "requirement": "Events reference the relevant fixture, impact event, queue item, validation run or source contract where applicable.",
+      "result": "PASS"
+    },
+    {
+      "check_id": "PFGAL-003",
+      "name": "Chronological coherence",
+      "requirement": "The recorded sequence reflects the governance progression without silently reversing state.",
+      "result": "PASS"
+    },
+    {
+      "check_id": "PFGAL-004",
+      "name": "Append-only protection",
+      "requirement": "Historical audit entries are retained rather than overwritten by later status changes.",
+      "result": "PASS"
+    },
+    {
+      "check_id": "PFGAL-005",
+      "name": "Historical immutability",
+      "requirement": "Audit history cannot be used to rewrite historical validation results.",
+      "result": "PASS"
+    },
+    {
+      "check_id": "PFGAL-006",
+      "name": "Legal evidence separation",
+      "requirement": "Audit events are not treated as proof of ownership, title or other property facts.",
+      "result": "PASS"
+    },
+    {
+      "check_id": "PFGAL-007",
+      "name": "Publication separation",
+      "requirement": "Audit-log success cannot independently make a pathway publication-ready.",
+      "result": "PASS"
+    }
+  ],
+  "result": {
+    "validation_status": "PASSED",
+    "audit_log_valid": true,
+    "historical_immutability": true,
+    "legal_evidence_status": "UNCHANGED",
+    "publication_status": "UNCHANGED"
+  },
+  "guardrails": [
+    "This validates audit-log governance only.",
+    "It does not verify Irish property law.",
+    "It does not represent live official-record retrieval.",
+    "It does not upgrade any property pathway to publication-ready."
+  ]
+}
