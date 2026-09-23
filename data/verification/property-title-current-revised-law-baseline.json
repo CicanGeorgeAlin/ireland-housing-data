@@ -1,0 +1,49 @@
+{
+  "schema_version":"0.1",
+  "status":"SOURCE_VERIFIED_BASELINE",
+  "verified_at":"2026-09-23",
+  "purpose":"Record the current revised-law baseline before provision-level publication decisions.",
+  "sources":[
+    {
+      "authority":"Irish Statute Book",
+      "source":"Registration of Title Act 1964 revised record",
+      "url":"https://www.irishstatutebook.ie/eli/isbc/1964_16.html",
+      "source_date":"updated 2026-06-18",
+      "role":"current revised-law baseline"
+    },
+    {
+      "authority":"Irish Statute Book",
+      "source":"Registration of Deeds and Title Act 2006 revised record",
+      "url":"https://www.irishstatutebook.ie/eli/isbc/2006_12.html",
+      "source_date":"updated 2026-06-18",
+      "role":"current amendment/commencement baseline"
+    },
+    {
+      "authority":"Tailte Éireann",
+      "source":"Property Registration Services",
+      "url":"https://tailte.ie/services/property-registration/",
+      "role":"current official administrative route"
+    }
+  ],
+  "verified_baseline":[
+    "The Registration of Title Act 1964 commenced as a whole on 1 January 1967.",
+    "The current revised Act record identifies amendments and other effects, including amendments associated with the Registration of Deeds and Title Act 2006 and Land and Conveyancing Law Reform Act 2009.",
+    "The Registration of Deeds and Title Act 2006 has staged commencement dates and its current revised record records those commencement effects.",
+    "The 2006 Act amended sections 31, 32, 33, 84 and 85 of the 1964 Act, among other provisions.",
+    "Tailte Éireann currently maintains the Land Register, Registry of Deeds and Registry map and provides Landdirect access to Land Registry records."
+  ],
+  "current_law_rule":"For publication, use the current revised statutory text together with its amendment and commencement tables; do not rely on the original enacted text alone.",
+  "historical_rule":"Where a user's property event occurred in the past, resolve the law applicable on that date rather than automatically applying today's text.",
+  "remaining":[
+    "Provision-level amendment and commencement matrix for each property-title proposition.",
+    "Full judicial review for each proposition.",
+    "Current form/rule mapping for each official-record route.",
+    "Publication-level legal verification."
+  ],
+  "publication_gate":"NOT_READY",
+  "guardrails":[
+    "Current revised text is a baseline, not proof that every proposition has been fully verified.",
+    "No live property record was retrieved.",
+    "No individual ownership conclusion is made."
+  ]
+}
