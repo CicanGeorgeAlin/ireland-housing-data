@@ -119,6 +119,15 @@
         "property-answer-reverification-change-detection",
         "property-evidence-fact-legal-effect-boundary"
       ]
+    },
+    {
+      "stage": "ANSWER_STATE_DECISION",
+      "routes": [
+        "property-answer-state-machine",
+        "property-answer-assembly-snapshot",
+        "property-evidence-audit-trail",
+        "property-answer-reverification-change-detection"
+      ]
     }
   ],
   "event_model": [
@@ -169,7 +178,8 @@
     "property-evidence-fact-legal-effect-boundary",
     "property-answer-assembly-snapshot",
     "property-answer-reverification-change-detection",
-    "property-evidence-audit-trail"
+    "property-evidence-audit-trail",
+    "property-answer-state-machine"
   ],
   "answer_sequence": [
     "QUESTION",
