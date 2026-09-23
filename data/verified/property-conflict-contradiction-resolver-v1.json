@@ -1,0 +1,29 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-conflict-contradiction-resolver-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified control contract for handling conflicting property evidence and legal/procedural propositions.",
+  "core_principle":"CONFLICT DETECTED → SCOPE → MATCH → AUTHORITY → TIME/VERSION → RESOLUTION OR EXPLICIT UNCERTAINTY",
+  "required_checks":[
+    "property identity",
+    "document identity",
+    "event and registration dates",
+    "current versus historical scope",
+    "source type and authority",
+    "commencement/amendment/transitional rules",
+    "superseding record where applicable",
+    "special rule or exception",
+    "case-law proposition where material"
+  ],
+  "publication_rule":"A material unresolved conflict blocks a definitive property-specific answer.",
+  "allowed_resolution_bases":[
+    "verified property match",
+    "verified date scope",
+    "authoritative source hierarchy",
+    "legal commencement/version",
+    "later record with established superseding effect",
+    "specific legal rule or court determination"
+  ],
+  "verification_boundary":"This resolver identifies and governs contradictions; it does not manufacture a resolution where the evidence or law does not support one."
+}
