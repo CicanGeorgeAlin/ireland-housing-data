@@ -1,0 +1,55 @@
+{
+  "schema_version":"0.1",
+  "status":"PARTIALLY_VERIFIED",
+  "manifest_id":"PROPERTY-TITLE-VERIFICATION-001",
+  "verified_at":"2026-09-23",
+  "purpose":"Consolidate the substantive legal, case-law, procedural and temporal verification state of the property-title pathway.",
+  "verified_layers":{
+    "core_statute":"VERIFIED",
+    "major_amendment_history":"PARTIALLY_VERIFIED",
+    "commencement":"PARTIALLY_VERIFIED",
+    "current_revised_text":"VERIFIED_BASELINE",
+    "official_property_record_routes":"VERIFIED",
+    "current_forms_and_procedures":"VERIFIED_WITH_RULE_HISTORY_CONTEXT",
+    "s31_case_law":"PRIMARY_AUTHORITIES_REVIEWED",
+    "registry_map_boundary_case_law":"PRIMARY_AUTHORITY_IDENTIFIED_MORE_RESEARCH_REQUIRED",
+    "possessory_title_procedure":"VERIFIED_WITH_HISTORICAL_CONTEXT",
+    "possessory_title_case_law":"PARTIAL",
+    "historical_version_resolution":"FRAMEWORK_ESTABLISHED"
+  },
+  "core_propositions":{
+    "PROP-PROPERTY-TITLE-001":"PARTIALLY_VERIFIED",
+    "PROP-PROPERTY-MAP-002":"PARTIALLY_VERIFIED",
+    "PROP-PROPERTY-REGISTRATION-003":"PARTIALLY_VERIFIED"
+  },
+  "evidence_chain":{
+    "primary_legislation":"PRESENT",
+    "amendments":"PARTIAL",
+    "commencement":"PARTIAL",
+    "case_law":"PARTIAL",
+    "official_procedure":"PRESENT",
+    "official_forms":"PRESENT",
+    "live_property_evidence":"ABSENT"
+  },
+  "publication_gate":{
+    "status":"NOT_READY",
+    "blocking_reasons":[
+      "Provision-level amendment and commencement review is incomplete for all relied-upon propositions.",
+      "Some proposition-specific case-law searches remain incomplete.",
+      "No live property record has been retrieved for an individual-property answer.",
+      "Final publication-level legal review has not been completed."
+    ]
+  },
+  "next_research_priority":[
+    "Complete amendment/commencement matrix for remaining relied-upon provisions.",
+    "Complete proposition-level review of possessory-title authorities.",
+    "Complete dedicated registry-map/boundary case-law search.",
+    "Then perform final legal-source audit before publication."
+  ],
+  "guardrails":[
+    "Technical validation is separate from legal verification.",
+    "No individual ownership or boundary conclusion is generated without actual official evidence.",
+    "Historical and current law remain separate.",
+    "No publication-ready label is inferred from partial verification."
+  ]
+}
