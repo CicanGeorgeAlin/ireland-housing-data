@@ -1,0 +1,34 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-human-readable-legal-answer-composer-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified presentation contract for turning the property's evidence and legal analysis into a citizen-facing answer.",
+  "answer_principle":"Explain the established facts, the applicable law, the legal effect, the limits of the evidence, and the next official route without overstating certainty.",
+  "minimum_source_chain":[
+    "property question classification",
+    "property/date scope",
+    "official evidence route",
+    "property/document match",
+    "fact extraction",
+    "legal regime and provision",
+    "authority chain",
+    "conditions/exceptions",
+    "procedure/authority",
+    "deadline where applicable",
+    "audit trail"
+  ],
+  "required_visible_sections":[
+    "Answer",
+    "What the evidence shows",
+    "What the law says",
+    "What this means",
+    "What is not established",
+    "Who handles the next step",
+    "Deadline",
+    "Next step",
+    "Official sources"
+  ],
+  "publication_rule":"If a required material dependency is unresolved, publish only the supported portion and clearly label the limitation.",
+  "verification_boundary":"This layer controls presentation and traceability; it does not itself establish property ownership, title, boundaries, easements, charges, succession or other property-specific facts."
+}
