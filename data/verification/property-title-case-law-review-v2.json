@@ -1,0 +1,40 @@
+{
+  "schema_version":"0.1",
+  "status":"PARTIALLY_VERIFIED",
+  "verified_at":"2026-09-23",
+  "scope":"Primary judicial authorities relevant to registered title and rectification",
+  "authorities":[
+    {
+      "case":"Reidy v The Governor and Company of Bank of Ireland [2023] IECA 212",
+      "court":"Court of Appeal",
+      "source":"https://www.courts.ie/acc/alfresco/32580a19-5d68-457d-b29a-672d66d9470e/%5B2023%5D%20IECA%20212%20Reidy%20v.%20the%20Governor%20and%20Company%20of%20Bank%20of%20Ireland.pdf/pdf",
+      "proposition":"s.31 conclusiveness of registered title",
+      "status":"PRIMARY_JUDGMENT_REVIEWED"
+    },
+    {
+      "case":"Allied Irish Banks plc v Property Registration Authority & Ors [2022] IEHC 232",
+      "court":"High Court (Land Registry)",
+      "source":"https://www.courts.ie/acc/alfresco/684bd6c9-4614-4288-81ae-f7fc8b39b9e5/2022_IEHC_232.pdf/pdf",
+      "proposition":"s.31, rectification and registration of a charge discharged in error",
+      "status":"PRIMARY_JUDGMENT_IDENTIFIED_AND_REVIEWED_FOR_SCOPE"
+    }
+  ],
+  "verified_observations":[
+    "The Court of Appeal in Reidy identifies s.31 as the statutory basis for the conclusiveness of the register and notes its substitution by s.4(2) of the 2006 Act with effect from 4 November 2006.",
+    "The High Court in Allied Irish Banks v Property Registration Authority considered an application under s.31 and Order 96 concerning reinstatement of a charge discharged in error.",
+    "The judicial authorities confirm that s.31 must be read together with the statutory court/rectification framework rather than treated as an absolute rule without exceptions."
+  ],
+  "limits":[
+    "These cases do not establish the facts of any particular property.",
+    "They do not establish that every boundary issue is resolved by the folio.",
+    "They do not replace provision-by-provision statutory verification.",
+    "A case identified for one proposition must not be generalized to another proposition without analysis."
+  ],
+  "remaining_case_law":[
+    "Dedicated boundary/registry-map authorities",
+    "Dedicated possessory-title authorities",
+    "Dedicated historical-registration authorities",
+    "Any authority materially affecting current official-search procedure"
+  ],
+  "publication_gate":"NOT_READY"
+}
