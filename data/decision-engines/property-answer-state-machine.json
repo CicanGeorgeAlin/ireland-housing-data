@@ -1,0 +1,158 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-answer-state-machine",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Determine the permitted publication state of a property answer from evidence sufficiency, property/date matching, legal-source completeness, limitations and verification history.",
+  "states":[
+    "QUESTION_UNRESOLVED",
+    "PROPERTY_UNRESOLVED",
+    "DATE_SCOPE_UNRESOLVED",
+    "EVIDENCE_REQUIRED",
+    "EVIDENCE_RETRIEVAL_IN_PROGRESS",
+    "PROPERTY_MATCH_INCOMPLETE",
+    "DATE_MATCH_INCOMPLETE",
+    "FACTS_ESTABLISHED",
+    "LEGAL_ANALYSIS_REQUIRED",
+    "LEGAL_ANALYSIS_INCOMPLETE",
+    "ANSWER_PARTIALLY_DETERMINED",
+    "VERIFIED_WITH_LIMITATIONS",
+    "VERIFIED_ANSWER",
+    "REQUIRES_REVERIFICATION",
+    "NOT_DETERMINABLE"
+  ],
+  "input_dependencies":[
+    "question",
+    "property_identifier",
+    "date_scope",
+    "registration_status",
+    "evidence_route",
+    "evidence_records",
+    "property_match",
+    "date_match",
+    "observed_facts",
+    "legal_sources",
+    "legal_propositions",
+    "legal_effects",
+    "conditions_and_exceptions",
+    "unestablished_matters",
+    "reverification_state",
+    "audit_integrity"
+  ],
+  "transition_rules":[
+    {
+      "from":"QUESTION_UNRESOLVED",
+      "condition":"question sufficiently classified",
+      "to":"PROPERTY_UNRESOLVED"
+    },
+    {
+      "from":"PROPERTY_UNRESOLVED",
+      "condition":"property identifier or sufficient property scope established",
+      "to":"DATE_SCOPE_UNRESOLVED"
+    },
+    {
+      "from":"DATE_SCOPE_UNRESOLVED",
+      "condition":"current or historical target date established",
+      "to":"EVIDENCE_REQUIRED"
+    },
+    {
+      "from":"EVIDENCE_REQUIRED",
+      "condition":"official route selected",
+      "to":"EVIDENCE_RETRIEVAL_IN_PROGRESS"
+    },
+    {
+      "from":"EVIDENCE_RETRIEVAL_IN_PROGRESS",
+      "condition":"required source unavailable or not retrieved",
+      "to":"EVIDENCE_REQUIRED"
+    },
+    {
+      "from":"EVIDENCE_RETRIEVAL_IN_PROGRESS",
+      "condition":"record retrieved but property match unresolved",
+      "to":"PROPERTY_MATCH_INCOMPLETE"
+    },
+    {
+      "from":"EVIDENCE_RETRIEVAL_IN_PROGRESS",
+      "condition":"historical proposition and date match unresolved",
+      "to":"DATE_MATCH_INCOMPLETE"
+    },
+    {
+      "from":"EVIDENCE_RETRIEVAL_IN_PROGRESS",
+      "condition":"facts extracted and evidence sufficient for fact layer",
+      "to":"FACTS_ESTABLISHED"
+    },
+    {
+      "from":"FACTS_ESTABLISHED",
+      "condition":"applicable law identified but legal analysis incomplete",
+      "to":"LEGAL_ANALYSIS_INCOMPLETE"
+    },
+    {
+      "from":"FACTS_ESTABLISHED",
+      "condition":"legal proposition and effect established with material conditions captured",
+      "to":"VERIFIED_WITH_LIMITATIONS"
+    },
+    {
+      "from":"VERIFIED_WITH_LIMITATIONS",
+      "condition":"all material limitations resolved and audit complete",
+      "to":"VERIFIED_ANSWER"
+    },
+    {
+      "from":"VERIFIED_ANSWER",
+      "condition":"material current-source, legal-source or record change detected",
+      "to":"REQUIRES_REVERIFICATION"
+    },
+    {
+      "from":"REQUIRES_REVERIFICATION",
+      "condition":"reverification completed without material change",
+      "to":"VERIFIED_ANSWER"
+    },
+    {
+      "from":"REQUIRES_REVERIFICATION",
+      "condition":"material change confirmed and answer rebuilt",
+      "to":"VERIFIED_WITH_LIMITATIONS"
+    }
+  ],
+  "publication_gates":{
+    "VERIFIED_ANSWER":[
+      "property match verified where property-specific",
+      "date scope verified",
+      "required evidence retrieved",
+      "material facts verified",
+      "applicable legal sources identified",
+      "legal effect assessed",
+      "material conditions captured",
+      "audit integrity complete",
+      "no unresolved material dependency"
+    ],
+    "VERIFIED_WITH_LIMITATIONS":[
+      "core proposition established",
+      "limitations explicitly disclosed",
+      "no unsupported conclusion presented as fact",
+      "audit chain sufficient"
+    ],
+    "ANSWER_PARTIALLY_DETERMINED":[
+      "some material facts established",
+      "one or more material dependencies unresolved",
+      "unresolved matters explicitly identified"
+    ],
+    "NOT_DETERMINABLE":[
+      "required evidence unavailable or insufficient",
+      "or property/date identity cannot be established",
+      "or applicable legal effect cannot responsibly be determined"
+    ]
+  },
+  "hard_stops":[
+    "No property-specific verified answer without verified property match.",
+    "No historical verified answer without adequate date scope and date matching.",
+    "No definitive legal-effect statement without an applicable authoritative legal source.",
+    "No verified answer where a material unresolved dependency is concealed.",
+    "No transition to VERIFIED_ANSWER while audit integrity is incomplete."
+  ],
+  "result_contract":[
+    "state",
+    "reason",
+    "established_facts",
+    "unestablished_matters",
+    "required_next_step",
+    "verification_date"
+  ]
+}
