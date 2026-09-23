@@ -1,0 +1,46 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Validate the candidate fixture intake contract and ensure submission requirements cannot be bypassed.",
+  "intake_contract": "data/tests/property-fixture-candidate-intake.json",
+  "validation_sequence": [
+    "LOAD_INTAKE_CONTRACT",
+    "VERIFY_REQUIRED_FIELDS",
+    "VERIFY_ACCEPTED_FIXTURE_TYPES",
+    "VERIFY_ADMISSION_STATES",
+    "VERIFY_CURRENT_NOT_SUBMITTED_STATE",
+    "VERIFY_PROVENANCE_REQUIREMENT",
+    "VERIFY_PRIVACY_AND_MEANING_REQUIREMENTS",
+    "VERIFY_PRODUCTION_ISOLATION",
+    "VERIFY_NO_INVENTION_GUARDRAIL",
+    "VERIFY_REVALIDATION_BLOCK",
+    "RECORD_VALIDATION"
+  ],
+  "checks": [
+    {"check_id":"PFCIV-001","name":"Required fields","result":"PASS"},
+    {"check_id":"PFCIV-002","name":"Fixture-type integrity","result":"PASS"},
+    {"check_id":"PFCIV-003","name":"Admission-state integrity","result":"PASS"},
+    {"check_id":"PFCIV-004","name":"Current intake state","result":"PASS"},
+    {"check_id":"PFCIV-005","name":"Provenance requirement","result":"PASS"},
+    {"check_id":"PFCIV-006","name":"Privacy/meaning requirements","result":"PASS"},
+    {"check_id":"PFCIV-007","name":"Production isolation","result":"PASS"},
+    {"check_id":"PFCIV-008","name":"No-invention safeguard","result":"PASS"},
+    {"check_id":"PFCIV-009","name":"Revalidation block","result":"PASS"}
+  ],
+  "result": {
+    "validation_status":"PASSED",
+    "intake_contract_valid":true,
+    "current_intake_state":"NOT_SUBMITTED",
+    "admission_allowed":false,
+    "dependent_revalidation_allowed":false,
+    "legal_source_status":"UNCHANGED",
+    "publication_status":"UNCHANGED"
+  },
+  "guardrails": [
+    "Structural validation only.",
+    "No candidate fixture was invented or submitted.",
+    "No live official property record was retrieved.",
+    "No legal proposition was upgraded.",
+    "No publication status was upgraded."
+  ]
+}
