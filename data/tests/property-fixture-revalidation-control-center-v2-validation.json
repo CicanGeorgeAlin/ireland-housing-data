@@ -1,0 +1,46 @@
+{
+  "schema_version": "0.2",
+  "status": "STRUCTURAL",
+  "purpose": "Validate the integrated revalidation control center v2 and ensure candidate intake, admission and dependent revalidation states cannot be inferred prematurely.",
+  "control_center": "data/registries/property-fixture-revalidation-control-center-v2.json",
+  "validation_sequence": [
+    "LOAD_CONTROL_CENTER",
+    "VERIFY_PREVIOUS_VERSION_LINK",
+    "VERIFY_CANDIDATE_INTAKE_LINK",
+    "VERIFY_ADMISSION_LINK",
+    "VERIFY_REVALIDATION_LINK",
+    "VERIFY_CURRENT_STATE",
+    "VERIFY_NEXT_ACTION",
+    "VERIFY_STATE_TRANSITION_RULES",
+    "VERIFY_NO_PREMATURE_TRANSITION",
+    "VERIFY_LEGAL_AND_PUBLICATION_SEPARATION",
+    "RECORD_VALIDATION"
+  ],
+  "checks": [
+    {"check_id":"PFRCCV2-001","name":"Version linkage","result":"PASS"},
+    {"check_id":"PFRCCV2-002","name":"Candidate-intake linkage","result":"PASS"},
+    {"check_id":"PFRCCV2-003","name":"Admission linkage","result":"PASS"},
+    {"check_id":"PFRCCV2-004","name":"Revalidation linkage","result":"PASS"},
+    {"check_id":"PFRCCV2-005","name":"Current-state integrity","result":"PASS"},
+    {"check_id":"PFRCCV2-006","name":"Next-action integrity","result":"PASS"},
+    {"check_id":"PFRCCV2-007","name":"Transition-rule integrity","result":"PASS"},
+    {"check_id":"PFRCCV2-008","name":"No-premature-transition safeguard","result":"PASS"},
+    {"check_id":"PFRCCV2-009","name":"Legal/publication separation","result":"PASS"}
+  ],
+  "result": {
+    "validation_status":"PASSED",
+    "control_center_valid":true,
+    "candidate_intake":"NOT_SUBMITTED",
+    "admission_gate":"BLOCKED",
+    "revalidation":"BLOCKED",
+    "closure":"NOT_READY",
+    "publication":"NOT_READY"
+  },
+  "guardrails": [
+    "Structural validation only.",
+    "No candidate fixture was invented or submitted.",
+    "No live official property record was retrieved.",
+    "No legal proposition was upgraded.",
+    "No publication status was upgraded."
+  ]
+}
