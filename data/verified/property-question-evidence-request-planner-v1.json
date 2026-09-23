@@ -1,0 +1,25 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-question-evidence-request-planner-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for converting an evidence gap into an ordered official retrieval plan.",
+  "core_principle":"MISSING MATERIAL → PURPOSE → OFFICIAL SOURCE → IDENTIFIER → ROUTE → ALTERNATIVE → STOPPING CONDITION",
+  "required_plan_fields":[
+    "missing evidence item",
+    "why it is needed",
+    "conclusion it would support",
+    "preferred official source",
+    "official route",
+    "property/date identifiers",
+    "access condition where material",
+    "alternative route if valid",
+    "expected evidential result"
+  ],
+  "planning_rule":"Only request evidence that can resolve an identified material gap.",
+  "identity_rule":"Resolve property identity before selecting a property-specific record where identity is uncertain.",
+  "historical_rule":"Historical questions require date-specific evidence; current records cannot silently substitute for historical proof.",
+  "route_rule":"A retrieval route must be linked to the function it serves and must not be presented as evidence already obtained.",
+  "publication_rule":"The plan may explain what is needed next, but it cannot upgrade an answer's verification status until the evidence is actually retrieved and validated.",
+  "verification_boundary":"This planner determines what should be retrieved; it does not retrieve or establish the missing evidence itself."
+}
