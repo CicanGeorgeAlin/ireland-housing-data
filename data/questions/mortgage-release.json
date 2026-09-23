@@ -1,0 +1,54 @@
+{
+  "id":"mortgage-release",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "question":"Is this mortgage or charge still registered, and how is it released?",
+  "pipeline":[
+    "identify-property",
+    "retrieve-current-folio",
+    "identify-charge-entry",
+    "identify-charge-holder",
+    "check-charge-date",
+    "check-current-registration-status",
+    "identify-release-or-cancellation-evidence",
+    "identify-required-tailte-procedure",
+    "check-priority_or_other_registered_interests",
+    "show-evidence",
+    "official-route"
+  ],
+  "result_types":[
+    "CHARGE_REGISTERED",
+    "CHARGE_RELEASED",
+    "CANCELLATION_ROUTE_IDENTIFIED",
+    "TRANSFER_ROUTE_IDENTIFIED",
+    "CURRENT_STATUS_NOT_DETERMINABLE",
+    "HISTORICAL_CHARGE_RESEARCH_REQUIRED",
+    "UNDERLYING_DOCUMENT_REQUIRED"
+  ],
+  "evidence":[
+    "current folio entry",
+    "charge instrument",
+    "release/discharge documentation",
+    "Tailte Éireann registration application",
+    "historical folio where date-specific status is required"
+  ],
+  "guardrails":[
+    "A current folio entry is evidence of the registered position, not necessarily the outstanding loan balance.",
+    "Do not infer that a debt is paid merely because a borrower says it was repaid.",
+    "Do not infer that a charge is cancelled merely because a loan account is closed.",
+    "Do not infer that a charge is current solely from an old document without checking the register.",
+    "Release, cancellation and transfer are distinct registration outcomes."
+  ],
+  "official_forms":[
+    "Form 56",
+    "Form 57A",
+    "Form 57B",
+    "Form 58"
+  ],
+  "sources":[
+    "SRC-TE-CHARGE-RELEASE",
+    "SRC-TE-RULE110",
+    "SRC-TE-RULE111",
+    "SRC-TE-RULE112"
+  ]
+}
