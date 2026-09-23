@@ -1,0 +1,57 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-registration-historical-state-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "scope":"General framework for reconstructing historical registered-property states; not a property-specific historical title determination.",
+  "last_verified":"2026-09-24",
+  "verified_propositions":[
+    {
+      "id":"PRS-H-001",
+      "claim":"The register is conclusive evidence of the title of the owner as appearing on the register, subject to the statutory exceptions and rectification jurisdiction.",
+      "source":"Registration of Title Act 1964, section 31"
+    },
+    {
+      "id":"PRS-H-002",
+      "claim":"The statutory description of registered land by reference to registry maps is not, except as provided by the Act, conclusive as to boundaries or extent.",
+      "source":"Registration of Title Act 1964, section 85 as substituted by Registration of Deeds and Title Act 2006"
+    },
+    {
+      "id":"PRS-H-003",
+      "claim":"Tailte Éireann maintains the Land Registry folios and maps as a public record and provides copy/search services; filed instruments may provide additional evidence of the documents underlying a completed dealing, subject to access rules.",
+      "source":"Tailte Éireann Search and Copy Services"
+    },
+    {
+      "id":"PRS-H-004",
+      "claim":"Registry of Deeds records can establish that documents were executed and registered, but the Registry of Deeds does not retain the deeds themselves; determining their effect may require examination of the deeds.",
+      "source":"Tailte Éireann Search and Copy Services"
+    }
+  ],
+  "historical_answer_boundary":{
+    "direct_record":"A contemporaneous or officially identifiable historical register entry is direct evidence of the registered state within its scope.",
+    "reconstruction":"Where the exact target-date record is unavailable, a historical state may sometimes be reconstructed from sequential official records and documents, but the answer must label the reconstruction rather than presenting it as a direct record.",
+    "unknown":"If the evidence cannot establish the state at the target date, the answer must remain unresolved."
+  },
+  "public_answer_contract":[
+    "TARGET_DATE",
+    "PROPERTY_IDENTITY",
+    "REGISTERED_STATE",
+    "TIMELINE",
+    "DIRECT_EVIDENCE",
+    "RECONSTRUCTED_FACTS",
+    "APPLICABLE_LAW",
+    "LATER_EVENTS",
+    "CURRENT_STATE",
+    "LIMITATIONS",
+    "OFFICIAL_ROUTE",
+    "NEXT_STEP",
+    "LAST_VERIFIED"
+  ],
+  "official_sources":[
+    "Tailte Éireann Search and Copy Services",
+    "Tailte Éireann Land Registry",
+    "Tailte Éireann Registry of Deeds",
+    "Irish Statute Book"
+  ],
+  "publication_gate":"GENERAL_INFORMATION_ONLY",
+  "property_specific_gate":"Historical property conclusions require property identity, relevant date, authoritative records and a documented evidence chain."
+}
