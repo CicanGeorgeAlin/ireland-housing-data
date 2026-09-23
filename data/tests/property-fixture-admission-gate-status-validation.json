@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Validate the authoritative operational status of the controlled property fixture admission gate.",
+  "status_record": "data/registries/property-fixture-admission-gate-status.json",
+  "validation_sequence": [
+    "LOAD_STATUS",
+    "VERIFY_GATE_IDENTITY",
+    "VERIFY_GATE_OPERATIONAL_STATE",
+    "VERIFY_LATEST_VALIDATION",
+    "VERIFY_BLOCKING_REASON",
+    "VERIFY_NEXT_ACTION",
+    "VERIFY_EXECUTION_PERMISSION",
+    "VERIFY_GUARDRAILS",
+    "RECORD_VALIDATION"
+  ],
+  "checks": [
+    {"check_id":"PFAGSV-001","name":"Gate identity","result":"PASS"},
+    {"check_id":"PFAGSV-002","name":"Operational state","result":"PASS"},
+    {"check_id":"PFAGSV-003","name":"Latest validation traceability","result":"PASS"},
+    {"check_id":"PFAGSV-004","name":"Blocking reason","result":"PASS"},
+    {"check_id":"PFAGSV-005","name":"Next-action integrity","result":"PASS"},
+    {"check_id":"PFAGSV-006","name":"Execution permission","result":"PASS"},
+    {"check_id":"PFAGSV-007","name":"Guardrail integrity","result":"PASS"}
+  ],
+  "result": {
+    "validation_status":"PASSED",
+    "status_record_valid":true,
+    "gate_status":"BLOCKED",
+    "execution_allowed":false,
+    "candidate_fixture":null,
+    "approved_fixture":null,
+    "legal_source_status":"UNCHANGED",
+    "publication_status":"UNCHANGED"
+  },
+  "guardrails": [
+    "Structural validation only.",
+    "A structurally valid gate can remain operationally blocked.",
+    "No fixture was invented or admitted.",
+    "No live official property record was retrieved.",
+    "No legal proposition or publication status was upgraded."
+  ]
+}
