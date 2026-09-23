@@ -1,0 +1,39 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-registration-title-consequences-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "scope":"General information about title consequences following transfer and succession of registered land; not a property-specific title determination.",
+  "last_verified":"2026-09-24",
+  "source_basis":[
+    {
+      "authority":"Irish Statute Book",
+      "sources":["Registration of Title Act 1964","Registration of Deeds and Title Act 2006","Succession Act 1965","Land Registration Rules 2012"]
+    },
+    {
+      "authority":"Tailte Éireann",
+      "sources":["current Land Registry registration procedures and official property-record services"]
+    }
+  ],
+  "verified_boundaries":[
+    "A person may have a right to be registered without yet appearing as the registered proprietor.",
+    "Death, succession entitlement, assent or transfer, and registration are separate stages that may need separate evidence.",
+    "The ownership form must be established before deciding whether survivorship or succession applies.",
+    "Registered charges and burdens remain separate title layers and require separate verification.",
+    "A current folio is not necessarily sufficient to reconstruct a historical title state."
+  ],
+  "public_answer_contract":[
+    "THE_EVENT",
+    "TITLE_STATE_BEFORE_EVENT",
+    "SUCCESSION_OR_TRANSFER_ROUTE",
+    "WHAT_CHANGED_LEGALLY",
+    "WHAT_THE_REGISTER_ESTABLISHES",
+    "WHAT_REMAINS_UNESTABLISHED",
+    "CHARGES_AND_BURDENS",
+    "EVIDENCE_REQUIRED",
+    "OFFICIAL_ROUTE",
+    "NEXT_STEP",
+    "LAST_VERIFIED"
+  ],
+  "publication_gate":"GENERAL_INFORMATION_ONLY",
+  "property_specific_gate":"Current registered ownership, historical title, charge status, co-ownership and other property-specific conclusions require authoritative records matched to the property and relevant date."
+}
