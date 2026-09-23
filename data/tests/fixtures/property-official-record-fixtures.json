@@ -1,0 +1,84 @@
+{
+  "id":"property-official-record-fixtures",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"CONTROLLED_TEST_FIXTURE_CONTRACT",
+  "purpose":"Define safe, clearly labelled fixture structures for testing official-property-record evidence flows without fabricating real property facts or claiming live retrieval.",
+  "fixture_rules":[
+    "Every fixture is synthetic unless explicitly marked as source-derived.",
+    "Synthetic values must never be presented as real property records.",
+    "A fixture cannot establish a real person's ownership, address, title, boundary or legal interest.",
+    "Source-derived fixtures must retain their source reference, retrieval date and provenance.",
+    "Fixtures are isolated from production legal evidence.",
+    "Fixture evidence can test pipeline behaviour but cannot upgrade substantive legal verification status."
+  ],
+  "fixture_schema":{
+    "fixture_id":"Unique test fixture identifier.",
+    "fixture_type":"SYNTHETIC|SOURCE_DERIVED_REDACTED",
+    "record_type":"FOLIO|TITLE_PLAN|OFFICIAL_SEARCH|REGISTRY_OF_DEEDS_SEARCH|FILED_INSTRUMENT",
+    "property_identifier":{
+      "value":"Synthetic or appropriately redacted identifier.",
+      "verified":false
+    },
+    "source":{
+      "official":false,
+      "source_name":null,
+      "source_url":null,
+      "retrieved_at":null,
+      "provenance_note":null
+    },
+    "document":{
+      "document_id":"Synthetic fixture document ID.",
+      "identity_status":"UNVERIFIED|FIXTURE_VERIFIED|SOURCE_VERIFIED",
+      "property_match_status":"UNVERIFIED|FIXTURE_MATCHED|SOURCE_MATCHED"
+    },
+    "facts":[],
+    "evidence_state":"RETRIEVAL_REQUESTED|RETRIEVED|IDENTITY_VERIFIED|PROPERTY_MATCHED|FACT_EXTRACTED|SOURCE_CROSS_CHECKED|PROPOSITION_SUPPORTED|CONFLICT|PROFESSIONAL_REVIEW_REQUIRED",
+    "supported_propositions":[],
+    "unsupported_propositions":[],
+    "legal_effect_status":"NOT_DETERMINABLE|FIXTURE_ONLY|SOURCE_GROUNDED_PENDING_LEGAL_REVIEW",
+    "example_only":true
+  },
+  "fixtures":[
+    {
+      "fixture_id":"FIXTURE-FOLIO-SYNTHETIC-001",
+      "fixture_type":"SYNTHETIC",
+      "record_type":"FOLIO",
+      "property_identifier":{
+        "value":"SYNTHETIC-FOLIO-001",
+        "verified":false
+      },
+      "source":{
+        "official":false,
+        "source_name":"Synthetic test fixture",
+        "source_url":null,
+        "retrieved_at":null,
+        "provenance_note":"Artificial data created solely to exercise the evidence pipeline."
+      },
+      "document":{
+        "document_id":"SYNTHETIC-DOC-001",
+        "identity_status":"FIXTURE_VERIFIED",
+        "property_match_status":"FIXTURE_MATCHED"
+      },
+      "facts":[
+        {
+          "fact_id":"FACT-FIXTURE-001",
+          "statement":"Synthetic fixture contains a fictional registered-title field.",
+          "source_location":"fixture.fact[0]"
+        }
+      ],
+      "evidence_state":"FACT_EXTRACTED",
+      "supported_propositions":[],
+      "unsupported_propositions":["PROP-PROPERTY-TITLE-001"],
+      "legal_effect_status":"FIXTURE_ONLY",
+      "example_only":true
+    }
+  ],
+  "test_expectations":[
+    "The pipeline must accept the fixture as test evidence.",
+    "The pipeline must preserve its synthetic provenance.",
+    "The fixture must not be treated as an official retrieval.",
+    "The fixture must not change production legal verification status.",
+    "The public answer must not expose fixture data as a real property fact."
+  ]
+}
