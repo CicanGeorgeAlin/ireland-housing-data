@@ -1,0 +1,38 @@
+{
+  "id":"planning-exempted-development",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "question":"Can I carry out this development without planning permission?",
+  "pipeline":[
+    "identify-property",
+    "classify-development",
+    "identify-current-law-and-effective-date",
+    "check-location-specific-restrictions",
+    "check-existing-permissions-and-conditions",
+    "check-exempted-development-class",
+    "test-all-conditions-and-limitations",
+    "check-removal-of-exemption",
+    "check-protected-structure-or-special-area",
+    "check-enforcement-or-retention-history",
+    "determine-permission-or-exemption-route",
+    "show-evidence"
+  ],
+  "example_seed":"For a house extension, Schedule 2 Part 1 Class 1 of the Planning and Development Regulations 2001 provides an exempted-development class subject to conditions and limitations; the current 2025 consolidated Schedule should be used and every applicable condition must be tested.",
+  "source":"https://consult.housing.gov.ie/en/system/files/materials/9/Exempted%20Development%202001%20regulations%20-%20Schedule%202.pdf",
+  "guardrails":[
+    "An exemption exists only if the development satisfies the applicable class and every relevant condition/limitation.",
+    "Do not answer from floor area alone.",
+    "Check previous extensions and the cumulative floor-area rules where relevant.",
+    "Check restrictions arising from planning conditions, protected structures, architectural conservation areas and other statutory constraints.",
+    "Check the current law and effective date before applying an exemption.",
+    "If the facts are insufficient, return NOT_DETERMINABLE rather than assuming permission or exemption."
+  ],
+  "result_types":[
+    "EXEMPTED_DEVELOPMENT_APPEARS_TO_APPLY_SUBJECT_TO_VERIFICATION",
+    "PLANNING_PERMISSION_REQUIRED",
+    "EXEMPTION_CONDITION_NOT_MET",
+    "SPECIAL_RESTRICTION_REQUIRES_REVIEW",
+    "NOT_DETERMINABLE",
+    "HISTORICAL_PLANNING_RESEARCH_REQUIRED"
+  ]
+}
