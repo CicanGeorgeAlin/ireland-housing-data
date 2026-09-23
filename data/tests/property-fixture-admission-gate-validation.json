@@ -1,0 +1,44 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Validate the controlled fixture admission gate and ensure no corrected or replacement fixture can enter dependent revalidation without provenance, privacy, meaning-preservation and approval controls.",
+  "gate": "data/tests/property-fixture-admission-gate.json",
+  "validation_sequence": [
+    "LOAD_GATE",
+    "VERIFY_ADMISSION_STATES",
+    "VERIFY_ADMISSION_SEQUENCE",
+    "VERIFY_REQUIRED_CONDITIONS",
+    "VERIFY_CURRENT_BLOCKED_STATE",
+    "VERIFY_NO_INVENTED_FIXTURE_RULE",
+    "VERIFY_PRODUCTION_ISOLATION",
+    "VERIFY_LEGAL_SEPARATION",
+    "VERIFY_PUBLICATION_SEPARATION",
+    "RECORD_VALIDATION"
+  ],
+  "checks": [
+    {"check_id":"PFAGV-001","name":"Admission-state integrity","result":"PASS"},
+    {"check_id":"PFAGV-002","name":"Admission-sequence integrity","result":"PASS"},
+    {"check_id":"PFAGV-003","name":"Required-condition completeness","result":"PASS"},
+    {"check_id":"PFAGV-004","name":"Blocked-state integrity","result":"PASS"},
+    {"check_id":"PFAGV-005","name":"No-invented-fixture safeguard","result":"PASS"},
+    {"check_id":"PFAGV-006","name":"Production isolation","result":"PASS"},
+    {"check_id":"PFAGV-007","name":"Legal/publication separation","result":"PASS"}
+  ],
+  "result": {
+    "validation_status":"PASSED",
+    "gate_valid":true,
+    "gate_status":"BLOCKED",
+    "candidate_fixture":null,
+    "approved_fixture":null,
+    "revalidation_execution_allowed":false,
+    "legal_source_status":"UNCHANGED",
+    "publication_status":"UNCHANGED"
+  },
+  "guardrails": [
+    "Structural validation only.",
+    "No fixture has been invented or admitted.",
+    "No live official property record was retrieved.",
+    "No legal proposition was upgraded.",
+    "No publication status was upgraded."
+  ]
+}
