@@ -104,7 +104,26 @@
     const result=classify();
     const active=result.status==='PRIVATE_PATH' ? 4 : result.status==='SPECIAL_PATH' ? 3 : 2;
     box.hidden=false;
-    box.innerHTML='<div class="kicker">YOUR LEGAL JOURNEY</div><div class="journey-track">'+steps.map((s,i)=>'<div class="journey-step '+(i<=active?'active':'')+'"><small>'+s[0]+'</small><strong>'+s[1]+'</strong><small>'+s[2]+'</small></div>').join('')+'</div>';
+    box.innerHTML='<div class="kicker">YOUR LEGAL JOURNEY</div><div class="journey-track">'+steps.map((s,i)=>'<button type="button" class="journey-step '+(i<=active?'active':'')+'" data-stage="'+s[1]+'"><small>'+s[0]+'</small><strong>'+s[1]+'</strong><small>'+s[2]+'</small></button>').join('')+'</div><div id="journey-detail" class="journey-detail"></div>'; renderJourneyDetail('FACTS');
+  }
+
+  function renderJourneyDetail(stage) {
+    const detail=document.getElementById('journey-detail');
+    if(!detail) return;
+    const result=classify(), time=temporalState(), deadline=deadlineState();
+    const data={
+      QUESTION:['QUESTION','What are you trying to resolve?','Rent review'],
+      FACTS:['FACTS','Collected information',Object.keys(state).length ? Object.entries(state).map(([k,v])=>label(k)+': '+v).join(' · ') : 'No facts entered yet.'],
+      CLASSIFICATION:['CLASSIFICATION','Current regime',result.status],
+      TIME:['TIME','Temporal branch',time ? time.tenancyGeneration+' / '+time.reviewPeriod : 'Dates required'],
+      LAW:['LAW','Candidate propositions',result.status==='PRIVATE_PATH'&&time&&time.reviewPeriod==='FROM_2026_FRAMEWORK' ? 'RTB-2026-RENT-CAP-001 · RTB-2026-RENT-RESET-002 · RTB-2026-APARTMENT-003' : 'Not yet resolved'],
+      EVIDENCE:['EVIDENCE','Evidence state',Object.keys(evidenceState).length ? Object.entries(evidenceState).map(([k,v])=>k+': '+v).join(' · ') : 'Evidence not yet entered'],
+      DEADLINE:['DEADLINE','Current deadline state',deadline.date ? deadline.date : deadline.message],
+      NEXT:['NEXT','Official route','RTB / applicable route after legal composition']
+    };
+    const d=data[stage]||data.FACTS;
+    detail.innerHTML='<div class="kicker">'+escapeHtml(d[0])+'</div><strong>'+escapeHtml(d[1])+'</strong><p>'+escapeHtml(d[2])+'</p>';
+    document.querySelectorAll('.journey-step').forEach(b=>b.addEventListener('click',()=>renderJourneyDetail(b.dataset.stage)));
   }
 
   function deadlineState() {
