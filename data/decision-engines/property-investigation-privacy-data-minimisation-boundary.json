@@ -1,0 +1,90 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-investigation-privacy-data-minimisation-boundary",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Control the collection, use, storage, separation and disclosure of personal information within property investigations so only information necessary for the stated investigation purpose is handled.",
+  "source_basis":[
+    "GDPR Article 5 principles as explained by the Irish Data Protection Commission",
+    "DPC guidance on data minimisation, purpose limitation, accuracy, storage limitation, integrity/confidentiality and accountability"
+  ],
+  "core_principle":"COLLECT THE MINIMUM NECESSARY → USE ONLY FOR THE INVESTIGATION PURPOSE → SEPARATE CITIZEN MATERIAL FROM OFFICIAL RECORDS → RETAIN ONLY AS JUSTIFIED → PROTECT ACCESS",
+  "information_classes":[
+    "PUBLIC_SOURCE_DATA",
+    "OFFICIAL_PROPERTY_RECORD",
+    "OFFICIAL_LEGAL_SOURCE",
+    "CITIZEN_SUPPLIED_DOCUMENT",
+    "CITIZEN_SUPPLIED_PERSONAL_DATA",
+    "SENSITIVE_OR_HIGH_RISK_PERSONAL_DATA",
+    "DERIVED_INVESTIGATION_METADATA",
+    "ANSWER_PUBLICATION_DATA"
+  ],
+  "data_minimisation_rules":[
+    "Request only information necessary to determine the investigation route or answer the stated question.",
+    "Do not request identity information merely because it might be useful later.",
+    "Do not retain unrelated personal information contained in a document when it is not material to the investigation.",
+    "Where a less intrusive identifier can achieve the same investigation purpose, prefer it.",
+    "Separate property identifiers from unnecessary personal profiles.",
+    "Do not infer or enrich personal information beyond what the investigation requires."
+  ],
+  "source_separation_rules":[
+    "Citizen-supplied documents are never relabelled as official records.",
+    "Official records retain their originating authority and retrieval provenance.",
+    "A citizen document may corroborate an issue but does not automatically establish the official registered position.",
+    "Copies, screenshots and photographs remain distinct source objects even when they appear to reproduce an official record.",
+    "Derived facts must retain links to the source from which they were derived."
+  ],
+  "access_rules":[
+    "Investigation access should be limited to the information needed for the assigned investigation function.",
+    "Public answer views should expose only information necessary to explain the answer.",
+    "Internal provenance may be retained separately from public presentation where required.",
+    "Do not expose unrelated personal information merely because it exists in the case file.",
+    "Access restrictions must not be treated as evidence that a record does not exist."
+  ],
+  "retention_rules":[
+    "Retention must be tied to the documented purpose and applicable legal obligations.",
+    "Do not invent a universal retention period.",
+    "Where the purpose ends and no continuing lawful retention requirement applies, the information should enter the appropriate disposal/review process.",
+    "Retention and deletion decisions must be auditable.",
+    "Legal claims, statutory duties or other applicable requirements may affect retention and must be assessed separately."
+  ],
+  "accuracy_rules":[
+    "Record the source and provenance of citizen-supplied personal information.",
+    "Do not silently convert allegations or assertions into established facts.",
+    "Where personal data are material and inaccurate, route the issue through the applicable correction/review process.",
+    "Preserve the distinction between what a person states and what an official record establishes."
+  ],
+  "privacy_states":[
+    "MINIMUM_DATA_SUFFICIENT",
+    "ADDITIONAL_DATA_JUSTIFIED",
+    "UNNECESSARY_DATA_IDENTIFIED",
+    "SENSITIVE_DATA_REQUIRES_REVIEW",
+    "SOURCE_SEPARATION_REQUIRED",
+    "RETENTION_REVIEW_REQUIRED",
+    "ACCESS_RESTRICTED",
+    "PRIVACY_REVIEW_REQUIRED",
+    "BLOCKED"
+  ],
+  "hard_stops":[
+    "Never collect personal information simply because it may become useful.",
+    "Never publish personal information merely because it appears in a source.",
+    "Never treat citizen-supplied personal information as official property evidence.",
+    "Never infer sensitive characteristics from property-investigation data.",
+    "Never invent retention periods or legal bases.",
+    "Never conceal the presence of material personal-data handling behind a generic evidence label."
+  ],
+  "output_contract":[
+    "privacy_assessment_id",
+    "investigation_run_id",
+    "purpose",
+    "information_classes",
+    "minimum_data_required",
+    "additional_data_justified",
+    "unnecessary_data",
+    "source_separation",
+    "access_scope",
+    "retention_review",
+    "privacy_state",
+    "next_action"
+  ]
+}
