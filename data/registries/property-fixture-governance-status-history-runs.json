@@ -1,0 +1,33 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Central immutable registry for validation runs that verify the historical property fixture governance status chain.",
+  "registry_rules": [
+    "Each completed history-validation run receives one immutable entry.",
+    "Run identity, contract, date, scope and result must be preserved.",
+    "A later run creates a new entry and does not overwrite an earlier run.",
+    "Technical governance validation remains separate from legal verification and publication."
+  ],
+  "runs": [
+    {
+      "run_id": "PFGSVHV-RUN-001",
+      "contract": "data/tests/property-fixture-governance-validation-status-history-validation.json",
+      "execution_mode": "STATIC_CONTRACT_VALIDATION",
+      "executed_at": "2026-09-23",
+      "result": "PASSED",
+      "scope": "Governance validation status history integrity",
+      "history_valid": true,
+      "chronology_valid": true,
+      "historical_integrity": true,
+      "legal_source_status": "UNCHANGED",
+      "publication_status": "UNCHANGED",
+      "immutable": true
+    }
+  ],
+  "guardrails": [
+    "This registry records technical validation only.",
+    "It does not establish Irish property-law correctness.",
+    "It does not represent live official-record retrieval.",
+    "It does not authorize publication."
+  ]
+}
