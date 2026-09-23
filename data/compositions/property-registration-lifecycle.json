@@ -76,6 +76,22 @@
       "routes": [
         "property-registration-rectification"
       ]
+    },
+    {
+      "stage": "FACT_EXTRACTION_AND_LEGAL_EFFECT",
+      "routes": [
+        "property-evidence-fact-legal-effect-boundary",
+        "property-evidence-property-match",
+        "property-registration-records"
+      ]
+    },
+    {
+      "stage": "ANSWER_COMPOSITION",
+      "routes": [
+        "property-evidence-fact-legal-effect-boundary",
+        "property-registration-title-consequences",
+        "property-registration-historical-state"
+      ]
     }
   ],
   "event_model": [
@@ -122,7 +138,8 @@
     "property-evidence-audit",
     "property-answer-snapshot",
     "property-answer-reverification",
-    "property-evidence-retrieval-routing"
+    "property-evidence-retrieval-routing",
+    "property-evidence-fact-legal-effect-boundary"
   ],
   "answer_sequence": [
     "QUESTION",
