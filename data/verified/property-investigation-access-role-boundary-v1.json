@@ -1,0 +1,21 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-investigation-access-role-boundary-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified role and access contract separating citizen input, evidence handling, legal analysis, review, publication and system administration.",
+  "core_principle":"NO ROLE MAY SILENTLY CROSS A MATERIAL EVIDENCE, LEGAL, REVIEW OR PUBLICATION BOUNDARY.",
+  "separation_of_duties":[
+    "citizen input is not official evidence",
+    "evidence retrieval is not legal adjudication",
+    "legal analysis is not property-record creation",
+    "review is not silent source alteration",
+    "publication is not quality-gate bypass",
+    "administration is not substantive case rewriting"
+  ],
+  "least_privilege_rule":"Access should be limited to information and actions necessary for the assigned function.",
+  "provenance_rule":"Material changes retain their source, actor/system identity and reason.",
+  "audit_rule":"Access and material changes remain traceable in the investigation history.",
+  "public_boundary":"Public presentation exposes only information approved for publication and does not expose restricted case data by default.",
+  "verification_boundary":"The access layer controls permissions and responsibilities; it does not itself establish legal rights, ownership or other substantive conclusions."
+}
