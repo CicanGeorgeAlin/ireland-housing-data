@@ -1,0 +1,89 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-legal-proposition-authority-chain",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Connect each legal proposition used in a property answer to the exact authoritative provision, relevant judicial authority and official guidance without collapsing distinct levels of authority.",
+  "authority_levels":[
+    "CONSTITUTION",
+    "PRIMARY_LEGISLATION",
+    "STATUTORY_INSTRUMENT",
+    "EU_LAW_WHERE_APPLICABLE",
+    "CASE_LAW",
+    "OFFICIAL_GUIDANCE",
+    "ADMINISTRATIVE_PROCEDURE",
+    "CICAN_EXPLANATION"
+  ],
+  "proposition_record":{
+    "proposition_id":"unique identifier",
+    "statement":"precise proposition",
+    "legal_issue":"issue addressed",
+    "primary_source":"Act/section or other controlling source",
+    "version":"applicable temporal version",
+    "commencement":"if relevant",
+    "related_sources":"supporting provisions",
+    "case_law":"judicial authorities",
+    "guidance":"official guidance where relevant",
+    "scope":"what proposition does and does not establish",
+    "verification_date":"date checked"
+  },
+  "authority_rules":[
+    "Primary legislation controls where the proposition is statutory.",
+    "Statutory instruments operate within their enabling legal framework.",
+    "Case law must be tied to the proposition actually decided or authoritatively reasoned.",
+    "Official guidance explains administration or procedure but does not silently become legislation.",
+    "Administrative practice must not be presented as the statutory rule unless the source establishes that effect.",
+    "CICAN explanations must preserve the meaning and limitations of the underlying authority."
+  ],
+  "proposition_types":[
+    "DEFINITION",
+    "LEGAL_EFFECT",
+    "REGISTRATION_EFFECT",
+    "TRANSFER_EFFECT",
+    "SUCCESSION_EFFECT",
+    "SECURITY_EFFECT",
+    "CO_OWNERSHIP_EFFECT",
+    "EASEMENT_OR_BURDEN_EFFECT",
+    "BOUNDARY_EFFECT",
+    "PROCEDURAL_REQUIREMENT",
+    "DEADLINE",
+    "REMEDY",
+    "JURISDICTION",
+    "EVIDENCE_REQUIREMENT"
+  ],
+  "reasoning_chain":[
+    "LEGAL_ISSUE",
+    "EXACT_PROVISION",
+    "PROPOSITION",
+    "JUDICIAL_INTERPRETATION_IF_NEEDED",
+    "OFFICIAL_PROCEDURE_IF_NEEDED",
+    "CONDITIONS_AND_EXCEPTIONS",
+    "LEGAL_EFFECT"
+  ],
+  "case_law_contract":[
+    "case_name",
+    "citation",
+    "court",
+    "decision_date",
+    "legal_issue",
+    "proposition_supported",
+    "binding_or_persuasive_status_where_relevant",
+    "limitations"
+  ],
+  "hard_stops":[
+    "Never cite a case without stating the proposition for which it is relied upon.",
+    "Never use guidance to override legislation.",
+    "Never state an administrative procedure as the substantive legal rule.",
+    "Never expand a judicial proposition beyond the issue actually decided.",
+    "If authority levels conflict or the controlling source is unresolved, mark LEGAL_AUTHORITY_UNRESOLVED."
+  ],
+  "result_states":[
+    "AUTHORITY_CHAIN_COMPLETE",
+    "PRIMARY_SOURCE_COMPLETE",
+    "CASE_LAW_REQUIRED",
+    "GUIDANCE_REQUIRED",
+    "MULTI_SOURCE_AUTHORITY",
+    "AUTHORITY_CHAIN_INCOMPLETE",
+    "LEGAL_AUTHORITY_UNRESOLVED"
+  ]
+}
