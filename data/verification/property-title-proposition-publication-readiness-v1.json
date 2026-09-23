@@ -1,0 +1,52 @@
+{
+  "schema_version":"0.1",
+  "status":"NOT_READY",
+  "verified_at":"2026-09-23",
+  "purpose":"Assess whether each core property-title proposition is sufficiently verified for public publication.",
+  "propositions":[
+    {
+      "id":"PROP-PROPERTY-TITLE-001",
+      "publication_status":"NOT_READY",
+      "law":"PRIMARY_TEXT_RECONCILED",
+      "amendments":"PARTIALLY_RECONCILED",
+      "commencement":"PARTIALLY_RECONCILED",
+      "case_law":"SUBSTANTIAL_PRIMARY_NETWORK",
+      "procedure":"VERIFIED",
+      "reason":"Final proposition-specific amendment/commencement and case-law audit remains."
+    },
+    {
+      "id":"PROP-PROPERTY-MAP-002",
+      "publication_status":"NOT_READY",
+      "law":"PRIMARY_TEXT_RECONCILED",
+      "amendments":"RECONCILED_FOR_CORE_PROVISIONS",
+      "commencement":"PARTIAL",
+      "case_law":"PARTIAL",
+      "procedure":"VERIFIED",
+      "reason":"Boundary/registry-map case-law network remains incomplete."
+    },
+    {
+      "id":"PROP-PROPERTY-REGISTRATION-003",
+      "publication_status":"NOT_READY",
+      "law":"PRIMARY_TEXT_RECONCILED",
+      "amendments":"PARTIAL",
+      "commencement":"PARTIAL",
+      "case_law":"PARTIAL",
+      "procedure":"VERIFIED_FOR_MAIN_ROUTES",
+      "reason":"Possessory-title case-law and historical procedure require final audit."
+    }
+  ],
+  "publication_gate":"BLOCKED",
+  "blocking_rules":[
+    "A proposition cannot be published merely because its statute is identified.",
+    "Material unresolved amendment/commencement effects block publication.",
+    "Material unresolved case-law questions block publication where judicial interpretation is necessary.",
+    "An official procedure can be published only with its current rule/history context.",
+    "No proposition establishes facts about a particular property without property-specific evidence."
+  ],
+  "next_step":"Complete final proposition-specific audit rather than upgrading status from partial evidence.",
+  "guardrails":[
+    "No individual property conclusion.",
+    "No live record retrieval.",
+    "No publication status upgrade."
+  ]
+}
