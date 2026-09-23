@@ -1,0 +1,36 @@
+{
+  "schema_version":"1.0",
+  "run_id":"RUN-PROPERTY-TITLE-LIVE-INTEGRATION-001",
+  "suite_id":"PROPERTY-TITLE-LIVE-INTEGRATION-001",
+  "execution_mode":"CONTROLLED_STATIC_INTEGRATION_VALIDATION",
+  "status":"PASSED_WITH_NONCRITICAL_WARNINGS",
+  "executed_at":"2026-09-23",
+  "results":[
+    {"test_id":"PTLI-001","result":"PASS","expected":"VERIFIED_GENERAL_INFORMATION","actual":"VERIFIED_GENERAL_INFORMATION"},
+    {"test_id":"PTLI-002","result":"PASS","expected":"EVIDENCE_REQUIRED","actual":"EVIDENCE_REQUIRED"},
+    {"test_id":"PTLI-003","result":"PASS","expected":"PARTIAL_OR_MATCH_REQUIRED","actual":"PARTIAL_OR_MATCH_REQUIRED"},
+    {"test_id":"PTLI-004","result":"PASS","expected":"CONFLICT_VISIBLE","actual":"CONFLICT_VISIBLE"},
+    {"test_id":"PTLI-005","result":"PASS","expected":"HISTORICAL_LAW_AND_RECORD_CONTEXT","actual":"HISTORICAL_LAW_AND_RECORD_CONTEXT"},
+    {"test_id":"PTLI-006","result":"PASS","expected":"REVERIFICATION_REQUIRED","actual":"REVERIFICATION_REQUIRED"},
+    {"test_id":"PTLI-007","result":"PASS","expected":"LIMITED_EVIDENCE","actual":"LIMITED_EVIDENCE"},
+    {"test_id":"PTLI-008","result":"PASS","expected":"SEPARATE_POSSESSION_PATHWAY","actual":"SEPARATE_POSSESSION_PATHWAY"}
+  ],
+  "unsafe_behavior_checks":{
+    "invented_property_result":false,
+    "invented_retrieval":false,
+    "silent_conflict_resolution":false,
+    "historical_current_mix":false,
+    "registry_of_deeds_overstatement":false,
+    "possession_pathway_collapse":false,
+    "silent_stale_answer":false
+  },
+  "warnings":[
+    "Controlled static integration validation only.",
+    "No real individual property record was retrieved.",
+    "This run validates architecture and evidence boundaries, not the legal merits of a real property."
+  ],
+  "publication_effect":"No individual-property publication status changed.",
+  "legal_source_status":"UNCHANGED",
+  "general_information_status":"INTEGRATION_VALIDATED",
+  "individual_property_status":"EVIDENCE_REQUIRED"
+}
