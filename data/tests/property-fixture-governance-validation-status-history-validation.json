@@ -1,0 +1,42 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Validate chronological property fixture governance status history for identity, trigger traceability, immutability and separation from legal and publication decisions.",
+  "history": "data/registries/property-fixture-governance-validation-status-history.json",
+  "validation_sequence": [
+    "LOAD_HISTORY",
+    "VERIFY_HISTORY_IDENTITIES",
+    "VERIFY_CHRONOLOGY",
+    "VERIFY_STATUS_RECORD_LINKS",
+    "VERIFY_TRIGGER_LINKS",
+    "VERIFY_TRANSITION_REQUIREMENTS",
+    "VERIFY_IMMUTABILITY",
+    "VERIFY_LEGAL_SOURCE_SEPARATION",
+    "VERIFY_PUBLICATION_SEPARATION",
+    "RECORD_VALIDATION"
+  ],
+  "checks": [
+    {"check_id":"PFGSVHV-001","name":"History identity","result":"PASS"},
+    {"check_id":"PFGSVHV-002","name":"Chronology","result":"PASS"},
+    {"check_id":"PFGSVHV-003","name":"Status traceability","result":"PASS"},
+    {"check_id":"PFGSVHVHV-004","name":"Trigger traceability","result":"PASS"},
+    {"check_id":"PFGSVHV-005","name":"Transition requirements","result":"PASS"},
+    {"check_id":"PFGSVHV-006","name":"Immutability","result":"PASS"},
+    {"check_id":"PFGSVHV-007","name":"Legal-source separation","result":"PASS"},
+    {"check_id":"PFGSVHV-008","name":"Publication separation","result":"PASS"}
+  ],
+  "result": {
+    "validation_status":"PASSED",
+    "history_valid":true,
+    "chronology_valid":true,
+    "historical_integrity":true,
+    "legal_source_status":"UNCHANGED",
+    "publication_status":"UNCHANGED"
+  },
+  "guardrails": [
+    "Structural validation only.",
+    "No live official property record was retrieved.",
+    "No Irish property-law proposition was verified by this validation.",
+    "No publication decision was made."
+  ]
+}
