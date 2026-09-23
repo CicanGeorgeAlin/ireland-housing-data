@@ -1,0 +1,52 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-registration-general-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "scope":"General Irish property-registration information only; not a property-specific title determination.",
+  "core_principles":[
+    "Property registration records and legal title are related but distinct concepts.",
+    "Registered-property questions should begin with the appropriate official record route.",
+    "Land Registry records and Registry of Deeds records belong to distinct registration systems.",
+    "A folio, title plan or other record can establish facts within its legal and evidential scope but does not automatically resolve every boundary, beneficial-interest, historical or dispute question.",
+    "First registration, transfer, mortgage, co-ownership, easement and rectification are separate legal pathways.",
+    "Historical property questions require date-aware record and law analysis.",
+    "A property-specific conclusion requires authoritative evidence for the identified property."
+  ],
+  "public_answer_contract":[
+    "THE_ANSWER",
+    "LEGAL_BASIS",
+    "WHAT_THE_RECORD_ESTABLISHES",
+    "WHAT_THE_RECORD_DOES_NOT_ESTABLISH",
+    "OFFICIAL_ROUTE",
+    "EVIDENCE_REQUIRED",
+    "CONDITIONS_AND_EXCEPTIONS",
+    "WHAT_TO_DO_NEXT",
+    "PROFESSIONAL_REVIEW_FLAG",
+    "LAST_VERIFIED"
+  ],
+  "official_sources":[
+    {
+      "authority":"Tailte Éireann",
+      "role":"Property registration and official property-record services",
+      "url":"https://tailte.ie/services/property-registration/"
+    },
+    {
+      "authority":"Tailte Éireann",
+      "role":"Copy and search services",
+      "url":"https://tailte.ie/services/copy-services/"
+    },
+    {
+      "authority":"LandDirect",
+      "role":"Official property search and map access",
+      "url":"https://www.landdirect.ie/"
+    },
+    {
+      "authority":"Irish Statute Book",
+      "role":"Primary legislation and statutory instruments",
+      "url":"https://www.irishstatutebook.ie/"
+    }
+  ],
+  "evidence_boundary":"No property-specific ownership, boundary, easement, mortgage, beneficial-interest or historical-title conclusion is asserted without verified authoritative evidence.",
+  "publication_gate":"GENERAL_INFORMATION_ONLY",
+  "last_verified":"2026-09-24"
+}
