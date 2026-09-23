@@ -1,0 +1,104 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-evidence-sufficiency-minimum-evidence-resolver",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Determine the minimum evidence required for each property-question type and identify whether available evidence is sufficient, partially sufficient, or missing a specific material record.",
+  "question_evidence_profiles":[
+    {
+      "question_type":"CURRENT_REGISTERED_OWNER",
+      "minimum":["identified_property","current_official_folio_or_search","verified_property_match"]
+    },
+    {
+      "question_type":"HISTORICAL_REGISTERED_OWNER",
+      "minimum":["identified_property","target_date","historical_register_evidence","verified_property_match","verified_date_match"]
+    },
+    {
+      "question_type":"TRANSFER_REGISTRATION_EFFECT",
+      "minimum":["property_identifier","transfer_instrument_or_dealing","registration_record","property_match","date_scope"]
+    },
+    {
+      "question_type":"MORTGAGE_OR_CHARGE_STATUS",
+      "minimum":["property_identifier","relevant_folio_or_official_record","charge_entry_or_dealing","date_scope"]
+    },
+    {
+      "question_type":"SUCCESSION_AND_REGISTERED_TITLE",
+      "minimum":["property_identifier","relevant death/event date","folio/history","grant_or succession evidence where material","assent/transfer/registration evidence where material"]
+    },
+    {
+      "question_type":"CO_OWNERSHIP",
+      "minimum":["property_identifier","relevant title/folio","co-ownership evidence","date/event scope","trust/beneficial evidence where specifically raised"]
+    },
+    {
+      "question_type":"EASEMENT_OR_RIGHT_OF_WAY",
+      "minimum":["property_identifier","servient/dominant context","folio/map or instrument evidence","relevant deed/order/prescriptive evidence where applicable","date scope"]
+    },
+    {
+      "question_type":"BOUNDARY",
+      "minimum":["property_identifier","relevant folio/map","boundary evidence","date scope","survey/deed/court evidence where material"]
+    },
+    {
+      "question_type":"RECTIFICATION_OR_REGISTER_ERROR",
+      "minimum":["property_identifier","current register","alleged error identified","supporting historical/instrument evidence","legal/procedural basis"]
+    },
+    {
+      "question_type":"GENERAL_PROPERTY_LAW",
+      "minimum":["classified legal issue","applicable legal regime","authoritative provision","material conditions/exceptions"]
+    }
+  ],
+  "sufficiency_states":[
+    "SUFFICIENT_FOR_REQUESTED_CONCLUSION",
+    "SUFFICIENT_WITH_LIMITATIONS",
+    "PARTIALLY_SUFFICIENT",
+    "MISSING_ONE_MATERIAL_ITEM",
+    "MISSING_MULTIPLE_MATERIAL_ITEMS",
+    "PROPERTY_IDENTITY_INSUFFICIENT",
+    "DATE_SCOPE_INSUFFICIENT",
+    "LEGAL_AUTHORITY_INSUFFICIENT",
+    "NOT_SUFFICIENT"
+  ],
+  "resolution_sequence":[
+    "CLASSIFY_QUESTION",
+    "LOAD_EVIDENCE_PROFILE",
+    "IDENTIFY_AVAILABLE_EVIDENCE",
+    "MATCH_PROPERTY",
+    "MATCH_DATE",
+    "CHECK_SOURCE_AUTHORITY",
+    "CHECK_CONTENT_COMPLETENESS",
+    "CHECK_MATERIAL_FACTS",
+    "CHECK_LEGAL_AUTHORITY",
+    "IDENTIFY_MINIMUM_MISSING_ITEM",
+    "ASSIGN_SUFFICIENCY_STATE",
+    "ROUTE_TO_NEXT_EVIDENCE_STEP"
+  ],
+  "rules":[
+    "Minimum evidence is question-specific; there is no universal property evidence bundle.",
+    "A source can be relevant but still insufficient for the requested conclusion.",
+    "Missing evidence must be named specifically where possible.",
+    "A property-specific conclusion requires a verified property match.",
+    "A historical conclusion requires a verified target date and historical evidence.",
+    "Beneficial ownership requires additional evidence where it is outside the registered title.",
+    "Boundary and easement questions may require evidence beyond a folio and map.",
+    "No amount of supporting context substitutes for a missing material primary or official record."
+  ],
+  "output_contract":[
+    "question_type",
+    "requested_conclusion",
+    "required_evidence",
+    "available_evidence",
+    "verified_items",
+    "missing_material_items",
+    "property_match_state",
+    "date_match_state",
+    "legal_authority_state",
+    "sufficiency_state",
+    "next_evidence_step",
+    "publication_effect"
+  ],
+  "hard_stops":[
+    "Never declare sufficient evidence merely because multiple documents exist.",
+    "Never treat quantity of evidence as proof of sufficiency.",
+    "Never fill a missing material record with inference.",
+    "Never publish a definitive property-specific conclusion when the minimum evidence profile is unmet."
+  ]
+}
