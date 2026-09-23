@@ -1,57 +1,17 @@
 {
-  "schema_version":"1.0",
+  "schema_version":"1.1",
   "content_id":"property-title-live",
-  "status":"VERIFIED_GENERAL_INFORMATION",
+  "status":"PUBLISHED_GENERAL_INFORMATION",
   "last_verified":"2026-09-23",
   "authority_label":"LAW",
   "title":"How registered property title works in Ireland",
   "scope":"General legal information about registered land; not an ownership determination for an individual property.",
-  "what_we_say":[
-    "The Land Registry records registered interests in registered land.",
-    "Section 31 of the Registration of Title Act 1964 gives the register the statutory conclusive effect provided by the Act, subject to the statutory framework for fraud, mistake, rectification and other exceptions.",
-    "A folio is an official Land Registry record and a title plan represents the registered parcel in the registry mapping system.",
-    "A title plan or registry-map description should not automatically be treated as a definitive determination of every physical boundary on the ground.",
-    "Registered title, the underlying conveyance/deed, physical occupation and other interests can raise separate legal questions.",
-    "Possessory title and adverse possession have distinct statutory and procedural routes.",
-    "The Registry of Deeds is a separate system from the Land Registry and a deed search does not by itself determine the legal effect of every deed found."
-  ],
-  "why_we_say_it":[
-    "Registration of Title Act 1964, including ss.31, 33, 49 and 84-86.",
-    "Registration of Deeds and Title Act 2006 relevant amendments.",
-    "Land Registration Rules and current Tailte Éireann procedures.",
-    "Relevant Irish primary judgments including Reidy, Fannon, Planetwhite, Tanager, O'Flaherty and McDonnell."
-  ],
-  "original_legal_text_routes":[
-    "https://revisedacts.lawreform.ie/eli/1964/act/16/revised/en/html",
-    "https://www.irishstatutebook.ie/eli/1964/act/16/enacted/en/html"
-  ],
-  "official_routes":[
-    "https://tailte.ie/services/property-registration/",
-    "https://tailte.ie/services/copy-services/",
-    "https://tailte.ie/category/forms/?_type=land-registry-forms",
-    "https://www.landdirect.ie/"
-  ],
-  "case_law_routes":[
-    "https://www.courts.ie/",
-    "https://www.bailii.org/ie/"
-  ],
-  "what_it_means":"The official register is central evidence of registered title, but the legal question asked determines which record, provision, document and procedure must be examined.",
-  "what_it_does_not_mean":[
-    "It does not establish who owns a particular property without examining the relevant official record.",
-    "It does not establish every physical boundary from a title plan alone.",
-    "It does not establish the legal effect of every underlying deed without examining the instrument and applicable law.",
-    "It does not determine the outcome of a contested court or registration proceeding."
-  ],
-  "official_record_pathway":{
-    "identify_property":"Landdirect map/property search",
-    "current_title":"Folio and title plan",
-    "official_search":"Applicable Land Registry official-search route",
-    "historical_registration":"Applicable historical-register search route",
-    "unregistered_deeds":"Registry of Deeds search",
-    "underlying_instrument":"Instrument copy/inspection route subject to access rules"
-  },
+  "publication_reason":{"core_amendment_commencement":"CLOSED","s31_case_law":"CLOSED_FOR_CORE_PUBLIC_PROPOSITION","boundary_case_law":"CLOSED_FOR_CORE_PUBLIC_PROPOSITION","possessory_title":"CLOSED_FOR_CORE_PUBLIC_PROPOSITION","official_source_audit":"PASSED_WITH_LIMITS","integration_test":"PASSED_WITH_NONCRITICAL_WARNINGS"},
+  "what_we_say":["The Land Registry records registered interests in registered land.","Section 31 of the Registration of Title Act 1964 gives the register the statutory conclusive effect provided by the Act, subject to the statutory framework and exceptions.","A folio is an official Land Registry record and a title plan represents the registered parcel in the registry mapping system.","A title plan or registry-map description should not automatically be treated as a definitive determination of every physical boundary on the ground.","Registered title, the underlying conveyance/deed, physical occupation and other interests can raise separate legal questions.","Possessory title and adverse possession have distinct statutory and procedural routes.","The Registry of Deeds is separate from the Land Registry and a deed search does not by itself determine the full legal effect of every deed found."],
+  "official_sources":["https://revisedacts.lawreform.ie/eli/1964/act/16/revised/en/html","https://tailte.ie/services/property-registration/","https://tailte.ie/services/copy-services/","https://tailte.ie/category/forms/?_type=land-registry-forms","https://www.courts.ie/court-rules/full-court-rule?url=Order-96-Superior-The-Registration-of-Title-Act-1964"],
+  "individual_property_boundary":"OFFICIAL_EVIDENCE_REQUIRED",
   "professional_review_flag":"YES_WHEN_FACTS_ARE_DISPUTED_OR_COMPLEX",
   "legal_change_dependency":"PROPERTY-TITLE-VERIFICATION-001",
-  "publication_gate":"GENERAL_INFORMATION_READY",
-  "individual_property_gate":"OFFICIAL_EVIDENCE_REQUIRED"
+  "publication_status":"PUBLISHED_GENERAL_INFORMATION",
+  "historical_law":"DATE_SPECIFIC"
 }
