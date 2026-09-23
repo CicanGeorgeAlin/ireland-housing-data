@@ -1,0 +1,70 @@
+{
+  "id":"source-derived-fixture-approval",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"CONTROLLED_FIXTURE_APPROVAL_CONTRACT",
+  "purpose":"Govern approval of source-derived redacted fixtures before they can be used in controlled property validation tests.",
+  "approval_record":{
+    "approval_id":"Unique approval identifier.",
+    "fixture_id":"Source-derived fixture identifier.",
+    "protocol_id":"source-derived-redacted-protocol",
+    "review_status":"PROPOSED|SOURCE_VERIFIED|REDACTION_REVIEW|APPROVED|REJECTED|SUPERSEDED",
+    "reviewed_at":null,
+    "reviewer_role":"System validation role; not a statement of legal professional status.",
+    "source_authority":null,
+    "source_url":null,
+    "source_reference":null,
+    "source_date":null,
+    "retrieved_at":null,
+    "legal_period":null
+  },
+  "approval_checks":{
+    "source_authority_confirmed":false,
+    "source_provenance_recorded":false,
+    "source_date_recorded":false,
+    "retrieval_date_recorded":false,
+    "legal_period_recorded":false,
+    "redaction_reviewed":false,
+    "substantive_meaning_preserved":false,
+    "privacy_minimised":false,
+    "fixture_label_applied":false,
+    "production_evidence_isolated":false
+  },
+  "approval_decision":{
+    "approved":false,
+    "reason":null,
+    "conditions":[],
+    "expiry_or_revalidation_trigger":null
+  },
+  "allowed_use":[
+    "CONTROLLED_TESTING",
+    "PIPELINE_VALIDATION",
+    "EVIDENCE_EXTRACTION_TESTING",
+    "PROVENANCE_TESTING",
+    "PRIVACY_TESTING"
+  ],
+  "prohibited_use":[
+    "CLAIM_LIVE_RETRIEVAL",
+    "CLAIM_REAL_PROPERTY_MATCH",
+    "CLAIM_REAL_PERSON_OWNERSHIP",
+    "AUTOMATIC_PRODUCTION_EVIDENCE",
+    "BYPASS_LEGAL_SOURCE_VERIFICATION",
+    "PUBLICATION_WITHOUT_SEPARATE_GOVERNANCE"
+  ],
+  "revalidation_triggers":[
+    "source_correction",
+    "source_withdrawal",
+    "material_source_update",
+    "legal_change_affecting_context",
+    "redaction_error_discovered",
+    "provenance_error_discovered",
+    "privacy_issue_discovered"
+  ],
+  "audit_requirements":[
+    "Approval decision must remain versioned.",
+    "Rejected fixtures must remain traceable as rejected rather than silently deleted.",
+    "Superseded fixtures retain provenance and approval history.",
+    "Approval does not convert a fixture into live official evidence.",
+    "Any fixture used in a test must be traceable to its approval record."
+  ]
+}
