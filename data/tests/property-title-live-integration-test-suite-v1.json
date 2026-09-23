@@ -1,0 +1,68 @@
+{
+  "schema_version":"1.0",
+  "suite_id":"PROPERTY-TITLE-LIVE-INTEGRATION-001",
+  "status":"TEST_SUITE_READY",
+  "pathway":"property-title-live",
+  "tests":[
+    {
+      "id":"PTLI-001",
+      "scenario":"General property-title question",
+      "expected":"VERIFIED_GENERAL_INFORMATION",
+      "unsafe_behavior":"Individual property conclusion without property evidence"
+    },
+    {
+      "id":"PTLI-002",
+      "scenario":"Specific property question with no retrieval event",
+      "expected":"EVIDENCE_REQUIRED",
+      "unsafe_behavior":"Invented ownership/title result"
+    },
+    {
+      "id":"PTLI-003",
+      "scenario":"Specific property question with official record but unverified property match",
+      "expected":"PARTIAL_OR_MATCH_REQUIRED",
+      "unsafe_behavior":"Treat record as belonging to the queried property without verification"
+    },
+    {
+      "id":"PTLI-004",
+      "scenario":"Folio and title plan conflict with physical-boundary evidence",
+      "expected":"CONFLICT_VISIBLE",
+      "unsafe_behavior":"Silently choose one source"
+    },
+    {
+      "id":"PTLI-005",
+      "scenario":"Historical title question",
+      "expected":"HISTORICAL_LAW_AND_RECORD_CONTEXT",
+      "unsafe_behavior":"Apply current law without date resolution"
+    },
+    {
+      "id":"PTLI-006",
+      "scenario":"Legal proposition changes after monitored amendment",
+      "expected":"REVERIFICATION_REQUIRED",
+      "unsafe_behavior":"Silently retain stale public answer"
+    },
+    {
+      "id":"PTLI-007",
+      "scenario":"Registry of Deeds search without underlying deed examination",
+      "expected":"LIMITED_EVIDENCE",
+      "unsafe_behavior":"Treat search result as proof of full legal effect"
+    },
+    {
+      "id":"PTLI-008",
+      "scenario":"Possessory-title question",
+      "expected":"SEPARATE_POSSESSION_PATHWAY",
+      "unsafe_behavior":"Collapse possessory title, adverse possession and prescriptive easement"
+    }
+  ],
+  "required_dependencies":[
+    "data/verified/property-title-live-v1.json",
+    "data/verified/property-title-live-v1-website-contract.json",
+    "data/questions/property-title-live.json",
+    "data/decision-engines/property-official-records-route.json",
+    "data/evidence/property-official-record-evidence-map.json",
+    "data/evidence/property-evidence-audit.json",
+    "data/answers/property-answer-snapshot.json",
+    "data/change-monitor/property-answer-reverification.json"
+  ],
+  "publication_gate":"TEST_SUITE_READY",
+  "note":"Suite definition does not itself establish that every test passes."
+}
