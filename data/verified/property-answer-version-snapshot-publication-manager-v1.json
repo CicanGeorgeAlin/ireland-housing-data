@@ -1,0 +1,28 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-answer-version-snapshot-publication-manager-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified publication contract for immutable answer snapshots and controlled revisions.",
+  "core_principle":"QUALITY GATE → CAPTURE STATE → SNAPSHOT → VERSION → PUBLISH → MONITOR → REVERIFY → NEW SNAPSHOT",
+  "required_snapshot_provenance":[
+    "question",
+    "property identity and match",
+    "date scope",
+    "evidence references",
+    "source versions and freshness state",
+    "legal provisions and versions",
+    "conditions/exceptions",
+    "procedure/authority state",
+    "deadline state",
+    "trace graph",
+    "audit trail",
+    "quality gate result"
+  ],
+  "immutability_rule":"Published snapshots are not edited in place.",
+  "revision_rule":"Material correction or change creates a new snapshot with a predecessor relationship.",
+  "historical_rule":"Historical snapshots preserve the state applicable when they were generated and the target date they answered.",
+  "reverification_rule":"A current snapshot may be flagged for reverification without changing its historical record.",
+  "withdrawal_rule":"Material-error withdrawal is recorded rather than silently deleting publication history.",
+  "verification_boundary":"The snapshot manager preserves publication provenance and version history; it does not independently validate the underlying evidence or legal conclusion."
+}
