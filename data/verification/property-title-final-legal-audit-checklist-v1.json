@@ -1,0 +1,82 @@
+{
+  "schema_version":"0.1",
+  "status":"AUDIT_READY_NOT_PASSED",
+  "verified_at":"2026-09-23",
+  "purpose":"Prepare the property-title pathway for a final publication-level legal audit without treating preparation as verification.",
+  "audit_id":"PROPERTY-TITLE-FINAL-AUDIT-001",
+  "required_checks":[
+    {
+      "id":"AUDIT-001",
+      "check":"Primary statutory provisions",
+      "status":"PARTIAL"
+    },
+    {
+      "id":"AUDIT-002",
+      "check":"Current revised text",
+      "status":"PASS"
+    },
+    {
+      "id":"AUDIT-003",
+      "check":"All material amendments",
+      "status":"PARTIAL"
+    },
+    {
+      "id":"AUDIT-004",
+      "check":"Commencement of relied-upon amendments",
+      "status":"PARTIAL"
+    },
+    {
+      "id":"AUDIT-005",
+      "check":"Current registration rules",
+      "status":"PASS_WITH_HISTORY_CONTEXT"
+    },
+    {
+      "id":"AUDIT-006",
+      "check":"Current official forms/routes",
+      "status":"PASS"
+    },
+    {
+      "id":"AUDIT-007",
+      "check":"s.31 case-law",
+      "status":"PASS_WITH_REMAINING_REVIEW"
+    },
+    {
+      "id":"AUDIT-008",
+      "check":"Registry-map/boundary case-law",
+      "status":"PARTIAL"
+    },
+    {
+      "id":"AUDIT-009",
+      "check":"Possessory-title case-law",
+      "status":"PARTIAL"
+    },
+    {
+      "id":"AUDIT-010",
+      "check":"Historical version handling",
+      "status":"FRAMEWORK_READY"
+    },
+    {
+      "id":"AUDIT-011",
+      "check":"Evidence boundary",
+      "status":"PASS"
+    },
+    {
+      "id":"AUDIT-012",
+      "check":"Privacy minimisation",
+      "status":"PASS"
+    }
+  ],
+  "publication_rule":"All material checks must be resolved before the pathway is labelled publication-ready. A technically valid pathway may remain legally unpublished.",
+  "current_decision":"NOT_READY",
+  "blocking_items":[
+    "Complete material amendment and commencement review.",
+    "Complete remaining proposition-specific case-law review.",
+    "Perform final source-by-source legal audit.",
+    "Live property evidence remains absent for any individual-property answer."
+  ],
+  "guardrails":[
+    "Audit preparation is not legal verification.",
+    "No publication is triggered by completion of this checklist.",
+    "No individual property result is generated."
+  ]
+}
