@@ -50,9 +50,19 @@ The website will progressively connect to:
 
 ## Current status
 
-Website foundation: **STARTED**
+Website foundation: **IMPLEMENTED**
 
-Research and legal architecture: **IN PROGRESS**
+GitHub Pages deployment workflow: **CONFIGURED**
+
+Property-title general information: **PUBLISHED IN REPOSITORY**
+
+Property-title controlled integration tests: **8/8 PASS**
+
+Public browser deployment: **NOT YET INDEPENDENTLY VERIFIED**
+
+Individual-property ownership/title answers: **OFFICIAL EVIDENCE REQUIRED**
+
+Research and legal architecture: **CONTINUOUS**
 
 Content publication follows verification.
 
