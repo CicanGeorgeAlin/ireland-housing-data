@@ -1,0 +1,75 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Validate that governance snapshot comparisons correctly detect technical state transitions without rewriting history or misrepresenting legal or publication status.",
+  "comparison_contract": "data/tests/property-fixture-governance-snapshot-comparison.json",
+  "validation_sequence": [
+    "LOAD_COMPARISON_CONTRACT",
+    "VERIFY_INPUT_SNAPSHOT_REQUIREMENTS",
+    "VERIFY_TRANSITION_TYPES",
+    "VERIFY_HISTORICAL_RULES",
+    "VERIFY_LEGAL_STATUS_SEPARATION",
+    "VERIFY_PRODUCTION_EVIDENCE_SEPARATION",
+    "VERIFY_PUBLICATION_GATE_SEPARATION",
+    "VERIFY_BLOCKED_COMPARISON_RULE",
+    "RECORD_VALIDATION"
+  ],
+  "checks": [
+    {
+      "check_id": "PFGSCV-001",
+      "name": "Input integrity",
+      "requirement": "Comparison requires identifiable before and after snapshots with capture dates.",
+      "result": "PASS"
+    },
+    {
+      "check_id": "PFGSCV-002",
+      "name": "Transition coverage",
+      "requirement": "Contract can represent unchanged, improved, regressed, blocker and revalidation/closure transitions.",
+      "result": "PASS"
+    },
+    {
+      "check_id": "PFGSCV-003",
+      "name": "Historical integrity",
+      "requirement": "Comparison cannot modify or currentize the earlier snapshot.",
+      "result": "PASS"
+    },
+    {
+      "check_id": "PFGSCV-004",
+      "name": "Legal separation",
+      "requirement": "Technical state changes cannot be treated as legal-source changes without separate evidence.",
+      "result": "PASS"
+    },
+    {
+      "check_id": "PFGSCV-005",
+      "name": "Evidence separation",
+      "requirement": "Production evidence changes require actual evidence records.",
+      "result": "PASS"
+    },
+    {
+      "check_id": "PFGSCV-006",
+      "name": "Publication separation",
+      "requirement": "Publication status remains governed by its independent gate.",
+      "result": "PASS"
+    },
+    {
+      "check_id": "PFGSCV-007",
+      "name": "Conflict handling",
+      "requirement": "Identity or capture-date conflicts block comparison.",
+      "result": "PASS"
+    }
+  ],
+  "result": {
+    "validation_status": "PASSED",
+    "comparison_contract_valid": true,
+    "historical_integrity": true,
+    "legal_source_status": "UNCHANGED",
+    "production_evidence_status": "UNCHANGED",
+    "publication_status": "UNCHANGED"
+  },
+  "guardrails": [
+    "This validates comparison governance only.",
+    "It does not verify Irish property law.",
+    "It does not represent live official-record retrieval.",
+    "It cannot independently authorize publication."
+  ]
+}
