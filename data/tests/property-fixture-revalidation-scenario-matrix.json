@@ -1,0 +1,84 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Define controlled scenario coverage for property evidence fixture revalidation so common correction, provenance, privacy, supersession and rejection paths are explicitly tested.",
+  "scenarios": [
+    {
+      "scenario_id": "PFRS-001",
+      "name": "Corrected synthetic fixture",
+      "change_type": "CORRECTION",
+      "expected": "REVALIDATION_REQUIRED",
+      "historical_runs_unchanged": true,
+      "publication_ready": false
+    },
+    {
+      "scenario_id": "PFRS-002",
+      "name": "Source-derived provenance change",
+      "change_type": "PROVENANCE_CHANGE",
+      "expected": "REVIEW_REQUIRED",
+      "historical_runs_unchanged": true,
+      "publication_ready": false
+    },
+    {
+      "scenario_id": "PFRS-003",
+      "name": "Privacy issue discovered",
+      "change_type": "PRIVACY_CHANGE",
+      "expected": "BLOCKED",
+      "historical_runs_unchanged": true,
+      "publication_ready": false
+    },
+    {
+      "scenario_id": "PFRS-004",
+      "name": "Fixture source updated",
+      "change_type": "SOURCE_UPDATE",
+      "expected": "REVIEW_REQUIRED",
+      "historical_runs_unchanged": true,
+      "publication_ready": false
+    },
+    {
+      "scenario_id": "PFRS-005",
+      "name": "Fixture superseded",
+      "change_type": "SUPERSESSION",
+      "expected": "REVALIDATION_REQUIRED",
+      "historical_runs_unchanged": true,
+      "publication_ready": false
+    },
+    {
+      "scenario_id": "PFRS-006",
+      "name": "Fixture rejected",
+      "change_type": "REJECTION",
+      "expected": "BLOCKED",
+      "historical_runs_unchanged": true,
+      "publication_ready": false
+    }
+  ],
+  "required_assertions": [
+    "Every scenario creates or references an explicit impact event.",
+    "Affected dependencies are resolved from the dependency registry.",
+    "Historical validation runs remain immutable.",
+    "Required dependent tests are identified.",
+    "Proposition scope remains limited to mapped dependencies.",
+    "Privacy-impacting changes block affected use until review passes.",
+    "Source-derived provenance changes require provenance review.",
+    "Superseded fixtures cannot silently remain active.",
+    "Rejected fixtures cannot be used for active validation.",
+    "No scenario automatically makes a pathway publication-ready."
+  ],
+  "coverage_expectation": {
+    "minimum_scenarios": 6,
+    "covered_change_types": [
+      "CORRECTION",
+      "PROVENANCE_CHANGE",
+      "PRIVACY_CHANGE",
+      "SOURCE_UPDATE",
+      "SUPERSESSION",
+      "REJECTION"
+    ]
+  },
+  "guardrails": [
+    "Scenario coverage validates system behavior, not the correctness of Irish property law.",
+    "Fixtures used in these scenarios may be synthetic and cannot establish real property facts.",
+    "Scenario results must not be interpreted as live official-record evidence.",
+    "Historical records remain immutable."
+  ]
+}
