@@ -1,0 +1,61 @@
+{
+  "id":"boundary-encroachment",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"STRUCTURAL_PROPERTY_DISPUTE_ENGINE",
+  "question":"Is there a boundary problem or possible encroachment affecting this property?",
+  "pipeline":[
+    "identify-properties-and-folios",
+    "retrieve-title-plans-and-relevant-map-evidence",
+    "identify-registered-boundary-status",
+    "compare-map-evidence-with-physical-features",
+    "record-date-and-history-of-occupation",
+    "identify-fence_wall_building_or_structure",
+    "check-easement_or_right_of_way",
+    "check-adverse-possession_or_prescription_issue",
+    "check-planning_and_building-control_separately",
+    "identify-survey_or-engineering-evidence",
+    "reconstruct-property-timeline",
+    "identify-pre_action_and-dispute-route",
+    "show-evidence"
+  ],
+  "issue_types":[
+    "ENCROACHMENT",
+    "BOUNDARY_DISPUTE",
+    "FENCE_OR_WALL_LOCATION",
+    "BUILDING_CROSSES_BOUNDARY",
+    "ACCESS_ROUTE",
+    "PRESCRIPTIVE_RIGHT",
+    "ADVERSE_POSSESSION",
+    "MAP_OR_TITLE_PLAN_CONFLICT"
+  ],
+  "evidence_priority":[
+    "folio",
+    "filed_or_title_plan",
+    "relevant_instrument",
+    "historical_title_documents",
+    "survey",
+    "dated_physical_evidence",
+    "planning_records",
+    "building_control_records",
+    "occupation_and_use_evidence"
+  ],
+  "guardrails":[
+    "Do not declare a boundary from a general map alone.",
+    "Do not equate a fence, wall or hedge with the legal boundary without evidence.",
+    "Do not infer adverse possession merely from long occupation.",
+    "Do not infer an easement merely from physical access.",
+    "Planning permission does not establish ownership of land affected by the development.",
+    "A boundary dispute may require a qualified surveyor and legal advice/court determination.",
+    "Historical law must be applied to the relevant period of possession or alteration."
+  ],
+  "result_types":[
+    "BOUNDARY_EVIDENCE_IDENTIFIED",
+    "POSSIBLE_ENCROACHMENT_REQUIRES_SURVEY",
+    "HISTORICAL_POSSESSION_RESEARCH_REQUIRED",
+    "EASEMENT_ISSUE_IDENTIFIED",
+    "MULTI_REGIME_PROPERTY_DISPUTE",
+    "COURT_OR_LEGAL_REVIEW_REQUIRED",
+    "NOT_DETERMINABLE"
+  ]
+}
