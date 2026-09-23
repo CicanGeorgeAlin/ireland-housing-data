@@ -1,0 +1,58 @@
+{
+  "schema_version":"1.0",
+  "contract_id":"PROPERTY-TITLE-LIVE-UX-001",
+  "status":"UX_READY",
+  "content_id":"property-title-live",
+  "principle":"Answer the user's legal question first, then show the evidence boundary and the correct official route.",
+  "entry_questions":[
+    "What does the Land Registry record?",
+    "What does a folio prove?",
+    "Does a title plan prove the boundary?",
+    "How do I check who is registered as owner?",
+    "How do I find historical title information?",
+    "What if I have an old deed?",
+    "Can I claim property through possession?"
+  ],
+  "answer_modes":{
+    "GENERAL_LAW":"Use verified general information.",
+    "PROPERTY_SPECIFIC":"Require official evidence before stating property-specific facts.",
+    "HISTORICAL":"Resolve the relevant date before applying legal rules.",
+    "DISPUTE":"Expose competing evidence and route to the appropriate procedure.",
+    "POSSESSORY_TITLE":"Use the separate possession pathway."
+  },
+  "display_order":[
+    "THE_ANSWER",
+    "SHOW_ME_THE_LAW",
+    "WHAT_THIS_PROVES",
+    "WHAT_THIS_DOES_NOT_PROVE",
+    "OFFICIAL_ROUTE",
+    "DOCUMENTS_NEEDED",
+    "DEADLINE_IF_ANY",
+    "WHEN_TO_GET_PROFESSIONAL_HELP",
+    "LAST_VERIFIED"
+  ],
+  "official_route_cards":[
+    "Landdirect property identification",
+    "Current folio/title plan",
+    "Official search",
+    "Historical register search",
+    "Registry of Deeds",
+    "Underlying instrument copy/inspection"
+  ],
+  "safety_states":[
+    "GENERAL_INFORMATION",
+    "EVIDENCE_REQUIRED",
+    "RETRIEVAL_PENDING",
+    "PROPERTY_MATCH_PENDING",
+    "CONFLICT",
+    "HISTORICAL",
+    "PROFESSIONAL_REVIEW_REQUIRED"
+  ],
+  "visual_rules":{
+    "background":"pure black",
+    "primary_text":"bright white",
+    "glow":"restrained white",
+    "priority":"legal clarity over decoration"
+  },
+  "publication_status":"READY_FOR_UI_IMPLEMENTATION"
+}
