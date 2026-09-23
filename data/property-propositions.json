@@ -1,0 +1,55 @@
+{
+  "id":"property-proposition-registry",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"CANONICAL_PROPERTY_PROPOSITION_SEED",
+  "principle":"ONE_CANONICAL_PROPERTY_PROPOSITION -> MANY_USES -> ONE_VERSION_HISTORY -> ONE_EVIDENCE_CHAIN",
+  "propositions":[
+    {
+      "id":"PROP-PROPERTY-TITLE-001",
+      "statement":"A current Land Registry folio is evidence of the registered title position for the registered property, subject to the register, entries and applicable law.",
+      "domains":["property-title","buyer-due-diligence","property-official-records-search"],
+      "source_families":["Registration of Title Act 1964","Tailte Éireann Land Registry"]
+    },
+    {
+      "id":"PROP-PROPERTY-MAP-002",
+      "statement":"A registry map or title-plan representation must not automatically be treated as conclusive proof of the precise physical boundary or every aspect of the property's extent.",
+      "domains":["property-title","boundary-encroachment"],
+      "source_families":["Land Registration Rules","Tailte Éireann"]
+    },
+    {
+      "id":"PROP-PROPERTY-REGISTRATION-003",
+      "statement":"A contractual transaction, succession entitlement or probate process must be distinguished from the subsequent registration of the relevant ownership position in the Land Register.",
+      "domains":["property-sale-transfer","property-succession-inheritance","estate-property-registration"],
+      "source_families":["Registration of Title Act 1964","Land Registration Rules","Succession Act 1965"]
+    },
+    {
+      "id":"PROP-PROPERTY-PLANNING-004",
+      "statement":"Registered ownership does not by itself establish planning permission, building-regulations compliance or lawful use/development of the property.",
+      "domains":["property-title","planning-property-use","buyer-due-diligence","building-control"],
+      "source_families":["Planning legislation","Building Control legislation","Registration of Title legislation"]
+    },
+    {
+      "id":"PROP-PROPERTY-TAX-005",
+      "statement":"Property tax treatment must be determined by the relevant property event, parties, consideration or value, date and applicable tax regime rather than by property ownership alone.",
+      "domains":["property-tax","property-sale-transfer","property-succession-inheritance"],
+      "source_families":["Revenue property tax guidance","relevant tax legislation"]
+    }
+  ],
+  "version_rules":[
+    "Every proposition has a version history.",
+    "Historical propositions remain available when relevant.",
+    "Amendment or supersession creates a new proposition version rather than silently overwriting the old one.",
+    "Every published proposition must have an evidence chain.",
+    "Every calculator, question, document validator and website explanation must reference canonical proposition IDs."
+  ],
+  "validation_states":[
+    "STRUCTURAL_SEED",
+    "SOURCE_VERIFIED",
+    "PROVISION_VERIFIED",
+    "COMMENCEMENT_VERIFIED",
+    "CASE_LAW_CHECKED",
+    "PROCEDURE_VERIFIED",
+    "PUBLISHED"
+  ]
+}
