@@ -1,0 +1,72 @@
+{
+  "id":"water-ingress-damp-mould",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"STRUCTURAL_CROSS_DOMAIN_ENGINE",
+  "question":"What should I do about water ingress, damp or mould in a property?",
+  "pipeline":[
+    "identify-property-and-occupancy",
+    "identify-location-and-building-element",
+    "record-first-observed-date",
+    "classify-observed-problem",
+    "collect_photos_reports_and_previous_repairs",
+    "identify_tenancy_or_ownership_regime",
+    "identify_OMC_or_landlord_responsibility_where_relevant",
+    "check_building_control_and_construction_history",
+    "check_insurance_route",
+    "check_applicable_remediation_scheme",
+    "identify_notice_or_reporting_route",
+    "preserve_evidence_and_chronology",
+    "identify_dispute_or_enforcement_route",
+    "show-evidence"
+  ],
+  "problem_types":[
+    "WATER_INGRESS",
+    "ROOF_LEAK",
+    "PIPE_LEAK",
+    "CONDENSATION",
+    "RISING_DAMP",
+    "PENETRATING_DAMP",
+    "MOULD",
+    "FLOODING",
+    "COMMON_AREA_WATER_DAMAGE"
+  ],
+  "cross_domain_links":[
+    "residential-tenancy",
+    "omc",
+    "building-control",
+    "construction-defects",
+    "insurance",
+    "remediation",
+    "planning_where_alterations_are_involved"
+  ],
+  "guardrails":[
+    "Do not diagnose the technical cause from appearance alone.",
+    "Do not assume mould has one cause.",
+    "Do not assign legal responsibility before identifying the occupancy, ownership and building-management regime.",
+    "Do not assume an insurance policy covers the event without checking policy terms and exclusions.",
+    "Do not treat a landlord/OMC report as proof that the underlying defect was remedied.",
+    "For urgent flooding or dangerous electrical/fire conditions, direct the user to immediate safety and emergency routes."
+  ],
+  "evidence_types":[
+    "dated_photographs",
+    "inspection_reports",
+    "repair_requests",
+    "contractor_reports",
+    "OMC_records",
+    "landlord_records",
+    "insurance_claim_records",
+    "building_control_documents",
+    "planning_documents",
+    "remediation_documents"
+  ],
+  "result_types":[
+    "REPORTING_ROUTE_IDENTIFIED",
+    "TECHNICAL_ASSESSMENT_REQUIRED",
+    "RESPONSIBILITY_REQUIRES_REVIEW",
+    "INSURANCE_REVIEW_REQUIRED",
+    "REMEDIATION_ROUTE_REQUIRES_RESEARCH",
+    "DISPUTE_ROUTE_IDENTIFIED",
+    "NOT_DETERMINABLE"
+  ]
+}
