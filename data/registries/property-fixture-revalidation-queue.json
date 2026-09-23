@@ -1,0 +1,84 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Central queue for property evidence fixture changes that require explicit review or revalidation before dependent testing can return to its prior state.",
+  "queue_rules": [
+    "Every material fixture impact event with unresolved dependencies appears here.",
+    "Queue entries reference the impact event rather than rewriting it.",
+    "Historical validation runs remain immutable.",
+    "Required dependencies must be resolved before closure.",
+    "Queue status does not establish legal verification or live property evidence."
+  ],
+  "statuses": [
+    "QUEUED",
+    "IN_REVIEW",
+    "WAITING_FOR_FIXTURE",
+    "WAITING_FOR_PROVENANCE_REVIEW",
+    "WAITING_FOR_PRIVACY_REVIEW",
+    "READY_FOR_REVALIDATION",
+    "REVALIDATION_IN_PROGRESS",
+    "COMPLETED",
+    "BLOCKED",
+    "HISTORICAL"
+  ],
+  "priority_rules": {
+    "BLOCKED": "Highest priority; dependent active testing cannot safely proceed.",
+    "WAITING_FOR_PRIVACY_REVIEW": "High priority where personal-data exposure could occur.",
+    "WAITING_FOR_PROVENANCE_REVIEW": "High priority for source-derived fixtures.",
+    "READY_FOR_REVALIDATION": "Run isolated validation as soon as the approved replacement/correction is available.",
+    "HISTORICAL": "Retain for audit but do not treat as an active queue item."
+  },
+  "records": [
+    {
+      "queue_id": "PF-REVAL-QUEUE-001",
+      "impact_event_id": "FIXTURE-IMPACT-EVENT-001",
+      "fixture_id": "FIXTURE-FOLIO-SYNTHETIC-001",
+      "fixture_version_before": "1.0",
+      "fixture_version_after": "1.1",
+      "change_type": "CORRECTION",
+      "status": "READY_FOR_REVALIDATION",
+      "priority": "MATERIAL",
+      "affected_test_case_ids": [
+        "PAE-001",
+        "PAE-007"
+      ],
+      "affected_validation_run_ids": [
+        "RUN-PROPERTY-TITLE-SYNTHETIC-E2E-001",
+        "PFIV-RUN-001"
+      ],
+      "affected_pathway_ids": [
+        "property-title-live"
+      ],
+      "affected_proposition_ids": [
+        "PROP-PROPERTY-TITLE-001",
+        "PROP-PROPERTY-REGISTRATION-003"
+      ],
+      "required_actions": [
+        "Use an approved replacement/corrected fixture.",
+        "Run isolated dependent validation.",
+        "Record the new validation run.",
+        "Update impact event with resulting run ID.",
+        "Recalculate pathway validation status."
+      ],
+      "historical_runs_immutable": true,
+      "publication_ready": false,
+      "example_only": true
+    }
+  ],
+  "closure_gate": [
+    "Approved fixture version available.",
+    "Required dependency tests re-run.",
+    "New validation result recorded.",
+    "Historical results preserved.",
+    "No unresolved critical provenance/privacy issue.",
+    "Impact event updated with resulting validation run.",
+    "Pathway status recalculated.",
+    "No automatic publication performed."
+  ],
+  "guardrails": [
+    "The queue is a technical governance mechanism, not a legal decision-maker.",
+    "Synthetic fixture entries cannot establish real ownership, title, boundary or other property facts.",
+    "A completed queue item does not by itself make a legal answer publishable.",
+    "Legal-source verification remains a separate gate."
+  ]
+}
