@@ -5,6 +5,15 @@
   "purpose": "Connect the principal property-registration pathways into one date-aware evidence-driven lifecycle while keeping each legal event distinct.",
   "lifecycle": [
     {
+      "stage": "REVERIFICATION_PRIORITY_QUEUE",
+      "routes": [
+        "property-investigation-reverification-priority-engine",
+        "property-evidence-dependency-graph",
+        "property-answer-reverification-change-detection",
+        "property-answer-version-snapshot-publication-manager"
+      ]
+    },
+    {
       "stage": "EVIDENCE_DEPENDENCY_GRAPH",
       "routes": [
         "property-evidence-dependency-graph",
@@ -419,7 +428,8 @@
     "property-investigation-orchestrator",
     "property-investigation-run-event-log",
     "property-investigation-evidence-cache-deduplication",
-    "property-evidence-dependency-graph"
+    "property-evidence-dependency-graph",
+    "property-investigation-reverification-priority-engine"
   ],
   "answer_sequence": [
     "QUESTION",
