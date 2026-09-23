@@ -1,0 +1,60 @@
+{
+  "schema_version":"0.1",
+  "status":"PARTIALLY_COMPLETE",
+  "verified_at":"2026-09-23",
+  "purpose":"Connect each core property-title proposition to statute, amendments, commencement, case law and official procedure.",
+  "chains":[
+    {
+      "proposition_id":"PROP-PROPERTY-TITLE-001",
+      "chain":{
+        "primary_law":"Registration of Title Act 1964 s.31",
+        "amendment":"Registration of Deeds and Title Act 2006 s.4(2)",
+        "commencement":"2006-11-04",
+        "case_law":[
+          "Reidy v The Governor and Company of Bank of Ireland [2023] IECA 212",
+          "Planetwhite Ltd v Hogan & Anor [2025] IEHC 378",
+          "O'Flaherty & Ors v Permanent TSB Public Ltd Company & Ors [2026] IEHC 74"
+        ],
+        "official_procedure":"Order 96 / Tailte Éireann registration procedures",
+        "status":"SUBSTANTIALLY_BOUND",
+        "remaining":"Final amendment/commencement reconciliation and proposition-specific judgment audit."
+      }
+    },
+    {
+      "proposition_id":"PROP-PROPERTY-MAP-002",
+      "chain":{
+        "primary_law":"Registration of Title Act 1964 ss.84-86",
+        "amendment":"Registration of Deeds and Title Act 2006 ss.61-62",
+        "commencement":"2006-11-04",
+        "case_law":[
+          "O'Flaherty & Ors v Permanent TSB Public Ltd Company & Ors [2026] IEHC 74"
+        ],
+        "official_procedure":"Tailte Éireann folio/title-plan and registration procedures",
+        "status":"PARTIALLY_BOUND",
+        "remaining":"Additional primary boundary authorities and final statutory audit."
+      }
+    },
+    {
+      "proposition_id":"PROP-PROPERTY-REGISTRATION-003",
+      "chain":{
+        "primary_law":"Registration of Title Act 1964 ss.33, 49, 53-54",
+        "amendment":"Registration of Deeds and Title Act 2006 relevant amendments",
+        "commencement":"Provision-specific review required",
+        "case_law":[
+          "McDonnell v McDonnell [2013] IEHC 395"
+        ],
+        "official_procedure":"Tailte Éireann possessory-title/adverse-possession routes",
+        "status":"PARTIALLY_BOUND",
+        "remaining":"Full case-law extraction, historical limitation analysis and complete current form/rule mapping."
+      }
+    }
+  ],
+  "chain_rule":"A proposition is publication-ready only when every material link in its evidence chain is verified or the unresolved limitation is explicitly non-material to the public statement.",
+  "publication_gate":"NOT_READY",
+  "guardrails":[
+    "No individual property evidence is included.",
+    "Case law is not treated as amendment authority.",
+    "Official procedure is not treated as substantive legal proof.",
+    "Historical and current law remain separately addressable."
+  ]
+}
