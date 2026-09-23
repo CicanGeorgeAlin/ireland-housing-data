@@ -1,0 +1,113 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-investigation-citizen-timeline-status-view",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Translate internal investigation state into a simple citizen-facing timeline showing progress, required action and publication state without exposing internal or restricted information.",
+  "core_principle":"SHOW PROGRESS, NOT INTERNAL COMPLEXITY.",
+  "citizen_stages":[
+    "QUESTION_RECEIVED",
+    "QUESTION_UNDERSTOOD",
+    "INFORMATION_NEEDED",
+    "EVIDENCE_BEING_CHECKED",
+    "PROPERTY_AND_DATE_CHECKED",
+    "LAW_BEING_CHECKED",
+    "CONFLICT_OR_GAP_REVIEWED",
+    "NEXT_ROUTE_IDENTIFIED",
+    "ANSWER_REVIEWED",
+    "ANSWER_READY",
+    "ANSWER_PUBLISHED",
+    "REVIEW_REQUIRED",
+    "WAITING_FOR_CITIZEN",
+    "WAITING_FOR_OFFICIAL_EVIDENCE",
+    "TEMPORARILY_BLOCKED"
+  ],
+  "internal_to_citizen_mapping":[
+    {
+      "internal":["QUESTION_UNRESOLVED","CLASSIFICATION"],
+      "citizen":"QUESTION_UNDERSTOOD"
+    },
+    {
+      "internal":["PROPERTY_UNRESOLVED","DATE_SCOPE_UNRESOLVED"],
+      "citizen":"INFORMATION_NEEDED"
+    },
+    {
+      "internal":["EVIDENCE_RETRIEVAL_IN_PROGRESS","SOURCE_RECEIVED","VALIDATION_IN_PROGRESS"],
+      "citizen":"EVIDENCE_BEING_CHECKED"
+    },
+    {
+      "internal":["PROPERTY_MATCH_INCOMPLETE","DATE_MATCH_INCOMPLETE","FACTS_ESTABLISHED"],
+      "citizen":"PROPERTY_AND_DATE_CHECKED"
+    },
+    {
+      "internal":["LEGAL_ANALYSIS_REQUIRED","LEGAL_ANALYSIS_INCOMPLETE"],
+      "citizen":"LAW_BEING_CHECKED"
+    },
+    {
+      "internal":["CONFLICT_DETECTED","MORE_EVIDENCE_REQUIRED"],
+      "citizen":"CONFLICT_OR_GAP_REVIEWED"
+    },
+    {
+      "internal":["PROCEDURE_IDENTIFIED","DEADLINE_IDENTIFIED","COURT_ROUTE_IDENTIFIED"],
+      "citizen":"NEXT_ROUTE_IDENTIFIED"
+    },
+    {
+      "internal":["QUALITY_GATE_REQUIRED"],
+      "citizen":"ANSWER_REVIEWED"
+    },
+    {
+      "internal":["READY_TO_PUBLISH","VERIFIED_ANSWER","VERIFIED_WITH_LIMITATIONS"],
+      "citizen":"ANSWER_READY"
+    },
+    {
+      "internal":["PUBLISHED"],
+      "citizen":"ANSWER_PUBLISHED"
+    }
+  ],
+  "visibility_rules":[
+    "Show the citizen only the stage, relevant action and material reason.",
+    "Do not expose internal engine names, dependency graph details, hidden confidence scores or internal chain-of-thought.",
+    "Do not expose restricted personal information or unrelated source contents.",
+    "A waiting state should explain what is needed without revealing unnecessary internal data.",
+    "A limitation should be communicated when it materially affects the answer.",
+    "A published answer status must match the actual snapshot publication state."
+  ],
+  "citizen_status_record":[
+    "status_view_id",
+    "run_id",
+    "public_case_reference",
+    "current_stage",
+    "completed_stages",
+    "waiting_for",
+    "citizen_action_required",
+    "material_limitation",
+    "last_public_update",
+    "answer_status",
+    "next_public_step"
+  ],
+  "status_language_rules":[
+    "Use plain language.",
+    "Prefer concrete actions over technical labels.",
+    "Do not imply certainty beyond the underlying verification state.",
+    "Do not promise a completion time unless a verified deadline or service timeframe applies.",
+    "Keep historical and current investigations distinguishable."
+  ],
+  "hard_stops":[
+    "Never expose internal reasoning through the status view.",
+    "Never show a stage as complete when the underlying state is incomplete.",
+    "Never imply that evidence retrieval alone establishes the answer.",
+    "Never hide a material limitation that changes what the citizen can rely on.",
+    "Never expose restricted personal data merely to make the timeline look complete."
+  ],
+  "output_contract":[
+    "public_case_reference",
+    "current_stage",
+    "progress_timeline",
+    "waiting_for",
+    "citizen_action_required",
+    "material_limitation",
+    "answer_status",
+    "last_public_update",
+    "next_public_step"
+  ]
+}
