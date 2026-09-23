@@ -1,0 +1,25 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-investigation-run-event-log-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for chronological, append-only investigation history.",
+  "core_principle":"A MATERIAL STATE CHANGE MUST HAVE A TRACEABLE EVENT.",
+  "minimum_event_fields":[
+    "event_id",
+    "run_id",
+    "timestamp",
+    "event_type",
+    "actor_or_engine",
+    "input_state",
+    "output_state",
+    "decision_or_result",
+    "references",
+    "verification_status"
+  ],
+  "immutability_rule":"Existing events are never edited or deleted; corrections and superseding states are recorded as new events.",
+  "traceability_rule":"Material published answer components must be reconstructable through the event chain to their supporting evidence and legal sources.",
+  "failure_visibility_rule":"Failed retrievals, conflicts, blocked stages, limitations and withdrawn/superseded answers remain visible in the run history.",
+  "reconstruction_rule":"The ordered event history must be sufficient to reconstruct the investigation's material state transitions.",
+  "verification_boundary":"An event log proves the investigation history, not the truth of the underlying property fact."
+}
