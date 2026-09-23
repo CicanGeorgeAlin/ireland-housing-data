@@ -1,0 +1,57 @@
+{
+  "id":"buyer-due-diligence",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"STRUCTURAL_AND_OFFICIAL_SOURCE_SEED",
+  "question":"What should a buyer establish before committing to purchase property?",
+  "pipeline":[
+    "identify-property",
+    "verify-title-and-owner",
+    "review-folio-and-filed-plan",
+    "identify-burdens-easements-leases-and-charges",
+    "review_contract_and_special_conditions",
+    "verify_lpt_position",
+    "check_stamp_duty_and_transaction_tax",
+    "check_planning_and_use_information",
+    "check_building_control_and_compliance_information",
+    "check_access_services_and_management_arrangements",
+    "identify_physical_or_environmental_due_diligence",
+    "record_open_questions",
+    "complete_conveyancing",
+    "verify_registration_after_completion"
+  ],
+  "evidence_categories":[
+    "title",
+    "registered_interests",
+    "contract",
+    "tax",
+    "planning",
+    "building_control",
+    "access",
+    "services",
+    "management_company_or_OMC",
+    "physical_condition",
+    "environmental",
+    "insurance",
+    "property_specific_documents"
+  ],
+  "official_verified_points":[
+    "Revenue advises purchasers to obtain the seller's LPT Property ID and valuation information and to check that LPT returns and payments are up to date.",
+    "Revenue states that unpaid LPT remains a charge on the property until paid.",
+    "Revenue states that purchasers normally arrange Stamp Duty payment and filing through a solicitor and that Stamp Duty applies to instruments transferring Irish property, subject to applicable rules and reliefs.",
+    "Tailte Éireann is the official source for Land Registry title and registration services."
+  ],
+  "guardrails":[
+    "Do not present the checklist as a substitute for transaction-specific legal advice.",
+    "Do not imply that a title search establishes planning, building-control or physical-condition compliance.",
+    "Do not imply that a solicitor's role eliminates the buyer's need to understand unresolved factual or contractual issues.",
+    "Do not infer that an absence of an obvious register entry proves the absence of every unregistered or equitable interest.",
+    "Flag issues requiring specialist inspection, planning, engineering, environmental, tax or legal review."
+  ],
+  "official_sources":[
+    "Tailte Éireann Land Registry / Landdirect",
+    "Revenue Buying Irish Property",
+    "Revenue LPT sale and purchase guidance",
+    "Revenue Stamp Duty property guidance"
+  ]
+}
