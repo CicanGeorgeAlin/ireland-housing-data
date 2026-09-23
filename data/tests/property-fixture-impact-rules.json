@@ -1,0 +1,109 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Define deterministic impact propagation from a controlled property evidence fixture change to dependent tests, pathways, propositions and validation state.",
+  "inputs": [
+    "fixture_id",
+    "fixture_change_type",
+    "previous_lifecycle_state",
+    "new_lifecycle_state",
+    "dependency_registry",
+    "active_validation_runs",
+    "historical_validation_runs"
+  ],
+  "change_types": [
+    "CORRECTION",
+    "PROVENANCE_CHANGE",
+    "PRIVACY_CHANGE",
+    "SOURCE_UPDATE",
+    "SUPERSESSION",
+    "REJECTION",
+    "RESTORATION"
+  ],
+  "propagation_rules": [
+    {
+      "rule_id": "FIXTURE-IMPACT-001",
+      "condition": "REJECTION",
+      "required_dependency": true,
+      "dependent_test_status": "BLOCKED",
+      "dependent_pathway_status": "REVALIDATION_REQUIRED",
+      "historical_run_status": "UNCHANGED",
+      "action": "Require replacement fixture or a new approved fixture before dependent active tests can run."
+    },
+    {
+      "rule_id": "FIXTURE-IMPACT-002",
+      "condition": "CORRECTION",
+      "required_dependency": true,
+      "dependent_test_status": "REVALIDATION_REQUIRED",
+      "dependent_pathway_status": "REVALIDATION_REQUIRED",
+      "historical_run_status": "UNCHANGED",
+      "action": "Create a new validation run using the corrected fixture; retain prior result."
+    },
+    {
+      "rule_id": "FIXTURE-IMPACT-003",
+      "condition": "PROVENANCE_CHANGE",
+      "required_dependency": true,
+      "dependent_test_status": "REVIEW_REQUIRED",
+      "dependent_pathway_status": "REVALIDATION_REQUIRED",
+      "historical_run_status": "UNCHANGED",
+      "action": "Re-check provenance, authority, retrieval date and legal-period metadata before reuse."
+    },
+    {
+      "rule_id": "FIXTURE-IMPACT-004",
+      "condition": "PRIVACY_CHANGE",
+      "required_dependency": true,
+      "dependent_test_status": "BLOCKED",
+      "dependent_pathway_status": "BLOCKED",
+      "historical_run_status": "UNCHANGED",
+      "action": "Block affected use until privacy review passes."
+    },
+    {
+      "rule_id": "FIXTURE-IMPACT-005",
+      "condition": "SOURCE_UPDATE",
+      "required_dependency": true,
+      "dependent_test_status": "REVIEW_REQUIRED",
+      "dependent_pathway_status": "REVALIDATION_REQUIRED",
+      "historical_run_status": "UNCHANGED",
+      "action": "Review whether the source update changes the fixture's legal period or evidential meaning."
+    },
+    {
+      "rule_id": "FIXTURE-IMPACT-006",
+      "condition": "SUPERSESSION",
+      "required_dependency": true,
+      "dependent_test_status": "REVALIDATION_REQUIRED",
+      "dependent_pathway_status": "REVALIDATION_REQUIRED",
+      "historical_run_status": "HISTORICAL_ONLY",
+      "action": "Use replacement fixture for current testing while retaining the superseded fixture for historical traceability."
+    }
+  ],
+  "execution_order": [
+    "IDENTIFY_FIXTURE_CHANGE",
+    "LOAD_DEPENDENCY_MAP",
+    "CLASSIFY_CHANGE",
+    "IDENTIFY_REQUIRED_DEPENDENCIES",
+    "PROPAGATE_TEST_IMPACT",
+    "PROPAGATE_PATHWAY_IMPACT",
+    "CHECK_PROPOSITION_SCOPE",
+    "CHECK_HISTORICAL_IMMUTABILITY",
+    "CREATE_REVALIDATION_QUEUE",
+    "RECORD_IMPACT_EVENT"
+  ],
+  "guardrails": [
+    "Fixture impact does not itself establish that the underlying law changed.",
+    "Fixture impact does not create or modify a legal proposition.",
+    "Historical validation runs remain immutable.",
+    "Synthetic fixtures cannot create real-world property facts.",
+    "A fixture change cannot silently publish a new legal answer.",
+    "Legal-source verification remains separate from technical fixture validation."
+  ],
+  "expected_output": {
+    "fixture_id": "string",
+    "impact_status": "NO_IMPACT | REVIEW_REQUIRED | REVALIDATION_REQUIRED | BLOCKED | HISTORICAL_ONLY",
+    "affected_test_case_ids": [],
+    "affected_validation_run_ids": [],
+    "affected_pathway_ids": [],
+    "affected_proposition_ids": [],
+    "new_validation_required": true,
+    "historical_runs_unchanged": true
+  }
+}
