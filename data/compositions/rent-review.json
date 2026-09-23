@@ -1,0 +1,25 @@
+{
+  "id":"rent-review-legal-composition",
+  "version":"0.1",
+  "status":"STRUCTURAL_ENGINE",
+  "pipeline":["FACTS","CLASSIFICATION","TIME","SPECIAL_RULE","EVIDENCE","PROPOSITION","RESULT"],
+  "result_types":{
+    "YES_SUBJECT_TO_CONDITIONS":"The currently verified facts support the proposition, but stated statutory conditions remain material.",
+    "POSSIBLY":"Available facts indicate a potentially applicable rule, but material facts or evidence remain unresolved.",
+    "NOT_DETERMINABLE":"The available facts/evidence are insufficient to resolve the legal question.",
+    "HISTORICAL":"The relevant event falls within a historical legal branch requiring historical propositions/evidence.",
+    "SPECIAL_REGIME":"The facts indicate a regime outside the ordinary private-tenancy pathway.",
+    "REVIEW_REQUIRED":"Evidence conflicts or a material legal issue cannot be resolved by the current verified dataset."
+  },
+  "composition_rules":[
+    "Classification must be resolved before applying private-rent propositions.",
+    "Tenancy start date and review date must be evaluated separately.",
+    "A special exception cannot be treated as established without its required evidence.",
+    "A missing exception fact does not prove the exception is absent.",
+    "Conflicting evidence produces REVIEW_REQUIRED.",
+    "Historical branches must not inherit current propositions automatically.",
+    "The output must expose its reasoning trace and evidence references."
+  ],
+  "trace_fields":["classification","tenancy_generation","review_period","candidate_propositions","special_rule_state","evidence_gate","unresolved_facts","result","evidence_refs"],
+  "current_scope":"Rent-review pathway only; not a complete legal determination."
+}
