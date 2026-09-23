@@ -1,0 +1,55 @@
+{
+  "id":"rent-review-next-steps",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "actions":[
+    {
+      "id":"calculate",
+      "label":"Calculate the permitted increase",
+      "when":"applicable capped or inflation-only route",
+      "authority":"RTB",
+      "official_route":"RTB Rent Calculator",
+      "source":"https://rtb.ie/rtb-rent-calculator/"
+    },
+    {
+      "id":"prepare-notice",
+      "label":"Prepare the Notice of Rent Review",
+      "when":"a rent review is legally available",
+      "authority":"RTB",
+      "official_route":"RTB rent review resources",
+      "source":"https://rtb.ie/resources/category/rent-reviews/"
+    },
+    {
+      "id":"serve-notice",
+      "label":"Serve the notice correctly",
+      "when":"notice is ready",
+      "authority":"RTB",
+      "current_procedure":"From 14 September 2026, a copy of a notice of rent review must be served to the RTB within 7 days of serving it on the tenant.",
+      "source":"https://rtb.ie/about/news/important-changes-to-rental-law-from-14-september-2026/"
+    },
+    {
+      "id":"market-register",
+      "label":"Check comparable rents",
+      "when":"market-rent setting/resetting is permitted",
+      "authority":"RTB",
+      "official_route":"RTB Rent Register",
+      "source":"https://rtb.ie/renting/guide-to-rent-review-notices/"
+    },
+    {
+      "id":"evidence",
+      "label":"Gather supporting evidence",
+      "when":"special exception or exemption is claimed",
+      "authority":"RTB",
+      "documents":["commencement notice or 7-day notice","related certificate of compliance on completion where applicable","rent calculator output","rent register comparables"],
+      "source":"https://rtb.ie/renting/guide-to-rent-review-notices/"
+    },
+    {
+      "id":"dispute",
+      "label":"Use the RTB dispute route",
+      "when":"a rent review is disputed",
+      "authority":"RTB",
+      "source":"https://rtb.ie/resources/forms-and-templates/"
+    }
+  ],
+  "guardrail":"The action layer must only expose an action when the legal composition identifies that route as relevant. An official link is not a determination that the user is entitled or required to take that action."
+}
