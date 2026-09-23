@@ -40,7 +40,16 @@
 <input id="property-identifier" class="property-input" placeholder="Address, folio number or other property identifier" autocomplete="off">
 <label for="property-date" class="kicker" style="display:block;margin-top:20px">Date scope</label>
 <input id="property-date" class="property-input" placeholder="Current or YYYY-MM-DD" autocomplete="off">
-<div class="actions"><button id="property-resolve" class="action" type="button">Resolve pathway</button></div>
+<div class="actions">
+<button id="property-resolve" class="action" type="button">Resolve pathway</button>
+<button class="action registration-route" type="button" data-registration-route="records">Registration records</button>
+<button class="action registration-route" type="button" data-registration-route="transfer">Transfer / inheritance</button>
+<button class="action registration-route" type="button" data-registration-route="mortgage">Mortgage / charge</button>
+<button class="action registration-route" type="button" data-registration-route="coownership">Co-ownership</button>
+<button class="action registration-route" type="button" data-registration-route="easement">Right of way / easement</button>
+<button class="action registration-route" type="button" data-registration-route="rectification">Register error</button>
+</div>
+<div id="registration-route-result" class="property-result" hidden></div>
 <div id="property-result" class="property-result" hidden></div>
 </div></section>
 
