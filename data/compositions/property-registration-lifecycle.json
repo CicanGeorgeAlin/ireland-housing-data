@@ -171,6 +171,15 @@
         "property-answer-state-machine",
         "property-legal-conditions-exceptions-overrides"
       ]
+    },
+    {
+      "stage": "DEADLINE_CALCULATION",
+      "routes": [
+        "property-deadline-calculation",
+        "property-legal-procedure-remedy-resolver",
+        "property-legal-provision-resolver",
+        "property-legal-conditions-exceptions-overrides"
+      ]
     }
   ],
   "event_model": [
@@ -228,7 +237,8 @@
     "property-legal-provision-resolver",
     "property-legal-proposition-authority-chain",
     "property-legal-conditions-exceptions-overrides",
-    "property-legal-procedure-remedy-resolver"
+    "property-legal-procedure-remedy-resolver",
+    "property-deadline-calculation"
   ],
   "answer_sequence": [
     "QUESTION",
