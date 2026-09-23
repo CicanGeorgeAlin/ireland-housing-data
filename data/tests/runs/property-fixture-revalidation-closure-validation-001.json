@@ -1,0 +1,48 @@
+{
+  "schema_version": "0.1",
+  "run_id": "PF-CLOSE-VAL-RUN-001",
+  "status": "PASSED_WITH_WARNINGS",
+  "execution_mode": "STATIC_CLOSURE_CONTRACT_VALIDATION",
+  "recorded_at": "2026-09-23",
+  "impact_event_id": "FIXTURE-IMPACT-EVENT-001",
+  "queue_id": "PF-REVAL-QUEUE-001",
+  "fixture_id": "FIXTURE-FOLIO-SYNTHETIC-001",
+  "scope": {
+    "closure_contract": "data/tests/property-fixture-revalidation-closure-contract.json",
+    "queue": "data/registries/property-fixture-revalidation-queue.json",
+    "impact_event": "data/tests/property-fixture-impact-event.json",
+    "fixture_registry": "data/registries/property-evidence-fixtures.json"
+  },
+  "checks": {
+    "approved_fixture_requirement": "PASS",
+    "dependent_revalidation_requirement": "PASS",
+    "new_validation_run_requirement": "PASS",
+    "historical_immutability_requirement": "PASS",
+    "provenance_privacy_requirement": "PASS",
+    "pathway_recalculation_requirement": "PASS",
+    "impact_linkage_requirement": "PASS",
+    "critical_dependency_requirement": "PASS",
+    "publication_separation_requirement": "PASS"
+  },
+  "result": {
+    "closure_contract": "VALIDATED",
+    "current_closure_state": "NOT_READY",
+    "reason": "The contract is validated, but the example impact event has not yet received the required new dependent revalidation run.",
+    "historical_runs_unchanged": true,
+    "publication_ready": false,
+    "legal_source_status": "UNCHANGED",
+    "production_evidence_status": "UNCHANGED"
+  },
+  "warnings": [
+    "This run validates the closure mechanism only.",
+    "The referenced property fixture is synthetic.",
+    "The example impact event remains open until a new dependent validation run is recorded.",
+    "No production legal evidence or publication state was changed."
+  ],
+  "guardrails": [
+    "Contract validation is not legal verification.",
+    "Synthetic evidence cannot establish real-world property facts.",
+    "Closure cannot silently alter historical validation records.",
+    "A closed fixture impact event cannot by itself publish a legal answer."
+  ]
+}
