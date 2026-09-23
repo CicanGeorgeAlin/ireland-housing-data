@@ -1,0 +1,50 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Validate the consolidated technical status of the controlled property fixture revalidation chain before moving to the next substantive work gate.",
+  "status_record": "data/registries/property-fixture-revalidation-control-status.json",
+  "validation_sequence": [
+    "LOAD_STATUS",
+    "VERIFY_CHAIN_STATES",
+    "VERIFY_OPEN_BLOCKER",
+    "VERIFY_NEXT_GATE",
+    "VERIFY_REVALIDATION_STATE",
+    "VERIFY_CLOSURE_STATE",
+    "VERIFY_LEGAL_SOURCE_SEPARATION",
+    "VERIFY_PRODUCTION_EVIDENCE_SEPARATION",
+    "VERIFY_PUBLICATION_SEPARATION",
+    "RECORD_VALIDATION"
+  ],
+  "checks": [
+    {"check_id":"PFRCSV-001","name":"Chain-state integrity","result":"PASS"},
+    {"check_id":"PFRCSV-002","name":"Open-blocker integrity","result":"PASS"},
+    {"check_id":"PFRCSV-003","name":"Next-gate integrity","result":"PASS"},
+    {"check_id":"PFRCSV-004","name":"Revalidation-state integrity","result":"PASS"},
+    {"check_id":"PFRCSV-005","name":"Closure-state integrity","result":"PASS"},
+    {"check_id":"PFRCSV-006","name":"Legal-source separation","result":"PASS"},
+    {"check_id":"PFRCSV-007","name":"Evidence separation","result":"PASS"},
+    {"check_id":"PFRCSV-008","name":"Publication separation","result":"PASS"}
+  ],
+  "result": {
+    "validation_status": "PASSED",
+    "status_record_valid": true,
+    "technical_governance": "PASSED",
+    "revalidation": "BLOCKED",
+    "open_blockers": 1,
+    "closure": "NOT_READY",
+    "legal_source_verification": "PARTIAL",
+    "production_evidence": "PARTIAL",
+    "publication": "NOT_READY"
+  },
+  "transition_gate": {
+    "current_gate": "APPROVED_CORRECTED_OR_REPLACEMENT_CONTROLLED_FIXTURE",
+    "next_substantive_work_after_gate": "CONTROLLED_DEPENDENT_REVALIDATION",
+    "gate_satisfied": false
+  },
+  "guardrails": [
+    "Structural validation only.",
+    "No live official property record was retrieved.",
+    "No Irish property-law proposition was verified by this validation.",
+    "No publication status was upgraded."
+  ]
+}
