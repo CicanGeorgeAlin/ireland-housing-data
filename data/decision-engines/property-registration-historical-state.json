@@ -1,0 +1,145 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-registration-historical-state",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "purpose":"Reconstruct the registered and legally relevant property state at a specified historical date without projecting the current register backwards or treating a later entry as proof of an earlier state.",
+  "verified_date":"2026-09-24",
+  "source_basis":[
+    "Registration of Title Act 1964, including sections 31, 61, 85 and 90 as amended",
+    "Registration of Deeds and Title Act 2006",
+    "Land Registration Rules 2012 and applicable amendments",
+    "Tailte Éireann Land Registry records and copy/search services"
+  ],
+  "historical_question_types":[
+    "WHO_WAS_REGISTERED_OWNER_ON_DATE",
+    "WHAT_INTEREST_WAS_REGISTERED_ON_DATE",
+    "WHAT_BURDENS_WERE_REGISTERED_ON_DATE",
+    "WHAT_DID_THE_FOLIO_SHOW_BEFORE_TRANSFER",
+    "WHAT_CHANGED_AFTER_DEATH",
+    "WHEN_WAS_A_TRANSFER_REGISTERED",
+    "WHEN_WAS_A_CHARGE_CREATED_OR_DISCHARGED",
+    "WHAT_HISTORICAL_RECORD_SUPPORTS_A_TITLE_CLAIM",
+    "WHAT_WAS_THE_REGISTRATION_STATUS_BEFORE_FIRST_REGISTRATION",
+    "WHAT_HAPPENED_BETWEEN_TWO_KNOWN_REGISTER_STATES"
+  ],
+  "classification_inputs":[
+    "property_identifier",
+    "folio_number_if_known",
+    "target_date",
+    "date_range_if_known",
+    "current_folio",
+    "historical_folio_or_register_extract",
+    "instrument_or_dealing_reference",
+    "date_of_death",
+    "transfer_date",
+    "registration_date",
+    "charge_or_discharge_date",
+    "registry_of_deeds_history_if_relevant",
+    "court_order_or_vesting_order_if_relevant"
+  ],
+  "timeline_model":[
+    "T0_TARGET_DATE",
+    "T1_PRECEDING_VERIFIED_STATE",
+    "T2_LEGAL_EVENT",
+    "T3_REGISTRATION_DEALING",
+    "T4_SUBSEQUENT_VERIFIED_STATE",
+    "T5_CURRENT_STATE"
+  ],
+  "reconstruction_rules":[
+    "A target-date question must be answered from records and law applicable to that date.",
+    "A current folio is evidence of the current registered state and must not automatically be treated as a historical snapshot.",
+    "A later registration entry may provide evidence about a transaction but does not by itself prove every legal fact existing before the entry.",
+    "Where a historical state cannot be directly observed, the system must identify the inference and the evidence supporting it rather than silently presenting it as a recorded fact.",
+    "Historical registration dates, event dates and document dates must remain separate fields.",
+    "The law applicable on the target date must be distinguished from the law applicable when a later record was created.",
+    "If the relevant property was not registered at the target date, the system must route to the Registry of Deeds and other appropriate historical evidence rather than forcing a Land Registry answer.",
+    "Where an event crosses a statutory amendment or commencement date, the applicable transitional provisions must be checked.",
+    "Historical ownership, beneficial entitlement and registered ownership remain distinct questions."
+  ],
+  "evidence_hierarchy":[
+    {
+      "rank":1,
+      "evidence":"official folio/register entry dated or demonstrably effective at the relevant time",
+      "role":"direct evidence of registered state within its scope"
+    },
+    {
+      "rank":2,
+      "evidence":"certified Land Registry instrument or official registration document",
+      "role":"evidence of the dealing and documents underlying registration, subject to access rules"
+    },
+    {
+      "rank":3,
+      "evidence":"official historical search, map or registry record",
+      "role":"supports property identity, registration status and historical reconstruction"
+    },
+    {
+      "rank":4,
+      "evidence":"Registry of Deeds memorial/search where the property was dealt with in that system",
+      "role":"evidence that a deed or transaction was registered; deed effect requires examination of the deed itself"
+    },
+    {
+      "rank":5,
+      "evidence":"private deeds, probate documents, correspondence or user-supplied documents",
+      "role":"supporting evidence requiring identity, authenticity, relevance and property matching"
+    }
+  ],
+  "state_transition_rules":[
+    "REGISTERED_OWNER_A -> TRANSFER_EVENT -> REGISTRATION_DEALING -> REGISTERED_OWNER_B",
+    "REGISTERED_OWNER_A -> DEATH -> PERSONAL_REPRESENTATIVE_ROUTE -> SUCCESSION_REGISTRATION -> BENEFICIARY_OR_OTHER_REGISTERED_OWNER",
+    "JOINT_OWNER_A_AND_B -> DEATH_OF_A -> SURVIVORSHIP_ROUTE -> REGISTERED_OWNER_B",
+    "REGISTERED_OWNER_A -> CHARGE -> REGISTERED_BURDEN_ADDED",
+    "REGISTERED_CHARGE -> DISCHARGE_EVENT -> REGISTRATION_DEALING -> BURDEN_REMOVED_OR_MARKED_DISCHARGED",
+    "UNREGISTERED_PROPERTY -> FIRST_REGISTRATION -> REGISTERED_TITLE_STATE"
+  ],
+  "conflict_handling":[
+    "If two official records appear inconsistent, do not silently choose one.",
+    "Identify the dates, legal status and provenance of each record.",
+    "Determine whether the apparent conflict is temporal rather than substantive.",
+    "Route unresolved legal conflicts to the appropriate professional or court process.",
+    "A later corrected or rectified register must not erase the fact that an earlier state existed; preserve the historical audit trail."
+  ],
+  "answer_contract":[
+    "TARGET_DATE",
+    "PROPERTY_IDENTITY",
+    "REGISTERED_STATE_AT_TARGET_DATE",
+    "LEGAL_EVENT_TIMELINE",
+    "EVIDENCE_FOR_EACH_STATE",
+    "WHAT_IS_DIRECTLY_RECORDED",
+    "WHAT_IS_RECONSTRUCTED",
+    "WHAT_IS_NOT_ESTABLISHED",
+    "APPLICABLE_LAW_AT_TARGET_DATE",
+    "LATER_EVENTS",
+    "CURRENT_STATE",
+    "OFFICIAL_RECORD_ROUTE",
+    "NEXT_STEP",
+    "CONFIDENCE_BOUNDARY"
+  ],
+  "result_states":[
+    "HISTORICAL_STATE_VERIFIED",
+    "HISTORICAL_STATE_RECONSTRUCTED",
+    "DIRECT_RECORD_MISSING",
+    "TEMPORAL_CONFLICT",
+    "PROPERTY_MATCH_UNCERTAIN",
+    "UNREGISTERED_AT_TARGET_DATE",
+    "REGISTRY_OF_DEEDS_ROUTE_REQUIRED",
+    "LEGAL_VERSION_ANALYSIS_REQUIRED",
+    "EVIDENCE_REQUIRED",
+    "PROFESSIONAL_REVIEW_REQUIRED",
+    "NOT_DETERMINABLE"
+  ],
+  "guardrails":[
+    "Never use the current folio as a substitute for a historical register state without explaining the limitation.",
+    "Never infer that the person currently registered was necessarily the person registered on an earlier date.",
+    "Never infer a registration date from the date of a deed alone.",
+    "Never infer the legal effect of a Registry of Deeds memorial without examining the underlying deed where required.",
+    "Never treat a title plan as conclusive of boundaries; section 85 expressly limits the conclusiveness of the register/map description as to boundaries or extent.",
+    "Never collapse event date, document date and registration date.",
+    "Never publish a historical property conclusion without a property match and evidence chain."
+  ],
+  "official_routes":[
+    "Tailte Éireann Land Registry copy/search services",
+    "Tailte Éireann Registry of Deeds search services",
+    "Irish Statute Book",
+    "Court records where a court order is part of the title history"
+  ]
+}
