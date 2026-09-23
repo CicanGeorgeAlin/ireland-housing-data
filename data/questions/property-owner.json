@@ -1,0 +1,29 @@
+{
+  "id":"property-owner-question",
+  "version":"0.1",
+  "status":"STRUCTURAL_DOMAIN_SEED",
+  "title":"Who is registered as the owner?",
+  "questions":[
+    {"id":"property_identifier","label":"What property are you checking?","required":true,"examples":["folio number","address","map reference"]},
+    {"id":"registration_status","label":"Is the property registered with the Land Registry?","required":false},
+    {"id":"folio","label":"Do you have the folio number?","required":false},
+    {"id":"date_scope","label":"What date should the ownership position be checked for?","required":true}
+  ],
+  "pipeline":[
+    "identify-property",
+    "resolve-registration-status",
+    "retrieve-current-folio-evidence",
+    "identify-registered-owner",
+    "identify-caveats-and-interests",
+    "check-date-scope",
+    "show-evidence",
+    "official-route"
+  ],
+  "result_types":["REGISTERED_OWNER_IDENTIFIED","PROPERTY_NOT_YET_IDENTIFIED","REGISTRATION_STATUS_UNKNOWN","HISTORICAL_TITLE_RESEARCH_REQUIRED","FURTHER_TITLE_DOCUMENTS_REQUIRED","NOT_DETERMINABLE"],
+  "guardrails":[
+    "Do not infer ownership from an address alone.",
+    "Do not treat a search result as proof of every legal interest.",
+    "Ownership position is date-sensitive.",
+    "Where the register is not sufficient, identify the further title evidence required."
+  ]
+}
