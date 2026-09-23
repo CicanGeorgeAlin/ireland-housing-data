@@ -1,0 +1,63 @@
+{
+  "id":"omc-service-charge-sinking-fund",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"STRUCTURAL_DECISION_ENGINE",
+  "question":"Can the OMC charge this service charge or sinking-fund contribution?",
+  "pipeline":[
+    "identify-development-and-unit",
+    "identify-OMC",
+    "identify-charge_type",
+    "identify-budget_or_expenditure",
+    "identify-legal_and_contractual_basis",
+    "check-lease_and-OMC-constitution",
+    "check-MUD-Act-framework",
+    "check-annual-governance_and-approval",
+    "check-sinking-fund_requirement_where_applicable",
+    "check-records_and-notice",
+    "identify-dispute-route",
+    "show-evidence"
+  ],
+  "charge_types":[
+    "SERVICE_CHARGE",
+    "SINKING_FUND_CONTRIBUTION",
+    "INSURANCE",
+    "MAINTENANCE",
+    "REPAIRS",
+    "MANAGEMENT_COSTS",
+    "CAPITAL_EXPENDITURE"
+  ],
+  "evidence":[
+    "OMC constitution",
+    "unit lease",
+    "annual budget",
+    "AGM/EGM resolutions",
+    "service-charge demand",
+    "accounts",
+    "sinking-fund plan",
+    "relevant MUD Act provisions",
+    "development-specific records"
+  ],
+  "guardrails":[
+    "Do not assume a charge is lawful solely because it appears on an invoice.",
+    "Do not assume a charge is unlawful solely because an owner disputes it.",
+    "Check the development-specific lease and OMC governing documents.",
+    "Separate recurring service charges from sinking-fund contributions and one-off capital expenditure.",
+    "Do not infer the required contribution amount without the applicable statutory, lease and governance basis.",
+    "Where records are missing, identify the missing evidence rather than calculating from assumptions."
+  ],
+  "result_types":[
+    "BASIS_IDENTIFIED",
+    "SERVICE_CHARGE_SUPPORTED_SUBJECT_TO_DOCUMENT_REVIEW",
+    "SINKING_FUND_ROUTE_IDENTIFIED",
+    "DOCUMENTS_REQUIRED",
+    "DISPUTE_ROUTE_REQUIRES_REVIEW",
+    "NOT_DETERMINABLE"
+  ],
+  "sources":[
+    "Multi-Unit Developments Act 2011",
+    "development-specific lease",
+    "OMC constitution",
+    "OMC records"
+  ]
+}
