@@ -1,0 +1,29 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-investigation-orchestrator-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified orchestration contract connecting the property investigation engines into one state-preserving workflow.",
+  "core_principle":"INTAKE → CLASSIFY → RESOLVE LAW → DETERMINE EVIDENCE → RETRIEVE → MATCH → ANALYSE → RESOLVE CONFLICTS → ROUTE → CALCULATE → ASSEMBLE → TRACE → REVIEW → PUBLISH",
+  "required_stage_families":[
+    "citizen intake",
+    "question classification",
+    "legal regime/provision/authority",
+    "evidence sufficiency and request planning",
+    "official route and retrieval",
+    "document/property/date matching",
+    "fact and legal-effect analysis",
+    "conflict resolution",
+    "procedure/remedy",
+    "deadline",
+    "case file",
+    "trace",
+    "quality gate",
+    "snapshot publication"
+  ],
+  "state_rule":"Each stage must retain its input, output, dependencies and verification event.",
+  "blocking_rule":"A material blocked dependency prevents definitive publication but does not require discarding completed upstream work.",
+  "subquestion_rule":"Independent subquestions may progress independently and retain separate verification states until final answer assembly.",
+  "publication_rule":"Only the quality gate can authorize a definitive published answer state.",
+  "verification_boundary":"The orchestrator coordinates the engines; it does not independently establish the truth of facts or law."
+}
