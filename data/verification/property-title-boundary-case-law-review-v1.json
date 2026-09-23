@@ -1,0 +1,28 @@
+{
+  "schema_version":"0.1",
+  "status":"PRIMARY_CASE_IDENTIFIED",
+  "verified_at":"2026-09-23",
+  "proposition_id":"PROP-PROPERTY-MAP-002",
+  "case":{
+    "name":"O'Flaherty & Ors v Permanent TSB Public Ltd Company & Ors [2026] IEHC 74",
+    "court":"High Court",
+    "source":"https://www.bailii.org/ie/cases/IEHC/2026/2026IEHC74.html",
+    "status":"PRIMARY_JUDGMENT_REVIEWED"
+  },
+  "relevance":[
+    "The judgment records a pleaded dispute that the Land Registry map was incorrect.",
+    "The judgment discusses Folio boundaries, a severed folio and an alleged landlocked retained part.",
+    "The court declined to resolve the boundary issue on the material before it, illustrating that a folio/map question can require additional factual and legal evidence."
+  ],
+  "verified_limit":"The case must not be used to state a universal rule about boundary conclusiveness. It demonstrates the need for separate factual/legal analysis where map, folio and physical land do not align.",
+  "system_effect":[
+    "A title-plan result cannot automatically be presented as a definitive physical-boundary determination.",
+    "Boundary disputes require a separate evidence path.",
+    "Where map, folio, deeds, occupation and physical features conflict, the answer must expose the conflict rather than silently choose one source."
+  ],
+  "remaining":[
+    "Additional primary authorities specifically interpreting sections 84-88.",
+    "Full historical case-law network for boundary and registry-map disputes."
+  ],
+  "publication_gate":"NOT_READY"
+}
