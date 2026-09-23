@@ -1,0 +1,72 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Unify the property evidence fixture registry, dependency mapping, impact propagation, revalidation queue, validation contracts and closure controls into one auditable governance manifest.",
+  "governance_chain": [
+    "FIXTURE_REGISTRY",
+    "DEPENDENCY_MAP",
+    "IMPACT_RULES",
+    "IMPACT_EVENT",
+    "IMPACT_REGISTRY",
+    "REVALIDATION_QUEUE",
+    "QUEUE_VALIDATION",
+    "REVALIDATION_RESULT",
+    "SCENARIO_MATRIX",
+    "SCENARIO_RUNNER",
+    "CLOSURE_CONTRACT",
+    "CLOSURE_VALIDATION"
+  ],
+  "required_controls": [
+    "fixture_identity",
+    "fixture_lifecycle",
+    "source_provenance",
+    "dependency_integrity",
+    "impact_propagation",
+    "historical_immutability",
+    "revalidation_requirement",
+    "provenance_review",
+    "privacy_review",
+    "proposition_scope",
+    "publication_separation",
+    "closure_gate"
+  ],
+  "source_files": [
+    "data/registries/property-evidence-fixtures.json",
+    "data/registries/property-fixture-test-dependencies.json",
+    "data/tests/property-fixture-impact-rules.json",
+    "data/tests/property-fixture-impact-event.json",
+    "data/registries/property-fixture-impact-registry.json",
+    "data/registries/property-fixture-revalidation-queue.json",
+    "data/registries/property-fixture-revalidation-queue-validation.json",
+    "data/tests/property-fixture-revalidation-result-contract.json",
+    "data/tests/property-fixture-revalidation-scenario-matrix.json",
+    "data/tests/property-fixture-revalidation-scenario-runner.json",
+    "data/tests/property-fixture-revalidation-closure-contract.json",
+    "data/tests/runs/property-fixture-impact-validation-run-001.json",
+    "data/tests/runs/property-fixture-revalidation-queue-validation-run-001.json",
+    "data/tests/runs/property-fixture-revalidation-scenario-run-001.json",
+    "data/tests/runs/property-fixture-revalidation-closure-validation-001.json"
+  ],
+  "publication_gate": {
+    "all_governance_layers_present": true,
+    "critical_fixture_issue_resolved": false,
+    "legal_source_verification_complete": false,
+    "live_official_record_retrieval_verified": false,
+    "publication_ready": false
+  },
+  "current_state": {
+    "governance_structure": "ESTABLISHED",
+    "scenario_validation": "PASSED_WITH_WARNINGS",
+    "active_revalidation_event": "FIXTURE-IMPACT-EVENT-001",
+    "active_queue_item": "PF-REVAL-QUEUE-001",
+    "closure_state": "NOT_READY"
+  },
+  "rules": [
+    "The manifest describes governance structure and does not itself create legal evidence.",
+    "Synthetic fixtures remain synthetic.",
+    "Historical validation results remain immutable.",
+    "Material fixture changes require explicit revalidation.",
+    "Legal-source verification is independent from fixture governance.",
+    "Technical validation cannot silently upgrade publication status."
+  ]
+}
