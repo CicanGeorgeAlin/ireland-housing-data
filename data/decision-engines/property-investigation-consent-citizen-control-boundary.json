@@ -1,0 +1,78 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-investigation-consent-citizen-control-boundary",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Define the boundary between general public information and citizen-authorised property investigations, including what a citizen's submission authorises and what remains outside that authorisation.",
+  "core_principle":"A CITIZEN QUESTION AUTHORIZES ONLY THE PURPOSE AND ACTIONS EXPRESSLY OR NECESSARILY REQUIRED TO ANSWER THAT QUESTION.",
+  "interaction_classes":[
+    "GENERAL_PUBLIC_INFORMATION",
+    "PROPERTY_SPECIFIC_INFORMATION_REQUEST",
+    "CITIZEN_DOCUMENT_SUBMISSION",
+    "INVESTIGATION_REQUEST",
+    "FOLLOW_UP_CLARIFICATION",
+    "REVIEW_OR_CORRECTION_REQUEST"
+  ],
+  "general_information_rules":[
+    "General legal information does not become a property investigation merely because a user asks about housing law.",
+    "General information should not require unnecessary personal or property identifiers.",
+    "General information must remain distinguishable from a property-specific conclusion."
+  ],
+  "investigation_authorisation_rules":[
+    "A property-specific request authorises investigation only within the stated question and necessary scope.",
+    "The system must identify the purpose and requested outcome before selecting evidence routes.",
+    "Unrequested investigations into unrelated people, properties or issues are outside scope.",
+    "A citizen supplying a document does not by itself authorise unrelated processing or conclusions.",
+    "Follow-up questions should request only information necessary to resolve the stated investigation."
+  ],
+  "citizen_control_actions":[
+    "PROVIDE_CLARIFICATION",
+    "PROVIDE_ADDITIONAL_DOCUMENT",
+    "CORRECT_CITIZEN_ASSERTION",
+    "REQUEST_REVIEW",
+    "REQUEST_SCOPE_CHANGE",
+    "WITHDRAW_UNSTARTED_REQUEST_WHERE_SUPPORTED"
+  ],
+  "scope_change_rules":[
+    "A material change in question, property, date, requested outcome or legal issue creates a new or revised investigation scope.",
+    "Scope changes must be recorded as events.",
+    "Previous investigation work may be reused only after dependency and scope compatibility checks.",
+    "A scope change must not silently rewrite the original question or historical case record."
+  ],
+  "citizen_assertion_rules":[
+    "Citizen assertions are labelled as citizen-supplied information until independently established.",
+    "Corrections to citizen assertions do not automatically alter official records or verified facts.",
+    "The system must preserve the distinction between user correction and authoritative source correction."
+  ],
+  "consent_state":[
+    "GENERAL_INFORMATION",
+    "INVESTIGATION_SCOPE_IDENTIFIED",
+    "CLARIFICATION_REQUIRED",
+    "INVESTIGATION_AUTHORISED_BY_REQUEST",
+    "ADDITIONAL_INPUT_REQUESTED",
+    "SCOPE_CHANGE_REQUESTED",
+    "REVIEW_REQUESTED",
+    "WITHDRAWAL_REQUESTED",
+    "OUT_OF_SCOPE",
+    "BLOCKED"
+  ],
+  "hard_stops":[
+    "Never infer broad authorisation from a narrow question.",
+    "Never treat document submission as blanket authorisation for unrelated processing.",
+    "Never silently expand property, person, date or legal scope.",
+    "Never treat a citizen's assertion as an established fact solely because the citizen requested an investigation.",
+    "Never present general information as a property-specific finding."
+  ],
+  "output_contract":[
+    "consent_boundary_id",
+    "interaction_class",
+    "stated_purpose",
+    "requested_scope",
+    "authorised_actions",
+    "excluded_actions",
+    "citizen_controls",
+    "scope_change_state",
+    "consent_state",
+    "next_action"
+  ]
+}
