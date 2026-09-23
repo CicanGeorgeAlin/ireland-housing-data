@@ -1,0 +1,62 @@
+{
+  "schema_version": "0.1",
+  "status": "STRUCTURAL",
+  "purpose": "Determine whether the property evidence fixture governance chain is eligible for closure without confusing technical validation with substantive legal verification or live evidence.",
+  "assessment_id": "PFG-CLOSURE-READINESS-001",
+  "assessed_at": "2026-09-23",
+  "inputs": [
+    "data/registries/property-fixture-governance-status.json",
+    "data/registries/property-fixture-revalidation-queue.json",
+    "data/tests/property-fixture-revalidation-closure-contract.json",
+    "data/registries/property-fixture-governance-validation-status.json",
+    "data/registries/property-fixture-governance-history-validation-status.json"
+  ],
+  "closure_gate": {
+    "required_conditions": [
+      "APPROVED_FIXTURE_AVAILABLE",
+      "DEPENDENT_TESTS_REVALIDATED",
+      "NEW_VALIDATION_RUN_RECORDED",
+      "HISTORICAL_IMMUTABILITY_CONFIRMED",
+      "PROVENANCE_AND_PRIVACY_CONFIRMED",
+      "PATHWAY_STATUS_RECALCULATED",
+      "IMPACT_EVENT_CLOSED",
+      "NO_CRITICAL_UNRESOLVED_DEPENDENCY"
+    ],
+    "current_conditions": {
+      "APPROVED_FIXTURE_AVAILABLE": "PASS",
+      "DEPENDENT_TESTS_REVALIDATED": "PENDING",
+      "NEW_VALIDATION_RUN_RECORDED": "PENDING",
+      "HISTORICAL_IMMUTABILITY_CONFIRMED": "PASS",
+      "PROVENANCE_AND_PRIVACY_CONFIRMED": "PASS",
+      "PATHWAY_STATUS_RECALCULATED": "PENDING",
+      "IMPACT_EVENT_CLOSED": "PENDING",
+      "NO_CRITICAL_UNRESOLVED_DEPENDENCY": "PASS"
+    }
+  },
+  "result": {
+    "closure_status": "NOT_READY",
+    "technical_governance_status": "PASSED",
+    "revalidation_required": true,
+    "blocking_conditions": [
+      "DEPENDENT_TESTS_REVALIDATED",
+      "NEW_VALIDATION_RUN_RECORDED",
+      "PATHWAY_STATUS_RECALCULATED",
+      "IMPACT_EVENT_CLOSED"
+    ]
+  },
+  "next_required_sequence": [
+    "APPROVE_OR_CONFIRM_REPLACEMENT_FIXTURE",
+    "RUN_DEPENDENT_REVALIDATION",
+    "RECORD_NEW_REVALIDATION_RESULT",
+    "RECALCULATE_PATHWAY_STATUS",
+    "UPDATE_IMPACT_EVENT",
+    "RECHECK_CLOSURE_GATE"
+  ],
+  "guardrails": [
+    "This is a technical closure assessment only.",
+    "It does not verify Irish property law.",
+    "It does not represent live official-record retrieval.",
+    "It does not make the property-title-live pathway publication-ready.",
+    "A closure assessment cannot substitute for substantive legal-source verification."
+  ]
+}
