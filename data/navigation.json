@@ -1,15 +1,20 @@
 {
-  "version": "0.1",
-  "title": "IRELAND HOUSING DATA",
-  "paths": [
+  "version":"0.2",
+  "title":"IRELAND HOUSING DATA",
+  "paths":[
     {"id":"rent","label":"Rent","domains":["residential-tenancies","rental-standards","rent-setting","termination","disputes"]},
-    {"id":"buy","label":"Buy","domains":["property-title","conveyancing","tax","mortgages","planning"]},
-    {"id":"sell","label":"Sell","domains":["property-title","conveyancing","tax","mortgages"]},
-    {"id":"own","label":"Own","domains":["ownership","registration","co-ownership","easements","boundaries"]},
-    {"id":"build","label":"Build","domains":["planning","building-control","development","environment"]},
-    {"id":"plan","label":"Plan","domains":["planning","development","local-authority-procedures"]},
+    {"id":"buy","label":"Buy","domains":["property-title","buyer-due-diligence","conveyancing","tax","mortgages","planning"]},
+    {"id":"sell","label":"Sell","domains":["property-title","property-sale-transfer","conveyancing","tax","mortgages"]},
+    {"id":"own","label":"Own","domains":["property-title","registration","co-ownership","easements","boundaries","apartment-owner-dashboard"]},
+    {"id":"build","label":"Build","domains":["planning","building-control","development","environment","planning-exempted-development"]},
+    {"id":"plan","label":"Plan","domains":["planning","development","local-authority-procedures","planning-application-appeal"]},
     {"id":"apply","label":"Apply","domains":["social-housing","housing-supports","affordable-housing","cost-rental"]},
-    {"id":"dispute","label":"Dispute","domains":["rtb","local-authority","property-disputes","appeals","courts"]},
-    {"id":"get-help","label":"Get help","domains":["official-routes","professional-help","emergency-housing"]}
-  ]
+    {"id":"dispute","label":"Dispute","domains":["rtb","local-authority","property-disputes","boundary-encroachment","insurance-complaint-dispute","appeals","courts"]},
+    {"id":"get-help","label":"Get help","domains":["official-routes","professional-help","emergency-housing","property-official-records-search"]}
+  ],
+  "property_pathways":{
+    "property-title":{"question":"Who is registered as the owner of this property?","live_pathway":"property-title-live","answer_contract":"property-legal-answer"},
+    "buyer-due-diligence":{"question":"What should a buyer establish before committing to purchase property?","engine":"buyer-due-diligence"},
+    "property-sale-transfer":{"question":"What must be checked when buying, selling or transferring property?","engine":"property-sale-transfer"}
+  }
 }
