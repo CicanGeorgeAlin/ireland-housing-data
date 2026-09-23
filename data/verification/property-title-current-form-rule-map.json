@@ -1,0 +1,76 @@
+{
+  "schema_version":"0.1",
+  "status":"SOURCE_VERIFIED_PROCEDURAL_MAP",
+  "verified_at":"2026-09-23",
+  "purpose":"Connect user-facing property-title routes to the current official form/rule layer without claiming that a form result establishes the legal merits of an individual case.",
+  "routes":[
+    {
+      "route_id":"IDENTIFY_REGISTERED_PROPERTY",
+      "official_service":"Landdirect / Tailte Éireann map search",
+      "rule":"Land Registration Rules official-search framework",
+      "form_if_formal_official_search":"LR Form 89",
+      "source":"https://tailte.ie/lr-form-89-requisition-for-official-search-for-the-registration-of-the-ownership-registered-in-the-registers-maintained-under-section-8a-and-b-of-the-act/",
+      "status":"VERIFIED"
+    },
+    {
+      "route_id":"CURRENT_REGISTERED_TITLE",
+      "official_service":"Copy folio / certified copy folio",
+      "form":"LR Application for Certified Copy of Folio",
+      "source":"https://tailte.ie/services/copy-services/",
+      "status":"VERIFIED"
+    },
+    {
+      "route_id":"TITLE_PLAN",
+      "official_service":"Certified copy folio with title plan",
+      "form":"LR Application for Certified Copy of Folio with Copy of Title Plan Attached",
+      "source":"https://tailte.ie/services/copy-services/",
+      "status":"VERIFIED"
+    },
+    {
+      "route_id":"HISTORICAL_REGISTER_ENTRIES",
+      "official_service":"Official search for entries since first registration or specified period",
+      "rule":"Rule 160",
+      "form":"LR Form 90",
+      "source":"https://tailte.ie/lr-rule-160-official-search/",
+      "status":"VERIFIED"
+    },
+    {
+      "route_id":"OFFICIAL_SEARCH_RESULT",
+      "official_service":"Certificate of official search result",
+      "rule":"Rule 160",
+      "form":"LR Form 91 or LR Form 92",
+      "source":"https://tailte.ie/lr-rule-160-official-search/",
+      "status":"VERIFIED"
+    },
+    {
+      "route_id":"UNDERLYING_REGISTERED_INSTRUMENT",
+      "official_service":"Inspection/copy of instrument subject to eligibility",
+      "rule":"Rule 159",
+      "form":"LR Form 96 / related notice process",
+      "source":"https://tailte.ie/category/forms/?_type=land-registry-forms",
+      "status":"VERIFIED_WITH_ACCESS_LIMITS"
+    },
+    {
+      "route_id":"COURT_REGISTRATION_PROCEEDING",
+      "official_service":"High Court Land Registry procedure",
+      "rule":"Order 96, Rules of the Superior Courts",
+      "source":"https://courts.ie/court-rules/full-court-rule?url=Order-96-Superior-The-Registration-of-Title-Act-1964",
+      "status":"VERIFIED"
+    }
+  ],
+  "critical_limits":[
+    "Rule 160 and Form 89/90 are search mechanisms, not automatic legal conclusions.",
+    "A folio/title plan is evidence within the statutory registration system; physical boundary disputes may require additional evidence and legal analysis.",
+    "Instrument access is restricted in specified circumstances.",
+    "Court procedure must not be presented as evidence that the applicant will succeed.",
+    "Fees and operational details must be rechecked immediately before public publication."
+  ],
+  "verification_chain":"USER QUESTION -> ROUTE CLASSIFICATION -> OFFICIAL SERVICE -> CURRENT RULE/FORM -> EVIDENCE RECEIVED -> LEGAL PROPOSITION -> ANSWER",
+  "publication_gate":"NOT_READY",
+  "guardrails":[
+    "No live property record retrieved.",
+    "No individual ownership conclusion.",
+    "No outcome prediction for court proceedings.",
+    "Current procedure separated from substantive legal effect."
+  ]
+}
