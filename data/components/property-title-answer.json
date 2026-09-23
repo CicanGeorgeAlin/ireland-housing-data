@@ -1,0 +1,22 @@
+{
+  "id":"property-title-answer-component",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "status":"DOMAIN_ANSWER_SEED",
+  "sections":[
+    {"id":"answer","label":"THE ANSWER","rule":"Identify the registered owner only from the relevant title evidence."},
+    {"id":"folio","label":"WHAT THE FOLIO SHOWS","rule":"Explain registered ownership and registered interests supported by the folio."},
+    {"id":"limits","label":"WHAT THE FOLIO DOES NOT ANSWER","rule":"Identify questions requiring filed instruments, historical searches, boundary evidence or other sources."},
+    {"id":"evidence","label":"TITLE EVIDENCE","rule":"Distinguish folio, filed plan, underlying instruments and official searches."},
+    {"id":"date","label":"DATE","rule":"State the date or period for which the ownership position has been established."},
+    {"id":"next","label":"OFFICIAL ROUTE","rule":"Link to the appropriate Tailte Éireann search/copy/registration service."},
+    {"id":"verified","label":"LAST VERIFIED","rule":"Display the verification date."}
+  ],
+  "guardrails":[
+    "Do not infer registered ownership from an address alone.",
+    "Do not treat a folio as answering every legal title question.",
+    "Do not treat a registry map as automatically conclusive of physical boundaries.",
+    "Historical ownership requires historical evidence.",
+    "Public-record accessibility does not remove the need for privacy analysis when republishing data."
+  ]
+}
