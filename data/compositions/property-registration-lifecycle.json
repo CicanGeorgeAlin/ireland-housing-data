@@ -44,6 +44,14 @@
       ]
     },
     {
+      "stage": "EVIDENCE_AND_PROPERTY_MATCH",
+      "routes": [
+        "property-evidence-property-match",
+        "property-registration-records",
+        "property-registration-historical-state"
+      ]
+    },
+    {
       "stage": "SECURITY",
       "routes": [
         "property-registration-mortgages"
@@ -97,6 +105,7 @@
     "property-registration-succession",
     "property-registration-title-consequences",
     "property-registration-historical-state",
+    "property-evidence-property-match",
     "property-registration-mortgages",
     "property-registration-co-ownership",
     "property-registration-easements",
