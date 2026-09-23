@@ -1,0 +1,70 @@
+{
+  "schema_version":"0.1",
+  "status":"PASSED_WITH_LIMITS",
+  "verified_at":"2026-09-23",
+  "audit_id":"PROPERTY-TITLE-PUBLICATION-SOURCE-AUDIT-001",
+  "official_sources":[
+    {
+      "source":"Irish Statute Book / Revised Acts",
+      "role":"current statutory text and amendment baseline",
+      "status":"VERIFIED"
+    },
+    {
+      "source":"Tailte Éireann Property Registration Services",
+      "role":"current Land Register, Registry of Deeds and Landdirect routes",
+      "status":"VERIFIED"
+    },
+    {
+      "source":"Tailte Éireann Search and Copy Services",
+      "role":"current folio, title-plan, instrument and Registry of Deeds procedures",
+      "status":"VERIFIED"
+    },
+    {
+      "source":"Tailte Éireann current Land Registry forms catalogue",
+      "role":"current forms, including Forms 4-6, 10, 89-92 and 96",
+      "status":"VERIFIED"
+    },
+    {
+      "source":"Courts Service Order 96",
+      "role":"current Superior Court procedure under the Registration of Title Act 1964",
+      "status":"VERIFIED"
+    }
+  ],
+  "current_procedure_checks":[
+    "Landdirect map/property identification route verified.",
+    "Copy folio/title-plan route verified.",
+    "Official search Form 89 route verified.",
+    "Historical register search Form 90 route verified.",
+    "Official search certificates Forms 91/92 verified.",
+    "Instrument inspection/copy Form 96 and Rule 159 route verified with access restrictions.",
+    "Current possessory-title/adverse-possession forms verified in Tailte catalogue.",
+    "Order 96 current court route verified; current page records later amendments including S.I. 261/2023."
+  ],
+  "important_source_limitations":[
+    "Tailte's current webpages can reproduce historical rule text; rule history must remain visible.",
+    "Current form availability does not establish the substantive legal merits of an application.",
+    "Tailte states that a Registry of Deeds search reveals the existence of documents, while their legal effect requires examination of the deeds themselves.",
+    "Tailte states that a purchaser for value can rely on the folio as evidence of title, subject to the statutory framework.",
+    "Current fees and operational details should be rechecked at the point of a live user transaction."
+  ],
+  "audit_result":{
+    "source_identity":"PASS",
+    "current_official_routes":"PASS",
+    "current_forms":"PASS",
+    "court_procedure":"PASS",
+    "historical_source_handling":"PASS",
+    "evidence_boundary":"PASS",
+    "privacy_boundary":"PASS"
+  },
+  "publication_decision":{
+    "general_legal_information":"READY_FOR_FINAL_LEGAL_COMPOSITION",
+    "individual_property_answer":"REQUIRES_PROPERTY_SPECIFIC_OFFICIAL_EVIDENCE",
+    "status":"NOT_A_BLANKET_LIVE_PROPERTY_VERIFICATION"
+  },
+  "guardrails":[
+    "This audit does not establish facts about any individual property.",
+    "No live property record was retrieved.",
+    "General legal publication must retain source links, date/version context and limitations.",
+    "Any later legal change reopens the relevant proposition for re-verification."
+  ]
+}
