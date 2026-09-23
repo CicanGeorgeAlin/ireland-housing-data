@@ -163,6 +163,14 @@
         "property-evidence-audit-trail",
         "property-answer-reverification-change-detection"
       ]
+    },
+    {
+      "stage": "PROCEDURE_REMEDY_AND_NEXT_ROUTE",
+      "routes": [
+        "property-legal-procedure-remedy-resolver",
+        "property-answer-state-machine",
+        "property-legal-conditions-exceptions-overrides"
+      ]
     }
   ],
   "event_model": [
@@ -219,7 +227,8 @@
     "property-legal-regime-resolver",
     "property-legal-provision-resolver",
     "property-legal-proposition-authority-chain",
-    "property-legal-conditions-exceptions-overrides"
+    "property-legal-conditions-exceptions-overrides",
+    "property-legal-procedure-remedy-resolver"
   ],
   "answer_sequence": [
     "QUESTION",
