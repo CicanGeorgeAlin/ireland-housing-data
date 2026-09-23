@@ -1,0 +1,46 @@
+{
+  "schema_version":"0.1",
+  "status":"PRIMARY_SOURCE_REVIEW_REQUIRED",
+  "verified_at":"2026-09-23",
+  "proposition_id":"PROP-PROPERTY-REGISTRATION-003",
+  "scope":"Possessory title under the Registration of Title Act 1964 and its interaction with adverse possession/prescription.",
+  "primary_statutory_sources":[
+    {
+      "source":"Registration of Title Act 1964",
+      "provisions":"ss.49 and 53-54",
+      "url":"https://www.irishstatutebook.ie/eli/1964/act/16/enacted/en/print.html",
+      "role":"registered-land possession and registration framework"
+    },
+    {
+      "source":"Statute of Limitations 1957",
+      "provisions":"Part IV and relevant land limitation provisions",
+      "url":"https://www.irishstatutebook.ie/eli/1957/act/6/enacted/en/html",
+      "role":"historical/current adverse-possession limitation framework"
+    },
+    {
+      "source":"Land and Conveyancing Law Reform Act 2021",
+      "provisions":"prescription and transitional provisions",
+      "url":"https://www.irishstatutebook.ie/eli/2021/act/35/enacted/en/html",
+      "role":"modern prescription changes"
+    }
+  ],
+  "case_law_status":{
+    "current_primary_authority":"NOT_YET_SUFFICIENTLY_VERIFIED",
+    "search_required":true,
+    "reason":"Possessory title, adverse possession and prescriptive easements are legally distinct pathways and cannot be collapsed into a single case-law category."
+  },
+  "system_rules":[
+    "Possessory title is not the same legal question as adverse possession.",
+    "Adverse possession of registered land must be separated from prescriptive easement claims.",
+    "Historical possession questions require date-specific law.",
+    "The 2021 prescription reforms require transitional analysis for older claims.",
+    "No possessory-title conclusion is published without a verified primary case-law and statutory chain."
+  ],
+  "next_research":[
+    "Search primary Irish judgments specifically concerning possessory title under the 1964 Act.",
+    "Map judgments to ss.49, 53 and 54 where applicable.",
+    "Separate registered-land adverse possession from easement prescription.",
+    "Record historical authorities and legal-version dates."
+  ],
+  "publication_gate":"NOT_READY"
+}
