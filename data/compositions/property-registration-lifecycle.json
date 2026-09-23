@@ -5,6 +5,17 @@
   "purpose": "Connect the principal property-registration pathways into one date-aware evidence-driven lifecycle while keeping each legal event distinct.",
   "lifecycle": [
     {
+      "stage": "OFFICIAL_SOURCE_CHANGE_MONITORING",
+      "routes": [
+        "property-official-source-change-monitor-watchlist",
+        "property-legal-change-impact-engine",
+        "property-source-reliability-freshness-resolver",
+        "property-evidence-dependency-graph",
+        "property-investigation-reverification-priority-engine",
+        "property-answer-version-snapshot-publication-manager"
+      ]
+    },
+    {
       "stage": "OFFICIAL_SOURCE_NAVIGATION_AND_CITATION",
       "routes": [
         "property-official-source-navigator-citation-resolver",
@@ -521,7 +532,8 @@
     "property-investigation-communication-clarification-dialogue",
     "property-investigation-citizen-timeline-status-view",
     "property-citizen-answer-delivery-action-plan",
-    "property-official-source-navigator-citation-resolver"
+    "property-official-source-navigator-citation-resolver",
+    "property-official-source-change-monitor-watchlist"
   ],
   "answer_sequence": [
     "QUESTION",
