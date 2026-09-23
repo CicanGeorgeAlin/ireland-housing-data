@@ -1,0 +1,63 @@
+{
+  "id":"omc-governance-records",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "question":"How can an owner understand or challenge an OMC decision or obtain the records needed to understand a charge?",
+  "pipeline":[
+    "identify-OMC-and-unit",
+    "identify-decision_or_record_requested",
+    "identify-governing-document",
+    "identify-statutory-record_or-governance_requirement",
+    "identify-meeting_or-resolution",
+    "identify-owner-right_or-obligation",
+    "request_or_review-records",
+    "check-accounting_and-budget_context",
+    "identify-dispute_or-court-route",
+    "show-evidence"
+  ],
+  "record_types":[
+    "OMC_CONSTITUTION",
+    "LEASE",
+    "ANNUAL_ACCOUNTS",
+    "BUDGET",
+    "SERVICE_CHARGE_DEMAND",
+    "SINKING_FUND_PLAN",
+    "AGM_NOTICE",
+    "AGM_MINUTES",
+    "EGM_RESOLUTION",
+    "DIRECTOR_RESOLUTION",
+    "MEMBERS_REGISTER",
+    "COMMON_AREA_DOCUMENTS",
+    "INSURANCE_DOCUMENTS"
+  ],
+  "governance_questions":[
+    "Who made the decision?",
+    "Under what legal or contractual authority?",
+    "Was the required meeting or resolution held?",
+    "What notice was required?",
+    "What voting threshold applies?",
+    "What records support the decision?",
+    "What accounts or budget support the charge?",
+    "What statutory or contractual remedy exists?"
+  ],
+  "guardrails":[
+    "Do not assume every OMC governance issue is a dispute before identifying the governing document and statutory framework.",
+    "Do not promise access to records beyond the legal entitlement established by the applicable law and documents.",
+    "Do not treat company-law records and MUD Act records as interchangeable.",
+    "Do not infer invalidity from a missing record until the required record and retention/access rule are established.",
+    "Where a formal company-law or court remedy is required, flag professional legal review."
+  ],
+  "sources":[
+    "Multi-Unit Developments Act 2011",
+    "Companies Act 2014 where applicable",
+    "OMC constitution",
+    "unit lease"
+  ],
+  "result_types":[
+    "GOVERNANCE_BASIS_IDENTIFIED",
+    "RECORD_REQUEST_ROUTE_IDENTIFIED",
+    "MISSING_RECORD_REQUIRES_FURTHER_RESEARCH",
+    "DISPUTE_ROUTE_REQUIRES_REVIEW",
+    "NOT_DETERMINABLE"
+  ]
+}
