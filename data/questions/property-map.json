@@ -1,0 +1,42 @@
+{
+  "id":"property-map",
+  "version":"0.1",
+  "verified_on":"2026-09-23",
+  "question":"What does the property map actually tell me?",
+  "pipeline":[
+    "identify-property",
+    "resolve-registration-status",
+    "retrieve-folio-and-title-plan",
+    "identify-map-purpose",
+    "check-boundary-conclusiveness",
+    "check-special-features",
+    "distinguish-registry-map-from-physical-features",
+    "check-date-scope",
+    "show-evidence",
+    "official-route"
+  ],
+  "result_types":[
+    "TITLE_PLAN_IDENTIFIED",
+    "REGISTRATION_MAP_IDENTIFIED",
+    "BOUNDARY_NOT_CONCLUSIVE",
+    "CONCLUSIVE_BOUNDARY_ENTRY_IDENTIFIED",
+    "ADDITIONAL_BOUNDARY_EVIDENCE_REQUIRED",
+    "PROPERTY_NOT_IDENTIFIED",
+    "REGISTRATION_STATUS_UNKNOWN",
+    "HISTORICAL_MAP_RESEARCH_REQUIRED"
+  ],
+  "guardrails":[
+    "Do not state that a registry map conclusively establishes the exact physical boundary unless a legally conclusive boundary entry applies.",
+    "Do not substitute general Tailte Éireann boundary datasets for a Land Registry folio/title plan.",
+    "Do not infer ownership from a map.",
+    "Do not infer planning permission, building compliance or physical occupation from the title plan.",
+    "If the question concerns an easement or right of way, inspect the relevant folio/instrument and any applicable map evidence."
+  ],
+  "official_sources":[
+    "SRC-TE-LANDREGISTRY",
+    "SRC-TE-COPYSERVICES",
+    "SRC-TE-MAP",
+    "SRC-TE-RULE8",
+    "SRC-TE-RULE139"
+  ]
+}
