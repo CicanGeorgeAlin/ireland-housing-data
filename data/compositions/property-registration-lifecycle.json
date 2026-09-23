@@ -1,0 +1,95 @@
+{
+  "schema_version":"1.0",
+  "composition_id":"property-registration-lifecycle",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "purpose":"Connect the principal property-registration pathways into one date-aware evidence-driven lifecycle while keeping each legal event distinct.",
+  "lifecycle":[
+    {
+      "stage":"STATUS",
+      "routes":["property-registration-records","property-registration-first-registration"]
+    },
+    {
+      "stage":"ACQUISITION_OR_TRANSFER",
+      "routes":["property-registration-transfers","property-registration-co-ownership"]
+    },
+    {
+      "stage":"SECURITY",
+      "routes":["property-registration-mortgages"]
+    },
+    {
+      "stage":"PROPERTY_RIGHTS",
+      "routes":["property-registration-easements"]
+    },
+    {
+      "stage":"RECORD_CHALLENGE",
+      "routes":["property-registration-rectification"]
+    }
+  ],
+  "event_model":[
+    "ACQUIRE",
+    "TRANSFER",
+    "INHERIT",
+    "CO_OWN",
+    "MORTGAGE",
+    "CHARGE",
+    "DISCHARGE",
+    "CREATE_RIGHT",
+    "CLAIM_PRESCRIPTION",
+    "RECTIFY",
+    "COURT_DETERMINE"
+  ],
+  "composition_rules":[
+    "Classify the property and registration status before selecting an event pathway.",
+    "One real-world event may trigger multiple legal and administrative pathways.",
+    "Registration status, substantive title, beneficial ownership, security interests and property rights remain distinct layers.",
+    "Historical events must be analysed under the law and registration rules applicable at the relevant date.",
+    "A later register entry does not automatically erase the historical legal state.",
+    "Official-record evidence is required before property-specific facts are asserted."
+  ],
+  "cross_dependencies":[
+    "property-registration-records",
+    "property-registration-first-registration",
+    "property-registration-transfers",
+    "property-registration-mortgages",
+    "property-registration-co-ownership",
+    "property-registration-easements",
+    "property-registration-rectification",
+    "property-title-live",
+    "property-evidence-audit",
+    "property-answer-snapshot",
+    "property-answer-reverification"
+  ],
+  "answer_sequence":[
+    "QUESTION",
+    "DATE_SCOPE",
+    "PROPERTY_IDENTIFICATION",
+    "REGISTRATION_STATUS",
+    "EVENT_CLASSIFICATION",
+    "OFFICIAL_RECORD_ROUTE",
+    "DOCUMENT_AND_PROPERTY_MATCH",
+    "FACT_EXTRACTION",
+    "LEGAL_PROPOSITION",
+    "LEGAL_EFFECT",
+    "CONDITIONS_AND_EXCEPTIONS",
+    "PROCEDURE",
+    "DEADLINE_IF_APPLICABLE",
+    "REMEDY_OR_NEXT_ROUTE",
+    "ANSWER_SNAPSHOT"
+  ],
+  "result_states":[
+    "REGISTRATION_LIFECYCLE_CLASSIFIED",
+    "MULTI_REGIME",
+    "EVIDENCE_REQUIRED",
+    "HISTORICAL_RESEARCH_REQUIRED",
+    "CONFLICT",
+    "PROFESSIONAL_REVIEW_REQUIRED",
+    "NOT_DETERMINABLE"
+  ],
+  "guardrails":[
+    "No single registry record is treated as the complete legal history.",
+    "No current ownership conclusion without current authoritative evidence.",
+    "No historical conclusion without date-aware source analysis.",
+    "No silent merging of title, beneficial interest, mortgage, easement or dispute status.",
+    "No property-specific publication without an evidence chain."
+  ]
+}
