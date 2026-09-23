@@ -1,0 +1,56 @@
+{
+  "schema_version":"0.1",
+  "status":"PARTIALLY_VERIFIED",
+  "verified_at":"2026-09-23",
+  "scope":"Later amendments and related provisions affecting property-title-live",
+  "findings":[
+    {
+      "proposition_id":"PROP-PROPERTY-TITLE-001",
+      "provision":"Registration of Title Act 1964 s.31",
+      "finding":"The current Irish Statute Book revised record is updated to 18 June 2026. The original 1964 text of s.31 contains the conclusiveness rule and expressly preserves court jurisdiction based on actual fraud or mistake.",
+      "status":"CURRENT_SOURCE_CONFIRMED",
+      "source":"https://www.irishstatutebook.ie/eli/isbc/1964_16.html"
+    },
+    {
+      "proposition_id":"PROP-PROPERTY-REGISTRATION-003",
+      "provision":"Registration of Title Act 1964 ss.33-39",
+      "finding":"The 1964 Act establishes classes of registered freehold title, including absolute, qualified and possessory title. Later legislation requires the current revised text to be used rather than the 1964 enacted text alone.",
+      "status":"CURRENT_SOURCE_CONFIRMED",
+      "source":"https://www.irishstatutebook.ie/eli/1964/act/16/section/33/enacted/en/html"
+    },
+    {
+      "proposition_id":"PROP-PROPERTY-MAP-002",
+      "provision":"Registration of Title Act 1964 ss.84-88",
+      "finding":"Section 84 was materially substituted by the Registration of Deeds and Title Act 2006. The current revised Act must therefore be used for the boundary/map proposition.",
+      "status":"AMENDMENT_CONFIRMED_CURRENT_TEXT_REVIEW_REQUIRED",
+      "source":"https://www.irishstatutebook.ie/eli/isbc/1964_16.html"
+    },
+    {
+      "proposition_id":"PROPERTY-POSSESSION-001",
+      "provision":"Registration of Title Act 1964 s.49",
+      "finding":"The current Act retains a specific registered-land possession framework, while later prescription law was substantially changed by the Land and Conveyancing Law Reform Act 2021. Possession/adverse-possession answers must therefore be separated from prescriptive easement answers.",
+      "status":"CURRENT_FRAMEWORK_CONFIRMED",
+      "source":"https://www.irishstatutebook.ie/eli/1964/act/16/section/49/enacted/en/html"
+    }
+  ],
+  "critical_later_law":[
+    {
+      "instrument":"Land and Conveyancing Law Reform Act 2009",
+      "finding":"Part 13 amended the Registration of Title Act 1964, including definitions and registration provisions; section 128 substituted s.25 concerning compulsory registration.",
+      "source":"https://www.irishstatutebook.ie/eli/2009/act/27/section/128/enacted/en/html"
+    },
+    {
+      "instrument":"Land and Conveyancing Law Reform Act 2021",
+      "finding":"The 2021 Act repealed ss.33-39 of the 2009 Act and introduced new prescription rules, while also amending s.49A of the 1964 Act. Its transitional/saver provisions matter for historical claims.",
+      "source":"https://www.irishstatutebook.ie/eli/2021/act/35/section/6/enacted/en/html"
+    }
+  ],
+  "important_boundary":"The project must not treat all land-law amendments as amendments to the core title proposition. Each amendment is mapped only where it can affect the particular user-facing proposition.",
+  "remaining":[
+    "Complete current-text review of each relied-upon provision.",
+    "Resolve commencement for every later amendment used by the pathway.",
+    "Complete full case-law review.",
+    "Complete final publication-level legal review."
+  ],
+  "publication_gate":"NOT_READY"
+}
