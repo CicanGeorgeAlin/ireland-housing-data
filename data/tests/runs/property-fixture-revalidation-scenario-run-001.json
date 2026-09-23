@@ -1,0 +1,72 @@
+{
+  "schema_version": "0.1",
+  "run_id": "PFRS-RUN-001",
+  "status": "PASSED_WITH_WARNINGS",
+  "execution_mode": "CONTROLLED_SCENARIO_CONTRACT_VALIDATION",
+  "recorded_at": "2026-09-23",
+  "runner_id": "PFRS-RUNNER-001",
+  "scenario_matrix": "data/tests/property-fixture-revalidation-scenario-matrix.json",
+  "scenario_results": {
+    "PFRS-001": {
+      "expected": "REVALIDATION_REQUIRED",
+      "actual": "REVALIDATION_REQUIRED",
+      "result": "PASS"
+    },
+    "PFRS-002": {
+      "expected": "REVIEW_REQUIRED",
+      "actual": "REVIEW_REQUIRED",
+      "result": "PASS"
+    },
+    "PFRS-003": {
+      "expected": "BLOCKED",
+      "actual": "BLOCKED",
+      "result": "PASS"
+    },
+    "PFRS-004": {
+      "expected": "REVIEW_REQUIRED",
+      "actual": "REVIEW_REQUIRED",
+      "result": "PASS"
+    },
+    "PFRS-005": {
+      "expected": "REVALIDATION_REQUIRED",
+      "actual": "REVALIDATION_REQUIRED",
+      "result": "PASS"
+    },
+    "PFRS-006": {
+      "expected": "BLOCKED",
+      "actual": "BLOCKED",
+      "result": "PASS"
+    }
+  },
+  "assertions": {
+    "dependency_resolution": "PASS",
+    "historical_immutability": "PASS",
+    "proposition_scope": "PASS",
+    "privacy_blocking": "PASS",
+    "provenance_review": "PASS",
+    "supersession_handling": "PASS",
+    "rejection_handling": "PASS",
+    "publication_separation": "PASS",
+    "production_state_unchanged": "PASS",
+    "unsafe_behaviour_detected": false
+  },
+  "result": {
+    "scenario_runner": "PASSED",
+    "all_scenarios_passed": true,
+    "historical_runs_unchanged": true,
+    "production_state_unchanged": true,
+    "publication_ready": false,
+    "legal_source_status": "UNCHANGED"
+  },
+  "warnings": [
+    "This run validates controlled technical behavior only.",
+    "Scenario fixtures are not live official property records.",
+    "No production legal evidence was created or upgraded.",
+    "This run does not verify the underlying Irish property law."
+  ],
+  "guardrails": [
+    "Scenario success does not establish a real property fact.",
+    "Scenario success does not constitute legal verification.",
+    "Historical validation results remain immutable."
+  ]
+}
