@@ -1,0 +1,15 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-search-result-explanation-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for explaining the relevance and evidential limits of discovered property legal-life results.",
+  "relevance_rule":"A result is relevant only in relation to the citizen's actual question and resolved scope.",
+  "evidence_rule":"Search matching does not itself establish a fact.",
+  "property_rule":"Property-specific facts require verified property identity.",
+  "historical_rule":"Historical facts require appropriate date matching and historical evidence.",
+  "source_rule":"General legal and procedural sources are not property-specific evidence.",
+  "limitation_rule":"What a result does not establish must remain visible where material.",
+  "next_step_rule":"The next action must follow from the verified evidence gap or official route.",
+  "verification_boundary":"The explanation layer clarifies search results; it does not create new facts or legal conclusions."
+}
