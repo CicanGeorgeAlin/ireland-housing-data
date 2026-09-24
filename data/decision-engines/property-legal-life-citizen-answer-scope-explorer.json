@@ -1,0 +1,86 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-legal-life-citizen-answer-scope-explorer",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Let citizens choose how much of an approved property answer to view without silently changing the investigation question, legal scope, evidence standard or underlying answer.",
+  "core_principle":"ONE APPROVED ANSWER → MULTIPLE SAFE VIEWS",
+  "view_modes":[
+    "DIRECT_ANSWER",
+    "RELEVANT_HISTORY",
+    "EVIDENCE_AND_LAW",
+    "FULL_CONTEXT"
+  ],
+  "view_definitions":{
+    "DIRECT_ANSWER":"Show only the material answer to the stated question plus essential limitation and next action.",
+    "RELEVANT_HISTORY":"Show only historical events materially relevant to the stated question and answer.",
+    "EVIDENCE_AND_LAW":"Show the supporting evidence, legal basis, dates/versions and material limitations.",
+    "FULL_CONTEXT":"Show the approved broader property/legal-life context within the investigation scope."
+  },
+  "scope_invariants":[
+    "Original question remains unchanged.",
+    "Property identity remains unchanged.",
+    "Time scope remains unchanged unless a separately authorised scope change occurs.",
+    "Legal regime and applicable legal version remain unchanged.",
+    "Evidence sufficiency requirements remain unchanged.",
+    "Publication and privacy rules remain unchanged.",
+    "Changing view mode does not create a new legal conclusion."
+  ],
+  "resolution_sequence":[
+    "LOAD_APPROVED_ANSWER_SNAPSHOT",
+    "LOAD_ANSWER_PLAN",
+    "LOAD_REQUESTED_VIEW_MODE",
+    "CHECK_VIEW_IS_WITHIN_APPROVED_SCOPE",
+    "SELECT_APPROVED_COMPONENTS",
+    "PRESERVE_MATERIAL_LIMITATIONS",
+    "PRESERVE_PROPERTY_AND_DATE_SCOPE",
+    "APPLY_PUBLIC_PRIVACY_BOUNDARY",
+    "RENDER_VIEW"
+  ],
+  "rules":[
+    "View selection changes presentation depth, not the underlying answer.",
+    "Direct Answer is the default concise view.",
+    "Relevant History includes only events material to the question.",
+    "Evidence and Law exposes provenance already approved for publication.",
+    "Full Context cannot expose restricted evidence or internal reasoning.",
+    "A request outside the approved investigation scope becomes a scope-change request rather than a silent expansion.",
+    "Material limitations remain visible in every view.",
+    "A broader view must not imply greater certainty.",
+    "View ordering must not imply correctness or importance beyond the approved answer structure."
+  ],
+  "scope_change_boundary":{
+    "in_scope_view":"render approved content at different depth",
+    "out_of_scope":"new property, new target date, new legal issue, new requested outcome, new evidence question or materially broader investigation",
+    "handling":"route to scope clarification/change process"
+  },
+  "states":[
+    "DIRECT_ANSWER_READY",
+    "RELEVANT_HISTORY_READY",
+    "EVIDENCE_AND_LAW_READY",
+    "FULL_CONTEXT_READY",
+    "VIEW_LIMITED_BY_PRIVACY",
+    "VIEW_LIMITED_BY_EVIDENCE",
+    "SCOPE_CHANGE_REQUIRED",
+    "VIEW_UNAVAILABLE"
+  ],
+  "hard_stops":[
+    "Never silently broaden the investigation.",
+    "Never alter property or date scope through a view switch.",
+    "Never expose restricted evidence through Full Context.",
+    "Never omit material limitations from a shorter view.",
+    "Never create a new legal conclusion while rendering a view.",
+    "Never treat a broader view as more authoritative than the approved answer."
+  ],
+  "output_contract":[
+    "view_id",
+    "answer_snapshot_id",
+    "view_mode",
+    "question",
+    "scope",
+    "rendered_components",
+    "limitations",
+    "privacy_state",
+    "scope_change_required",
+    "state"
+  ]
+}
