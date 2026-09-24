@@ -1,0 +1,15 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-citizen-answer-history-versions-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for citizen-readable version history of approved property answer snapshots.",
+  "immutability_rule":"Published snapshots are immutable.",
+  "predecessor_rule":"Every material revision retains a predecessor link.",
+  "ordering_rule":"Version order describes publication history and is not a quality ranking.",
+  "current_rule":"The current operative version is determined from approved publication state, not timestamp alone.",
+  "change_rule":"Material revisions identify the supported reason for change.",
+  "historical_rule":"Historical versions retain their original scope, dates and applicable legal-source versions.",
+  "privacy_rule":"Private case information and restricted evidence are excluded from public version history.",
+  "verification_boundary":"The engine presents approved snapshot history; it does not infer correctness from version recency."
+}
