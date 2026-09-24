@@ -1,0 +1,15 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-citizen-what-should-i-do-now-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for translating an approved property answer into a safe, source-based next action.",
+  "action_rule":"The next action follows from the approved answer state and material unresolved issue.",
+  "route_rule":"Official routes are used only when supported by authoritative sources.",
+  "deadline_rule":"A deadline is shown only when the governing source, trigger and counting rule are verified.",
+  "route_distinction":"Evidence retrieval, application, correction, review, complaint, appeal and court/dispute routes remain distinct.",
+  "guarantee_rule":"A procedural route is not presented as a guarantee of the requested outcome.",
+  "scope_rule":"The action plan stays within the approved property, date and legal scope.",
+  "no_action_rule":"Where no further action is needed, the citizen-facing answer says so explicitly.",
+  "verification_boundary":"The engine identifies an appropriate next step from established facts and sources; it does not create a remedy or predict its outcome."
+}
