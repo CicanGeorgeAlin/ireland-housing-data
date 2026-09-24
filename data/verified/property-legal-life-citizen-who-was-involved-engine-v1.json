@@ -1,0 +1,16 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-citizen-who-was-involved-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for citizen-facing explanation of party and role relationships in an approved property event.",
+  "identity_rule":"Party identity must be sufficiently matched before a role is attributed.",
+  "role_rule":"Document participation, legal role and property interest are distinct layers.",
+  "property_rule":"Role attribution retains property matching.",
+  "temporal_rule":"Roles are time-bounded and require historical evidence when projected to another date.",
+  "ownership_rule":"Party participation does not itself establish ownership, beneficial ownership or another property interest.",
+  "multiple_role_rule":"One party may hold multiple distinct roles; roles are not collapsed.",
+  "privacy_rule":"Only necessary personal information is displayed publicly.",
+  "assertion_rule":"Citizen-supplied assertions remain unverified until supported.",
+  "verification_boundary":"Role display explains supported relationships; it does not create a new legal conclusion."
+}
