@@ -1,0 +1,119 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-legal-life-search-result-explanation-engine",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Explain why a discovered result is relevant, what it establishes, what it does not establish, and what the citizen should open or do next.",
+  "core_principle":"RESULT → WHY RELEVANT → WHAT IT SHOWS → WHAT IT DOES NOT SHOW → NEXT",
+  "explanation_sections":[
+    "RESULT_SUMMARY",
+    "WHY_THIS_RESULT_IS_RELEVANT",
+    "WHAT_THE_RESULT_ESTABLISHES",
+    "WHAT_THE_RESULT_DOES_NOT_ESTABLISH",
+    "PROPERTY_IDENTITY_STATUS",
+    "DATE_SCOPE_STATUS",
+    "SOURCE_STATUS",
+    "LIMITATIONS",
+    "WHAT_TO_OPEN_NEXT",
+    "OFFICIAL_ROUTE_IF_NEEDED"
+  ],
+  "input_requirements":[
+    "search_result",
+    "original_question",
+    "resolved_question_type",
+    "property_scope",
+    "time_scope",
+    "source_reference",
+    "approval_status"
+  ],
+  "explanation_sequence":[
+    "LOAD_SEARCH_RESULT",
+    "LOAD_QUESTION_CONTEXT",
+    "CHECK_RESULT_APPROVAL",
+    "CHECK_RELEVANCE_TO_REQUEST",
+    "CHECK_PROPERTY_IDENTITY",
+    "CHECK_DATE_SCOPE",
+    "CHECK_SOURCE_AUTHORITY",
+    "IDENTIFY_ESTABLISHED_FACTS",
+    "IDENTIFY_UNESTABLISHED_MATTERS",
+    "LOAD_LIMITATIONS",
+    "SELECT_NEXT_OPEN_OR_ACTION",
+    "RENDER_EXPLANATION"
+  ],
+  "relevance_types":[
+    "DIRECTLY_RELEVANT",
+    "RELEVANT_SUPPORTING_SOURCE",
+    "RELEVANT_LEGAL_SOURCE",
+    "RELEVANT_PROCEDURAL_SOURCE",
+    "RELEVANT_HISTORICAL_SOURCE",
+    "POTENTIALLY_RELEVANT_REQUIRES_IDENTITY_CHECK",
+    "POTENTIALLY_RELEVANT_REQUIRES_DATE_CHECK",
+    "NOT_RELEVANT"
+  ],
+  "establishment_types":[
+    "GENERAL_LAW_ONLY",
+    "OFFICIAL_ROUTE_ONLY",
+    "PROPERTY_RECORD_FACT",
+    "HISTORICAL_RECORD_FACT",
+    "DOCUMENT_IDENTITY_ONLY",
+    "LEGAL_PROPOSITION",
+    "PROCEDURAL_FACT",
+    "LIMITED_SUPPORT",
+    "NO_MATERIAL_FACT_ESTABLISHED"
+  ],
+  "rules":[
+    "Relevance must be explained in relation to the citizen's actual question.",
+    "A search result is not evidence merely because it matches keywords.",
+    "Property-specific establishment requires property identity verification.",
+    "Historical establishment requires date matching and appropriate historical evidence.",
+    "A general legal source establishes law or guidance, not facts about a particular property.",
+    "A document's existence does not by itself establish its legal effect.",
+    "A route page establishes how to access a service, not the outcome of the requested investigation.",
+    "Limitations must remain visible.",
+    "The next step must follow from the verified gap or approved route, not from speculation."
+  ],
+  "next_step_types":[
+    "OPEN_ANSWER",
+    "OPEN_TIMELINE_EVENT",
+    "OPEN_LEGAL_PROVISION",
+    "OPEN_EVIDENCE_SUMMARY",
+    "VERIFY_PROPERTY_IDENTITY",
+    "VERIFY_DATE_SCOPE",
+    "RETRIEVE_OFFICIAL_RECORD",
+    "REQUEST_MISSING_EVIDENCE",
+    "OPEN_OFFICIAL_ROUTE",
+    "NO_FURTHER_ACTION"
+  ],
+  "states":[
+    "EXPLAINED_RELEVANT",
+    "EXPLAINED_RELEVANT_WITH_LIMITATIONS",
+    "IDENTITY_CHECK_REQUIRED",
+    "DATE_CHECK_REQUIRED",
+    "SOURCE_CHECK_REQUIRED",
+    "NOT_RELEVANT",
+    "NO_SAFE_EXPLANATION"
+  ],
+  "hard_stops":[
+    "Never describe a search match as proof.",
+    "Never infer property identity from names or addresses alone where ambiguity exists.",
+    "Never infer legal effect from a document title or search snippet alone.",
+    "Never conceal a missing material source.",
+    "Never invent a next action.",
+    "Never expose restricted evidence or internal reasoning."
+  ],
+  "output_contract":[
+    "explanation_id",
+    "result_id",
+    "question",
+    "relevance_explanation",
+    "established",
+    "not_established",
+    "identity_status",
+    "date_status",
+    "source_status",
+    "limitations",
+    "next_step",
+    "official_route",
+    "explanation_state"
+  ]
+}
