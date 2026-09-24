@@ -1,0 +1,90 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-legal-life-citizen-why-this-route-engine",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Explain why an identified official authority or route applies to a property issue, what legal or administrative function supports the route, what the route can and cannot do, and what evidence it requires.",
+  "core_principle":"ROUTE → FUNCTION → AUTHORITY → LEGAL BASIS → SCOPE → EVIDENCE → LIMITS",
+  "display_sections":[
+    "WHY_THIS_ROUTE",
+    "WHAT_FUNCTION_THIS_ROUTE_PERFORMS",
+    "WHO_HANDLES_IT",
+    "WHAT_AUTHORITY_THIS_SOURCE_GIVES",
+    "WHAT_THIS_ROUTE_CAN_DO",
+    "WHAT_THIS_ROUTE_CANNOT_DO",
+    "WHAT_EVIDENCE_IS_NEEDED",
+    "WHAT_HAPPENS_NEXT",
+    "LIMITATIONS",
+    "OFFICIAL_SOURCE"
+  ],
+  "resolution_sequence":[
+    "LOAD_APPROVED_ISSUE",
+    "LOAD_AUTHORITY_RESOLUTION",
+    "IDENTIFY_ROUTE_FUNCTION",
+    "IDENTIFY_LEGAL_OR_ADMINISTRATIVE_BASIS",
+    "VERIFY_SCOPE_OF_AUTHORITY",
+    "IDENTIFY_REQUIRED_EVIDENCE",
+    "IDENTIFY_LIMITS_AND_ALTERNATIVE_ROUTES",
+    "CHECK_REVIEW_OR_APPEAL",
+    "CHECK_DEADLINE_IF_APPLICABLE",
+    "RENDER_CITIZEN_EXPLANATION"
+  ],
+  "rules":[
+    "Explain the route from its actual legal or administrative function, not from convenience.",
+    "Distinguish authority to hold/provide a record from authority to decide a dispute.",
+    "Distinguish registration authority from substantive adjudication unless the governing source provides otherwise.",
+    "Identify the exact source supporting the route where material.",
+    "State the limits of the route so citizens do not expect an authority to provide a remedy outside its function.",
+    "Required evidence is tied to the requested function and proposition.",
+    "Alternative routes are shown only where supported by an authoritative source.",
+    "Review, appeal, complaint and court routes remain distinct.",
+    "Deadlines are shown only when governing source, trigger and counting rule are verified.",
+    "The explanation describes the route; it does not guarantee an outcome."
+  ],
+  "route_examples":[
+    "PROPERTY_RECORD_ACCESS",
+    "LAND_REGISTRATION",
+    "REGISTRY_OF_DEEDS",
+    "SUCCESSION_AND_REGISTRATION",
+    "MORTGAGE_OR_CHARGE",
+    "EASEMENT_OR_RIGHT_OF_WAY",
+    "BOUNDARY",
+    "RECTIFICATION_OR_REGISTRY_ERROR",
+    "COURT_ORDER_EFFECT",
+    "GENERAL_PROPERTY_INFORMATION"
+  ],
+  "states":[
+    "ROUTE_EXPLAINED",
+    "ROUTE_EXPLAINED_WITH_LIMITATIONS",
+    "LEGAL_BASIS_REQUIRES_CHECK",
+    "AUTHORITY_SCOPE_REQUIRES_CHECK",
+    "EVIDENCE_REQUIREMENTS_REQUIRES_CHECK",
+    "ROUTE_UNRESOLVED"
+  ],
+  "hard_stops":[
+    "Never invent legal authority for a route.",
+    "Never treat a service webpage as proof of substantive legal power without the relevant source.",
+    "Never imply a record custodian can determine a dispute without authority.",
+    "Never imply an application guarantees the requested result.",
+    "Never invent evidence requirements, fees, forms or deadlines.",
+    "Never expose restricted evidence or internal reasoning."
+  ],
+  "output_contract":[
+    "route_explanation_id",
+    "answer_snapshot_id",
+    "route",
+    "function",
+    "authority",
+    "legal_or_administrative_basis",
+    "scope",
+    "can_do",
+    "cannot_do",
+    "required_evidence",
+    "next_step",
+    "review_or_appeal",
+    "deadline",
+    "limitations",
+    "official_source",
+    "state"
+  ]
+}
