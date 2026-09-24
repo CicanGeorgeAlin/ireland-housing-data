@@ -1,0 +1,83 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-investigation-export-case-report-generator",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Generate a structured citizen-facing case report from an approved investigation without exposing restricted evidence or internal system reasoning.",
+  "core_principle":"APPROVED SNAPSHOT → PRIVACY FILTER → STRUCTURED REPORT → OFFICIAL SOURCES → NEXT ACTIONS",
+  "report_sections":[
+    "REPORT_HEADER",
+    "QUESTION",
+    "PROPERTY_SCOPE",
+    "DATE_SCOPE",
+    "ANSWER_STATUS",
+    "ANSWER",
+    "WHAT_THE_EVIDENCE_SHOWS",
+    "WHAT_THE_LAW_SAYS",
+    "WHAT_THIS_MEANS",
+    "WHAT_IS_NOT_ESTABLISHED",
+    "WHO_HANDLES_THE_NEXT_STEP",
+    "WHAT_TO_SUBMIT_OR_RETRIEVE",
+    "VERIFIED_DEADLINE_IF_ANY",
+    "NEXT_ACTION",
+    "OFFICIAL_SOURCES",
+    "VERSION_AND_VERIFICATION_DATE",
+    "LIMITATIONS"
+  ],
+  "optional_sections":[
+    "CHRONOLOGY",
+    "REVIEW_OUTCOME",
+    "ANSWER_PREDECESSOR",
+    "CORRECTION_HISTORY_SUMMARY"
+  ],
+  "generation_sequence":[
+    "LOAD_APPROVED_ANSWER_SNAPSHOT",
+    "VERIFY_SNAPSHOT_STATE",
+    "LOAD_PUBLIC_EVIDENCE_EXPLORER",
+    "APPLY_PRIVACY_PUBLICATION_BOUNDARY",
+    "RENDER_QUESTION_AND_SCOPE",
+    "RENDER_ANSWER",
+    "RENDER_MATERIAL_EVIDENCE",
+    "RENDER_LAW_AND_LEGAL_EFFECT",
+    "RENDER_LIMITATIONS",
+    "RENDER_ROUTE_AND_ACTIONS",
+    "RENDER_VERIFIED_DEADLINE_IF_PRESENT",
+    "RENDER_OFFICIAL_CITATIONS",
+    "RENDER_VERSION_AND_VERIFICATION",
+    "FINAL_PRIVACY_AND_QUALITY_CHECK",
+    "EXPORT"
+  ],
+  "report_formats":[
+    "WEB_VIEW",
+    "PRINTABLE_REPORT",
+    "STRUCTURED_DATA"
+  ],
+  "rules":[
+    "Only approved snapshots may be exported as definitive reports.",
+    "The report must reflect the snapshot version and verification state.",
+    "Material limitations must be preserved.",
+    "Public report content must pass the privacy/publication boundary.",
+    "Official sources must be rendered through the citation resolver.",
+    "A report is a representation of the approved answer, not a new legal determination.",
+    "Historical reports retain their historical scope and predecessor/version references."
+  ],
+  "hard_stops":[
+    "Never export an unreviewed case as a verified report.",
+    "Never expose restricted evidence merely because it exists in the case file.",
+    "Never omit a material limitation.",
+    "Never invent a deadline, remedy, authority or source.",
+    "Never alter the underlying immutable answer snapshot during export."
+  ],
+  "output_contract":[
+    "report_id",
+    "answer_snapshot_id",
+    "report_version",
+    "generated_at",
+    "answer_status",
+    "public_sections",
+    "official_sources",
+    "privacy_state",
+    "limitations",
+    "export_format"
+  ]
+}
