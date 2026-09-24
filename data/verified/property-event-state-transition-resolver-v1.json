@@ -1,0 +1,13 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-event-state-transition-resolver-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for modelling material property events as state transitions.",
+  "state_rule":"A property event is analysed against the relevant pre-event state and governing law before an after-state is established.",
+  "date_rule":"Event date, document date and registration date are distinct data points.",
+  "interest_rule":"Events may affect registered title, beneficial interests, co-ownership, security, leasehold, easements, burdens, boundaries, succession or other dimensions independently.",
+  "registration_rule":"Where registration is legally material, the registered outcome must be established separately from the event or document.",
+  "historical_rule":"Historical after-state requires evidence and law applicable to the target date.",
+  "verification_boundary":"This resolver models state transitions; it does not itself prove the property-specific state without the required authoritative evidence."
+}
