@@ -1,0 +1,15 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-evidence-request-experience-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for turning a material evidence gap into a minimal, understandable citizen request.",
+  "minimum_rule":"Request only the evidence necessary to unblock the requested conclusion.",
+  "identity_rule":"Preserve document, property and date identity through retrieval and validation.",
+  "citizen_document_rule":"Citizen-supplied documents remain unverified until independently validated where official status matters.",
+  "privacy_rule":"Do not request unnecessary personal information.",
+  "route_rule":"Official retrieval routes must be grounded in authoritative sources.",
+  "future_result_rule":"The request must not promise that the evidence will prove the desired conclusion.",
+  "post_receipt_rule":"Received evidence proceeds through document identity, property/date matching and sufficiency assessment.",
+  "verification_boundary":"The request experience collects or routes evidence; it does not establish facts or legal effects."
+}
