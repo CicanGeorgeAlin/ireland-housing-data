@@ -1,0 +1,13 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-search-discovery-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for safe discovery of approved property legal-life content and official legal/property sources.",
+  "search_rule":"Search identifies candidate content; it does not establish property identity, legal correctness or evidence.",
+  "identity_rule":"Property-specific discovery requires identity checking before property-specific conclusions.",
+  "privacy_rule":"Private case content is excluded from public discovery.",
+  "temporal_rule":"Current, historical, superseded and withdrawn content remain distinct.",
+  "ordering_rule":"Result order is relevance-oriented and must not be interpreted as legal ranking or correctness.",
+  "verification_boundary":"Discovery locates approved content; it does not create new facts or legal conclusions."
+}
