@@ -1,0 +1,85 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-legal-life-citizen-answer-archive-search-engine",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Provide safe discovery of published property-law answers by topic, legal issue, event, date and public-safe general area without treating search similarity as property identity, evidence or legal correctness.",
+  "core_principle":"SEARCH → CANDIDATES → SCOPE CHECK → ACCESS CHECK → OPEN APPROVED CONTENT",
+  "search_dimensions":[
+    "QUESTION_TYPE",
+    "PROPERTY_TOPIC",
+    "LEGAL_ISSUE",
+    "EVENT_TYPE",
+    "INTEREST_TYPE",
+    "DATE_OR_PERIOD",
+    "GENERAL_AREA_IF_PUBLIC_SAFE",
+    "ANSWER_STATUS",
+    "PUBLICATION_DATE",
+    "OFFICIAL_SOURCE_TYPE"
+  ],
+  "citizen_display":[
+    "SEARCH_RESULT",
+    "WHY_THIS_RESULT_MATCHED",
+    "QUESTION_SCOPE",
+    "DATE_SCOPE",
+    "ANSWER_STATUS",
+    "PUBLICATION_VERSION",
+    "WHAT_THE_RESULT_CONTAINS",
+    "WHAT_IT_DOES_NOT_ESTABLISH",
+    "OPEN_APPROVED_ANSWER",
+    "OFFICIAL_SOURCES"
+  ],
+  "resolution_sequence":[
+    "RECEIVE_SEARCH_QUERY",
+    "NORMALIZE_SEARCH_DIMENSIONS",
+    "SEARCH_PUBLIC_INDEX",
+    "FILTER_ACCESS",
+    "FILTER_SCOPE",
+    "IDENTIFY_CANDIDATES",
+    "EXPLAIN_RELEVANCE",
+    "OPEN_APPROVED_CONTENT",
+    "PRESERVE_SNAPSHOT_REFERENCE"
+  ],
+  "rules":[
+    "Search relevance is not evidence.",
+    "A matching name or address is not proof of property identity.",
+    "A search result is not proof of ownership, title, registration or legal effect.",
+    "Current and historical answers remain distinct.",
+    "Private investigations are never exposed through public search.",
+    "Search ordering does not imply correctness, quality or legal preference.",
+    "Only approved public snapshots are searchable in the public archive.",
+    "Historical publication status is preserved.",
+    "Search snippets do not replace the approved answer or its official sources.",
+    "Personal and sensitive information is excluded from public indexing unless demonstrably necessary and public-safe."
+  ],
+  "states":[
+    "SEARCH_READY",
+    "RESULTS_FOUND",
+    "RESULTS_FOUND_WITH_LIMITATIONS",
+    "NO_PUBLIC_MATCH",
+    "ACCESS_RESTRICTED",
+    "SCOPE_REQUIRES_CLARIFICATION",
+    "RESULT_REQUIRES_OPENING",
+    "SEARCH_UNAVAILABLE"
+  ],
+  "hard_stops":[
+    "Never use search similarity as property identity.",
+    "Never expose private case data.",
+    "Never present search ranking as legal ranking.",
+    "Never use a search result as property-specific evidence before source validation.",
+    "Never convert a historical answer into a current answer.",
+    "Never infer a legal conclusion from keywords alone."
+  ],
+  "output_contract":[
+    "search_id",
+    "query",
+    "search_dimensions",
+    "results",
+    "relevance_explanations",
+    "access_state",
+    "scope_limitations",
+    "approved_snapshot_refs",
+    "official_sources",
+    "state"
+  ]
+}
