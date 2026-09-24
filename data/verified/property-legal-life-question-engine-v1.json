@@ -1,0 +1,13 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-question-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for routing natural-language property questions to the correct legal-life investigation or general-information pathway.",
+  "question_rule":"Preserve the original question and classify intent before selecting evidence or legal analysis.",
+  "scope_rule":"Property and time scope are established before property-specific conclusions are attempted.",
+  "routing_rule":"Question type determines the minimum evidence and legal-analysis components required.",
+  "clarification_rule":"Only material routing or retrieval blockers justify clarification.",
+  "general_info_rule":"General legal questions should not be converted into unnecessary property investigations.",
+  "verification_boundary":"The question engine routes work; it does not itself establish property facts or legal conclusions."
+}
