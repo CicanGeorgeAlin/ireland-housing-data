@@ -1,0 +1,16 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-citizen-question-expansion-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for safely expanding an approved property answer into a linked citizen follow-up.",
+  "context_rule":"Preserve verified property, jurisdiction, registration and relevant temporal context unless the citizen changes it.",
+  "intent_rule":"Classify the new question independently even when prior context is reusable.",
+  "time_rule":"A changed or newly specified date creates a new temporal scope.",
+  "property_rule":"A new property reference requires identity verification; prior property identity is not silently transferred.",
+  "evidence_rule":"New questions receive their own minimum evidence profile; prior evidence is reused only when eligible.",
+  "snapshot_rule":"The parent answer snapshot remains immutable; follow-up work is linked as a new question/sub-investigation.",
+  "scope_rule":"Only the dimension actually requested by the citizen is added.",
+  "privacy_rule":"Related private context is not exposed merely because the follow-up refers to the same property.",
+  "verification_boundary":"Question expansion routes and scopes follow-up work; it does not establish new facts or legal conclusions."
+}
