@@ -5,6 +5,18 @@
   "purpose": "Connect the principal property-registration pathways into one date-aware evidence-driven lifecycle while keeping each legal event distinct.",
   "lifecycle": [
     {
+      "stage": "PROPERTY_LEGAL_LIFE_CITIZEN_WHAT_WAS_LEGAL_EFFECT",
+      "routes": [
+        "property-legal-life-citizen-what-was-legal-effect-engine",
+        "property-legal-provision-resolver",
+        "property-legal-conditions-exceptions-overrides",
+        "property-legal-proposition-authority-chain",
+        "property-event-state-transition-resolver",
+        "property-evidence-fact-legal-effect-boundary",
+        "property-legal-life-citizen-event-evidence-show-me-engine"
+      ]
+    },
+    {
       "stage": "PROPERTY_LEGAL_LIFE_CITIZEN_WHAT_DID_EVENT_CHANGE",
       "routes": [
         "property-legal-life-citizen-what-did-event-change-engine",
@@ -1108,7 +1120,8 @@
     "property-legal-life-citizen-event-evidence-show-me-engine",
     "property-legal-life-citizen-event-comparison-engine",
     "property-legal-life-citizen-who-was-involved-engine",
-    "property-legal-life-citizen-what-did-event-change-engine"
+    "property-legal-life-citizen-what-did-event-change-engine",
+    "property-legal-life-citizen-what-was-legal-effect-engine"
   ],
   "answer_sequence": [
     "QUESTION",
