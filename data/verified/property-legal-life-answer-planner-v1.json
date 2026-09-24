@@ -1,0 +1,13 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-answer-planner-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for selecting the material facts, events, law, evidence and limitations needed for a property legal-life answer.",
+  "scope_rule":"Answer scope follows the requested outcome rather than automatically exposing the entire property history.",
+  "materiality_rule":"Material facts and qualifiers that affect the requested conclusion must be included.",
+  "evidence_rule":"Property-specific answer plans require property-specific evidence.",
+  "legal_rule":"The required legal authority is selected according to the classified question and applicable temporal scope.",
+  "limitation_rule":"Material limitations remain part of the answer plan.",
+  "verification_boundary":"The planner selects answer content; it does not establish facts or legal conclusions."
+}
