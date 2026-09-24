@@ -1,0 +1,13 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-narrative-evidence-drilldown-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for drilling each material public legal-life narrative claim back to supporting evidence and legal authority.",
+  "claim_rule":"Every material narrative claim is traceable to supporting evidence or legal authority appropriate to its type.",
+  "property_rule":"Property-specific claims require property-specific evidence and verified property matching.",
+  "temporal_rule":"Historical claims retain date matching and applicable legal version.",
+  "limitation_rule":"Material evidence gaps or restrictions remain visible.",
+  "privacy_rule":"Restricted evidence and unnecessary personal information are not exposed through public drill-down.",
+  "verification_boundary":"The drill-down exposes provenance and supporting authority; it does not generate new facts or expose internal reasoning."
+}
