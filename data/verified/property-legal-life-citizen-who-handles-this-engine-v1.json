@@ -1,0 +1,16 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-citizen-who-handles-this-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for resolving the responsible authority or forum for a property issue.",
+  "function_rule":"Identify the legal/administrative function first, then the actor responsible for that function.",
+  "custody_rule":"Record custody does not automatically mean dispute decision-making authority.",
+  "registration_rule":"Registration functions are distinct from substantive dispute resolution unless the governing source provides otherwise.",
+  "review_rule":"Review and appeal routes are shown only where supported by the governing source.",
+  "court_rule":"Court or dispute routes are identified only where legally applicable.",
+  "enforcement_rule":"Enforcement is kept separate from information, registration, administration and adjudication.",
+  "multi_actor_rule":"One issue may require multiple actors; each actor's function is stated separately.",
+  "official_route_rule":"Official routes must be source-supported before publication.",
+  "verification_boundary":"The engine identifies responsibility and routing; it does not create authority or remedy."
+}
