@@ -1,0 +1,16 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-citizen-timeline-question-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for routing citizen questions about approved property timeline events.",
+  "event_scope_rule":"A question about an event preserves the approved property and event identity.",
+  "fact_rule":"Event facts come from approved evidence; event names alone do not establish legal effect.",
+  "causation_rule":"Why questions require independent causation analysis.",
+  "party_rule":"Party participation does not by itself establish ownership or another property interest.",
+  "temporal_rule":"Legal analysis uses the applicable law and version for the event date.",
+  "date_rule":"Event, document and registration dates remain distinct.",
+  "history_rule":"Before/after questions expand only to necessary neighbouring timeline scope.",
+  "privacy_rule":"Restricted evidence and internal reasoning remain protected.",
+  "verification_boundary":"Timeline question routing identifies the required evidence and analysis; it does not create a new fact or legal conclusion."
+}
