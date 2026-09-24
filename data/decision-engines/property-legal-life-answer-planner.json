@@ -1,0 +1,78 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-legal-life-answer-planner",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Determine the minimum material content needed to answer each property legal-life question accurately, clearly and proportionately.",
+  "core_principle":"QUESTION TYPE → MATERIAL FACTS → MATERIAL EVENTS → LAW → EVIDENCE → LIMITATIONS → NEXT ACTION",
+  "answer_profiles":{
+    "CURRENT_REGISTERED_OWNER":["current property identifier","current official register evidence","property match","current registered proprietor","material burdens/charges if asked","limitations","official source"],
+    "HISTORICAL_REGISTERED_OWNER":["target date","historical register evidence","property/date match","registered proprietor at target date","relevant intervening event if needed","historical legal scope","limitations"],
+    "PROPERTY_HISTORY":["target period","material chronology","material state transitions","interest/holder changes","causal links where established","evidence","gaps"],
+    "WHAT_CHANGED":["state A","state B","material interest differences","supporting events","evidence","limitations"],
+    "WHY_CHANGED":["observed change","candidate events","causal analysis","legal mechanism","registration effect if relevant","alternative/unresolved causes","evidence"],
+    "WHO_HELD_INTEREST":["target date","interest type","holder role","identity/property/date evidence","legal basis","limitations"],
+    "SUCCESSION_AFTER_DEATH":["death/event date","pre-death state","succession route","representative/beneficiary roles","transfer/assent/registration","post-event state","evidence","limitations"],
+    "MORTGAGE_OR_CHARGE_HISTORY":["target period","charge/dealing records","creation/assignment/discharge events","registration effects","current/historical state","evidence","limitations"],
+    "EASEMENT_OR_RIGHT_OF_WAY_HISTORY":["property scope","right/burden identity","creation/history","registration or other legal basis","extent only if established","later release/court/boundary events","evidence","limitations"],
+    "BOUNDARY_HISTORY":["property identifiers","relevant maps/records","boundary events","agreements/orders/instruments","legal framework","evidence limitations"],
+    "COURT_ORDER_EFFECT":["order identity","parties/property match","order date","actual scope of order","registration/formal effect","subsequent state","limitations"],
+    "DOCUMENT_EFFECT":["document identity","parties","property match","date","document content/effect source","registration consequences if any","what document does not establish"],
+    "GENERAL_PROPERTY_LAW":["question","applicable legal regime","exact authority","conditions/exceptions","plain-language explanation","official source"]
+  },
+  "planning_sequence":[
+    "LOAD_CLASSIFIED_QUESTION",
+    "SELECT_QUESTION_PROFILE",
+    "SET_PROPERTY_AND_TIME_SCOPE",
+    "SELECT_MATERIAL_INTERESTS",
+    "SELECT_MATERIAL_EVENTS",
+    "SELECT_MINIMUM_EVIDENCE",
+    "SELECT_REQUIRED_LEGAL_AUTHORITY",
+    "SELECT_PROCEDURE_OR_DEADLINE_IF_REQUESTED",
+    "SELECT_LIMITATIONS",
+    "SELECT_NEXT_ACTION",
+    "APPLY_PRIVACY_BOUNDARY",
+    "QUALITY_CHECK",
+    "GENERATE_ANSWER_PLAN"
+  ],
+  "rules":[
+    "Answer only the material scope needed for the requested outcome.",
+    "Do not omit a fact or qualifier that changes the legal meaning.",
+    "Do not dump the entire property history when a narrower verified answer is sufficient.",
+    "If a broader history is necessary to establish the requested conclusion, include the relevant chain.",
+    "A limitation is material when it prevents or qualifies the requested conclusion.",
+    "Current and historical answer profiles remain distinct.",
+    "Property-specific answer plans require property-specific evidence.",
+    "The plan does not itself establish any fact or legal conclusion."
+  ],
+  "plan_states":[
+    "ANSWER_PLAN_READY",
+    "ANSWER_PLAN_WITH_LIMITATIONS",
+    "PROPERTY_SCOPE_REQUIRED",
+    "DATE_SCOPE_REQUIRED",
+    "EVIDENCE_REQUIRED",
+    "LEGAL_AUTHORITY_REQUIRED",
+    "MULTI_PART_ANSWER_REQUIRED",
+    "NOT_DETERMINABLE"
+  ],
+  "hard_stops":[
+    "Never omit material uncertainty merely for brevity.",
+    "Never include unsupported facts merely to make the narrative complete.",
+    "Never invent a deadline, remedy or route because the profile expects one.",
+    "Never treat the answer plan as evidence.",
+    "Never expose restricted evidence in the answer."
+  ],
+  "output_contract":[
+    "answer_plan_id",
+    "question_type",
+    "required_sections",
+    "material_facts",
+    "material_events",
+    "required_evidence",
+    "legal_authority",
+    "limitations",
+    "next_action",
+    "privacy_state",
+    "plan_state"
+  ]
+}
