@@ -1,0 +1,16 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-citizen-answer-archive-search-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for safe discovery of published property-law answers.",
+  "search_rule":"Search identifies potentially relevant published content; it does not establish facts or legal conclusions.",
+  "identity_rule":"Names, addresses and textual similarity do not by themselves establish property identity.",
+  "evidence_rule":"A search result is not property-specific evidence until the approved source and scope are checked.",
+  "temporal_rule":"Current and historical answers remain distinct and retain their original date scope.",
+  "privacy_rule":"Private investigations and unnecessary personal information are excluded from public search.",
+  "ordering_rule":"Search ordering is not a correctness, quality or legal preference ranking.",
+  "publication_rule":"Only approved public snapshots are indexed for the public archive.",
+  "snippet_rule":"Search snippets do not replace the approved answer or its official sources.",
+  "verification_boundary":"The engine supports discovery and navigation; it does not establish property identity, ownership or legal effect."
+}
