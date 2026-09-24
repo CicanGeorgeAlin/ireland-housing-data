@@ -1,0 +1,101 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-legal-life-answer-interaction-model",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Define safe navigation from a citizen-facing property answer into its verified timeline, events, parties/roles, interests, evidence, legal sources and official routes.",
+  "core_principle":"ANSWER → SELECTED COMPONENT → VERIFIED DETAIL → SOURCE / NEXT ACTION",
+  "interaction_targets":[
+    "ANSWER_COMPONENT",
+    "TIMELINE_EVENT",
+    "PROPERTY_STATE",
+    "INTEREST",
+    "PARTY_ROLE",
+    "RELATIONSHIP",
+    "CAUSAL_EVENT",
+    "LEGAL_PROVISION",
+    "LEGAL_EFFECT",
+    "EVIDENCE_RECORD",
+    "OFFICIAL_SOURCE",
+    "OFFICIAL_ROUTE",
+    "LIMITATION",
+    "NEXT_ACTION"
+  ],
+  "interaction_record":[
+    "interaction_id",
+    "answer_snapshot_id",
+    "selected_target_type",
+    "selected_target_id",
+    "visible_summary",
+    "supporting_references",
+    "property_scope",
+    "date_scope",
+    "privacy_state",
+    "access_state",
+    "navigation_target",
+    "limitations"
+  ],
+  "interaction_sequence":[
+    "LOAD_APPROVED_ANSWER_SNAPSHOT",
+    "DISPLAY_PUBLIC_SAFE_COMPONENTS",
+    "USER_SELECTS_COMPONENT",
+    "RESOLVE_TARGET",
+    "CHECK_PUBLIC_ACCESS",
+    "LOAD_APPROVED_DETAIL",
+    "LOAD_SUPPORTING_CITATIONS",
+    "LOAD_RELEVANT_LIMITATIONS",
+    "OFFER_OFFICIAL_ROUTE_OR_NEXT_ACTION",
+    "RETURN_TO_ANSWER"
+  ],
+  "navigation_map":{
+    "ANSWER_COMPONENT":"component evidence and legal basis",
+    "TIMELINE_EVENT":"event details, state transition, evidence and law",
+    "PROPERTY_STATE":"state comparison and supporting records",
+    "INTEREST":"holder/role, before-after state and legal basis",
+    "PARTY_ROLE":"relationship timeline and supporting evidence",
+    "RELATIONSHIP":"relationship dates, event and evidence",
+    "CAUSAL_EVENT":"causal analysis and alternative/unresolved causes",
+    "LEGAL_PROVISION":"exact provision, version, conditions and official source",
+    "LEGAL_EFFECT":"supporting proposition and applicable conditions",
+    "EVIDENCE_RECORD":"safe evidence summary and official retrieval route",
+    "OFFICIAL_SOURCE":"source details and official destination",
+    "OFFICIAL_ROUTE":"procedure, responsible body and next action",
+    "LIMITATION":"reason for limitation and evidence needed if known",
+    "NEXT_ACTION":"approved procedural or evidence-retrieval step"
+  },
+  "rules":[
+    "Navigation may expose only information approved for the user's access level.",
+    "A drill-down must not create a new legal conclusion.",
+    "Selected detail must retain property and date scope.",
+    "Public navigation may show source summaries and official links but not restricted evidence.",
+    "Returning from a detail view must preserve the original answer snapshot.",
+    "A source page is not automatically evidence of the property-specific fact being investigated.",
+    "Limitations must remain visible when navigating to supporting detail."
+  ],
+  "interaction_states":[
+    "INTERACTIVE_ANSWER_READY",
+    "DETAIL_LOADED",
+    "OFFICIAL_SOURCE_AVAILABLE",
+    "OFFICIAL_ROUTE_AVAILABLE",
+    "ACCESS_RESTRICTED",
+    "DETAIL_UNAVAILABLE",
+    "SNAPSHOT_CHANGED_REQUIRES_RELOAD"
+  ],
+  "hard_stops":[
+    "Never expose restricted evidence through a public click path.",
+    "Never navigate from a general source to an unsupported property-specific conclusion.",
+    "Never silently change the answer snapshot during navigation.",
+    "Never hide limitations in detail views.",
+    "Never expose internal reasoning or system-only metadata."
+  ],
+  "output_contract":[
+    "interaction_id",
+    "answer_snapshot_id",
+    "target",
+    "detail",
+    "supporting_sources",
+    "limitations",
+    "official_route",
+    "navigation_state"
+  ]
+}
