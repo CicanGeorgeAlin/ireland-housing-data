@@ -1,0 +1,14 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-definition-regime-resolver-expansion-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for regime-specific and time-specific interpretation of legal terms in Irish housing and property questions.",
+  "definition_rule":"A legal term must be interpreted from the applicable governing regime and source before it is used in a legal conclusion.",
+  "scope_rule":"A statutory definition applies only within the scope specified by its governing source.",
+  "temporal_rule":"The definition applicable to a historical event must be verified for the relevant date, commencement and transitional framework.",
+  "collision_rule":"Terms that appear similar in ordinary language may represent different legal concepts, including registered title, beneficial interest, possession, tenancy, security and burden.",
+  "case_rule":"Judicial interpretation is linked to the actual interpretive proposition supported by the judgment.",
+  "guidance_rule":"Official guidance may explain operational terminology but does not replace substantive statutory meaning.",
+  "verification_boundary":"This resolver selects and scopes definitions; it does not independently establish the ultimate legal effect of the defined concept."
+}
