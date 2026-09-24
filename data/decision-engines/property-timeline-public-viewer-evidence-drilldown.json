@@ -1,0 +1,84 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-timeline-public-viewer-evidence-drilldown",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Present a verified property chronology as a citizen-friendly timeline with event-level evidence, legal context and limitations while enforcing privacy and access boundaries.",
+  "core_principle":"TIMELINE EVENT → WHAT HAPPENED → EVIDENCE → LAW → EFFECT → LIMITATION",
+  "timeline_view":[
+    "PROPERTY_SCOPE",
+    "TARGET_PERIOD",
+    "CURRENT_OR_HISTORICAL_LABEL",
+    "CHRONOLOGY_STATUS",
+    "EVENT_LIST",
+    "EVENT_DETAILS",
+    "SOURCE_LINKS",
+    "LIMITATIONS"
+  ],
+  "event_detail_sections":[
+    "EVENT_DATE",
+    "EVENT_TYPE",
+    "WHAT_HAPPENED",
+    "DOCUMENT_DATE_IF_RELEVANT",
+    "REGISTRATION_DATE_IF_RELEVANT",
+    "WHAT_THE_RECORD_ESTABLISHES",
+    "LEGAL_RULE",
+    "LEGAL_EFFECT",
+    "INTERESTS_AFFECTED",
+    "WHAT_CHANGED",
+    "WHAT_IS_NOT_ESTABLISHED",
+    "OFFICIAL_SOURCE",
+    "VERIFICATION_STATE"
+  ],
+  "viewer_sequence":[
+    "LOAD_APPROVED_CHRONOLOGY",
+    "CHECK_CHRONOLOGY_STATUS",
+    "APPLY_PUBLIC_PRIVATE_BOUNDARY",
+    "RENDER_TIMELINE",
+    "SELECT_EVENT",
+    "LOAD_EVENT_EVIDENCE_SUMMARY",
+    "LOAD_LEGAL_SOURCE_SUMMARY",
+    "LOAD_CITATIONS",
+    "RENDER_LIMITATIONS",
+    "RENDER_OFFICIAL_ROUTE",
+    "PRESERVE_SNAPSHOT_REFERENCE"
+  ],
+  "rules":[
+    "Only approved/public-safe chronology data may be shown publicly.",
+    "Timeline order must preserve the chronology builder's date rules.",
+    "Event date, document date and registration date remain separately labelled.",
+    "A timeline event is not itself proof beyond its underlying evidence.",
+    "Legal effect is displayed only when established by the applicable legal analysis.",
+    "Missing evidence and unresolved conflicts remain visible.",
+    "Restricted documents are represented by safe summaries or official retrieval routes rather than exposed content.",
+    "Current and historical timeline views remain distinct."
+  ],
+  "viewer_states":[
+    "VERIFIED_TIMELINE",
+    "VERIFIED_TIMELINE_WITH_LIMITATIONS",
+    "PARTIAL_TIMELINE",
+    "DATE_CONFLICT",
+    "PROPERTY_MATCH_CONFLICT",
+    "EVIDENCE_INCOMPLETE",
+    "NOT_DETERMINABLE"
+  ],
+  "hard_stops":[
+    "Never fabricate an event to make the timeline continuous.",
+    "Never hide a material missing record or date conflict.",
+    "Never expose restricted/private evidence in the public viewer.",
+    "Never infer legal effect from event labels alone.",
+    "Never convert current state into historical state without historical evidence."
+  ],
+  "output_contract":[
+    "timeline_id",
+    "chronology_reference",
+    "property_scope",
+    "target_period",
+    "timeline_status",
+    "events",
+    "event_details",
+    "official_sources",
+    "limitations",
+    "snapshot_reference"
+  ]
+}
