@@ -1,0 +1,87 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-change-explanation-engine",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Translate a verified property state comparison into a plain-language explanation while preserving the distinction between observed change, causal event, legal effect, evidence and uncertainty.",
+  "core_principle":"WHAT CHANGED → WHY IT CHANGED IF ESTABLISHED → LAW → EVIDENCE → WHAT REMAINS UNCERTAIN",
+  "explanation_sections":[
+    "QUESTION",
+    "STATE_A",
+    "STATE_B",
+    "WHAT_CHANGED",
+    "EVENT_CAUSING_CHANGE_IF_ESTABLISHED",
+    "LEGAL_RULE",
+    "LEGAL_EFFECT",
+    "EVIDENCE",
+    "WHAT_IS_NOT_ESTABLISHED",
+    "NEXT_EVIDENCE_STEP",
+    "OFFICIAL_SOURCES"
+  ],
+  "sequence":[
+    "LOAD_APPROVED_COMPARISON",
+    "CHECK_PROPERTY_AND_DATE_SCOPE",
+    "GROUP_MATERIAL_DIFFERENCES",
+    "LINK_SUPPORTED_CAUSING_EVENTS",
+    "RESOLVE_APPLICABLE_LAW",
+    "RESOLVE_LEGAL_EFFECT",
+    "SELECT_MATERIAL_EVIDENCE",
+    "SEPARATE_ESTABLISHED_FROM_UNRESOLVED",
+    "GENERATE_PLAIN_LANGUAGE_EXPLANATION",
+    "APPLY_PRIVACY_BOUNDARY",
+    "QUALITY_CHECK",
+    "PUBLISH_EXPLANATION"
+  ],
+  "change_explanation_record":[
+    "change_id",
+    "comparison_reference",
+    "change_type",
+    "state_before",
+    "state_after",
+    "causing_event",
+    "causal_status",
+    "legal_rule",
+    "legal_effect",
+    "evidence",
+    "limitations",
+    "next_step",
+    "verification_state"
+  ],
+  "causal_statuses":[
+    "CAUSAL_EVENT_ESTABLISHED",
+    "CAUSAL_EVENT_SUPPORTED_WITH_LIMITATIONS",
+    "CHANGE_ESTABLISHED_CAUSE_UNRESOLVED",
+    "CHANGE_PARTIALLY_ESTABLISHED",
+    "CHANGE_UNRESOLVED"
+  ],
+  "rules":[
+    "Describe the observed difference before explaining its cause.",
+    "Only attribute causation where evidence and legal analysis support the connection.",
+    "Keep event date, document date, registration date and legal-effect date distinct.",
+    "Explain legal effect only from the applicable legal source and conditions.",
+    "Do not turn a possible explanation into an established explanation.",
+    "Preserve material limitations and unresolved conflicts.",
+    "Use plain language without changing the legal meaning of the source.",
+    "A current state does not prove a historical state."
+  ],
+  "hard_stops":[
+    "Never invent a causal event.",
+    "Never state that a document caused a registered change without supporting registration evidence where required.",
+    "Never use a later legal rule to explain an earlier event without temporal verification.",
+    "Never conceal an unresolved material difference.",
+    "Never expose restricted/private evidence in the public explanation."
+  ],
+  "output_contract":[
+    "explanation_id",
+    "question",
+    "state_a",
+    "state_b",
+    "changes",
+    "causal_events",
+    "legal_effects",
+    "evidence",
+    "limitations",
+    "next_step",
+    "verification_state"
+  ]
+}
