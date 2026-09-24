@@ -1,0 +1,15 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-citizen-evidence-conflict-resolution-experience-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for citizen-facing explanation and routing of material evidence conflicts.",
+  "conflict_rule":"A conflict is a state requiring analysis, not proof that either source is wrong.",
+  "scope_rule":"Differences in property, date, legal layer or document scope are checked before source preference.",
+  "authority_rule":"Source authority is evaluated separately from recency.",
+  "historical_rule":"Current records do not automatically resolve historical questions.",
+  "citizen_source_rule":"Citizen-supplied evidence is validated against the relevant proposition rather than silently accepted or rejected.",
+  "resolution_rule":"Resolved conflicts retain their supporting basis; unresolved material conflicts remain visible and can block definitive publication.",
+  "privacy_rule":"Restricted evidence and internal reasoning remain protected.",
+  "verification_boundary":"The experience explains and routes conflicts; it does not resolve them without the required evidence and authority checks."
+}
