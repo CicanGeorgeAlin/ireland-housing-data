@@ -5,6 +5,20 @@
   "purpose": "Connect the principal property-registration pathways into one date-aware evidence-driven lifecycle while keeping each legal event distinct.",
   "lifecycle": [
     {
+      "stage": "PROPERTY_EVENT_STATE_TRANSITIONS",
+      "routes": [
+        "property-event-state-transition-resolver",
+        "property-concept-interest-resolver",
+        "property-registration-lifecycle",
+        "property-registration-transfers",
+        "property-registration-succession",
+        "property-registration-mortgages",
+        "property-registration-co-ownership",
+        "property-registration-easements",
+        "property-registration-historical-state"
+      ]
+    },
+    {
       "stage": "PROPERTY_CONCEPT_AND_INTEREST_RESOLUTION",
       "routes": [
         "property-concept-interest-resolver",
@@ -648,7 +662,8 @@
     "property-question-knowledge-reuse-resolver",
     "property-legal-knowledge-graph-cross-reference-resolver",
     "property-legal-definition-regime-resolver-expansion",
-    "property-concept-interest-resolver"
+    "property-concept-interest-resolver",
+    "property-event-state-transition-resolver"
   ],
   "answer_sequence": [
     "QUESTION",
