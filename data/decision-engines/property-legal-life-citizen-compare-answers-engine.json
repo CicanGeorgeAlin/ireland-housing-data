@@ -1,0 +1,101 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-legal-life-citizen-compare-answers-engine",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Present a citizen-safe comparison of two approved answer snapshots or two verified property states, identifying supported differences, unchanged points, causes where established, evidence and limitations.",
+  "core_principle":"STATE A / ANSWER A → DIFFERENCE → SUPPORTING EVIDENCE → CAUSE IF ESTABLISHED → STATE B / ANSWER B",
+  "comparison_targets":[
+    "ANSWER_SNAPSHOT_VS_ANSWER_SNAPSHOT",
+    "PROPERTY_STATE_VS_PROPERTY_STATE",
+    "HISTORICAL_STATE_VS_CURRENT_STATE",
+    "TWO_HISTORICAL_STATES"
+  ],
+  "comparison_dimensions":[
+    "REGISTERED_PROPRIETORSHIP",
+    "FREEHOLD_INTEREST",
+    "LEASEHOLD",
+    "BENEFICIAL_INTEREST",
+    "CO_OWNERSHIP",
+    "MORTGAGE_OR_CHARGE",
+    "EASEMENT_OR_BURDEN",
+    "BOUNDARY",
+    "SUCCESSION_INTEREST",
+    "POSSESSION",
+    "REGISTRATION_STATUS",
+    "LEGAL_RULE",
+    "PROCEDURE",
+    "DEADLINE",
+    "ANSWER_STATUS"
+  ],
+  "display_sections":[
+    "WHAT_WAS_TRUE_IN_A",
+    "WHAT_IS_TRUE_IN_B",
+    "WHAT_CHANGED",
+    "WHAT_DID_NOT_CHANGE",
+    "WHY_IT_CHANGED_IF_ESTABLISHED",
+    "EVIDENCE_SUPPORTING_THE_DIFFERENCE",
+    "LAW_AND_DATE_VERSION",
+    "LIMITATIONS",
+    "OFFICIAL_SOURCES"
+  ],
+  "resolution_sequence":[
+    "LOAD_APPROVED_COMPARISON_TARGETS",
+    "VERIFY_COMPARABLE_SCOPE",
+    "VERIFY_PROPERTY_IDENTITY",
+    "VERIFY_DATE_OR_STATE_BOUNDARIES",
+    "ALIGN_RELEVANT_DIMENSIONS",
+    "IDENTIFY_DIFFERENCES",
+    "LINK_CAUSAL_EVENTS_IF_ESTABLISHED",
+    "LINK_EVIDENCE_AND_LEGAL_SOURCES",
+    "PRESERVE_UNCHANGED_ITEMS",
+    "APPLY_PRIVACY_BOUNDARY",
+    "RENDER_CITIZEN_COMPARISON"
+  ],
+  "rules":[
+    "Comparison requires compatible property and defined temporal/state scope.",
+    "A difference does not by itself establish its cause.",
+    "An event is presented as causal only when the causation engine supports it.",
+    "Current state is not projected backward into historical state.",
+    "Historical and current legal versions remain distinct.",
+    "Unchanged means no material change identified within the verified evidence scope, not proof that nothing ever changed.",
+    "Different answer wording is not automatically a substantive legal difference.",
+    "Differences caused only by presentation depth remain presentation differences.",
+    "Material limitations from either target remain visible.",
+    "Restricted evidence is not exposed merely because it explains a difference."
+  ],
+  "states":[
+    "COMPARISON_READY",
+    "COMPARISON_READY_WITH_LIMITATIONS",
+    "PROPERTY_MATCH_REQUIRED",
+    "DATE_SCOPE_REQUIRED",
+    "STATE_A_INCOMPLETE",
+    "STATE_B_INCOMPLETE",
+    "CAUSAL_EVENT_UNRESOLVED",
+    "CONFLICT_DETECTED",
+    "NOT_COMPARABLE"
+  ],
+  "hard_stops":[
+    "Never compare different properties as if they were the same.",
+    "Never compare undefined dates as if they were equivalent.",
+    "Never infer causation from difference alone.",
+    "Never hide a material conflict.",
+    "Never treat changed wording as changed law without analysis.",
+    "Never expose restricted/private evidence.",
+    "Never create a new legal conclusion merely because two answers differ."
+  ],
+  "output_contract":[
+    "comparison_id",
+    "target_a",
+    "target_b",
+    "scope",
+    "dimensions_compared",
+    "differences",
+    "unchanged_items",
+    "causal_explanations",
+    "evidence",
+    "legal_sources",
+    "limitations",
+    "state"
+  ]
+}
