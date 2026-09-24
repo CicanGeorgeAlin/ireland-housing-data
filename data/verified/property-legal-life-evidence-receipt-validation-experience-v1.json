@@ -1,0 +1,15 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-evidence-receipt-validation-experience-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for acknowledging and validating newly received property evidence.",
+  "receipt_rule":"Receipt confirms arrival only; it does not establish authenticity, property identity or legal effect.",
+  "identity_rule":"Document identity, property match and date match are separate validation dimensions.",
+  "source_rule":"Citizen-supplied material retains its source classification until independently verified where official status matters.",
+  "scope_rule":"Evidence may be sufficient for one proposition and insufficient for another.",
+  "conflict_rule":"Conflicting records are preserved and reviewed rather than silently reconciled.",
+  "privacy_rule":"Privacy/access status is checked before public exposure.",
+  "feedback_rule":"Citizen feedback reports the actual validation state and remaining gap.",
+  "verification_boundary":"The receipt/validation experience evaluates evidence; it does not create new legal conclusions."
+}
