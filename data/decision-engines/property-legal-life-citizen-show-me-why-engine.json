@@ -1,0 +1,92 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-legal-life-citizen-show-me-why-engine",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Provide a citizen-facing 'Why?' interaction for material answer statements, showing the supporting evidence, law, date/version, limitations and official source without exposing internal reasoning.",
+  "core_principle":"WHY? → WHAT SUPPORTS IT → WHAT LAW APPLIES → WHAT DATE/VERSION → WHAT IS LIMITED → OFFICIAL SOURCE",
+  "trigger":{
+    "action":"SHOW_ME_WHY",
+    "requires_answer_component":true,
+    "requires_approved_snapshot":true
+  },
+  "display_sequence":[
+    "CLAIM",
+    "WHAT_THE_RECORD_SHOWS",
+    "WHY_THIS_RECORD_IS_RELEVANT",
+    "WHAT_THE_LAW_SAYS",
+    "DATE_AND_VERSION",
+    "WHAT_IS_NOT_ESTABLISHED",
+    "OFFICIAL_SOURCE",
+    "OPTIONAL_NEXT_STEP"
+  ],
+  "resolution_sequence":[
+    "LOAD_APPROVED_ANSWER_SNAPSHOT",
+    "RESOLVE_ANSWER_COMPONENT",
+    "LOAD_PROVENANCE",
+    "LOAD_PROPERTY_AND_DATE_MATCH",
+    "LOAD_LEGAL_PROPOSITION",
+    "LOAD_CONDITIONS_AND_EXCEPTIONS",
+    "LOAD_LIMITATIONS",
+    "CHECK_PUBLIC_ACCESS",
+    "RENDER_WHY_VIEW",
+    "OFFER_OFFICIAL_ROUTE_OR_DETAIL"
+  ],
+  "why_components":[
+    "CLAIM",
+    "EVIDENCE_SUMMARY",
+    "PROPERTY_MATCH",
+    "DATE_MATCH",
+    "LEGAL_BASIS",
+    "LEGAL_EFFECT_IF_ESTABLISHED",
+    "CONDITIONS_OR_EXCEPTIONS",
+    "LIMITATION",
+    "OFFICIAL_SOURCE",
+    "NEXT_STEP"
+  ],
+  "rules":[
+    "The Why view explains an already-approved claim; it does not create a new conclusion.",
+    "The supporting record is described only within its verified scope.",
+    "Property-specific claims retain property matching where material.",
+    "Historical claims retain target-date and legal-version context.",
+    "Conditions and exceptions material to the claim remain visible.",
+    "If evidence is incomplete, the Why view says what remains unestablished.",
+    "Official source links/routes are shown where available.",
+    "Restricted evidence is summarized only at the permitted access level.",
+    "No internal chain-of-thought, confidence score or hidden metadata is exposed."
+  ],
+  "states":[
+    "WHY_VIEW_READY",
+    "WHY_VIEW_WITH_LIMITATIONS",
+    "EVIDENCE_INCOMPLETE",
+    "LEGAL_BASIS_INCOMPLETE",
+    "PROPERTY_MATCH_REQUIRED",
+    "DATE_MATCH_REQUIRED",
+    "ACCESS_RESTRICTED",
+    "WHY_VIEW_UNAVAILABLE"
+  ],
+  "hard_stops":[
+    "Never invent support for a claim.",
+    "Never display a general source as property-specific proof.",
+    "Never omit a material exception.",
+    "Never hide a property/date mismatch.",
+    "Never expose restricted evidence.",
+    "Never turn the Why interaction into a new legal analysis."
+  ],
+  "output_contract":[
+    "why_view_id",
+    "answer_snapshot_id",
+    "answer_component_id",
+    "claim",
+    "evidence",
+    "property_match",
+    "date_match",
+    "legal_basis",
+    "legal_effect",
+    "conditions",
+    "limitations",
+    "official_source",
+    "next_step",
+    "state"
+  ]
+}
