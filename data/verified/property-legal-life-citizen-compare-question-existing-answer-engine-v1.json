@@ -1,0 +1,16 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-citizen-compare-question-existing-answer-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for comparing a new citizen question with an existing approved answer before investigation.",
+  "similarity_rule":"Similarity is not legal or factual equivalence.",
+  "property_rule":"Different properties require fresh property-specific evidence.",
+  "question_rule":"Different questions about the same property remain distinct investigation scopes.",
+  "temporal_rule":"Different target dates require date-specific verification.",
+  "legal_rule":"Reusable legal propositions require authority, version and scope checks.",
+  "procedure_rule":"Procedures and deadlines are revalidated where currentness matters.",
+  "limitation_rule":"Limitations remain attached to reused content.",
+  "snapshot_rule":"The existing approved answer remains immutable.",
+  "verification_boundary":"The comparison identifies reusable knowledge and fresh dependencies; it does not establish facts or legal conclusions."
+}
