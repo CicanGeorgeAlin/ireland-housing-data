@@ -1,0 +1,16 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-citizen-what-was-legal-effect-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for citizen-facing explanation of the legal effect of an approved property event.",
+  "event_rule":"Factual event and legal effect are separate layers.",
+  "authority_rule":"The stated legal effect requires the applicable legal provision or authoritative case-law proposition.",
+  "temporal_rule":"Historical effect uses the law applicable at the relevant time, including material commencement and transitional rules.",
+  "condition_rule":"Material conditions, exceptions, provisos and savings remain visible.",
+  "registration_rule":"Registration requirements remain distinct from signing, execution, possession and contractual effect.",
+  "scope_rule":"Legal effect is limited to what evidence and authority establish.",
+  "non_effect_rule":"Material things the event did not establish or accomplish are explicitly identified.",
+  "conflict_rule":"Unresolved evidence or legal-authority conflicts prevent a definitive legal-effect statement.",
+  "verification_boundary":"The engine explains approved legal effects and non-effects; it does not create a new legal conclusion."
+}
