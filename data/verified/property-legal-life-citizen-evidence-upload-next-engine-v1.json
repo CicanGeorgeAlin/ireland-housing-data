@@ -1,0 +1,18 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-citizen-evidence-upload-next-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for the citizen-facing lifecycle after evidence submission.",
+  "receipt_rule":"Receipt does not equal validation.",
+  "source_rule":"Citizen-supplied evidence remains labelled as citizen-supplied until independently validated.",
+  "matching_rule":"Property and date matching are independent validation dimensions.",
+  "scope_rule":"Evidence may establish one proposition while remaining insufficient for another.",
+  "conflict_rule":"Conflicts are preserved and routed for review rather than silently resolved.",
+  "access_rule":"Access restriction is distinct from evidence absence.",
+  "history_rule":"Validation does not rewrite historical records.",
+  "publication_rule":"Only validated facts enter the approved public answer/evidence layer.",
+  "privacy_rule":"Privacy is checked before public exposure.",
+  "next_step_rule":"Citizen-facing next action reflects the actual recorded validation state.",
+  "verification_boundary":"The engine reports evidence status and next steps; it does not guarantee an answer change."
+}
