@@ -1,0 +1,26 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-investigation-export-case-report-generator-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for exporting approved investigation results into citizen-readable reports.",
+  "minimum_report":[
+    "question",
+    "scope",
+    "answer status",
+    "answer",
+    "material evidence",
+    "law",
+    "legal effect",
+    "limitations",
+    "responsible route",
+    "next action",
+    "official sources",
+    "verification date"
+  ],
+  "privacy_rule":"Only public-safe information may enter the exported report.",
+  "source_rule":"Official citations must come from the resolved source/citation layer.",
+  "snapshot_rule":"The exported report references an immutable answer snapshot and does not mutate it.",
+  "historical_rule":"Historical answers retain their target date and applicable source/version scope.",
+  "verification_boundary":"Export confirms that the report represents an approved snapshot; it does not independently re-establish the underlying legal or property facts."
+}
