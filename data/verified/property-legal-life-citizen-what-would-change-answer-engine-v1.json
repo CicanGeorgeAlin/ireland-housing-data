@@ -1,0 +1,15 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-citizen-what-would-change-answer-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for explaining material conditions that would trigger reassessment of an approved property answer.",
+  "dependency_rule":"Only dependencies actually supporting the approved answer are treated as material triggers.",
+  "trigger_rule":"A trigger requires reassessment; it does not predict the result of reassessment.",
+  "evidence_rule":"New evidence changes an answer only if its material effect is established.",
+  "legal_rule":"Legal-source changes are evaluated against the specific legal dependencies of the answer.",
+  "historical_rule":"Historical answers are reassessed against changes relevant to their historical scope and legal version.",
+  "procedure_rule":"Procedure/deadline changes may affect next steps without necessarily changing the substantive legal conclusion.",
+  "uncertainty_rule":"The future outcome of reassessment remains open unless already established.",
+  "verification_boundary":"The engine identifies reassessment triggers; it does not predict future facts, legal outcomes or source changes."
+}
