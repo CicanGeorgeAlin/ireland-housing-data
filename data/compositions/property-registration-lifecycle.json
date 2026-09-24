@@ -5,6 +5,17 @@
   "purpose": "Connect the principal property-registration pathways into one date-aware evidence-driven lifecycle while keeping each legal event distinct.",
   "lifecycle": [
     {
+      "stage": "PROPERTY_EVENT_CAUSATION",
+      "routes": [
+        "property-event-causation-resolver",
+        "property-change-explanation-engine",
+        "property-state-comparison-resolver",
+        "property-event-state-transition-resolver",
+        "property-evidence-to-answer-trace-graph",
+        "property-conflict-contradiction-resolver"
+      ]
+    },
+    {
       "stage": "PROPERTY_CHANGE_EXPLANATION",
       "routes": [
         "property-change-explanation-engine",
@@ -710,7 +721,8 @@
     "property-chronology-builder",
     "property-timeline-public-viewer-evidence-drilldown",
     "property-state-comparison-resolver",
-    "property-change-explanation-engine"
+    "property-change-explanation-engine",
+    "property-event-causation-resolver"
   ],
   "answer_sequence": [
     "QUESTION",
