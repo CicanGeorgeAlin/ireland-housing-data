@@ -1,0 +1,14 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-change-explanation-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for explaining supported differences between two property states.",
+  "explanation_rule":"Start with the observed change, then identify a causal event only where supported.",
+  "legal_rule":"Legal effect is tied to the applicable provision, version, conditions and evidence.",
+  "evidence_rule":"Only material evidence supporting the stated change or causal link is presented.",
+  "uncertainty_rule":"If the change is established but its cause is not, say so explicitly.",
+  "language_rule":"Plain-language explanation must preserve the meaning and limits of the underlying legal sources.",
+  "privacy_rule":"Restricted/private evidence is not exposed in the public explanation.",
+  "verification_boundary":"The explanation translates an approved comparison; it does not create new property facts."
+}
