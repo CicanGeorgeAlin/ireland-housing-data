@@ -1,0 +1,13 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-ownership-interest-change-matrix-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for comparing distinct property interests and holder roles across two verified states.",
+  "interest_rule":"Each material property interest is assessed independently.",
+  "holder_rule":"Holder roles are not inferred from generic ownership language.",
+  "change_rule":"A change in one interest dimension does not establish a change in another.",
+  "registration_rule":"Registered effects are separately established where registration is legally material.",
+  "evidence_rule":"Material holder and interest changes require property/date/document evidence appropriate to the issue.",
+  "verification_boundary":"The matrix organises supported interest changes and does not create unsupported ownership or beneficial-interest conclusions."
+}
