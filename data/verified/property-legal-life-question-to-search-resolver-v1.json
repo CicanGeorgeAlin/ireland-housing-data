@@ -1,0 +1,13 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-question-to-search-resolver-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for translating citizen language into search and evidence-routing dimensions.",
+  "interpretation_rule":"Natural-language interpretation routes the question; it does not establish facts or legal conclusions.",
+  "clarification_rule":"Ask only for information that materially changes search scope, evidence selection or property/date identity.",
+  "property_rule":"Property-specific searches require identity checks before property-specific conclusions.",
+  "temporal_rule":"Current and historical questions are routed separately.",
+  "compound_rule":"Material compound questions are split into linked sub-searches without discarding the original request.",
+  "verification_boundary":"The resolver selects search/evidence routes; it does not establish the underlying property or legal facts."
+}
