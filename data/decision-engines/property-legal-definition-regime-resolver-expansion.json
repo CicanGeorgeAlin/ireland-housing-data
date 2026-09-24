@@ -1,0 +1,102 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-legal-definition-regime-resolver-expansion",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Resolve legal terms according to the applicable Irish legal regime, temporal version and provision rather than ordinary-language assumptions.",
+  "core_principle":"TERM → REGIME → DEFINING SOURCE → VERSION → SCOPE → LEGAL MEANING",
+  "definition_record":[
+    "term",
+    "normalized_term",
+    "legal_regime",
+    "source_type",
+    "act_or_instrument",
+    "exact_provision",
+    "definition_text_reference",
+    "commencement",
+    "amendments",
+    "transitional_scope",
+    "temporal_validity",
+    "defined_scope",
+    "related_terms",
+    "case_law",
+    "official_guidance",
+    "verification_date"
+  ],
+  "resolution_sequence":[
+    "EXTRACT_LEGAL_TERM",
+    "NORMALIZE_TERM",
+    "IDENTIFY_POSSIBLE_REGIMES",
+    "IDENTIFY_TARGET_DATE",
+    "LOCATE_DEFINING_PROVISIONS",
+    "CHECK_REGIME_PRIORITY",
+    "CHECK_VERSION_AND_COMMENCEMENT",
+    "CHECK_AMENDMENTS_AND_TRANSITION",
+    "CHECK_DEFINED_SCOPE",
+    "CHECK_RELEVANT_CASE_LAW",
+    "CHECK_OFFICIAL_GUIDANCE",
+    "RESOLVE_OR_PRESERVE_AMBIGUITY"
+  ],
+  "term_classes":[
+    "PERSON_ROLE",
+    "PROPERTY",
+    "PROPERTY_INTEREST",
+    "TENANCY",
+    "REGISTRATION",
+    "SECURITY",
+    "SUCCESSION",
+    "EASEMENT_OR_BURDEN",
+    "PROCEDURE",
+    "AUTHORITY",
+    "TIME_OR_DEADLINE",
+    "DOCUMENT_OR_RECORD"
+  ],
+  "rules":[
+    "Ordinary dictionary meaning is not a substitute for a statutory definition where one applies.",
+    "The same word may have different legal meanings in different statutes or regimes.",
+    "A definition may be limited to a particular Part, section, scheme or procedural context.",
+    "Current definitions cannot automatically be projected backward to historical events.",
+    "An amendment to a definition requires commencement and transitional analysis.",
+    "Case law may clarify an undefined or disputed term but cannot be treated as a statutory definition unless the source supports that proposition.",
+    "Official guidance may explain operational use but does not override the defining legislation."
+  ],
+  "priority_rules":[
+    "Exact governing provision and regime first.",
+    "Specific statutory definition before general usage where applicable.",
+    "Applicable temporal version before current consolidated wording.",
+    "Relevant special regime before broad general property terminology.",
+    "Case law only within its actual interpretive scope.",
+    "Unresolved material definition means legal analysis remains incomplete."
+  ],
+  "example_collision_types":[
+    "owner_vs_registered_proprietor",
+    "owner_vs_beneficial_owner",
+    "tenant_vs_licensee",
+    "landlord_vs_registered_owner",
+    "land_vs_premises",
+    "interest_vs_registered_interest",
+    "charge_vs_mortgage",
+    "burden_vs_easement",
+    "property_vs_dwelling",
+    "application_vs_registration",
+    "possession_vs_title"
+  ],
+  "hard_stops":[
+    "Never select a definition solely from word similarity.",
+    "Never merge definitions from different statutes without authority.",
+    "Never treat ordinary-language ownership as registered title.",
+    "Never use a current definition for a historical question without temporal verification.",
+    "Never hide a material unresolved definition."
+  ],
+  "output_contract":[
+    "term",
+    "selected_regime",
+    "definition_source",
+    "definition_scope",
+    "temporal_version",
+    "related_terms",
+    "interpretive_authority",
+    "ambiguity",
+    "legal_analysis_state"
+  ]
+}
