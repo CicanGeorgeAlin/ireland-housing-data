@@ -1,0 +1,87 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-legal-life-citizen-answer-history-versions-engine",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Present a citizen-readable history of approved property answer snapshots, showing publication dates, material changes, reasons for changes and the currently operative version while preserving the underlying audit chain.",
+  "core_principle":"ANSWER HISTORY → VERSION → WHAT CHANGED → WHY → CURRENT OPERATIVE VERSION",
+  "version_record":[
+    "snapshot_id",
+    "version_number",
+    "published_at",
+    "status",
+    "question",
+    "scope_summary",
+    "material_answer",
+    "change_from_predecessor",
+    "change_reason",
+    "source_or_evidence_change",
+    "legal_source_change",
+    "procedure_or_deadline_change",
+    "limitations",
+    "predecessor_snapshot_id",
+    "current_operational_state"
+  ],
+  "citizen_display":[
+    "ANSWER_HISTORY",
+    "VERSION",
+    "PUBLISHED_DATE",
+    "WHAT_THIS_VERSION_SAID",
+    "WHAT_CHANGED",
+    "WHY_IT_CHANGED",
+    "WHAT_STAYED_THE_SAME",
+    "LIMITATIONS",
+    "CURRENT_VERSION",
+    "OFFICIAL_SOURCES"
+  ],
+  "resolution_sequence":[
+    "LOAD_APPROVED_SNAPSHOTS",
+    "VERIFY_PREDECESSOR_CHAIN",
+    "ORDER_VERSIONS_BY_PUBLICATION",
+    "IDENTIFY_MATERIAL_DIFFERENCES",
+    "CLASSIFY_CHANGE_REASON",
+    "IDENTIFY_CURRENT_OPERATIVE_VERSION",
+    "PRESERVE_HISTORICAL_CONTEXT",
+    "APPLY_PRIVACY_BOUNDARY",
+    "RENDER_CITIZEN_HISTORY"
+  ],
+  "rules":[
+    "Published snapshots are immutable.",
+    "Every material revision links to its predecessor.",
+    "Version ordering reflects publication history and does not imply legal correctness or quality ranking.",
+    "Only approved snapshots enter the citizen-facing history.",
+    "A superseded answer remains historical and is not silently presented as current.",
+    "Current operative status is based on publication state, not merely the newest timestamp.",
+    "Material changes identify whether the cause was evidence, legal source, procedure, deadline, correction or another approved change type.",
+    "Unchanged material components remain visible where useful.",
+    "Historical versions retain their original scope, dates and legal-source versions.",
+    "Private case information and restricted evidence are excluded from public history."
+  ],
+  "states":[
+    "HISTORY_READY",
+    "HISTORY_READY_WITH_LIMITATIONS",
+    "CURRENT_VERSION_IDENTIFIED",
+    "PREDECESSOR_CHAIN_INCOMPLETE",
+    "SNAPSHOT_COMPARISON_REQUIRED",
+    "HISTORY_UNAVAILABLE"
+  ],
+  "hard_stops":[
+    "Never overwrite a historical snapshot.",
+    "Never manufacture a version history from timestamps alone.",
+    "Never treat the newest version as correct merely because it is newest.",
+    "Never expose restricted evidence or internal audit metadata.",
+    "Never hide a material revision.",
+    "Never change historical wording or scope while displaying it as an original version."
+  ],
+  "output_contract":[
+    "history_id",
+    "answer_id",
+    "versions",
+    "current_snapshot_id",
+    "material_changes",
+    "current_operational_state",
+    "limitations",
+    "official_sources",
+    "state"
+  ]
+}
