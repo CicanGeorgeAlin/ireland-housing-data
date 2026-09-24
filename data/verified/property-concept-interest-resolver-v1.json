@@ -1,0 +1,12 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-concept-interest-resolver-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for identifying the property interest implicated by a question before evidence and legal analysis are selected.",
+  "interest_rule":"The system must identify the actual legal/property interest rather than relying on ordinary-language labels such as owner or property.",
+  "holder_rule":"Registered proprietor, beneficial owner, trustee, personal representative, security holder, occupier and other roles remain distinct unless authoritative law establishes otherwise.",
+  "evidence_rule":"Minimum evidence is selected from the resolved interest type and time scope.",
+  "historical_rule":"Interest identification must remain anchored to the relevant historical or current state.",
+  "verification_boundary":"This resolver classifies the property concept and interest; it does not independently prove that the interest exists in a particular property."
+}
