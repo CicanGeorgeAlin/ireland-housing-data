@@ -1,0 +1,88 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-legal-life-citizen-answer-status-engine",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Translate the approved investigation and quality-gate state into a precise citizen-facing answer status, with the material reason and next action.",
+  "core_principle":"ANSWER STATE → PLAIN-LANGUAGE STATUS → WHY → WHAT IS NEEDED NEXT",
+  "statuses":[
+    "VERIFIED",
+    "VERIFIED_WITH_LIMITATIONS",
+    "PARTIALLY_DETERMINED",
+    "EVIDENCE_INCOMPLETE",
+    "LEGAL_ANALYSIS_INCOMPLETE",
+    "NOT_DETERMINABLE"
+  ],
+  "status_definitions":{
+    "VERIFIED":"Material evidence, property/date scope, legal authority, legal effect and required review conditions are satisfied for the requested conclusion.",
+    "VERIFIED_WITH_LIMITATIONS":"The core requested conclusion is established, but one or more explicit non-material or bounded limitations remain.",
+    "PARTIALLY_DETERMINED":"Some material components are established while another material component remains unresolved.",
+    "EVIDENCE_INCOMPLETE":"A material factual or property-specific evidence dependency is missing or insufficient.",
+    "LEGAL_ANALYSIS_INCOMPLETE":"The material evidence is available, but the applicable legal rule, version, condition or legal effect remains unresolved.",
+    "NOT_DETERMINABLE":"The requested conclusion cannot safely be established within the available scope and evidence."
+  },
+  "citizen_display":[
+    "ANSWER_STATUS",
+    "WHAT_THIS_STATUS_MEANS",
+    "WHAT_IS_ESTABLISHED",
+    "WHAT_REMAINS_UNRESOLVED",
+    "WHY_IT_MATTERS",
+    "WHAT_IS_NEEDED_NEXT",
+    "OFFICIAL_ROUTE",
+    "VERIFICATION_DATE"
+  ],
+  "resolution_sequence":[
+    "LOAD_INVESTIGATION_STATE",
+    "LOAD_QUALITY_GATE",
+    "LOAD_EVIDENCE_SUFFICIENCY",
+    "LOAD_LEGAL_ANALYSIS_STATE",
+    "LOAD_PROPERTY_AND_DATE_SCOPE",
+    "IDENTIFY_MATERIAL_UNRESOLVED_DEPENDENCIES",
+    "SELECT_STATUS",
+    "GENERATE_PLAIN_LANGUAGE_REASON",
+    "GENERATE_NEXT_ACTION_IF_REQUIRED",
+    "APPLY_PRIVACY_BOUNDARY",
+    "RENDER_STATUS"
+  ],
+  "rules":[
+    "Status reflects the actual approved investigation state, not a confidence score.",
+    "Verified is allowed only when the publication gate is satisfied.",
+    "Verified with limitations requires the core conclusion to be established and limitations to be explicit.",
+    "Partially determined requires at least one material component established and another material component unresolved.",
+    "Evidence incomplete is used when a material evidential dependency is missing or insufficient.",
+    "Legal analysis incomplete is used when material evidence is sufficient but the governing legal analysis remains unresolved.",
+    "Not determinable is used when the requested conclusion cannot safely be established.",
+    "The citizen-facing explanation identifies the material reason for the status.",
+    "Status does not rank answer quality and does not predict future outcomes.",
+    "Status changes create a new approved answer snapshot when the underlying answer changes."
+  ],
+  "mapping":[
+    {"internal":"VERIFIED_ANSWER","citizen":"VERIFIED"},
+    {"internal":"VERIFIED_WITH_LIMITATIONS","citizen":"VERIFIED_WITH_LIMITATIONS"},
+    {"internal":"ANSWER_PARTIALLY_DETERMINED","citizen":"PARTIALLY_DETERMINED"},
+    {"internal":"EVIDENCE_INCOMPLETE","citizen":"EVIDENCE_INCOMPLETE"},
+    {"internal":"LEGAL_ANALYSIS_INCOMPLETE","citizen":"LEGAL_ANALYSIS_INCOMPLETE"},
+    {"internal":"NOT_DETERMINABLE","citizen":"NOT_DETERMINABLE"}
+  ],
+  "hard_stops":[
+    "Never display VERIFIED when the quality gate is not satisfied.",
+    "Never use a confidence percentage as a substitute for status.",
+    "Never hide the material reason for a limited or incomplete status.",
+    "Never treat status as a legal conclusion.",
+    "Never silently change status because a citizen disagrees.",
+    "Never expose internal engine names, dependency graphs or chain-of-thought."
+  ],
+  "output_contract":[
+    "answer_status_id",
+    "answer_snapshot_id",
+    "citizen_status",
+    "meaning",
+    "established",
+    "unresolved",
+    "why_it_matters",
+    "next_action",
+    "official_route",
+    "verification_date",
+    "state"
+  ]
+}
