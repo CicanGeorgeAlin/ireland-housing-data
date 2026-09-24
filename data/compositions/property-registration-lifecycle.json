@@ -5,6 +5,16 @@
   "purpose": "Connect the principal property-registration pathways into one date-aware evidence-driven lifecycle while keeping each legal event distinct.",
   "lifecycle": [
     {
+      "stage": "INVESTIGATION_REPORT_SEARCH_AND_RETRIEVAL",
+      "routes": [
+        "property-investigation-report-search-retrieval-index",
+        "property-case-report-integrity-reproducibility",
+        "property-answer-version-snapshot-publication-manager",
+        "property-investigation-merge-case-identity-resolver",
+        "property-public-private-privacy-boundary-renderer"
+      ]
+    },
+    {
       "stage": "CASE_REPORT_INTEGRITY_AND_REPRODUCIBILITY",
       "routes": [
         "property-case-report-integrity-reproducibility",
@@ -590,7 +600,8 @@
     "property-citizen-answer-feedback-correction-review",
     "property-public-private-privacy-boundary-renderer",
     "property-investigation-export-case-report-generator",
-    "property-case-report-integrity-reproducibility"
+    "property-case-report-integrity-reproducibility",
+    "property-investigation-report-search-retrieval-index"
   ],
   "answer_sequence": [
     "QUESTION",
