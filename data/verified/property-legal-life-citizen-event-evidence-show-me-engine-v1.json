@@ -1,0 +1,16 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-citizen-event-evidence-show-me-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for citizen-facing evidence drill-down from an approved property timeline event.",
+  "record_rule":"Record identity and record scope are displayed separately from extracted facts.",
+  "matching_rule":"Material property and date matches are retained and visible.",
+  "legal_effect_rule":"Legal effect is shown only when supported by applicable authority and evidence.",
+  "date_rule":"Event, document, registration and legal-effect dates remain distinct.",
+  "document_rule":"Document existence does not by itself establish registration or legal effect.",
+  "source_rule":"Citizen-supplied documents remain labelled until independently validated.",
+  "access_rule":"Restricted records are summarized only within permitted access.",
+  "limitation_rule":"Material evidence and legal limitations remain visible.",
+  "verification_boundary":"The drill-down exposes approved evidence lineage and legal context; it does not create new facts or legal conclusions."
+}
