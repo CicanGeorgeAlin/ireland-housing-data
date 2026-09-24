@@ -1,0 +1,18 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-citizen-what-happens-after-this-step-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for explaining the supported procedural stages after a citizen takes an approved action.",
+  "sequence_rule":"ACTION → SUBMISSION → RECEIPT → PROCESSING → OUTCOME/RECORD → REVIEW/APPEAL IF AVAILABLE → NEXT.",
+  "submission_rule":"Submission does not equal acceptance, registration or favourable outcome.",
+  "receipt_rule":"Receipt or acknowledgement does not equal a substantive decision.",
+  "timing_rule":"Do not invent processing times; distinguish verified statutory deadlines from unverified administrative timing.",
+  "more_information_rule":"Requests for additional information are shown as procedural states, not as evidence of the eventual outcome.",
+  "review_rule":"Review and appeal are shown only where legally supported.",
+  "court_rule":"Court or dispute routes are not automatic escalation.",
+  "enforcement_rule":"Enforcement remains distinct from registration and decision-making.",
+  "scope_rule":"A procedural outcome is not expanded into broader property rights beyond its verified scope.",
+  "outcome_rule":"No processing path is presented as a guarantee of acceptance or favourable outcome.",
+  "verification_boundary":"The engine explains supported process stages and next actions; it does not predict processing times or outcomes."
+}
