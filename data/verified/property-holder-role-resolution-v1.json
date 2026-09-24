@@ -1,0 +1,13 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-holder-role-resolution-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for resolving a subject's role in relation to a property interest at a defined date.",
+  "identity_rule":"Identity must be matched to the relevant property record and evidence; name similarity is insufficient.",
+  "role_rule":"Role is resolved separately from the underlying property interest.",
+  "temporal_rule":"A role is date-specific where the evidence or legal framework makes time material.",
+  "interest_rule":"Registered ownership, beneficial ownership, security, tenancy, succession and other roles remain distinct.",
+  "privacy_rule":"Only information necessary to establish the requested role is processed or exposed.",
+  "verification_boundary":"The resolver identifies supported roles; it does not infer unsupported ownership or identity."
+}
