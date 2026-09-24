@@ -5,6 +5,17 @@
   "purpose": "Connect the principal property-registration pathways into one date-aware evidence-driven lifecycle while keeping each legal event distinct.",
   "lifecycle": [
     {
+      "stage": "LEGAL_KNOWLEDGE_GRAPH_CROSS_REFERENCE",
+      "routes": [
+        "property-legal-knowledge-graph-cross-reference-resolver",
+        "property-legal-regime-resolver",
+        "property-legal-provision-resolver",
+        "property-legal-proposition-authority-chain",
+        "property-legal-conditions-exceptions-overrides",
+        "property-legal-change-impact-engine"
+      ]
+    },
+    {
       "stage": "QUESTION_KNOWLEDGE_REUSE",
       "routes": [
         "property-question-knowledge-reuse-resolver",
@@ -613,7 +624,8 @@
     "property-investigation-export-case-report-generator",
     "property-case-report-integrity-reproducibility",
     "property-investigation-report-search-retrieval-index",
-    "property-question-knowledge-reuse-resolver"
+    "property-question-knowledge-reuse-resolver",
+    "property-legal-knowledge-graph-cross-reference-resolver"
   ],
   "answer_sequence": [
     "QUESTION",
