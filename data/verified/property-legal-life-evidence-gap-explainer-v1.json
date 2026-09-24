@@ -1,0 +1,14 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-evidence-gap-explainer-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for explaining material evidence gaps and their effect on a property legal-life answer.",
+  "gap_rule":"Only evidence gaps that materially affect the requested conclusion are presented as blockers.",
+  "effect_rule":"Each gap identifies the conclusion it prevents or qualifies.",
+  "absence_rule":"Failure to retrieve or access a record is not proof that the record does not exist.",
+  "route_rule":"Official retrieval and procedural routes must come from authoritative sources.",
+  "alternative_rule":"Alternative evidence is identified separately and is not silently treated as equivalent to the preferred source.",
+  "future_conclusion_rule":"The explanation states what new evidence could establish without presenting that future result as already established.",
+  "verification_boundary":"The gap explainer identifies and explains missing evidence; it does not create the missing fact or legal conclusion."
+}
