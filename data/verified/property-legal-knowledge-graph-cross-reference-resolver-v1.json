@@ -1,0 +1,13 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-knowledge-graph-cross-reference-resolver-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for resolving material legal cross-references before publishing Irish property-law answers.",
+  "graph_rule":"The graph identifies potentially related authorities; each material dependency must still be verified through the authoritative source.",
+  "temporal_rule":"Cross-references are filtered by the legal regime applicable to the relevant event or target date.",
+  "case_rule":"A case is relevant only to the legal proposition supported by the judgment; citation alone does not establish broader meaning.",
+  "procedure_rule":"Official procedures are connected to legal issues as administrative/procedural routes and do not override substantive law.",
+  "definition_rule":"Where a legal conclusion depends on a defined term, the applicable definition and temporal version must be checked.",
+  "verification_boundary":"The graph is a dependency-discovery mechanism; it does not itself establish legal effect."
+}
