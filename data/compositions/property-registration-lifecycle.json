@@ -5,6 +5,18 @@
   "purpose": "Connect the principal property-registration pathways into one date-aware evidence-driven lifecycle while keeping each legal event distinct.",
   "lifecycle": [
     {
+      "stage": "PROPERTY_LEGAL_LIFE_ANSWER_INTERACTION",
+      "routes": [
+        "property-legal-life-answer-interaction-model",
+        "property-legal-life-answer-assembly-engine",
+        "property-legal-life-narrative-evidence-drilldown",
+        "property-timeline-public-viewer-evidence-drilldown",
+        "property-public-answer-evidence-explorer",
+        "property-public-source-evidence-citation-renderer",
+        "property-official-source-navigator-citation-resolver"
+      ]
+    },
+    {
       "stage": "PROPERTY_LEGAL_LIFE_ANSWER_ASSEMBLY",
       "routes": [
         "property-legal-life-answer-assembly-engine",
@@ -836,7 +848,8 @@
     "property-legal-life-narrative-evidence-drilldown",
     "property-legal-life-question-engine",
     "property-legal-life-answer-planner",
-    "property-legal-life-answer-assembly-engine"
+    "property-legal-life-answer-assembly-engine",
+    "property-legal-life-answer-interaction-model"
   ],
   "answer_sequence": [
     "QUESTION",
