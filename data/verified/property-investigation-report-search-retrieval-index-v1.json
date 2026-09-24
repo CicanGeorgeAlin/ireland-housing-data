@@ -1,0 +1,14 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-investigation-report-search-retrieval-index-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for safe retrieval of public answers and authorized private case records.",
+  "public_index_rule":"Only published, public-safe answer/report metadata may be indexed publicly.",
+  "private_index_rule":"Private case search requires authorization and may use case-specific identifiers not exposed publicly.",
+  "identity_rule":"Search results are candidates for retrieval, not proof of property identity or legal equivalence.",
+  "historical_rule":"Current and historical answer scopes remain separate.",
+  "privacy_rule":"Unnecessary personal data, private documents and restricted case metadata are excluded from public indexing.",
+  "ranking_rule":"Search relevance determines discoverability only; it must never be presented as legal correctness, quality or recommendation.",
+  "verification_boundary":"The search index locates existing records; it does not independently verify the underlying answer or property facts."
+}
