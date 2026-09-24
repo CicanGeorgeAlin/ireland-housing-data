@@ -1,0 +1,13 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-state-comparison-resolver-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for comparing two verified states of the same property.",
+  "comparison_rule":"State comparison requires verified property identity and defined endpoint dates/scopes.",
+  "difference_rule":"A detected difference is distinct from proof of the event that caused it.",
+  "causation_rule":"Causal attribution requires supporting event/document/legal evidence.",
+  "temporal_rule":"Each state is anchored to its own date and applicable legal/evidential framework.",
+  "interest_rule":"Registered title, beneficial interests, security, leasehold, easements, boundaries and other interests are compared independently.",
+  "verification_boundary":"The comparison identifies supported differences; it does not infer unsupported causal events."
+}
