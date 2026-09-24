@@ -1,0 +1,17 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-citizen-what-did-event-change-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for citizen-facing explanation of property-interest changes associated with an approved event.",
+  "state_rule":"The explanation compares verified before and after states around an event.",
+  "dimension_rule":"Property interests are assessed independently and are not collapsed into ownership.",
+  "effect_rule":"Legal effect requires the applicable legal source and supporting evidence.",
+  "registration_rule":"Execution, signing, possession and registration remain distinct.",
+  "succession_rule":"Inheritance entitlement and registered transfer remain distinct.",
+  "security_rule":"Sale or inheritance does not by itself establish mortgage or charge discharge.",
+  "boundary_rule":"Easement or boundary events do not automatically transfer ownership.",
+  "unchanged_rule":"Unchanged means no material change identified within verified evidence scope.",
+  "limitation_rule":"Incomplete before/after states and unresolved dimensions remain visible.",
+  "verification_boundary":"The engine explains approved state changes; it does not create a new legal conclusion."
+}
