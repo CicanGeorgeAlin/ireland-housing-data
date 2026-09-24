@@ -1,0 +1,77 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-question-knowledge-reuse-resolver",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Determine whether an existing verified answer, evidence bundle, legal analysis or official source can safely be reused for a new property question without conflating properties, dates, legal issues or source versions.",
+  "core_principle":"FIND EXISTING KNOWLEDGE → CHECK IDENTITY/SCOPE/FRESHNESS → REUSE ONLY WHAT REMAINS VALID → RETRIEVE NEW EVIDENCE WHERE REQUIRED",
+  "reuse_units":[
+    "PUBLIC_VERIFIED_ANSWER",
+    "VERIFIED_WITH_LIMITATIONS_ANSWER",
+    "LEGAL_PROPOSITION",
+    "LEGAL_REGIME_ANALYSIS",
+    "OFFICIAL_PROCEDURE",
+    "OFFICIAL_SOURCE_CITATION",
+    "EVIDENCE_BUNDLE_COMPONENT",
+    "CASE_FILE_COMPONENT"
+  ],
+  "eligibility_sequence":[
+    "CLASSIFY_NEW_QUESTION",
+    "SEARCH_EXISTING_KNOWLEDGE",
+    "COMPARE_QUESTION_INTENT",
+    "COMPARE_PROPERTY_SCOPE",
+    "COMPARE_REGISTRATION_SYSTEM",
+    "COMPARE_DATE_SCOPE",
+    "COMPARE_EVENT_SCOPE",
+    "CHECK_SOURCE_AUTHORITY_AND_FRESHNESS",
+    "CHECK_LEGAL_VERSION_AND_COMMENCEMENT",
+    "CHECK_EVIDENCE_PROPERTY_MATCH",
+    "CHECK_LIMITATIONS",
+    "ASSESS_REUSE_SCOPE",
+    "REUSE_OR_CREATE_NEW_RETRIEVAL_PLAN"
+  ],
+  "reuse_states":[
+    "EXACT_REUSE_ELIGIBLE",
+    "PARTIAL_REUSE_ELIGIBLE",
+    "LEGAL_ANALYSIS_REUSE_ONLY",
+    "PROCEDURE_REUSE_ONLY",
+    "SOURCE_CITATION_REUSE_ONLY",
+    "FRESH_EVIDENCE_REQUIRED",
+    "PROPERTY_MATCH_REQUIRED",
+    "DATE_SCOPE_REQUIRED",
+    "LEGAL_REVALIDATION_REQUIRED",
+    "CONFLICT_REVIEW_REQUIRED",
+    "REUSE_BLOCKED",
+    "NO_REUSABLE_KNOWLEDGE"
+  ],
+  "rules":[
+    "Same legal question does not imply same property evidence.",
+    "Same property does not imply same date or legal issue.",
+    "A general legal proposition may be reusable while property-specific facts are not.",
+    "A procedure can be reused only after currentness/access checks.",
+    "Historical legal analysis may be reused only when its temporal scope matches or remains applicable.",
+    "Verified evidence may be reused only when source identity, property identity, date scope and currentness requirements remain satisfied.",
+    "A reused component retains its provenance and original verification context.",
+    "Reuse never bypasses the current investigation quality gate."
+  ],
+  "hard_stops":[
+    "Never copy a property-specific conclusion from one property to another.",
+    "Never reuse current evidence as historical evidence without temporal verification.",
+    "Never reuse stale procedure or deadline information as current.",
+    "Never merge different legal questions merely because wording is similar.",
+    "Never treat semantic search similarity as proof of equivalence.",
+    "Never bypass property/date matching because an existing answer looks relevant."
+  ],
+  "output_contract":[
+    "new_question_id",
+    "candidate_knowledge",
+    "reuse_state",
+    "reusable_components",
+    "non_reusable_components",
+    "fresh_evidence_required",
+    "fresh_legal_verification_required",
+    "fresh_procedure_check_required",
+    "provenance_links",
+    "next_stage"
+  ]
+}
