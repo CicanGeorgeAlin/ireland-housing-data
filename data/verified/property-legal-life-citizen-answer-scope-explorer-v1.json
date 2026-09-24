@@ -1,0 +1,15 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-citizen-answer-scope-explorer-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for safe citizen-controlled presentation depth over an approved property answer.",
+  "view_rule":"View mode changes presentation depth only; it does not change the underlying investigation or answer.",
+  "scope_rule":"Property, date, legal issue, evidence requirements and requested outcome remain fixed unless a separate scope change is authorised.",
+  "limitation_rule":"Material limitations remain visible in every view.",
+  "privacy_rule":"Broader views remain subject to public/private and restricted-evidence boundaries.",
+  "history_rule":"Relevant History contains only approved material history within the established scope.",
+  "evidence_rule":"Evidence and Law exposes already-approved provenance and legal material; it does not create new analysis.",
+  "scope_change_rule":"A request outside approved scope is routed as a scope change rather than silently expanded.",
+  "verification_boundary":"The explorer controls presentation depth and cannot establish new property facts or legal conclusions."
+}
