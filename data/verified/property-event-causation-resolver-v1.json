@@ -1,0 +1,13 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-event-causation-resolver-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for evaluating whether documented property events explain observed state changes.",
+  "causation_rule":"Temporal sequence alone is insufficient; causation requires an evidence link and applicable legal mechanism.",
+  "registration_rule":"Where registration is material to legal effect, registration evidence is evaluated separately.",
+  "multi_event_rule":"Multiple events may contribute to one observed change and must not be collapsed into a single cause without support.",
+  "alternative_rule":"Material alternative causal events remain visible until resolved.",
+  "historical_rule":"Historical causation uses the law and evidence applicable to the relevant period.",
+  "verification_boundary":"The resolver assesses supported causal links; it does not create missing evidence."
+}
