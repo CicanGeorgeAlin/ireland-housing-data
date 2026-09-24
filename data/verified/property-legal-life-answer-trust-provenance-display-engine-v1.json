@@ -1,0 +1,15 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-answer-trust-provenance-display-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for displaying citizen-understandable source lineage for material property legal-life answer claims.",
+  "claim_rule":"Material claims retain an identifiable supporting source or approved evidential basis.",
+  "scope_rule":"Displayed sources are tied to the specific proposition, record or procedure they support.",
+  "property_rule":"Property-specific claims retain property matching where material.",
+  "temporal_rule":"Historical claims retain relevant date/version context.",
+  "case_law_rule":"Case law is shown only for the proposition actually supported.",
+  "guidance_rule":"Official guidance is distinguished from legislation.",
+  "limitation_rule":"Source limitations and access restrictions remain visible when material.",
+  "verification_boundary":"Provenance display explains source lineage; it does not create new facts, legal conclusions or confidence scores."
+}
