@@ -5,6 +5,18 @@
   "purpose": "Connect the principal property-registration pathways into one date-aware evidence-driven lifecycle while keeping each legal event distinct.",
   "lifecycle": [
     {
+      "stage": "PROPERTY_LEGAL_LIFE_CITIZEN_WHAT_EVIDENCE_DO_I_NEED",
+      "routes": [
+        "property-legal-life-citizen-what-evidence-do-i-need-engine",
+        "property-question-evidence-request-planner",
+        "property-legal-life-evidence-request-experience",
+        "property-evidence-sufficiency-minimum-evidence-resolver",
+        "property-official-route-authority-resolver",
+        "property-legal-life-evidence-receipt-validation-experience",
+        "property-legal-life-citizen-what-is-still-uncertain-engine"
+      ]
+    },
+    {
       "stage": "PROPERTY_LEGAL_LIFE_CITIZEN_WHAT_IS_STILL_UNCERTAIN",
       "routes": [
         "property-legal-life-citizen-what-is-still-uncertain-engine",
@@ -1134,7 +1146,8 @@
     "property-legal-life-citizen-who-was-involved-engine",
     "property-legal-life-citizen-what-did-event-change-engine",
     "property-legal-life-citizen-what-was-legal-effect-engine",
-    "property-legal-life-citizen-what-is-still-uncertain-engine"
+    "property-legal-life-citizen-what-is-still-uncertain-engine",
+    "property-legal-life-citizen-what-evidence-do-i-need-engine"
   ],
   "answer_sequence": [
     "QUESTION",
