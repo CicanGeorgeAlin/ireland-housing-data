@@ -1,0 +1,13 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-narrative-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for assembling a coherent legal-life narrative from approved property evidence and analysis components.",
+  "source_rule":"Narrative statements must originate from approved chronology, interest, relationship, event, causation or legal-effect components.",
+  "traceability_rule":"Every material narrative proposition remains traceable to evidence and legal sources.",
+  "temporal_rule":"Historical states and applicable legal versions remain distinct from current state and law.",
+  "limitation_rule":"Missing or unresolved material evidence is explicitly presented.",
+  "privacy_rule":"Restricted evidence and unnecessary personal information are excluded from public narrative output.",
+  "verification_boundary":"The narrative is an assembly and explanation layer; it does not create new property facts."
+}
