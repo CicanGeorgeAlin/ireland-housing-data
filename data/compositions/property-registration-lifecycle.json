@@ -5,6 +5,16 @@
   "purpose": "Connect the principal property-registration pathways into one date-aware evidence-driven lifecycle while keeping each legal event distinct.",
   "lifecycle": [
     {
+      "stage": "PUBLIC_PROPERTY_TIMELINE_AND_EVIDENCE_DRILLDOWN",
+      "routes": [
+        "property-timeline-public-viewer-evidence-drilldown",
+        "property-chronology-builder",
+        "property-public-source-evidence-citation-renderer",
+        "property-public-private-privacy-boundary-renderer",
+        "property-public-answer-evidence-explorer"
+      ]
+    },
+    {
       "stage": "PROPERTY_CHRONOLOGY_BUILDING",
       "routes": [
         "property-chronology-builder",
@@ -675,7 +685,8 @@
     "property-legal-definition-regime-resolver-expansion",
     "property-concept-interest-resolver",
     "property-event-state-transition-resolver",
-    "property-chronology-builder"
+    "property-chronology-builder",
+    "property-timeline-public-viewer-evidence-drilldown"
   ],
   "answer_sequence": [
     "QUESTION",
