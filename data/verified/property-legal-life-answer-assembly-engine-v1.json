@@ -1,0 +1,14 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-answer-assembly-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for assembling a citizen-facing property legal-life answer from approved components.",
+  "source_rule":"Only approved verified facts, legal analysis, procedures, citations and limitations may enter a definitive answer.",
+  "scope_rule":"Assembly follows the approved answer plan and does not silently broaden scope.",
+  "traceability_rule":"Every material answer component retains a trace to evidence or legal authority.",
+  "temporal_rule":"Historical answers preserve historical dates and applicable legal versions.",
+  "limitation_rule":"Material evidence or legal limitations remain visible.",
+  "privacy_rule":"Restricted evidence and unnecessary personal information are excluded.",
+  "verification_boundary":"Assembly is a presentation layer; it does not create new legal conclusions."
+}
