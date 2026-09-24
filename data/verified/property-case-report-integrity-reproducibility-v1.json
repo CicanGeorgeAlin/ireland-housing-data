@@ -1,0 +1,14 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-case-report-integrity-reproducibility-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for reconstructing published reports from immutable answer snapshots and preserved dependency references.",
+  "reconstruction_rule":"A report is reproduced from its recorded snapshot and material dependency references, not regenerated from current legal or property state.",
+  "historical_rule":"Historical reports preserve their original question scope, target date, evidence references and applicable source/version references.",
+  "missing_source_rule":"If a former source is unavailable, the system records that limitation rather than substituting a current source or inventing historical content.",
+  "revision_rule":"Material correction or change produces a new snapshot linked to its predecessor.",
+  "integrity_rule":"Reproducibility requires integrity of the snapshot, material dependencies, citations, quality gate, privacy state and predecessor chain.",
+  "privacy_rule":"Reconstruction must not expose restricted evidence merely because it was part of the original investigation.",
+  "verification_boundary":"This contract verifies reproducibility of the recorded report structure and dependencies; it does not independently re-decide the underlying legal or property issue."
+}
