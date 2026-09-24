@@ -1,0 +1,14 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-question-knowledge-reuse-resolver-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for safely reusing existing Ireland Housing Data knowledge in new property investigations.",
+  "reuse_rule":"Reuse is component-specific. Legal propositions and official procedures may sometimes be reusable; property-specific facts require their own verified property scope.",
+  "identity_rule":"Existing knowledge must be compared against the new question's intent, property scope, registration system, event and date scope before reuse.",
+  "freshness_rule":"Current procedures, deadlines and source content require currentness checks where material.",
+  "historical_rule":"Historical reuse requires matching temporal legal and evidence scope.",
+  "provenance_rule":"Every reused component retains its source, verification and predecessor references.",
+  "quality_rule":"Reuse never bypasses the current investigation quality gate.",
+  "verification_boundary":"This contract determines whether existing knowledge is eligible for reuse; it does not independently establish that the new property's facts match an earlier case."
+}
