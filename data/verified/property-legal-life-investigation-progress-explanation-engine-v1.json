@@ -1,0 +1,14 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-investigation-progress-explanation-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for explaining investigation progress to citizens.",
+  "state_rule":"Progress reflects recorded investigation state, not estimated completion.",
+  "established_rule":"Only material verified points are presented as established.",
+  "waiting_rule":"Waiting states identify the needed citizen action or official evidence where appropriate.",
+  "privacy_rule":"Internal reasoning, confidence and restricted data are excluded.",
+  "scope_rule":"The citizen's original question and time/property scope remain unchanged.",
+  "timing_rule":"No unsupported completion-time estimates are presented.",
+  "verification_boundary":"The progress layer communicates investigation state; it does not establish property or legal conclusions."
+}
