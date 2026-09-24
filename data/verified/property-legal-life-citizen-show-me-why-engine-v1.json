@@ -1,0 +1,15 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-citizen-show-me-why-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for the citizen-facing 'Why?' explanation of approved answer claims.",
+  "claim_rule":"The Why view explains an existing approved answer component and does not create a new conclusion.",
+  "evidence_rule":"Supporting evidence is shown only within its verified scope.",
+  "property_rule":"Material property-specific claims retain verified property matching.",
+  "temporal_rule":"Historical claims retain target-date and legal-version context.",
+  "qualification_rule":"Material conditions, exceptions and limitations remain visible.",
+  "privacy_rule":"Restricted evidence is summarized only at the permitted access level.",
+  "source_rule":"Official source navigation is shown where available.",
+  "verification_boundary":"The Why view exposes provenance and legal/evidential context without exposing internal reasoning."
+}
