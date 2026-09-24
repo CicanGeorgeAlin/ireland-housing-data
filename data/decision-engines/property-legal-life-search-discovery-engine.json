@@ -1,0 +1,105 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-legal-life-search-discovery-engine",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Safely discover relevant property legal-life answers, timelines, events, legal topics and official sources without treating search similarity as proof of property identity, legal correctness or evidence.",
+  "core_principle":"SEARCH → CANDIDATES → SCOPE CHECK → ACCESS CHECK → RELEVANCE → OPEN APPROVED CONTENT",
+  "search_domains":[
+    "PUBLISHED_ANSWERS",
+    "PROPERTY_TIMELINES",
+    "LEGAL_TOPICS",
+    "TIMELINE_EVENTS",
+    "PROPERTY_INTERESTS",
+    "PARTY_ROLES_WHERE_PUBLIC_SAFE",
+    "LEGAL_PROVISIONS",
+    "OFFICIAL_SOURCES",
+    "OFFICIAL_ROUTES"
+  ],
+  "query_dimensions":[
+    "free_text",
+    "question_type",
+    "property_identifier_when_authorized",
+    "general_area",
+    "date_or_period",
+    "interest_type",
+    "event_type",
+    "legal_topic",
+    "source_type",
+    "answer_status"
+  ],
+  "search_sequence":[
+    "RECEIVE_QUERY",
+    "CLASSIFY_QUERY",
+    "DETERMINE_PUBLIC_OR_PRIVATE_SCOPE",
+    "NORMALIZE_TERMS",
+    "SEARCH_INDEX",
+    "GENERATE_CANDIDATES",
+    "CHECK_SCOPE_AND_ACCESS",
+    "CHECK_PROPERTY_IDENTITY_IF_APPLICABLE",
+    "CHECK_DATE_SCOPE",
+    "CHECK_SOURCE_STATUS",
+    "PRESENT_RESULTS",
+    "OPEN_SELECTED_APPROVED_CONTENT"
+  ],
+  "result_fields":[
+    "result_id",
+    "result_type",
+    "title",
+    "summary",
+    "topic",
+    "general_area",
+    "date_or_period_if_public_safe",
+    "status",
+    "relevance_reason",
+    "property_identity_state",
+    "access_state",
+    "source_reference"
+  ],
+  "rules":[
+    "Search relevance is not evidence.",
+    "Semantic similarity is not property identity.",
+    "Names and addresses alone must not silently merge properties or people.",
+    "Current and historical results remain distinct.",
+    "Private cases require authorization and are never exposed through public search.",
+    "Search ordering must not imply legal correctness, quality, ownership or outcome.",
+    "A result may be opened only at its approved access level.",
+    "A general legal topic may link to official law without becoming a property-specific conclusion.",
+    "Superseded or withdrawn answers must be clearly identified and must not appear as current verified answers.",
+    "Search results retain their source and snapshot references."
+  ],
+  "identity_states":[
+    "NOT_APPLICABLE_GENERAL",
+    "PROPERTY_IDENTITY_VERIFIED",
+    "PROPERTY_IDENTITY_REQUIRES_CHECK",
+    "PROPERTY_IDENTITY_CONFLICT",
+    "PRIVATE_IDENTITY_REQUIRED"
+  ],
+  "result_states":[
+    "RELEVANT_APPROVED",
+    "RELEVANT_WITH_LIMITATIONS",
+    "GENERAL_INFORMATION",
+    "SUPERSEDED",
+    "WITHDRAWN",
+    "ACCESS_RESTRICTED",
+    "IDENTITY_REQUIRES_CHECK",
+    "NO_SAFE_RESULT"
+  ],
+  "hard_stops":[
+    "Never use search similarity as proof of ownership or property identity.",
+    "Never expose private case data through public search.",
+    "Never rank results as legally better or worse.",
+    "Never present a search result as evidence before its underlying approved source is checked.",
+    "Never silently convert an old answer into a current answer.",
+    "Never infer a person's legal role from a matching name alone."
+  ],
+  "output_contract":[
+    "search_id",
+    "query",
+    "scope",
+    "results",
+    "identity_checks",
+    "access_checks",
+    "source_references"
+  ]
+}
