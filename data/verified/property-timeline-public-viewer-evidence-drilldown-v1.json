@@ -1,0 +1,14 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-timeline-public-viewer-evidence-drilldown-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for presenting approved property chronologies and event-level evidence to citizens.",
+  "viewer_rule":"The public timeline is a presentation of approved chronology data, not a new fact-finding layer.",
+  "event_rule":"Each displayed event retains its event/document/registration date distinctions and evidence provenance.",
+  "legal_rule":"Legal effect is displayed only from the verified legal analysis connected to that event.",
+  "limitation_rule":"Missing records, unresolved conflicts and incomplete historical evidence remain visible.",
+  "privacy_rule":"Private documents and restricted personal information are not exposed merely because they support a timeline event.",
+  "source_rule":"Official citations are rendered through the public source/evidence citation layer.",
+  "verification_boundary":"The viewer communicates verified chronology; it does not independently establish the underlying property facts."
+}
