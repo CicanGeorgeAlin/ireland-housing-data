@@ -5,6 +5,17 @@
   "purpose": "Connect the principal property-registration pathways into one date-aware evidence-driven lifecycle while keeping each legal event distinct.",
   "lifecycle": [
     {
+      "stage": "PROPERTY_HOLDER_ROLE_RESOLUTION",
+      "routes": [
+        "property-holder-role-resolution",
+        "property-concept-interest-resolver",
+        "property-ownership-interest-change-matrix",
+        "property-evidence-property-match",
+        "property-investigation-privacy-data-minimisation-boundary",
+        "property-investigation-merge-case-identity-resolver"
+      ]
+    },
+    {
       "stage": "PROPERTY_OWNERSHIP_INTEREST_CHANGE_MATRIX",
       "routes": [
         "property-ownership-interest-change-matrix",
@@ -737,7 +748,8 @@
     "property-state-comparison-resolver",
     "property-change-explanation-engine",
     "property-event-causation-resolver",
-    "property-ownership-interest-change-matrix"
+    "property-ownership-interest-change-matrix",
+    "property-holder-role-resolution"
   ],
   "answer_sequence": [
     "QUESTION",
