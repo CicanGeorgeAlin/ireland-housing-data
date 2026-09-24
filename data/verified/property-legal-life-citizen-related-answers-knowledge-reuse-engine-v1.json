@@ -1,0 +1,17 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-citizen-related-answers-knowledge-reuse-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for safe reuse of approved property-law knowledge across related citizen questions.",
+  "similarity_rule":"Semantic similarity does not establish property or legal equivalence.",
+  "property_rule":"Property-specific conclusions are never copied to another property without fresh property-specific verification.",
+  "temporal_rule":"Current and historical evidence require matching temporal scope.",
+  "legal_rule":"Reusable legal propositions require authority, version, commencement and scope checks.",
+  "procedure_rule":"Procedures and deadlines are revalidated when currentness matters.",
+  "citation_rule":"A reusable citation does not become property-specific evidence merely by reuse.",
+  "limitation_rule":"Limitations from the source answer remain attached to reused material.",
+  "quality_gate_rule":"Reuse never bypasses the current investigation quality gate.",
+  "snapshot_rule":"Original published snapshots remain immutable.",
+  "verification_boundary":"The engine determines reusable components and fresh checks; it does not transfer unsupported conclusions."
+}
