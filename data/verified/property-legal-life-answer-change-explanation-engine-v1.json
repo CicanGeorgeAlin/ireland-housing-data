@@ -1,0 +1,14 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-answer-change-explanation-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for explaining material changes between approved property answer snapshots.",
+  "comparison_rule":"Compare immutable approved snapshots and preserve predecessor identity.",
+  "cause_rule":"A change explanation identifies a cause only when supported by an approved evidence, legal or recorded change dependency.",
+  "evidence_rule":"Evidence change and legal-rule change remain distinct.",
+  "historical_rule":"Historical answers remain anchored to their target date and applicable legal version.",
+  "unchanged_rule":"Material unchanged components may be identified to prevent overstatement of the change.",
+  "uncertainty_rule":"An unresolved cause remains explicitly unresolved.",
+  "verification_boundary":"The change explanation describes approved snapshot differences; it does not create a new legal conclusion."
+}
