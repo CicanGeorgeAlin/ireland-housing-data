@@ -1,0 +1,103 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-legal-life-citizen-who-handles-this-engine",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Identify the responsible authority or forum for each property issue while keeping record custody, administration, decision-making, review, dispute resolution and enforcement distinct.",
+  "core_principle":"ISSUE → FUNCTION → RESPONSIBLE ACTOR → OFFICIAL ROUTE → EVIDENCE → REVIEW/DISPUTE → ENFORCEMENT",
+  "actor_functions":[
+    "RECORD_CUSTODIAN",
+    "REGISTRAR",
+    "INFORMATION_PROVIDER",
+    "APPLICATION_ADMINISTRATOR",
+    "DECISION_MAKER",
+    "INVESTIGATOR",
+    "REVIEW_BODY",
+    "APPEAL_BODY",
+    "COURT_OR_DISPUTE_FORUM",
+    "ENFORCEMENT_BODY",
+    "PROFESSIONAL_ADVISER"
+  ],
+  "routing_sequence":[
+    "LOAD_APPROVED_ISSUE",
+    "IDENTIFY_LEGAL_FUNCTION",
+    "IDENTIFY_RELEVANT_RECORD_OR_DECISION",
+    "RESOLVE_RESPONSIBLE_AUTHORITY",
+    "VERIFY_OFFICIAL_ROUTE",
+    "IDENTIFY_REQUIRED_EVIDENCE",
+    "IDENTIFY_REVIEW_OR_APPEAL",
+    "IDENTIFY_COURT_OR_DISPUTE_ROUTE_IF_APPLICABLE",
+    "IDENTIFY_ENFORCEMENT_ONLY_IF_RELEVANT",
+    "RENDER_CITIZEN_ROUTE"
+  ],
+  "citizen_display":[
+    "WHO_HANDLES_THIS",
+    "WHAT_THEY_ARE_RESPONSIBLE_FOR",
+    "WHAT_THEY_ARE_NOT_RESPONSIBLE_FOR",
+    "WHAT_TO_SUBMIT_OR_REQUEST",
+    "OFFICIAL_ROUTE",
+    "REVIEW_OR_APPEAL_IF_AVAILABLE",
+    "COURT_OR_DISPUTE_ROUTE_IF_APPLICABLE",
+    "ENFORCEMENT_IF_APPLICABLE",
+    "LIMITATIONS"
+  ],
+  "rules":[
+    "The authority holding a record is not automatically the authority deciding a dispute.",
+    "A registrar's registration function is distinct from substantive dispute resolution.",
+    "An information provider is not automatically a decision-maker.",
+    "A complaint route is distinct from a review or appeal route.",
+    "A review or appeal route exists only where the governing source provides it.",
+    "A court or dispute forum is identified only where legally applicable.",
+    "Enforcement is separate from information, registration and adjudication.",
+    "Official routes are verified before publication.",
+    "Multiple actors may be required for one issue, with each actor's function stated separately.",
+    "No authority is inferred from convenience, common practice or the actor's name alone."
+  ],
+  "common_property_routes":[
+    "PROPERTY_REGISTRATION",
+    "REGISTRY_OF_DEEDS",
+    "PROPERTY_RECORD_ACCESS",
+    "SUCCESSION_AND_REGISTRATION",
+    "MORTGAGE_OR_CHARGE",
+    "EASEMENT_OR_RIGHT_OF_WAY",
+    "BOUNDARY",
+    "RECTIFICATION_OR_REGISTRY_ERROR",
+    "COURT_ORDER_EFFECT",
+    "GENERAL_PROPERTY_INFORMATION"
+  ],
+  "states":[
+    "AUTHORITY_IDENTIFIED",
+    "MULTI_ACTOR_ROUTE_IDENTIFIED",
+    "OFFICIAL_ROUTE_REQUIRES_VERIFICATION",
+    "REVIEW_ROUTE_IDENTIFIED",
+    "APPEAL_ROUTE_IDENTIFIED",
+    "COURT_ROUTE_IDENTIFIED",
+    "ENFORCEMENT_ROUTE_IDENTIFIED",
+    "AUTHORITY_UNRESOLVED",
+    "ROUTE_UNRESOLVED"
+  ],
+  "hard_stops":[
+    "Never invent an authority or official route.",
+    "Never say the record custodian decides a dispute unless the source supports it.",
+    "Never turn a complaint into an appeal without authority.",
+    "Never imply that an authority can grant a remedy outside its legal function.",
+    "Never infer enforcement power from administrative involvement.",
+    "Never expose restricted personal information."
+  ],
+  "output_contract":[
+    "authority_resolution_id",
+    "answer_snapshot_id",
+    "issue",
+    "actor",
+    "function",
+    "responsibility",
+    "non_responsibility",
+    "official_route",
+    "evidence",
+    "review_or_appeal",
+    "court_or_dispute",
+    "enforcement",
+    "limitations",
+    "state"
+  ]
+}
