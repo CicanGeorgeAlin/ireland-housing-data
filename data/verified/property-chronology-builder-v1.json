@@ -1,0 +1,13 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-chronology-builder-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for constructing date-ordered property histories from matched evidence.",
+  "date_rule":"Event date, document date, registration date and legal-effect date are recorded separately.",
+  "ordering_rule":"Chronology ordering depends on the question's purpose and the applicable legal/evidential date; no date is silently substituted for another.",
+  "evidence_rule":"Every material chronology event retains its source, property match and date match.",
+  "historical_rule":"Missing historical records create a limitation, not proof that no event occurred.",
+  "conflict_rule":"Conflicting dates or property matches remain explicit until authoritative evidence resolves them.",
+  "verification_boundary":"The chronology organises verified evidence and state transitions; it does not independently establish facts beyond its evidence."
+}
