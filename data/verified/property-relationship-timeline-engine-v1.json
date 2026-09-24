@@ -1,0 +1,13 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-relationship-timeline-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for constructing date-aware timelines of party/property-interest relationships.",
+  "relationship_rule":"Each timeline relationship is independently supported and linked to a defined party, property interest and temporal scope.",
+  "date_rule":"Relationship dates are not silently substituted with document or registration dates.",
+  "causation_rule":"A relationship change may be linked to an event only where the causal link is supported.",
+  "historical_rule":"Historical roles require evidence appropriate to the target period.",
+  "privacy_rule":"Public relationship timelines expose only approved, necessary relationship information.",
+  "verification_boundary":"The timeline organizes verified relationships and transitions; it does not create unsupported legal relationships."
+}
