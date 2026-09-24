@@ -1,0 +1,89 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-event-causation-resolver",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Determine whether an observed property-state change can be causally linked to one or more documented events, while distinguishing evidence of sequence from proof of legal causation.",
+  "core_principle":"OBSERVED CHANGE → CANDIDATE EVENT → EVIDENCE LINK → LEGAL MECHANISM → CAUSAL CONCLUSION",
+  "causation_types":[
+    "DIRECT_DOCUMENTED_CAUSE",
+    "REGISTRATION_MEDIATED_CAUSE",
+    "SUCCESSION_MEDIATED_CAUSE",
+    "COURT_ORDER_MEDIATED_CAUSE",
+    "SECURITY_DISCHARGE_CAUSE",
+    "MULTIPLE_CONTRIBUTING_EVENTS",
+    "TEMPORALLY_ASSOCIATED_ONLY",
+    "CAUSE_UNRESOLVED"
+  ],
+  "causation_record":[
+    "causation_id",
+    "property_scope",
+    "state_before",
+    "state_after",
+    "observed_change",
+    "candidate_events",
+    "event_evidence",
+    "property_match",
+    "date_match",
+    "legal_mechanism",
+    "registration_effect",
+    "alternative_explanations",
+    "causal_status",
+    "limitations"
+  ],
+  "sequence":[
+    "IDENTIFY_OBSERVED_CHANGE",
+    "IDENTIFY_STATE_ENDPOINTS",
+    "IDENTIFY_CANDIDATE_EVENTS",
+    "VERIFY_PROPERTY_MATCH",
+    "VERIFY_EVENT_AND_STATE_DATES",
+    "VERIFY_DOCUMENT_OR_RECORD_IDENTITY",
+    "CHECK_DIRECT_EVIDENCE_LINK",
+    "RESOLVE_LEGAL_MECHANISM",
+    "CHECK_REGISTRATION_EFFECT",
+    "CHECK_ALTERNATIVE_EVENTS",
+    "CHECK_CONFLICTS",
+    "ASSESS_CAUSAL_SUFFICIENCY",
+    "PUBLISH_CAUSAL_CONCLUSION"
+  ],
+  "causal_statuses":[
+    "CAUSATION_ESTABLISHED",
+    "CAUSATION_ESTABLISHED_WITH_LIMITATIONS",
+    "MULTIPLE_CAUSES_SUPPORTED",
+    "EVENT_LINK_SUPPORTED_BUT_LEGAL_CAUSE_INCOMPLETE",
+    "TEMPORAL_ASSOCIATION_ONLY",
+    "CAUSE_UNRESOLVED",
+    "CAUSATION_CONFLICTED",
+    "INSUFFICIENT_EVIDENCE"
+  ],
+  "rules":[
+    "A chronological sequence alone does not prove causation.",
+    "A document mentioning a transaction does not automatically prove that it produced the observed registered state.",
+    "Where registration is legally material, registration evidence must be considered.",
+    "Where succession is involved, death, entitlement, representative authority and registration effects remain separate.",
+    "Where a court order is involved, the order's actual scope and subsequent registration effect must be checked.",
+    "Multiple events may jointly explain a state change.",
+    "A later event cannot be assumed to explain an earlier state change without temporal and legal support.",
+    "Alternative plausible material events must be considered before declaring a single cause established."
+  ],
+  "hard_stops":[
+    "Never infer causation from chronology alone.",
+    "Never infer causation merely because two documents have related names.",
+    "Never infer registration effect from a deed, contract, inheritance or court order alone where registration evidence is required.",
+    "Never suppress a material alternative causal event.",
+    "Never convert correlation or temporal proximity into legal causation.",
+    "Never use current law to establish historical causation without temporal verification."
+  ],
+  "output_contract":[
+    "causation_id",
+    "observed_change",
+    "causing_events",
+    "causal_type",
+    "legal_mechanism",
+    "registration_effect",
+    "alternative_events",
+    "evidence",
+    "limitations",
+    "causal_status"
+  ]
+}
