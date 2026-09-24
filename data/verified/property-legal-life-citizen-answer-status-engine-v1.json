@@ -1,0 +1,16 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-citizen-answer-status-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for citizen-facing answer status derived from investigation evidence, legal analysis and publication review.",
+  "status_rule":"Status reflects the approved investigation state and is not a confidence score.",
+  "verified_rule":"VERIFIED requires the applicable publication gate to be satisfied.",
+  "limitation_rule":"VERIFIED_WITH_LIMITATIONS requires the core conclusion to be established and limitations to be explicit.",
+  "partial_rule":"PARTIALLY_DETERMINED means some material components are established while another material component remains unresolved.",
+  "evidence_rule":"EVIDENCE_INCOMPLETE identifies missing or insufficient material evidence.",
+  "legal_rule":"LEGAL_ANALYSIS_INCOMPLETE identifies unresolved material legal authority, version, condition or effect despite sufficient evidence.",
+  "indeterminacy_rule":"NOT_DETERMINABLE is used when the requested conclusion cannot safely be established within available scope.",
+  "snapshot_rule":"A material status/answer change is represented by a new approved snapshot.",
+  "verification_boundary":"The status communicates answer readiness and limitations; it does not rank quality or predict outcomes."
+}
