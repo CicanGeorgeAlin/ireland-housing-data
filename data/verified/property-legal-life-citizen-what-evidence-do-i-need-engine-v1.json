@@ -1,0 +1,18 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-citizen-what-evidence-do-i-need-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for minimum evidence requests needed to resolve a material property answer gap.",
+  "minimum_rule":"Request only evidence material to the unresolved answer component.",
+  "authority_rule":"Prefer authoritative sources where available.",
+  "reason_rule":"Every requested item has a plain-language reason tied to the affected answer component.",
+  "scope_rule":"Each item has explicit limits and is not treated as proof beyond its scope.",
+  "citizen_document_rule":"Citizen-supplied material remains clearly labelled until independently validated.",
+  "access_rule":"Access restrictions are distinguished from evidence absence.",
+  "alternative_rule":"Alternative evidence is used only when sufficient for the requested proposition.",
+  "privacy_rule":"Evidence requests follow data minimisation and do not request unnecessary personal information.",
+  "no_invention_rule":"No forms, fees, deadlines, contacts, routes or outcomes are invented.",
+  "post_receipt_rule":"Received evidence is validated for identity, property/date match, authority, scope, conflicts and sufficiency.",
+  "verification_boundary":"The engine specifies evidence needed and the validation plan; it does not establish the eventual legal outcome."
+}
