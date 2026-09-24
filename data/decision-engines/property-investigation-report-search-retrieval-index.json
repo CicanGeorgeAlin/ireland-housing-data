@@ -1,0 +1,86 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-investigation-report-search-retrieval-index",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Locate published answers, reports and investigation records using safe identifiers without exposing private case information or conflating different properties, dates or questions.",
+  "core_principle":"SEARCHABILITY ≠ DISCLOSURE",
+  "search_scopes":[
+    "PUBLIC_ANSWER_INDEX",
+    "PUBLIC_REPORT_INDEX",
+    "PRIVATE_CITIZEN_CASE_INDEX",
+    "AUTHORIZED_REVIEW_INDEX"
+  ],
+  "public_search_fields":[
+    "answer_snapshot_id",
+    "report_id",
+    "report_version",
+    "public_answer_title",
+    "question_topic",
+    "general_property_area_or_non-identifying descriptor where publication is appropriate",
+    "target_date_or_period where public-safe",
+    "answer_status",
+    "publication_date",
+    "verification_date",
+    "source_domain",
+    "legal_topic",
+    "property_topic"
+  ],
+  "private_search_fields":[
+    "authorized_case_id",
+    "citizen-owned property identifiers",
+    "private documents",
+    "case-specific identifiers",
+    "correction/review references"
+  ],
+  "indexing_sequence":[
+    "IDENTIFY_SEARCH_SCOPE",
+    "CHECK_AUTHORIZATION",
+    "NORMALIZE_QUERY",
+    "CLASSIFY_QUERY_INTENT",
+    "SEARCH_APPROPRIATE_INDEX",
+    "APPLY_PROPERTY_IDENTITY_BOUNDARY",
+    "APPLY_DATE_SCOPE",
+    "APPLY_PUBLICATION_PRIVACY_FILTER",
+    "RETURN_MATCHES",
+    "PRESERVE_SNAPSHOT_IDENTITY"
+  ],
+  "identity_rules":[
+    "Do not merge records merely because addresses or names look similar.",
+    "Property-specific searches should use authoritative property identifiers where available.",
+    "Different target dates remain distinct answer scopes.",
+    "Different legal questions about the same property remain distinct investigations unless explicitly linked.",
+    "Shared evidence does not imply identical answers.",
+    "Historical and current reports must remain distinguishable."
+  ],
+  "public_visibility_rules":[
+    "Only published/public-safe snapshots enter the public index.",
+    "Private case identifiers never become public search keys.",
+    "Restricted personal data is excluded from public indexing.",
+    "Public search results expose only metadata necessary to locate the public answer.",
+    "Unpublished or withdrawn material is not exposed through the public index."
+  ],
+  "ranking_rules":[
+    "Exact snapshot/report identifier match first.",
+    "Exact topic and date scope next.",
+    "Exact legal/property topic next.",
+    "General text relevance only after identity and publication filtering.",
+    "Ranking must never imply legal correctness or answer quality."
+  ],
+  "hard_stops":[
+    "Never reveal private cases through search.",
+    "Never use search similarity as proof that two properties are the same.",
+    "Never expose unpublished answer content.",
+    "Never conflate current and historical reports.",
+    "Never turn search ranking into an evaluative legal ranking."
+  ],
+  "output_contract":[
+    "search_scope",
+    "matches",
+    "match_type",
+    "public_metadata",
+    "snapshot_or_report_reference",
+    "visibility_state",
+    "limitations"
+  ]
+}
