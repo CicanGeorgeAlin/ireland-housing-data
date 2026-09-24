@@ -1,0 +1,16 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-citizen-event-comparison-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for citizen-readable comparison of two approved timeline events.",
+  "scope_rule":"Compared events must share a verified property scope unless a separately authorised comparison permits otherwise.",
+  "difference_rule":"Comparison identifies supported differences and unchanged dimensions; difference alone does not establish causation.",
+  "causation_rule":"Causal connections require independent evidence and remain explicitly unresolved when unsupported.",
+  "date_rule":"Event, document, registration and legal-effect dates remain distinct for each event.",
+  "interest_rule":"Changes are assessed by property-interest dimension and are not collapsed into ownership.",
+  "party_rule":"Party participation is not automatically a legal role or ownership interest.",
+  "temporal_rule":"Each event is analysed under the legal version applicable to its relevant date.",
+  "privacy_rule":"Restricted evidence and private data remain protected.",
+  "verification_boundary":"Event comparison describes supported relationships and differences; it does not create a new legal conclusion."
+}
