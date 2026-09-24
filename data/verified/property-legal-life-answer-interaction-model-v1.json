@@ -1,0 +1,13 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-answer-interaction-model-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for navigating a public property answer into approved supporting detail.",
+  "interaction_rule":"Every interactive target resolves to an already approved answer component or evidence/legal detail.",
+  "scope_rule":"Property and date scope remain attached during navigation.",
+  "privacy_rule":"Public interactions cannot expose restricted evidence or unnecessary personal data.",
+  "snapshot_rule":"Navigation preserves the source answer snapshot and does not silently replace it.",
+  "source_rule":"Official source navigation identifies the source and route without treating the source page itself as property-specific evidence.",
+  "verification_boundary":"The interaction layer navigates approved information; it does not create new legal conclusions."
+}
