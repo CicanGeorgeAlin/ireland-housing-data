@@ -1,0 +1,14 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-party-relationship-graph-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for representing evidence-backed party/property relationships across time.",
+  "graph_rule":"A graph relationship is a structured representation of an independently supported relationship, not proof created by graph structure.",
+  "identity_rule":"Party identity and property identity must be independently matched.",
+  "temporal_rule":"Material relationships carry temporal scope where relevant.",
+  "interest_rule":"Party roles are linked to specific property interests rather than generic ownership labels.",
+  "evidence_rule":"Material relationships retain supporting evidence and legal basis where required.",
+  "privacy_rule":"Public graph views expose only approved, necessary relationship information.",
+  "verification_boundary":"The graph organizes verified relationships; it does not infer unsupported legal relationships."
+}
