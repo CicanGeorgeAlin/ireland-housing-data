@@ -1,0 +1,15 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-citizen-what-is-still-uncertain-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for citizen-facing explanation of material unresolved items in an approved property answer.",
+  "uncertainty_rule":"Material uncertainty is identified specifically by dependency and affected answer component.",
+  "absence_rule":"Missing or inaccessible evidence is not treated as proof that the underlying event or record does not exist.",
+  "conflict_rule":"Conflicting evidence remains a conflict until resolved by appropriate source, scope, date and authority checks.",
+  "materiality_rule":"Only unresolved items that affect the requested answer are presented as material limitations.",
+  "resolution_rule":"Where possible, identify the minimum evidence or legal authority needed to resolve the uncertainty.",
+  "partial_rule":"A supported partial conclusion may remain available even when another component is unresolved.",
+  "privacy_rule":"Uncertainty display does not expose restricted or unnecessary personal information.",
+  "verification_boundary":"The engine describes uncertainty and safe remaining conclusions; it does not create probabilities or new legal conclusions."
+}
