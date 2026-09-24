@@ -1,0 +1,16 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-citizen-what-if-answer-changes-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for explaining material changes between approved property answer snapshots.",
+  "snapshot_rule":"Material changes create a new snapshot while preserving the previous snapshot.",
+  "evidence_change_rule":"New or corrected evidence is distinguished from legal-rule changes.",
+  "legal_change_rule":"Legal changes are evaluated by provision, commencement and temporal scope.",
+  "historical_rule":"Historical answers remain anchored to their target date and applicable legal version.",
+  "procedure_rule":"Procedure or deadline changes may alter the next action without necessarily changing the substantive answer.",
+  "cause_rule":"The reason for an answer change must be supported; unresolved causation remains explicit.",
+  "unchanged_rule":"Material components that did not change remain visible.",
+  "privacy_rule":"Restricted evidence and internal reasoning remain protected.",
+  "verification_boundary":"The engine explains approved snapshot changes; it does not invent a cause or create a new legal conclusion."
+}
