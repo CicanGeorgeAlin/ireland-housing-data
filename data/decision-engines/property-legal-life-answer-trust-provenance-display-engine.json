@@ -1,0 +1,85 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-legal-life-answer-trust-provenance-display-engine",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Display understandable source lineage for material citizen-facing answer statements without exposing internal reasoning or restricted metadata.",
+  "core_principle":"CLAIM → SOURCE → WHAT IT SUPPORTS → SCOPE → LIMITATION",
+  "provenance_types":[
+    "PROPERTY_RECORD_PROVENANCE",
+    "HISTORICAL_RECORD_PROVENANCE",
+    "DOCUMENT_PROVENANCE",
+    "LEGAL_PROVISION_PROVENANCE",
+    "CASE_LAW_PROVENANCE",
+    "PROCEDURAL_PROVENANCE",
+    "OFFICIAL_GUIDANCE_PROVENANCE",
+    "COURT_ORDER_PROVENANCE",
+    "ANSWER_COMPONENT_PROVENANCE"
+  ],
+  "display_sections":[
+    "CLAIM",
+    "SOURCE",
+    "EXACT_PROVISION_OR_RECORD",
+    "DATE_OR_VERSION",
+    "WHAT_THIS_SOURCE_SUPPORTS",
+    "WHAT_IT_DOES_NOT_SUPPORT",
+    "ACCESS_ROUTE",
+    "LIMITATION"
+  ],
+  "resolution_sequence":[
+    "LOAD_APPROVED_ANSWER_COMPONENT",
+    "LOAD_TRACE_REFERENCES",
+    "RESOLVE_SUPPORTING_SOURCE",
+    "CHECK_SOURCE_AUTHORITY",
+    "CHECK_SOURCE_VERSION_OR_DATE",
+    "CHECK_PROPERTY_AND_DATE_MATCH_IF_MATERIAL",
+    "CHECK_SCOPE_OF_SUPPORT",
+    "CHECK_ACCESS_STATE",
+    "RENDER_CITIZEN_SAFE_PROVENANCE",
+    "RENDER_LIMITATION_IF_REQUIRED"
+  ],
+  "rules":[
+    "Every material citizen-facing claim should have an identifiable supporting source or approved evidential basis.",
+    "A source is displayed with the specific proposition, record or procedure it supports.",
+    "General official service pages are not presented as proof of property-specific facts.",
+    "Property-specific claims retain property and date match information where material.",
+    "Historical claims retain historical source/date/version context.",
+    "Case law is displayed with the proposition it actually supports, not a broader inferred rule.",
+    "Official guidance is distinguished from legislation.",
+    "Access limitations are disclosed where they affect verification.",
+    "Provenance display explains source lineage without exposing internal chain-of-thought."
+  ],
+  "trust_states":[
+    "SOURCE_IDENTIFIED",
+    "SOURCE_IDENTIFIED_WITH_LIMITATIONS",
+    "PROPERTY_MATCH_VERIFIED",
+    "DATE_MATCH_VERIFIED",
+    "LEGAL_SOURCE_VERIFIED",
+    "PROCEDURAL_SOURCE_VERIFIED",
+    "SOURCE_SCOPE_LIMITED",
+    "SOURCE_UNAVAILABLE",
+    "PROVENANCE_INCOMPLETE"
+  ],
+  "hard_stops":[
+    "Never imply a source supports more than it actually supports.",
+    "Never invent an exact provision, record reference, date or version.",
+    "Never use source prestige as a substitute for relevance or scope.",
+    "Never expose restricted documents or internal metadata.",
+    "Never present a provenance chain as proof when a required property-specific record is missing.",
+    "Never conceal material source limitations."
+  ],
+  "output_contract":[
+    "provenance_id",
+    "answer_component_id",
+    "claim",
+    "source_type",
+    "source_title",
+    "exact_reference",
+    "date_or_version",
+    "supports",
+    "does_not_support",
+    "access_route",
+    "limitation",
+    "trust_state"
+  ]
+}
