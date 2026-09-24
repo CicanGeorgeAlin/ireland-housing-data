@@ -1,0 +1,16 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-citizen-compare-answers-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for citizen-safe comparison of approved property answers or verified property states.",
+  "comparability_rule":"Comparison requires compatible property identity and defined temporal or state scope.",
+  "difference_rule":"A difference establishes only that the compared verified states or answers differ within scope; it does not establish causation by itself.",
+  "causation_rule":"Causal explanations require independent supporting evidence.",
+  "historical_rule":"Historical and current states retain their own evidence and applicable legal versions.",
+  "unchanged_rule":"Unchanged means no material change identified within verified evidence scope.",
+  "wording_rule":"Different wording or presentation depth is not automatically a substantive legal difference.",
+  "limitation_rule":"Material limitations from either comparison target remain visible.",
+  "privacy_rule":"Restricted evidence remains protected.",
+  "verification_boundary":"Comparison describes supported differences and similarities; it does not create a new legal conclusion."
+}
