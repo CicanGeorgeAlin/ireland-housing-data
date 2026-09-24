@@ -1,0 +1,15 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-evidence-conflict-experience-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for explaining and resolving conflicts between property evidence sources.",
+  "conflict_rule":"A conflict is a condition requiring comparison, not proof that either source is wrong.",
+  "scope_rule":"Conflicting claims are compared within their property, date and legal scope.",
+  "authority_rule":"Source authority, version and commencement are considered before resolving substantive conflicts.",
+  "historical_rule":"Historical conflicts remain anchored to the relevant historical date and legal version.",
+  "layer_rule":"Different records may describe different legal layers and may therefore not actually conflict.",
+  "publication_rule":"Material unresolved conflict blocks a definitive answer.",
+  "transparency_rule":"Resolved conflicts retain the basis for resolution and unresolved conflicts remain visible.",
+  "verification_boundary":"The conflict experience compares approved evidence and communicates state; it does not invent a resolution."
+}
