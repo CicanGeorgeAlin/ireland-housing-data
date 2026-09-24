@@ -1,0 +1,16 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-citizen-why-this-route-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for explaining why an official property route applies and what its authority and limits are.",
+  "function_rule":"The route is explained through the legal or administrative function it performs.",
+  "authority_rule":"The authority's scope must be supported by an authoritative source.",
+  "scope_rule":"Record custody, registration, administration, adjudication, review, appeal and enforcement powers remain distinct.",
+  "evidence_rule":"Required evidence is tied to the specific function and proposition being pursued.",
+  "limits_rule":"The citizen is told what the route cannot do as well as what it can do.",
+  "route_rule":"Alternative routes are shown only when supported by authoritative sources.",
+  "deadline_rule":"Deadlines require a verified governing source, trigger and counting rule.",
+  "outcome_rule":"A route is not presented as a guarantee of the requested outcome.",
+  "verification_boundary":"The engine explains an identified route and its basis; it does not create legal authority or a remedy."
+}
