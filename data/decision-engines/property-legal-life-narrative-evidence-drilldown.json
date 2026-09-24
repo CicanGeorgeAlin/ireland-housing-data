@@ -1,0 +1,92 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-legal-life-narrative-evidence-drilldown",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Connect each material statement, event and legal-effect element in a property legal-life narrative to its supporting evidence, legal authority, dates, property match and limitations.",
+  "core_principle":"NARRATIVE CLAIM → EVIDENCE → PROPERTY/DATE MATCH → LAW → EFFECT → LIMITATION",
+  "claim_types":[
+    "EVENT_CLAIM",
+    "PROPERTY_STATE_CLAIM",
+    "INTEREST_CLAIM",
+    "PARTY_ROLE_CLAIM",
+    "RELATIONSHIP_CLAIM",
+    "CAUSAL_CLAIM",
+    "LEGAL_PROPOSITION",
+    "LEGAL_EFFECT",
+    "PROCEDURAL_CLAIM",
+    "CURRENT_STATE_CLAIM",
+    "HISTORICAL_STATE_CLAIM"
+  ],
+  "drilldown_record":[
+    "drilldown_id",
+    "narrative_id",
+    "claim_id",
+    "claim_text",
+    "claim_type",
+    "source_records",
+    "document_references",
+    "property_match",
+    "date_match",
+    "legal_sources",
+    "legal_version",
+    "conditions_exceptions",
+    "legal_effect",
+    "limitations",
+    "official_route",
+    "verification_state"
+  ],
+  "sequence":[
+    "LOAD_APPROVED_NARRATIVE",
+    "IDENTIFY_MATERIAL_CLAIMS",
+    "RETRIEVE_TRACE_REFERENCES",
+    "VERIFY_PROPERTY_MATCH",
+    "VERIFY_DATE_MATCH",
+    "VERIFY_DOCUMENT_IDENTITY",
+    "LOAD_LEGAL_AUTHORITY",
+    "LOAD_CONDITIONS_EXCEPTIONS",
+    "LOAD_LEGAL_EFFECT",
+    "LOAD_LIMITATIONS",
+    "APPLY_PUBLIC_PRIVATE_BOUNDARY",
+    "RENDER_DRILLDOWN"
+  ],
+  "rules":[
+    "Every material public narrative claim must have a traceable supporting reference.",
+    "Property-specific claims require property-specific evidence and property matching.",
+    "Historical claims require date matching and applicable historical legal version where legal effect is stated.",
+    "A claim may have multiple supporting records and legal sources.",
+    "A limitation must be shown when supporting evidence is incomplete or restricted.",
+    "The drill-down explains the basis of a claim but must not expose internal chain-of-thought or restricted material.",
+    "Citation references must identify the source sufficiently for the citizen to understand and, where available, retrieve the official source."
+  ],
+  "claim_states":[
+    "VERIFIED",
+    "VERIFIED_WITH_LIMITATIONS",
+    "PARTIALLY_SUPPORTED",
+    "EVIDENCE_INCOMPLETE",
+    "LEGAL_AUTHORITY_INCOMPLETE",
+    "PROPERTY_MATCH_INCOMPLETE",
+    "DATE_MATCH_INCOMPLETE",
+    "NOT_DETERMINABLE"
+  ],
+  "hard_stops":[
+    "Never create a citation merely because a source is related to the topic.",
+    "Never use a general service page as proof of a property-specific fact.",
+    "Never hide missing evidence behind a generic source label.",
+    "Never expose restricted documents or unnecessary personal data.",
+    "Never present a legal proposition without its relevant authority and temporal scope."
+  ],
+  "output_contract":[
+    "drilldown_id",
+    "narrative_claim",
+    "claim_type",
+    "what_supports_it",
+    "property_match",
+    "date_match",
+    "law_and_version",
+    "legal_effect",
+    "limitations",
+    "official_sources",
+    "verification_state"
+  ]
+}
