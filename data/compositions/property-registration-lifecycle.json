@@ -5,6 +5,18 @@
   "purpose": "Connect the principal property-registration pathways into one date-aware evidence-driven lifecycle while keeping each legal event distinct.",
   "lifecycle": [
     {
+      "stage": "PROPERTY_LEGAL_LIFE_CITIZEN_WHO_WAS_INVOLVED",
+      "routes": [
+        "property-legal-life-citizen-who-was-involved-engine",
+        "property-holder-role-resolution",
+        "property-party-relationship-graph",
+        "property-relationship-timeline-engine",
+        "property-legal-life-citizen-timeline-question-engine",
+        "property-legal-life-citizen-event-evidence-show-me-engine",
+        "property-investigation-privacy-data-minimisation-boundary"
+      ]
+    },
+    {
       "stage": "PROPERTY_LEGAL_LIFE_CITIZEN_EVENT_COMPARISON",
       "routes": [
         "property-legal-life-citizen-event-comparison-engine",
@@ -1083,7 +1095,8 @@
     "property-legal-life-citizen-compare-answers-engine",
     "property-legal-life-citizen-timeline-question-engine",
     "property-legal-life-citizen-event-evidence-show-me-engine",
-    "property-legal-life-citizen-event-comparison-engine"
+    "property-legal-life-citizen-event-comparison-engine",
+    "property-legal-life-citizen-who-was-involved-engine"
   ],
   "answer_sequence": [
     "QUESTION",
