@@ -1,0 +1,81 @@
+{
+  "schema_version":"1.0",
+  "engine_id":"property-legal-life-citizen-event-evidence-show-me-engine",
+  "status":"STRUCTURALLY_ESTABLISHED",
+  "verified_date":"2026-09-24",
+  "purpose":"Provide a citizen-facing drill-down from an approved property timeline event to the supporting record, extracted fact, applicable law, legal effect and explicit limits.",
+  "core_principle":"EVENT → RECORD → EXTRACTED FACT → LAW → LEGAL EFFECT → LIMITATION",
+  "display_sections":[
+    "EVENT",
+    "SOURCE_RECORD",
+    "DOCUMENT_IDENTITY",
+    "PROPERTY_MATCH",
+    "DATE_MATCH",
+    "WHAT_THE_RECORD_SAYS",
+    "WHAT_FACT_WAS_EXTRACTED",
+    "WHAT_THE_LAW_SAYS",
+    "LEGAL_EFFECT_IF_ESTABLISHED",
+    "WHAT_THIS_RECORD_DOES_NOT_ESTABLISH",
+    "OFFICIAL_SOURCE_OR_ACCESS_ROUTE"
+  ],
+  "resolution_sequence":[
+    "LOAD_APPROVED_TIMELINE_EVENT",
+    "LOAD_EVENT_EVIDENCE_REFERENCES",
+    "VERIFY_SOURCE_IDENTITY",
+    "VERIFY_PROPERTY_MATCH",
+    "VERIFY_DATE_MATCH",
+    "RESOLVE_EXTRACTED_FACTS",
+    "RESOLVE_APPLICABLE_LAW_AND_VERSION",
+    "RESOLVE_CONDITIONS_AND_EXCEPTIONS",
+    "RESOLVE_LEGAL_EFFECT",
+    "APPLY_PRIVACY_AND_ACCESS_BOUNDARY",
+    "RENDER_EVENT_EVIDENCE_VIEW"
+  ],
+  "rules":[
+    "The event view explains an approved timeline event and does not create a new event.",
+    "The record identity is shown separately from the fact extracted from it.",
+    "Property and date matching are shown when material.",
+    "The exact scope of the record is preserved.",
+    "Legal effect is shown only where supported by the applicable legal authority and evidence.",
+    "Event date, document date, registration date and legal-effect date remain distinct.",
+    "A document's existence is not presented as proof of its legal effect.",
+    "A user-supplied document remains clearly labelled unless independently validated.",
+    "Restricted records are described only at the permitted access level.",
+    "Material limitations are always visible."
+  ],
+  "states":[
+    "EVENT_EVIDENCE_READY",
+    "EVENT_EVIDENCE_READY_WITH_LIMITATIONS",
+    "DOCUMENT_IDENTITY_INCOMPLETE",
+    "PROPERTY_MATCH_INCOMPLETE",
+    "DATE_MATCH_INCOMPLETE",
+    "LEGAL_EFFECT_INCOMPLETE",
+    "ACCESS_RESTRICTED",
+    "EVIDENCE_UNAVAILABLE"
+  ],
+  "hard_stops":[
+    "Never invent a document reference.",
+    "Never claim a record establishes more than its scope supports.",
+    "Never treat a deed or contract as registration proof where registration evidence is required.",
+    "Never treat a memorial or search as the complete underlying deed.",
+    "Never hide property/date mismatch.",
+    "Never expose restricted evidence.",
+    "Never add a new legal conclusion during display rendering."
+  ],
+  "output_contract":[
+    "event_evidence_view_id",
+    "timeline_id",
+    "event_id",
+    "source_record",
+    "document_identity",
+    "property_match",
+    "date_match",
+    "record_scope",
+    "extracted_fact",
+    "legal_source",
+    "legal_effect",
+    "limitations",
+    "official_route",
+    "state"
+  ]
+}
