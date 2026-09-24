@@ -1,0 +1,14 @@
+{
+  "schema_version":"1.0",
+  "content_id":"property-legal-life-investigation-citizen-notification-engine-v1",
+  "status":"GENERAL_INFORMATION_READY",
+  "last_verified":"2026-09-24",
+  "purpose":"Verified contract for material citizen notifications during a property legal-life investigation.",
+  "materiality_rule":"Only citizen-relevant material state changes trigger notifications.",
+  "action_rule":"Notifications state the minimum action required, or explicitly say when no action is needed.",
+  "privacy_rule":"Restricted evidence and unnecessary personal information are excluded.",
+  "deadline_rule":"No deadline or urgency is stated unless independently verified.",
+  "state_rule":"Notification delivery is separate from the underlying investigation state.",
+  "change_rule":"Answer changes identify whether they result from correction, new evidence, legal/procedural change or re-verification.",
+  "verification_boundary":"Notifications communicate investigation state; they do not create or alter legal conclusions."
+}
